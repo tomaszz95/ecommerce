@@ -1,0 +1,61 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+input,
+label,
+button {
+    font: inherit;
+}
+
+button {
+    font: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+ul,
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+:root {
+    --greylish: rgb(242, 242, 242);
+    --light-grey: rgb(140, 140, 140);
+    --dark-grey: rgb(51, 51, 51);
+    --call-to-action: rgb(229, 21, 19);
+    --call-to-action-hover: rgba(197, 17, 14, 0.904);
+    --pure-white: rgb(255, 255, 255);
+    --dirty-white: rgb(243, 243, 243);
+    --pure-black: rgb(0, 0, 0);
+    --light-black: rgb(22, 21, 21);
+    --lighter-black: rgb(65, 62, 62);
+    --light-blue: rgb(0, 113, 235);
+    --lighter-blue: rgb(0, 128, 255);
+    --success-color: rgb(13, 218, 13);
+    --darker-green: rgb(38, 176, 107);
+}
