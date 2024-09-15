@@ -1,3 +1,4 @@
+import Header from '@/components/header/Header'
 import type { Metadata } from 'next'
 import '../styles/globals.css'
 
@@ -13,7 +14,12 @@ export const metadata: Metadata = {
 const HomepageLayout = ({ children }: HomepageLayoutType) => {
     return (
         <html lang="en">
-            <body>{children}</body>
+            <body>
+                <header>
+                    <Header />
+                </header>
+                <main>{children}</main>
+            </body>
         </html>
     )
 }

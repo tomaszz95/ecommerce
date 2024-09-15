@@ -1,0 +1,45 @@
+.topbar {
+    display: none;
+    padding: 0.7rem;
+    background-color: var(--dark-grey);
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 100%;
+}
+
+.topbarItem {
+    display: flex;
+    align-items: center;
+    margin: 0 0.5rem;
+}
+
+.topbarItem img {
+    margin-right: 0.5rem;
+    scale: 0.8;
+}
+
+.topbarItem p {
+    font-size: 0.9rem;
+    color: var(--pure-white);
+}
+
+@media (786px < width) {
+    .topbar {
+        display: block;
+    }
+}
+
+@media (992px < width) {
+    .topbarItem img {
+        scale: 0.9;
+    }
+
+    .topbarItem p {
+        font-size: 1rem;
+    }
+}

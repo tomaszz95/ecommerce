@@ -1,5 +1,5 @@
 {
-	"name": "ecommerce",
+	"name": "nextpc",
 	"version": "1.0.0",
 	"main": "app.js",
 	"dependencies": {
@@ -25,5 +25,5 @@
 	},
 	"author": "Tomasz Ż.",
 	"license": "ISC",
-	"description": ""
+	"description": "NextPC ecommerce app"
 }

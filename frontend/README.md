@@ -1,4 +1,4 @@
-<h1>Ecommerce app</h1>
+<h1>NeXtPC ecommerce app</h1>
 
 <p>Some description..</p>
 
