@@ -1,0 +1,26 @@
+.mainheader {
+    padding: 1rem;
+    background-color: var(--pure-black);
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 100%;
+}
+
+.logo {
+    margin: 0.5rem;
+    width: 150px;
+    height: 30px;
+}
+
+@media (786px < width) {
+    .logo {
+        margin: 0.5rem;
+        width: 180px;
+        height: 40px;
+    }
+}
