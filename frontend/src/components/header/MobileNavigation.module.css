@@ -1,0 +1,6 @@
+.burger {
+    display: block;
+    align-self: flex-end;
+    padding: 1rem;
+    background-color: var(--pure-black);
+}

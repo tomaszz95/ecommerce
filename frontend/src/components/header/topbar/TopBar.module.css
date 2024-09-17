@@ -28,7 +28,7 @@
     color: var(--pure-white);
 }
 
-@media (786px < width) {
+@media (768px < width) {
     .topbar {
         display: block;
     }
