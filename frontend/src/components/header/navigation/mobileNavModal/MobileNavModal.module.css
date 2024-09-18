@@ -1,0 +1,50 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalContent {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 75%;
+    max-width: 400px;
+    background-color: var(--pure-black);
+    color: var(--pure-white);
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0.8rem;
+    background-color: var(--dark-grey);
+}
+
+.modalHeader span {
+    font-size: 1.4rem;
+    padding: 0.6rem;
+}
+
+.modalHeader button {
+    background-color: inherit;
+    padding: 0.6rem;
+}
+
+.modalHeader img {
+    height: 28px;
+    width: 28px;
+}
+
+@media (768px < width) {
+    .modal {
+        display: none;
+    }
+}

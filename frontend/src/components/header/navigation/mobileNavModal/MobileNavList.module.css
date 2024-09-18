@@ -1,0 +1,27 @@
+.navList {
+    display: flex;
+    flex-direction: column;
+}
+
+.navListLink {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+.navListLink:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.navListLink img {
+    height: 26px;
+    width: 26px;
+}
+
+.navListLink span {
+    font-size: 1.1rem;
+}

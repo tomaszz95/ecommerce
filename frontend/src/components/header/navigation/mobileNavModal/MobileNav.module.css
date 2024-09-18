@@ -1,0 +1,35 @@
+.mobileNav {
+    width: 100%;
+    height: 100%;
+    padding: 1.2rem;
+}
+
+.mobileNavItem {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.mobileNavItem:nth-child(1) {
+    margin-bottom: 2rem;
+}
+
+.mobileNavTitle {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.mobileNavContact {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.mobileNavContact img {
+    height: 26px;
+    width: 26px;
+}
+
+.mobileNavContact span {
+    font-size: 1.1rem;
+}
