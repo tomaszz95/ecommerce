@@ -1,7 +1,8 @@
 import Image from 'next/image'
-import XIcon from '../../../../assets/icons/x.png'
-import MobileNav from './MobileNav'
 
+import MobileNavContent from './MobileNavContent'
+
+import XIcon from '../../../../assets/icons/x.svg'
 import styles from './MobileNavModal.module.css'
 
 type ComponentType = {
@@ -19,7 +20,7 @@ const MobileNavModal: React.FC<ComponentType> = ({ onClose }) => {
                         <Image src={XIcon} alt="" />
                     </button>
                 </div>
-                <MobileNav onClose={onClose} />
+                <MobileNavContent onClose={onClose} />
             </div>
         </div>
     )

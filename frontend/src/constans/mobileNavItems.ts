@@ -1,11 +1,11 @@
-import ComputerIcon from '../assets/icons/computer.png'
-import LaptopIcon from '../assets/icons/laptop.png'
-import AccessoriesIcon from '../assets/icons/mouse.png'
-import HardwareIcon from '../assets/icons/hardware.png'
-import GamingIcon from '../assets/icons/gaming.png'
-import StreamingIcon from '../assets/icons/streaming.png'
-import SmartphoneIcon from '../assets/icons/smartphone.png'
-import SmartwatchIcon from '../assets/icons/smartwatch.png'
+import ComputerIcon from '../assets/icons/computer.svg'
+import LaptopIcon from '../assets/icons/laptop.svg'
+import AccessoriesIcon from '../assets/icons/mouse.svg'
+import HardwareIcon from '../assets/icons/hardware.svg'
+import GamingIcon from '../assets/icons/gaming.svg'
+import StreamingIcon from '../assets/icons/streaming.svg'
+import SmartphoneIcon from '../assets/icons/smartphone.svg'
+import SmartwatchIcon from '../assets/icons/smartwatch.svg'
 
 type mobileNavItemsType = { name: string; link: string; icon: any }[]
 

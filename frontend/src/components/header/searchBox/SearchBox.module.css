@@ -13,8 +13,9 @@
     height: 35px;
     width: 100%;
     border-radius: 10px;
-    border: none;
+    border: 1px solid var(--pure-black);
     font-size: 0.9rem;
+    background-color: var(--dirty-white);
 }
 
 .searchBox button {
@@ -32,7 +33,7 @@
 }
 
 .searchBox button:hover {
-    background-color: var(--main-color-hover);
+    background-color: var(--main-color-darker);
 }
 
 .searchBox button img {

@@ -3,17 +3,13 @@ import Link from 'next/link'
 
 import mobileNavItems from '../../../../constans/mobileNavItems'
 
-import styles from './MobileNavList.module.css'
+import styles from './DesktopNavContent.module.css'
 
-type ComponentType = {
-    onClose: () => void
-}
-
-const MobileNavList: React.FC<ComponentType> = ({ onClose }) => {
+const DesktopNavContent = () => {
     return (
-        <ul className={styles.navList}>
+        <ul className={styles.navContent}>
             {mobileNavItems.map((item) => (
-                <Link href={`/shop/${item.link}`} key={item.link} className={styles.navListLink} onClick={onClose}>
+                <Link href={`/shop/${item.link}`} key={item.link} className={styles.navListLink}>
                     <Image src={item.icon} alt="" />
                     <span>{item.name}</span>
                 </Link>
@@ -22,4 +18,4 @@ const MobileNavList: React.FC<ComponentType> = ({ onClose }) => {
     )
 }
 
-export default MobileNavList
+export default DesktopNavContent

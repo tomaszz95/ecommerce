@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import MobileNavigation from './navigation/MobileNavigation'
+import MobileNavigation from './navigation/mobileNavModal/MobileNavigation'
 import SearchBox from './searchBox/SearchBox'
 import HeaderOptions from './HeaderOptions'
 

@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import User from '../../assets/icons/user.png'
-import Contact from '../../assets/icons/contact.png'
-import Cart from '../../assets/icons/cart.png'
+import UserIcon from '../../assets/icons/user.svg'
+import ContactIcon from '../../assets/icons/contact.svg'
+import CartIcon from '../../assets/icons/cart.svg'
 
 import styles from './HeaderOptions.module.css'
 
@@ -11,15 +11,15 @@ const HeaderOptions = () => {
     return (
         <div className={styles.headerOptions}>
             <Link className={styles.headerOption} href="/login">
-                <Image src={User} alt="" />
+                <Image src={UserIcon} alt="" />
                 <p>Login</p>
             </Link>
             <Link className={styles.headerOption} href="/contact">
-                <Image src={Contact} alt="" />
+                <Image src={ContactIcon} alt="" />
                 <p>Contact</p>
             </Link>
             <Link className={styles.headerOption} href="/cart">
-                <Image src={Cart} alt="" />
+                <Image src={CartIcon} alt="" />
                 <p>Cart</p>
             </Link>
         </div>

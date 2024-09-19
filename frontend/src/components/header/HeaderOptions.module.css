@@ -15,18 +15,17 @@
 }
 
 .headerOption:hover {
-    background-color: var(--dark-grey);
+    background-color: var(--dirty-white);
 }
 
 .headerOption img {
-    width: 24px;
-    height: 24px;
     pointer-events: none;
 }
 
 .headerOption p {
     display: none;
-    color: var(--pure-white);
+    font-weight: 700;
+    color: var(--pure-black);
     pointer-events: none;
 }
 

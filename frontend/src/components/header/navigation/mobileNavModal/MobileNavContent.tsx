@@ -1,10 +1,10 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 import MobileNavList from './MobileNavList'
 
-import Contact from '../../../../assets/icons/contact.png'
-import styles from './MobileNav.module.css'
-import Image from 'next/image'
+import ContactIcon from '../../../../assets/icons/contact.svg'
+import styles from './MobileNavContent.module.css'
 
 type ComponentType = {
     onClose: () => void
@@ -15,12 +15,12 @@ const MobileNav: React.FC<ComponentType> = ({ onClose }) => {
         <nav className={styles.mobileNav}>
             <div className={styles.mobileNavItem}>
                 <span className={styles.mobileNavTitle}>Categories</span>
-                <MobileNavList />
+                <MobileNavList onClose={onClose} />
             </div>
             <div className={styles.mobileNavItem}>
                 <span className={styles.mobileNavTitle}>Any questions?</span>
                 <Link href="/contact" className={styles.mobileNavContact} onClick={onClose}>
-                    <Image src={Contact} alt="" />
+                    <Image src={ContactIcon} alt="" />
                     <span>Contact us!</span>
                 </Link>
             </div>

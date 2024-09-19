@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
-import Search from '../../../assets/icons/search.png'
+import Search from '../../../assets/icons/search.svg'
 
 import styles from './SearchBox.module.css'
 

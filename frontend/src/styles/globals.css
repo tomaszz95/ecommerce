@@ -45,11 +45,12 @@ a {
 
 :root {
     --light-grey: rgb(140, 140, 140);
+    --lighter-grey: rgb(211, 211, 211);
     --dark-grey: rgb(66, 66, 66);
     --darker-grey: rgb(33, 33, 33);
     --pure-white: rgb(255, 255, 255);
-    --dirty-white: rgb(243, 243, 243);
+    --dirty-white: rgb(233, 233, 233);
     --pure-black: rgb(0, 0, 0);
-    --main-color: rgb(22, 190, 62);
-    --main-color-hover: rgb(11, 136, 40);
+    --main-color: rgb(25, 144, 255);
+    --main-color-darker: rgb(5, 115, 218);
 }

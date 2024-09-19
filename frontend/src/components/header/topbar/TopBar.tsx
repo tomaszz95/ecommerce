@@ -1,9 +1,9 @@
 import Image from 'next/image'
 
-import Briefcase from '../../../assets/icons/briefcase.png'
-import Star from '../../../assets/icons/star.png'
-import Package from '../../../assets/icons/package.png'
-import Shop from '../../../assets/icons/shop.png'
+import BriefcaseIcon from '../../../assets/icons/briefcase.svg'
+import StarIcon from '../../../assets/icons/star.svg'
+import PackageIcon from '../../../assets/icons/package.svg'
+import ShopIcon from '../../../assets/icons/shop.svg'
 
 import styles from './TopBar.module.css'
 
@@ -12,19 +12,19 @@ const TopBar = () => {
         <div className={styles.topbar}>
             <div className={styles.container}>
                 <div className={styles.topbarItem}>
-                    <Image src={Briefcase} alt="" />
+                    <Image src={BriefcaseIcon} alt="" />
                     <p>10 years in business</p>
                 </div>
                 <div className={styles.topbarItem}>
-                    <Image src={Star} alt="" />
+                    <Image src={StarIcon} alt="" />
                     <p>Highest customer ratings</p>
                 </div>
                 <div className={styles.topbarItem}>
-                    <Image src={Package} alt="" />
+                    <Image src={PackageIcon} alt="" />
                     <p>Express order shipping</p>
                 </div>
                 <div className={styles.topbarItem}>
-                    <Image src={Shop} alt="" />
+                    <Image src={ShopIcon} alt="" />
                     <p>Free delivery to 20 stores</p>
                 </div>
             </div>

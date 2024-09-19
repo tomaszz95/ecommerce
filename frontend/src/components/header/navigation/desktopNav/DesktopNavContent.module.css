@@ -1,0 +1,37 @@
+.navContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-width: 1500px;
+    width: 100%;
+}
+
+.navListLink {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.navListLink:hover {
+    background-color: var(--lighter-grey);
+}
+
+.navListLink img {
+    margin-right: 0.8rem;
+    pointer-events: none;
+}
+
+.navListLink span {
+    font-size: 1rem;
+    pointer-events: none;
+    font-weight: 700;
+}
+
+@media (768px < width) {
+    .desktopNav {
+        display: flex;
+    }
+}

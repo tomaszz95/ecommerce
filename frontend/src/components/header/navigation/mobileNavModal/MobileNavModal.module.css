@@ -17,20 +17,21 @@
     left: 0;
     width: 75%;
     max-width: 400px;
-    background-color: var(--pure-black);
-    color: var(--pure-white);
+    background-color: var(--pure-white);
 }
 
 .modalHeader {
     display: flex;
     justify-content: space-between;
     padding: 0.4rem 0.8rem;
-    background-color: var(--dark-grey);
+    background-color: var(--main-color);
 }
 
 .modalHeader span {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 0.6rem;
+    font-weight: 700;
+    color: var(--pure-white);
 }
 
 .modalHeader button {
@@ -41,6 +42,7 @@
 .modalHeader img {
     height: 28px;
     width: 28px;
+    filter: brightness(0) invert(1);
 }
 
 @media (768px < width) {

@@ -3,11 +3,11 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
-import NavIcon from '../../../assets/icons/nav.png'
+import NavIcon from '../../../../assets/icons/nav.svg'
 
 import styles from './MobileNavigation.module.css'
-import MobileNavModal from './mobileNavModal/MobileNavModal'
-import MobileNavPortal from './mobileNavModal/MobileNavPortal'
+import MobileNavModal from './MobileNavModal'
+import MobileNavPortal from './MobileNavPortal'
 
 const MobileNavigation = () => {
     const [isNavOpen, setIsNavOpen] = useState(false)
