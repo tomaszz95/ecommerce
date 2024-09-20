@@ -16,18 +16,18 @@
 }
 
 .navListLink:hover {
-    background-color: var(--lighter-grey);
+    background-color: var(--main-color-darker);
 }
 
 .navListLink img {
     margin-right: 0.8rem;
     pointer-events: none;
+    filter: brightness(0) invert(1);
 }
 
 .navListLink span {
     font-size: 1rem;
     pointer-events: none;
-    font-weight: 700;
 }
 
 @media (768px < width) {

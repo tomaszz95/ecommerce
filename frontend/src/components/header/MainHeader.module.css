@@ -60,12 +60,13 @@
 
 @media (768px < width) {
     .mainheader {
-        padding: 1rem;
+        padding: 0.6rem;
     }
 
     .container {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto;
+        padding: 1rem;
     }
 
     .logo {

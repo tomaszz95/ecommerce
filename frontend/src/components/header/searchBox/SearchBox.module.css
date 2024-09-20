@@ -39,6 +39,7 @@
 .searchBox button img {
     scale: 0.7;
     pointer-events: none;
+    filter: brightness(0) invert(1);
 }
 
 @media (768px < width) {

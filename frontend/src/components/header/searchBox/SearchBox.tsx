@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
-import Search from '../../../assets/icons/search.svg'
+import SearchIcon from '../../../assets/icons/search.svg'
 
 import styles from './SearchBox.module.css'
 
@@ -25,7 +25,7 @@ const SearchBox = () => {
                 onChange={(e) => setInputSearchValue(e.target.value)}
             />
             <button aria-label="Click to search" type="submit">
-                <Image src={Search} alt="Search icon" />
+                <Image src={SearchIcon} alt="Search icon" />
             </button>
         </form>
     )
