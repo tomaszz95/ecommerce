@@ -7,7 +7,7 @@ const HeroImage = () => {
             <div className={styles.heroImageShadow} />
             <div className={styles.heroImageText}>
                 <h1>New gaming laptop</h1>
-                <p>Best offer, best prices, check now!</p>
+                <p>Best offer, best prices, check it now!</p>
             </div>
         </section>
     )
