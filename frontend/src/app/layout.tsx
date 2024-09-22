@@ -2,7 +2,7 @@ import Header from '../components/header/Header'
 import type { Metadata } from 'next'
 import '../styles/globals.css'
 
-type HomepageLayoutType = {
+type ComponentType = {
     children: React.ReactNode
 }
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: 'Ecommerce app description',
 }
 
-const HomepageLayout = ({ children }: HomepageLayoutType) => {
+const HomepageLayout = ({ children }: ComponentType) => {
     return (
         <html lang="en">
             <body>

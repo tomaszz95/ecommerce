@@ -1,0 +1,14 @@
+.container {
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: var(--pure-white);
+    border-radius: 10px;
+    max-width: 1440px;
+    width: 90%;
+}
+
+@media (768px < width) {
+    .container {
+        margin: 4rem auto;
+    }
+}

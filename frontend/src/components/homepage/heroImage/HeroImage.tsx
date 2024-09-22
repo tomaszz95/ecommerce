@@ -1,3 +1,5 @@
+import CtaLink from '../../../components/UI/CtaLink'
+
 import styles from './HeroImage.module.css'
 
 const HeroImage = () => {
@@ -7,7 +9,10 @@ const HeroImage = () => {
             <div className={styles.heroImageShadow} />
             <div className={styles.heroImageText}>
                 <h1>New gaming laptop</h1>
-                <p>Best offer, best prices, check it now!</p>
+                <p>Best price, best equipment, best opportunity.</p>
+                <CtaLink width="200px" href="/">
+                    Check now!
+                </CtaLink>
             </div>
         </section>
     )
