@@ -10,6 +10,7 @@ const dummyProducts = [
         images: [DummyImage, DummyImage],
         category: 'Smartphone',
         company: 'Apple',
+        prodId: '1',
     },
     {
         name: 'Apple iphone 15',
@@ -20,6 +21,7 @@ const dummyProducts = [
         images: [DummyImage, DummyImage],
         category: 'Computer',
         company: 'Apple',
+        prodId: '12',
     },
     {
         name: 'Apple iphone 14',
@@ -30,6 +32,7 @@ const dummyProducts = [
         images: [DummyImage, DummyImage],
         category: 'Laptop',
         company: 'Apple',
+        prodId: '123',
     },
     {
         name: 'Apple iphone 13',
@@ -40,6 +43,7 @@ const dummyProducts = [
         images: [DummyImage, DummyImage],
         category: 'Gaming',
         company: 'Apple',
+        prodId: '1323',
     },
     {
         name: 'Apple iphone 12',
@@ -50,6 +54,7 @@ const dummyProducts = [
         images: [DummyImage, DummyImage],
         category: 'Streaming',
         company: 'Apple',
+        prodId: '12332',
     },
     {
         name: 'Apple iphone 11',
@@ -60,6 +65,29 @@ const dummyProducts = [
         images: [DummyImage, DummyImage],
         category: 'Smartphone',
         company: 'Apple',
+        prodId: '121323132',
+    },
+    {
+        name: 'Apple iphone 7',
+        description:
+            'Lorem ipsum dolor sit amened. Asad asd asd asd dsdsdasd asd sdasda sda asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda',
+        price: 1699,
+        mainImage: DummyImage,
+        images: [DummyImage, DummyImage],
+        category: 'Smartphone',
+        company: 'Apple',
+        prodId: '12133122332',
+    },
+    {
+        name: 'Apple iphone 18',
+        description:
+            'Lorem ipsum dolor sit amened. Asad asd asd asd dsdsdasd asd sdasda sda asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda',
+        price: 1699,
+        mainImage: DummyImage,
+        images: [DummyImage, DummyImage],
+        category: 'Smartphone',
+        company: 'Apple',
+        prodId: '11551',
     },
 ]
 

@@ -1,0 +1,12 @@
+.carousel {
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 90vw;
+    overflow: hidden;
+}
+
+@media (768px < width) {
+    .carousel {
+        display: none;
+    }
+}

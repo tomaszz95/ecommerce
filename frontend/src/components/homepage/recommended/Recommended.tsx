@@ -1,4 +1,6 @@
-import RecommendedProductsCarousel from '../../../components/UI/Carousels/RecommendedProductsCarousel'
+import RecommendedProductsCarousel from './RecommendedProductsCarousel'
+import RecommendedProductsBox from './RecommendedProductsBox'
+
 import styles from './Recommended.module.css'
 
 const Recommended = () => {
@@ -6,6 +8,7 @@ const Recommended = () => {
         <section className={styles.recommendedSection}>
             <h2>Recommended</h2>
             <RecommendedProductsCarousel />
+            <RecommendedProductsBox />
         </section>
     )
 }

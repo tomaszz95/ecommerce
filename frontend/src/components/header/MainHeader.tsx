@@ -15,6 +15,7 @@ const MainHeader = () => {
                 <div className={styles.logoLinkBox}>
                     <Link href="/" className={styles.logoLink}>
                         <Image src={Logo} alt="NeXtPC logo" className={styles.logo} />
+                        <h1>NeXtPC the best computer shop!</h1>
                     </Link>
                 </div>
                 <div className={styles.mobileNavBox}>

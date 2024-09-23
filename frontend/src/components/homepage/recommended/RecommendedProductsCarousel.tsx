@@ -1,10 +1,9 @@
 'use client'
-import Image from 'next/image'
-import Link from 'next/link'
-import Slider from 'react-slick'
-
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import Slider from 'react-slick'
+
+import SingleProduct from '../../singleProduct/SingleProduct'
 
 import dummyProducts from '../../../constans/dummyProducts'
 import styles from './RecommendedProductsCarousel.module.css'
@@ -40,12 +39,14 @@ const RecommendedProductsCarousel = () => {
     return (
         <Slider {...settings} className={styles.carousel}>
             {dummyProducts.map((item) => (
-                <Link className={styles.carouselItem} key={item.name} href="/">
-                    <Image src={item.mainImage} alt={item.name} />
-                    <p>{item.category}</p>
-                    <h3>{item.name}</h3>
-                    <span>{item.price}$</span>
-                </Link>
+                <SingleProduct
+                    name={item.name}
+                    prodId={item.prodId}
+                    mainImage={item.mainImage}
+                    category={item.category}
+                    price={item.price}
+                    key={item.prodId}
+                />
             ))}
         </Slider>
     )
