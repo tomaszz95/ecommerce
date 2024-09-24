@@ -31,14 +31,19 @@
 .heroImageText {
     position: absolute;
     top: 25%;
-    left: 10%;
+    left: 8%;
     padding: 1rem;
     color: var(--pure-white);
 }
 
-.heroImageText h2 {
+.heroImageText h1 {
     font-size: 2.4rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.heroImageText h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
 }
 
 .heroImageText p {
@@ -94,16 +99,28 @@
     }
 
     .heroImageText {
-        top: 35%;
-        left: 20%;
+        top: 30%;
+        left: 12%;
+    }
+
+    .heroImageText h1 {
+        font-size: 3rem;
+        margin-bottom: 0.8rem;
     }
 
     .heroImageText h2 {
-        font-size: 3rem;
-        margin-bottom: 0.7rem;
+        font-size: 2.4rem;
+        margin-bottom: 0.8rem;
     }
 
     .heroImageText p {
         font-size: 1.5rem;
+    }
+}
+
+@media (1200px < width) {
+    .heroImageText {
+        top: 35%;
+        left: 15%;
     }
 }
