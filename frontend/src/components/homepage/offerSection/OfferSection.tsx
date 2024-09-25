@@ -1,4 +1,4 @@
-import BestPromotion from './BestPromotion'
+import BiggestPromotion from './BiggestPromotion'
 import LatestProduct from './LatestProduct'
 import styles from './OfferSection.module.css'
 
@@ -6,8 +6,9 @@ const OfferSection = () => {
     return (
         <section className={styles.offerSection}>
             <div className={styles.offerSectionBox}>
-                <h2>Best promotion</h2>
-                <BestPromotion />
+                <h2>Deal of the day</h2>
+                <span className={styles.offerSectionPromotion}>-20%</span>
+                <BiggestPromotion />
             </div>
             <div className={styles.offerSectionBox}>
                 <h2>Latest products</h2>

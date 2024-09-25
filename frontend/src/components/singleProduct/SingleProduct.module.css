@@ -13,7 +13,7 @@
 }
 
 .item:hover {
-    border: 2px solid var(--dirty-white);
+    border: 2px solid var(--lighter-grey);
 }
 
 .item img {

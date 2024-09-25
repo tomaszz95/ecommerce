@@ -3,12 +3,37 @@
 }
 
 .offerSectionBox {
+    position: relative;
     margin: 4rem auto;
     padding: 2rem;
     background-color: var(--pure-white);
     border-radius: 10px;
     width: 100%;
     max-width: 350px;
+}
+
+.offerSectionBox:nth-child(1) {
+    border-top: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+    border-left: 3px solid var(--main-color);
+    border-right: 3px solid var(--main-color);
+    transition: scale 0.4s;
+}
+
+.offerSectionBox:nth-child(1):hover {
+    scale: 1.03;
+}
+
+.offerSectionPromotion {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.7rem 1.5rem;
+    background-color: var(--danger-color);
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    color: var(--pure-white);
+    font-size: 1.2rem;
 }
 
 .offerSectionBox h2 {
@@ -18,7 +43,7 @@
 
 @media (768px < width) {
     .offerSection {
-        margin: 4rem auto;
+        margin: 2rem auto;
         padding: 0 2rem;
         max-width: 1440px;
         display: grid;
@@ -27,6 +52,7 @@
     }
 
     .offerSectionBox {
+        margin: 2rem auto;
         grid-column: 1 / 2;
         padding: 2rem;
         background-color: var(--pure-white);

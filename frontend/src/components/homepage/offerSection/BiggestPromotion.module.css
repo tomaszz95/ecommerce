@@ -1,0 +1,81 @@
+.item {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0 0;
+    text-align: center;
+    transition: border 0.5s;
+    border-radius: 10px;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+}
+
+.item p {
+    font-size: 0.9rem;
+    color: var(--dark-grey);
+    margin: 0.4rem 0 0.6rem;
+}
+
+.item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+}
+
+.promotionPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.beforePromotionPrice {
+    text-decoration: line-through;
+    margin-right: 1rem;
+    font-size: 1rem;
+    color: var(--dark-grey);
+}
+
+.currentPrice {
+    color: var(--danger-color);
+    font-size: 1.4rem;
+}
+
+.promotionTime {
+    margin-top: 1rem;
+}
+
+.promotionTime p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.promotionTimerBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.promotionTimerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70px;
+    height: 70px;
+    border: 1px solid var(--lighter-grey);
+    border-radius: 10px;
+}
+
+.promotionTimerValue {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.promotionTimerUnit {
+    color: 1px solid var(--lighter-grey);
+}

@@ -54,6 +54,7 @@ a {
     --pure-black: rgb(0, 0, 0);
     --main-color: rgb(25, 144, 255);
     --main-color-darker: rgb(5, 115, 218);
+    --danger-color: rgb(238, 36, 22);
 }
 
 .slick-slide div {
