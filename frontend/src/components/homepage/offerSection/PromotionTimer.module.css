@@ -1,0 +1,26 @@
+.promotionTimerBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.promotionTimerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70px;
+    height: 70px;
+    border: 1px solid var(--lighter-grey);
+    border-radius: 10px;
+}
+
+.promotionTimerValue {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.promotionTimerUnit {
+    color: 1px solid var(--lighter-grey);
+}

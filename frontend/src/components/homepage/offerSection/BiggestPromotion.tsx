@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 import dummyProducts from '../../../constans/dummyProducts'
 import styles from './BiggestPromotion.module.css'
+import PromotionTimer from './PromotionTimer'
 
 const BiggestPromotion = () => {
     const promotionProduct = dummyProducts[0]
@@ -21,20 +22,7 @@ const BiggestPromotion = () => {
             </div>
             <div className={styles.promotionTime}>
                 <p>Left until the end of the promotion</p>
-                <div className={styles.promotionTimerBox}>
-                    <div className={styles.promotionTimerContainer}>
-                        <span className={styles.promotionTimerValue}>22</span>
-                        <span className={styles.promotionTimerUnit}>h</span>
-                    </div>
-                    <div className={styles.promotionTimerContainer}>
-                        <span className={styles.promotionTimerValue}>22</span>
-                        <span className={styles.promotionTimerUnit}>min</span>
-                    </div>
-                    <div className={styles.promotionTimerContainer}>
-                        <span className={styles.promotionTimerValue}>22</span>
-                        <span className={styles.promotionTimerUnit}>sec</span>
-                    </div>
-                </div>
+                <PromotionTimer />
             </div>
         </Link>
     )
