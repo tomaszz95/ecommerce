@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import MobileNavigation from './navigation/mobileNavModal/MobileNavigation'
 import SearchBox from './searchBox/SearchBox'
-import HeaderOptions from './HeaderOptions'
+import HeaderOptions from './headerOption/HeaderOptions'
 
 import Logo from '../../assets/photos/nextpc.png'
 import styles from './MainHeader.module.css'

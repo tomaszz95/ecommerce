@@ -6,38 +6,12 @@ import Slider from 'react-slick'
 import SingleProduct from '../../singleProduct/SingleProduct'
 
 import dummyProducts from '../../../constans/dummyProducts'
+import sliderSettings from '../../../helpers/sliderSettings'
 import styles from './RecommendedProductsCarousel.module.css'
 
 const RecommendedProductsCarousel = () => {
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 1000,
-        slidesToShow: 3,
-        slidesToScroll: 2,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        pauseOnHover: true,
-        responsive: [
-            {
-                breakpoint: 700,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                },
-            },
-            {
-                breakpoint: 500,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-            },
-        ],
-    }
-
     return (
-        <Slider {...settings} className={styles.carousel}>
+        <Slider {...sliderSettings} className={styles.carousel}>
             {dummyProducts.map((item) => (
                 <SingleProduct
                     name={item.name}

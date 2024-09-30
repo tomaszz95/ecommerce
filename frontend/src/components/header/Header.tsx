@@ -1,11 +1,11 @@
-import TopBar from './topbar/TopBar'
+import TopBarContainer from './topbar/TopBarContainer'
 import MainHeader from './MainHeader'
 import DesktopNavigation from './navigation/desktopNav/DesktopNavigation'
 
 const Header = () => {
     return (
         <>
-            <TopBar />
+            <TopBarContainer />
             <MainHeader />
             <DesktopNavigation />
         </>

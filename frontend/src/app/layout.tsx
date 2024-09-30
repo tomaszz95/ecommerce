@@ -1,5 +1,7 @@
-import Header from '../components/header/Header'
 import type { Metadata } from 'next'
+
+import Header from '../components/header/Header'
+
 import '../styles/globals.css'
 
 type ComponentType = {
@@ -8,7 +10,7 @@ type ComponentType = {
 
 export const metadata: Metadata = {
     title: 'Ecommerce app',
-    description: 'Ecommerce app description',
+    description: 'Ecommerce app homepage description',
 }
 
 const HomepageLayout = ({ children }: ComponentType) => {

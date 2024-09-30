@@ -3,8 +3,8 @@ import Image from 'next/image'
 
 import PromotionTimer from './PromotionTimer'
 
-import styles from './BiggestPromotion.module.css'
 import dummyProducts from '../../../constans/dummyProducts'
+import styles from './BiggestPromotion.module.css'
 
 const BiggestPromotion = () => {
     const promotionProduct = dummyProducts[0]

@@ -7,9 +7,9 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    padding-bottom: 0.4rem;
+    padding-bottom: 0.5rem;
     margin-bottom: 1rem;
-    border-bottom: 1px solid var(--dark-grey);
+    border-bottom: 1px solid var(--light-grey);
 }
 
 .navListLink:last-of-type {
@@ -18,10 +18,10 @@
 }
 
 .navListLink img {
-    height: 26px;
-    width: 26px;
+    height: 25px;
+    width: 25px;
 }
 
 .navListLink span {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }

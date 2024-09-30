@@ -28,7 +28,7 @@
 }
 
 .modalHeader span {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     padding: 0.6rem;
     font-weight: 700;
     color: var(--pure-white);
@@ -40,8 +40,8 @@
 }
 
 .modalHeader img {
-    height: 28px;
-    width: 28px;
+    height: 24px;
+    width: 24px;
     filter: brightness(0) invert(1);
 }
 

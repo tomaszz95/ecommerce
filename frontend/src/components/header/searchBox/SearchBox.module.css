@@ -61,19 +61,3 @@
         scale: 0.8;
     }
 }
-
-@media (1100px < width) {
-    .searchBox {
-        max-width: 500px;
-    }
-
-    .searchBox input {
-        height: 45px;
-        font-size: 1.1rem;
-    }
-
-    .searchBox button {
-        height: 45px;
-        padding: 0.4rem 0.8rem;
-    }
-}

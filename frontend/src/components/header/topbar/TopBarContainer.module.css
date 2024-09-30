@@ -1,0 +1,19 @@
+.topbar {
+    display: none;
+    padding: 0.7rem;
+    background-color: var(--main-color);
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 100%;
+}
+
+@media (768px < width) {
+    .topbar {
+        display: block;
+    }
+}

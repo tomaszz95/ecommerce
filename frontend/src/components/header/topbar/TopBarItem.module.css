@@ -1,0 +1,16 @@
+.topbarItem {
+    display: flex;
+    align-items: center;
+    margin: 0 0.5rem;
+}
+
+.topbarItem img {
+    margin-right: 0.4rem;
+    scale: 0.9;
+    filter: brightness(0) invert(1);
+}
+
+.topbarItem p {
+    font-size: 0.9rem;
+    color: var(--pure-white);
+}

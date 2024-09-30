@@ -1,6 +1,17 @@
 import DummyImage from '../assets/photos/dummyImg.webp'
 
-const dummyProducts = [
+type dummyProductsType = {
+    name: string
+    description: string
+    price: number
+    mainImage: any
+    images: any[]
+    category: string
+    company: string
+    prodId: string
+}[]
+
+const dummyProducts: dummyProductsType = [
     {
         name: 'Apple iphone 16',
         description:

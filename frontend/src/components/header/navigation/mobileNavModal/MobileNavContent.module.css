@@ -16,7 +16,7 @@
 
 .mobileNavTitle {
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .mobileNavContact {
@@ -26,10 +26,10 @@
 }
 
 .mobileNavContact img {
-    height: 26px;
-    width: 26px;
+    height: 25px;
+    width: 25px;
 }
 
 .mobileNavContact span {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
