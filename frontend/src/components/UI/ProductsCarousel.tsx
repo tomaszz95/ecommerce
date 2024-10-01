@@ -3,13 +3,13 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Slider from 'react-slick'
 
-import SingleProduct from '../../singleProduct/SingleProduct'
+import SingleProduct from '../singleProduct/SingleProduct'
 
-import dummyProducts from '../../../constans/dummyProducts'
-import sliderSettings from '../../../helpers/sliderSettings'
-import styles from './RecommendedProductsCarousel.module.css'
+import dummyProducts from '../../constans/dummyProducts'
+import sliderSettings from '../../helpers/sliderSettings'
+import styles from './ProductsCarousel.module.css'
 
-const RecommendedProductsCarousel = () => {
+const ProductsCarousel = () => {
     return (
         <Slider {...sliderSettings} className={styles.carousel}>
             {dummyProducts.map((item) => (
@@ -26,4 +26,4 @@ const RecommendedProductsCarousel = () => {
     )
 }
 
-export default RecommendedProductsCarousel
+export default ProductsCarousel

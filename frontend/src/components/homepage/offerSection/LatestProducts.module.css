@@ -1,0 +1,13 @@
+.container {
+    display: none;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+@media (768px < width) {
+    .container {
+        display: flex;
+    }
+}

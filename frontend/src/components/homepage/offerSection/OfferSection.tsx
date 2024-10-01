@@ -1,3 +1,4 @@
+import ProductsCarousel from '../../UI/ProductsCarousel'
 import BiggestPromotion from './BiggestPromotion'
 import LatestProducts from './LatestProducts'
 
@@ -14,6 +15,7 @@ const OfferSection = () => {
             <div className={styles.offerSectionBox}>
                 <h2>Latest products</h2>
                 <LatestProducts />
+                <ProductsCarousel />
             </div>
         </section>
     )
