@@ -1,7 +1,8 @@
-import HeroImage from '../components/homepage/heroImage/HeroImage'
-import ProductsContainer from '../components/productsContainer/ProductsContainer'
-import Recommended from '../components/homepage/recommended/Recommended'
+import HeroImage from '../components/heroImage/HeroImage'
+import ProductsContainer from '../components/product/ProductsContainer'
+import Recommended from '../components/homepage/recommendedSection/Recommended'
 import OfferSection from '../components/homepage/offerSection/OfferSection'
+import BrandsSection from '../components/homepage/brandsSection/BrandsSection'
 
 const Homepage = () => {
     return (
@@ -26,6 +27,7 @@ const Homepage = () => {
                 linkText="Choose now!"
             />
             <OfferSection />
+            <BrandsSection />
         </>
     )
 }

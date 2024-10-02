@@ -1,4 +1,4 @@
-import SingleProduct from '../../singleProduct/SingleProduct'
+import SingleProduct from '../../product/SingleProduct'
 
 import dummyProducts from '../../../constans/dummyProducts'
 import styles from './RecommendedProductsBox.module.css'
@@ -14,6 +14,7 @@ const RecommendedProductsBox = () => {
                     category={item.category}
                     price={item.price}
                     key={item.prodId}
+                    size="big"
                 />
             ))}
         </div>

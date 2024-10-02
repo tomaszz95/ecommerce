@@ -9,16 +9,14 @@ type ComponentType = {
     mainImage: any
     category: string
     price: number
-    section?: string
+    size?: string
 }
 
-const SingleProduct = ({ name, prodId, mainImage, category, price, section }: ComponentType) => {
+const SingleProduct = ({ name, prodId, mainImage, category, price, size }: ComponentType) => {
+    const linkSize = size === 'small' ? styles.small : size === 'big' ? styles.big : ''
+
     return (
-        <Link
-            className={`${styles.item} ${section === 'latest' ? styles.latest : ''}`}
-            key={name}
-            href={`/product/${prodId}`}
-        >
+        <Link className={`${styles.item} ${linkSize}`} key={name} href={`/product/${prodId}`}>
             <Image src={mainImage} alt={name} />
             <p>{category}</p>
             <h3>{name}</h3>

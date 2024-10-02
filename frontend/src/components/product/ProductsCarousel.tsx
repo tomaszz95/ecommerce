@@ -3,7 +3,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Slider from 'react-slick'
 
-import SingleProduct from '../singleProduct/SingleProduct'
+import SingleProduct from './SingleProduct'
 
 import dummyProducts from '../../constans/dummyProducts'
 import sliderSettings from '../../helpers/sliderSettings'

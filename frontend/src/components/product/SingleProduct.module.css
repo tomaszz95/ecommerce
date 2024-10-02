@@ -1,21 +1,22 @@
 .item {
-    max-width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    margin: 1rem 0;
     text-align: center;
     transition: border 0.5s;
     border-radius: 10px;
     border: 2px solid transparent;
+    max-width: 240px;
 }
 
-.latest {
+.small {
     max-width: 200px;
-    padding: 1rem;
-    margin: 0;
+}
+
+.big {
+    max-width: 280px;
 }
 
 .item:hover {

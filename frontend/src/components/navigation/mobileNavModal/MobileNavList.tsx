@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import mobileNavItems from '../../../../constans/mobileNavItems'
+import mobileNavItems from '../../../constans/mobileNavItems'
 import styles from './MobileNavList.module.css'
 
 type ComponentType = {

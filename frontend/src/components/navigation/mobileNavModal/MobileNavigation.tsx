@@ -6,7 +6,7 @@ import { useState } from 'react'
 import MobileNavModal from './MobileNavModal'
 import MobileNavPortal from './MobileNavPortal'
 
-import NavIcon from '../../../../assets/icons/nav.svg'
+import NavIcon from '../../../assets/icons/nav.svg'
 import styles from './MobileNavigation.module.css'
 
 const MobileNavigation = () => {

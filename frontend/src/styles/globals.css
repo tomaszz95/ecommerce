@@ -62,3 +62,13 @@ a {
     justify-content: center;
     align-items: center;
 }
+
+h2 {
+    font-size: 1.6rem;
+}
+
+@media (768px < width) {
+    h2 {
+        font-size: 1.8rem;
+    }
+}

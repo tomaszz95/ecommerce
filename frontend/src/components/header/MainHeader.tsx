@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import MobileNavigation from './navigation/mobileNavModal/MobileNavigation'
-import SearchBox from './searchBox/SearchBox'
-import HeaderOptions from './headerOption/HeaderOptions'
+import MobileNavigation from '../navigation/mobileNavModal/MobileNavigation'
+import SearchBox from '../searchBox/SearchBox'
+import HeaderOptions from './headerOptions/HeaderOptions'
 
 import Logo from '../../assets/photos/nextpc.png'
 import styles from './MainHeader.module.css'

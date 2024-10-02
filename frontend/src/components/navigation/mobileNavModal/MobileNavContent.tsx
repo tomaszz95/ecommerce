@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import MobileNavList from './MobileNavList'
 
-import ContactIcon from '../../../../assets/icons/contact.svg'
+import ContactIcon from '../../../assets/icons/contact.svg'
 import styles from './MobileNavContent.module.css'
 
 type ComponentType = {

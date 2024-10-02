@@ -1,0 +1,34 @@
+.brandsSection {
+    margin: 3rem 2rem;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: var(--pure-white);
+    max-width: 1500px;
+}
+
+.brandsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 1.6rem auto;
+    width: 100%;
+}
+
+@media (900px < width) {
+    .brandsContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (1540px < width) {
+    .brandsSection {
+        margin: 4rem auto;
+    }
+
+    .brandsContainer {
+        display: flex;
+    }
+}

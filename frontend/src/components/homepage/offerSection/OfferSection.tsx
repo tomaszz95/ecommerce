@@ -1,4 +1,4 @@
-import ProductsCarousel from '../../UI/ProductsCarousel'
+import ProductsCarousel from '../../product/ProductsCarousel'
 import BiggestPromotion from './BiggestPromotion'
 import LatestProducts from './LatestProducts'
 

@@ -1,4 +1,4 @@
-import SingleProduct from '../../singleProduct/SingleProduct'
+import SingleProduct from '../../product/SingleProduct'
 
 import dummyProducts from '../../../constans/dummyProducts'
 
@@ -15,7 +15,7 @@ const RecommendedProductsBox = () => {
                     category={item.category}
                     price={item.price}
                     key={item.prodId}
-                    section="latest"
+                    size="small"
                 />
             ))}
         </div>
