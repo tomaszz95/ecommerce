@@ -1,8 +1,9 @@
 import HeroImage from '../components/heroImage/HeroImage'
 import ProductsContainer from '../components/product/ProductsContainer'
 import Recommended from '../components/homepage/recommendedSection/Recommended'
-import OfferSection from '../components/homepage/offerSection/OfferSection'
+import HighlightedSection from '../components/homepage/highlightedSection/HighlightedSection'
 import BrandsSection from '../components/homepage/brandsSection/BrandsSection'
+import OfferSection from '../components/homepage/offerSection/OfferSection'
 
 const Homepage = () => {
     return (
@@ -23,11 +24,12 @@ const Homepage = () => {
                 imgType="encourage"
                 bigText="Buy the perfect computer for your needs"
                 smallText="Choose manufacturer, components and price in a few second."
-                link="/shop/computer"
+                link="/shop/computers"
                 linkText="Choose now!"
             />
-            <OfferSection />
+            <HighlightedSection />
             <BrandsSection />
+            <OfferSection />
         </>
     )
 }

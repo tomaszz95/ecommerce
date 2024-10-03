@@ -6,6 +6,10 @@
     max-width: 1500px;
 }
 
+.brandsSection h2 {
+    text-align: center;
+}
+
 .brandsContainer {
     display: flex;
     justify-content: center;

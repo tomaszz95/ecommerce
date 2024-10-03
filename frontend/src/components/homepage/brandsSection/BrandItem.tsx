@@ -10,7 +10,7 @@ type ComponentType = {
 
 const BrandItem = ({ brand, logo }: ComponentType) => {
     return (
-        <Link href={`#${brand}`} className={styles.logoLink}>
+        <Link href={`/shop&brand=${brand}`} className={styles.logoLink}>
             <Image src={logo} alt={`${brand} logo`} />
         </Link>
     )

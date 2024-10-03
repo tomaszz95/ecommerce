@@ -1,22 +1,31 @@
-import ProductsCarousel from '../../product/ProductsCarousel'
-import BiggestPromotion from './BiggestPromotion'
-import LatestProducts from './LatestProducts'
+import Image from 'next/image'
+import Link from 'next/link'
+import offerSectonItems from '../../../constans/offerSectonItems'
 
 import styles from './OfferSection.module.css'
 
 const OfferSection = () => {
     return (
         <section className={styles.offerSection}>
-            <div className={styles.offerSectionBox}>
-                <h2>Deal of the day</h2>
-                <span className={styles.offerSectionPromotion}>-20%</span>
-                <BiggestPromotion />
-            </div>
-            <div className={styles.offerSectionBox}>
-                <h2>Latest products</h2>
-                <LatestProducts />
-                <ProductsCarousel />
-            </div>
+            {offerSectonItems.map((item) => (
+                <div className={styles.offerSectionBox} key={item.name}>
+                    <div className={styles.offerSectionHero}>
+                        <Image src={item.photo} alt="" />
+                        <div className={styles.offerSectionShadow} />
+                        <div className={styles.offerSectionSubcategory}>
+                            {item.subcategories.map((subItem) => (
+                                <Link
+                                    className={styles.offerSectionSubcategoryLink}
+                                    href={subItem.link}
+                                    key={subItem.link}
+                                >
+                                    {subItem.name}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            ))}
         </section>
     )
 }
