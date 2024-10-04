@@ -31,7 +31,15 @@
 }
 
 @media (768px < width) {
-    .desktopNav {
+    .navContent {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (1300px < width) {
+    .navContent {
         display: flex;
     }
 }

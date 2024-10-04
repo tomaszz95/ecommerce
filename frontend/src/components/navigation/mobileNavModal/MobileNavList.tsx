@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import mobileNavItems from '../../../constans/mobileNavItems'
+import navItems from '../../../constans/navItems'
 import styles from './MobileNavList.module.css'
 
 type ComponentType = {
@@ -11,7 +11,7 @@ type ComponentType = {
 const MobileNavList: React.FC<ComponentType> = ({ onClose }) => {
     return (
         <ul className={styles.navList}>
-            {mobileNavItems.map((item) => (
+            {navItems.map((item) => (
                 <Link href={`/shop/${item.link}`} key={item.link} className={styles.navListLink} onClick={onClose}>
                     <Image src={item.icon} alt="" />
                     <span>{item.name}</span>

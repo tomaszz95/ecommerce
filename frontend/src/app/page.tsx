@@ -1,9 +1,9 @@
 import HeroImage from '../components/heroImage/HeroImage'
-import ProductsContainer from '../components/product/ProductsContainer'
 import Recommended from '../components/homepage/recommendedSection/Recommended'
 import HighlightedSection from '../components/homepage/highlightedSection/HighlightedSection'
-import BrandsSection from '../components/homepage/brandsSection/BrandsSection'
 import OfferSection from '../components/homepage/offerSection/OfferSection'
+import BrandsSection from '../components/homepage/brandsSection/BrandsSection'
+import NewsletterSection from '../components/homepage/newsletterSection/NewsletterSection'
 
 const Homepage = () => {
     return (
@@ -16,9 +16,7 @@ const Homepage = () => {
                 link="/shop"
                 linkText="Check offer!"
             />
-            <ProductsContainer>
-                <Recommended />
-            </ProductsContainer>
+            <Recommended />
             <HeroImage
                 h1Header="false"
                 imgType="encourage"
@@ -28,8 +26,9 @@ const Homepage = () => {
                 linkText="Choose now!"
             />
             <HighlightedSection />
-            <BrandsSection />
             <OfferSection />
+            <NewsletterSection />
+            <BrandsSection />
         </>
     )
 }

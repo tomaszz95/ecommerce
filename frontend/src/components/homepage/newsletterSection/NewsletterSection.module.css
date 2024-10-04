@@ -1,6 +1,7 @@
-.brandsSection {
+.newsletterSection {
     padding: 2rem;
-    background-color: var(--pure-white);
+    background-color: var(--main-color);
+    color: var(--pure-white);
 }
 
 .brandsSection h2 {

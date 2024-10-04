@@ -1,14 +1,8 @@
 .carousel {
-    margin-top: 1.5rem;
+    margin: 3rem auto;
     width: 100%;
     max-width: 90vw;
     max-width: 1400px;
     overflow: hidden;
     border-radius: 10px;
-}
-
-@media (768px < width) {
-    .carousel {
-        display: none;
-    }
 }
