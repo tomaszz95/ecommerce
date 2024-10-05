@@ -7,6 +7,7 @@ import SingleProduct from '../../product/SingleProduct'
 
 import dummyProducts from '../../../constans/dummyProducts'
 import { offerSliderSettings } from '../../../helpers/sliderSettings'
+
 import styles from './OfferCarousel.module.css'
 
 const OfferCarousel = () => {

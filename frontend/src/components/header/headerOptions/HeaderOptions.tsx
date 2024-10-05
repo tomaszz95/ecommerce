@@ -1,6 +1,7 @@
 import HeaderItem from './HeaderItem'
 
 import headerOptionItems from '../../../constans/headerOptionItems'
+
 import styles from './HeaderOptions.module.css'
 
 const HeaderOptions = () => {

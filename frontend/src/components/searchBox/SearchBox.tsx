@@ -1,9 +1,10 @@
 'use client'
 
-import Image from 'next/image'
 import { useState } from 'react'
+import Image from 'next/image'
 
 import SearchIcon from '../../assets/icons/search.svg'
+
 import styles from './SearchBox.module.css'
 
 const SearchBox = () => {

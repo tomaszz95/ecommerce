@@ -1,8 +1,7 @@
 .carousel {
     margin: 3rem auto;
     width: 100%;
-    max-width: 90vw;
     max-width: 1400px;
-    overflow: hidden;
     border-radius: 10px;
+    overflow: hidden;
 }

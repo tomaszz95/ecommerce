@@ -4,11 +4,11 @@
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    max-width: 240px;
     text-align: center;
     transition: border 0.5s;
     border-radius: 10px;
     border: 2px solid transparent;
-    max-width: 240px;
 }
 
 .small {
@@ -29,14 +29,14 @@
 }
 
 .item p {
+    margin: 0.4rem 0 0.6rem;
     font-size: 0.9rem;
     color: var(--dark-grey);
-    margin: 0.4rem 0 0.6rem;
 }
 
 .item h3 {
-    font-size: 1.3rem;
     margin-bottom: 0.6rem;
+    font-size: 1.3rem;
 }
 
 .item span {

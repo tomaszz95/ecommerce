@@ -1,6 +1,7 @@
 import TopBarItem from './TopBarItem'
 
 import topBarItems from '../../constans/topBarItems'
+
 import styles from './TopBarContainer.module.css'
 
 const TopBarContainer = () => {

@@ -1,12 +1,13 @@
 'use client'
 
-import Image from 'next/image'
 import { useState } from 'react'
+import Image from 'next/image'
 
 import MobileNavModal from './MobileNavModal'
 import MobileNavPortal from './MobileNavPortal'
 
 import NavIcon from '../../../assets/icons/nav.svg'
+
 import styles from './MobileNavigation.module.css'
 
 const MobileNavigation = () => {

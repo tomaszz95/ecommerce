@@ -3,6 +3,7 @@ import Image from 'next/image'
 import MobileNavContent from './MobileNavContent'
 
 import XIcon from '../../../assets/icons/x.svg'
+
 import styles from './MobileNavModal.module.css'
 
 type ComponentType = {

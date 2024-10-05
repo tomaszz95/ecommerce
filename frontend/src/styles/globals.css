@@ -21,6 +21,10 @@ body {
     background-color: var(--dirty-white);
 }
 
+h2 {
+    font-size: 1.6rem;
+}
+
 input,
 label,
 button {
@@ -44,6 +48,19 @@ a {
     text-decoration: none;
 }
 
+footer {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 2rem 1rem;
+    text-align: center;
+    width: 100%;
+    background-color: var(--main-color);
+    color: var(--pure-white);
+}
+
 :root {
     --light-grey: rgb(140, 140, 140);
     --lighter-grey: rgb(211, 211, 211);
@@ -52,7 +69,7 @@ a {
     --pure-white: rgb(255, 255, 255);
     --dirty-white: rgb(233, 233, 233);
     --pure-black: rgb(0, 0, 0);
-    --main-color: rgb(25, 144, 255);
+    --main-color: rgb(21, 137, 245);
     --main-color-darker: rgb(5, 115, 218);
     --danger-color: rgb(238, 36, 22);
 }
@@ -61,10 +78,6 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-h2 {
-    font-size: 1.6rem;
 }
 
 @media (768px < width) {

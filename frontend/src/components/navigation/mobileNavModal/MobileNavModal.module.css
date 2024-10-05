@@ -35,8 +35,8 @@
 }
 
 .modalHeader button {
-    background-color: inherit;
     padding: 0.6rem;
+    background-color: inherit;
 }
 
 .modalHeader img {

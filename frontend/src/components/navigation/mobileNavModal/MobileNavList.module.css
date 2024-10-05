@@ -13,8 +13,8 @@
 }
 
 .navListLink:last-of-type {
-    border-bottom: none;
     margin-bottom: 0;
+    border-bottom: none;
 }
 
 .navListLink img {

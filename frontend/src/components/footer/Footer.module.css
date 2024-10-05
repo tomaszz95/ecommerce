@@ -1,0 +1,41 @@
+.title {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.contactLink {
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.contactLink:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.copyright {
+    margin-top: 3rem;
+    font-size: 1rem;
+}
+
+.copyright p {
+    margin-bottom: 0.2rem;
+}
+
+.container img {
+    filter: brightness(0) invert(1);
+}
+
+@media (768px < width) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 700px;
+    }
+}

@@ -1,11 +1,11 @@
 .headerItem {
-    padding: 0.6rem 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    padding: 0.6rem 1rem;
     border-radius: 20px;
     transition: 0.4s background-color;
+    cursor: pointer;
 }
 
 .headerItem:hover {

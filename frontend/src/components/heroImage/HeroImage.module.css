@@ -4,11 +4,11 @@
 }
 
 .heroImagePhoto {
+    height: 100%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 100%;
 }
 
 .heroImagePhoto.main {
@@ -37,27 +37,27 @@
 }
 
 .heroImageText h1 {
-    font-size: 2.4rem;
     margin-bottom: 0.8rem;
+    font-size: 2.4rem;
 }
 
 .heroImageText h2 {
-    font-size: 2rem;
     margin-bottom: 0.8rem;
+    font-size: 2rem;
 }
 
 .heroImageText p {
-    font-size: 1.2rem;
     margin-bottom: 2.5rem;
+    font-size: 1.2rem;
 }
 
 .heroImageLink {
     position: relative;
     display: block;
     padding: 1rem 2rem;
-    text-align: center;
     width: 200px;
     font-size: 1.2rem;
+    text-align: center;
     background-color: var(--main-color);
     color: var(--pure-white);
     border: none;
@@ -67,10 +67,10 @@
 
 .heroImageLink::before {
     content: '';
-    display: block;
     position: absolute;
     top: -30px;
     left: -130px;
+    display: block;
     height: 180%;
     width: 100px;
     background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
@@ -105,12 +105,10 @@
 
     .heroImageText h1 {
         font-size: 3rem;
-        margin-bottom: 0.8rem;
     }
 
     .heroImageText h2 {
         font-size: 2.4rem;
-        margin-bottom: 0.8rem;
     }
 
     .heroImageText p {

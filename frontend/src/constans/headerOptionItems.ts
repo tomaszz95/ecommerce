@@ -2,7 +2,9 @@ import UserIcon from '../assets/icons/user.svg'
 import ContactIcon from '../assets/icons/contact.svg'
 import CartIcon from '../assets/icons/cart.svg'
 
-const headerOptionItems = [
+type headerOptionItemsType = { icon: any; text: string; href: string }[]
+
+const headerOptionItems: headerOptionItemsType = [
     {
         icon: UserIcon,
         text: 'Login',

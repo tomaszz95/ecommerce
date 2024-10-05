@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 import Header from '../components/header/Header'
+import Footer from '../components/footer/Footer'
 
 import '../styles/globals.css'
 
@@ -9,8 +10,8 @@ type ComponentType = {
 }
 
 export const metadata: Metadata = {
-    title: 'Ecommerce app',
-    description: 'Ecommerce app homepage description',
+    title: 'neXtPC - computer shop',
+    description: 'neXtPC app homepage',
 }
 
 const HomepageLayout = ({ children }: ComponentType) => {
@@ -21,6 +22,9 @@ const HomepageLayout = ({ children }: ComponentType) => {
                     <Header />
                 </header>
                 <main>{children}</main>
+                <footer>
+                    <Footer />
+                </footer>
             </body>
         </html>
     )

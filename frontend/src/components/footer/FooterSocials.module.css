@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    min-width: 230px;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+.socialsBox {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    text-align: left;
+}
+
+@media (768px < width) {
+    .container {
+        padding-left: 8rem;
+    }
+}

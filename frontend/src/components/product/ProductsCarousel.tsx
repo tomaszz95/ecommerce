@@ -7,6 +7,7 @@ import SingleProduct from './SingleProduct'
 
 import dummyProducts from '../../constans/dummyProducts'
 import { productSliderSettings } from '../../helpers/sliderSettings'
+
 import styles from './ProductsCarousel.module.css'
 
 const ProductsCarousel = () => {
