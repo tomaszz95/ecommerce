@@ -1,8 +1,5 @@
 import type { Metadata } from 'next'
 
-import Header from '../components/header/Header'
-import Footer from '../components/footer/Footer'
-
 import '../styles/globals.css'
 
 type ComponentType = {
@@ -14,20 +11,12 @@ export const metadata: Metadata = {
     description: 'neXtPC app homepage',
 }
 
-const HomepageLayout = ({ children }: ComponentType) => {
+const RootLayout = ({ children }: ComponentType) => {
     return (
         <html lang="en">
-            <body>
-                <header>
-                    <Header />
-                </header>
-                <main>{children}</main>
-                <footer>
-                    <Footer />
-                </footer>
-            </body>
+            <body>{children}</body>
         </html>
     )
 }
 
-export default HomepageLayout
+export default RootLayout

@@ -1,0 +1,30 @@
+.container {
+    display: none;
+    text-align: left;
+}
+
+.container p {
+    margin-bottom: 0.6rem;
+    font-size: 1.2rem;
+}
+
+.linkBox {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.linkBox a {
+    font-size: 1rem;
+}
+
+.linkBox a:hover {
+    text-decoration: underline;
+}
+
+@media (768px < width) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+}

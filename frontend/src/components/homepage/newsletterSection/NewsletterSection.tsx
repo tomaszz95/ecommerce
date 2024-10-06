@@ -1,6 +1,9 @@
 'use client'
 
 import { useRef, useState } from 'react'
+import Image from 'next/image'
+
+import XCircle from '../../../assets/icons/XCircle.png'
 
 import styles from './NewsletterSection.module.css'
 
@@ -36,7 +39,12 @@ const NewsletterSection = () => {
                         ref={inputRef}
                         className={`${!isFirstTime && !isEmailValid ? styles.error : ''}`}
                     />
-                    {!isFirstTime && !isEmailValid && <p className={styles.errorText}>Please provide a valid email</p>}
+                    {!isFirstTime && !isEmailValid && (
+                        <div className={styles.errorBox}>
+                            <Image src={XCircle} alt="" />
+                            <p>Please provide a valid email</p>
+                        </div>
+                    )}
                     <button type="button" onClick={submitNewsletter}>
                         Join us!
                     </button>

@@ -76,7 +76,18 @@
     opacity: 1;
 }
 
-.errorText {
+.errorBox {
+    display: flex;
+    align-items: center;
+}
+
+.errorBox img {
+    width: 28px;
+    height: 28px;
+}
+
+.errorBox p {
+    margin-left: 0.4rem;
     color: var(--danger-color);
 }
 

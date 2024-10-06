@@ -18,7 +18,8 @@ html {
 
 body {
     font-family: 'IBM Plex Sans', sans-serif;
-    background-color: var(--dirty-white);
+    background-color: var(--pure-white);
+    min-height: 100vh;
 }
 
 h2 {
@@ -48,19 +49,6 @@ a {
     text-decoration: none;
 }
 
-footer {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 2rem 1rem;
-    text-align: center;
-    width: 100%;
-    background-color: var(--main-color);
-    color: var(--pure-white);
-}
-
 :root {
     --light-grey: rgb(140, 140, 140);
     --lighter-grey: rgb(211, 211, 211);
@@ -78,6 +66,10 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.whiteBg {
+    background-color: var(--pure-white);
 }
 
 @media (768px < width) {

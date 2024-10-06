@@ -19,7 +19,11 @@
 }
 
 @media (768px < width) {
-    .container {
-        padding-left: 8rem;
+    .socialsBox {
+        justify-content: end;
+    }
+
+    .socialsBox img {
+        order: 1;
     }
 }

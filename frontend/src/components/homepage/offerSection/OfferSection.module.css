@@ -7,25 +7,10 @@
 }
 
 .offerSectionBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    display: block;
     width: 100%;
 }
 
 .offerSectionBox:nth-child(1) {
     margin-top: 0;
-}
-
-@media (768px < width) {
-    .offerSectionBox div:nth-child(2) {
-        display: block;
-    }
-}
-
-@media (1200px < width) {
-    .offerSectionBox {
-        display: block;
-    }
 }

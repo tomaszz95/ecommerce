@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import PhoneIcon from '../../assets/icons/phone.svg'
+import PhoneIcon from '../../../assets/icons/phone.svg'
 
 import styles from './FooterContact.module.css'
 

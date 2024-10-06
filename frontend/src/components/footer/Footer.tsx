@@ -1,20 +1,22 @@
 import Link from 'next/link'
 
-import FooterPhoneContact from './FooterContact'
-import FooterSocials from './FooterSocials'
+import FooterPhoneContact from './mainFooter/FooterContact'
+import FooterSocials from './mainFooter/FooterSocials'
 
 import styles from './Footer.module.css'
+import FooterNav from './mainFooter/FooterNav'
 
 const Footer = () => {
     const currentYear = new Date().getFullYear()
 
     return (
-        <>
+        <footer className={styles.footer}>
             <h3 className={styles.title}>DO YOU HAVE QUESTIONS?</h3>
             <Link href="/contact" className={styles.contactLink}>
                 Call us or write
             </Link>
             <div className={styles.container}>
+                <FooterNav />
                 <FooterPhoneContact />
                 <FooterSocials />
             </div>
@@ -22,7 +24,7 @@ const Footer = () => {
                 <p>Copyright © 1998-{currentYear} by neXtPC.</p>
                 <p>All rights reserved.</p>
             </div>
-        </>
+        </footer>
     )
 }
 

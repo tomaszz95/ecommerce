@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
-import MailIcon from '../../assets/icons/contact.svg'
-import WhatsupIcon from '../../assets/icons/whatsup.svg'
-import FacebookIcon from '../../assets/icons/facebook.svg'
+import MailIcon from '../../../assets/icons/contact.svg'
+import WhatsupIcon from '../../../assets/icons/whatsup.svg'
+import FacebookIcon from '../../../assets/icons/facebook.svg'
 
 import styles from './FooterSocials.module.css'
 
