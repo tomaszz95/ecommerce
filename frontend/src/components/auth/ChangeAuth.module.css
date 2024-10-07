@@ -1,0 +1,26 @@
+.changeAuthBox {
+    margin: 1rem 0;
+}
+
+.changeAuthBox a {
+    display: block;
+    margin-top: 1.6rem;
+    padding: 0.6rem 1rem;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid var(--pure-black);
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.changeAuthBox a:hover {
+    background-color: var(--dirty-white);
+}
+
+@media (768px < width) {
+    .changeAuthBox a {
+        margin-top: 2rem;
+        padding: 0.7rem 1rem;
+    }
+}

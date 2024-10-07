@@ -1,0 +1,100 @@
+.loginForm {
+    margin: 2rem 0;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid var(--lighter-grey);
+    border-radius: 10px;
+}
+
+.loginForm h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.4rem;
+}
+
+.loginForm input {
+    padding: 0.8rem 1rem;
+    margin: 1.4rem 0 0.3rem;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--lighter-grey);
+    font-size: 0.85rem;
+}
+
+.errorBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.errorBox img {
+    width: 24px;
+    height: 24px;
+}
+
+.errorBox p {
+    margin-left: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--danger-color);
+}
+
+.loginForm button {
+    position: relative;
+    display: block;
+    margin: 1.2rem auto 0;
+    padding: 0.7rem 1.5rem;
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+    text-align: center;
+    background-color: var(--main-color);
+    color: var(--pure-white);
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.loginForm button::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -130px;
+    display: block;
+    height: 250%;
+    width: 100px;
+    background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+    transform: rotate(20deg);
+    transition: all 0.5s;
+    opacity: 0;
+    z-index: 1;
+}
+
+.loginForm button:hover::before {
+    left: 130%;
+    opacity: 1;
+}
+
+@media (768px < width) {
+    .loginForm h1 {
+        font-size: 2rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .loginForm input {
+        padding: 1rem 1.2rem;
+        margin: 1.4rem 0 0.4rem;
+        font-size: 0.9rem;
+    }
+
+    .errorBox p {
+        font-size: 0.85rem;
+    }
+
+    .loginForm button {
+        margin: 1.8rem auto 0;
+        padding: 0.8rem 1.5rem;
+        width: 100%;
+        max-width: 350px;
+        font-size: 1.1rem;
+    }
+}

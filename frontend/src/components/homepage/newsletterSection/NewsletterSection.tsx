@@ -3,7 +3,7 @@
 import { useRef, useState } from 'react'
 import Image from 'next/image'
 
-import XCircle from '../../../assets/icons/XCircle.png'
+import XCircle from '../../../assets/icons/xcircle.png'
 
 import styles from './NewsletterSection.module.css'
 
