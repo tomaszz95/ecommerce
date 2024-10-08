@@ -1,0 +1,36 @@
+.consentContainer {
+    margin: 2rem 0;
+}
+
+.consentBox {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 15px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.consentBox input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    margin-right: 1rem;
+}
+
+.consentBox label {
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.consentBox:first-child label {
+    font-weight: bold;
+}
+
+.consentBox:hover {
+    background-color: var(--dirty-white);
+}
+
+.error label {
+    color: var(--danger-color);
+}

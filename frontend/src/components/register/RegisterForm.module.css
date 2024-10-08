@@ -1,4 +1,4 @@
-.loginForm {
+.registerForm {
     margin: 2rem 0;
     padding: 2rem;
     width: 100%;
@@ -7,21 +7,21 @@
     border-radius: 10px;
 }
 
-.loginForm h1 {
+.registerForm h1 {
     font-size: 1.8rem;
     margin-bottom: 0.4rem;
 }
 
-.loginForm input {
+.registerForm input {
     padding: 0.8rem 1rem;
-    margin: 1.4rem 0 0.3rem;
+    margin: 1.4rem 0 0.5rem;
     width: 100%;
     border-radius: 10px;
     border: 1px solid var(--lighter-grey);
     font-size: 0.85rem;
 }
 
-.loginForm input.error {
+.registerForm input.error {
     border: 1px solid var(--danger-color);
 }
 
@@ -42,7 +42,7 @@
     color: var(--danger-color);
 }
 
-.loginForm button {
+.registerForm button {
     position: relative;
     display: block;
     margin: 1.2rem auto 0;
@@ -58,7 +58,7 @@
     overflow: hidden;
 }
 
-.loginForm button::before {
+.registerForm button::before {
     content: '';
     position: absolute;
     top: -30px;
@@ -73,18 +73,18 @@
     z-index: 1;
 }
 
-.loginForm button:hover::before {
+.registerForm button:hover::before {
     left: 130%;
     opacity: 1;
 }
 
 @media (768px < width) {
-    .loginForm h1 {
+    .registerForm h1 {
         font-size: 2rem;
         margin-bottom: 0.6rem;
     }
 
-    .loginForm input {
+    .registerForm input {
         padding: 1rem 1.2rem;
         margin: 1.4rem 0 0.4rem;
         font-size: 0.9rem;
@@ -94,7 +94,7 @@
         font-size: 0.85rem;
     }
 
-    .loginForm button {
+    .registerForm button {
         margin: 1.8rem auto 0;
         padding: 0.8rem 1.5rem;
         width: 100%;
