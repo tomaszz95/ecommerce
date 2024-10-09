@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 
 import SearchIcon from '../../assets/icons/search.svg'
@@ -9,6 +10,11 @@ import styles from './SearchBox.module.css'
 
 const SearchBox = () => {
     const [inputSearchValue, setInputSearchValue] = useState<string>('')
+    const pathname = usePathname()
+
+    if (pathname === '/contact') {
+        return null
+    }
 
     const inputHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()

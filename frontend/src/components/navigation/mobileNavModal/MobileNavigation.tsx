@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 
 import MobileNavModal from './MobileNavModal'
@@ -12,7 +13,12 @@ import styles from './MobileNavigation.module.css'
 
 const MobileNavigation = () => {
     const [isNavOpen, setIsNavOpen] = useState(false)
+    const pathname = usePathname()
 
+    if (pathname === '/contact') {
+        return null
+    }
+    
     const openModal = () => setIsNavOpen(true)
     const closeModal = () => setIsNavOpen(false)
 

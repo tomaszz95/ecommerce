@@ -1,0 +1,27 @@
+.helpSection {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1100px;
+    padding: 2rem;
+}
+
+.helpSection h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.4rem;
+}
+
+.helpSection h2 {
+    color: var(--light-grey);
+    font-weight: 500;
+}
+
+@media (768px < width) {
+    .helpSection {
+        padding: 4rem 2rem;
+    }
+
+    .helpSection h1 {
+        font-size: 2rem;
+        margin-bottom: 0.6rem;
+    }
+}

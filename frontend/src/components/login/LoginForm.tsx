@@ -25,7 +25,7 @@ const LoginForm = () => {
 
     const handlePasswordChange = () => {
         const passwordValue = inputPasswordRef.current?.value || ''
-        const isValid = passwordValue !== ''
+        const isValid = passwordValue.length >= 8
 
         setIsPasswordValid(isValid)
     }
@@ -70,7 +70,7 @@ const LoginForm = () => {
                 {!isFirstTime && !isPasswordValid && (
                     <div className={styles.errorBox}>
                         <Image src={XCircle} alt="" />
-                        <p>Please provide valid password</p>
+                        <p>Please provide valid password (at least 8 characters)</p>
                     </div>
                 )}
             </div>
