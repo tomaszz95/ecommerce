@@ -1,0 +1,77 @@
+.contactInfo {
+    padding: 1rem 2rem;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.contactInfo h2 {
+    margin-top: 1.5rem;
+}
+
+.contactInfoBox,
+.contactInfoCompany {
+    margin-top: 1.4rem;
+}
+
+.contactInfo h3 {
+    margin: 1.2rem 0 0.6rem;
+    color: var(--light-grey);
+    font-weight: 500;
+}
+
+.contactInfo p {
+    margin: 1rem 0;
+}
+
+.contactInfo p:nth-of-type(2) {
+    font-weight: bold;
+}
+
+.contactInfoCompany div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 1rem 0;
+}
+
+.contactInfoCompanyTitle {
+    font-weight: bold;
+}
+
+@media (768px < width) {
+    .contactInfo {
+        width: 100%;
+        min-width: 750px;
+    }
+
+    .contactInfoContainer {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .contactInfoBox:nth-of-type(2) {
+        text-align: right;
+    }
+}
+
+@media (1100px < width) {
+    .contactInfo {
+        min-width: 550px;
+        padding-top: 0;
+    }
+
+    .contactInfoContainer {
+        display: block;
+    }
+
+    .contactInfoBox:nth-of-type(2) {
+        text-align: left;
+    }
+
+    .contactInfo h2 {
+        margin-top: 0;
+    }
+}
