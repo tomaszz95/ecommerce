@@ -1,6 +1,7 @@
-import styles from './ContactBox.module.css'
 import ContactForm from './ContactForm'
 import ContactInfo from './ContactInfo'
+
+import styles from './ContactBox.module.css'
 
 const ContactBox = () => {
     return (
