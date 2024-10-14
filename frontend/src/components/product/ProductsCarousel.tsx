@@ -21,6 +21,7 @@ const ProductsCarousel = () => {
                     category={item.category}
                     price={item.price}
                     key={item.prodId}
+                    categoryLink={item.categoryLink}
                 />
             ))}
         </Slider>

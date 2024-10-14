@@ -13,7 +13,7 @@ const MobileNavList: React.FC<ComponentType> = ({ onClose }) => {
     return (
         <ul className={styles.navList}>
             {navItems.map((item) => (
-                <Link href={`/shop/${item.link}`} key={item.link} className={styles.navListLink} onClick={onClose}>
+                <Link href={item.link} key={item.link} className={styles.navListLink} onClick={onClose}>
                     <Image src={item.icon} alt="" />
                     <span>{item.name}</span>
                 </Link>

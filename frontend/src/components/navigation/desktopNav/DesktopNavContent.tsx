@@ -9,7 +9,7 @@ const DesktopNavContent = () => {
     return (
         <ul className={styles.navContent}>
             {navItems.map((item) => (
-                <Link href={`/shop/${item.link}`} key={item.link} className={styles.navListLink}>
+                <Link href={item.link} key={item.link} className={styles.navListLink}>
                     <Image src={item.icon} alt="" />
                     <span>{item.name}</span>
                 </Link>

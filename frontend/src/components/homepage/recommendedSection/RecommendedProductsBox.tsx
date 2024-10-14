@@ -13,6 +13,7 @@ const RecommendedProductsBox = () => {
                     prodId={item.prodId}
                     mainImage={item.mainImage}
                     category={item.category}
+                    categoryLink={item.categoryLink}
                     price={item.price}
                     key={item.prodId}
                     size="big"

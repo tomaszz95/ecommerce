@@ -4,7 +4,7 @@ import dummyProducts from '../../../constans/dummyProducts'
 
 import styles from './LatestProducts.module.css'
 
-const RecommendedProductsBox = () => {
+const LatestProductsBox = () => {
     return (
         <div className={styles.container}>
             {dummyProducts.map((item) => (
@@ -13,6 +13,7 @@ const RecommendedProductsBox = () => {
                     prodId={item.prodId}
                     mainImage={item.mainImage}
                     category={item.category}
+                    categoryLink={item.categoryLink}
                     price={item.price}
                     key={item.prodId}
                     size="small"
@@ -22,4 +23,4 @@ const RecommendedProductsBox = () => {
     )
 }
 
-export default RecommendedProductsBox
+export default LatestProductsBox

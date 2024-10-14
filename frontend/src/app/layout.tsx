@@ -7,7 +7,7 @@ type ComponentType = {
 }
 
 export const metadata: Metadata = {
-    title: 'neXtPC - computer shop',
+    title: 'NeXtPC - Computer Shop',
     description: 'neXtPC app homepage',
 }
 

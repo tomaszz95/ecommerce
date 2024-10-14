@@ -3,6 +3,8 @@ import Image from 'next/image'
 
 import PromotionTimer from './PromotionTimer'
 
+import createLinkFromProductName from '../../../components/utils/createLinkFromProductName'
+
 import dummyProducts from '../../../constans/dummyProducts'
 
 import styles from './BiggestPromotion.module.css'
@@ -12,9 +14,10 @@ const BiggestPromotion = () => {
     const promotionValue = 20
     const promotionValueInCash = Math.floor((promotionValue * +promotionProduct.price) / 100)
     const currentPrice = promotionProduct.price - promotionValueInCash
+    const productLink = createLinkFromProductName(promotionProduct.name)
 
     return (
-        <Link className={styles.item} href={`/product/${promotionProduct.prodId}`}>
+        <Link className={styles.item} href={`${promotionProduct.categoryLink}/${productLink}`}>
             <Image src={promotionProduct.mainImage} alt={promotionProduct.name} />
             <p>{promotionProduct.category}</p>
             <h3>{promotionProduct.name}</h3>

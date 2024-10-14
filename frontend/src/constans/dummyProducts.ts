@@ -7,6 +7,7 @@ type dummyProductsType = {
     mainImage: any
     images: any[]
     category: string
+    categoryLink: string
     company: string
     prodId: string
 }[]
@@ -20,6 +21,7 @@ const dummyProducts: dummyProductsType = [
         mainImage: DummyImage,
         images: [DummyImage, DummyImage],
         category: 'Smartphone',
+        categoryLink: '/shop/smartphone',
         company: 'Apple',
         prodId: '1',
     },
@@ -31,6 +33,7 @@ const dummyProducts: dummyProductsType = [
         mainImage: DummyImage,
         images: [DummyImage, DummyImage],
         category: 'Computer',
+        categoryLink: '/shop/computer',
         company: 'Apple',
         prodId: '12',
     },
@@ -42,6 +45,7 @@ const dummyProducts: dummyProductsType = [
         mainImage: DummyImage,
         images: [DummyImage, DummyImage],
         category: 'Laptop',
+        categoryLink: '/shop/laptop',
         company: 'Apple',
         prodId: '123',
     },
@@ -53,6 +57,7 @@ const dummyProducts: dummyProductsType = [
         mainImage: DummyImage,
         images: [DummyImage, DummyImage],
         category: 'Gaming',
+        categoryLink: '/shop/gaming',
         company: 'Apple',
         prodId: '1323',
     },
@@ -64,6 +69,7 @@ const dummyProducts: dummyProductsType = [
         mainImage: DummyImage,
         images: [DummyImage, DummyImage],
         category: 'Streaming',
+        categoryLink: '/shop/streaming',
         company: 'Apple',
         prodId: '12332',
     },
@@ -75,6 +81,7 @@ const dummyProducts: dummyProductsType = [
         mainImage: DummyImage,
         images: [DummyImage, DummyImage],
         category: 'Smartphone',
+        categoryLink: '/shop/smartphone',
         company: 'Apple',
         prodId: '121323132',
     },
@@ -86,6 +93,7 @@ const dummyProducts: dummyProductsType = [
         mainImage: DummyImage,
         images: [DummyImage, DummyImage],
         category: 'Smartphone',
+        categoryLink: '/shop/smartphone',
         company: 'Apple',
         prodId: '12133122332',
     },
@@ -97,6 +105,7 @@ const dummyProducts: dummyProductsType = [
         mainImage: DummyImage,
         images: [DummyImage, DummyImage],
         category: 'Smartphone',
+        categoryLink: '/shop/smartphone',
         company: 'Apple',
         prodId: '11551',
     },

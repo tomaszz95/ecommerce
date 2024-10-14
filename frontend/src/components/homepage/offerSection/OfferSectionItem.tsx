@@ -11,7 +11,7 @@ const OfferSectionItem = ({ name, photo, link }: ComponentType) => {
             <Image src={photo} alt="" />
             <div className={styles.offerSectionShadow} />
             <h3 className={styles.offerSectionText}>{name}</h3>
-            <Link className={styles.offerSectionLink} href={`shop/${link}`}>
+            <Link className={styles.offerSectionLink} href={link}>
                 Check more &gt;
             </Link>
         </div>
