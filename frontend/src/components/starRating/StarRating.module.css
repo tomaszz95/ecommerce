@@ -1,0 +1,16 @@
+.starsContainer {
+    display: flex;
+    gap: 5px;
+    font-size: 1.8rem;
+}
+
+.starsContainer span {
+    color: #ffc70f;
+}
+
+@media (768px < width) {
+    .starsContainer {
+        gap: 7px;
+        font-size: 2rem;
+    }
+}

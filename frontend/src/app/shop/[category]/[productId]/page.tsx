@@ -1,7 +1,7 @@
+import ProductSection from '../../../../components/productPage/ProductSection'
 import type { Metadata } from 'next'
 
 import MainLayout from '../../../../components/layouts/MainLayout'
-import Slug from '../../../../components/slug/Slug'
 
 import capitalizeFirstLetter from '../../../../components/utils/capitalizeFirstLetter'
 import createProductNameFromLink from '../../../../components/utils/createProductNameFromString'
@@ -15,11 +15,11 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const categorySlug = params.productId || 'Product'
     const categoryName = createProductNameFromLink(categorySlug)
-    const categoryNameFinish = capitalizeFirstLetter(categoryName)
+    const categoryNameFinal = capitalizeFirstLetter(categoryName)
 
     return {
-        title: `NeXtPC - ${categoryNameFinish}`,
-        description: `Explore products in ${categoryNameFinish} category on NeXtPC`,
+        title: `NeXtPC - ${categoryNameFinal}`,
+        description: `Explore products in ${categoryNameFinal} category on NeXtPC`,
     }
 }
 
@@ -28,7 +28,7 @@ const SingleProductPage = () => {
 
     return (
         <MainLayout>
-            <Slug categoryLink={product.categoryLink} categoryName={product.category} />
+            <ProductSection product={product} />
         </MainLayout>
     )
 }

@@ -1,0 +1,20 @@
+.section {
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    max-width: 1440px;
+}
+
+.container,
+.productInfoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+@media (768px < width) {
+    .section {
+        margin: 3rem auto;
+    }
+}

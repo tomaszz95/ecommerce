@@ -1,4 +1,4 @@
-import ProductsCarousel from '../../product/ProductsCarousel'
+import ProductsCarousel from '../../productCarousel/ProductsCarousel'
 import RecommendedProductsBox from './RecommendedProductsBox'
 
 import styles from './Recommended.module.css'

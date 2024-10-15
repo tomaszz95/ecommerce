@@ -1,0 +1,44 @@
+.productHeading {
+    width: 100%;
+}
+
+.productHeading h1 {
+    font-size: 1.8rem;
+    margin: 0.6rem 0 1rem;
+}
+
+.productContainer {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.productOpinions {
+    display: flex;
+    align-items: flex-end;
+}
+
+.productOpinions img {
+    margin-right: 0.8rem;
+}
+
+@media (768px < width) {
+    .productHeading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .productHeading h1 {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .productContainer {
+        gap: 50px;
+    }
+
+    .productOpinions img {
+        margin-right: 1.2rem;
+    }
+}

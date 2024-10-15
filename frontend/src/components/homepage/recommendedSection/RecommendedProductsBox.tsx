@@ -1,4 +1,4 @@
-import SingleProduct from '../../product/SingleProduct'
+import SingleProduct from '../../productCarousel/SingleProduct'
 
 import dummyProducts from '../../../constans/dummyProducts'
 

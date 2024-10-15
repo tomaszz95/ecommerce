@@ -1,6 +1,6 @@
 import DummyImage from '../assets/photos/dummyImg.webp'
 
-type dummyProductsType = {
+export type dummyProductsType = {
     name: string
     description: string
     price: number
@@ -10,9 +10,9 @@ type dummyProductsType = {
     categoryLink: string
     company: string
     prodId: string
-}[]
+}
 
-const dummyProducts: dummyProductsType = [
+const dummyProducts: dummyProductsType[] = [
     {
         name: 'Apple iphone 16',
         description:
@@ -34,7 +34,7 @@ const dummyProducts: dummyProductsType = [
         images: [DummyImage, DummyImage],
         category: 'Computer',
         categoryLink: '/shop/computer',
-        company: 'Apple',
+        company: 'Lenovo',
         prodId: '12',
     },
     {
@@ -58,7 +58,7 @@ const dummyProducts: dummyProductsType = [
         images: [DummyImage, DummyImage],
         category: 'Gaming',
         categoryLink: '/shop/gaming',
-        company: 'Apple',
+        company: 'Xiaomi',
         prodId: '1323',
     },
     {

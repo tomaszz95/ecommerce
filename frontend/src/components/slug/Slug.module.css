@@ -1,0 +1,12 @@
+.slug {
+    margin: 1rem 0 1rem;
+    font-size: 1.1rem;
+}
+
+.slug a:hover {
+    text-decoration: underline;
+}
+
+.slug span {
+    margin: 0 1rem;
+}
