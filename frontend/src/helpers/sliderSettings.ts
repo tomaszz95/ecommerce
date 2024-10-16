@@ -65,6 +65,7 @@ export const offerSliderSettings = {
         },
     ],
 }
+
 export const photoSliderSettings = {
     infinite: true,
     speed: 1000,

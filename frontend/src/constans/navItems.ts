@@ -20,14 +20,14 @@ type navItemsType = { name: string; link: string; icon: any; photo: any }[]
 
 const navItems: navItemsType = [
     {
-        name: 'Computers',
-        link: '/shop/computers',
+        name: 'Computer',
+        link: '/shop/computer',
         icon: ComputerIcon,
         photo: ComputerHero,
     },
     {
-        name: 'Laptops',
-        link: '/shop/laptops',
+        name: 'Laptop',
+        link: '/shop/laptop',
         icon: LaptopIcon,
         photo: LaptopHero,
     },
@@ -56,14 +56,14 @@ const navItems: navItemsType = [
         photo: StreamingHero,
     },
     {
-        name: 'Smartphones',
-        link: '/shop/smartphones',
+        name: 'Smartphone',
+        link: '/shop/smartphone',
         icon: SmartphoneIcon,
         photo: SmartphoneHero,
     },
     {
-        name: 'Smartwatches',
-        link: '/shop/smartwatches',
+        name: 'Smartwatch',
+        link: '/shop/smartwatch',
         icon: SmartwatchIcon,
         photo: SmartwatchHero,
     },

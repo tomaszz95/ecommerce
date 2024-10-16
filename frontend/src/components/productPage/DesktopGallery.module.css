@@ -1,0 +1,51 @@
+.imageGallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    display: none;
+}
+
+.mainImage {
+    width: 100%;
+}
+
+.mainImageContent {
+    width: 450px;
+    height: auto;
+}
+
+.thumbnailList {
+    display: flex;
+    justify-content: center;
+}
+
+.thumbnail {
+    margin: 0 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--light-grey);
+    cursor: pointer;
+}
+
+.thumbnailImage {
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+}
+
+.activeThumbnail {
+    border: 1px solid var(--main-color);
+}
+
+@media (768px < width) {
+    .imageGallery {
+        display: flex;
+    }
+}
+
+@media (1200px < width) {
+    .mainImageContent {
+        width: 500px;
+        height: auto;
+    }
+}

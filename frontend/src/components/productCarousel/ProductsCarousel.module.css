@@ -9,6 +9,6 @@
 
 @media (768px < width) {
     .carousel {
-        display: none;
+        display: none !important;
     }
 }

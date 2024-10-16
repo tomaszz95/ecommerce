@@ -31,7 +31,7 @@
 
     .productHeading h1 {
         font-size: 2rem;
-        margin: 0;
+        margin: 1.4rem 0 0;
     }
 
     .productContainer {
@@ -39,6 +39,7 @@
     }
 
     .productOpinions img {
+        margin-top: 0.4rem;
         margin-right: 1.2rem;
     }
 }

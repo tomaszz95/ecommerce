@@ -1,10 +1,10 @@
 import Link from 'next/link'
 
+import FooterNav from './mainFooter/FooterNav'
 import FooterPhoneContact from './mainFooter/FooterContact'
 import FooterSocials from './mainFooter/FooterSocials'
 
 import styles from './Footer.module.css'
-import FooterNav from './mainFooter/FooterNav'
 
 const Footer = () => {
     const currentYear = new Date().getFullYear()

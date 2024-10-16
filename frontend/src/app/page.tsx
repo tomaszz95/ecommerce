@@ -1,11 +1,13 @@
 import MainLayout from '../components/layouts/MainLayout'
 
 import HeroImage from '../components/heroImage/HeroImage'
-import Recommended from '../components/homepage/recommendedSection/Recommended'
+import RecommendedSection from '../components/homepage/recommendedSection/RecommendedSection'
 import HighlightedSection from '../components/homepage/highlightedSection/HighlightedSection'
 import OfferSection from '../components/homepage/offerSection/OfferSection'
 import NewsletterSection from '../components/homepage/newsletterSection/NewsletterSection'
 import BrandsSection from '../components/homepage/brandsSection/BrandsSection'
+
+import dummyProducts from '../constans/dummyProducts'
 
 const Homepage = () => {
     return (
@@ -18,7 +20,7 @@ const Homepage = () => {
                 link="/shop"
                 linkText="Check offer!"
             />
-            <Recommended />
+            <RecommendedSection />
             <HeroImage
                 h1Header="false"
                 imgType="encourage"
@@ -28,7 +30,7 @@ const Homepage = () => {
                 linkText="Choose now!"
             />
             <HighlightedSection />
-            <OfferSection />
+            <OfferSection products={dummyProducts} />
             <NewsletterSection />
             <BrandsSection />
         </MainLayout>

@@ -5,23 +5,27 @@ import Slider from 'react-slick'
 
 import SingleProduct from './SingleProduct'
 
-import dummyProducts from '../../constans/dummyProducts'
+import { dummyProductsType } from '../../constans/dummyProducts'
 import { productSliderSettings } from '../../helpers/sliderSettings'
 
 import styles from './ProductsCarousel.module.css'
 
-const ProductsCarousel = () => {
+type ComponentType = {
+    products: dummyProductsType[]
+}
+
+const ProductsCarousel = ({ products }: ComponentType) => {
     return (
         <Slider {...productSliderSettings} className={styles.carousel}>
-            {dummyProducts.map((item) => (
+            {products.map((item) => (
                 <SingleProduct
                     name={item.name}
                     prodId={item.prodId}
-                    mainImage={item.mainImage}
-                    category={item.category}
+                    mainImage={item.images[0]}
+                    category={item.category.name}
+                    categoryLink={item.category.link}
                     price={item.price}
                     key={item.prodId}
-                    categoryLink={item.categoryLink}
                 />
             ))}
         </Slider>

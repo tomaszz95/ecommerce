@@ -5,24 +5,26 @@ import PromotionTimer from './PromotionTimer'
 
 import createLinkFromProductName from '../../../components/utils/createLinkFromProductName'
 
-import dummyProducts from '../../../constans/dummyProducts'
+import { dummyProductsType } from '../../../constans/dummyProducts'
 
 import styles from './BiggestPromotion.module.css'
 
-const BiggestPromotion = () => {
-    const promotionProduct = dummyProducts[0]
-    const promotionValue = 20
-    const promotionValueInCash = Math.floor((promotionValue * +promotionProduct.price) / 100)
-    const currentPrice = promotionProduct.price - promotionValueInCash
-    const productLink = createLinkFromProductName(promotionProduct.name)
+type ComponentType = {
+    product: dummyProductsType
+}
+
+const BiggestPromotion = ({ product }: ComponentType) => {
+    const promotionPercent = product.promotion.promotionPercent
+    const currentPrice = Math.floor(product.price - (product.price * promotionPercent) / 100)
+    const productLink = createLinkFromProductName(product.name)
 
     return (
-        <Link className={styles.item} href={`${promotionProduct.categoryLink}/${productLink}`}>
-            <Image src={promotionProduct.mainImage} alt={promotionProduct.name} />
-            <p>{promotionProduct.category}</p>
-            <h3>{promotionProduct.name}</h3>
+        <Link className={styles.item} href={`${product.category.link}/${productLink}`}>
+            <Image src={product.images[0]} alt={product.name} />
+            <p>{product.category.name}</p>
+            <h3>{product.name}</h3>
             <div className={styles.promotionPrice}>
-                <span className={styles.beforePromotionPrice}>{promotionProduct.price}$</span>
+                <span className={styles.beforePromotionPrice}>{product.price}$</span>
                 <span className={styles.currentPrice}>{currentPrice}$</span>
             </div>
             <div className={styles.promotionTime}>

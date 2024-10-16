@@ -14,8 +14,14 @@ type ComponentType = {
 }
 
 const ProductHeading = ({ productName, productId }: ComponentType) => {
-    const opinionsCount = productsOpinions[0].opinions.length
-    const opinionsText = opinionsCount === 1 ? 'opinion' : 'opinions'
+    const findOpinion = productsOpinions.find((product) => productId === product.productId)
+    const opinionsCount = findOpinion ? findOpinion.opinions.length : 0
+    const opinionsText =
+        opinionsCount === 0
+            ? 'No opinions yet'
+            : opinionsCount === 1
+              ? `See ${opinionsCount} opinion`
+              : `See ${opinionsCount}  opinions`
 
     return (
         <div className={styles.productHeading}>
@@ -24,9 +30,7 @@ const ProductHeading = ({ productName, productId }: ComponentType) => {
                 <StarRating rating={productsOpinions[0].opinionsAverage} />
                 <div className={styles.productOpinions}>
                     <Image src={SpeechBubbleIcon} alt="" />
-                    <Link href="#opinions">
-                        See {opinionsCount} {opinionsText}
-                    </Link>
+                    <Link href="#opinions">{opinionsText}</Link>
                 </div>
             </div>
         </div>

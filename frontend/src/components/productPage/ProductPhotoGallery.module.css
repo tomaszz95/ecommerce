@@ -1,3 +1,10 @@
 .photoGallery {
     width: 100%;
 }
+
+@media (768px < width) {
+    .photoGallery {
+        display: flex;
+        align-items: flex-start;
+    }
+}

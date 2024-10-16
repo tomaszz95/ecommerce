@@ -1,5 +1,6 @@
 import ProductDescription from './ProductDescription'
 import ProductPhotoGallery from './ProductPhotoGallery'
+import ProductBuyMenu from './ProductBuyMenu'
 import styles from './ProductDetails.module.css'
 import { dummyProductsType } from '../../constans/dummyProducts'
 
@@ -11,7 +12,10 @@ const ProductDetails = ({ product }: ComponentType) => {
     return (
         <div className={styles.productDetails}>
             <ProductPhotoGallery photos={product.images} productName={product.name} />
-            <ProductDescription />
+            <div className={styles.productPayment}>
+                <ProductDescription description={product.description} company={product.company} />
+                <ProductBuyMenu />
+            </div>
         </div>
     )
 }

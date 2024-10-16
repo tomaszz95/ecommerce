@@ -1,0 +1,12 @@
+.descriptionBox {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+@media (768px < width) {
+    .descriptionBox {
+        flex-direction: column;
+        gap: 30px;
+    }
+}

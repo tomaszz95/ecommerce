@@ -1,4 +1,5 @@
 import PhotoCarousel from '../photoCarousel/PhotoCarousel'
+import DesktopGallery from './DesktopGallery'
 import styles from './ProductPhotoGallery.module.css'
 
 type ComponentType = {
@@ -10,6 +11,7 @@ const ProductPhotoGallery = ({ photos, productName }: ComponentType) => {
     return (
         <div className={styles.photoGallery}>
             <PhotoCarousel photos={photos} productName={productName} />
+            <DesktopGallery photos={photos} productName={productName} />
         </div>
     )
 }

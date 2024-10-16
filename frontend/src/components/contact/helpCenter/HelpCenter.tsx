@@ -3,9 +3,9 @@
 import { useState } from 'react'
 
 import HelpNav from './HelpNav'
+import HelpQuestionBox from './HelpQuestionBox'
 
 import styles from './HelpCenter.module.css'
-import HelpQuestionBox from './HelpQuestionBox'
 
 const HelpCenter = () => {
     const [activeSection, setActiveSection] = useState('Frequently asked')

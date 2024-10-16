@@ -5,21 +5,25 @@ import Slider from 'react-slick'
 
 import SingleProduct from '../../productCarousel/SingleProduct'
 
-import dummyProducts from '../../../constans/dummyProducts'
+import { dummyProductsType } from '../../../constans/dummyProducts'
 import { offerSliderSettings } from '../../../helpers/sliderSettings'
 
 import styles from './OfferCarousel.module.css'
 
-const OfferCarousel = () => {
+type ComponentType = {
+    products: dummyProductsType[]
+}
+
+const OfferCarousel = ({ products }: ComponentType) => {
     return (
         <Slider {...offerSliderSettings} className={styles.carousel}>
-            {dummyProducts.map((item) => (
+            {products.map((item) => (
                 <SingleProduct
                     name={item.name}
                     prodId={item.prodId}
-                    mainImage={item.mainImage}
-                    category={item.category}
-                    categoryLink={item.categoryLink}
+                    mainImage={item.images[0]}
+                    category={item.category.name}
+                    categoryLink={item.category.link}
                     price={item.price}
                     key={item.prodId}
                 />
