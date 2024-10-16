@@ -1,0 +1,15 @@
+.carousel {
+    display: none !important;
+}
+
+@media (768px < width) {
+    .carousel {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 10px;
+        align-self: center;
+    }
+}

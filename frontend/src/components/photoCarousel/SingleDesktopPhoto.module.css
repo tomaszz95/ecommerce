@@ -1,0 +1,16 @@
+.photoWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.photo {
+    border-radius: 10px;
+    height: auto;
+    margin: 0 0.6rem;
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+}

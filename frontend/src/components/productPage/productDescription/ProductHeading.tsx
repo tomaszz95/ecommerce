@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import SpeechBubbleIcon from '../../assets/icons/speechbubble.svg'
+import SpeechBubbleIcon from '../../../assets/icons/speechbubble.svg'
+import StarRating from './StarRating'
 
-import productsOpinions from '../../constans/productsOpinions'
+import productsOpinions from '../../../constans/productsOpinions'
 
 import styles from './ProductHeading.module.css'
-import StarRating from '../starRating/StarRating'
 
 type ComponentType = {
     productName: string

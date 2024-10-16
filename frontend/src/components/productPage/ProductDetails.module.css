@@ -16,12 +16,13 @@
 @media (768px < width) {
     .productDetails {
         padding: 3rem 0;
-        flex-direction: row;
-        align-items: flex-start;
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        align-items: start;
     }
 
     .productPayment {
-        padding: 1rem 2rem;
+        padding: 0 2rem;
         width: 100%;
     }
 }

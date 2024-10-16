@@ -7,6 +7,7 @@ export const productSliderSettings = {
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
+    draggable: true,
     responsive: [
         {
             breakpoint: 700,
@@ -34,6 +35,7 @@ export const offerSliderSettings = {
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
+    draggable: true,
     responsive: [
         {
             breakpoint: 1100,
@@ -74,4 +76,15 @@ export const photoSliderSettings = {
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
+    draggable: true,
+}
+
+export const desktopPhotoSliderSettings = {
+    infinite: false,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    dots: false,
+    autoplay: false,
+    draggable: true,
+    swipeToSlide: true,
 }

@@ -1,5 +1,5 @@
 .recommendedSection {
-    margin: 3rem auto;
+    margin: 1rem auto;
     padding: 2rem;
     max-width: 1440px;
     width: 90%;
@@ -11,10 +11,4 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-@media (768px < width) {
-    .recommendedSection {
-        margin: 2rem auto;
-    }
 }

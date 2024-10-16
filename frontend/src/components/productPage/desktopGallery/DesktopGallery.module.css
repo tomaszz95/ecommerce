@@ -1,40 +1,21 @@
 .imageGallery {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 20px;
-    display: none;
+    overflow: hidden;
 }
 
 .mainImage {
     width: 100%;
+    border-radius: 10px;
 }
 
 .mainImageContent {
-    width: 450px;
+    width: 400px;
     height: auto;
-}
-
-.thumbnailList {
-    display: flex;
-    justify-content: center;
-}
-
-.thumbnail {
-    margin: 0 1rem;
     border-radius: 10px;
-    border: 1px solid var(--light-grey);
-    cursor: pointer;
-}
-
-.thumbnailImage {
-    border-radius: 10px;
-    width: 80px;
-    height: 80px;
-}
-
-.activeThumbnail {
-    border: 1px solid var(--main-color);
 }
 
 @media (768px < width) {

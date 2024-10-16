@@ -1,7 +1,7 @@
 import { StaticImageData } from 'next/image'
 
 import DummyImage from '../assets/photos/dummyImg.webp'
-
+import SomeImg from '../assets/photos/gamingHero.jpg'
 export type dummyProductsType = {
     name: string
     description: string
@@ -18,6 +18,7 @@ export type dummyProductsType = {
         promotionPercent: number
     }
     recommended: boolean
+    stock: number
 }
 
 const dummyProducts: dummyProductsType[] = [
@@ -26,7 +27,7 @@ const dummyProducts: dummyProductsType[] = [
         description:
             'Lorem ipsum dolor sit amened. Asad asd asd asd dsdsdasd asd sdasda sda asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda. asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda. asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda.asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda.asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda.',
         price: 699,
-        images: [DummyImage, DummyImage, DummyImage, DummyImage],
+        images: [DummyImage, SomeImg, DummyImage, SomeImg, DummyImage, DummyImage],
         category: {
             name: 'Smartphone',
             link: '/shop/smartphone',
@@ -38,13 +39,14 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 35,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 15',
         description:
             'Lorem ipsum dolor sit amened. Asad asd asd asd dsdsdasd asd sdasda sda asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda. Lorem ipsum dolor sit amened. Asad asd asd asd dsdsdasd asd sdasda sda asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda. Lorem ipsum dolor sit amened. Asad asd asd asd dsdsdasd asd sdasda sda asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda',
         price: 6991,
-        images: [DummyImage, DummyImage, DummyImage, DummyImage],
+        images: [SomeImg, DummyImage, SomeImg, DummyImage],
         category: {
             name: 'Computer',
             link: '/shop/computer',
@@ -56,13 +58,14 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: false,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 14',
         description:
             'Lorem ipsum dolor sit amened. Asad asd asd asd dsdsdasd asd sdasda sda asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda',
         price: 99,
-        images: [DummyImage, DummyImage, DummyImage, DummyImage],
+        images: [SomeImg, SomeImg, DummyImage, SomeImg, DummyImage, SomeImg],
         category: {
             name: 'Laptop',
             link: '/shop/laptop',
@@ -74,6 +77,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 13',
@@ -92,6 +96,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 30,
         },
         recommended: false,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 12',
@@ -110,6 +115,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 11',
@@ -128,6 +134,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 30,
         },
         recommended: false,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 7',
@@ -146,6 +153,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 18',
@@ -164,6 +172,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 16',
@@ -182,6 +191,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 30,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 15',
@@ -200,6 +210,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: false,
+        stock: 32,
     },
 
     {
@@ -219,6 +230,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 13',
@@ -237,6 +249,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 30,
         },
         recommended: false,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 12',
@@ -255,6 +268,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 11',
@@ -273,6 +287,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 30,
         },
         recommended: false,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 7',
@@ -291,6 +306,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 18',
@@ -309,6 +325,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 16',
@@ -327,6 +344,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 30,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 15',
@@ -345,6 +363,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: false,
+        stock: 32,
     },
 
     {
@@ -364,6 +383,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 13',
@@ -382,6 +402,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 30,
         },
         recommended: false,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 12',
@@ -400,6 +421,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 11',
@@ -418,6 +440,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 30,
         },
         recommended: false,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 7',
@@ -436,6 +459,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 18',
@@ -454,6 +478,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 16',
@@ -472,6 +497,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 30,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 15',
@@ -490,6 +516,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: false,
+        stock: 32,
     },
 
     {
@@ -509,6 +536,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 13',
@@ -527,6 +555,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 30,
         },
         recommended: false,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 12',
@@ -545,6 +574,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 11',
@@ -563,6 +593,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 30,
         },
         recommended: false,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 7',
@@ -581,6 +612,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 18',
@@ -599,6 +631,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 16',
@@ -617,6 +650,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 30,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 15',
@@ -635,6 +669,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: false,
+        stock: 32,
     },
 
     {
@@ -654,6 +689,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 13',
@@ -672,6 +708,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 30,
         },
         recommended: false,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 12',
@@ -690,6 +727,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 11',
@@ -708,6 +746,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 30,
         },
         recommended: false,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 7',
@@ -726,6 +765,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 18',
@@ -744,6 +784,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 16',
@@ -762,6 +803,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 30,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 15',
@@ -780,6 +822,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: false,
+        stock: 32,
     },
 
     {
@@ -799,6 +842,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 13',
@@ -817,6 +861,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 30,
         },
         recommended: false,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 12',
@@ -835,6 +880,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 11',
@@ -853,6 +899,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 30,
         },
         recommended: false,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 7',
@@ -871,6 +918,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
     {
         name: 'Apple Iphone 18',
@@ -889,6 +937,7 @@ const dummyProducts: dummyProductsType[] = [
             promotionPercent: 0,
         },
         recommended: true,
+        stock: 32,
     },
 ]
 

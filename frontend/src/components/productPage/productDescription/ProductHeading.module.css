@@ -23,15 +23,15 @@
 }
 
 @media (768px < width) {
-    .productHeading {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    .productHeading h1 {
+        font-size: 1.9rem;
+        margin: 0 0 1rem;
     }
+}
 
+@media (1200px < width) {
     .productHeading h1 {
         font-size: 2rem;
-        margin: 1.4rem 0 0;
     }
 
     .productContainer {

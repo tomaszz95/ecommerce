@@ -1,6 +1,5 @@
 import Slug from '../slug/Slug'
 
-import ProductHeading from './ProductHeading'
 import ProductDetails from './ProductDetails'
 
 import { dummyProductsType } from '../../constans/dummyProducts'
@@ -32,10 +31,7 @@ const ProductSection = ({ product }: ComponentType) => {
                 productName={product.name}
             />
             <div className={styles.container}>
-                <div className={styles.productInfoContainer}>
-                    <ProductHeading productName={product.name} productId={product.prodId} />
-                    <ProductDetails product={product} />
-                </div>
+                <ProductDetails product={product} />
             </div>
         </section>
     )

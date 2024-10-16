@@ -1,5 +1,6 @@
 'use client'
 
+import DesktopPhotoCarousel from '../../../components/photoCarousel/DesktopPhotoCarousel'
 import Image from 'next/image'
 
 import { useState } from 'react'
@@ -28,17 +29,7 @@ const DesktopGallery = ({ photos, productName }: ComponentType) => {
                 />
             </div>
 
-            <div className={styles.thumbnailList}>
-                {photos.map((image, index) => (
-                    <div
-                        key={index}
-                        onClick={() => handleClick(index)}
-                        className={`${styles.thumbnail} ${index === selectedPhotoIndex ? styles.activeThumbnail : ''}`}
-                    >
-                        <Image src={image} alt={`Thumbnail ${productName} photo`} className={styles.thumbnailImage} />
-                    </div>
-                ))}
-            </div>
+            <DesktopPhotoCarousel photos={photos} productName={productName} onHandleClick={handleClick} />
         </div>
     )
 }

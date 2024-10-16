@@ -2,11 +2,20 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    max-width: 600px;
+}
+
+.descriptionText p {
+    margin-bottom: 0.5rem;
 }
 
 @media (768px < width) {
     .descriptionBox {
         flex-direction: column;
         gap: 30px;
+    }
+
+    .descriptionText p {
+        margin-bottom: 1rem;
     }
 }
