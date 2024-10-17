@@ -1,19 +1,19 @@
-import AcerLogo from '../assets/brand/acerLogo.svg'
-import AsusLogo from '../assets/brand/appleLogo.svg'
-import AppleLogo from '../assets/brand/asusLogo.svg'
-import IntelLogo from '../assets/brand/intelLogo.svg'
-import LenovoLogo from '../assets/brand/lenovoLogo.svg'
-import LogitechLogo from '../assets/brand/logitechLogo.svg'
-import MicrosoftLogo from '../assets/brand/microsoftLogo.svg'
-import SamsungLogo from '../assets/brand/samsungLogo.svg'
-import SonyLogo from '../assets/brand/sonyLogo.svg'
-import XiaomiLogo from '../assets/brand/xiaomiLogo.svg'
-import DJILogo from '../assets/brand/djiLogo.svg'
-import HPLogo from '../assets/brand/hpLogo.svg'
+import { brandLogoType } from './../types/types'
 
-type brandLogosType = { brand: string; logo: any }[]
+import AcerLogo from '../assets/brand/acer.svg'
+import AsusLogo from '../assets/brand/apple.svg'
+import AppleLogo from '../assets/brand/asus.svg'
+import IntelLogo from '../assets/brand/intel.svg'
+import LenovoLogo from '../assets/brand/lenovo.svg'
+import LogitechLogo from '../assets/brand/logitech.svg'
+import MicrosoftLogo from '../assets/brand/microsoft.svg'
+import SamsungLogo from '../assets/brand/samsung.svg'
+import SonyLogo from '../assets/brand/sony.svg'
+import XiaomiLogo from '../assets/brand/xiaomi.svg'
+import DJILogo from '../assets/brand/dji.svg'
+import HPLogo from '../assets/brand/hp.svg'
 
-const brandLogos: brandLogosType = [
+const brandLogos: brandLogoType[] = [
     { brand: 'acer', logo: AcerLogo },
     { brand: 'apple', logo: AsusLogo },
     { brand: 'asus', logo: AppleLogo },

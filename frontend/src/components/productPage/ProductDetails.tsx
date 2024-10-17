@@ -1,11 +1,13 @@
-import ProductDescription from './productDescription/ProductDescription'
 import ProductPhotoGallery from './desktopGallery/ProductPhotoGallery'
+import ProductDescription from './productDescription/ProductDescription'
 import ProductBuyMenu from './productBuyMenu/ProductBuyMenu'
+
+import { productType } from '../../types/types'
+
 import styles from './ProductDetails.module.css'
-import { dummyProductsType } from '../../constans/dummyProducts'
 
 type ComponentType = {
-    product: dummyProductsType
+    product: productType
 }
 
 const ProductDetails = ({ product }: ComponentType) => {
@@ -15,7 +17,6 @@ const ProductDetails = ({ product }: ComponentType) => {
             <div className={styles.productPayment}>
                 <ProductDescription
                     description={product.description}
-                    company={product.company}
                     productName={product.name}
                     productId={product.prodId}
                 />

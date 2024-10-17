@@ -1,13 +1,10 @@
 import Image from 'next/image'
 
+import { topBarItemType } from '../../types/types'
+
 import styles from './TopBarItem.module.css'
 
-type ComponentType = {
-    icon: any
-    text: string
-}
-
-const TopBarItem = ({ icon, text }: ComponentType) => {
+const TopBarItem = ({ icon, text }: topBarItemType) => {
     return (
         <div className={styles.topbarItem}>
             <Image src={icon} alt="" />

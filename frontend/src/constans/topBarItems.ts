@@ -1,11 +1,11 @@
+import { topBarItemType } from './../types/types'
+
 import BriefcaseIcon from '../assets/icons/briefcase.svg'
 import StarIcon from '../assets/icons/star.svg'
 import PackageIcon from '../assets/icons/package.svg'
 import ShopIcon from '../assets/icons/shop.svg'
 
-type topBarItemsType = { text: string; icon: any }[]
-
-const topBarItems: topBarItemsType = [
+const topBarItems: topBarItemType[] = [
     {
         icon: BriefcaseIcon,
         text: '10 years in business',

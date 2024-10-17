@@ -1,7 +1,6 @@
-import Image from 'next/image'
+import ProductHeading from './ProductHeading'
 
 import styles from './ProductDescription.module.css'
-import ProductHeading from './ProductHeading'
 
 type ComponentType = {
     description: string

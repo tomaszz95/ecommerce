@@ -1,5 +1,6 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
+
 import createLinkFromProductName from '../utils/createLinkFromProductName'
 
 import styles from './SingleProduct.module.css'
@@ -7,7 +8,7 @@ import styles from './SingleProduct.module.css'
 type ComponentType = {
     name: string
     prodId: string
-    mainImage: any
+    mainImage: StaticImageData
     category: string
     categoryLink: string
     price: number

@@ -1,27 +1,9 @@
-import { StaticImageData } from 'next/image'
+import { productType } from '../types/types'
 
-import DummyImage from '../assets/photos/dummyImg.webp'
-import SomeImg from '../assets/photos/gamingHero.jpg'
-export type dummyProductsType = {
-    name: string
-    description: string
-    price: number
-    images: StaticImageData[]
-    category: {
-        name: string
-        link: string
-    }
-    company: string
-    prodId: string
-    promotion: {
-        isPromotion: boolean
-        promotionPercent: number
-    }
-    recommended: boolean
-    stock: number
-}
+import DummyImage from '../assets/photos/dummyimg.webp'
+import SomeImg from '../assets/photos/gaminghero.jpg'
 
-const dummyProducts: dummyProductsType[] = [
+const dummyProducts: productType[] = [
     {
         name: 'Apple Iphone 16',
         description:

@@ -3,12 +3,12 @@ import OfferCarousel from './OfferCarousel'
 
 import navItems from '../../../constans/navItems'
 
-import { dummyProductsType } from '../../../constans/dummyProducts'
+import { productType } from '../../../types/types'
 
 import styles from './OfferSection.module.css'
 
 type ComponentType = {
-    products: dummyProductsType[]
+    products: productType[]
 }
 
 const OfferSection = ({ products }: ComponentType) => {

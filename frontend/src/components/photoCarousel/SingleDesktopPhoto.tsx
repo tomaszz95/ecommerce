@@ -1,9 +1,9 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 
 import styles from './SingleDesktopPhoto.module.css'
 
 type ComponentType = {
-    photo: any
+    photo: StaticImageData
     productName: string
     onClick: () => void
 }

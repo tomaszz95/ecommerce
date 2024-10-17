@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import HightlightButton from '../UI/buttons/HightlightButton'
 
 import styles from './HeroImage.module.css'
 
@@ -19,9 +19,7 @@ const HeroImage = ({ imgType, bigText, smallText, link, linkText, h1Header }: Co
             <div className={styles.heroImageText}>
                 {h1Header === 'true' ? <h1>{bigText}</h1> : <h2>{bigText}</h2>}
                 <p>{smallText}</p>
-                <Link className={styles.heroImageLink} href={link}>
-                    {linkText}
-                </Link>
+                <HightlightButton href={link}>{linkText}</HightlightButton>
             </div>
         </section>
     )

@@ -1,11 +1,11 @@
 import SingleProduct from '../../productCarousel/SingleProduct'
 
-import { dummyProductsType } from '../../../constans/dummyProducts'
+import { productType } from '../../../types/types'
 
 import styles from './RecommendedProductsBox.module.css'
 
 type ComponentType = {
-    products: dummyProductsType[]
+    products: productType[]
 }
 
 const RecommendedProductsBox = ({ products }: ComponentType) => {

@@ -1,14 +1,14 @@
-import Slug from '../slug/Slug'
-
-import ProductDetails from './ProductDetails'
-
-import { dummyProductsType } from '../../constans/dummyProducts'
-
-import styles from './ProductSection.module.css'
 import Link from 'next/link'
 
+import Slug from '../slug/Slug'
+import ProductDetails from './ProductDetails'
+
+import { productType } from '../../types/types'
+
+import styles from './ProductSection.module.css'
+
 type ComponentType = {
-    product: dummyProductsType | undefined
+    product: productType | undefined
 }
 
 const ProductSection = ({ product }: ComponentType) => {

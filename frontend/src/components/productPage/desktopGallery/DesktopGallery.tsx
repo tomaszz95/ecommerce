@@ -1,14 +1,14 @@
 'use client'
 
-import DesktopPhotoCarousel from '../../../components/photoCarousel/DesktopPhotoCarousel'
-import Image from 'next/image'
-
 import { useState } from 'react'
+import Image, { StaticImageData } from 'next/image'
+
+import DesktopPhotoCarousel from '../../../components/photoCarousel/DesktopPhotoCarousel'
 
 import styles from './DesktopGallery.module.css'
 
 type ComponentType = {
-    photos: any[]
+    photos: StaticImageData[]
     productName: string
 }
 

@@ -1,29 +1,36 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import Image from 'next/image'
+import { FormEvent } from 'react'
 
-import XCircle from '../../../assets/icons/xcircle.png'
+import useInput from '../../../hooks/useInput'
+
+import Input from '../../UI/inputs/Input'
+import AuthFormButton from '../../UI/buttons/AuthFormButton'
 
 import styles from './NewsletterSection.module.css'
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const NewsletterSection = () => {
-    const [isEmailValid, setIsEmailValid] = useState(false)
-    const [isFirstTime, setIsFirstTime] = useState(true)
-    const inputRef = useRef<HTMLInputElement>(null)
+    const {
+        value: enteredEmail,
+        hasError: emailInputHasError,
+        valueIsValid: emailIsValid,
+        valueChangeHandler: emailChangeHandler,
+        inputBlurHandler: emailBlurHandler,
+    } = useInput((value) => value.trim() !== '' && emailRegex.test(value))
 
-    const submitNewsletter = () => {
-        setIsFirstTime(false)
+    const formIsValid = emailIsValid
 
-        if (inputRef.current && inputRef.current.value !== '' && emailRegex.test(inputRef.current.value)) {
-            setIsEmailValid(true)
+    const submitHandler = (event: FormEvent) => {
+        event.preventDefault()
 
-            console.log(inputRef.current.value)
-        } else {
-            setIsEmailValid(false)
+        if (!formIsValid) {
+            console.log('Please fill out all required fields.')
+            return
         }
+
+        console.log('Newsletter send!', { enteredEmail })
     }
 
     return (
@@ -33,22 +40,21 @@ const NewsletterSection = () => {
                     <h2>Sign up for the newsletter</h2>
                     <p>Don't miss any promotion and get additional discounts</p>
                 </div>
-                <div className={styles.inputBox}>
-                    <input
-                        placeholder="Email..."
-                        ref={inputRef}
-                        className={`${!isFirstTime && !isEmailValid ? styles.error : ''}`}
+                <form className={styles.inputBox} onSubmit={submitHandler}>
+                    <Input
+                        label="Email"
+                        id="email"
+                        value={enteredEmail}
+                        hasError={emailInputHasError}
+                        onChange={emailChangeHandler}
+                        onBlur={emailBlurHandler}
+                        errorText="Please provide valid email."
                     />
-                    {!isFirstTime && !isEmailValid && (
-                        <div className={styles.errorBox}>
-                            <Image src={XCircle} alt="" />
-                            <p>Please provide a valid email</p>
-                        </div>
-                    )}
-                    <button type="button" onClick={submitNewsletter}>
-                        Join us!
-                    </button>
-                </div>
+
+                    <AuthFormButton type="submit" formIsValid={formIsValid}>
+                        Sign In
+                    </AuthFormButton>
+                </form>
             </div>
         </section>
     )

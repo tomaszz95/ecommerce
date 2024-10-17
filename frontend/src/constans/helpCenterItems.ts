@@ -1,3 +1,5 @@
+import { helpCenterItemType } from './../types/types'
+
 import ContactQuestionIcon from '../assets/icons/contactquestion.png'
 import ContactBoxIcon from '../assets/icons/contactbox.png'
 import ContactLaptopIcon from '../assets/icons/contactlaptop.png'
@@ -5,16 +7,7 @@ import ContactPadlockIcon from '../assets/icons/contactpadlock.png'
 import ContactReturnIcon from '../assets/icons/contactreturn.png'
 import ContactPersonIcon from '../assets/icons/contactperson.png'
 
-type helpCenterItemsType = {
-    icon: any
-    text: string
-    questions: {
-        question: string
-        answer: string
-    }[]
-}[]
-
-const helpCenterItems: helpCenterItemsType = [
+const helpCenterItems: helpCenterItemType[] = [
     {
         icon: ContactQuestionIcon,
         text: 'Frequently asked',

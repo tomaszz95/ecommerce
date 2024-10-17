@@ -1,0 +1,14 @@
+.contactInfoCompany {
+    margin-top: 1.4rem;
+}
+
+.contactInfoCompany div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 1rem 0;
+}
+
+.contactInfoCompanyTitle {
+    font-weight: bold;
+}

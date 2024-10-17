@@ -1,0 +1,26 @@
+.contactInfoBox {
+    margin-top: 1.4rem;
+}
+
+@media (768px < width) {
+    .contactInfoContainer {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .contactInfoBox:nth-of-type(2) {
+        text-align: right;
+    }
+}
+
+@media (1100px < width) {
+    .contactInfoContainer {
+        display: block;
+    }
+
+    .contactInfoBox:nth-of-type(2) {
+        text-align: left;
+    }
+}

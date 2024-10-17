@@ -5,6 +5,8 @@ import 'slick-carousel/slick/slick-theme.css'
 
 import Slider from 'react-slick'
 
+import { StaticImageData } from 'next/image'
+
 import SingleDesktopPhoto from './SingleDesktopPhoto'
 
 import { desktopPhotoSliderSettings } from '../../helpers/sliderSettings'
@@ -12,7 +14,7 @@ import { desktopPhotoSliderSettings } from '../../helpers/sliderSettings'
 import styles from './DesktopPhotoCarousel.module.css'
 
 type ComponentType = {
-    photos: any[]
+    photos: StaticImageData[]
     productName: string
     onHandleClick: (index: number) => void
 }

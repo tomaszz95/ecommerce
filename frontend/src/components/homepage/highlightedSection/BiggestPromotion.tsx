@@ -5,12 +5,12 @@ import PromotionTimer from './PromotionTimer'
 
 import createLinkFromProductName from '../../../components/utils/createLinkFromProductName'
 
-import { dummyProductsType } from '../../../constans/dummyProducts'
+import { productType } from '../../../types/types'
 
 import styles from './BiggestPromotion.module.css'
 
 type ComponentType = {
-    product: dummyProductsType
+    product: productType
 }
 
 const BiggestPromotion = ({ product }: ComponentType) => {

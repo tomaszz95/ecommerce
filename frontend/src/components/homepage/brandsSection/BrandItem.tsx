@@ -1,11 +1,11 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 
 import styles from './BrandItem.module.css'
 
 type ComponentType = {
     brand: string
-    logo: any
+    logo: StaticImageData
 }
 
 const BrandItem = ({ brand, logo }: ComponentType) => {

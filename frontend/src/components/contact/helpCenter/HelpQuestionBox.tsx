@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
+
 import helpCenterItems from '../../../constans/helpCenterItems'
+
 import styles from './HelpQuestionBox.module.css'
 
 type ComponentType = {

@@ -1,26 +1,12 @@
-import Link from 'next/link'
-
-import ChangeAuth from '../auth/ChangeAuth'
-import BenefitsAuth from '../auth/BenefitsAuth'
+import AuthOverlay from '../auth/AuthOverlay'
 import RegisterForm from './RegisterForm'
 
-import styles from './Register.module.css'
-
-const Register = () => {
+const Login = () => {
     return (
-        <section className={styles.loginSection}>
-            <div className={styles.loginSectionContainer}>
-                <div className={styles.loginFormContainer}>
-                    <RegisterForm />
-                    <Link href="/"> &lt; Go Back</Link>
-                </div>
-                <div className={styles.loginOfferBox}>
-                    <ChangeAuth pageType="register" />
-                    <BenefitsAuth />
-                </div>
-            </div>
-        </section>
+        <AuthOverlay pageType="register">
+            <RegisterForm />
+        </AuthOverlay>
     )
 }
 
-export default Register
+export default Login

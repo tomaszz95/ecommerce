@@ -25,70 +25,13 @@
     align-items: center;
 }
 
-.inputBox input {
-    padding: 0.8rem 1.2rem;
-    margin-bottom: 0.8rem;
+.inputBox div {
     width: 100%;
     max-width: 400px;
-    font-size: 1rem;
-    border-radius: 10px;
-    border: 2px solid transparent;
-    background-color: var(--pure-white);
 }
 
-.inputBox input.error {
-    border: 2px solid var(--danger-color);
-}
-
-.inputBox button {
-    position: relative;
-    display: block;
-    margin: 1.2rem auto 0;
-    padding: 0.7rem 1.5rem;
-    width: 100%;
-    max-width: 250px;
-    font-size: 1.1rem;
-    text-align: center;
-    background-color: var(--main-color);
-    color: var(--pure-white);
-    border: none;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.inputBox button::before {
-    content: '';
-    position: absolute;
-    top: -30px;
-    left: -130px;
-    display: block;
-    height: 250%;
-    width: 100px;
-    background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
-    transform: rotate(20deg);
-    transition: all 0.5s;
-    opacity: 0;
-    z-index: 1;
-}
-
-.inputBox button:hover::before {
-    left: 130%;
-    opacity: 1;
-}
-
-.errorBox {
-    display: flex;
-    align-items: center;
-}
-
-.errorBox img {
-    width: 28px;
-    height: 28px;
-}
-
-.errorBox p {
-    margin-left: 0.4rem;
-    color: var(--danger-color);
+.inputBox div input {
+    padding: 0.9rem 1.4rem;
 }
 
 @media (768px < width) {
@@ -96,6 +39,7 @@
         display: flex;
         align-items: center;
         justify-content: space-evenly;
+        gap: 30px;
     }
 
     .textBox {
@@ -107,15 +51,6 @@
     }
 
     .inputBox {
-        margin-left: 2rem;
-        width: 50%;
-    }
-
-    .inputBox input {
-        max-width: 400px;
-    }
-
-    .inputBox button {
-        max-width: 300px;
+        min-width: 400px;
     }
 }

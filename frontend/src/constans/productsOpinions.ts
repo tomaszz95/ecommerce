@@ -1,4 +1,6 @@
-const productsOpinions = [
+import { productOpinionType } from './../types/types'
+
+const productsOpinions: productOpinionType[] = [
     {
         productId: '1',
         opinionsCount: 2,

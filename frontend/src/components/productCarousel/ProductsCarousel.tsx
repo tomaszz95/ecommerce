@@ -6,13 +6,13 @@ import Slider from 'react-slick'
 
 import SingleProduct from './SingleProduct'
 
-import { dummyProductsType } from '../../constans/dummyProducts'
+import { productType } from '../../types/types'
 import { productSliderSettings } from '../../helpers/sliderSettings'
 
 import styles from './ProductsCarousel.module.css'
 
 type ComponentType = {
-    products: dummyProductsType[]
+    products: productType[]
 }
 
 const ProductsCarousel = ({ products }: ComponentType) => {

@@ -1,81 +1,72 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import Image from 'next/image'
+import { FormEvent } from 'react'
 
-import XCircle from '../../assets/icons/xcircle.png'
+import useInput from '../../hooks/useInput'
+
+import Input from '../UI/inputs/Input'
+import AuthFormButton from '../UI/buttons/AuthFormButton'
 
 import styles from './LoginForm.module.css'
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const LoginForm = () => {
-    const [isEmailValid, setIsEmailValid] = useState(false)
-    const [isPasswordValid, setIsPasswordValid] = useState(false)
-    const [isFirstTime, setIsFirstTime] = useState(true)
+    const {
+        value: enteredEmail,
+        hasError: emailInputHasError,
+        valueIsValid: emailIsValid,
+        valueChangeHandler: emailChangeHandler,
+        inputBlurHandler: emailBlurHandler,
+    } = useInput((value) => value.trim() !== '' && emailRegex.test(value))
 
-    const inputEmailRef = useRef<HTMLInputElement>(null)
-    const inputPasswordRef = useRef<HTMLInputElement>(null)
+    const {
+        value: enteredPassword,
+        hasError: passwordInputHasError,
+        valueIsValid: passwordIsValid,
+        valueChangeHandler: passwordChangeHandler,
+        inputBlurHandler: passwordBlurHandler,
+    } = useInput((value) => value.length >= 8)
 
-    const handleEmailChange = () => {
-        const emailValue = inputEmailRef.current?.value || ''
-        const isValid = emailValue !== '' && emailRegex.test(emailValue)
+    const formIsValid = emailIsValid && passwordIsValid
 
-        setIsEmailValid(isValid)
-    }
+    const submitHandler = (event: FormEvent) => {
+        event.preventDefault()
 
-    const handlePasswordChange = () => {
-        const passwordValue = inputPasswordRef.current?.value || ''
-        const isValid = passwordValue.length >= 8
-
-        setIsPasswordValid(isValid)
-    }
-
-    const submitInputs = (e: React.FormEvent) => {
-        e.preventDefault()
-
-        setIsFirstTime(false)
-
-        if (isEmailValid && isPasswordValid) {
-            console.log('wsio gra')
-        } else {
-            console.log('nie gra')
+        if (!formIsValid) {
+            console.log('Please fill out all required fields.')
+            return
         }
+
+        console.log('Login successful!', { enteredEmail, enteredPassword })
     }
 
     return (
-        <form className={styles.loginForm} onSubmit={submitInputs}>
+        <form className={styles.loginForm} onSubmit={submitHandler}>
             <h1>Sign in</h1>
-            <div>
-                <input
-                    placeholder="Email"
-                    ref={inputEmailRef}
-                    onChange={handleEmailChange}
-                    className={!isFirstTime && !isEmailValid ? styles.error : ''}
-                />
-                {!isFirstTime && !isEmailValid && (
-                    <div className={styles.errorBox}>
-                        <Image src={XCircle} alt="" />
-                        <p>Please provide valid email</p>
-                    </div>
-                )}
-            </div>
-            <div>
-                <input
-                    placeholder="Password"
-                    type="password"
-                    ref={inputPasswordRef}
-                    onChange={handlePasswordChange}
-                    className={!isFirstTime && !isPasswordValid ? styles.error : ''}
-                />
-                {!isFirstTime && !isPasswordValid && (
-                    <div className={styles.errorBox}>
-                        <Image src={XCircle} alt="" />
-                        <p>Please provide valid password (at least 8 characters)</p>
-                    </div>
-                )}
-            </div>
-            <button type="submit">Sign In</button>
+            <Input
+                label="Email"
+                id="email"
+                value={enteredEmail}
+                hasError={emailInputHasError}
+                onChange={emailChangeHandler}
+                onBlur={emailBlurHandler}
+                errorText="Please provide valid email."
+            />
+            <Input
+                label="Password"
+                id="password"
+                type="password"
+                value={enteredPassword}
+                hasError={passwordInputHasError}
+                onChange={passwordChangeHandler}
+                onBlur={passwordBlurHandler}
+                errorText="Password must be at least 8 characters long."
+            />
+
+            <AuthFormButton type="submit" formIsValid={formIsValid}>
+                Sign In
+            </AuthFormButton>
         </form>
     )
 }

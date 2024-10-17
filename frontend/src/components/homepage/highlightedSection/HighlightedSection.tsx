@@ -8,6 +8,7 @@ import styles from './HighlightedSection.module.css'
 
 const HighlightedSection = () => {
     const getFirst8Products = dummyProducts.slice(0, 8)
+
     const productWithHighestPromotion = dummyProducts.reduce((maxProduct, currentProduct) => {
         return currentProduct.promotion.promotionPercent > maxProduct.promotion.promotionPercent
             ? currentProduct

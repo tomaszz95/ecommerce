@@ -1,110 +1,93 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import Image from 'next/image'
+import { FormEvent, useState } from 'react'
 
-import XCircle from '../../assets/icons/xcircle.png'
+import useInput from '../../hooks/useInput'
+
+import FormalConsents from './consents/FormalConsents'
+import AuthFormButton from '../UI/buttons/AuthFormButton'
+import Input from '../UI/inputs/Input'
 
 import styles from './RegisterForm.module.css'
-import FormalConsents from './FormalConsents'
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const RegisterForm = () => {
-    const [isNameValid, setIsNameValid] = useState(false)
-    const [isEmailValid, setIsEmailValid] = useState(false)
-    const [isPasswordValid, setIsPasswordValid] = useState(false)
+    const {
+        value: enteredName,
+        hasError: nameInputHasError,
+        valueIsValid: nameIsValid,
+        valueChangeHandler: nameChangeHandler,
+        inputBlurHandler: nameBlurHandler,
+    } = useInput((value) => value.trim() !== '')
+
+    const {
+        value: enteredEmail,
+        hasError: emailInputHasError,
+        valueIsValid: emailIsValid,
+        valueChangeHandler: emailChangeHandler,
+        inputBlurHandler: emailBlurHandler,
+    } = useInput((value) => emailRegex.test(value))
+
+    const {
+        value: enteredPassword,
+        hasError: passwordInputHasError,
+        valueIsValid: passwordIsValid,
+        valueChangeHandler: passwordChangeHandler,
+        inputBlurHandler: passwordBlurHandler,
+    } = useInput((value) => value.length >= 8)
+
     const [areConsentsAgreed, setAreConsentsAgreed] = useState(false)
-    const [isFirstTime, setIsFirstTime] = useState(true)
 
-    const inputNameRef = useRef<HTMLInputElement>(null)
-    const inputEmailRef = useRef<HTMLInputElement>(null)
-    const inputPasswordRef = useRef<HTMLInputElement>(null)
+    const formIsValid = nameIsValid && emailIsValid && passwordIsValid && areConsentsAgreed
 
-    const handleNameChange = () => {
-        const nameValue = inputNameRef.current?.value || ''
-        const isValid = nameValue !== ''
+    const submitHandler = (event: FormEvent) => {
+        event.preventDefault()
 
-        setIsNameValid(isValid)
-    }
-
-    const handleEmailChange = () => {
-        const emailValue = inputEmailRef.current?.value || ''
-        const isValid = emailRegex.test(emailValue)
-
-        setIsEmailValid(isValid)
-    }
-
-    const handlePasswordChange = () => {
-        const passwordValue = inputPasswordRef.current?.value || ''
-        const isValid = passwordValue.length >= 8
-
-        setIsPasswordValid(isValid)
-    }
-
-    const submitInputs = (e: React.FormEvent) => {
-        e.preventDefault()
-
-        setIsFirstTime(false)
-
-        if (isNameValid && isEmailValid && isPasswordValid && areConsentsAgreed) {
-            console.log('Formularz został poprawnie wypełniony.')
-        } else {
-            console.log('Wypełnij wszystkie wymagane pola.')
+        if (!formIsValid) {
+            console.log('Please fill out all required fields and agree to the terms.')
+            return
         }
+
+        console.log('Form submitted!', { enteredName, enteredEmail, enteredPassword })
     }
 
     return (
-        <form className={styles.registerForm} onSubmit={submitInputs}>
+        <form className={styles.registerForm} onSubmit={submitHandler}>
             <h1>Register</h1>
-            <div>
-                <input
-                    placeholder="Name"
-                    ref={inputNameRef}
-                    onChange={handleNameChange}
-                    className={!isFirstTime && !isNameValid ? styles.error : ''}
-                />
-                {!isFirstTime && !isNameValid && (
-                    <div className={styles.errorBox}>
-                        <Image src={XCircle} alt="" />
-                        <p>Name cannot be empty</p>
-                    </div>
-                )}
-            </div>
-            <div>
-                <input
-                    placeholder="Email"
-                    ref={inputEmailRef}
-                    onChange={handleEmailChange}
-                    className={!isFirstTime && !isEmailValid ? styles.error : ''}
-                />
-                {!isFirstTime && !isEmailValid && (
-                    <div className={styles.errorBox}>
-                        <Image src={XCircle} alt="" />
-                        <p>Please provide valid email</p>
-                    </div>
-                )}
-            </div>
-            <div>
-                <input
-                    placeholder="Password"
-                    type="password"
-                    ref={inputPasswordRef}
-                    onChange={handlePasswordChange}
-                    className={!isFirstTime && !isPasswordValid ? styles.error : ''}
-                />
-                {!isFirstTime && !isPasswordValid && (
-                    <div className={styles.errorBox}>
-                        <Image src={XCircle} alt="" />
-                        <p>Password must have at least 8 characters</p>
-                    </div>
-                )}
-            </div>
-            <FormalConsents
-                onConsentsAgree={setAreConsentsAgreed}
-                isConsentError={!areConsentsAgreed && !isFirstTime}
+            <Input
+                label="Name"
+                id="name"
+                value={enteredName}
+                hasError={nameInputHasError}
+                onChange={nameChangeHandler}
+                onBlur={nameBlurHandler}
+                errorText="Name cannot be empty."
             />
-            <button type="submit">Register</button>
+            <Input
+                label="Email"
+                id="email"
+                value={enteredEmail}
+                hasError={emailInputHasError}
+                onChange={emailChangeHandler}
+                onBlur={emailBlurHandler}
+                errorText="Please enter a valid email address."
+            />
+            <Input
+                label="Password"
+                id="password"
+                type="password"
+                value={enteredPassword}
+                hasError={passwordInputHasError}
+                onChange={passwordChangeHandler}
+                onBlur={passwordBlurHandler}
+                errorText="Password must be at least 8 characters long."
+            />
+            <FormalConsents onConsentsAgree={setAreConsentsAgreed} />
+
+            <AuthFormButton type="submit" formIsValid={formIsValid}>
+                Register
+            </AuthFormButton>
         </form>
     )
 }

@@ -1,10 +1,10 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 
 import styles from './HeaderItem.module.css'
 
 type ComponentType = {
-    icon: any
+    icon: StaticImageData
     text: string
     href: string
 }

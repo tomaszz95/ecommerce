@@ -26,7 +26,7 @@ const Homepage = () => {
                 imgType="encourage"
                 bigText="Buy the perfect computer for your needs"
                 smallText="Choose manufacturer, components and price in a few second."
-                link="/shop/computers"
+                link="/shop/computer"
                 linkText="Choose now!"
             />
             <HighlightedSection />
