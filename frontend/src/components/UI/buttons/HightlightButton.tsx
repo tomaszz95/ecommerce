@@ -9,9 +9,9 @@ type ComponentType = {
     type?: string
 }
 
-const HightlightButton = ({ href, children, className = '', type = 'button' }: ComponentType) => {
+const HightlightButton = ({ href, children, className, type = 'button' }: ComponentType) => {
     return (
-        <Link className={`${styles.button} ${className}`} href={href} type={type}>
+        <Link className={`${styles.button} ${className === 'hero' ? styles.hero : ''}`} href={href} type={type}>
             {children}
         </Link>
     )

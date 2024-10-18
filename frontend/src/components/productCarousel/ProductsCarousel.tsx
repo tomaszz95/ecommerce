@@ -27,6 +27,8 @@ const ProductsCarousel = ({ products }: ComponentType) => {
                     categoryLink={item.category.link}
                     price={item.price}
                     key={item.prodId}
+                    promotion={item.promotion.isPromotion}
+                    promotionPercent={item.promotion.promotionPercent}
                 />
             ))}
         </Slider>

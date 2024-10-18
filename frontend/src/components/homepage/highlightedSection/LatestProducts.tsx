@@ -21,6 +21,8 @@ const LatestProductsBox = ({ products }: ComponentType) => {
                     price={item.price}
                     key={item.prodId}
                     size="small"
+                    promotion={item.promotion.isPromotion}
+                    promotionPercent={item.promotion.promotionPercent}
                 />
             ))}
         </div>

@@ -7,7 +7,7 @@ type ComponentType = {
 }
 
 const ProductBuyMenu = ({ price, stock, productId }: ComponentType) => {
-    return <div>ProductBuyMenu</div>
+    return <div className={styles.buyContainer}>ProductBuyMenu</div>
 }
 
 export default ProductBuyMenu

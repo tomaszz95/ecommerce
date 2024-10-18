@@ -14,14 +14,13 @@ const ProductDetails = ({ product }: ComponentType) => {
     return (
         <div className={styles.productDetails}>
             <ProductPhotoGallery photos={product.images} productName={product.name} />
-            <div className={styles.productPayment}>
-                <ProductDescription
-                    description={product.description}
-                    productName={product.name}
-                    productId={product.prodId}
-                />
-                <ProductBuyMenu price={product.price} stock={product.stock} productId={product.prodId} />
-            </div>
+            <ProductDescription
+                company={product.company}
+                description={product.description}
+                productName={product.name}
+                productId={product.prodId}
+            />
+            <ProductBuyMenu price={product.price} stock={product.stock} productId={product.prodId} />
         </div>
     )
 }

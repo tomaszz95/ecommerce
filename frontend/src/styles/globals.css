@@ -63,9 +63,19 @@ a {
 }
 
 .slick-slide div {
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
+}
+
+.slick-list div {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.slick-dots li button:before {
+    font-size: 0.5rem !important;
 }
 
 .whiteBg {

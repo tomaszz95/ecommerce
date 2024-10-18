@@ -1,6 +1,7 @@
 .slug {
     margin: 1rem 0 1rem;
     font-size: 1.1rem;
+    line-height: 1.5rem;
 }
 
 .slug a:hover {

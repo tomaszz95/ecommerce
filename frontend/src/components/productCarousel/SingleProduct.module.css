@@ -46,6 +46,15 @@
     color: var(--dark-grey);
 }
 
+.item .promotionPrice {
+    font-size: 1.2rem;
+    color: var(--danger-color);
+}
+
+.item .badPrice {
+    text-decoration: line-through;
+}
+
 @media (width < 768px) {
     .item {
         height: 290px;

@@ -35,3 +35,8 @@
     left: 130%;
     opacity: 1;
 }
+
+.hero {
+    position: relative;
+    left: 100px;
+}

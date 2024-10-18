@@ -2,9 +2,16 @@
     width: 100%;
 }
 
-.productHeading h1 {
-    font-size: 1.8rem;
+.productHeadingTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     margin: 0.6rem 0 1rem;
+}
+
+.productHeadingTitle h1 {
+    font-size: 1.8rem;
+    margin: 0;
 }
 
 .productContainer {
@@ -25,6 +32,9 @@
 @media (768px < width) {
     .productHeading h1 {
         font-size: 1.9rem;
+    }
+
+    .productHeadingTitle {
         margin: 0 0 1rem;
     }
 }
@@ -41,5 +51,11 @@
     .productOpinions img {
         margin-top: 0.4rem;
         margin-right: 1.2rem;
+    }
+
+    .productHeadingTitle {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
 }

@@ -6,12 +6,13 @@ type ComponentType = {
     description: string
     productName: string
     productId: string
+    company: string
 }
 
-const ProductDescription = ({ description, productName, productId }: ComponentType) => {
+const ProductDescription = ({ description, productName, productId, company }: ComponentType) => {
     return (
         <div className={styles.descriptionBox}>
-            <ProductHeading productName={productName} productId={productId} />
+            <ProductHeading productName={productName} productId={productId} company={company} />
             <div className={styles.descriptionText}>
                 <p>{description}</p>
             </div>

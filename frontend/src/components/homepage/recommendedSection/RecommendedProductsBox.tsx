@@ -21,6 +21,8 @@ const RecommendedProductsBox = ({ products }: ComponentType) => {
                     price={item.price}
                     key={item.prodId}
                     size="big"
+                    promotion={item.promotion.isPromotion}
+                    promotionPercent={item.promotion.promotionPercent}
                 />
             ))}
         </div>

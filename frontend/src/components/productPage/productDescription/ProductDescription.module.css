@@ -7,6 +7,7 @@
 
 .descriptionText p {
     margin-bottom: 0.5rem;
+    line-height: 1.4rem;
 }
 
 @media (768px < width) {

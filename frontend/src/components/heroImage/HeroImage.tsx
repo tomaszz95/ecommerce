@@ -19,7 +19,9 @@ const HeroImage = ({ imgType, bigText, smallText, link, linkText, h1Header }: Co
             <div className={styles.heroImageText}>
                 {h1Header === 'true' ? <h1>{bigText}</h1> : <h2>{bigText}</h2>}
                 <p>{smallText}</p>
-                <HightlightButton href={link}>{linkText}</HightlightButton>
+                <HightlightButton href={link} className="hero">
+                    {linkText}
+                </HightlightButton>
             </div>
         </section>
     )

@@ -16,18 +16,22 @@ const HighlightedSection = () => {
     }, dummyProducts[0])
 
     return (
-        <section className={styles.offerSection}>
-            <div className={styles.offerSectionBox}>
+        <section className={styles.highlightSection}>
+            <div className={styles.highlightSectionPromotion}>
                 <h2>Deal of the day</h2>
-                <span className={styles.offerSectionPromotion}>
-                    {productWithHighestPromotion.promotion.promotionPercent}%
-                </span>
-                <BiggestPromotion product={productWithHighestPromotion} />
+                <div className={styles.highlightSectionPromotionBox}>
+                    <span className={styles.highlightSectionPromotionText}>
+                        {productWithHighestPromotion.promotion.promotionPercent}%
+                    </span>
+                    <BiggestPromotion product={productWithHighestPromotion} />
+                </div>
             </div>
-            <div className={styles.offerSectionBox}>
+            <div className={styles.highlightSectionPromotion}>
                 <h2>Latest products</h2>
-                <LatestProducts products={getFirst8Products} />
-                <ProductsCarousel products={getFirst8Products} />
+                <div className={styles.highlightSectionLatest}>
+                    <LatestProducts products={getFirst8Products} />
+                    <ProductsCarousel products={getFirst8Products} />
+                </div>
             </div>
         </section>
     )

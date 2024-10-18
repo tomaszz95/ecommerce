@@ -77,6 +77,8 @@ export const photoSliderSettings = {
     autoplaySpeed: 3000,
     pauseOnHover: true,
     draggable: true,
+    dots: true,
+    arrows: false,
 }
 
 export const desktopPhotoSliderSettings = {
@@ -87,4 +89,5 @@ export const desktopPhotoSliderSettings = {
     autoplay: false,
     draggable: true,
     swipeToSlide: true,
+    arrows: false,
 }

@@ -36,8 +36,8 @@ const dummyProducts: productType[] = [
         company: 'Lenovo',
         prodId: '12',
         promotion: {
-            isPromotion: false,
-            promotionPercent: 0,
+            isPromotion: true,
+            promotionPercent: 35,
         },
         recommended: false,
         stock: 32,
