@@ -20,7 +20,14 @@ const ProductDetails = ({ product }: ComponentType) => {
                 productName={product.name}
                 productId={product.prodId}
             />
-            <ProductBuyMenu price={product.price} stock={product.stock} productId={product.prodId} />
+            <ProductBuyMenu
+                price={product.price}
+                stock={product.stock}
+                productName={product.name}
+                productId={product.prodId}
+                promotion={product.promotion.isPromotion}
+                promotionPercent={product.promotion.promotionPercent}
+            />
         </div>
     )
 }

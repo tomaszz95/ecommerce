@@ -8,7 +8,7 @@ import PromotionIcon from '../assets/icons/promotion.svg'
 const loginOfferItems: loginOfferItemType[] = [
     {
         icon: CartIcon,
-        text: 'Order faster',
+        text: 'Fast orders',
     },
     {
         icon: OrderIcon,

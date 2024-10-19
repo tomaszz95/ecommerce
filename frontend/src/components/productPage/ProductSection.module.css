@@ -62,4 +62,8 @@
     .productSection {
         margin: 3rem auto;
     }
+
+    .container {
+        margin-top: 2rem;
+    }
 }

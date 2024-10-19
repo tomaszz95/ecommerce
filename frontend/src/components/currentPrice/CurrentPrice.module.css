@@ -1,0 +1,16 @@
+.priceBox .defaultPrice {
+    text-decoration: line-through;
+}
+
+.priceBox .promotionPrice {
+    font-size: 1.2rem;
+    color: var(--danger-color);
+}
+
+.priceBox.big .defaultPrice {
+    font-size: 1.4rem;
+}
+
+.priceBox.big .promotionPrice {
+    font-size: 1.6rem;
+}

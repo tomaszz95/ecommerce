@@ -10,5 +10,6 @@
 @media (768px < width) {
     .container {
         display: flex;
+        gap: 20px;
     }
 }

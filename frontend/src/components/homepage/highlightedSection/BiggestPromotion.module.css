@@ -26,24 +26,6 @@
     font-size: 1.3rem;
 }
 
-.promotionPrice {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.beforePromotionPrice {
-    margin-right: 1rem;
-    font-size: 1rem;
-    text-decoration: line-through;
-    color: var(--dark-grey);
-}
-
-.currentPrice {
-    font-size: 1.4rem;
-    color: var(--danger-color);
-}
-
 .promotionTime {
     margin-top: 1rem;
 }

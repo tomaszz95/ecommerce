@@ -1,6 +1,8 @@
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 
+import CurrentPrice from '../currentPrice/CurrentPrice'
+
 import createLinkFromProductName from '../utils/createLinkFromProductName'
 
 import styles from './SingleProduct.module.css'
@@ -31,21 +33,13 @@ const SingleProduct = ({
     const linkSize = size === 'small' ? styles.small : size === 'big' ? styles.big : ''
     const productLink = createLinkFromProductName(name)
 
-    let promotionPrice = 0
-
-    if (promotion) {
-        promotionPrice = Math.floor(price - (price * promotionPercent) / 100)
-    }
-
     return (
         <Link className={`${styles.item} ${linkSize}`} key={name} href={`${categoryLink}/${productLink}`}>
+            {promotion && <div className={styles.promotionBanner}>{promotionPercent}%</div>}
             <Image src={mainImage} alt={name} />
             <p>{category}</p>
             <h3>{name}</h3>
-            <div>
-                <span className={`${promotion ? styles.badPrice : ''}`}>{price}$</span>
-                {promotion && <span className={styles.promotionPrice}>&nbsp;&nbsp;{promotionPrice}$</span>}
-            </div>
+            <CurrentPrice price={price} promotion={promotion} promotionPercent={promotionPercent} />
         </Link>
     )
 }

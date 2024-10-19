@@ -10,6 +10,15 @@
 @media (768px < width) {
     .productDetails {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        padding: 0 2rem;
+        grid-template-columns: 50% 50%;
+        max-width: 1000px;
+    }
+}
+
+@media (1300px < width) {
+    .productDetails {
+        grid-template-columns: 30% 30% 30%;
+        max-width: 1400px;
     }
 }

@@ -20,3 +20,9 @@
         margin-bottom: 1rem;
     }
 }
+
+@media (1300px < width) {
+    .descriptionBox {
+        align-self: flex-start;
+    }
+}

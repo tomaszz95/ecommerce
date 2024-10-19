@@ -20,9 +20,9 @@ const HighlightedSection = () => {
             <div className={styles.highlightSectionPromotion}>
                 <h2>Deal of the day</h2>
                 <div className={styles.highlightSectionPromotionBox}>
-                    <span className={styles.highlightSectionPromotionText}>
+                    <div className={styles.highlightSectionPromotionText}>
                         {productWithHighestPromotion.promotion.promotionPercent}%
-                    </span>
+                    </div>
                     <BiggestPromotion product={productWithHighestPromotion} />
                 </div>
             </div>

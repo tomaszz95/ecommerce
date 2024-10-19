@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import PromotionTimer from './PromotionTimer'
+import CurrentPrice from '../../../components/currentPrice/CurrentPrice'
 
 import createLinkFromProductName from '../../../components/utils/createLinkFromProductName'
 
@@ -14,8 +15,6 @@ type ComponentType = {
 }
 
 const BiggestPromotion = ({ product }: ComponentType) => {
-    const promotionPercent = product.promotion.promotionPercent
-    const currentPrice = Math.floor(product.price - (product.price * promotionPercent) / 100)
     const productLink = createLinkFromProductName(product.name)
 
     return (
@@ -23,10 +22,12 @@ const BiggestPromotion = ({ product }: ComponentType) => {
             <Image src={product.images[0]} alt={product.name} />
             <p>{product.category.name}</p>
             <h3>{product.name}</h3>
-            <div className={styles.promotionPrice}>
-                <span className={styles.beforePromotionPrice}>{product.price}$</span>
-                <span className={styles.currentPrice}>{currentPrice}$</span>
-            </div>
+            <CurrentPrice
+                isBig={true}
+                price={product.price}
+                promotion={product.promotion.isPromotion}
+                promotionPercent={product.promotion.promotionPercent}
+            />
             <div className={styles.promotionTime}>
                 <p>Left until the end of the promotion</p>
                 <PromotionTimer />
