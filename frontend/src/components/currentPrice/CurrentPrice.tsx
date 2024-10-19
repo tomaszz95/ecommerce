@@ -13,7 +13,7 @@ const CurrentPrice = ({ price, promotion, promotionPercent, isBig }: ComponentTy
 
     return (
         <div className={`${styles.priceBox} ${isBig ? styles.big : ''}`}>
-            <span className={`${promotion ? styles.defaultPrice : ''}`}>{price}$</span>
+            <span className={`${promotion ? styles.defaultPrice : styles.curPrice}`}>{price}$</span>
             {promotion && <span className={styles.promotionPrice}>&nbsp;&nbsp;{currentPrice}$</span>}
         </div>
     )

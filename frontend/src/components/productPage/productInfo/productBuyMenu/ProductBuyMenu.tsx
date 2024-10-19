@@ -1,6 +1,6 @@
 'use client'
 
-import CurrentPrice from '../../../components/currentPrice/CurrentPrice'
+import CurrentPrice from '../../../currentPrice/CurrentPrice'
 import BuyMenuBenefits from './BuyMenuBenefits'
 
 import styles from './ProductBuyMenu.module.css'

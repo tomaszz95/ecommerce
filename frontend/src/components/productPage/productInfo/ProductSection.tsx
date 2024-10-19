@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
-import Slug from '../slug/Slug'
+import Slug from '../../slug/Slug'
 import ProductDetails from './ProductDetails'
 
-import { productType } from '../../types/types'
+import { productType } from '../../../types/types'
 
 import styles from './ProductSection.module.css'
 

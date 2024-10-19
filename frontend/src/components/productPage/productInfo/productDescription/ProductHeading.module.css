@@ -23,6 +23,8 @@
 .productOpinions {
     display: flex;
     align-items: flex-end;
+    color: var(--main-color);
+    font-weight: bold;
 }
 
 .productOpinions img {
@@ -36,6 +38,10 @@
 
     .productHeadingTitle {
         margin: 0 0 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
 }
 
@@ -51,11 +57,5 @@
     .productOpinions img {
         margin-top: 0.4rem;
         margin-right: 1.2rem;
-    }
-
-    .productHeadingTitle {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
     }
 }

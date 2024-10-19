@@ -2,7 +2,7 @@ import ProductPhotoGallery from './desktopGallery/ProductPhotoGallery'
 import ProductDescription from './productDescription/ProductDescription'
 import ProductBuyMenu from './productBuyMenu/ProductBuyMenu'
 
-import { productType } from '../../types/types'
+import { productType } from '../../../types/types'
 
 import styles from './ProductDetails.module.css'
 

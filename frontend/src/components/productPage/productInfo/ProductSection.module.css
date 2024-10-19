@@ -60,7 +60,7 @@
 
 @media (768px < width) {
     .productSection {
-        margin: 3rem auto;
+        margin: 3rem auto 1rem;
     }
 
     .container {

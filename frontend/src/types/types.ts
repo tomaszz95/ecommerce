@@ -35,6 +35,12 @@ export type productOpinionType = {
     opinions: singleOpinionType[]
 }
 
+export type productPresentationDummyType = {
+    title: string
+    text: string
+    img: StaticImageData
+}
+
 // logos
 
 export type brandLogoType = { brand: string; logo: StaticImageData }

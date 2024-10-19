@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    max-width: 600px;
 }
 
 .descriptionText p {
@@ -14,6 +13,7 @@
     .descriptionBox {
         flex-direction: column;
         gap: 30px;
+        grid-column: 1 / 3;
     }
 
     .descriptionText p {
@@ -24,5 +24,6 @@
 @media (1300px < width) {
     .descriptionBox {
         align-self: flex-start;
+        grid-column: 2 / 3;
     }
 }

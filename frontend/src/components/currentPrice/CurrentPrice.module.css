@@ -7,8 +7,12 @@
     color: var(--danger-color);
 }
 
-.priceBox.big .defaultPrice {
-    font-size: 1.4rem;
+.priceBox.big .defaultPrice{
+    font-size: 1.3rem;
+}
+
+.priceBox.big .curPrice{
+    font-size: 1.6rem;
 }
 
 .priceBox.big .promotionPrice {

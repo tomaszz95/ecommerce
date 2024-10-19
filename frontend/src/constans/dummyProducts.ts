@@ -40,7 +40,7 @@ const dummyProducts: productType[] = [
             promotionPercent: 35,
         },
         recommended: false,
-        stock: 32,
+        stock: 11,
     },
     {
         name: 'Apple Iphone 14',
@@ -59,7 +59,7 @@ const dummyProducts: productType[] = [
             promotionPercent: 0,
         },
         recommended: true,
-        stock: 32,
+        stock: 0,
     },
     {
         name: 'Apple Iphone 13',

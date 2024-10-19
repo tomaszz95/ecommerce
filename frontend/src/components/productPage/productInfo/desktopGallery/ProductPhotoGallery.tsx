@@ -1,6 +1,6 @@
 import { StaticImageData } from 'next/image'
 
-import PhotoCarousel from '../../photoCarousel/PhotoCarousel'
+import PhotoCarousel from '../../../photoCarousel/PhotoCarousel'
 import DesktopGallery from './DesktopGallery'
 
 import styles from './ProductPhotoGallery.module.css'
