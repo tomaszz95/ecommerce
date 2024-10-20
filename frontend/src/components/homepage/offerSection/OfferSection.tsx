@@ -1,5 +1,5 @@
 import OfferSectionItem from './OfferSectionItem'
-import OfferCarousel from './OfferCarousel'
+import OfferCarousel from '../../carousels/offerCarousel/OfferCarousel'
 
 import navItems from '../../../constans/navItems'
 

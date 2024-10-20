@@ -26,6 +26,8 @@ export type singleOpinionType = {
     opinionAuthor: string
     opinionText: string
     opinionValue: number
+    likes: number
+    dislikes: number
 }
 
 export type productOpinionType = {

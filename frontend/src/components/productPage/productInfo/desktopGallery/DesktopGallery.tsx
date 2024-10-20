@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image, { StaticImageData } from 'next/image'
 
-import DesktopPhotoCarousel from '../../../photoCarousel/DesktopPhotoCarousel'
+import DesktopPhotoCarousel from '../../../carousels/photoCarousel/DesktopPhotoCarousel'
 
 import styles from './DesktopGallery.module.css'
 

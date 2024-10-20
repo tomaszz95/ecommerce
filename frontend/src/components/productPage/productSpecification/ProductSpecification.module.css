@@ -1,0 +1,25 @@
+.productSpecificationSection {
+    padding: 1.5rem;
+    max-width: 1300px;
+    margin: 0 auto 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.productSpecificationSection h2 {
+    margin-bottom: 3rem;
+}
+
+.productSpecificationTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.productSpecificationTable tr:nth-child(even) {
+    background-color: var(--dirty-white);
+}
+
+.productSpecificationTable tr:nth-child(odd) {
+    background-color: var(--pure-white);
+}

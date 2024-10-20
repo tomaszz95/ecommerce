@@ -9,7 +9,7 @@ import { StaticImageData } from 'next/image'
 
 import SinglePhoto from './SinglePhoto'
 
-import { photoSliderSettings } from '../../helpers/sliderSettings'
+import { photoSliderSettings } from '../../../helpers/sliderSettings'
 
 import styles from './PhotoCarousel.module.css'
 

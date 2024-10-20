@@ -1,9 +1,9 @@
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 
-import CurrentPrice from '../currentPrice/CurrentPrice'
+import CurrentPrice from '../../currentPrice/CurrentPrice'
 
-import createLinkFromProductName from '../utils/createLinkFromProductName'
+import createLinkFromProductName from '../../utils/createLinkFromProductName'
 
 import styles from './SingleProduct.module.css'
 

@@ -9,7 +9,7 @@ import { StaticImageData } from 'next/image'
 
 import SingleDesktopPhoto from './SingleDesktopPhoto'
 
-import { desktopPhotoSliderSettings } from '../../helpers/sliderSettings'
+import { desktopPhotoSliderSettings } from '../../../helpers/sliderSettings'
 
 import styles from './DesktopPhotoCarousel.module.css'
 

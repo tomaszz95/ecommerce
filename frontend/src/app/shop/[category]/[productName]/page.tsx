@@ -1,8 +1,12 @@
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
 import MainLayout from '../../../../components/layouts/MainLayout'
 import ProductSection from '../../../../components/productPage/productInfo/ProductSection'
 import ProductPresentation from '../../../../components/productPage/productPresentation/ProductPresentation'
+import ProductSpecification from '../../../../components/productPage/productSpecification/ProductSpecification'
+import SimilarCarousel from '../../../../components/productPage/similarProductsCarousel/SimilarCarousel'
+import OpinionsSection from '../../../../components/productPage/opinionsSection/OpinionsSection'
 
 import capitalizeFirstLetter from '../../../../components/utils/capitalizeFirstLetter'
 import createProductNameFromLink from '../../../../components/utils/createProductNameFromString'
@@ -31,10 +35,17 @@ const SingleProductPage = ({ params }: Props) => {
 
     const findProductByName = dummyProduct.find((product) => product.name === productNameFinal)
 
+    if (!findProductByName) {
+        notFound()
+    }
+
     return (
         <MainLayout>
             <ProductSection product={findProductByName} />
-            {findProductByName && <ProductPresentation productName={findProductByName.name} />}
+            <ProductPresentation />
+            <ProductSpecification />
+            <SimilarCarousel productCategory={findProductByName.category.name} />
+            <OpinionsSection productId={findProductByName.prodId} />
         </MainLayout>
     )
 }

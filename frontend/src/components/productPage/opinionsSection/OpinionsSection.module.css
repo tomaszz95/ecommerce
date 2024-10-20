@@ -1,0 +1,12 @@
+.opinionsSection {
+    padding: 1.5rem;
+    max-width: 1300px;
+    margin: 0 auto 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.opinionsSection h2 {
+    margin-bottom: 1rem;
+}

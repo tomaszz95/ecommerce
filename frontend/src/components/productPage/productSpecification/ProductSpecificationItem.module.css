@@ -1,0 +1,26 @@
+.productSpecificationItem {
+    border: 1px solid var(--lighter-grey);
+}
+
+.productSpecificationItem td {
+    padding: 1rem;
+}
+
+.productSpecificationItem td:first-child {
+    font-weight: bold;
+    width: 50%;
+}
+
+.productSpecificationItem td:last-child {
+    width: 50%;
+}
+
+.productSpecificationItem td div {
+    line-height: 1.4rem;
+}
+
+@media (768px < width) {
+    .productSpecificationItem td {
+        padding: 1rem 2rem;
+    }
+}

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import SpeechBubbleIcon from '../../../../assets/icons/speechbubble.svg'
-import StarRating from './StarRating'
+import StarRating from '../../../starRating/StarRating'
 
 import getBrandLogo from '../../../../helpers/getBrandLogo'
 import productsOpinions from '../../../../constans/productsOpinions'
@@ -15,7 +15,7 @@ type ComponentType = {
 }
 
 const ProductHeading = ({ productName, productId, company }: ComponentType) => {
-    const findOpinion = productsOpinions.find((product) => productId === product.productId)
+    const findOpinion = productsOpinions.find((opinions) => productId === opinions.productId)
     const opinionsCount = findOpinion ? findOpinion.opinions.length : 0
     const opinionsText =
         opinionsCount === 0
@@ -32,7 +32,7 @@ const ProductHeading = ({ productName, productId, company }: ComponentType) => {
                 {brandLogo && <Image src={brandLogo} alt={`${company} logo`} />}
             </div>
             <div className={styles.productContainer}>
-                <StarRating rating={productsOpinions[0].opinionsAverage} />
+                <StarRating rating={findOpinion ? findOpinion.opinionsAverage : 0} />
                 <div className={styles.productOpinions}>
                     <Image src={SpeechBubbleIcon} alt="" />
                     <Link href="#opinions">{opinionsText}</Link>
