@@ -1,0 +1,59 @@
+.opinionItem {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--lighter-grey);
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+.opinionInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.opinionInfo h4 {
+    font-size: 1.2rem;
+}
+
+.opinionText {
+    margin: 1.6rem 0;
+}
+
+.opinionTextQuestion {
+    font-style: italic;
+}
+
+.opinionLikes {
+    margin-top: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.opinionLikesButton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    background-color: var(--pure-white);
+    padding: 0.3rem 0.8rem;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.opinionLikesButton:hover {
+    background-color: var(--dirty-white);
+}
+
+.opinionLikesButton img {
+    width: 16px;
+    height: 16px;
+}
+
+.opinionLikesButton span {
+    font-size: 1rem;
+}

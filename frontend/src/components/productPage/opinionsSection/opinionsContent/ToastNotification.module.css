@@ -1,0 +1,18 @@
+.toastContainer {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    bottom: 1rem;
+    left: 50%;
+    text-align: center;
+    z-index: 1000;
+    width: 80%;
+    max-width: 300px;
+}
+
+.toast {
+    background-color: var(--pure-black);
+    color: var(--pure-white);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+}
