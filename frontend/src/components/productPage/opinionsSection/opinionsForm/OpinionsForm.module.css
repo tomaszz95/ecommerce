@@ -1,20 +1,20 @@
 .starsContainer {
     display: flex;
-    gap: 0; /* Ustaw gap na 0, aby gwiazdki się stykały */
+    gap: 0;
 }
 
 .star {
-    font-size: 30px; /* Zwiększ rozmiar gwiazdek */
+    font-size: 30px;
     cursor: pointer;
     color: lightgray;
-    transition: transform 0.2s; /* Dodaj płynne przejście dla efektu hover */
-    transform-origin: center; /* Ustaw punkt odniesienia dla transformacji w centrum */
+    transition: transform 0.2s;
+    transform-origin: center;
 }
 
 .star:hover {
-    transform: scale(1.2); /* Powiększenie na hover */
+    transform: scale(1.2);
 }
 
 .filled {
-    color: gold; /* Kolor dla wypełnionych gwiazdek */
+    color: gold;
 }
