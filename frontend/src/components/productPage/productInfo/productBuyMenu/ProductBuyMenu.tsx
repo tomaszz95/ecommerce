@@ -1,7 +1,11 @@
 'use client'
 
+import { useState } from 'react'
+import { StaticImageData } from 'next/image'
+
 import CurrentPrice from '../../../currentPrice/CurrentPrice'
 import BuyMenuBenefits from './BuyMenuBenefits'
+import ProductAddToCartModal from './ProductAddToCartModal'
 
 import styles from './ProductBuyMenu.module.css'
 
@@ -12,11 +16,26 @@ type ComponentType = {
     promotion: boolean
     promotionPercent: number
     productName: string
+    photo: StaticImageData
 }
 
-const ProductBuyMenu = ({ price, stock, productId, promotion, promotionPercent, productName }: ComponentType) => {
+const ProductBuyMenu = ({
+    photo,
+    price,
+    stock,
+    productId,
+    promotion,
+    promotionPercent,
+    productName,
+}: ComponentType) => {
+    const [showModal, setShowModal] = useState(false)
+
+    const closeModalHandler = () => {
+        setShowModal(false)
+    }
+
     const addToCartHandler = () => {
-        console.log(price, productId, productName)
+        setShowModal(true)
     }
 
     return (
@@ -28,6 +47,15 @@ const ProductBuyMenu = ({ price, stock, productId, promotion, promotionPercent, 
             </button>
 
             <BuyMenuBenefits stock={stock} />
+
+            {showModal && (
+                <ProductAddToCartModal
+                    price={price}
+                    photo={photo}
+                    productName={productName}
+                    onClose={closeModalHandler}
+                />
+            )}
         </div>
     )
 }

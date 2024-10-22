@@ -29,6 +29,10 @@
         gap: 50px;
     }
 
+    .noOpinions {
+        display: flex;
+    }
+
     .opinionsContainer h2 {
         margin-bottom: 2rem;
     }

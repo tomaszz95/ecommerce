@@ -7,6 +7,7 @@ import ProductPresentation from '../../../../components/productPage/productPrese
 import ProductSpecification from '../../../../components/productPage/productSpecification/ProductSpecification'
 import SimilarCarousel from '../../../../components/productPage/similarProductsCarousel/SimilarCarousel'
 import OpinionsSection from '../../../../components/productPage/opinionsSection/OpinionsSection'
+import MayInterestCarousel from '../../../../components/productPage/mayInterestSection/mayInterestCarousel'
 
 import capitalizeFirstLetter from '../../../../components/utils/capitalizeFirstLetter'
 import createProductNameFromLink from '../../../../components/utils/createProductNameFromString'
@@ -46,6 +47,7 @@ const SingleProductPage = ({ params }: Props) => {
             <ProductSpecification />
             <SimilarCarousel productCategory={findProductByName.category.name} />
             <OpinionsSection productId={findProductByName.prodId} />
+            <MayInterestCarousel productCompany={findProductByName.company} />
         </MainLayout>
     )
 }

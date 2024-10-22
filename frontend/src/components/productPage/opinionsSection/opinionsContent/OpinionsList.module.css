@@ -9,5 +9,6 @@
 @media (1100px < width) {
     .opinionsListBox {
         margin-top: 0;
+        align-self: flex-start;
     }
 }

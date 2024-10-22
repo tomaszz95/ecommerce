@@ -1,3 +1,29 @@
+.addReviewForm {
+    margin: 3rem auto 0;
+    padding: 2rem 2rem;
+    border: 1px solid var(--lighter-grey);
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+.addReviewForm h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.starsBox {
+    margin: 0.8rem 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.starsBox p {
+    font-weight: bold;
+    font-size: 1.1rem;
+    height: 16px;
+}
+
 .starsContainer {
     display: flex;
     gap: 0;
@@ -17,4 +43,16 @@
 
 .filled {
     color: gold;
+}
+
+@media (1100px < width) {
+    .addReviewForm {
+        margin: 0;
+        margin-top: 5rem;
+    }
+
+    .noOpinions {
+        margin: 0 auto;
+        margin-top: 2rem;
+    }
 }

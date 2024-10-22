@@ -27,6 +27,7 @@ const ProductDetails = ({ product }: ComponentType) => {
                 productId={product.prodId}
                 promotion={product.promotion.isPromotion}
                 promotionPercent={product.promotion.promotionPercent}
+                photo={product.images[0]}
             />
         </div>
     )

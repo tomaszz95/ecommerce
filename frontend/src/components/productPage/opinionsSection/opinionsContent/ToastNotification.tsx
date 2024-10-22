@@ -4,12 +4,12 @@ import ReactDOM from 'react-dom'
 
 import styles from './ToastNotification.module.css'
 
-type ToastNotificationProps = {
+type ComponentType = {
     message: string
     onClose: () => void
 }
 
-const ToastNotification = ({ message, onClose }: ToastNotificationProps) => {
+const ToastNotification = ({ message, onClose }: ComponentType) => {
     useEffect(() => {
         const timer = setTimeout(onClose, 3000)
         return () => clearTimeout(timer)

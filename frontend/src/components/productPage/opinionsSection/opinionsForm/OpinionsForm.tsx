@@ -11,7 +11,7 @@ import styles from './OpinionsForm.module.css'
 
 type ComponentType = {
     productId: string
-    opinionsCount: number | undefined
+    opinionsCount: number
 }
 
 const OpinionsForm = ({ productId, opinionsCount }: ComponentType) => {
@@ -32,7 +32,7 @@ const OpinionsForm = ({ productId, opinionsCount }: ComponentType) => {
         valueIsValid: messageIsValid,
         valueChangeHandler: messageChangeHandler,
         inputBlurHandler: messageBlurHandler,
-    } = useInput((value) => value.length >= 20)
+    } = useInput((value) => value.trim() !== '')
 
     const formIsValid = nameIsValid && messageIsValid && rating > 0
 
@@ -48,8 +48,11 @@ const OpinionsForm = ({ productId, opinionsCount }: ComponentType) => {
     }
 
     return (
-        <form className={styles.addReviewForm} onSubmit={submitHandler}>
-            <h3>Add Your First Review</h3>
+        <form
+            className={`${styles.addReviewForm} ${opinionsCount === 0 ? styles.noOpinions : ''}`}
+            onSubmit={submitHandler}
+        >
+            {opinionsCount === 0 ? <h3>Add Your First Review</h3> : <h3>Add Review</h3>}
             <p>Have this product? Share your opinion based on the criteria below.</p>
             <Input
                 label="Your Name"
@@ -67,23 +70,26 @@ const OpinionsForm = ({ productId, opinionsCount }: ComponentType) => {
                 hasError={messageInputHasError}
                 onChange={messageChangeHandler}
                 onBlur={messageBlurHandler}
-                errorText="The message must be at least 20 characters long."
+                errorText="The message is required."
             />
-            <div className={styles.starsContainer}>
-                {[1, 2, 3, 4, 5].map((star) => (
-                    <span
-                        key={star}
-                        className={`${styles.star} ${(hoveredRating || rating) >= star ? styles.filled : ''}`}
-                        onMouseEnter={() => setHoveredRating(star)}
-                        onMouseLeave={() => setHoveredRating(0)}
-                        onClick={() => {
-                            setRating(star)
-                            setHoveredRating(0)
-                        }}
-                    >
-                        ★
-                    </span>
-                ))}
+            <div className={styles.starsBox}>
+                <p>Your rating:</p>
+                <div className={styles.starsContainer}>
+                    {[1, 2, 3, 4, 5].map((star) => (
+                        <span
+                            key={star}
+                            className={`${styles.star} ${(hoveredRating || rating) >= star ? styles.filled : ''}`}
+                            onMouseEnter={() => setHoveredRating(star)}
+                            onMouseLeave={() => setHoveredRating(0)}
+                            onClick={() => {
+                                setRating(star)
+                                setHoveredRating(0)
+                            }}
+                        >
+                            ★
+                        </span>
+                    ))}
+                </div>
             </div>
             <AuthFormButton type="submit" formIsValid={formIsValid}>
                 Add Review

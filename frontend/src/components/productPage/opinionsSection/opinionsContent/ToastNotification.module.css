@@ -1,8 +1,8 @@
 .toastContainer {
     position: fixed;
-    transform: translate(-50%, -50%);
     bottom: 1rem;
     left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     z-index: 1000;
     width: 80%;
