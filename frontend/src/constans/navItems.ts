@@ -38,7 +38,7 @@ const navItems: navItemType[] = [
         photo: AccessoriesHero,
     },
     {
-        name: 'PC hardware',
+        name: 'Hardware',
         link: '/shop/hardware',
         icon: HardwareIcon,
         photo: HardwareHero,

@@ -71,3 +71,13 @@ export type helpCenterItemType = {
     text: string
     questions: questionsType[]
 }
+
+// filters
+
+export type filterTypes = {
+    priceFrom: number | null
+    priceTo: number | null
+    selectedCompanies: string[]
+    availableOnly: boolean
+    promotionsOnly: boolean
+}

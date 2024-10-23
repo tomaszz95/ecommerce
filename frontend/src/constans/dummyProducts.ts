@@ -144,7 +144,7 @@ const dummyProducts: productType[] = [
         price: 1699,
         images: [DummyImage, DummyImage, DummyImage, DummyImage],
         category: {
-            name: 'PC hardware',
+            name: 'Hardware',
             link: '/shop/hardware',
         },
         company: 'Apple',
@@ -185,14 +185,14 @@ const dummyProducts: productType[] = [
             name: 'Computer',
             link: '/shop/computer',
         },
-        company: 'Lenovo',
+        company: 'Apple',
         prodId: '18872',
         promotion: {
-            isPromotion: false,
-            promotionPercent: 0,
+            isPromotion: true,
+            promotionPercent: 20,
         },
         recommended: false,
-        stock: 32,
+        stock: 0,
     },
 
     {
@@ -297,7 +297,7 @@ const dummyProducts: productType[] = [
         price: 1699,
         images: [DummyImage, DummyImage, DummyImage, DummyImage],
         category: {
-            name: 'PC hardware',
+            name: 'Hardware',
             link: '/shop/hardware',
         },
         company: 'Apple',
@@ -338,7 +338,7 @@ const dummyProducts: productType[] = [
             name: 'Computer',
             link: '/shop/computer',
         },
-        company: 'Lenovo',
+        company: 'Apple',
         prodId: '1522',
         promotion: {
             isPromotion: false,
@@ -450,7 +450,7 @@ const dummyProducts: productType[] = [
         price: 1699,
         images: [DummyImage, DummyImage, DummyImage, DummyImage],
         category: {
-            name: 'PC hardware',
+            name: 'Hardware',
             link: '/shop/hardware',
         },
         company: 'Apple',
@@ -603,7 +603,7 @@ const dummyProducts: productType[] = [
         price: 1699,
         images: [DummyImage, DummyImage, DummyImage, DummyImage],
         category: {
-            name: 'PC hardware',
+            name: 'Hardware',
             link: '/shop/hardware',
         },
         company: 'Apple',
@@ -756,7 +756,7 @@ const dummyProducts: productType[] = [
         price: 1699,
         images: [DummyImage, DummyImage, DummyImage, DummyImage],
         category: {
-            name: 'PC hardware',
+            name: 'Hardware',
             link: '/shop/hardware',
         },
         company: 'Apple',
@@ -909,7 +909,7 @@ const dummyProducts: productType[] = [
         price: 1699,
         images: [DummyImage, DummyImage, DummyImage, DummyImage],
         category: {
-            name: 'PC hardware',
+            name: 'Hardware',
             link: '/shop/hardware',
         },
         company: 'Apple',

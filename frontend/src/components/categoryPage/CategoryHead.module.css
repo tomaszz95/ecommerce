@@ -1,0 +1,30 @@
+.categoryHeadSection {
+    margin: 1rem auto 3rem;
+    padding: 0 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.categoryHeadText {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.categoryHeadText h1 {
+    margin-right: 1rem;
+}
+.categoryHeadText span {
+    font-weight: 300;
+    color: var(--dark-grey);
+}
+
+@media (768px < width) {
+    .categoryHeadSection {
+        margin: 3rem auto;
+    }
+
+    .categoryHeadText h1 {
+        font-size: 2.2rem;
+    }
+}
