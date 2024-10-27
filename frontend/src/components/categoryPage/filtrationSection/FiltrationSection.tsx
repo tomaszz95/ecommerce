@@ -1,8 +1,8 @@
-import capitalizeFirstLetter from '../../../components/utils/capitalizeFirstLetter'
 import React from 'react'
 
 import brandLogos from '../../../constans/brandLogos'
 import { productType, filterTypes } from '../../../types/types'
+import capitalizeFirstLetter from '../../../components/utils/capitalizeFirstLetter'
 
 import styles from './FiltrationSection.module.css'
 
