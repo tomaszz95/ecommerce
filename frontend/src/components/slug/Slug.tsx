@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import createLinkFromProductName from '../utils/createLinkFromProductName'
 
 import styles from './Slug.module.css'
@@ -13,9 +14,9 @@ const Slug = ({ categoryLink, productName, categoryName }: ComponentType) => {
 
     return (
         <div className={styles.slug}>
-            <a href="/">NeXtPC </a> <span>&gt;</span>
-            <a href={categoryLink}> {categoryName} </a> {productLink && <span>&gt;</span>}
-            {productLink && <a href={`${categoryLink}/${productLink}`}> {productName}</a>}
+            <Link href="/">NeXtPC </Link> <span>&gt;</span>
+            <Link href={categoryLink}> {categoryName} </Link> {productLink && <span>&gt;</span>}
+            {productLink && <Link href={`${categoryLink}/${productLink}`}> {productName}</Link>}
         </div>
     )
 }

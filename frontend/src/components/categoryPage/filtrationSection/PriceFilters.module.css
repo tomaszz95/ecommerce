@@ -1,0 +1,34 @@
+.priceFiltersValues,
+.priceFiltersContainer {
+    display: flex;
+    align-items: center;
+}
+
+.priceFiltersContainer {
+    gap: 10px;
+}
+
+.priceFiltersValues span {
+    font-size: 1.4rem;
+}
+
+.priceFiltersValues input {
+    padding: 0.4rem 1rem;
+    width: 100px;
+    margin-left: 0.6rem;
+    border-radius: 6px;
+}
+
+@media (768px < width) {
+    .priceFiltersContainer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (1100px < width) {
+    .priceFiltersContainer {
+        flex-direction: row;
+        align-items: center;
+    }
+}

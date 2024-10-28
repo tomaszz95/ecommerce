@@ -25,21 +25,18 @@ const CategoryContent = ({ initialProducts }: ComponentType) => {
         if (filters.selectedCompanies.length > 0) {
             filtered = filtered.filter((product) => filters.selectedCompanies.includes(product.company))
         }
-        console.log(filtered)
+
         if (filters.priceFrom !== null) {
             filtered = filtered.filter((product) => product.price >= (filters.priceFrom ?? 0))
         }
 
-        console.log(filtered)
         if (filters.priceTo !== null) {
             filtered = filtered.filter((product) => product.price <= (filters.priceTo ?? Number.MAX_SAFE_INTEGER))
         }
 
-        console.log(filtered)
         if (filters.availableOnly) {
             filtered = filtered.filter((product) => product.stock !== 0)
         }
-        console.log(filtered)
 
         if (filters.promotionsOnly) {
             filtered = filtered.filter((product) => product.promotion.isPromotion)
@@ -54,10 +51,20 @@ const CategoryContent = ({ initialProducts }: ComponentType) => {
             ...newFilters,
         }))
     }
-    console.log(filters)
+
+    const clearFiltersHandler = () => {
+        setFilters({
+            priceFrom: null,
+            priceTo: null,
+            selectedCompanies: [],
+            availableOnly: false,
+            promotionsOnly: false,
+        })
+    }
+
     return (
         <div>
-            <FiltrationSection products={initialProducts} filters={filters} onFilterChange={handleFilterChange} />
+            <FiltrationSection products={initialProducts} filters={filters} onFilterChange={handleFilterChange} onClearFilters={clearFiltersHandler}/>
             <div>
                 <h2>Products:</h2>
                 {filteredProducts.length > 0 ? (
