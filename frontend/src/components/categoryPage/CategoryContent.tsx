@@ -3,6 +3,8 @@
 import { productType, filterTypes } from '../../types/types'
 import React, { useState, useEffect } from 'react'
 import FiltrationSection from './filtrationSection/FiltrationSection'
+import ProductsList from './productsList/ProductsList'
+import styles from './CategoryContent.module.css'
 
 type ComponentType = {
     initialProducts: productType[]
@@ -63,22 +65,15 @@ const CategoryContent = ({ initialProducts }: ComponentType) => {
     }
 
     return (
-        <div>
-            <FiltrationSection products={initialProducts} filters={filters} onFilterChange={handleFilterChange} onClearFilters={clearFiltersHandler}/>
-            <div>
-                <h2>Products:</h2>
-                {filteredProducts.length > 0 ? (
-                    <ul>
-                        {filteredProducts.map((product) => (
-                            <li key={product.prodId}>
-                                {product.name} - ${product.price}
-                            </li>
-                        ))}
-                    </ul>
-                ) : (
-                    <p>No products found based on the filters applied.</p>
-                )}
-            </div>
+        <div className={styles.container}>
+            <FiltrationSection
+                products={initialProducts}
+                filters={filters}
+                onFilterChange={handleFilterChange}
+                onClearFilters={clearFiltersHandler}
+            />
+
+            <ProductsList products={filteredProducts} />
         </div>
     )
 }

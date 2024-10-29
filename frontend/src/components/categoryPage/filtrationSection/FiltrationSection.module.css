@@ -1,8 +1,6 @@
 .filtrationSection {
-    margin: 1rem auto 3rem;
-    padding: 0 2rem;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1300px;
 }
 
 .filtrationContent {
@@ -122,7 +120,7 @@
     display: block;
     height: 250%;
     width: 100px;
-    background-image: linear-gradient(-90deg, rgba(41, 70, 235, 0.552), rgba(42, 87, 233, 0.278));
+    background-image: linear-gradient(-90deg, rgba(26, 40, 238, 0.5), rgba(10, 31, 223, 0.2));
     transform: rotate(20deg);
     transition: all 0.5s;
     opacity: 0;
@@ -130,6 +128,11 @@
 }
 
 @media (768px < width) {
+    .filtrationSection {
+        margin: 1rem auto 3rem;
+        padding: 0 2rem;
+    }
+    
     .filtrationButtonSection {
         display: none;
     }

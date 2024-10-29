@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 
 import { productType, filterTypes } from '../../../types/types'
-import AvailableFilter from './AvailableFilter'
-import CompanyFilters from './CompanyFilters'
+import AvailableFilter from './filters/AvailableFilter'
+import CompanyFilters from './filters/CompanyFilters'
 
 import styles from './FiltrationSection.module.css'
-import PriceFilters from './PriceFilters'
-import PromotionFilter from './PromotionFilter'
+import PriceFilters from './filters/PriceFilters'
+import PromotionFilter from './filters/PromotionFilter'
 
 type ComponentType = {
     products: productType[]

@@ -1,0 +1,9 @@
+@media (768px < width) {
+    .container {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+}

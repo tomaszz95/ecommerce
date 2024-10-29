@@ -4,9 +4,9 @@ import SpeechBubbleIcon from '../../../../assets/icons/speechbubble.svg'
 import StarRating from '../../../starRating/StarRating'
 
 import getBrandLogo from '../../../../helpers/getBrandLogo'
-import productsOpinions from '../../../../constans/productsOpinions'
 
 import styles from './ProductHeading.module.css'
+import getOpinions from '../../../../components/utils/getOpinions'
 
 type ComponentType = {
     productName: string
@@ -15,14 +15,7 @@ type ComponentType = {
 }
 
 const ProductHeading = ({ productName, productId, company }: ComponentType) => {
-    const findOpinion = productsOpinions.find((opinions) => productId === opinions.productId)
-    const opinionsCount = findOpinion ? findOpinion.opinions.length : 0
-    const opinionsText =
-        opinionsCount === 0
-            ? 'No opinions yet'
-            : opinionsCount === 1
-              ? `See ${opinionsCount} opinion`
-              : `See ${opinionsCount}  opinions`
+    const { opinions, opinionsText } = getOpinions(productId, true)
     const brandLogo = getBrandLogo(company)
 
     return (
@@ -32,7 +25,7 @@ const ProductHeading = ({ productName, productId, company }: ComponentType) => {
                 {brandLogo && <Image src={brandLogo} alt={`${company} logo`} />}
             </div>
             <div className={styles.productContainer}>
-                <StarRating rating={findOpinion ? findOpinion.opinionsAverage : 0} />
+                <StarRating rating={opinions ? opinions.opinionsAverage : 0} />
                 <div className={styles.productOpinions}>
                     <Image src={SpeechBubbleIcon} alt="" />
                     <Link href="#opinions">{opinionsText}</Link>

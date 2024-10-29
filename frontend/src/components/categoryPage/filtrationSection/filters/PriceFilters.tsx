@@ -1,4 +1,4 @@
-import { filterTypes } from '../../../types/types'
+import { filterTypes } from '../../../../types/types'
 
 import styles from './PriceFilters.module.css'
 

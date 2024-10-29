@@ -1,6 +1,6 @@
-import brandLogos from '../../../constans/brandLogos'
-import capitalizeFirstLetter from '../../../components/utils/capitalizeFirstLetter'
-import { filterTypes, productType } from '../../../types/types'
+import brandLogos from '../../../../constans/brandLogos'
+import capitalizeFirstLetter from '../../../utils/capitalizeFirstLetter'
+import { filterTypes, productType } from '../../../../types/types'
 
 import styles from './CompanyFilters.module.css'
 

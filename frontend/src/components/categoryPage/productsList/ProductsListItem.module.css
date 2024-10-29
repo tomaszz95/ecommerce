@@ -1,0 +1,80 @@
+.listItem {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 3rem;
+    border: 1px solid var(--lighter-grey);
+    border-radius: 10px;
+    position: relative;
+}
+
+.recommended {
+    border: 2px solid var(--main-color);
+}
+
+.recommendedText {
+    color: var(--pure-white);
+    background-color: var(--main-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    position: absolute;
+    top: -16px;
+    left: 5%;
+}
+
+.listMainDataBox {
+    padding: 1rem;
+    width: 100%;
+}
+
+.listMainDataBox h2 {
+    align-self: flex-start;
+    margin-bottom: 2rem;
+}
+
+.listMainDataBox img {
+    width: 100%;
+    height: auto;
+}
+
+.listAdditionalInfoBox {
+    padding: 1rem;
+}
+
+.listAdditionalInfoBoxOpinions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.productOpinions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0.3rem;
+}
+
+.listInfoDescription {
+    padding: 1rem;
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+.listSaleBox {
+    position: relative;
+}
+
+@media (486px < width) {
+    .listAdditionalInfoBox {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .listAdditionalInfoBoxOpinions {
+        gap: 30px;
+    }
+}

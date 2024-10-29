@@ -1,0 +1,29 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.2rem;
+}
+
+.pagination button {
+    border-radius: 10px;
+    padding: 0.2rem 0.8rem;
+}
+
+.pagination input {
+    padding: 0.2rem;
+    margin-right: 0.4rem;
+    border: 1px solid var(--lighter-grey);
+    text-align: center;
+    border-radius: 10px;
+
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+    appearance: textfield;
+}
+
+.pagination input::-webkit-outer-spin-button,
+.pagination input::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+}
