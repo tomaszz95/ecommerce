@@ -15,7 +15,13 @@ const Slug = ({ categoryLink, productName, categoryName }: ComponentType) => {
     return (
         <div className={styles.slug}>
             <Link href="/">NeXtPC </Link> <span>&gt;</span>
-            <Link href={categoryLink}> {categoryName} </Link> {productLink && <span>&gt;</span>}
+            <Link href="/shop">Shop </Link>
+            {categoryName !== 'Shop' && (
+                <>
+                    <span>&gt;</span> <Link href={categoryLink}> {categoryName} </Link>
+                </>
+            )}
+            {productLink && <span>&gt;</span>}
             {productLink && <Link href={`${categoryLink}/${productLink}`}> {productName}</Link>}
         </div>
     )

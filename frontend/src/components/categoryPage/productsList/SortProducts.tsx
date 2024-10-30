@@ -28,8 +28,8 @@ const SortProducts = ({ productsLength }: ComponentType) => {
                     <option value="alph-asc">Alphabetically: From a - z</option>
                     <option value="alph-desc">Alphabetically: From z - a</option>
                 </select>
-                <Pagination productsLength={productsLength} />
             </div>
+            <Pagination productsLength={productsLength} />
         </div>
     )
 }

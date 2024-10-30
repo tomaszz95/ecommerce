@@ -48,7 +48,9 @@ const ProductsListItem = ({ product }: ComponentType) => {
                     isBig
                 />
                 <BuyMenuBenefits stock={product.stock} />
-                <HightlightButton href={`${product.category.link}/${productLink}`}>Show more</HightlightButton>
+                <div className={styles.listSaleBoxBtn}>
+                    <HightlightButton href={`${product.category.link}/${productLink}`}>Show more</HightlightButton>
+                </div>
             </div>
         </li>
     )

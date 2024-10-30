@@ -130,9 +130,9 @@
 @media (768px < width) {
     .filtrationSection {
         margin: 1rem auto 3rem;
-        padding: 0 2rem;
+        padding: 0 0 0 2rem;
     }
-    
+
     .filtrationButtonSection {
         display: none;
     }
@@ -142,7 +142,7 @@
     }
 
     .filtrationContent {
-        padding-top: 0;
+        padding: 0 0 0 2rem;
         position: relative;
         display: block;
         width: 25%;

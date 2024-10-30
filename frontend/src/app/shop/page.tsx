@@ -1,4 +1,9 @@
+import CategoryContent from '@/components/categoryPage/CategoryContent'
+import CategoryHead from '@/components/categoryPage/CategoryHead'
+import MainLayout from '@/components/layouts/MainLayout'
 import type { Metadata } from 'next'
+
+import dummyProducts from '../../constans/dummyProducts'
 
 export const metadata: Metadata = {
     title: 'NeXtPC - Shop',
@@ -6,7 +11,12 @@ export const metadata: Metadata = {
 }
 
 const ShopPage = () => {
-    return <div>ProductPage</div>
+    return (
+        <MainLayout>
+            <CategoryHead categoryName="Shop" categorySlug="" productsCount={dummyProducts.length} />
+            <CategoryContent initialProducts={dummyProducts} />
+        </MainLayout>
+    )
 }
 
 export default ShopPage

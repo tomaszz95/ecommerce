@@ -26,7 +26,7 @@ const dummyProducts: productType[] = [
     {
         name: 'Apple Iphone 15',
         description:
-            'Lorem ipsum dolor sit amened. Asad asd asd asd dsdsdasd asd sdasda sda asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda. Lorem ipsum dolor sit amened. Asad asd asd asd dsdsdasd asd sdasda sda asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda. Lorem ipsum dolor sit amened. Asad asd asd asd dsdsdasd asd sdasda sda asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda',
+            'Lorem ipsum dolor sit amened. Asad asd asd asd dsdsdasd asd sdasda sda asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda. Lorem ipsum dolor sit amened. Asad asd asd asd dsdsdasd asd sdasda sda asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda. Lorem ipsum dolor sit amened. Asad asd asd asd dsdsdasd asd sdasda sda asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda ',
         price: 6991,
         images: [SomeImg, DummyImage, SomeImg, DummyImage],
         category: {

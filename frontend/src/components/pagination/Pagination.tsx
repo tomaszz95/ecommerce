@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import styles from './Pagination.module.css'
 
-const itemsPerPage = 4
+const itemsPerPage = 6
 
 type ComponentType = {
     productsLength: number

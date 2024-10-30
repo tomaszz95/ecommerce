@@ -2,3 +2,26 @@
     width: 100%;
     padding: 1rem 1.5rem 3rem;
 }
+
+.noProducts {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 4rem;
+}
+
+.productsList {
+    width: 100%;
+}
+
+.productsSectionPagination {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (768px < width) {
+    .productsSection {
+        padding-top: 0;
+    }
+}
