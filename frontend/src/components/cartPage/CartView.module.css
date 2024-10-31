@@ -1,0 +1,8 @@
+.order {
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1400px;
+}

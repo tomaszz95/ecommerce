@@ -1,0 +1,43 @@
+.orderItemPriceBox {
+    border-bottom: 1px solid var(--lighter-grey);
+    padding: 1rem 1rem 2rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.orderItemPrice,
+.orderItemValue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.orderItemPrice p,
+.orderItemValue p {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.orderItemPrice span,
+.orderItemValue span {
+    font-size: 1.2rem !important;
+}
+
+.noBorder {
+    border-bottom: none;
+}
+
+@media (768px < width) {
+    .orderItemPrice p,
+    .orderItemValue p {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .orderItemPrice span,
+    .orderItemValue span {
+        font-size: 1.3rem !important;
+    }
+}

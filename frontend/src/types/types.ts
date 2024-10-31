@@ -1,6 +1,6 @@
 import { StaticImageData } from 'next/image'
 
-// products
+// Products
 
 export type productType = {
     name: string
@@ -43,11 +43,11 @@ export type productPresentationDummyType = {
     img: StaticImageData
 }
 
-// logos
+// Logos
 
 export type brandLogoType = { brand: string; logo: StaticImageData }
 
-// navigation / header
+// Navigation / Header
 
 export type navItemType = { name: string; link: string; icon: StaticImageData; photo: StaticImageData }
 
@@ -55,11 +55,11 @@ export type headerOptionItemType = { icon: StaticImageData; text: string; href: 
 
 export type topBarItemType = { text: string; icon: StaticImageData }
 
-// login
+// Login
 
 export type loginOfferItemType = { icon: StaticImageData; text: string }
 
-// contact
+// Contact
 
 export type questionsType = {
     question: string
@@ -72,7 +72,7 @@ export type helpCenterItemType = {
     questions: questionsType[]
 }
 
-// filters
+// Filters
 
 export type filterTypes = {
     priceFrom: number | null
@@ -80,4 +80,33 @@ export type filterTypes = {
     selectedCompanies: string[]
     availableOnly: boolean
     promotionsOnly: boolean
+}
+
+// Order
+
+export type orderType = {
+    orderId: string
+    totalPrice: number
+    status: string
+    products: singleProductType[]
+}
+
+export type singleProductType = {
+    product: {
+        name: string
+        price: number
+        image: StaticImageData
+        category: {
+            name: string
+            link: string
+        }
+        prodId: string
+        promotion: {
+            isPromotion: boolean
+            promotionPercent: number
+        }
+        stock: number
+    }
+    count: number
+    totalProductPrice: number
 }

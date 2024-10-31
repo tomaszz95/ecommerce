@@ -1,0 +1,19 @@
+.orderCart {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.orderProductsList {
+    border: 2px solid var(--lighter-grey);
+    border-radius: 10px;
+    max-width: 550px;
+    width: 100%;
+    margin: 3rem auto;
+}
+
+@media (768px < width) {
+    .orderProductsList {
+        max-width: 700px;
+    }
+}

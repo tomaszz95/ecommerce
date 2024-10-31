@@ -1,0 +1,46 @@
+.orderItem {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+    padding: 2rem 1rem;
+}
+
+.orderItemTrash {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--light-grey);
+    background-color: var(--pure-white);
+    transition: background-color 0.3s;
+    border-radius: 10px;
+}
+
+.orderItemTrash:hover {
+    background-color: var(--dirtier-white);
+}
+
+@media (768px < width) {
+    .orderItem {
+        padding: 1.5rem;
+    }
+
+    .orderItemTrash {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 0.5rem 0.7rem;
+    }
+
+    .orderItemPrice p,
+    .orderItemValue p {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .orderItemPrice span,
+    .orderItemValue span {
+        font-size: 1.3rem !important;
+    }
+}
