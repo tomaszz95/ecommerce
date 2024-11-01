@@ -14,6 +14,13 @@
 
 @media (768px < width) {
     .orderProductsList {
-        max-width: 700px;
+        min-width: 700px;
+    }
+}
+
+@media (1100px < width) {
+    .orderProductsList {
+        min-width: 850px;
+        margin-bottom: 0;
     }
 }

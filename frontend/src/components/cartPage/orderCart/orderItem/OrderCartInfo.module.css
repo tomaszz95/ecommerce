@@ -3,12 +3,13 @@
     margin-top: 3rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 30px;
 }
 
 .orderItemInfoText {
+    margin-left: 1rem;
     display: flex;
     align-items: center;
 }
@@ -22,6 +23,7 @@
 .orderItemInfoCount {
     display: flex;
     align-items: center;
+    margin: 0 auto;
     padding: 0.6rem 2rem;
     border: 1px solid var(--lighter-grey);
     border-radius: 10px;
@@ -56,5 +58,12 @@
 
     .orderItemInfoText h3 {
         font-size: 1.3rem;
+    }
+}
+
+@media (1100px < width) {
+    .orderItemInfo {
+        max-width: 530px;
+        flex-wrap: nowrap;
     }
 }

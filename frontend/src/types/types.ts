@@ -88,6 +88,7 @@ export type orderType = {
     orderId: string
     totalPrice: number
     status: string
+    finalTotalPrice: number
     products: singleProductType[]
 }
 

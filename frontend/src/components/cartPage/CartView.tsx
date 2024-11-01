@@ -1,5 +1,5 @@
 import { orderType } from '../../types/types'
-import BuyMenuCart from './BuyMenuCart'
+import BuyMenuCart from './buyMenuCart/BuyMenuCart'
 import OrderCart from './orderCart/OrderCart'
 
 import styles from './CartView.module.css'
@@ -12,7 +12,7 @@ const CartView = ({ order }: ComponentType) => {
     return (
         <div className={styles.order}>
             <OrderCart order={order} />
-            <BuyMenuCart />
+            <BuyMenuCart totalPrice={order.totalPrice} />
         </div>
     )
 }

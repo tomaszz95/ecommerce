@@ -1,0 +1,53 @@
+.promotionCodeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.promotionCodeBox {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.promotionCodeBox input {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--main-color);
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+.promotionCodeBox button {
+    width: 40%;
+    border-radius: 10px;
+    background-color: var(--pure-white);
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    font-weight: bold;
+    padding: 0.6rem 0.7rem;
+    font-size: 0.95rem;
+    transition:
+        background-color 0.3s,
+        border 0.3s,
+        color 0.3s;
+}
+
+.promotionCodeBox button:hover {
+    background-color: var(--main-color);
+    border: 1px solid var(--pure-white);
+    color: var(--pure-white);
+}
+
+.error,
+.valid {
+    color: var(--danger-color);
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.valid {
+    color: rgb(64, 153, 13);
+}

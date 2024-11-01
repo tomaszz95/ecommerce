@@ -44,3 +44,14 @@
         font-size: 1.3rem !important;
     }
 }
+
+@media (1100px < width) {
+    .orderItem {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .lastItem {
+        margin-bottom: 2rem;
+    }
+}

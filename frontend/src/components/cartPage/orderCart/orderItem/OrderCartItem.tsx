@@ -18,7 +18,7 @@ const OrderCartItem = ({ product, isLast }: ComponentType) => {
     }
 
     return (
-        <div className={styles.orderItem}>
+        <div className={`${styles.orderItem} ${isLast ? styles.lastItem : ''}`}>
             <button className={styles.orderItemTrash} onClick={removeCartItemHandler}>
                 <Image src={TrashIcon} alt="" />
             </button>

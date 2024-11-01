@@ -6,3 +6,11 @@
     width: 100%;
     max-width: 1400px;
 }
+
+@media (1200px < width) {
+    .order {
+        flex-direction: row;
+        gap: 20px;
+        align-items: flex-start;
+    }
+}
