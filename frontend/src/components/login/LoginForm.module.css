@@ -12,6 +12,13 @@
     margin-bottom: 0.4rem;
 }
 
+.serverError {
+    margin-top: 0.3rem;
+    text-align: center;
+    font-weight: bold;
+    color: var(--danger-color);
+}
+
 @media (768px < width) {
     .loginForm h1 {
         font-size: 2rem;

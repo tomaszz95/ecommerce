@@ -2,19 +2,19 @@ import type { Metadata } from 'next'
 
 import AuthLayout from '../../components/layouts/AuthLayout'
 
-import RegisterView from '../../components/register/RegisterView'
+import LoginOrRegister from '../../components/loginOrRegister/LoginOrRegister'
 
 export const metadata: Metadata = {
-    title: 'NeXtPC - Register',
+    title: 'NeXtPC - Login or Register',
     description: 'neXtPC app homepage',
 }
 
-const RegisterPage = () => {
+const LoginOrRegisterPage = () => {
     return (
         <AuthLayout>
-            <RegisterView />
+            <LoginOrRegister />
         </AuthLayout>
     )
 }
 
-export default RegisterPage
+export default LoginOrRegisterPage

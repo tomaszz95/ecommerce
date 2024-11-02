@@ -1,7 +1,7 @@
 import AuthOverlay from '../auth/AuthOverlay'
 import LoginForm from './LoginForm'
 
-const Login = () => {
+const LoginView = () => {
     return (
         <AuthOverlay pageType="login">
             <LoginForm />
@@ -9,4 +9,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default LoginView

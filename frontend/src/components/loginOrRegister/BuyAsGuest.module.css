@@ -1,0 +1,36 @@
+.buyAsGuestSection {
+    margin: 1rem auto 2rem;
+    max-width: 500px;
+}
+
+.buyAsGuestSection h2 {
+    margin-bottom: 0.8rem;
+}
+
+.buyAsGuestSection a {
+    display: block;
+    margin-top: 1.6rem;
+    padding: 0.6rem 1rem;
+    width: 100%;
+    background-color: var(--pure-white);
+    max-width: 500px;
+    border: 1px solid var(--pure-black);
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.buyAsGuestSection a:hover {
+    background-color: var(--dirty-white);
+}
+
+@media (768px < width) {
+    .buyAsGuestSection {
+        margin: 0 auto 2rem;
+    }
+
+    .buyAsGuestSection a {
+        margin-top: 2rem;
+        padding: 0.7rem 1rem;
+    }
+}

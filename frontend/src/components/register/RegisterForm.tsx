@@ -1,18 +1,20 @@
 'use client'
 
-import { FormEvent, useState } from 'react'
-
+import { FormEvent, useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import useInput from '../../hooks/useInput'
-
 import FormalConsents from './consents/FormalConsents'
 import AuthFormButton from '../UI/buttons/AuthFormButton'
 import Input from '../UI/inputs/Input'
-
 import styles from './RegisterForm.module.css'
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const RegisterForm = () => {
+    const [serverError, setServerError] = useState('')
+    const [isStorageValid, setIsStorageValid] = useState(false)
+    const router = useRouter()
+
     const {
         value: enteredName,
         hasError: nameInputHasError,
@@ -41,15 +43,36 @@ const RegisterForm = () => {
 
     const formIsValid = nameIsValid && emailIsValid && passwordIsValid && areConsentsAgreed
 
+    useEffect(() => {
+        const expirationKey = 'loginOrRegisterExpiration'
+        const storedExpiration = localStorage.getItem(expirationKey)
+        const now = new Date().getTime()
+
+        if (storedExpiration && now <= parseInt(storedExpiration)) {
+            setIsStorageValid(true)
+        }
+    }, [])
+
     const submitHandler = (event: FormEvent) => {
         event.preventDefault()
 
         if (!formIsValid) {
-            console.log('Please fill out all required fields and agree to the terms.')
+            setServerError('Please fill out all required fields.')
             return
         }
 
-        console.log('Form submitted!', { enteredName, enteredEmail, enteredPassword })
+        try {
+            localStorage.setItem('isLogin', 'true')
+            setServerError('')
+
+            if (isStorageValid) {
+                router.push('/delivery')
+            } else {
+                router.push('/')
+            }
+        } catch (err) {
+            setServerError('Something went wrong. Please try again later.')
+        }
     }
 
     return (
@@ -84,6 +107,8 @@ const RegisterForm = () => {
                 errorText="Password must be at least 8 characters long."
             />
             <FormalConsents onConsentsAgree={setAreConsentsAgreed} />
+
+            {serverError !== '' && <p className={styles.serverError}>{serverError}</p>}
 
             <AuthFormButton type="submit" formIsValid={formIsValid}>
                 Register

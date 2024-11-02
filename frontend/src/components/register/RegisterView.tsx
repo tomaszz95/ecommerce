@@ -1,7 +1,7 @@
 import AuthOverlay from '../auth/AuthOverlay'
 import RegisterForm from './RegisterForm'
 
-const Login = () => {
+const RegisterView = () => {
     return (
         <AuthOverlay pageType="register">
             <RegisterForm />
@@ -9,4 +9,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default RegisterView

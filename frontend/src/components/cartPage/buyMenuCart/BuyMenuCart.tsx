@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import styles from './BuyMenuCart.module.css'
 import promoCodes from '../../../constans/promoCodes'
@@ -14,6 +14,15 @@ const BuyMenuCart = ({ totalPrice }: ComponentType) => {
     const [promoInput, setPromoInput] = useState('')
     const [discount, setDiscount] = useState(0)
     const [isValid, setIsValid] = useState(true)
+    const [linkPath, setLinkPath] = useState('/login-or-register')
+
+    useEffect(() => {
+        const isLogin = localStorage.getItem('isLogin')
+        
+        if (isLogin === 'true') {
+            setLinkPath('/delivery')
+        }
+    }, [])
 
     const promoCodeHandler = () => {
         const promo = promoCodes.find((code) => code.name.toLowerCase() === promoInput.toLowerCase())
@@ -57,7 +66,7 @@ const BuyMenuCart = ({ totalPrice }: ComponentType) => {
                 <span>Total price:</span>
                 <b>${finalPrice.toFixed(0)}</b>
             </div>
-            <Link href="/delivery" className={styles.nextButton}>
+            <Link href={linkPath} className={styles.nextButton}>
                 Go to delivery
             </Link>
             <p className={styles.priceBoxInfo}>Don't delay, the products in your cart are not reserved.</p>

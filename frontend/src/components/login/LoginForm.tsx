@@ -1,6 +1,7 @@
 'use client'
 
-import { FormEvent } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 import useInput from '../../hooks/useInput'
 
@@ -12,6 +13,10 @@ import styles from './LoginForm.module.css'
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const LoginForm = () => {
+    const [serverError, isServerError] = useState('')
+    const [isStorageValid, setIsStorageValid] = useState(false)
+    const router = useRouter()
+
     const {
         value: enteredEmail,
         hasError: emailInputHasError,
@@ -30,15 +35,36 @@ const LoginForm = () => {
 
     const formIsValid = emailIsValid && passwordIsValid
 
+    useEffect(() => {
+        const expirationKey = 'loginOrRegisterExpiration'
+        const storedExpiration = localStorage.getItem(expirationKey)
+        const now = new Date().getTime()
+
+        if (storedExpiration && now <= parseInt(storedExpiration)) {
+            setIsStorageValid(true)
+        }
+    }, [])
+
     const submitHandler = (event: FormEvent) => {
         event.preventDefault()
 
         if (!formIsValid) {
-            console.log('Please fill out all required fields.')
+            isServerError('Please fill out all required fields.')
             return
         }
 
-        console.log('Login successful!', { enteredEmail, enteredPassword })
+        try {
+            localStorage.setItem('isLogin', 'true')
+            isServerError('')
+
+            if (isStorageValid) {
+                router.push('/delivery')
+            } else {
+                router.push('/')
+            }
+        } catch (err) {
+            isServerError('Something went wrong. Please try again later.')
+        }
     }
 
     return (
@@ -63,6 +89,7 @@ const LoginForm = () => {
                 onBlur={passwordBlurHandler}
                 errorText="Password must be at least 8 characters long."
             />
+            {serverError !== '' && <p className={styles.serverError}>{serverError}</p>}
 
             <AuthFormButton type="submit" formIsValid={formIsValid}>
                 Sign In
