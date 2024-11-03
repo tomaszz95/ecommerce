@@ -1,7 +1,9 @@
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 
 import styles from './HeaderItem.module.css'
+import ProfileMenu from './ProfileMenu'
 
 type ComponentType = {
     icon: StaticImageData
@@ -9,7 +11,46 @@ type ComponentType = {
     href: string
 }
 
+const isMobileDevice = () => {
+    return typeof window !== 'undefined' && /Mobi|Android/i.test(window.navigator.userAgent)
+}
+
 const HeaderItem = ({ icon, text, href }: ComponentType) => {
+    const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false)
+
+    const openProfileMenuHandler = () => {
+        if (!isMobileDevice()) {
+            setIsProfileMenuOpen(true)
+        }
+    }
+
+    const closeProfileMenuHandler = () => {
+        setIsProfileMenuOpen(false)
+    }
+
+    const switchProfileMenuOpen = () => {
+        setIsProfileMenuOpen((prevValue) => !prevValue)
+    }
+
+    console.log(isProfileMenuOpen)
+    if (text === 'User') {
+        return (
+            <div
+                className={styles.profileContainer}
+                onMouseEnter={openProfileMenuHandler}
+                onMouseLeave={closeProfileMenuHandler}
+            >
+                <button className={styles.headerItem} onClick={switchProfileMenuOpen}>
+                    <Image src={icon} alt="" />
+                    <p>
+                        {text} <span className={isProfileMenuOpen ? styles.rotate : ''}>▼</span>
+                    </p>
+                </button>
+                {isProfileMenuOpen && <ProfileMenu />}
+            </div>
+        )
+    }
+
     return (
         <Link className={styles.headerItem} href={href}>
             <Image src={icon} alt="" />

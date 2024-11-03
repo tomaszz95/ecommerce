@@ -24,14 +24,13 @@ const HeaderOptions = () => {
 
     return (
         <div className={styles.headerOptions}>
+            <HeaderItem icon={ContactIcon} text="Contact" href="/contact" />
+            <HeaderItem icon={CartIcon} text="Cart" href="/cart" />
             {isLogin ? (
-                <HeaderItem icon={UserIcon} text="Logout" href="/logout" />
+                <HeaderItem icon={UserIcon} text="User" href="/user" />
             ) : (
                 <HeaderItem icon={UserIcon} text="Login" href="/login" />
             )}
-
-            <HeaderItem icon={ContactIcon} text="Contact" href="/contact" />
-            <HeaderItem icon={CartIcon} text="Cart" href="/cart" />
         </div>
     )
 }
