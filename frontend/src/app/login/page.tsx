@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 import AuthLayout from '../../components/layouts/AuthLayout'
 
-import LoginView from '../../components/login/LoginView'
+import LoginView from '../../components/loginPage/LoginView'
 
 export const metadata: Metadata = {
     title: 'NeXtPC - Login',

@@ -20,9 +20,11 @@ const ProductsList = ({ products }: ComponentType) => {
                     products.map((product) => <ProductsListItem product={product} key={product.prodId} />)
                 )}
             </ul>
-            <div className={styles.productsSectionPagination}>
-                <Pagination productsLength={products.length} />
-            </div>
+            {products.length !== 0 && (
+                <div className={styles.productsSectionPagination}>
+                    <Pagination productsLength={products.length} />
+                </div>
+            )}
         </section>
     )
 }

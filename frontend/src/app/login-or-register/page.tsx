@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 import AuthLayout from '../../components/layouts/AuthLayout'
 
-import LoginOrRegister from '../../components/loginOrRegister/LoginOrRegister'
+import LoginOrRegister from '../../components/loginOrRegisterPage/LoginOrRegister'
 
 export const metadata: Metadata = {
     title: 'NeXtPC - Login or Register',

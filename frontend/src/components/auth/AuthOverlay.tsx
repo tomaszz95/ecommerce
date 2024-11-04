@@ -4,7 +4,7 @@ import ChangeAuthTexts from './ChangeAuthTexts'
 import RegisterBenefits from './RegisterBenefits'
 
 import styles from './AuthOverlay.module.css'
-import BuyAsGuest from '../loginOrRegister/BuyAsGuest'
+import BuyAsGuest from '../loginOrRegisterPage/BuyAsGuest'
 
 type AuthLayoutProps = {
     children: React.ReactNode

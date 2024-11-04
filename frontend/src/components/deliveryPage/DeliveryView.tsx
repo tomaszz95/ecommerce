@@ -1,11 +1,10 @@
 import { orderType } from '../../types/types'
-import DeliveryMethod from './deliveryInfo/DeliveryMethod'
-import DeliveryData from './deliveryInfo/DeliveryData'
 import DeliveryPayment from './deliveryInfo/DeliveryPayment'
 import DeliveryAgreements from './deliveryInfo/DeliveryAgreements'
 import DeliverySummary from './deliverySummary/DeliverySummary'
 
 import styles from './DeliveryView.module.css'
+import DeliveryOptions from './deliveryOptions/DeliveryOptions'
 
 type ComponentType = {
     order: orderType
@@ -13,10 +12,9 @@ type ComponentType = {
 
 const DeliveryView = ({ order }: ComponentType) => {
     return (
-        <div>
-            <div>
-                <DeliveryMethod />
-                <DeliveryData />
+        <div className={styles.deliveryPage}>
+            <div className={styles.deliveryContainer}>
+                <DeliveryOptions />
                 <DeliveryPayment />
                 <DeliveryAgreements />
             </div>

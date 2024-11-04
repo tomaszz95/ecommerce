@@ -1,0 +1,106 @@
+.methodBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: background-color 0.3s;
+}
+
+.methodBox.active {
+    border: 1px solid var(--dark-grey);
+}
+
+.methodBox:hover {
+    background-color: var(--pure-white);
+}
+
+.methodBox input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.methodsTitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.methodsText {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.methodsText b {
+    font-size: 1.1rem;
+}
+
+.methodsText span {
+    color: var(--medium-grey);
+}
+
+.methodsIcon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 1rem;
+}
+
+.methodsIcon img {
+    width: 30px;
+    height: 30px;
+}
+
+.methodsIcon.iconsBig img {
+    width: 40px;
+    height: 40px;
+}
+
+.methodsInputRadio {
+    min-width: 20px;
+    min-height: 20px;
+    border: 2px solid var(--dark-grey);
+    border-radius: 50%;
+    position: relative;
+}
+
+.methodsInputRadio.checked::after {
+    content: '';
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background-color: var(--pure-black);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (768px < width) {
+    .methodsTitle {
+        gap: 20px;
+    }
+
+    .methodsText {
+        gap: 10px;
+    }
+
+    .methodsText b {
+        font-size: 1.2rem;
+    }
+
+    .methodsIcon {
+        gap: 15px;
+    }
+}

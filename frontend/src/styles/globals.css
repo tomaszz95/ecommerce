@@ -51,10 +51,12 @@ a {
 
 :root {
     --light-grey: rgb(140, 140, 140);
+    --medium-grey: rgb(100, 100, 100);
     --lighter-grey: rgb(211, 211, 211);
     --dark-grey: rgb(66, 66, 66);
     --darker-grey: rgb(33, 33, 33);
     --pure-white: rgb(255, 255, 255);
+    --light-white: rgb(249, 249, 249);
     --dirty-white: rgb(243, 243, 243);
     --dirtier-white: rgb(233, 233, 233);
     --pure-black: rgb(0, 0, 0);

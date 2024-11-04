@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 import MainLayout from '../../components/layouts/MainLayout'
-import HelpCenter from '../../components/contact/helpCenter/HelpCenter'
-import ContactBox from '@/components/contact/ContactBox'
+import HelpCenter from '../../components/contactPage/helpCenter/HelpCenter'
+import ContactBox from '@/components/contactPage/ContactBox'
 
 export const metadata: Metadata = {
     title: 'NeXtPC - Contact',

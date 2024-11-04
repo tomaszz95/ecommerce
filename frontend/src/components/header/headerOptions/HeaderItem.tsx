@@ -32,7 +32,6 @@ const HeaderItem = ({ icon, text, href }: ComponentType) => {
         setIsProfileMenuOpen((prevValue) => !prevValue)
     }
 
-    console.log(isProfileMenuOpen)
     if (text === 'User') {
         return (
             <div

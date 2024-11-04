@@ -1,0 +1,22 @@
+.methodForm {
+    padding: 2rem 1rem;
+    background-color: var(--light-white);
+    border: 1px solid var(--lighter-grey);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 660px;
+}
+
+.methodsContainer {
+    margin-top: 2rem;
+    border: 1px solid var(--lighter-grey);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (768px < width) {
+    .methodForm {
+        padding: 2rem;
+    }
+}

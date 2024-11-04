@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 import AuthOverlay from '../auth/AuthOverlay'
-import LoginForm from '../login/LoginForm'
+import LoginForm from '../loginPage/LoginForm'
 
 const LoginOrRegister = () => {
     useEffect(() => {

@@ -11,7 +11,7 @@ import styles from './MainHeader.module.css'
 
 const MainHeader = () => {
     return (
-        <div className={styles.mainheader}>
+        <div className={styles.mainHeader}>
             <div className={styles.container}>
                 <div className={styles.logoLinkBox}>
                     <Link href="/" className={styles.logoLink}>
