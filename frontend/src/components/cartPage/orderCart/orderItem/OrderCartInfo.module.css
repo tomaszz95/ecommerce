@@ -27,6 +27,7 @@
     padding: 0.6rem 2rem;
     border: 1px solid var(--lighter-grey);
     border-radius: 10px;
+    background-color: var(--pure-white);
 }
 
 .orderItemInfoCount button {

@@ -87,8 +87,9 @@ export type filterTypes = {
 export type orderType = {
     orderId: string
     totalPrice: number
-    status: string
+    discount: number
     finalTotalPrice: number
+    status: string
     products: singleProductType[]
 }
 

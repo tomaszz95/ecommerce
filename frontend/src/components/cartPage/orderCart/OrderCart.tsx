@@ -23,7 +23,11 @@ const OrderCart = ({ order }: ComponentType) => {
             <OrderCartHeading productsCount={productsCount} />
             <ul className={styles.orderProductsList}>
                 {order.products.map((product, index) => (
-                    <OrderCartItem product={product} key={order.orderId} isLast={index === order.products.length - 1} />
+                    <OrderCartItem
+                        product={product}
+                        key={product.product.prodId}
+                        isLast={index === order.products.length - 1}
+                    />
                 ))}
             </ul>
         </section>

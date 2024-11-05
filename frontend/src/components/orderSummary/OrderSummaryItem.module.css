@@ -1,0 +1,34 @@
+.summaryItemBox {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    border-bottom: 1px solid var(--lighter-grey);
+    padding: 1rem 0;
+}
+
+.summaryItemBox img {
+    width: 70px;
+    height: 70px;
+}
+
+.summaryItemText {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.summaryItemText h4 {
+    font-size: 1.1rem;
+}
+
+.summaryItemText b {
+    font-size: 1.2rem;
+    align-self: flex-end;
+}
+
+.summaryItemText p {
+    color: var(--medium-grey);
+}

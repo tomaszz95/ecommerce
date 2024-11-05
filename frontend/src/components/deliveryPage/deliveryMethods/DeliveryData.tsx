@@ -12,7 +12,7 @@ type ComponentType = {
 const DeliveryData = ({ selectedMethod, selectedMethodDelivery, onSelectMethodDelivery }: ComponentType) => {
     return (
         <form className={styles.methodForm}>
-            <h2>{selectedMethod === 'Courier' ? 'The parcel will be delivered' : 'Select a store'}</h2>
+            <h2>{selectedMethod === 'Courier' ? 'The parcel will be delivered by' : 'Select a store'}</h2>
             <div className={styles.methodsContainer}>
                 {selectedMethod === 'Courier' ? (
                     <CourierDelivery

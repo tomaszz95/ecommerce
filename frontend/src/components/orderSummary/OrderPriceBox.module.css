@@ -1,11 +1,5 @@
-.buyMenuSection {
-    border: 2px solid var(--lighter-grey);
-    border-radius: 10px;
-    width: 100%;
-    margin: 1rem auto;
-    padding: 2rem;
-    background-color: var(--light-white);
-    max-width: 550px;
+.priceContainer {
+    margin: 2rem 0 0;
 }
 
 .priceBox {
@@ -66,22 +60,14 @@
     opacity: 1;
 }
 
+.nextButton.disabled {
+    background-color: var(--lighter-grey);
+    pointer-events: none;
+}
+
 .priceBoxInfo {
     text-align: center;
     font-size: 0.8rem;
     color: var(--dark-grey);
     font-weight: bold;
-}
-
-@media (768px < width) {
-    .buyMenuSection {
-        max-width: 700px;
-    }
-}
-
-@media (1200px < width) {
-    .buyMenuSection {
-        margin-bottom: 0;
-        align-self: flex-end;
-    }
 }

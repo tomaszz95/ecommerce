@@ -1,0 +1,24 @@
+.deliveryForm {
+    padding: 2rem 1rem;
+    background-color: var(--light-white);
+    border: 1px solid var(--lighter-grey);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 660px;
+}
+
+.deliveryForm h2 {
+    font-size: 1.4rem;
+}
+
+@media (768px < width) {
+    .deliveryForm {
+        padding: 2rem;
+    }
+}
+
+@media (1100px < width) {
+    .deliveryForm h2 {
+        font-size: 1.6rem;
+    }
+}

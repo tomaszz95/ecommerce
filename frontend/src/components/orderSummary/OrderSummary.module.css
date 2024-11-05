@@ -1,0 +1,15 @@
+.summarySection {
+    padding: 2rem 1rem;
+    margin-bottom: 3rem;
+    background-color: var(--light-white);
+    border: 1px solid var(--lighter-grey);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 660px;
+}
+
+@media (768px < width) {
+    .summarySection {
+        padding: 2rem;
+    }
+}

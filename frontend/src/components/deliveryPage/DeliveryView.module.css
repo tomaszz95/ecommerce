@@ -16,3 +16,11 @@
     width: 100%;
     gap: 30px;
 }
+
+@media (1100px < width) {
+    .deliveryPage {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+}

@@ -4,6 +4,7 @@ import SomeImg from '../assets/photos/gaminghero.jpg'
 const orderDummy = {
     orderId: '213',
     totalPrice: 21323,
+    discount: 2001,
     finalTotalPrice: 19322,
     status: 'pending',
     products: [

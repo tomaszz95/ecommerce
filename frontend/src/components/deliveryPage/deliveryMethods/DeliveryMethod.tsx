@@ -27,7 +27,7 @@ const DeliveryMethod = ({ onSelectMethod, selectedMethod }: ComponentType) => {
                     onSelectMethod={onSelectMethod}
                     selectedMethod={selectedMethod}
                     inputValue="Store"
-                    additionalText="Select a salon, to find out the date"
+                    additionalText="Select a store"
                     icon={ShopIcon}
                     iconText="$0"
                 />

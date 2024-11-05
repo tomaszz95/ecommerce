@@ -9,7 +9,7 @@ type ComponentType = {
     additionalText?: string
     icon: StaticImageData
     iconsBig?: boolean
-    iconText: string
+    iconText?: string
 }
 
 const DeliveryMethodItem = ({
@@ -43,7 +43,7 @@ const DeliveryMethodItem = ({
             </div>
             <div className={`${styles.methodsIcon} ${iconsBig ? styles.iconsBig : ''}`}>
                 <Image src={icon} alt="" />
-                <span>{iconText}</span>
+                {iconText && <span>{iconText}</span>}
             </div>
         </div>
     )

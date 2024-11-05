@@ -7,6 +7,10 @@
     max-width: 660px;
 }
 
+.methodForm h2 {
+    font-size: 1.4rem;
+}
+
 .methodsContainer {
     margin-top: 2rem;
     border: 1px solid var(--lighter-grey);
@@ -18,5 +22,11 @@
 @media (768px < width) {
     .methodForm {
         padding: 2rem;
+    }
+}
+
+@media (1100px < width) {
+    .methodForm h2 {
+        font-size: 1.6rem;
     }
 }
