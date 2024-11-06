@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from 'next/image'
 
-import styles from './DeliveryMethodItem.module.css'
+import styles from './OrderMethodItem.module.css'
 
 type ComponentType = {
     onSelectMethod: (value: string) => void
@@ -12,7 +12,7 @@ type ComponentType = {
     iconText?: string
 }
 
-const DeliveryMethodItem = ({
+const OrderMethodItem = ({
     selectedMethod,
     onSelectMethod,
     inputValue,
@@ -41,7 +41,9 @@ const DeliveryMethodItem = ({
                     {additionalText && <span>{additionalText}</span>}
                 </div>
             </div>
-            <div className={`${styles.methodsIcon} ${iconsBig ? styles.iconsBig : ''}`}>
+            <div
+                className={`${styles.methodsIcon} ${iconsBig ? styles.iconsBig : ''} ${selectedMethod === inputValue ? styles.checked : ''}`}
+            >
                 <Image src={icon} alt="" />
                 {iconText && <span>{iconText}</span>}
             </div>
@@ -49,4 +51,4 @@ const DeliveryMethodItem = ({
     )
 }
 
-export default DeliveryMethodItem
+export default OrderMethodItem

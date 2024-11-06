@@ -1,8 +1,12 @@
+.profileContainer {
+    position: relative;
+}
+
 .headerItem {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.6rem 1rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 20px;
     transition: 0.4s background-color;
     cursor: pointer;
@@ -30,10 +34,6 @@
     transition: transform 0.3s;
 }
 
-.profileContainer {
-    position: relative;
-}
-
 .rotate {
     display: inline-block;
     transform: rotate(180deg);
@@ -42,10 +42,6 @@
 }
 
 @media (768px < width) {
-    .headerItem {
-        padding: 0.6rem 1.2rem;
-    }
-
     .headerItem img {
         width: 26px;
         height: 26px;
@@ -55,6 +51,8 @@
 @media (992px < width) {
     .headerItem {
         margin-left: 1rem;
+        padding: 0.6rem;
+        min-width: 135px;
     }
 
     .headerItem img {

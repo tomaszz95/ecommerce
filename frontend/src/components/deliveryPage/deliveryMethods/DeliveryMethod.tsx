@@ -1,4 +1,4 @@
-import DeliveryMethodItem from './DeliveryMethodItem'
+import OrderMethodItem from '../../orderSummary/OrderMethodItem'
 
 import TruckIcon from '../../../assets/icons/truck.svg'
 import ShopIcon from '../../../assets/icons/shop.svg'
@@ -15,7 +15,7 @@ const DeliveryMethod = ({ onSelectMethod, selectedMethod }: ComponentType) => {
         <form className={styles.methodForm}>
             <h2>Delivery method</h2>
             <div className={styles.methodsContainer}>
-                <DeliveryMethodItem
+                <OrderMethodItem
                     onSelectMethod={onSelectMethod}
                     selectedMethod={selectedMethod}
                     inputValue="Courier"
@@ -23,7 +23,7 @@ const DeliveryMethod = ({ onSelectMethod, selectedMethod }: ComponentType) => {
                     icon={TruckIcon}
                     iconText="$0"
                 />
-                <DeliveryMethodItem
+                <OrderMethodItem
                     onSelectMethod={onSelectMethod}
                     selectedMethod={selectedMethod}
                     inputValue="Store"

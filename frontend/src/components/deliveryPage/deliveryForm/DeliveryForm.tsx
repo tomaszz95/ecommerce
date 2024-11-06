@@ -6,7 +6,6 @@ import Input from '../../UI/inputs/Input'
 import styles from './DeliveryForm.module.css'
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const textRegex = /^[a-zA-Z\s]+$/
 const alphanumericWithSpaceRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d\s]+$/
 const numericRegex = /^\d+$/
 
@@ -23,7 +22,7 @@ const DeliveryForm = ({ onFormValidationChange }: ComponentType) => {
         valueIsValid: nameIsValid,
         valueChangeHandler: nameChangeHandler,
         inputBlurHandler: nameBlurHandler,
-    } = useInput((value) => textRegex.test(value.trim()))
+    } = useInput((value) => value.trim() !== '')
 
     const {
         value: enteredStreet,
@@ -47,7 +46,7 @@ const DeliveryForm = ({ onFormValidationChange }: ComponentType) => {
         valueIsValid: cityIsValid,
         valueChangeHandler: cityChangeHandler,
         inputBlurHandler: cityBlurHandler,
-    } = useInput((value) => textRegex.test(value.trim()))
+    } = useInput((value) => value.trim() !== '')
 
     const {
         value: enteredPhone,

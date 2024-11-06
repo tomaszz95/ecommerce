@@ -1,4 +1,4 @@
-import DeliveryMethodItem from './DeliveryMethodItem'
+import OrderMethodItem from '../../orderSummary/OrderMethodItem'
 
 import WarsawIcon from '../../../assets/icons/warsaw.svg'
 import CracowIcon from '../../../assets/icons/cracow.svg'
@@ -12,21 +12,21 @@ type ComponentType = {
 const StoreDelivery = ({ selectedMethodDelivery, onSelectMethodDelivery }: ComponentType) => {
     return (
         <>
-            <DeliveryMethodItem
+            <OrderMethodItem
                 onSelectMethod={onSelectMethodDelivery}
                 selectedMethod={selectedMethodDelivery}
                 inputValue="Warsaw"
                 additionalText="ul. Pogodna 3"
                 icon={WarsawIcon}
             />
-            <DeliveryMethodItem
+            <OrderMethodItem
                 onSelectMethod={onSelectMethodDelivery}
                 selectedMethod={selectedMethodDelivery}
                 inputValue="Cracow"
                 additionalText="ul. Jagodowa 2"
                 icon={CracowIcon}
             />
-            <DeliveryMethodItem
+            <OrderMethodItem
                 onSelectMethod={onSelectMethodDelivery}
                 selectedMethod={selectedMethodDelivery}
                 inputValue="Katowice"

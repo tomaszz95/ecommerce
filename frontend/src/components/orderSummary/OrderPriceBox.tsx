@@ -9,9 +9,18 @@ type ComponentType = {
     link: string
     isFormValid: boolean
     onHandleSubmit: () => void
+    linkText: string
 }
 
-const OrderPriceBox = ({ totalPrice, finalTotalPrice, discount, link, isFormValid, onHandleSubmit }: ComponentType) => {
+const OrderPriceBox = ({
+    totalPrice,
+    finalTotalPrice,
+    discount,
+    link,
+    isFormValid,
+    onHandleSubmit,
+    linkText,
+}: ComponentType) => {
     return (
         <div className={styles.priceContainer}>
             <div className={styles.priceBox}>
@@ -35,7 +44,7 @@ const OrderPriceBox = ({ totalPrice, finalTotalPrice, discount, link, isFormVali
                 className={`${styles.nextButton} ${!isFormValid ? styles.disabled : ''}`}
                 onClick={onHandleSubmit}
             >
-                Go to payment
+                Go to {linkText}
             </Link>
             <p className={styles.priceBoxInfo}>Don't delay, the products in your cart are not reserved.</p>
         </div>

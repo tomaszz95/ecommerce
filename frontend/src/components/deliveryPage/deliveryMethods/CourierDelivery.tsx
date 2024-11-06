@@ -1,4 +1,4 @@
-import DeliveryMethodItem from './DeliveryMethodItem'
+import OrderMethodItem from '../../orderSummary/OrderMethodItem'
 
 import FeedExIcon from '../../../assets/icons/feedex.svg'
 import InpostIcon from '../../../assets/icons/inpost.svg'
@@ -12,7 +12,7 @@ type ComponentType = {
 const CourierDelivery = ({ selectedMethodDelivery, onSelectMethodDelivery }: ComponentType) => {
     return (
         <>
-            <DeliveryMethodItem
+            <OrderMethodItem
                 onSelectMethod={onSelectMethodDelivery}
                 selectedMethod={selectedMethodDelivery}
                 inputValue="FeedEx"
@@ -20,7 +20,7 @@ const CourierDelivery = ({ selectedMethodDelivery, onSelectMethodDelivery }: Com
                 iconsBig={true}
                 iconText="$0"
             />
-            <DeliveryMethodItem
+            <OrderMethodItem
                 onSelectMethod={onSelectMethodDelivery}
                 selectedMethod={selectedMethodDelivery}
                 inputValue="Inpost"
@@ -28,7 +28,7 @@ const CourierDelivery = ({ selectedMethodDelivery, onSelectMethodDelivery }: Com
                 iconsBig={true}
                 iconText="$0"
             />
-            <DeliveryMethodItem
+            <OrderMethodItem
                 onSelectMethod={onSelectMethodDelivery}
                 selectedMethod={selectedMethodDelivery}
                 inputValue="UPS"

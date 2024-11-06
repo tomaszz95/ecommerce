@@ -1,0 +1,32 @@
+.paymentForm {
+    padding: 2rem 1rem;
+    background-color: var(--light-white);
+    border: 1px solid var(--lighter-grey);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 660px;
+}
+
+.paymentForm h2 {
+    font-size: 1.4rem;
+}
+
+.paymentContainer {
+    margin-top: 2rem;
+    border: 1px solid var(--lighter-grey);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (768px < width) {
+    .paymentForm {
+        padding: 2rem;
+    }
+}
+
+@media (1100px < width) {
+    .paymentForm h2 {
+        font-size: 1.6rem;
+    }
+}

@@ -1,6 +1,5 @@
-.summarySection {
-    padding: 2rem 1rem;
-    margin-bottom: 3rem;
+.consentSection {
+    padding: 2rem;
     background-color: var(--light-white);
     border: 1px solid var(--lighter-grey);
     border-radius: 10px;
@@ -8,14 +7,22 @@
     max-width: 660px;
 }
 
+.consentSection label {
+    font-size: 1rem;
+}
+
+.paymentForm h2 {
+    font-size: 1.4rem;
+}
+
 @media (768px < width) {
-    .summarySection {
+    .paymentForm {
         padding: 2rem;
     }
 }
 
 @media (1100px < width) {
-    .summarySection {
-        max-width: 550px;
+    .paymentForm h2 {
+        font-size: 1.6rem;
     }
 }

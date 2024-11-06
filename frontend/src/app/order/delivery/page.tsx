@@ -1,8 +1,8 @@
-import MainLayout from '../../components/layouts/MainLayout'
+import MainLayout from '../../../components/layouts/MainLayout'
 import type { Metadata } from 'next'
-import orderDummy from '../../constans/orderDummy'
-import StepsChart from '../../components/stepsChart/StepsChart'
-import DeliveryView from '../../components/deliveryPage/DeliveryView'
+import orderDummy from '../../../constans/orderDummy'
+import StepsChart from '../../../components/stepsChart/StepsChart'
+import DeliveryView from '../../../components/deliveryPage/DeliveryView'
 
 export const metadata: Metadata = {
     title: 'NeXtPC - Checkout',

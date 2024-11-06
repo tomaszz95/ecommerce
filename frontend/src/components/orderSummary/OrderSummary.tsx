@@ -9,9 +9,11 @@ type ComponentType = {
     isFormValid: boolean
     order: orderType
     onHandleSubmit: () => void
+    link: string
+    linkText: string
 }
 
-const OrderSummary = ({ isFormValid, order, onHandleSubmit }: ComponentType) => {
+const OrderSummary = ({ isFormValid, order, onHandleSubmit, link, linkText }: ComponentType) => {
     return (
         <section className={styles.summarySection}>
             <ul>
@@ -29,7 +31,8 @@ const OrderSummary = ({ isFormValid, order, onHandleSubmit }: ComponentType) => 
                 totalPrice={order.totalPrice}
                 finalTotalPrice={order.finalTotalPrice}
                 discount={order.discount}
-                link="/payment"
+                link={link}
+                linkText={linkText}
                 isFormValid={isFormValid}
                 onHandleSubmit={onHandleSubmit}
             />

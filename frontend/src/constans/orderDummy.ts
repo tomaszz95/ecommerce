@@ -7,6 +7,19 @@ const orderDummy = {
     discount: 2001,
     finalTotalPrice: 19322,
     status: 'pending',
+    delivery: {
+        method: 'Courier',
+        methodWay: 'FeedEx',
+        informations: {
+            name: 'Tomasz Żuber',
+            address: '3 Maja',
+            postalCode: '28-400',
+            city: 'Pińczów',
+            phone: '571385580',
+            email: 'legolas2622@gmail.com',
+        },
+    },
+    payment: 'Online payment',
     products: [
         {
             product: {

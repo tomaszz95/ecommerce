@@ -14,13 +14,13 @@ const BuyMenuCart = ({ totalPrice }: ComponentType) => {
     const [promoInput, setPromoInput] = useState('')
     const [discount, setDiscount] = useState(0)
     const [isValid, setIsValid] = useState(true)
-    const [linkPath, setLinkPath] = useState('/login-or-register')
+    const [linkPath, setLinkPath] = useState('/order/login-or-register')
 
     useEffect(() => {
         const isLogin = localStorage.getItem('isLogin')
         
         if (isLogin === 'true') {
-            setLinkPath('/delivery')
+            setLinkPath('/order/delivery')
         }
     }, [])
 

@@ -51,7 +51,13 @@ const DeliveryView = ({ order }: ComponentType) => {
                 />
                 <DeliveryForm onFormValidationChange={handleFormValidationChange} />
             </div>
-            <OrderSummary isFormValid={isFormValid} order={order} onHandleSubmit={handleSubmit} />
+            <OrderSummary
+                isFormValid={isFormValid}
+                order={order}
+                onHandleSubmit={handleSubmit}
+                link="/order/payment"
+                linkText="payment"
+            />
         </div>
     )
 }

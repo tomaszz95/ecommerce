@@ -90,6 +90,19 @@ export type orderType = {
     discount: number
     finalTotalPrice: number
     status: string
+    delivery: {
+        method: string
+        methodWay: string
+        informations: {
+            name: string
+            address: string
+            postalCode: string
+            city: string
+            phone: string
+            email: string
+        }
+    }
+    payment: string
     products: singleProductType[]
 }
 

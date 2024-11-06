@@ -1,0 +1,46 @@
+.deliverySection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.deliveryText {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+.deliveryText span {
+    color: var(--medium-grey);
+}
+
+.deliveryInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 1rem;
+}
+
+.deliveryInfo img {
+    width: 30px;
+    height: 30px;
+}
+
+.deliveryInfo.iconsBig img {
+    width: 40px;
+    height: 40px;
+}
+
+@media (768px < width) {
+    .deliveryText {
+        gap: 10px;
+        font-size: 1.2rem;
+    }
+
+    .deliveryInfo {
+        gap: 15px;
+    }
+}
