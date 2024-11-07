@@ -1,0 +1,16 @@
+.title {
+    margin-bottom: 1rem;
+}
+
+.bottomText {
+    align-self: flex-end;
+    font-size: 1.1rem;
+}
+
+.badLength {
+    color: var(--danger-color);
+}
+
+.goodLength {
+    color: rgb(17, 235, 53);
+}

@@ -24,7 +24,7 @@ const SummaryView = ({ order }: ComponentType) => {
                 order={order}
                 onHandleSubmit={handleSubmit}
                 link="/order/confirmation"
-                linkText="confirmation"
+                linkText="Buy and pay"
             />
         </div>
     )

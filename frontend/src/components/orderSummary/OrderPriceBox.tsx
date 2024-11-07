@@ -44,7 +44,7 @@ const OrderPriceBox = ({
                 className={`${styles.nextButton} ${!isFormValid ? styles.disabled : ''}`}
                 onClick={onHandleSubmit}
             >
-                Go to {linkText}
+                {linkText === 'Buy and pay' ? 'Buy and pay' : `Go to ${linkText}`}
             </Link>
             <p className={styles.priceBoxInfo}>Don't delay, the products in your cart are not reserved.</p>
         </div>

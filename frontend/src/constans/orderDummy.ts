@@ -1,18 +1,20 @@
+import { orderType } from './../types/types'
 import DummyImage from '../assets/photos/dummyimg.webp'
 import SomeImg from '../assets/photos/gaminghero.jpg'
 
-const orderDummy = {
+const orderDummy: orderType = {
     orderId: '213',
     totalPrice: 21323,
     discount: 2001,
     finalTotalPrice: 19322,
     status: 'pending',
+    comment: '',
     delivery: {
         method: 'Courier',
         methodWay: 'FeedEx',
         informations: {
             name: 'Tomasz Żuber',
-            address: '3 Maja',
+            address: '3 Maja 17/23',
             postalCode: '28-400',
             city: 'Pińczów',
             phone: '571385580',

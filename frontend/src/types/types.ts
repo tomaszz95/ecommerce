@@ -89,6 +89,7 @@ export type orderType = {
     totalPrice: number
     discount: number
     finalTotalPrice: number
+    comment: string
     status: string
     delivery: {
         method: string

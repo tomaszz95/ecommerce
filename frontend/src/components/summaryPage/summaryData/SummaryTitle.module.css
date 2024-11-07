@@ -1,0 +1,28 @@
+.sectionTitle h2 {
+    font-size: 1.4rem;
+}
+
+.sectionTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.editLink {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.editLink:hover {
+    background-color: var(--dirtier-white);
+}
+
+@media (1100px < width) {
+    .sectionTitle h2 {
+        font-size: 1.6rem;
+    }
+}

@@ -1,4 +1,4 @@
-.deliverySection {
+.paymentSection {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -6,36 +6,40 @@
     margin-top: 2rem;
 }
 
-.deliveryText {
+.paymentText {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 10px;
+}
+
+.paymentText b {
     font-size: 1.1rem;
 }
 
-.deliveryText span {
+.paymentText span {
+    font-size: 1rem;
     color: var(--medium-grey);
 }
 
-.deliveryInfo {
+.paymentInfo {
     display: flex;
     align-items: center;
     gap: 10px;
     padding-left: 1rem;
 }
 
-.deliveryInfo img {
-    width: 30px;
-    height: 30px;
+.paymentInfo img {
+    width: 40px;
+    height: 40px;
 }
 
 @media (768px < width) {
-    .deliveryText {
+    .paymentText {
         gap: 10px;
         font-size: 1.2rem;
     }
 
-    .deliveryInfo {
+    .paymentInfo {
         gap: 15px;
     }
 }

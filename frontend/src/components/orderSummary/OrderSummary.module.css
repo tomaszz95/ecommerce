@@ -6,6 +6,7 @@
     border-radius: 10px;
     width: 100%;
     max-width: 660px;
+    align-self: flex-start;
 }
 
 @media (768px < width) {

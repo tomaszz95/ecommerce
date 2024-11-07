@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const SummaryPage = () => {
     return (
         <MainLayout>
-            <StepsChart step="confirmation" />
+            <StepsChart step="summary" />
             <SummaryView order={orderDummy} />
         </MainLayout>
     )

@@ -9,12 +9,14 @@ type ComponentType = {
     onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
     onBlur: () => void
     errorText: string
+    maxLength?: number
 }
 
-const TextArea = ({ label, id, value, hasError, onChange, onBlur, errorText }: ComponentType) => {
+const TextArea = ({ label, id, value, hasError, onChange, onBlur, errorText, maxLength }: ComponentType) => {
     return (
         <div>
             <textarea
+                maxLength={maxLength}
                 id={id}
                 placeholder={label}
                 value={value}

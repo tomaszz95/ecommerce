@@ -7,18 +7,13 @@
     max-width: 660px;
 }
 
-.section h2 {
-    font-size: 1.4rem;
+.sectionComment {
+    display: flex;
+    flex-direction: column;
 }
 
 @media (768px < width) {
     .section {
         padding: 2rem;
-    }
-}
-
-@media (1100px < width) {
-    .section h2 {
-        font-size: 1.6rem;
     }
 }

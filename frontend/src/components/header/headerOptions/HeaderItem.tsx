@@ -22,10 +22,14 @@ const HeaderItem = ({ icon, text, href }: ComponentType) => {
         if (!isMobileDevice()) {
             setIsProfileMenuOpen(true)
         }
+        return
     }
 
     const closeProfileMenuHandler = () => {
-        setIsProfileMenuOpen(false)
+        if (!isMobileDevice()) {
+            setIsProfileMenuOpen(false)
+        }
+        return
     }
 
     const switchProfileMenuOpen = () => {

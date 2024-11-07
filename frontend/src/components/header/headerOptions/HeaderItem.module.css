@@ -48,11 +48,11 @@
     }
 }
 
-@media (992px < width) {
+@media (1100px < width) {
     .headerItem {
         margin-left: 1rem;
         padding: 0.6rem;
-        min-width: 135px;
+        min-width: 115px;
     }
 
     .headerItem img {

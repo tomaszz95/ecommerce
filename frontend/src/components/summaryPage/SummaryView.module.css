@@ -22,5 +22,10 @@
         flex-direction: row;
         align-items: center;
         margin-bottom: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .summaryContainer {
+        margin-bottom: 3rem;
     }
 }

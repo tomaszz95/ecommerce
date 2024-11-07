@@ -17,7 +17,6 @@ const PaymentView = ({ order }: ComponentType) => {
 
     const selectPaymentHandler = (value: string) => {
         setSelectedPayment(value)
-        console.log(value)
     }
 
     const acceptRegulationsHandler = (value: boolean) => {

@@ -5,7 +5,7 @@ type ComponentType = {
     step: string
 }
 
-const stepLabels = ['cart', 'delivery', 'payment', 'confirmation']
+const stepLabels = ['cart', 'delivery', 'payment', 'summary']
 
 const StepsChart = ({ step }: ComponentType) => {
     const currentStepIndex = stepLabels.indexOf(step)
