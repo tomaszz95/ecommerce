@@ -5,7 +5,7 @@ import StepsChart from '../../../components/stepsChart/StepsChart'
 import DeliveryView from '../../../components/deliveryPage/DeliveryView'
 
 export const metadata: Metadata = {
-    title: 'NeXtPC - Checkout',
+    title: 'NeXtPC - Delivery',
     description: 'neXtPC app homepage',
 }
 

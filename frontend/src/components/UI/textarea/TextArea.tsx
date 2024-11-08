@@ -5,10 +5,10 @@ type ComponentType = {
     label: string
     id: string
     value: string
-    hasError: boolean
+    hasError?: boolean
     onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
-    onBlur: () => void
-    errorText: string
+    onBlur?: () => void
+    errorText?: string
     maxLength?: number
 }
 

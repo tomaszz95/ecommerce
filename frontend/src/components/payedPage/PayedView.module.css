@@ -1,4 +1,4 @@
-.confirmationSection {
+.payedSection {
     padding: 1rem 2rem;
     margin: 3rem 0;
     width: 100%;
@@ -8,7 +8,7 @@
     align-items: center;
 }
 
-.confirmationContainer {
+.payedContainer {
     border-radius: 10px;
     max-width: 660px;
     gap: 30px;
@@ -20,16 +20,13 @@
     align-items: center;
 }
 
-.confirmationContainer a {
+.payedContainer a {
+    text-decoration: underline;
     color: var(--main-color);
     font-weight: bold;
 }
 
-.confirmationContainer a:hover {
-    text-decoration: underline;
-}
-
-.confirmationContainer .backButton {
+.payedContainer .backButton {
     text-decoration: none;
     font-weight: normal;
     position: relative;
@@ -41,10 +38,6 @@
     border: none;
     border-radius: 10px;
     overflow: hidden;
-}
-
-.confirmationContainer .backButton:hover {
-    text-decoration: none;
 }
 
 .backButton::before {
@@ -67,8 +60,13 @@
     opacity: 1;
 }
 
+.payedInfo {
+    font-size: 0.9rem;
+    color: var(--medium-grey);
+}
+
 @media (768px < width) {
-    .confirmationSection {
+    .payedSection {
         margin: 6rem 0;
     }
 }

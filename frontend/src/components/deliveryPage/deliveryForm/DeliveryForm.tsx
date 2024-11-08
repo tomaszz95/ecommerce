@@ -6,7 +6,6 @@ import Input from '../../UI/inputs/Input'
 import styles from './DeliveryForm.module.css'
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const alphanumericWithSpaceRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d\s]+$/
 const numericRegex = /^\d+$/
 
 type ComponentType = {
@@ -30,7 +29,7 @@ const DeliveryForm = ({ onFormValidationChange }: ComponentType) => {
         valueIsValid: streetIsValid,
         valueChangeHandler: streetChangeHandler,
         inputBlurHandler: streetBlurHandler,
-    } = useInput((value) => alphanumericWithSpaceRegex.test(value.trim()))
+    } = useInput((value) => value.trim() !== '')
 
     const {
         value: enteredPostalCode,
@@ -103,7 +102,7 @@ const DeliveryForm = ({ onFormValidationChange }: ComponentType) => {
                 hasError={streetInputHasError}
                 onChange={streetChangeHandler}
                 onBlur={streetBlurHandler}
-                errorText="This field must contain at least one letter and one number."
+                errorText="This field cannot be empty."
             />
             <Input
                 label="Postal Code"
