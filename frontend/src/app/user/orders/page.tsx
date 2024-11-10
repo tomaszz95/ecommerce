@@ -1,5 +1,7 @@
+import MainLayout from '../../../components/layouts/MainLayout'
+
 const UserOrdersPage = () => {
-    return <div>UserOrderListPage</div>
+    return <MainLayout>UserOrdersPage</MainLayout>
 }
 
 export default UserOrdersPage

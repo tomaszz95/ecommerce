@@ -1,5 +1,7 @@
+import MainLayout from '../../../components/layouts/MainLayout'
+
 const UserFavoritesPage = () => {
-    return <div>UserFavoritePage</div>
+    return <MainLayout>UserFavoritesPage</MainLayout>
 }
 
 export default UserFavoritesPage

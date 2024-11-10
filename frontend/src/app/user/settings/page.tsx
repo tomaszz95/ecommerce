@@ -1,5 +1,7 @@
+import MainLayout from '../../../components/layouts/MainLayout'
+
 const UserSettingsPage = () => {
-    return <div>UserSettingsPage</div>
+    return <MainLayout>UserPage</MainLayout>
 }
 
 export default UserSettingsPage

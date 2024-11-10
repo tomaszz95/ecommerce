@@ -1,5 +1,7 @@
-const UserOrderPage = () => {
-    return <div>UserOrderPage</div>
+import MainLayout from '../../../../components/layouts/MainLayout'
+
+const UserSingleOrderPage = () => {
+    return <MainLayout>UserSingleOrderPage</MainLayout>
 }
 
-export default UserOrderPage
+export default UserSingleOrderPage
