@@ -1,0 +1,19 @@
+.settings {
+    width: 100%;
+    margin: 3rem auto 4rem;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 1440px;
+}
+
+@media (1100px < width) {
+    .settings {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 70px;
+    }
+}

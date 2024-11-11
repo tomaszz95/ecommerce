@@ -6,7 +6,6 @@ import Input from '../../UI/inputs/Input'
 import styles from './DeliveryForm.module.css'
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const numericRegex = /^\d+$/
 
 type ComponentType = {
     onFormValidationChange: (isValid: boolean, {}) => void
@@ -37,7 +36,7 @@ const DeliveryForm = ({ onFormValidationChange }: ComponentType) => {
         valueIsValid: postalCodeIsValid,
         valueChangeHandler: postalCodeChangeHandler,
         inputBlurHandler: postalCodeBlurHandler,
-    } = useInput((value) => numericRegex.test(value.trim()))
+    } = useInput((value) => value.trim() !== '')
 
     const {
         value: enteredCity,
@@ -53,7 +52,7 @@ const DeliveryForm = ({ onFormValidationChange }: ComponentType) => {
         valueIsValid: phoneIsValid,
         valueChangeHandler: phoneChangeHandler,
         inputBlurHandler: phoneBlurHandler,
-    } = useInput((value) => numericRegex.test(value.trim()))
+    } = useInput((value) => value.trim() !== '')
 
     const {
         value: enteredEmail,
@@ -93,7 +92,6 @@ const DeliveryForm = ({ onFormValidationChange }: ComponentType) => {
                 onChange={nameChangeHandler}
                 onBlur={nameBlurHandler}
                 errorText="This field must contain only letters."
-                type="text"
             />
             <Input
                 label="Street and House/Apartment Number"
@@ -112,7 +110,6 @@ const DeliveryForm = ({ onFormValidationChange }: ComponentType) => {
                 onChange={postalCodeChangeHandler}
                 onBlur={postalCodeBlurHandler}
                 errorText="Postal code must be numeric."
-                type="number"
             />
             <Input
                 label="City"

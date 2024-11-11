@@ -22,6 +22,7 @@ const Input = ({ label, id, type = 'text', value, hasError, onChange, onBlur, er
                 value={value}
                 onChange={onChange}
                 onBlur={onBlur}
+                autoComplete={type === 'password' ? 'on' : 'off'}
                 className={`${styles.input} ${hasError ? styles.error : ''}`}
             />
             {hasError && <InputError>{errorText}</InputError>}

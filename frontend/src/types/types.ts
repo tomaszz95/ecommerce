@@ -126,3 +126,20 @@ export type singleProductType = {
     count: number
     totalProductPrice: number
 }
+
+// User
+
+export type userType = {
+    userId: string
+    credentials: {
+        name: string
+        password: string
+        email: string
+    }
+    informations: {
+        address: string
+        postalCode: string
+        city: string
+        phone: string
+    }
+}

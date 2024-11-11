@@ -13,7 +13,7 @@ type ComponentType = {
 const ProductDetails = ({ product }: ComponentType) => {
     return (
         <div className={styles.productDetails}>
-            <ProductPhotoGallery photos={product.images} productName={product.name} />
+            <ProductPhotoGallery photos={product.images} productName={product.name} productId={product.prodId} />
             <ProductDescription
                 company={product.company}
                 description={product.description}

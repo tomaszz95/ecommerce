@@ -16,13 +16,14 @@ import styles from './PhotoCarousel.module.css'
 type ComponentType = {
     photos: StaticImageData[]
     productName: string
+    productId: string
 }
 
-const PhotoCarousel = ({ photos, productName }: ComponentType) => {
+const PhotoCarousel = ({ photos, productName, productId }: ComponentType) => {
     return (
         <Slider {...photoSliderSettings} className={styles.carousel}>
             {photos.map((item, index) => (
-                <SinglePhoto photo={item} key={index} productName={productName} />
+                <SinglePhoto photo={item} key={index} productName={productName} productId={productId} />
             ))}
         </Slider>
     )

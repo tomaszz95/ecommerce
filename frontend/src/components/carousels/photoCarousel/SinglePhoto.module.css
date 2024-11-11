@@ -1,3 +1,7 @@
+.carouselItem {
+    position: relative;
+}
+
 .photo {
     max-width: 350px;
     width: 100%;

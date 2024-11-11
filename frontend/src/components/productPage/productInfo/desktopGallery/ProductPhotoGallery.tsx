@@ -8,13 +8,14 @@ import styles from './ProductPhotoGallery.module.css'
 type ComponentType = {
     photos: StaticImageData[]
     productName: string
+    productId: string
 }
 
-const ProductPhotoGallery = ({ photos, productName }: ComponentType) => {
+const ProductPhotoGallery = ({ photos, productName, productId }: ComponentType) => {
     return (
         <div className={styles.photoGallery}>
-            <PhotoCarousel photos={photos} productName={productName} />
-            <DesktopGallery photos={photos} productName={productName} />
+            <PhotoCarousel photos={photos} productName={productName} productId={productId} />
+            <DesktopGallery photos={photos} productName={productName} productId={productId} />
         </div>
     )
 }

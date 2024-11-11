@@ -24,7 +24,7 @@ const productsOpinions: productOpinionType[] = [
                 dislikes: 1,
             },
             {
-                opinionId: '2344',
+                opinionId: '23424',
                 opinionAuthor: 'Some author 2',
                 opinionText:
                     'Some text Some textSome text Some text Some text Some text Some textSome textSome text Some textSome textSome textSome textSome text Some textvvvvvSome textSome textSome text',
@@ -42,7 +42,7 @@ const productsOpinions: productOpinionType[] = [
                 dislikes: 1,
             },
             {
-                opinionId: '2344',
+                opinionId: '23144',
                 opinionAuthor: 'Some author 2',
                 opinionText:
                     'Some text Some textSome text Some text Some text Some text Some textSome textSome text Some textSome textSome textSome textSome text Some textvvvvvSome textSome textSome text',
@@ -59,7 +59,7 @@ const productsOpinions: productOpinionType[] = [
         opinionsAverage: 4,
         opinions: [
             {
-                opinionId: '233',
+                opinionId: '2033',
                 opinionAuthor: 'Some author',
                 opinionText:
                     'Some text Some textSome text Some text Some text Some text Some text Some textv Some textSome textSome textSome textSome text Some textSome textSome text Some textSome textSome textSome textSome text Some textvvvvvSome textSome textSome text',
