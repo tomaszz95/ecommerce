@@ -1,0 +1,19 @@
+.orderSection {
+    margin: 3rem auto;
+    width: 100%;
+    max-width: 1440px;
+    padding: 1rem;
+}
+
+.orderSection h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.errorText {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    margin: 5rem 0;
+}

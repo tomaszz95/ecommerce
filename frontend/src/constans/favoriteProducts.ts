@@ -18,7 +18,7 @@ const favoriteProducts = [
             isPromotion: true,
             promotionPercent: 35,
         },
-        recommended: true,
+        recommended: false,
         stock: 32,
     },
     {

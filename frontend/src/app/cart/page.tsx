@@ -11,11 +11,15 @@ export const metadata: Metadata = {
 }
 
 const CartPage = () => {
+    const isEmptyObject = (obj: object) => Object.keys(obj).length === 0
+
     return (
         <MainLayout>
             <StepsChart step="cart" />
             <CartView order={orderDummy} />
-            <SimilarCarousel productCategory={orderDummy.products[0].product.category.name} />
+            {!isEmptyObject(orderDummy) && (
+                <SimilarCarousel productCategory={orderDummy.products[0].product.category.name} />
+            )}
         </MainLayout>
     )
 }

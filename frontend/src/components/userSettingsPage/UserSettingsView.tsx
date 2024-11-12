@@ -11,9 +11,12 @@ type ComponentType = {
 
 const UserSettingsView = ({ userData }: ComponentType) => {
     return (
-        <div className={styles.settings}>
-            <UserSettingsForm userData={userData} />
-            <UserSettingsPassword password={userData.credentials.password} />
+        <div className={styles.container}>
+            <h1>Your settings</h1>
+            <div className={styles.settings}>
+                <UserSettingsForm userData={userData} />
+                <UserSettingsPassword password={userData.credentials.password} />
+            </div>
         </div>
     )
 }

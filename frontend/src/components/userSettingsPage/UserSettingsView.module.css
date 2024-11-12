@@ -1,7 +1,14 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem auto;
+}
+
 .settings {
     width: 100%;
-    margin: 3rem auto 4rem;
-    padding: 0 1rem;
+    padding: 3rem 1rem;
     display: flex;
     justify-content: center;
     align-items: center;

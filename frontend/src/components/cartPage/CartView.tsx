@@ -9,10 +9,18 @@ type ComponentType = {
 }
 
 const CartView = ({ order }: ComponentType) => {
+    const isEmptyObject = (obj: object) => Object.keys(obj).length === 0
+
     return (
         <div className={styles.order}>
-            <OrderCart order={order} />
-            <BuyMenuCart totalPrice={order.totalPrice} />
+            {!isEmptyObject(order) ? (
+                <>
+                    <OrderCart order={order} />
+                    <BuyMenuCart totalPrice={order.totalPrice} />
+                </>
+            ) : (
+                <p className={styles.errorText}>No started order yet</p>
+            )}
         </div>
     )
 }
