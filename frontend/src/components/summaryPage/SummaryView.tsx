@@ -19,6 +19,7 @@ const SummaryView = ({ order }: ComponentType) => {
             <div className={styles.summaryContainer}>
                 <SummaryData order={order} />
             </div>
+            
             <OrderSummary
                 isFormValid={true}
                 order={order}

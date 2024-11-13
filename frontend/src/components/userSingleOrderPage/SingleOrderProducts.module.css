@@ -1,0 +1,42 @@
+.singleBox {
+    padding: 1rem;
+    margin: 2rem 0;
+    background-color: var(--light-white);
+    border-radius: 10px;
+    border: 2px solid var(--dirtier-white);
+    width: 100%;
+    max-width: 660px;
+}
+
+.priceContainer {
+    margin: 2rem 0 0;
+}
+
+.priceBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 0.6rem;
+}
+
+.priceBox span {
+    font-size: 1.1rem;
+}
+
+.priceBox b {
+    font-size: 1.2rem;
+}
+
+.totalPrice {
+    border-top: 1px solid var(--lighter-grey);
+    padding-top: 1rem;
+}
+
+@media (1100px < width) {
+    .singleBox {
+        align-self: flex-start;
+        margin-top: 0;
+        padding: 2rem;
+    }
+}

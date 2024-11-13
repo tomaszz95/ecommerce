@@ -8,21 +8,21 @@ const ordersDummy: orderType[] = [
         totalPrice: 21323,
         discount: 2001,
         finalTotalPrice: 19322,
-        status: 'pending',
+        status: 'Pending',
         comment: '',
         delivery: {
-            method: 'Courier',
-            methodWay: 'FeedEx',
+            method: '',
+            methodWay: '',
             informations: {
-                name: 'Tomasz Żuber',
-                address: '3 Maja 17/23',
-                postalCode: '28-400',
-                city: 'Pińczów',
-                phone: '571385580',
-                email: 'legolas2622@gmail.com',
+                name: '',
+                address: '',
+                postalCode: '',
+                city: '',
+                phone: '',
+                email: '',
             },
         },
-        payment: 'Online payment',
+        payment: '',
         products: [
             {
                 product: {
@@ -85,10 +85,10 @@ const ordersDummy: orderType[] = [
     },
     {
         orderId: '2133',
-        totalPrice: 21323,
-        discount: 2001,
-        finalTotalPrice: 19322,
-        status: 'pending',
+        totalPrice: 2132,
+        discount: 200,
+        finalTotalPrice: 1932,
+        status: 'Payed',
         comment: '',
         delivery: {
             method: 'Courier',

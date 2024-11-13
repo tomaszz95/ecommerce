@@ -1,3 +1,5 @@
+'use client'
+
 import styles from './SummaryData.module.css'
 
 import { orderType } from '../../../types/types'
@@ -10,26 +12,44 @@ import SummaryComment from './SummaryComment'
 
 type ComponentType = {
     order: orderType
+    singleOrder?: boolean
 }
 
-const SummaryData = ({ order }: ComponentType) => {
+const SummaryData = ({ order, singleOrder = false }: ComponentType) => {
+    const isDeliveryChosen = order.delivery.method !== '' && order.delivery.methodWay !== ''
+    const isAddressChosen = order.delivery.informations.address !== ''
+
     return (
         <>
             <section className={styles.section}>
-                <SummaryTitle title="Delivery method" link="/order/delivery" />
-                <SummaryDelivery deliveryMethod={order.delivery.method} deliveryWay={order.delivery.methodWay} />
+                <SummaryTitle title="Delivery method" link="/order/delivery" canEdit={order.status === 'Pending'} />
+                <SummaryDelivery
+                    deliveryMethod={order.delivery.method}
+                    deliveryWay={order.delivery.methodWay}
+                    isDeliveryChosen={isDeliveryChosen}
+                />
             </section>
             <section className={styles.section}>
-                <SummaryTitle title="Delivery address" link="/order/delivery" />
-                <SummaryAddress summaryAddress={order.delivery.informations} />
+                <SummaryTitle title="Delivery address" link="/order/delivery" canEdit={order.status === 'Pending'} />
+                <SummaryAddress
+                    summaryAddress={order.delivery.informations}
+                    singleOrder={singleOrder}
+                    isAddressChosen={isAddressChosen}
+                />
             </section>
             <section className={styles.section}>
-                <SummaryTitle title="Payment method" link="/order/payment" />
+                <SummaryTitle
+                    title="Payment method"
+                    link="/order/payment"
+                    canEdit={order.status === 'Pending' && isDeliveryChosen && isAddressChosen}
+                />
                 <SummaryPayment payment={order.payment} />
             </section>
-            <section className={`${styles.sectionComment} ${styles.section}`}>
-                <SummaryComment />
-            </section>
+            {!singleOrder && (
+                <section className={`${styles.sectionComment} ${styles.section}`}>
+                    <SummaryComment />
+                </section>
+            )}
         </>
     )
 }

@@ -11,7 +11,7 @@
 .editLink {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     padding: 0.5rem 1rem;
     border-radius: 10px;
     transition: background-color 0.3s;

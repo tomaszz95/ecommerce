@@ -11,6 +11,8 @@ type ComponentType = {
 }
 
 const SummaryPayment = ({ payment }: ComponentType) => {
+    const isChosen = payment !== ''
+
     const deliveryIcon =
         payment === 'Online payment'
             ? OnlinePaymentIcon
@@ -32,13 +34,21 @@ const SummaryPayment = ({ payment }: ComponentType) => {
     return (
         <div className={styles.paymentSection}>
             <div className={styles.paymentText}>
-                <b>{payment}</b>
-                <span>{deliveryText}</span>
+                {isChosen ? (
+                    <>
+                        <b>{payment}</b>
+                        <span>{deliveryText}</span>
+                    </>
+                ) : (
+                    <b>Not selected yet</b>
+                )}
             </div>
-            <div className={styles.paymentInfo}>
-                <Image src={deliveryIcon} alt="" />
-                <span>$0</span>
-            </div>
+            {isChosen && (
+                <div className={styles.paymentInfo}>
+                    <Image src={deliveryIcon} alt="" />
+                    <span>$0</span>
+                </div>
+            )}
         </div>
     )
 }

@@ -7,7 +7,7 @@ const orderDummy: orderType = {
     totalPrice: 21323,
     discount: 2001,
     finalTotalPrice: 19322,
-    status: 'pending',
+    status: 'Pending',
     comment: '',
     delivery: {
         method: 'Courier',

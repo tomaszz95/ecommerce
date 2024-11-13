@@ -1,0 +1,63 @@
+.orderContainer {
+    margin: 1.5rem auto;
+    width: 100%;
+    max-width: 1440px;
+    padding: 1rem;
+}
+
+.orderContainer h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.orderContainer h2 {
+    margin-top: 0.6rem;
+    text-align: center;
+}
+
+.singleOrderMain {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.orderData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.notSet {
+    color: var(--danger-color);
+}
+
+.set {
+    color: rgb(4, 145, 23);
+}
+
+@media (1100px < width) {
+    .orderData {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 30px;
+    }
+
+    .singleOrderMain {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 3rem;
+        margin-bottom: 3rem;
+    }
+}
+@media (768px < width) {
+    .orderContainer {
+        margin: 3rem auto;
+    }
+}

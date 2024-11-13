@@ -6,16 +6,19 @@ import Link from 'next/link'
 type ComponentType = {
     title: string
     link: string
+    canEdit: boolean
 }
 
-const SummaryTitle = ({ title, link }: ComponentType) => {
+const SummaryTitle = ({ title, link, canEdit }: ComponentType) => {
     return (
         <div className={styles.sectionTitle}>
             <h2>{title}</h2>
-            <Link href={link} className={styles.editLink}>
-                <Image src={PenIcon} alt="" />
-                <span>Edit</span>
-            </Link>
+            {canEdit && (
+                <Link href={link} className={styles.editLink}>
+                    <Image src={PenIcon} alt="" />
+                    <span>Edit</span>
+                </Link>
+            )}
         </div>
     )
 }

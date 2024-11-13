@@ -8,20 +8,30 @@ import styles from './SummaryDelivery.module.css'
 type ComponentType = {
     deliveryMethod: string
     deliveryWay: string
+    isDeliveryChosen: boolean
 }
 
-const SummaryDelivery = ({ deliveryMethod, deliveryWay }: ComponentType) => {
+const SummaryDelivery = ({ deliveryMethod, deliveryWay, isDeliveryChosen }: ComponentType) => {
     const deliveryIcon = deliveryMethod === 'Courier' ? TruckIcon : ShopIcon
 
     return (
         <div className={styles.deliverySection}>
             <div className={styles.deliveryText}>
-                <b>{deliveryMethod} -</b> <span>{deliveryWay}</span>
+                {isDeliveryChosen ? (
+                    <>
+                        <b>{deliveryMethod} -</b>
+                        <span>{deliveryWay}</span>
+                    </>
+                ) : (
+                    <b>Not selected yet</b>
+                )}
             </div>
-            <div className={styles.deliveryInfo}>
-                <Image src={deliveryIcon} alt="" />
-                <span>$0</span>
-            </div>
+            {isDeliveryChosen && (
+                <div className={styles.deliveryInfo}>
+                    {deliveryIcon && <Image src={deliveryIcon} alt="" />}
+                    <span>$0</span>
+                </div>
+            )}
         </div>
     )
 }
