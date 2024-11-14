@@ -1,4 +1,5 @@
-import Link from 'next/link'
+import HightlightButton from '../UI/buttons/HightlightButton'
+
 import styles from './PayedView.module.css'
 
 const PayedView = () => {
@@ -8,10 +9,10 @@ const PayedView = () => {
                 <h2>Thank you for your payment</h2>
                 <p>Your payment has been accepted. </p>
                 <p>The next step is to pack the product and ship it to you.</p>
-                <p className={styles.payedInfo}>(This page is only a preview page, payment and redirection itself has not been created).</p>
-                <Link href="/" className={styles.backButton}>
-                    Go back
-                </Link>
+                <p className={styles.payedInfo}>
+                    (This page is only a preview page, payment and redirection itself has not been created).
+                </p>
+                <HightlightButton href="/">Go back</HightlightButton>
             </div>
         </section>
     )

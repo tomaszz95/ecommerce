@@ -1,11 +1,11 @@
 'use client'
 
-import styles from './OrderCart.module.css'
+import OrderCartHeading from './OrderCartHeading'
+import OrderCartItem from './orderItem/OrderCartItem'
 
 import { orderType } from '../../../types/types'
 
-import OrderCartHeading from './OrderCartHeading'
-import OrderCartItem from './orderItem/OrderCartItem'
+import styles from './OrderCart.module.css'
 
 type ComponentType = {
     order: orderType

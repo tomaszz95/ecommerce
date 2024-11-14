@@ -1,4 +1,5 @@
 import Link from 'next/link'
+
 import styles from './BuyAsGuest.module.css'
 
 const BuyAsGuest = () => {
@@ -9,7 +10,9 @@ const BuyAsGuest = () => {
                 If you do not log in, you will not have access to your order history and discounts that we have prepared
                 for you.
             </p>
-            <Link href="/delivery">Continue as a guest</Link>
+            <Link href="/order/delivery" aria-label="Go to delivery page">
+                Continue as a guest
+            </Link>
         </section>
     )
 }

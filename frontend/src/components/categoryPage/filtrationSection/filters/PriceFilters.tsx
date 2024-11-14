@@ -16,6 +16,7 @@ const PriceFilters = ({ filters, onFilterChange }: ComponentType) => {
                     placeholder="from"
                     value={filters.priceFrom ?? ''}
                     onChange={(e) => onFilterChange({ priceFrom: Number(e.target.value) || null })}
+                    aria-label="Lowest price"
                 />
             </div>
             <div className={styles.priceFiltersValues}>
@@ -24,6 +25,7 @@ const PriceFilters = ({ filters, onFilterChange }: ComponentType) => {
                     placeholder="to"
                     value={filters.priceTo ?? ''}
                     onChange={(e) => onFilterChange({ priceTo: Number(e.target.value) || null })}
+                    aria-label="Highest price"
                 />
             </div>
         </div>

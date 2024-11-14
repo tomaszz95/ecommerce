@@ -10,7 +10,7 @@ const FooterNav = () => {
             <p>Menu</p>
             <div className={styles.linkBox}>
                 {navItems.map((item) => (
-                    <Link href={item.link} key={item.link}>
+                    <Link href={item.link} key={item.link} aria-label={`Go to ${item.name} shop page`}>
                         {item.name}
                     </Link>
                 ))}

@@ -21,7 +21,7 @@
     width: 100%;
 }
 
-.formContainer a {
+.formLink {
     padding: 0.5rem 1rem;
     align-self: start;
     order: -1;
@@ -30,7 +30,7 @@
     transition: background-color 0.3s;
 }
 
-.formContainer a:hover {
+.formLink:hover {
     background-color: var(--lighter-grey);
 }
 

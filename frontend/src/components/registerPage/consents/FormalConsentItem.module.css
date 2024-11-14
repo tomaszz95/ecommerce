@@ -8,9 +8,9 @@
 }
 
 .consentItem label {
+    font-size: 0.9rem;
     color: var(--pure-black);
     transition: color 0.2s;
-    font-size: 0.9rem;
     cursor: pointer;
 }
 

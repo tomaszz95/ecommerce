@@ -1,7 +1,7 @@
 .helpQuestionError {
     padding: 2rem;
-    text-align: center;
     font-size: 1.6rem;
+    text-align: center;
     color: var(--danger-color);
 }
 
@@ -14,13 +14,13 @@
 }
 
 .questionTitle {
-    font-size: 1rem;
-    font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0;
     padding: 1rem 0;
+    font-size: 1rem;
+    font-weight: bold;
     transition: color 0.3s;
     border-bottom: 1px solid var(--light-grey);
 }
@@ -30,10 +30,10 @@
 }
 
 .questionTitle::after {
+    margin-left: 0.6rem;
     content: '▼';
     font-size: 16px;
     transition: transform 0.3s ease;
-    margin-left: 0.6rem;
 }
 
 .questionItem.open .questionTitle::after {
@@ -41,8 +41,8 @@
 }
 
 .answerText {
-    font-size: 1rem;
     max-height: 0;
+    font-size: 1rem;
     overflow: hidden;
     opacity: 0;
     transition:
@@ -53,7 +53,7 @@
 }
 
 .questionItem.open .answerText {
+    padding: 2rem 1rem;
     max-height: 200px;
     opacity: 1;
-    padding: 2rem 1rem;
 }

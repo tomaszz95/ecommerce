@@ -1,7 +1,7 @@
+import Image from 'next/image'
+
 import TruckIcon from '../../../assets/icons/truck.svg'
 import ShopIcon from '../../../assets/icons/shop.svg'
-
-import Image from 'next/image'
 
 import styles from './SummaryDelivery.module.css'
 

@@ -20,46 +20,6 @@
     align-items: center;
 }
 
-.payedContainer a {
-    text-decoration: underline;
-    color: var(--main-color);
-    font-weight: bold;
-}
-
-.payedContainer .backButton {
-    text-decoration: none;
-    font-weight: normal;
-    position: relative;
-    padding: 1rem 2rem;
-    width: 200px;
-    font-size: 1.1rem;
-    color: var(--pure-white);
-    background-color: var(--main-color);
-    border: none;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.backButton::before {
-    content: '';
-    position: absolute;
-    top: -30px;
-    left: -130px;
-    display: block;
-    height: 180%;
-    width: 100px;
-    background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
-    transform: rotate(20deg);
-    transition: all 0.5s;
-    opacity: 0;
-    z-index: 1;
-}
-
-.backButton:hover::before {
-    left: 130%;
-    opacity: 1;
-}
-
 .payedInfo {
     font-size: 0.9rem;
     color: var(--medium-grey);

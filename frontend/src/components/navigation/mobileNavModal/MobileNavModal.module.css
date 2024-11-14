@@ -30,8 +30,8 @@
 }
 
 .modalHeader span {
-    font-size: 1.5rem;
     padding: 0.6rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--pure-white);
 }

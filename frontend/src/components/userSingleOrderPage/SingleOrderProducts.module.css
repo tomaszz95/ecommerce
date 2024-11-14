@@ -1,11 +1,11 @@
 .singleBox {
     padding: 1rem;
     margin: 2rem 0;
+    width: 100%;
+    max-width: 660px;
     background-color: var(--light-white);
     border-radius: 10px;
     border: 2px solid var(--dirtier-white);
-    width: 100%;
-    max-width: 660px;
 }
 
 .priceContainer {
@@ -29,8 +29,8 @@
 }
 
 .totalPrice {
-    border-top: 1px solid var(--lighter-grey);
     padding-top: 1rem;
+    border-top: 1px solid var(--lighter-grey);
 }
 
 @media (1100px < width) {

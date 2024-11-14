@@ -6,9 +6,9 @@
     max-height: 500px;
     min-width: 100%;
     max-width: 100%;
+    font-size: 0.9rem;
     border-radius: 10px;
     border: 1px solid var(--lighter-grey);
-    font-size: 0.9rem;
 }
 
 .textarea.error {

@@ -1,4 +1,5 @@
 import countPromotionPrice from '../../helpers/countPromotionPrice'
+
 import styles from './CurrentPrice.module.css'
 
 type ComponentType = {

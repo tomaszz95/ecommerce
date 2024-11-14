@@ -31,6 +31,7 @@ const OrderMethodItem = ({
                 type="radio"
                 checked={selectedMethod === inputValue}
                 onChange={() => onSelectMethod(inputValue)}
+                aria-label="Click to check"
             />
             <div className={styles.methodsTitle}>
                 <div

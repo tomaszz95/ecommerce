@@ -8,8 +8,8 @@
 }
 
 .loginForm h1 {
-    font-size: 1.8rem;
     margin-bottom: 0.4rem;
+    font-size: 1.8rem;
 }
 
 .serverError {
@@ -21,7 +21,7 @@
 
 @media (768px < width) {
     .loginForm h1 {
-        font-size: 2rem;
         margin-bottom: 0.6rem;
+        font-size: 2rem;
     }
 }

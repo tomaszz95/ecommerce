@@ -1,13 +1,15 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'
 import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+
+import HightlightButton from '../UI/buttons/HightlightButton'
+
 import styles from './LogoutView.module.css'
 
 const LogoutView = () => {
     const router = useRouter()
-    
+
     useEffect(() => {
         const timer = setTimeout(() => {
             router.push('/')
@@ -27,9 +29,7 @@ const LogoutView = () => {
                     shared or public computer.
                 </p>
                 <p>You’ll be redirected to nextpc.com in 30 seconds.</p>
-                <Link href="/" className={styles.goBackButton} onClick={() => router.push('/')}>
-                    Go Now
-                </Link>
+                <HightlightButton href="/">Go Now</HightlightButton>
             </div>
         </section>
     )

@@ -1,7 +1,8 @@
+import StatisticsView from './StatisticsView'
+
 import { productOpinionType } from '../../../../types/types'
 
 import styles from './OpinionsStatistics.module.css'
-import StatisticsView from './StatisticsView'
 
 type ComponentType = {
     opinions: productOpinionType

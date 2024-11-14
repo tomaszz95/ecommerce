@@ -1,9 +1,9 @@
 .orderItem {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
     position: relative;
+    display: flex;
+    flex-direction: column;
     padding: 2rem 1rem;
+    width: 100%;
 }
 
 .orderItemTrash {
@@ -35,8 +35,8 @@
 
     .orderItemPrice p,
     .orderItemValue p {
-        font-size: 1.1rem;
         margin-bottom: 0.5rem;
+        font-size: 1.1rem;
     }
 
     .orderItemPrice span,

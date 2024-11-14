@@ -1,6 +1,8 @@
-import styles from './FavoriteList.module.css'
-import { productType } from '../../types/types'
 import ProductsListItem from '../categoryPage/productsList/ProductsListItem'
+
+import { productType } from '../../types/types'
+
+import styles from './FavoriteList.module.css'
 
 type ComponentType = {
     favorites: productType[]

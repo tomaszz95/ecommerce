@@ -1,14 +1,14 @@
-import Image from 'next/image'
-
-import { topBarItemType } from '../../types/types'
+import Image, { StaticImageData } from 'next/image'
 
 import styles from './TopBarItem.module.css'
 
-const TopBarItem = ({ icon, text }: topBarItemType) => {
+type ComponentType = { children: React.ReactNode; icon: StaticImageData }
+
+const TopBarItem = ({ icon, children }: ComponentType) => {
     return (
         <div className={styles.topbarItem}>
             <Image src={icon} alt="" />
-            <p>{text}</p>
+            <p>{children}</p>
         </div>
     )
 }

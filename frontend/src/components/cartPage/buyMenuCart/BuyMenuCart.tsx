@@ -1,10 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import styles from './BuyMenuCart.module.css'
-import promoCodes from '../../../constans/promoCodes'
+
+import HightlightButton from '../../../components/UI/buttons/HightlightButton'
 import PromotionCode from './PromotionCode'
+
+import promoCodes from '../../../constans/promoCodes'
+
+import styles from './BuyMenuCart.module.css'
 
 type ComponentType = {
     totalPrice: number
@@ -18,7 +21,7 @@ const BuyMenuCart = ({ totalPrice }: ComponentType) => {
 
     useEffect(() => {
         const isLogin = localStorage.getItem('isLogin')
-        
+
         if (isLogin === 'true') {
             setLinkPath('/order/delivery')
         }
@@ -66,9 +69,7 @@ const BuyMenuCart = ({ totalPrice }: ComponentType) => {
                 <span>Total price:</span>
                 <b>${finalPrice.toFixed(0)}</b>
             </div>
-            <Link href={linkPath} className={styles.nextButton}>
-                Go to delivery
-            </Link>
+            <HightlightButton href={linkPath}>Go to delivery</HightlightButton>
             <p className={styles.priceBoxInfo}>Don't delay, the products in your cart are not reserved.</p>
         </section>
     )

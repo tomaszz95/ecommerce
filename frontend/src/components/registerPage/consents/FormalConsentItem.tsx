@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import styles from './FormalConsentItem.module.css'
 
 type ComponentType = {
@@ -25,6 +26,7 @@ const FormalConsentItem = ({ id, label, checked, onChange, isError = false }: Co
                     checked={checked}
                     onChange={(e) => onChange(e.target.checked)}
                     onBlur={handleBlur}
+                    aria-label="Accept consents"
                 />
             </div>
             <label htmlFor={id}>{label}</label>

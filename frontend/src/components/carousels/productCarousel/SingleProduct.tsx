@@ -34,7 +34,11 @@ const SingleProduct = ({
     const productLink = createLinkFromProductName(name)
 
     return (
-        <Link className={`${styles.item} ${linkSize}`} href={`${categoryLink}/${productLink}`}>
+        <Link
+            className={`${styles.item} ${linkSize}`}
+            href={`${categoryLink}/${productLink}`}
+            aria-label={`Click to see product ${name}`}
+        >
             {promotion && <div className={styles.promotionBanner}>{promotionPercent}%</div>}
             <Image src={mainImage} alt={name} />
             <p>{category}</p>

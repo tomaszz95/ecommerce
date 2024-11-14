@@ -17,7 +17,7 @@ const MobileNavModal: React.FC<ComponentType> = ({ onClose }) => {
             <div className={styles.modalContent}>
                 <div className={styles.modalHeader}>
                     <span>Menu</span>
-                    <button onClick={onClose}>
+                    <button onClick={onClose} aria-label="Close navigation">
                         <Image src={XIcon} alt="" />
                     </button>
                 </div>

@@ -1,4 +1,5 @@
 import brandLogos from '../../../../constans/brandLogos'
+
 import capitalizeFirstLetter from '../../../utils/capitalizeFirstLetter'
 import { filterTypes, productType } from '../../../../types/types'
 
@@ -33,6 +34,7 @@ const CompanyFilters = ({ filters, onFilterChange, products }: ComponentType) =>
                         type="checkbox"
                         checked={filters.selectedCompanies.includes(brand)}
                         onChange={() => handleCompanyChange(brand)}
+                        aria-label="Company filter"
                     />
                     <p>
                         {brand} ({count})

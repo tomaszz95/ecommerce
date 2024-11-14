@@ -1,8 +1,8 @@
 .companyList {
-    margin-top: 0.6rem;
     display: flex;
     align-items: center;
     gap: 15px;
+    margin-top: 0.6rem;
 }
 
 .companyList input {

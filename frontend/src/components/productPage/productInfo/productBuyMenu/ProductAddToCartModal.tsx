@@ -1,9 +1,10 @@
-import Image, { StaticImageData } from 'next/image'
-
 import ReactDOM from 'react-dom'
 
+import Image, { StaticImageData } from 'next/image'
+
+import HightlightButton from '../../../../components/UI/buttons/HightlightButton'
+
 import styles from './ProductAddToCartModal.module.css'
-import Link from 'next/link'
 
 type ComponentType = {
     price: number
@@ -28,7 +29,7 @@ const ProductAddToCartModal = ({ price, productName, photo, onClose }: Component
                     <button onClick={onClose} className={styles.modalBackButton}>
                         Back to shopping
                     </button>
-                    <Link href="/cart">Go to the cart</Link>
+                    <HightlightButton href="/cart">Go to the cart</HightlightButton>
                 </div>
             </div>
         </div>,

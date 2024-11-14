@@ -1,10 +1,13 @@
 'use client'
 
-import styles from './PaymentView.module.css'
-import { orderType } from '../../types/types'
 import { useEffect, useState } from 'react'
+
 import OrderSummary from '../orderSummary/OrderSummary'
 import PaymentOptions from './paymentOptions/PaymentOptions'
+
+import { orderType } from '../../types/types'
+
+import styles from './PaymentView.module.css'
 
 type ComponentType = {
     order: orderType

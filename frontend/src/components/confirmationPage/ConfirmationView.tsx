@@ -1,4 +1,7 @@
 import Link from 'next/link'
+
+import HightlightButton from '../UI/buttons/HightlightButton'
+
 import styles from './ConfirmationView.module.css'
 
 const ConfirmationView = () => {
@@ -7,21 +10,26 @@ const ConfirmationView = () => {
             <div className={styles.confirmationContainer}>
                 <h2>Thank you for placing your order</h2>
                 <p>
-                    To pay for your order, click on the&nbsp;<Link href="/order/payed">highlighted link.</Link>
+                    To pay for your order, click on the&nbsp;
+                    <Link href="/order/payed" aria-label="Pay for order" className={styles.confirmationLink}>
+                        highlighted link.
+                    </Link>
                 </p>
                 <p>
                     You will receive an email with your order details shortly. You can also check your orders&nbsp;
-                    <Link href="/user/orders">at this link.</Link>
+                    <Link href="/user/orders" aria-label="Go to orders" className={styles.confirmationLink}>
+                        at this link.
+                    </Link>
                 </p>
 
                 <p>We will inform you about changes in the order status by e-mail.</p>
                 <p>
                     If you have any questions or doubts, please contact us by&nbsp;
-                    <Link href="/contact">phone or e-mail.</Link>
+                    <Link href="/contact" aria-label="Go to contact page" className={styles.confirmationLink}>
+                        phone or e-mail.
+                    </Link>
                 </p>
-                <Link href="/" className={styles.backButton}>
-                    Go back
-                </Link>
+                <HightlightButton href="/">Go back</HightlightButton>
             </div>
         </section>
     )

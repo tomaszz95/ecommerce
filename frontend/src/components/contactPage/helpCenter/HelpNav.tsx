@@ -17,6 +17,7 @@ const HelpNav = ({ onActiveSection, activeSection }: ComponentType) => {
                     key={item.text}
                     className={`${activeSection === item.text ? styles.active : ''}`}
                     onClick={() => onActiveSection(item.text)}
+                    aria-label={`Click to open ${item.text}`}
                 >
                     <Image src={item.icon} alt="" />
                     <p>{item.text}</p>

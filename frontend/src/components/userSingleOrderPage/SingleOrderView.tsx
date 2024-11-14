@@ -1,7 +1,7 @@
-import { orderType } from '../../types/types'
+import SingleOrderProducts from './SingleOrderProducts'
 import SummaryData from '../summaryPage/summaryData/SummaryData'
 
-import SingleOrderProducts from './SingleOrderProducts'
+import { orderType } from '../../types/types'
 
 import styles from './SingleOrderView.module.css'
 
@@ -10,7 +10,6 @@ type ComponentType = {
 }
 
 const SingleOrderView = ({ order }: ComponentType) => {
-    console.log(order)
     return (
         <div className={styles.orderContainer}>
             <h1>Order #{order.orderId}</h1>

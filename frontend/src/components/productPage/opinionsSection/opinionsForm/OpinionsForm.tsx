@@ -91,6 +91,7 @@ const OpinionsForm = ({ productId, opinionsCount }: ComponentType) => {
                     ))}
                 </div>
             </div>
+
             <AuthFormButton type="submit" formIsValid={formIsValid}>
                 Add Review
             </AuthFormButton>

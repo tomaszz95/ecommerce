@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 
-import { productType, filterTypes } from '../../../types/types'
 import AvailableFilter from './filters/AvailableFilter'
 import CompanyFilters from './filters/CompanyFilters'
-
-import styles from './FiltrationSection.module.css'
 import PriceFilters from './filters/PriceFilters'
 import PromotionFilter from './filters/PromotionFilter'
+import OnClickButton from '../../../components/UI/buttons/OnClickButton'
+
+import { productType, filterTypes } from '../../../types/types'
+
+import styles from './FiltrationSection.module.css'
 
 type ComponentType = {
     products: productType[]
@@ -55,17 +57,13 @@ const FiltrationSection = ({ products, filters, onFilterChange, onClearFilters }
                 </button>
 
                 <div className={styles.filtrationButtonSection}>
-                    <button className={styles.filtrationButton} onClick={closeMobileFiltersHandler}>
-                        Apply filters
-                    </button>
+                    <OnClickButton onClick={closeMobileFiltersHandler}>Apply filters</OnClickButton>
                 </div>
             </div>
 
             {!showMobileFilters && (
                 <div className={styles.filtrationButtonSection}>
-                    <button className={styles.filtrationButton} onClick={showMobileFiltersHandler}>
-                        Show filters
-                    </button>
+                    <OnClickButton onClick={showMobileFiltersHandler}>Show filters</OnClickButton>
                 </div>
             )}
         </section>

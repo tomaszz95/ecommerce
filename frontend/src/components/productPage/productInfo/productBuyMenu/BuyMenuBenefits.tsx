@@ -1,4 +1,5 @@
 import Image from 'next/image'
+
 import PackageIcon from '../../../../assets/icons/package.svg'
 import DeliveryIcon from '../../../../assets/icons/delivery.svg'
 import TruckIcon from '../../../../assets/icons/truck.svg'

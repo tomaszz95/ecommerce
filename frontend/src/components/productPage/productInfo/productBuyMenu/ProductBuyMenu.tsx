@@ -8,6 +8,7 @@ import BuyMenuBenefits from './BuyMenuBenefits'
 import ProductAddToCartModal from './ProductAddToCartModal'
 
 import styles from './ProductBuyMenu.module.css'
+import AuthFormButton from '@/components/UI/buttons/AuthFormButton'
 
 type ComponentType = {
     price: number
@@ -42,7 +43,13 @@ const ProductBuyMenu = ({
         <div className={styles.buyContainer}>
             <CurrentPrice price={price} promotion={promotion} promotionPercent={promotionPercent} isBig={true} />
 
-            <button type="submit" className={styles.buyButton} onClick={addToCartHandler} disabled={stock === 0}>
+            <button
+                type="submit"
+                className={styles.buyButton}
+                onClick={addToCartHandler}
+                disabled={stock === 0}
+                aria-label="Add product to cart"
+            >
                 {stock === 0 ? 'No product in stock' : 'Add to cart'}
             </button>
 

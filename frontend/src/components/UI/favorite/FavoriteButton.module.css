@@ -2,9 +2,9 @@
     position: absolute;
     right: 0;
     top: 0;
+    padding: 1rem;
     border: none;
     border-bottom-left-radius: 10px;
-    padding: 1rem;
     transition: background-color 0.3s;
 }
 

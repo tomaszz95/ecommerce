@@ -1,8 +1,10 @@
 'use client'
 
-import { userType } from '../../types/types'
 import UserSettingsForm from './UserSettingsForm'
 import UserSettingsPassword from './UserSettingsPassword'
+
+import { userType } from '../../types/types'
+
 import styles from './UserSettingsView.module.css'
 
 type ComponentType = {

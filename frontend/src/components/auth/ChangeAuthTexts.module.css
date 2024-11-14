@@ -10,8 +10,8 @@
     max-width: 500px;
     border: 1px solid var(--pure-black);
     border-radius: 10px;
-    text-align: center;
     transition: background-color 0.3s;
+    text-align: center;
 }
 
 .changeAuthBox a:hover {

@@ -1,10 +1,11 @@
+import Image from 'next/image'
+
 import OnlinePaymentIcon from '../../../assets/icons/onlinepayment.svg'
 import VisaPaymentIcon from '../../../assets/icons/visa.svg'
 import TransferPaymentIcon from '../../../assets/icons/transfer.svg'
 import WalletPaymentIcon from '../../../assets/icons/wallet.svg'
 
 import styles from './SummaryPayment.module.css'
-import Image from 'next/image'
 
 type ComponentType = {
     payment: string

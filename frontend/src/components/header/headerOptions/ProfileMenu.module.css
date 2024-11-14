@@ -2,21 +2,21 @@
     position: absolute;
     top: 45px;
     right: 0;
+    display: flex;
+    flex-direction: column;
     min-width: 200px;
     border: 2px solid var(--main-color);
     background-color: var(--pure-white);
-    display: flex;
-    flex-direction: column;
     border-radius: 10px;
     z-index: 999999;
 }
 
 .profileMenuItem {
-    cursor: pointer;
-    padding: 1.2rem;
     display: flex;
     align-items: center;
+    padding: 1.2rem;
     font-size: 1rem;
+    cursor: pointer;
     border-radius: 10px;
     transition: background-color 0.3s;
 }

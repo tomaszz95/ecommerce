@@ -1,5 +1,7 @@
-import { productType } from '../../types/types'
 import FavoriteList from './FavoriteList'
+
+import { productType } from '../../types/types'
+
 import styles from './FavoriteView.module.css'
 
 type ComponentType = {

@@ -1,6 +1,9 @@
 import TopBarItem from './TopBarItem'
 
-import topBarItems from '../../constans/topBarItems'
+import BriefcaseIcon from '../../assets/icons/briefcase.svg'
+import StarIcon from '../../assets/icons/star.svg'
+import PackageIcon from '../../assets/icons/package.svg'
+import ShopIcon from '../../assets/icons/shop.svg'
 
 import styles from './TopBarContainer.module.css'
 
@@ -8,9 +11,10 @@ const TopBarContainer = () => {
     return (
         <div className={styles.topbar}>
             <div className={styles.topbarContainer}>
-                {topBarItems.map((item) => (
-                    <TopBarItem icon={item.icon} text={item.text} key={item.text} />
-                ))}
+                <TopBarItem icon={BriefcaseIcon}>10 years in business</TopBarItem>
+                <TopBarItem icon={StarIcon}>Highest customer ratings</TopBarItem>
+                <TopBarItem icon={PackageIcon}>Express order shipping</TopBarItem>
+                <TopBarItem icon={ShopIcon}>Free delivery to 20 stores</TopBarItem>
             </div>
         </div>
     )

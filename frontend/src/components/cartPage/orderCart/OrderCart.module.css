@@ -5,12 +5,12 @@
 }
 
 .orderProductsList {
+    margin: 3rem auto;
+    width: 100%;
+    max-width: 550px;
     border: 2px solid var(--lighter-grey);
     background-color: var(--light-white);
     border-radius: 10px;
-    max-width: 550px;
-    width: 100%;
-    margin: 3rem auto;
 }
 
 @media (768px < width) {
@@ -21,7 +21,7 @@
 
 @media (1100px < width) {
     .orderProductsList {
-        min-width: 850px;
         margin-bottom: 0;
+        min-width: 850px;
     }
 }

@@ -1,10 +1,18 @@
-import SingleOrderView from '../../../../components/userSingleOrderPage/SingleOrderView'
-import MainLayout from '../../../../components/layouts/MainLayout'
-import ordersDummy from '../../../../constans/ordersDummy'
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+
+import MainLayout from '../../../../components/layouts/MainLayout'
+import SingleOrderView from '../../../../components/userSingleOrderPage/SingleOrderView'
+
+import ordersDummy from '../../../../constans/ordersDummy'
 
 type Props = {
     params: { orderId: string }
+}
+
+export const metadata: Metadata = {
+    title: 'NeXtPC - Order',
+    description: 'neXtPC app homepage',
 }
 
 const UserSingleOrderPage = ({ params }: Props) => {

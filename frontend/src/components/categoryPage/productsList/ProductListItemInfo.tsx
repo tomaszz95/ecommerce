@@ -1,10 +1,14 @@
 import Image from 'next/image'
-import getBrandLogo from '../../../helpers/getBrandLogo'
+
 import StarRating from '../../../components/starRating/StarRating'
-import SpeechBubbleIcon from '../../../assets/icons/speechbubble.svg'
-import styles from './ProductListItemInfo.module.css'
+
 import getOpinions from '../../../components/utils/getOpinions'
+import getBrandLogo from '../../../helpers/getBrandLogo'
+import SpeechBubbleIcon from '../../../assets/icons/speechbubble.svg'
+
 import { productType } from '../../../types/types'
+
+import styles from './ProductListItemInfo.module.css'
 
 type ComponentType = {
     product: productType

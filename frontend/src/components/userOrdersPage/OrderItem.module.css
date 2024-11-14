@@ -1,7 +1,7 @@
 .itemBox {
+    padding: 1.5rem;
     width: 100%;
     max-width: 400px;
-    padding: 1.5rem;
     background-color: var(--dirty-white);
     border-radius: 10px;
     border: 2px solid var(--dirtier-white);
@@ -43,8 +43,8 @@
 
 @media (768px < width) {
     .itemBox {
-        max-width: 1100px;
         padding: 2rem;
+        max-width: 1100px;
     }
 
     .itemBox h2 {

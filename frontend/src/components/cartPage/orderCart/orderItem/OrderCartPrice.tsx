@@ -1,6 +1,8 @@
-import styles from './OrderCartPrice.module.css'
-import { singleProductType } from '../../../../types/types'
 import CurrentPrice from '../../../currentPrice/CurrentPrice'
+
+import { singleProductType } from '../../../../types/types'
+
+import styles from './OrderCartPrice.module.css'
 
 type ComponentType = {
     product: singleProductType

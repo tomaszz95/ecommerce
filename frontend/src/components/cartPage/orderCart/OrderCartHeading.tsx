@@ -19,7 +19,7 @@ const OrderCartHeading = ({ productsCount }: ComponentType) => {
                     ({productsCount} {productsCount === 1 ? 'product' : 'products'})
                 </span>
             </div>
-            <button className={styles.orderClearBtn} onClick={clearOrderHandler}>
+            <button className={styles.orderClearBtn} onClick={clearOrderHandler} aria-label="Clear cart">
                 <Image src={TrashIcon} alt="" />
                 <span>Clear cart</span>
             </button>

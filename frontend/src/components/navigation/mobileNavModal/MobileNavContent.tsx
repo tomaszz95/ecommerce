@@ -20,7 +20,12 @@ const MobileNav: React.FC<ComponentType> = ({ onClose }) => {
             </div>
             <div className={styles.mobileNavItem}>
                 <span className={styles.mobileNavTitle}>Any questions?</span>
-                <Link href="/contact" className={styles.mobileNavContact} onClick={onClose}>
+                <Link
+                    href="/contact"
+                    className={styles.mobileNavContact}
+                    onClick={onClose}
+                    aria-label="Go to contact page"
+                >
                     <Image src={ContactIcon} alt="" />
                     <span>Contact us!</span>
                 </Link>

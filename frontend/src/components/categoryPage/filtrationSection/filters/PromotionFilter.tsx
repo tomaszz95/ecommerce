@@ -14,6 +14,7 @@ const PromotionFilter = ({ filters, onFilterChange }: ComponentType) => {
                 type="checkbox"
                 checked={filters.promotionsOnly}
                 onChange={(e) => onFilterChange({ promotionsOnly: e.target.checked })}
+                aria-label="Show products on a sale"
             />
             <p>Show products on sale</p>
         </div>

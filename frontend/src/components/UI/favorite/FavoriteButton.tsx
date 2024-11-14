@@ -1,10 +1,13 @@
 'use client'
 
-import Image from 'next/image'
 import { useState, useRef } from 'react'
-import FavoriteIcon from '../../../assets/icons/favoritefill.svg'
-import styles from './FavoriteButton.module.css'
+import Image from 'next/image'
+
 import FavoriteModal from './FavoriteModal'
+
+import FavoriteIcon from '../../../assets/icons/favoritefill.svg'
+
+import styles from './FavoriteButton.module.css'
 
 type ComponentType = {
     productId: string
@@ -48,6 +51,7 @@ const FavoriteButton = ({ productId }: ComponentType) => {
                     cleanupTimer()
                     toggleFavoriteHandler()
                 }}
+                aria-label="Click to favorite"
             >
                 <Image src={FavoriteIcon} alt="" />
             </button>

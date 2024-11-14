@@ -53,8 +53,6 @@ export type navItemType = { name: string; link: string; icon: StaticImageData; p
 
 export type headerOptionItemType = { icon: StaticImageData; text: string; href: string }
 
-export type topBarItemType = { text: string; icon: StaticImageData }
-
 // Login
 
 export type loginOfferItemType = { icon: StaticImageData; text: string }

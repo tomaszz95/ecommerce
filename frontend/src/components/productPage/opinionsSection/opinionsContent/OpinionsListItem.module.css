@@ -1,10 +1,11 @@
 .opinionItem {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid var(--lighter-grey);
-    border-radius: 10px;
+    padding-bottom: 0.5rem;
     width: 100%;
     max-width: 800px;
+    border-bottom: 1px solid var(--lighter-grey);
+    border-radius: 10px;
 }
 
 .opinionInfo {
@@ -27,19 +28,19 @@
 }
 
 .opinionLikes {
-    margin-top: 0.6rem;
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-top: 0.6rem;
 }
 
 .opinionLikesButton {
     display: flex;
     align-items: center;
     gap: 10px;
+    padding: 0.3rem 0.8rem;
     cursor: pointer;
     background-color: var(--pure-white);
-    padding: 0.3rem 0.8rem;
     border-radius: 10px;
     transition: background-color 0.3s;
 }

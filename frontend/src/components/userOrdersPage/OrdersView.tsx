@@ -1,5 +1,7 @@
-import { orderType } from '../../types/types'
 import OrdersList from './OrdersList'
+
+import { orderType } from '../../types/types'
+
 import styles from './OrdersView.module.css'
 
 type ComponentType = {

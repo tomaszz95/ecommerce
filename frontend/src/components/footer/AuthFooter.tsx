@@ -13,7 +13,7 @@ const AuthFooter = () => {
                     <div className={styles.contactPhone}>
                         <p>Call us</p>
                         <Image src={Phone} alt="" />
-                        <a href="tel:+00 000 00 00">+00 000 00 00</a>
+                        <a href="tel:+00 000 00 00" aria-label='Phone to neXtPC'>+00 000 00 00</a>
                     </div>
                 </div>
                 <div className={styles.info}>

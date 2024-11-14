@@ -1,6 +1,6 @@
 .productsSection {
-    width: 100%;
     padding: 1rem 1.5rem 3rem;
+    width: 100%;
     background-color: var(--pure-white);
     border-radius: 10px;
 }
@@ -10,16 +10,16 @@
 }
 
 .noProducts {
-    text-align: center;
-    font-size: 2rem;
     margin-top: 4rem;
+    font-size: 2rem;
+    text-align: center;
 }
 
 .productsSectionPagination {
-    width: 100%;
-    margin-top: 2rem;
     display: flex;
     justify-content: flex-end;
+    margin-top: 2rem;
+    width: 100%;
 }
 
 @media (768px < width) {

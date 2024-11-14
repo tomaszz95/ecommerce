@@ -5,8 +5,9 @@ import Image, { StaticImageData } from 'next/image'
 
 import DesktopPhotoCarousel from '../../../carousels/photoCarousel/DesktopPhotoCarousel'
 
-import styles from './DesktopGallery.module.css'
 import FavoriteButton from '../../../../components/UI/favorite/FavoriteButton'
+
+import styles from './DesktopGallery.module.css'
 
 type ComponentType = {
     photos: StaticImageData[]

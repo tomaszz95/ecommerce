@@ -49,11 +49,11 @@ const OpinionsListItem = ({ opinion }: ComponentType) => {
             <div>
                 <p className={styles.opinionTextQuestion}>Was this comment helpful?</p>
                 <div className={styles.opinionLikes}>
-                    <button className={styles.opinionLikesButton} onClick={addLikeHandler}>
+                    <button className={styles.opinionLikesButton} onClick={addLikeHandler} aria-label="Add like">
                         <Image src={LikeIcon} alt="" />
                         <span>{likesCount}</span>
                     </button>
-                    <button className={styles.opinionLikesButton} onClick={addDislikeHandler}>
+                    <button className={styles.opinionLikesButton} onClick={addDislikeHandler} aria-label="Add dislike">
                         <Image src={DislikeIcon} alt="" />
                         <span>{dislikesCount}</span>
                     </button>

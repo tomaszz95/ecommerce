@@ -10,7 +10,9 @@ const ChangeAuthTexts = ({ pageType }: ComponentType) => {
     return (
         <div className={styles.changeAuthBox}>
             <h2>{isLoginPage ? "Don't have an account?" : 'Already have an account?'}</h2>
-            <Link href={isLoginPage ? '/register' : '/login'}>{isLoginPage ? 'Create' : 'Login'}</Link>
+            <Link href={isLoginPage ? '/register' : '/login'} aria-label={`Go to ${pageType} page`}>
+                {isLoginPage ? 'Create' : 'Login'}
+            </Link>
         </div>
     )
 }

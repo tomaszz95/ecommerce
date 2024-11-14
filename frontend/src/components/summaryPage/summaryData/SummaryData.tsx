@@ -1,14 +1,14 @@
 'use client'
 
-import styles from './SummaryData.module.css'
-
-import { orderType } from '../../../types/types'
-
 import SummaryDelivery from './SummaryDelivery'
 import SummaryAddress from './SummaryAddress'
 import SummaryPayment from './SummaryPayment'
 import SummaryTitle from './SummaryTitle'
 import SummaryComment from './SummaryComment'
+
+import { orderType } from '../../../types/types'
+
+import styles from './SummaryData.module.css'
 
 type ComponentType = {
     order: orderType

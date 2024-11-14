@@ -1,9 +1,10 @@
-import productsOpinions from '../../../constans/productsOpinions'
-
-import styles from './OpinionsSection.module.css'
 import OpinionsStatistics from './opinionsStatistics/OpinionsStatistics'
 import OpinionsList from './opinionsContent/OpinionsList'
 import OpinionsForm from './opinionsForm/OpinionsForm'
+
+import productsOpinions from '../../../constans/productsOpinions'
+
+import styles from './OpinionsSection.module.css'
 
 type ComponentType = {
     productId: string

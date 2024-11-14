@@ -19,12 +19,19 @@
 }
 
 .offerSectionText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
-    font-size: 2rem;
     transform: translate(-50%, -50%);
+    font-size: 2rem;
     color: var(--pure-white);
+}
+
+.offerSectionText p {
+    margin-bottom: 1.5rem;
 }
 
 @media (768px < width) {

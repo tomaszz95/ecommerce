@@ -13,8 +13,8 @@ const Homepage = () => {
     return (
         <MainLayout>
             <HeroImage
-                imgType="main"
                 h1Header="true"
+                imgType="main"
                 bigText="NextPC proven technology supplier"
                 smallText="Best price, best equipment, best opportunity."
                 link="/shop"

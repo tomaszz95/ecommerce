@@ -1,5 +1,6 @@
-import Pagination from '@/components/pagination/Pagination'
 import { useState } from 'react'
+
+import Pagination from '../../../components/pagination/Pagination'
 
 import styles from './SortProducts.module.css'
 

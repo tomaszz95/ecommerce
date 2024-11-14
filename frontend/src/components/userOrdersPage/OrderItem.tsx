@@ -1,4 +1,5 @@
 import Link from 'next/link'
+
 import { orderType } from '../../types/types'
 
 import styles from './OrderItem.module.css'
@@ -12,7 +13,7 @@ const OrderItem = ({ order }: ComponentType) => {
     const paymentText = order.payment === '' ? 'Not selected yet' : order.payment
 
     return (
-        <Link className={styles.itemBox} href={`/user/orders/${order.orderId}`}>
+        <Link className={styles.itemBox} href={`/user/orders/${order.orderId}`} aria-label="Click to go to order">
             <h2>Order #{order.orderId}</h2>
             <div className={styles.itemContainer}>
                 <div className={styles.itemContent}>

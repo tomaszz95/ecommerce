@@ -1,12 +1,14 @@
 'use client'
 
-import { orderType } from '../../types/types'
-import OrderSummary from '../orderSummary/OrderSummary'
+import { useCallback, useState } from 'react'
 
-import styles from './DeliveryView.module.css'
+import OrderSummary from '../orderSummary/OrderSummary'
 import DeliveryOptions from './deliveryMethods/DeliveryOptions'
 import DeliveryForm from './deliveryForm/DeliveryForm'
-import { useCallback, useState } from 'react'
+
+import { orderType } from '../../types/types'
+
+import styles from './DeliveryView.module.css'
 
 type ComponentType = {
     order: orderType

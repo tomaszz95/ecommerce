@@ -10,8 +10,8 @@
 }
 
 .productHeadingTitle h1 {
-    font-size: 1.8rem;
     margin: 0;
+    font-size: 1.8rem;
 }
 
 .productContainer {
@@ -37,11 +37,11 @@
     }
 
     .productHeadingTitle {
-        margin: 0 0 1rem;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        margin: 0 0 1rem;
     }
 }
 

@@ -13,9 +13,9 @@
 }
 
 .benefitsAuthItems img {
+    margin-right: 1.2rem;
     width: 35px;
     height: 35px;
-    margin-right: 1.2rem;
 }
 
 @media (768px < width) {
@@ -24,8 +24,8 @@
     }
 
     .benefitsAuthBox h3 {
-        font-size: 1.15rem;
         margin-bottom: 1.3rem;
+        font-size: 1.15rem;
     }
 
     .benefitsAuthItems {

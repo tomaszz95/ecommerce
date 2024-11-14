@@ -2,6 +2,7 @@ import ProductsCarousel from '../../carousels/productCarousel/ProductsCarousel'
 import BiggestPromotion from './BiggestPromotion'
 import LatestProducts from './LatestProducts'
 
+import highestPromotionFilter from '../../../helpers/highestPromotionFilter'
 import dummyProducts from '../../../constans/dummyProducts'
 
 import styles from './HighlightedSection.module.css'
@@ -9,11 +10,7 @@ import styles from './HighlightedSection.module.css'
 const HighlightedSection = () => {
     const getFirst8Products = dummyProducts.slice(0, 8)
 
-    const productWithHighestPromotion = dummyProducts.reduce((maxProduct, currentProduct) => {
-        return currentProduct.promotion.promotionPercent > maxProduct.promotion.promotionPercent
-            ? currentProduct
-            : maxProduct
-    }, dummyProducts[0])
+    const productWithHighestPromotion = highestPromotionFilter(dummyProducts)
 
     return (
         <section className={styles.highlightSection}>

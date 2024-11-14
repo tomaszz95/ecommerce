@@ -1,8 +1,10 @@
 import OrderMethodItem from '../../orderSummary/OrderMethodItem'
+
 import OnlinePaymentIcon from '../../../assets/icons/onlinepayment.svg'
 import VisaPaymentIcon from '../../../assets/icons/visa.svg'
 import TransferPaymentIcon from '../../../assets/icons/transfer.svg'
 import WalletPaymentIcon from '../../../assets/icons/wallet.svg'
+
 import styles from './PaymentMethod.module.css'
 
 type ComponentType = {

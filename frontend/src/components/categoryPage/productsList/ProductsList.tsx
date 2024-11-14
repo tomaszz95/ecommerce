@@ -1,9 +1,10 @@
+import ProductsListItem from './ProductsListItem'
+import SortProducts from './SortProducts'
 import Pagination from '../../../components/pagination/Pagination'
+
 import { productType } from '../../../types/types'
 
 import styles from './ProductsList.module.css'
-import ProductsListItem from './ProductsListItem'
-import SortProducts from './SortProducts'
 
 type ComponentType = {
     products: productType[]

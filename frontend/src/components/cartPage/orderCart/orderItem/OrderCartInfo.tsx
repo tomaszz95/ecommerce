@@ -1,5 +1,7 @@
 import Image from 'next/image'
+
 import { singleProductType } from '../../../../types/types'
+
 import styles from './OrderCartInfo.module.css'
 
 type ComponentType = {
@@ -22,9 +24,13 @@ const OrderCartInfo = ({ product }: ComponentType) => {
                 <h3>{product.product.name}</h3>
             </div>
             <div className={styles.orderItemInfoCount}>
-                <button onClick={RemoveItemCountHandler}>-</button>
+                <button onClick={RemoveItemCountHandler} aria-label="Add  item">
+                    -
+                </button>
                 <input defaultValue={product.count} />
-                <button onClick={AddItemCountHandler}>+</button>
+                <button onClick={AddItemCountHandler} aria-label="Add  item">
+                    +
+                </button>
             </div>
         </div>
     )

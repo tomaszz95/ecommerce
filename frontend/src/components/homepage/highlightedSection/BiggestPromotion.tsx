@@ -18,7 +18,7 @@ const BiggestPromotion = ({ product }: ComponentType) => {
     const productLink = createLinkFromProductName(product.name)
 
     return (
-        <Link className={styles.item} href={`${product.category.link}/${productLink}`}>
+        <Link className={styles.item} href={`${product.category.link}/${productLink}`} aria-label='Biggest promotion item'>
             <Image src={product.images[0]} alt={product.name} />
             <p>{product.category.name}</p>
             <h3>{product.name}</h3>

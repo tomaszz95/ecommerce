@@ -12,7 +12,7 @@ const Footer = () => {
     return (
         <footer className={styles.footer}>
             <h3 className={styles.title}>DO YOU HAVE QUESTIONS?</h3>
-            <Link href="/contact" className={styles.contactLink}>
+            <Link href="/contact" className={styles.contactLink} aria-label="Go to contact page">
                 Call us or write
             </Link>
             <div className={styles.container}>

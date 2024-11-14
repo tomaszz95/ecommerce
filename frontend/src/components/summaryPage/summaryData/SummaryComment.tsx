@@ -1,6 +1,7 @@
 import useInput from '../../../hooks/useInput'
-import styles from './SummaryComment.module.css'
 import TextArea from '../../../components/UI/textarea/TextArea'
+
+import styles from './SummaryComment.module.css'
 
 const SummaryComment = () => {
     const { value: enteredComment, valueChangeHandler: commentChangeHandler } = useInput((value) => value.trim() !== '')

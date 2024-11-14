@@ -1,17 +1,17 @@
 .productDetails {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 50px;
+    width: 100%;
 }
 
 @media (768px < width) {
     .productDetails {
         display: grid;
-        padding: 0 2rem;
         grid-template-columns: 50% 50%;
+        padding: 0 2rem;
         max-width: 1000px;
     }
 }

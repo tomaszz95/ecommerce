@@ -1,9 +1,11 @@
-import MainLayout from '../../components/layouts/MainLayout'
 import type { Metadata } from 'next'
+
+import MainLayout from '../../components/layouts/MainLayout'
 import StepsChart from '../../components/stepsChart/StepsChart'
 import CartView from '../../components/cartPage/CartView'
-import orderDummy from '../../constans/orderDummy'
 import SimilarCarousel from '../../components/productPage/similarProductsCarousel/SimilarCarousel'
+
+import orderDummy from '../../constans/orderDummy'
 
 export const metadata: Metadata = {
     title: 'NeXtPC - Cart',

@@ -2,10 +2,10 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    max-width: 500px;
-    width: 100%;
     padding: 1rem;
     margin: 3rem auto 0;
+    max-width: 500px;
+    width: 100%;
     border: 1px solid var(--lighter-grey);
     border-radius: 10px;
     position: relative;
@@ -16,24 +16,24 @@
 }
 
 .recommendedText {
-    color: var(--pure-white);
-    background-color: var(--main-color);
-    padding: 0.4rem 0.8rem;
-    border-radius: 8px;
     position: absolute;
     top: -16px;
     left: 5%;
+    padding: 0.4rem 0.8rem;
+    color: var(--pure-white);
+    background-color: var(--main-color);
+    border-radius: 8px;
 }
 
 .listMainDataBox {
-    text-align: center;
     padding: 1rem;
     width: 100%;
+    text-align: center;
 }
 
 .listMainDataBox h2 {
-    align-self: flex-start;
     margin-bottom: 2rem;
+    align-self: flex-start;
 }
 
 .listMainDataBox img {
@@ -49,9 +49,9 @@
 
 .listSaleBoxBtn {
     position: relative;
-    width: 100%;
     padding: 2.5rem;
     margin-bottom: 2rem;
+    width: 100%;
 }
 
 @media (1100px < width) {
@@ -78,10 +78,10 @@
     }
 
     .listSaleBox {
-        margin-top: 1rem;
-        padding-top: 1rem;
         grid-column: 2 / 3;
         grid-row: 1 / 2;
+        margin-top: 1rem;
+        padding-top: 1rem;
     }
 
     .listSaleBoxBtn {

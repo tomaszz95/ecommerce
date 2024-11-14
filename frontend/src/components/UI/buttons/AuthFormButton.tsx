@@ -6,9 +6,9 @@ type AuthFormButtonProps = {
     type: 'button' | 'submit' | 'reset'
 }
 
-const AuthFormButton = ({ children, formIsValid, type }: AuthFormButtonProps) => {
+const AuthFormButton = ({ children, formIsValid, type = 'button' }: AuthFormButtonProps) => {
     return (
-        <button type={type} className={styles.authButton} disabled={!formIsValid}>
+        <button type={type} className={styles.authButton} disabled={!formIsValid} aria-label="Click to apply form">
             {children}
         </button>
     )

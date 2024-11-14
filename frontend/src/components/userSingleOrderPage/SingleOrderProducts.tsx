@@ -1,6 +1,8 @@
-import styles from './SingleOrderProducts.module.css'
-import { orderType } from '../../types/types'
 import OrderSummaryItem from '../orderSummary/OrderSummaryItem'
+
+import { orderType } from '../../types/types'
+
+import styles from './SingleOrderProducts.module.css'
 
 type ComponentType = {
     order: orderType

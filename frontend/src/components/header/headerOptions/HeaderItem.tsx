@@ -43,7 +43,7 @@ const HeaderItem = ({ icon, text, href }: ComponentType) => {
                 onMouseEnter={openProfileMenuHandler}
                 onMouseLeave={closeProfileMenuHandler}
             >
-                <button className={styles.headerItem} onClick={switchProfileMenuOpen}>
+                <button className={styles.headerItem} onClick={switchProfileMenuOpen} aria-label="Open user menu">
                     <Image src={icon} alt="" />
                     <p>
                         {text} <span className={isProfileMenuOpen ? styles.rotate : ''}>▼</span>

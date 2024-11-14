@@ -28,12 +28,14 @@ const FormalConsents = ({ onConsentsAgree }: ComponentType) => {
                 onChange={setAcceptRegulations}
                 isError={isConsentError}
             />
+
             <FormalConsentItem
                 id="receiveOffers"
                 label="I want to receive information about current offers and promotions by e-mail"
                 checked={receiveOffers}
                 onChange={setReceiveOffers}
             />
+
             <FormalConsentItem
                 id="tailoredOffers"
                 label="I want to receive an offer tailored to my needs"

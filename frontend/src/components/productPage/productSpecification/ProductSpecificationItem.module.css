@@ -7,8 +7,8 @@
 }
 
 .productSpecificationItem td:first-child {
-    font-weight: bold;
     width: 50%;
+    font-weight: bold;
 }
 
 .productSpecificationItem td:last-child {

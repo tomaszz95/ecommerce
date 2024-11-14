@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom'
+
 import styles from './FavoriteModal.module.css'
 
 const FavoriteModal = ({ children, isExiting }: { children: React.ReactNode; isExiting: boolean }) => {

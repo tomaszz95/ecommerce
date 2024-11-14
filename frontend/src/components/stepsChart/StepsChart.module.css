@@ -1,12 +1,12 @@
 .stepsContainer {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    max-width: 1300px;
     margin: 0 auto;
     padding: 2rem 1rem;
-    position: relative;
+    width: 100%;
+    max-width: 1300px;
 }
 
 .stepWrapper {
@@ -20,9 +20,9 @@
 .line {
     position: absolute;
     top: 50%;
-    transform: translate(-50%, -50%);
     left: 0;
     right: 0;
+    transform: translate(-50%, -50%);
     height: 3px;
     background-color: var(--light-grey);
     z-index: 0;
@@ -34,18 +34,18 @@
 
 .step {
     position: relative;
-    z-index: 1;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background-color: var(--light-grey);
-    color: var(--pure-white);
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 34px;
+    height: 34px;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    background-color: var(--light-grey);
+    color: var(--pure-white);
     font-weight: bold;
     border: 2px solid transparent;
-    font-size: 1.2rem;
+    z-index: 1;
 }
 
 .completed {

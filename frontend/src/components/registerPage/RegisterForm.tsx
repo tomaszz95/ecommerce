@@ -2,10 +2,12 @@
 
 import { FormEvent, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import useInput from '../../hooks/useInput'
+
 import FormalConsents from './consents/FormalConsents'
 import AuthFormButton from '../UI/buttons/AuthFormButton'
 import Input from '../UI/inputs/Input'
+import useInput from '../../hooks/useInput'
+
 import styles from './RegisterForm.module.css'
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -66,7 +68,7 @@ const RegisterForm = () => {
             setServerError('')
 
             if (isStorageValid) {
-                router.push('/delivery')
+                router.push('/order/delivery')
             } else {
                 router.push('/')
             }

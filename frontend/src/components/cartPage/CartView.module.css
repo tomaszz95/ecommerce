@@ -1,15 +1,15 @@
 .order {
-    margin: 0 auto;
-    padding: 2rem;
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
+    padding: 2rem;
     width: 100%;
     max-width: 1400px;
 }
 
 .errorText {
-    width: 100%;
     display: block;
+    width: 100%;
     text-align: center;
     font-size: 2rem;
 }
@@ -17,8 +17,8 @@
 @media (1200px < width) {
     .order {
         flex-direction: row;
-        gap: 20px;
         align-items: flex-start;
+        gap: 30px;
         margin-bottom: 1rem;
     }
 }

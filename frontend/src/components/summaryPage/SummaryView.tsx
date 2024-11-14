@@ -1,9 +1,11 @@
 'use client'
 
-import styles from './SummaryView.module.css'
-import { orderType } from '../../types/types'
 import SummaryData from './summaryData/SummaryData'
 import OrderSummary from '../orderSummary/OrderSummary'
+
+import { orderType } from '../../types/types'
+
+import styles from './SummaryView.module.css'
 
 type ComponentType = {
     order: orderType
@@ -19,7 +21,7 @@ const SummaryView = ({ order }: ComponentType) => {
             <div className={styles.summaryContainer}>
                 <SummaryData order={order} />
             </div>
-            
+
             <OrderSummary
                 isFormValid={true}
                 order={order}

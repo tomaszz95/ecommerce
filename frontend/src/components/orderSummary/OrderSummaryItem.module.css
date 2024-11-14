@@ -2,9 +2,9 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    padding: 1rem 0;
     width: 100%;
     border-bottom: 1px solid var(--lighter-grey);
-    padding: 1rem 0;
 }
 
 .summaryItemBox img {
@@ -25,8 +25,8 @@
 }
 
 .summaryItemText b {
-    font-size: 1.2rem;
     align-self: flex-end;
+    font-size: 1.2rem;
 }
 
 .summaryItemText p {

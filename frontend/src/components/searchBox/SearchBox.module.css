@@ -22,8 +22,8 @@
     position: absolute;
     top: 5;
     right: 0;
-    height: 35px;
     padding: 0.1rem 0.4rem;
+    height: 35px;
     background-color: var(--main-color);
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
@@ -53,8 +53,8 @@
     }
 
     .searchBox button {
-        height: 40px;
         padding: 0.3rem 0.6rem;
+        height: 40px;
     }
 
     .searchBox button img {

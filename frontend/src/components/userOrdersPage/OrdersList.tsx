@@ -1,5 +1,6 @@
-import { orderType } from '../../types/types'
 import OrderItem from './OrderItem'
+
+import { orderType } from '../../types/types'
 
 import styles from './OrdersList.module.css'
 

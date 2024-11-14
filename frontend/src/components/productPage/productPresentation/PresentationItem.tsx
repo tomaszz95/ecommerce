@@ -1,4 +1,5 @@
 import Image from 'next/image'
+
 import { productPresentationDummyType } from '../../../types/types'
 
 import styles from './PresentationItem.module.css'
@@ -10,7 +11,7 @@ const PresentationItem = ({ text, img, title }: productPresentationDummyType) =>
                 <h3>{title}</h3>
                 <p>{text}</p>
             </div>
-            <Image src={img} alt={`${title} photo`} />
+            <Image src={img} alt={`${title} photo`} aria-label={`${title} photo`} />
         </div>
     )
 }

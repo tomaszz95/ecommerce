@@ -1,10 +1,11 @@
 .button {
     position: relative;
     display: block;
-    padding: 1rem 2rem;
-    width: 200px;
-    font-size: 1.1rem;
-    color: var(--pure-white);
+    margin: 1.2rem auto;
+    padding: 0.7rem 1.5rem;
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
     text-align: center;
     background-color: var(--main-color);
     color: var(--pure-white);
@@ -19,7 +20,7 @@
     top: -30px;
     left: -130px;
     display: block;
-    height: 180%;
+    height: 250%;
     width: 100px;
     background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
     transform: rotate(20deg);
@@ -31,4 +32,19 @@
 .button:hover::before {
     left: 130%;
     opacity: 1;
+}
+
+.button.disabled {
+    background-color: var(--lighter-grey);
+    cursor: default;
+}
+
+@media (768px < width) {
+    .button {
+        margin: 1.8rem auto 1.8rem;
+        padding: 0.8rem 1.5rem;
+        width: 100%;
+        max-width: 350px;
+        font-size: 1.1rem;
+    }
 }

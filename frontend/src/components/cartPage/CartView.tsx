@@ -1,6 +1,7 @@
-import { orderType } from '../../types/types'
 import BuyMenuCart from './buyMenuCart/BuyMenuCart'
 import OrderCart from './orderCart/OrderCart'
+
+import { orderType } from '../../types/types'
 
 import styles from './CartView.module.css'
 

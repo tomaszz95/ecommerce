@@ -1,23 +1,23 @@
 .orderItemInfo {
-    width: 100%;
-    margin-top: 3rem;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 30px;
+    margin-top: 3rem;
+    width: 100%;
 }
 
 .orderItemInfoText {
-    margin-left: 1rem;
     display: flex;
     align-items: center;
+    margin-left: 1rem;
 }
 
 .orderItemInfoText img {
+    margin-right: 0.8rem;
     width: 80px;
     height: 80px;
-    margin-right: 0.8rem;
 }
 
 .orderItemInfoCount {
@@ -36,14 +36,14 @@
 }
 
 .orderItemInfoCount input {
-    text-align: center;
     padding: 0.5rem;
-    max-width: 60px;
     margin: 0 1rem;
+    max-width: 60px;
+    font-size: 1.2rem;
+    text-align: center;
     border-radius: 10px;
     background-color: var(--dirty-white);
     border: 1px solid var(--lighter-grey);
-    font-size: 1.2rem;
 }
 
 @media (768px < width) {
@@ -52,9 +52,9 @@
     }
 
     .orderItemInfoText img {
+        margin-right: 1rem;
         width: 90px;
         height: 90px;
-        margin-right: 1rem;
     }
 
     .orderItemInfoText h3 {
@@ -64,7 +64,7 @@
 
 @media (1100px < width) {
     .orderItemInfo {
-        max-width: 530px;
         flex-wrap: nowrap;
+        max-width: 530px;
     }
 }

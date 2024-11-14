@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+
 import styles from './Pagination.module.css'
 
 const itemsPerPage = 6
@@ -13,6 +14,7 @@ const Pagination = ({ productsLength }: ComponentType) => {
     const [currentPage, setCurrentPage] = useState(1)
 
     const maxPage = Math.ceil(productsLength / itemsPerPage)
+
     const handlePageInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = Number(event.target.value)
         if (value >= 1 && value <= maxPage) {
@@ -34,14 +36,14 @@ const Pagination = ({ productsLength }: ComponentType) => {
 
     return (
         <div className={styles.pagination}>
-            <button onClick={goToPreviousPage} disabled={currentPage === 1}>
+            <button onClick={goToPreviousPage} disabled={currentPage === 1} aria-label="Go to previous page">
                 &lt;
             </button>
             <span>
                 <input type="number" value={currentPage} onChange={handlePageInputChange} min={1} max={maxPage} /> of{' '}
                 {maxPage}
             </span>
-            <button onClick={goToNextPage} disabled={currentPage === maxPage}>
+            <button onClick={goToNextPage} disabled={currentPage === maxPage} aria-label="Go to next page">
                 &gt;
             </button>
         </div>

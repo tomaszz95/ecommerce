@@ -1,13 +1,15 @@
 import Image from 'next/image'
 
-import { productType } from '../../../types/types'
-
-import styles from './ProductsListItem.module.css'
+import ProductListItemInfo from './ProductListItemInfo'
 import BuyMenuBenefits from '../../../components/productPage/productInfo/productBuyMenu/BuyMenuBenefits'
 import CurrentPrice from '../../../components/currentPrice/CurrentPrice'
 import HightlightButton from '../../../components/UI/buttons/HightlightButton'
+
 import createLinkFromProductName from '../../../components/utils/createLinkFromProductName'
-import ProductListItemInfo from './ProductListItemInfo'
+
+import { productType } from '../../../types/types'
+
+import styles from './ProductsListItem.module.css'
 
 type ComponentType = {
     product: productType

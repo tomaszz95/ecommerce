@@ -1,4 +1,5 @@
 import OfferCarousel from '../../carousels/offerCarousel/OfferCarousel'
+
 import dummyProducts from '../../../constans/dummyProducts'
 
 import styles from './MayInterestCarousel.module.css'

@@ -58,7 +58,7 @@ const LoginForm = () => {
             isServerError('')
 
             if (isStorageValid) {
-                router.push('/delivery')
+                router.push('/order/delivery')
             } else {
                 router.push('/')
             }
@@ -89,6 +89,7 @@ const LoginForm = () => {
                 onBlur={passwordBlurHandler}
                 errorText="Password must be at least 8 characters long."
             />
+
             {serverError !== '' && <p className={styles.serverError}>{serverError}</p>}
 
             <AuthFormButton type="submit" formIsValid={formIsValid}>

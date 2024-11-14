@@ -1,7 +1,7 @@
 'use client'
+import { useState, useEffect } from 'react'
 
 import countdownToMidnight from '../../utils/countdownToMidnight'
-import { useState, useEffect } from 'react'
 
 import styles from './PromotionTimer.module.css'
 

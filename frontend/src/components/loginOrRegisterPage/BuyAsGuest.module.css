@@ -12,8 +12,8 @@
     margin-top: 1.6rem;
     padding: 0.6rem 1rem;
     width: 100%;
-    background-color: var(--pure-white);
     max-width: 500px;
+    background-color: var(--lighter-dark);
     border: 1px solid var(--pure-black);
     border-radius: 10px;
     text-align: center;

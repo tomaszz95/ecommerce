@@ -14,6 +14,7 @@ const AvailableFilter = ({ filters, onFilterChange }: ComponentType) => {
                 type="checkbox"
                 checked={filters.availableOnly}
                 onChange={(e) => onFilterChange({ availableOnly: e.target.checked })}
+                aria-label="Show only available products"
             />
             <p>Show available products</p>
         </div>

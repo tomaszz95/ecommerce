@@ -13,8 +13,12 @@ const StatisticsHeader = ({ average, totalOpinions }: ComponentType) => (
             <span className={styles.opinionAverage}>{average}</span>
             <span className={styles.opinionMaxScore}>/5</span>
         </div>
+
         <StarRating rating={average} />
-        <span className={styles.opinionsCount}>{totalOpinions === 1 ? '(1 opinion)' : `(${totalOpinions} opinions)`}</span>
+
+        <span className={styles.opinionsCount}>
+            {totalOpinions === 1 ? '(1 opinion)' : `(${totalOpinions} opinions)`}
+        </span>
     </div>
 )
 

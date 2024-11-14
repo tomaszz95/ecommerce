@@ -1,5 +1,6 @@
-import styles from './TextArea.module.css'
 import InputError from '../inputs/InputError'
+
+import styles from './TextArea.module.css'
 
 type ComponentType = {
     label: string

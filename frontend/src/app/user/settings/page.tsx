@@ -1,7 +1,9 @@
-import UserSettingsView from '../../../components/userSettingsPage/UserSettingsView'
-import MainLayout from '../../../components/layouts/MainLayout'
-import userDummy from '../../../constans/userDummy'
 import type { Metadata } from 'next'
+
+import MainLayout from '../../../components/layouts/MainLayout'
+import UserSettingsView from '../../../components/userSettingsPage/UserSettingsView'
+
+import userDummy from '../../../constans/userDummy'
 
 export const metadata: Metadata = {
     title: 'NeXtPC - User settings',

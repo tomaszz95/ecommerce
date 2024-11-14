@@ -2,9 +2,9 @@ import Link from 'next/link'
 
 import ChangeAuthTexts from './ChangeAuthTexts'
 import RegisterBenefits from './RegisterBenefits'
+import BuyAsGuest from '../loginOrRegisterPage/BuyAsGuest'
 
 import styles from './AuthOverlay.module.css'
-import BuyAsGuest from '../loginOrRegisterPage/BuyAsGuest'
 
 type AuthLayoutProps = {
     children: React.ReactNode
@@ -18,7 +18,9 @@ const AuthOverlay = ({ children, pageType, loginOrRegister }: AuthLayoutProps) =
             <div className={styles.authOverlaySectionContainer}>
                 <div className={styles.formContainer}>
                     {children}
-                    <Link href="/"> &lt; Go Home</Link>
+                    <Link href="/" aria-label="Go to homepage" className={styles.formLink}>
+                        &lt; Go Home
+                    </Link>
                     {loginOrRegister && <BuyAsGuest />}
                 </div>
                 <div className={styles.offerBox}>

@@ -2,11 +2,11 @@
 
 import { FormEvent } from 'react'
 
-import useInput from '../../hooks/useInput'
+import useInput from '../../../hooks/useInput'
 
-import AuthFormButton from '../UI/buttons/AuthFormButton'
-import Input from '../UI/inputs/Input'
-import TextArea from '../UI/textarea/TextArea'
+import AuthFormButton from '../../UI/buttons/AuthFormButton'
+import Input from '../../UI/inputs/Input'
+import TextArea from '../../UI/textarea/TextArea'
 
 import styles from './ContactForm.module.css'
 
@@ -81,7 +81,7 @@ const ContactForm = () => {
                 onBlur={messageBlurHandler}
                 errorText="The message must be at least 20 characters long."
             />
-            
+
             <AuthFormButton type="submit" formIsValid={formIsValid}>
                 Send
             </AuthFormButton>

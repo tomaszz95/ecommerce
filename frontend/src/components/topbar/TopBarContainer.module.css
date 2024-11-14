@@ -8,8 +8,8 @@
     display: flex;
     justify-content: space-evenly;
     margin: 0 auto;
-    max-width: 1440px;
     width: 100%;
+    max-width: 1440px;
 }
 
 @media (768px < width) {

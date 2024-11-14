@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import OrderAuthButton from '../UI/buttons/OrderAuthButton'
 
 import styles from './OrderPriceBox.module.css'
 
@@ -39,13 +39,11 @@ const OrderPriceBox = ({
                 <span>Total price:</span>
                 <b>${finalTotalPrice}</b>
             </div>
-            <Link
-                href={link}
-                className={`${styles.nextButton} ${!isFormValid ? styles.disabled : ''}`}
-                onClick={onHandleSubmit}
-            >
+
+            <OrderAuthButton href={link} disabled={!isFormValid} onClick={onHandleSubmit}>
                 {linkText === 'Buy and pay' ? 'Buy and pay' : `Go to ${linkText}`}
-            </Link>
+            </OrderAuthButton>
+
             <p className={styles.priceBoxInfo}>Don't delay, the products in your cart are not reserved.</p>
         </div>
     )

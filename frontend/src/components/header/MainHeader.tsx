@@ -14,7 +14,7 @@ const MainHeader = () => {
         <div className={styles.mainHeader}>
             <div className={styles.container}>
                 <div className={styles.logoLinkBox}>
-                    <Link href="/" className={styles.logoLink}>
+                    <Link href="/" className={styles.logoLink} aria-label="Go to homepage">
                         <Image src={Logo} alt="NeXtPC logo" className={styles.logo} />
                     </Link>
                 </div>
