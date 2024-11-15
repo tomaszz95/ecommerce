@@ -1,5 +1,6 @@
-import type { Metadata } from 'next'
+'use client'
 
+import { useState, useEffect } from 'react'
 import { notFound } from 'next/navigation'
 
 import MainLayout from '../../../../components/layouts/MainLayout'
@@ -9,6 +10,7 @@ import ProductSpecification from '../../../../components/productPage/productSpec
 import SimilarCarousel from '../../../../components/productPage/similarProductsCarousel/SimilarCarousel'
 import OpinionsSection from '../../../../components/productPage/opinionsSection/OpinionsSection'
 import MayInterestCarousel from '../../../../components/productPage/mayInterestSection/mayInterestCarousel'
+import LoadingSpinner from '../../../../components/loadingSpinner/LoadingSpinner'
 
 import capitalizeFirstLetter from '../../../../components/utils/capitalizeFirstLetter'
 import createProductNameFromLink from '../../../../components/utils/createProductNameFromString'
@@ -19,36 +21,65 @@ type Props = {
     params: { productName: string }
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const productSlug = params.productName || 'Product'
-    const productName = createProductNameFromLink(productSlug)
-    const productNameFinal = capitalizeFirstLetter(productName)
-
-    return {
-        title: `NeXtPC - ${productNameFinal}`,
-        description: `Explore products in ${productNameFinal} category on NeXtPC`,
-    }
-}
-
 const SingleProductPage = ({ params }: Props) => {
     const productSlug = params.productName || 'Product'
     const productName = createProductNameFromLink(productSlug)
     const productNameFinal = capitalizeFirstLetter(productName)
 
-    const findProductByName = dummyProduct.find((product) => product.name === productNameFinal)
+    const [product, setProduct] = useState<(typeof dummyProduct)[0] | null>(null)
+    const [loading, setLoading] = useState(true)
 
-    if (!findProductByName) {
-        notFound()
-    }
+    useEffect(() => {
+        const fetchProductData = async () => {
+            setLoading(true)
+            try {
+                await new Promise((resolve) => setTimeout(resolve, 1000))
+                const foundProduct = dummyProduct.find((product) => product.name === productNameFinal)
+
+                if (!foundProduct) {
+                    notFound()
+                } else {
+                    setProduct(foundProduct)
+                }
+            } catch (error) {
+                console.error('Error fetching product data:', error)
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        fetchProductData()
+    }, [productNameFinal])
+
+    useEffect(() => {
+        if (product) {
+            document.title = `NeXtPC - ${productNameFinal}`
+            const metaDescription = document.querySelector('meta[name="description"]')
+
+            if (metaDescription) {
+                metaDescription.setAttribute('content', `Explore ${productNameFinal} on NeXtPC`)
+            }
+        }
+    }, [product, productNameFinal])
 
     return (
         <MainLayout>
-            <ProductSection product={findProductByName} />
-            <ProductPresentation />
-            <ProductSpecification />
-            <SimilarCarousel productCategory={findProductByName.category.name} />
-            <OpinionsSection productId={findProductByName.prodId} />
-            <MayInterestCarousel productCompany={findProductByName.company} />
+            {loading ? (
+                <LoadingSpinner />
+            ) : (
+                <>
+                    {product && (
+                        <>
+                            <ProductSection product={product} />
+                            <ProductPresentation />
+                            <ProductSpecification />
+                            <SimilarCarousel productCategory={product.category.name} />
+                            <OpinionsSection productId={product.prodId} />
+                            <MayInterestCarousel productCompany={product.company} />
+                        </>
+                    )}
+                </>
+            )}
         </MainLayout>
     )
 }

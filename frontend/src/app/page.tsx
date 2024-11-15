@@ -6,8 +6,7 @@ import HighlightedSection from '../components/homepage/highlightedSection/Highli
 import OfferSection from '../components/homepage/offerSection/OfferSection'
 import NewsletterSection from '../components/homepage/newsletterSection/NewsletterSection'
 import BrandsSection from '../components/homepage/brandsSection/BrandsSection'
-
-import dummyProducts from '../constans/dummyProducts'
+import LoadingSpinner from '../components/loadingSpinner/LoadingSpinner'
 
 const Homepage = () => {
     return (
@@ -30,7 +29,7 @@ const Homepage = () => {
                 linkText="Choose now!"
             />
             <HighlightedSection />
-            <OfferSection products={dummyProducts} />
+            <OfferSection />
             <NewsletterSection />
             <BrandsSection />
         </MainLayout>

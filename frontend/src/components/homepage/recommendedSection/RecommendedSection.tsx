@@ -1,19 +1,50 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+
 import ProductsCarousel from '../../carousels/productCarousel/ProductsCarousel'
 import RecommendedProductsBox from './RecommendedProductsBox'
+import LoadingSpinner from '../../loadingSpinner/LoadingSpinner'
+
+import { productType } from '../../../types/types'
+import dummyProducts from '../../../constans/dummyProducts'
 
 import styles from './RecommendedSection.module.css'
 
-import dummyProducts from '../../../constans/dummyProducts'
-
 const RecommendedSection = () => {
-    const filteredRecommendedProducts = dummyProducts.filter((product) => product.recommended === true).slice(0, 8)
+    const [products, setProducts] = useState<productType[]>([])
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            setLoading(true)
+
+            try {
+                await new Promise((resolve) => setTimeout(resolve, 1000))
+                const recommendedProducts = dummyProducts.filter((product) => product.recommended === true).slice(0, 8)
+                setProducts(recommendedProducts)
+            } catch (error) {
+                console.error('Error fetching products:', error)
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        fetchProducts()
+    }, [])
 
     return (
         <section className={styles.recommendedSection}>
             <section className={styles.container}>
                 <h2>Recommended</h2>
-                <ProductsCarousel products={filteredRecommendedProducts} />
-                <RecommendedProductsBox products={filteredRecommendedProducts} />
+                {loading ? (
+                    <LoadingSpinner />
+                ) : (
+                    <>
+                        <ProductsCarousel products={products} />
+                        <RecommendedProductsBox products={products} />
+                    </>
+                )}
             </section>
         </section>
     )
