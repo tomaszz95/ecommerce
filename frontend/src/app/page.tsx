@@ -6,7 +6,6 @@ import HighlightedSection from '../components/homepage/highlightedSection/Highli
 import OfferSection from '../components/homepage/offerSection/OfferSection'
 import NewsletterSection from '../components/homepage/newsletterSection/NewsletterSection'
 import BrandsSection from '../components/homepage/brandsSection/BrandsSection'
-import LoadingSpinner from '../components/loadingSpinner/LoadingSpinner'
 
 const Homepage = () => {
     return (

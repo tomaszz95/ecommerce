@@ -1,12 +1,12 @@
 'use client'
 
-import { FormEvent } from 'react'
-
 import useInput from '../../../hooks/useInput'
 
+import Modal from '../../../components/UI/Modal/Modal'
 import AuthFormButton from '../../UI/buttons/AuthFormButton'
 import Input from '../../UI/inputs/Input'
 import TextArea from '../../UI/textarea/TextArea'
+import { useSubmitForm } from '../../../hooks/useSubmitForm'
 
 import styles from './ContactForm.module.css'
 
@@ -19,6 +19,7 @@ const ContactForm = () => {
         valueIsValid: emailIsValid,
         valueChangeHandler: emailChangeHandler,
         inputBlurHandler: emailBlurHandler,
+        reset: resetEmail,
     } = useInput((value) => emailRegex.test(value))
 
     const {
@@ -27,6 +28,7 @@ const ContactForm = () => {
         valueIsValid: subjectIsValid,
         valueChangeHandler: subjectChangeHandler,
         inputBlurHandler: subjectBlurHandler,
+        reset: resetSubject,
     } = useInput((value) => value.trim() !== '' && value.length > 5)
 
     const {
@@ -35,20 +37,26 @@ const ContactForm = () => {
         valueIsValid: messageIsValid,
         valueChangeHandler: messageChangeHandler,
         inputBlurHandler: messageBlurHandler,
+        reset: resetMessage,
     } = useInput((value) => value.trim() !== '' && value.length > 20)
 
     const formIsValid = emailIsValid && subjectIsValid && messageIsValid
 
-    const submitHandler = (event: FormEvent) => {
-        event.preventDefault()
+    const validateForm = () => formIsValid
 
-        if (!formIsValid) {
-            console.log('Please fill out all required fields correctly.')
-            return
-        }
-
-        console.log('Form submitted!', { enteredEmail, enteredSubject, enteredMessage })
+    const resetForm = () => {
+        resetEmail()
+        resetSubject()
+        resetMessage()
     }
+
+    const { serverError, isModalVisible, isSubmitting, firstLoading, submitHandler, setIsModalVisible } = useSubmitForm(
+        {
+            validateForm,
+            resetForm,
+            errorMessage: 'Please fill out all required fields correctly.',
+        },
+    )
 
     return (
         <form className={styles.contactForm} onSubmit={submitHandler}>
@@ -82,9 +90,17 @@ const ContactForm = () => {
                 errorText="The message must be at least 20 characters long."
             />
 
-            <AuthFormButton type="submit" formIsValid={formIsValid}>
+            {serverError && <p className={styles.serverError}>{serverError}</p>}
+
+            <AuthFormButton type="submit" formIsValid={formIsValid && !isSubmitting}>
                 Send
             </AuthFormButton>
+
+            {!firstLoading && (
+                <Modal isVisible={isModalVisible} onAnimationEnd={() => setIsModalVisible(false)}>
+                    You've successfully sent a message!
+                </Modal>
+            )}
         </form>
     )
 }

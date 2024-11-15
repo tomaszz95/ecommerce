@@ -4,6 +4,7 @@ import useInput from '../../hooks/useInput'
 
 import Input from '../UI/inputs/Input'
 import AuthFormButton from '../UI/buttons/AuthFormButton'
+import Modal from '../UI/Modal/Modal'
 
 import styles from './UserSettingsPassword.module.css'
 
@@ -13,9 +14,9 @@ type ComponentType = {
 
 const UserSettingsPassword = ({ password }: ComponentType) => {
     const [serverError, setServerError] = useState('')
-    const [isNewData, setIsNewData] = useState(false)
+    const [isModalVisible, setIsModalVisible] = useState(false)
+    const [firstLoading, setFirstLoading] = useState(true)
     const [isSubmitting, setIsSubmitting] = useState(false)
-    const [modalClass, setModalClass] = useState(styles.slideIn)
 
     const {
         value: enteredPassword,
@@ -51,9 +52,9 @@ const UserSettingsPassword = ({ password }: ComponentType) => {
 
     const submitHandler = (event: FormEvent) => {
         event.preventDefault()
-        setIsNewData(false)
-        setModalClass(styles.slideIn)
+
         setIsSubmitting(true)
+        setFirstLoading(false)
 
         if (!formIsValid) {
             setServerError('Please fill out all required fields correctly.')
@@ -62,21 +63,17 @@ const UserSettingsPassword = ({ password }: ComponentType) => {
         }
 
         try {
-            setIsNewData(true)
+            setIsModalVisible(true)
             setServerError('')
 
             setTimeout(() => {
-                setModalClass(styles.slideOut)
-            }, 3000)
-
-            setTimeout(() => {
-                setIsNewData(false)
+                setIsModalVisible(false)
                 setIsSubmitting(false)
 
                 resetPassword()
                 resetNewPassword()
                 resetNewRepeatPassword()
-            }, 3500)
+            }, 3000)
         } catch (err) {
             setServerError('Something went wrong. Please try again later.')
             setIsSubmitting(false)
@@ -132,7 +129,11 @@ const UserSettingsPassword = ({ password }: ComponentType) => {
                 Change password
             </AuthFormButton>
 
-            {isNewData && <div className={`${styles.modal} ${modalClass}`}>Password has been changed</div>}
+            {!firstLoading && (
+                <Modal isVisible={isModalVisible} onAnimationEnd={() => setIsModalVisible(false)}>
+                    Password has been changed
+                </Modal>
+            )}
         </form>
     )
 }

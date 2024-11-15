@@ -15,13 +15,13 @@ const ConfirmationView = () => {
                         highlighted link.
                     </Link>
                 </p>
+                <p>You will receive an email with your order details shortly.</p>
                 <p>
-                    You will receive an email with your order details shortly. You can also check your orders&nbsp;
+                    If you are logged in you can also check your orders&nbsp;
                     <Link href="/user/orders" aria-label="Go to orders" className={styles.confirmationLink}>
                         at this link.
                     </Link>
                 </p>
-
                 <p>We will inform you about changes in the order status by e-mail.</p>
                 <p>
                     If you have any questions or doubts, please contact us by&nbsp;

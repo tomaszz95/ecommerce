@@ -1,4 +1,4 @@
-import FavoriteButton from '../../../components/UI/favorite/FavoriteButton'
+import FavoriteButton from '../../productPage/productInfo/favorite/FavoriteButton'
 import Image, { StaticImageData } from 'next/image'
 
 import styles from './SinglePhoto.module.css'

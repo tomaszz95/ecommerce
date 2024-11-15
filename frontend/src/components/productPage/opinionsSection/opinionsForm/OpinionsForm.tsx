@@ -1,11 +1,13 @@
 'use client'
 
-import { FormEvent, useState } from 'react'
+import { useState } from 'react'
 
 import Input from '../../../../components/UI/inputs/Input'
 import TextArea from '../../../../components/UI/textarea/TextArea'
 import useInput from '../../../../hooks/useInput'
 import AuthFormButton from '../../../../components/UI/buttons/AuthFormButton'
+import Modal from '../../../../components/UI/Modal/Modal'
+import { useSubmitForm } from '../../../../hooks/useSubmitForm'
 
 import styles from './OpinionsForm.module.css'
 
@@ -24,6 +26,7 @@ const OpinionsForm = ({ productId, opinionsCount }: ComponentType) => {
         valueIsValid: nameIsValid,
         valueChangeHandler: nameChangeHandler,
         inputBlurHandler: nameBlurHandler,
+        reset: resetName,
     } = useInput((value) => value.trim() !== '')
 
     const {
@@ -32,20 +35,26 @@ const OpinionsForm = ({ productId, opinionsCount }: ComponentType) => {
         valueIsValid: messageIsValid,
         valueChangeHandler: messageChangeHandler,
         inputBlurHandler: messageBlurHandler,
+        reset: resetMessage,
     } = useInput((value) => value.trim() !== '')
 
     const formIsValid = nameIsValid && messageIsValid && rating > 0
 
-    const submitHandler = (event: FormEvent) => {
-        event.preventDefault()
+    const validateForm = () => nameIsValid && messageIsValid && rating > 0
 
-        if (!formIsValid) {
-            console.log('Please fill out all required fields.')
-            return
-        }
-
-        console.log('Review submitted!', { enteredName, enteredMessage, rating })
+    const resetForm = () => {
+        resetName()
+        resetMessage()
+        setRating(0)
     }
+
+    const { serverError, isModalVisible, isSubmitting, firstLoading, submitHandler, setIsModalVisible } = useSubmitForm(
+        {
+            validateForm,
+            resetForm,
+            errorMessage: 'Please fill out all required fields correctly.',
+        },
+    )
 
     return (
         <form
@@ -92,9 +101,17 @@ const OpinionsForm = ({ productId, opinionsCount }: ComponentType) => {
                 </div>
             </div>
 
-            <AuthFormButton type="submit" formIsValid={formIsValid}>
+            {serverError && <p className={styles.serverError}>{serverError}</p>}
+
+            <AuthFormButton type="submit" formIsValid={formIsValid && !isSubmitting}>
                 Add Review
             </AuthFormButton>
+
+            {!firstLoading && (
+                <Modal isVisible={isModalVisible} onAnimationEnd={() => setIsModalVisible(false)}>
+                    Your review has been submitted!
+                </Modal>
+            )}
         </form>
     )
 }

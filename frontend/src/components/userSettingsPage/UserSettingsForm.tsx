@@ -3,12 +3,13 @@
 import { FormEvent, useState } from 'react'
 
 import useInput from '../../hooks/useInput'
-
 import Input from '../UI/inputs/Input'
 import AuthFormButton from '../UI/buttons/AuthFormButton'
+import Modal from '../UI/Modal/Modal'
+
+import { userType } from '../../types/types'
 
 import styles from './UserSettingsForm.module.css'
-import { userType } from '../../types/types'
 
 type ComponentType = {
     userData: userType
@@ -19,8 +20,8 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const UserSettingsForm = ({ userData }: ComponentType) => {
     const [serverError, setServerError] = useState('')
     const [isNewData, setIsNewData] = useState(false)
+    const [firstLoading, setFirstLoading] = useState(true)
     const [isSubmitting, setIsSubmitting] = useState(false)
-    const [modalClass, setModalClass] = useState(styles.slideIn)
 
     const {
         value: enteredName,
@@ -75,9 +76,9 @@ const UserSettingsForm = ({ userData }: ComponentType) => {
 
     const submitHandler = (event: FormEvent) => {
         event.preventDefault()
-        setIsNewData(false)
-        setModalClass(styles.slideIn)
+        
         setIsSubmitting(true)
+        setFirstLoading(false)
 
         if (!formIsValid) {
             setServerError('Please fill out all required fields correctly.')
@@ -88,11 +89,7 @@ const UserSettingsForm = ({ userData }: ComponentType) => {
         try {
             setIsNewData(true)
             setServerError('')
-
-            setTimeout(() => {
-                setModalClass(styles.slideOut)
-            }, 3000)
-
+            
             setTimeout(() => {
                 setIsNewData(false)
                 setIsSubmitting(false)
@@ -186,7 +183,12 @@ const UserSettingsForm = ({ userData }: ComponentType) => {
             <AuthFormButton type="submit" formIsValid={formIsValid && !isSubmitting}>
                 Save Changes
             </AuthFormButton>
-            {isNewData && <div className={`${styles.modal} ${modalClass}`}>User data has been changed</div>}
+
+            {!firstLoading && (
+                <Modal isVisible={isNewData} onAnimationEnd={() => setIsNewData(false)}>
+                    User data has been changed
+                </Modal>
+            )}
         </form>
     )
 }

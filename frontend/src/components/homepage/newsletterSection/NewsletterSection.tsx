@@ -1,11 +1,11 @@
 'use client'
 
-import { FormEvent } from 'react'
-
 import useInput from '../../../hooks/useInput'
 
 import Input from '../../UI/inputs/Input'
 import AuthFormButton from '../../UI/buttons/AuthFormButton'
+import Modal from '../../UI/Modal/Modal'
+import { useSubmitForm } from '../../../hooks/useSubmitForm'
 
 import styles from './NewsletterSection.module.css'
 
@@ -18,20 +18,22 @@ const NewsletterSection = () => {
         valueIsValid: emailIsValid,
         valueChangeHandler: emailChangeHandler,
         inputBlurHandler: emailBlurHandler,
+        reset: resetEmail,
     } = useInput((value) => value.trim() !== '' && emailRegex.test(value))
 
     const formIsValid = emailIsValid
 
-    const submitHandler = (event: FormEvent) => {
-        event.preventDefault()
+    const validateForm = () => formIsValid
 
-        if (!formIsValid) {
-            console.log('Please fill out all required fields.')
-            return
-        }
-
-        console.log('Newsletter send!', { enteredEmail })
+    const resetForm = () => {
+        resetEmail()
     }
+
+    const { isModalVisible, isSubmitting, firstLoading, submitHandler, setIsModalVisible } = useSubmitForm({
+        validateForm,
+        resetForm,
+        errorMessage: 'Please fill out all required fields correctly.',
+    })
 
     return (
         <section className={styles.newsletterSection}>
@@ -51,11 +53,17 @@ const NewsletterSection = () => {
                         errorText="Please provide valid email."
                     />
 
-                    <AuthFormButton type="submit" formIsValid={formIsValid}>
+                    <AuthFormButton type="submit" formIsValid={formIsValid && !isSubmitting}>
                         Sign In
                     </AuthFormButton>
                 </form>
             </div>
+
+            {!firstLoading && (
+                <Modal isVisible={isModalVisible} onAnimationEnd={() => setIsModalVisible(false)}>
+                    You've successfully subscribed to the newsletter!
+                </Modal>
+            )}
         </section>
     )
 }

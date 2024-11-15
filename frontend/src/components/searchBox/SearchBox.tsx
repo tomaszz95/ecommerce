@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 
 import SearchIcon from '../../assets/icons/search.svg'
@@ -11,6 +12,7 @@ import styles from './SearchBox.module.css'
 const SearchBox = () => {
     const [inputSearchValue, setInputSearchValue] = useState<string>('')
     const pathname = usePathname()
+    const router = useRouter()
 
     if (pathname === '/contact') {
         return null
@@ -18,7 +20,10 @@ const SearchBox = () => {
 
     const inputHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        console.log('Input value:', inputSearchValue)
+
+        if (inputSearchValue.trim() !== '') {
+            router.push(`/shop?search=${inputSearchValue}`)
+        }
     }
 
     return (
