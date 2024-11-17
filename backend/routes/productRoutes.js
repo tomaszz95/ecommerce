@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const { authenticateUser, authorizePermissions } = require('../middleware/authentication')
+const { authenticateUser } = require('../middleware/authentication')
 
 const {
 	createProduct,
@@ -16,15 +16,15 @@ const { getSingleProductReviews } = require('../controllers/reviewController')
 
 router.get('/', getAllProducts)
 
-router.post('/', authenticateUser, authorizePermissions('admin'), createProduct)
+router.post('/', authenticateUser, createProduct)
 
-router.post('/uploadImage', authenticateUser, authorizePermissions('admin'), uploadImage)
+router.post('/uploadImage', authenticateUser, uploadImage)
 
 router.get('/:id', getSingleProduct)
 
-router.patch('/:id', authenticateUser, authorizePermissions('admin'), updateProduct)
+router.patch('/:id', authenticateUser, updateProduct)
 
-router.delete('/:id', authenticateUser, authorizePermissions('admin'), deleteProduct)
+router.delete('/:id', authenticateUser, deleteProduct)
 
 router.get('/:id/reviews', getSingleProductReviews)
 

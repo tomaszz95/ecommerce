@@ -13,21 +13,26 @@ const UserSchema = new mongoose.Schema({
 			validator: validator.isEmail,
 		},
 	},
-	password: { type: String, required: [true, 'Please provide password'], minlength: 6 },
-	role: {
-		type: String,
-		enum: ['admin', 'user'],
-		default: 'user',
+	password: { type: String, required: [true, 'Please provide password'], minlength: 8 },
+	informations: {
+		address: { type: String, default: '' },
+		postalCode: { type: String, default: '' },
+		city: { type: String, default: '' },
+		phone: { type: String, default: '' },
 	},
+	// favorites: { type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }], default: [] },
+	favorites: { type: [{ type: String }], default: [] },
 })
 
 UserSchema.pre('save', async function () {
 	const salt = await bcrypt.genSalt(10)
+
 	this.password = await bcrypt.hash(this.password, salt)
 })
 
 UserSchema.methods.comparePassword = async function (canditatePassword) {
 	const isMatch = await bcrypt.compare(canditatePassword, this.password)
+
 	return isMatch
 }
 

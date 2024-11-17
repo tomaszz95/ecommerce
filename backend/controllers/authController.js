@@ -13,11 +13,8 @@ const register = async (req, res) => {
 		throw new CustomError.BadRequestError('Email already exists')
 	}
 
-	const isFirstAccount = (await User.countDocuments({})) === 0
-	const role = isFirstAccount ? 'admin' : 'user'
+	const user = await User.create({ email, name, password })
 
-	const user = await User.create({ name, email, password, role })
-	
 	const tokenUser = createTokenUser(user)
 
 	attachCookiesToResponse({ res, user: tokenUser })

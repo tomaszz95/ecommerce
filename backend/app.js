@@ -4,11 +4,9 @@ require('express-async-errors')
 const express = require('express')
 const app = express()
 
-const morgan = require('morgan')
 const cookieParser = require('cookie-parser')
 const fileUpload = require('express-fileupload')
 const helmet = require('helmet')
-const cors = require('cors')
 const mongoSanitize = require('express-mongo-sanitize')
 
 const connectDB = require('./db/connect')
@@ -23,15 +21,17 @@ const notFoundMiddleware = require('./middleware/not-found')
 const errorHandlerMiddleware = require('./middleware/error-handler')
 
 app.use(helmet())
-app.use(cors())
 app.use(mongoSanitize())
-
-app.use(morgan('tiny'))
 app.use(express.json())
 app.use(cookieParser(process.env.JWT_SECRET))
 
 app.use(express.static('./public'))
 app.use(fileUpload())
+
+app.get('/api', (req, res) => {
+	console.log(req.signedCookies)
+	res.send('ecommerce')
+})
 
 app.use('/api/auth', authRouter)
 app.use('/api/users', userRouter)

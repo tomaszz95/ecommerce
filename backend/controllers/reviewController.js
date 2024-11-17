@@ -2,7 +2,6 @@ const Review = require('../models/Review')
 const Product = require('../models/Product')
 const { StatusCodes } = require('http-status-codes')
 const CustomError = require('../errors/index')
-const checkPermissions = require('../utils/checkPermissions')
 
 const createReview = async (req, res) => {
 	const { product: productId } = req.body
@@ -57,8 +56,6 @@ const updateReview = async (req, res) => {
 		throw new CustomError.NotFoundError(`No review with id ${req.params.id}`)
 	}
 
-	checkPermissions(req.user, review.user)
-
 	review.rating = rating
 	review.title = title
 	review.comment = comment
@@ -74,8 +71,6 @@ const deleteReview = async (req, res) => {
 	if (!review) {
 		throw new CustomError.NotFoundError(`No review with id ${req.params.id}`)
 	}
-
-	checkPermissions(req.user, review.user)
 
 	await review.deleteOne()
 

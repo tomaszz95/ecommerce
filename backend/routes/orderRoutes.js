@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const { authenticateUser, authorizePermissions } = require('../middleware/authentication')
+const { authenticateUser } = require('../middleware/authentication')
 
 const {
 	getAllOrders,
@@ -11,7 +11,7 @@ const {
 	updateOrder,
 } = require('../controllers/orderController')
 
-router.get('/', authenticateUser, authorizePermissions('admin'), getAllOrders)
+router.get('/', authenticateUser, getAllOrders)
 
 router.post('/', authenticateUser, createOrder)
 

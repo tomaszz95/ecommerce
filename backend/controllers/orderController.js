@@ -2,7 +2,6 @@ const Order = require('../models/Order')
 const Product = require('../models/Product')
 const { StatusCodes } = require('http-status-codes')
 const CustomError = require('../errors/index')
-const checkPermissions = require('../utils/checkPermissions')
 
 const fakeStripeAPI = async ({ amount, currenct }) => {
 	const client_secret = 'someRandomValue'
@@ -24,8 +23,6 @@ const getSingleOrder = async (req, res) => {
 	if (!order) {
 		throw new CustomError.NotFoundError('No order found')
 	}
-
-	checkPermissions(req.user, order.user)
 
 	res.status(StatusCodes.OK).json({ order })
 }
@@ -101,8 +98,6 @@ const updateOrder = async (req, res) => {
 	if (!order) {
 		throw new CustomError.NotFoundError('No order found')
 	}
-
-	checkPermissions(req.user, order.user)
 
 	order.paymentIntentId = paymentIntentId
 	order.status = 'paid'

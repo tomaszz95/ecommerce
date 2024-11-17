@@ -2,14 +2,7 @@ const User = require('../models/User')
 const { StatusCodes } = require('http-status-codes')
 const { attachCookiesToResponse } = require('../utils/jwt')
 const createTokenUser = require('../utils/createTokenUser')
-const checkPermissions = require('../utils/checkPermissions')
 const CustomError = require('../errors/index')
-
-const getAllUsers = async (req, res) => {
-	const users = await User.find({ role: 'user' }).select('-password')
-
-	res.status(StatusCodes.OK).json({ users })
-}
 
 const getSingleUser = async (req, res) => {
 	const user = await User.findOne({ _id: req.params.id }).select('-password')
@@ -17,42 +10,56 @@ const getSingleUser = async (req, res) => {
 	if (!user) {
 		throw new CustomError.NotFoundError(`No user with id ${req.params.id}`)
 	}
-	checkPermissions(req.user, user._id)
 
 	res.status(StatusCodes.OK).json({ user })
 }
 
-const showCurrentUser = async (req, res) => {
-	res.status(StatusCodes.OK).json({ user: req.user })
-}
-
 const updateUser = async (req, res) => {
-	const { email, name } = req.body
+	const { email, name, address, postalCode, city, phone } = req.body
 
-	if (!email || !name) {
-		throw new CustomError.BadRequestError('Please provide both values')
+	if (!email || !name || !address || !postalCode || !city || !phone) {
+		throw new CustomError.BadRequestError('Please provide all values')
 	}
 
-	const user = await User.findOneAndUpdate(
+	if (email !== req.user.email) {
+		const emailExists = await User.findOne({ email })
+
+		if (emailExists) {
+			throw new CustomError.BadRequestError('Email already in use')
+		}
+	}
+
+	const existingUser = await User.findOne({ _id: req.user.userId })
+
+	if (!existingUser) {
+		throw new CustomError.NotFoundError('User not found')
+	}
+
+	const updatedUser = await User.findOneAndUpdate(
 		{ _id: req.user.userId },
-		{
-			email,
-			name,
-		},
+		{ email, name, informations: { address, postalCode, city, phone } },
 		{ new: true, runValidators: true }
 	)
 
-	const tokenUser = createTokenUser(user)
+	const tokenUser = createTokenUser({
+		name: updatedUser.name,
+		email: updatedUser.email,
+		_id: updatedUser._id,
+	})
 
 	attachCookiesToResponse({ res, user: tokenUser })
 
-	res.status(StatusCodes.OK).json({ user: tokenUser })
+	const { favorites, password, ...userResponse } = updatedUser.toObject()
+
+	res.status(StatusCodes.OK).json({
+		user: userResponse,
+	})
 }
 
 const updateUserPassword = async (req, res) => {
 	const { oldPassword, newPassword } = req.body
 
-	if (!oldPassword || !oldPassword) {
+	if (!oldPassword || !newPassword) {
 		throw new CustomError.BadRequestError('Please provide both values')
 	}
 
@@ -71,10 +78,43 @@ const updateUserPassword = async (req, res) => {
 	res.status(StatusCodes.OK).json({ msg: 'Password changed' })
 }
 
+const updateUserFavorites = async (req, res) => {
+	const { productId } = req.body
+
+	if (!productId) {
+		throw new CustomError.BadRequestError('Please provide productId')
+	}
+
+	const user = await User.findOne({ _id: req.user.userId })
+
+	if (!user) {
+		throw new CustomError.NotFoundError('User not found')
+	}
+
+	const isFavorite = user.favorites.includes(productId)
+	let updatedFavorites
+	let favoriteMessage
+
+	if (isFavorite) {
+		updatedFavorites = user.favorites.filter(fav => fav.toString() !== productId)
+		favoriteMessage = 'Product removed from favorites'
+	} else {
+		updatedFavorites = [...user.favorites, productId]
+		favoriteMessage = 'Product added to favorites'
+	}
+
+	const updatedUser = await User.findOneAndUpdate(
+		{ _id: req.user.userId },
+		{ favorites: updatedFavorites },
+		{ new: true, runValidators: true }
+	)
+
+	res.status(StatusCodes.OK).json({ msg: favoriteMessage, favorites: updatedUser.favorites })
+}
+
 module.exports = {
-	getAllUsers,
 	getSingleUser,
-	showCurrentUser,
 	updateUser,
 	updateUserPassword,
+	updateUserFavorites,
 }
