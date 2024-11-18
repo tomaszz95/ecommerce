@@ -6,9 +6,9 @@ import SomeImg from '../assets/photos/gaminghero.jpg'
 const dummyProducts: productType[] = [
     {
         name: 'Apple Iphone 16',
+        price: 699,
         description:
             'Lorem ipsum dolor sit amened. Asad asd asd asd dsdsdasd asd sdasda sda asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda. asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda. asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda.asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda.asd dsaas asd asd asdasddsa sad sa asdsad sadsadsad sdasadsda.',
-        price: 699,
         images: [DummyImage, SomeImg, DummyImage, SomeImg, DummyImage, DummyImage],
         category: {
             name: 'Smartphones',

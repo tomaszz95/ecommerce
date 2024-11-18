@@ -5,13 +5,21 @@ const createTokenUser = require('../utils/createTokenUser')
 const CustomError = require('../errors/index')
 
 const getSingleUser = async (req, res) => {
+	if (req.params.id.toString() !== req.user.userId.toString()) {
+		throw new CustomError.UnauthorizedError('Unauthorized')
+	}
+
 	const user = await User.findOne({ _id: req.params.id }).select('-password')
 
 	if (!user) {
-		throw new CustomError.NotFoundError(`No user with id ${req.params.id}`)
+		throw new CustomError.NotFoundError(`No user found`)
 	}
 
 	res.status(StatusCodes.OK).json({ user })
+}
+
+const showCurrentUser = async (req, res) => {
+	res.status(StatusCodes.OK).json({ user: req.user })
 }
 
 const updateUser = async (req, res) => {
@@ -27,12 +35,6 @@ const updateUser = async (req, res) => {
 		if (emailExists) {
 			throw new CustomError.BadRequestError('Email already in use')
 		}
-	}
-
-	const existingUser = await User.findOne({ _id: req.user.userId })
-
-	if (!existingUser) {
-		throw new CustomError.NotFoundError('User not found')
 	}
 
 	const updatedUser = await User.findOneAndUpdate(
@@ -117,4 +119,5 @@ module.exports = {
 	updateUser,
 	updateUserPassword,
 	updateUserFavorites,
+	showCurrentUser,
 }

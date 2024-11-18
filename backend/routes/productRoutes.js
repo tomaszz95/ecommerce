@@ -1,31 +1,13 @@
 const express = require('express')
 const router = express.Router()
 
-const { authenticateUser } = require('../middleware/authentication')
+const { getFilteredProducts, getSingleProduct, createProduct } = require('../controllers/productController')
+const queryProductsValidator = require('../middleware/queryProductsValidator')
 
-const {
-	createProduct,
-	getAllProducts,
-	getSingleProduct,
-	updateProduct,
-	deleteProduct,
-	uploadImage,
-} = require('../controllers/productController')
+router.get('/', queryProductsValidator, getFilteredProducts)
 
-const { getSingleProductReviews } = require('../controllers/reviewController')
-
-router.get('/', getAllProducts)
-
-router.post('/', authenticateUser, createProduct)
-
-router.post('/uploadImage', authenticateUser, uploadImage)
+router.post('/', createProduct)
 
 router.get('/:id', getSingleProduct)
-
-router.patch('/:id', authenticateUser, updateProduct)
-
-router.delete('/:id', authenticateUser, deleteProduct)
-
-router.get('/:id/reviews', getSingleProductReviews)
 
 module.exports = router

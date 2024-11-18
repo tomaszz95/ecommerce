@@ -22,11 +22,11 @@ const errorHandlerMiddleware = require('./middleware/error-handler')
 
 app.use(helmet())
 app.use(mongoSanitize())
+
 app.use(express.json())
 app.use(cookieParser(process.env.JWT_SECRET))
 
 app.use(express.static('./public'))
-app.use(fileUpload())
 
 app.get('/api', (req, res) => {
 	console.log(req.signedCookies)
