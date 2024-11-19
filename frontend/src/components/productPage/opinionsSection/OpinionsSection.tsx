@@ -21,7 +21,7 @@ const OpinionsSection = ({ productId }: ComponentType) => {
             <div className={`${styles.opinionsSection} ${opinionCount === 0 ? styles.noOpinions : ''}`}>
                 <div className={styles.leftColumn}>
                     {filteredOpinions && <OpinionsStatistics opinions={filteredOpinions} />}
-                    <OpinionsForm productId={productId} opinionsCount={opinionCount} />
+                    <OpinionsForm opinionsCount={opinionCount} />
                 </div>
                 {filteredOpinions && <OpinionsList opinions={filteredOpinions.opinions} />}
             </div>

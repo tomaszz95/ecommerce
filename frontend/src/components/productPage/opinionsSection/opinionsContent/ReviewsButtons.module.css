@@ -1,0 +1,20 @@
+.opinionEdit {
+    display: flex;
+    gap: 10px;
+}
+
+.opinionEdit button {
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    background-color: var(--dirty-white);
+}
+
+.opinionEdit img {
+    width: 22px;
+    height: 22px;
+}
+
+.opinionEdit button:hover {
+    background-color: var(--lighter-grey);
+}

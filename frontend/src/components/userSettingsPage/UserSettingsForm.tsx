@@ -76,7 +76,7 @@ const UserSettingsForm = ({ userData }: ComponentType) => {
 
     const submitHandler = (event: FormEvent) => {
         event.preventDefault()
-        
+
         setIsSubmitting(true)
         setFirstLoading(false)
 
@@ -89,7 +89,7 @@ const UserSettingsForm = ({ userData }: ComponentType) => {
         try {
             setIsNewData(true)
             setServerError('')
-            
+
             setTimeout(() => {
                 setIsNewData(false)
                 setIsSubmitting(false)

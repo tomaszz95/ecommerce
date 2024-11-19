@@ -12,12 +12,27 @@ import { useSubmitForm } from '../../../../hooks/useSubmitForm'
 import styles from './OpinionsForm.module.css'
 
 type ComponentType = {
-    productId: string
-    opinionsCount: number
+    opinionsCount?: number
+    formMode?: string
+    author?: string
+    rating?: number
+    message?: string
+    opinionId?: string
+    onClose?: () => void
+    onDisableHandler?: (value: boolean) => void
 }
 
-const OpinionsForm = ({ productId, opinionsCount }: ComponentType) => {
-    const [rating, setRating] = useState(0)
+const OpinionsForm = ({
+    opinionsCount,
+    formMode,
+    author,
+    rating,
+    message,
+    opinionId,
+    onClose,
+    onDisableHandler,
+}: ComponentType) => {
+    const [newRating, setNewRating] = useState(rating || 0)
     const [hoveredRating, setHoveredRating] = useState(0)
 
     const {
@@ -27,7 +42,7 @@ const OpinionsForm = ({ productId, opinionsCount }: ComponentType) => {
         valueChangeHandler: nameChangeHandler,
         inputBlurHandler: nameBlurHandler,
         reset: resetName,
-    } = useInput((value) => value.trim() !== '')
+    } = useInput((value) => value.trim() !== '', author || '')
 
     const {
         value: enteredMessage,
@@ -36,16 +51,16 @@ const OpinionsForm = ({ productId, opinionsCount }: ComponentType) => {
         valueChangeHandler: messageChangeHandler,
         inputBlurHandler: messageBlurHandler,
         reset: resetMessage,
-    } = useInput((value) => value.trim() !== '')
+    } = useInput((value) => value.trim() !== '', message || '')
 
-    const formIsValid = nameIsValid && messageIsValid && rating > 0
+    const formIsValid = nameIsValid && messageIsValid && newRating > 0
 
-    const validateForm = () => nameIsValid && messageIsValid && rating > 0
+    const validateForm = () => nameIsValid && messageIsValid && newRating > 0
 
     const resetForm = () => {
         resetName()
         resetMessage()
-        setRating(0)
+        setNewRating(0)
     }
 
     const { serverError, isModalVisible, isSubmitting, firstLoading, submitHandler, setIsModalVisible } = useSubmitForm(
@@ -56,13 +71,28 @@ const OpinionsForm = ({ productId, opinionsCount }: ComponentType) => {
         },
     )
 
+    const formSubmitHandler = (event: React.FormEvent) => {
+        submitHandler(event)
+
+        if (formMode === 'edit' && onClose && onDisableHandler) {
+            onDisableHandler(true)
+
+            setTimeout(() => {
+                onClose()
+                onDisableHandler(false)
+            }, 3000)
+        }
+    }
+
     return (
         <form
-            className={`${styles.addReviewForm} ${opinionsCount === 0 ? styles.noOpinions : ''}`}
-            onSubmit={submitHandler}
+            className={`${styles.addReviewForm} ${formMode === 'edit' ? 'Edit review' : opinionsCount === 0 ? styles.noOpinions : ''}`}
+            onSubmit={formSubmitHandler}
         >
-            {opinionsCount === 0 ? <h3>Add Your First Review</h3> : <h3>Add Review</h3>}
-            <p>Have this product? Share your opinion based on the criteria below.</p>
+            <h3>{opinionsCount === 0 ? 'Add First Review' : formMode === 'edit' ? 'Edit Review' : 'Add Review'}</h3>
+
+            {formMode !== 'edit' && <p>Have this product? Share your opinion based on the criteria below.</p>}
+
             <Input
                 label="Your Name"
                 id="name"
@@ -87,11 +117,11 @@ const OpinionsForm = ({ productId, opinionsCount }: ComponentType) => {
                     {[1, 2, 3, 4, 5].map((star) => (
                         <span
                             key={star}
-                            className={`${styles.star} ${(hoveredRating || rating) >= star ? styles.filled : ''}`}
+                            className={`${styles.star} ${(hoveredRating || newRating) >= star ? styles.filled : ''}`}
                             onMouseEnter={() => setHoveredRating(star)}
                             onMouseLeave={() => setHoveredRating(0)}
                             onClick={() => {
-                                setRating(star)
+                                setNewRating(star)
                                 setHoveredRating(0)
                             }}
                         >
@@ -104,7 +134,7 @@ const OpinionsForm = ({ productId, opinionsCount }: ComponentType) => {
             {serverError && <p className={styles.serverError}>{serverError}</p>}
 
             <AuthFormButton type="submit" formIsValid={formIsValid && !isSubmitting}>
-                Add Review
+                {formMode === 'edit' ? 'Edit review' : 'Add Review'}
             </AuthFormButton>
 
             {!firstLoading && (

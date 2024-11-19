@@ -2,30 +2,39 @@ const mongoose = require('mongoose')
 
 const ReviewSchema = new mongoose.Schema(
 	{
+		author: {
+			type: String,
+			required: [true, 'Please provide author name'],
+			maxlength: [50, 'Title can not be longer than 50 characters'],
+		},
+		message: {
+			type: String,
+			required: [true, 'Please provide text review'],
+		},
 		rating: {
 			type: Number,
 			required: [true, 'Please provide rating'],
 			min: 1,
 			max: 5,
 		},
-		title: {
-			type: String,
-			trim: true,
-			required: [true, 'Please provide review title'],
-			maxlength: [100, 'Title can not be more than 100 characters'],
-		},
-		comment: {
-			type: String,
-			required: [true, 'Please provide text review'],
-		},
-		user: {
-			type: mongoose.Types.ObjectId,
-			ref: 'User',
+		likes: {
+			type: Number,
 			required: true,
+			default: 0,
+		},
+		dislikes: {
+			type: Number,
+			required: true,
+			default: 0,
 		},
 		product: {
-			type: mongoose.Types.ObjectId,
+			type: mongoose.Schema.ObjectId,
 			ref: 'Product',
+			required: true,
+		},
+		user: {
+			type: mongoose.Schema.ObjectId,
+			ref: 'User',
 			required: true,
 		},
 	},

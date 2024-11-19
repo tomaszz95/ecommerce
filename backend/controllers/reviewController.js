@@ -9,7 +9,7 @@ const createReview = async (req, res) => {
 	const isValidProduct = await Product.findOne({ _id: productId })
 
 	if (!isValidProduct) {
-		throw new CustomError.NotFoundError(`No product with id: ${productId}`)
+		throw new CustomError.NotFoundError(`No product with found`)
 	}
 
 	const alreadySubmitted = await Review.findOne({

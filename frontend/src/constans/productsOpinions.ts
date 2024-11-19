@@ -50,7 +50,6 @@ const productsOpinions: productOpinionType[] = [
                 likes: 2,
                 dislikes: 1,
             },
-           
         ],
     },
     {

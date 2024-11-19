@@ -1,6 +1,7 @@
 .addReviewForm {
     margin: 3rem auto 0;
     padding: 2rem 2rem;
+    width: 100%;
     max-width: 600px;
     border: 1px solid var(--lighter-grey);
     border-radius: 10px;
@@ -46,11 +47,6 @@
 }
 
 @media (1100px < width) {
-    .addReviewForm {
-        margin: 0;
-        margin-top: 5rem;
-    }
-
     .noOpinions {
         margin: 0 auto;
         margin-top: 2rem;
