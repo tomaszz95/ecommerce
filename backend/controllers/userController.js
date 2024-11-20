@@ -2,6 +2,7 @@ const User = require('../models/User')
 const { StatusCodes } = require('http-status-codes')
 const { attachCookiesToResponse } = require('../utils/jwt')
 const createTokenUser = require('../utils/createTokenUser')
+const checkPermissions = require('../utils/checkPermissions')
 const CustomError = require('../errors/index')
 
 const getSingleUser = async (req, res) => {
@@ -15,11 +16,9 @@ const getSingleUser = async (req, res) => {
 		throw new CustomError.NotFoundError(`No user found`)
 	}
 
-	res.status(StatusCodes.OK).json({ user })
-}
+	checkPermissions(req.user, user._id)
 
-const showCurrentUser = async (req, res) => {
-	res.status(StatusCodes.OK).json({ user: req.user })
+	res.status(StatusCodes.OK).json({ user })
 }
 
 const updateUser = async (req, res) => {
@@ -93,7 +92,10 @@ const updateUserFavorites = async (req, res) => {
 		throw new CustomError.NotFoundError('User not found')
 	}
 
+	checkPermissions(req.user, user._id)
+
 	const isFavorite = user.favorites.includes(productId)
+
 	let updatedFavorites
 	let favoriteMessage
 
@@ -119,5 +121,4 @@ module.exports = {
 	updateUser,
 	updateUserPassword,
 	updateUserFavorites,
-	showCurrentUser,
 }

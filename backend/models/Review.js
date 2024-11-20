@@ -17,16 +17,6 @@ const ReviewSchema = new mongoose.Schema(
 			min: 1,
 			max: 5,
 		},
-		likes: {
-			type: Number,
-			required: true,
-			default: 0,
-		},
-		dislikes: {
-			type: Number,
-			required: true,
-			default: 0,
-		},
 		product: {
 			type: mongoose.Schema.ObjectId,
 			ref: 'Product',

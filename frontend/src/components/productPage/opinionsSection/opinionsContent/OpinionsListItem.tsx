@@ -1,7 +1,6 @@
 'use client'
 
 import StarRating from '../../../../components/starRating/StarRating'
-import LikesButtons from './LikesButtons'
 import ReviewsButtons from './ReviewsButtons'
 
 import { singleOpinionType } from '../../../../types/types'
@@ -20,9 +19,7 @@ const OpinionsListItem = ({ opinion }: ComponentType) => {
                 <StarRating rating={opinion.opinionValue} />
             </div>
             <p className={styles.opinionText}>{opinion.opinionText}</p>
-            <p className={styles.opinionTextQuestion}>Was this comment helpful?</p>
             <div className={styles.opinionBottomBox}>
-                <LikesButtons likes={opinion.likes} dislikes={opinion.dislikes} />
                 <ReviewsButtons
                     opinionId={opinion.opinionId}
                     author={opinion.opinionAuthor}

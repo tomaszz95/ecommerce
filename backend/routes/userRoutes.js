@@ -3,15 +3,7 @@ const router = express.Router()
 
 const { authenticateUser } = require('../middleware/authentication')
 
-const {
-	getSingleUser,
-	updateUser,
-	updateUserPassword,
-	updateUserFavorites,
-	showCurrentUser,
-} = require('../controllers/userController')
-
-router.get('/showUser', authenticateUser, showCurrentUser)
+const { getSingleUser, updateUser, updateUserPassword, updateUserFavorites } = require('../controllers/userController')
 
 router.patch('/updateUser', authenticateUser, updateUser)
 
