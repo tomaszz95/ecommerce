@@ -1,4 +1,5 @@
 const User = require('../models/User')
+const Product = require('../models/Product')
 const { StatusCodes } = require('http-status-codes')
 const { attachCookiesToResponse } = require('../utils/jwt')
 const createTokenUser = require('../utils/createTokenUser')
@@ -86,13 +87,13 @@ const updateUserFavorites = async (req, res) => {
 		throw new CustomError.BadRequestError('Please provide productId')
 	}
 
-	const user = await User.findOne({ _id: req.user.userId })
+	const product = await Product.findOne({ _id: productId })
 
-	if (!user) {
-		throw new CustomError.NotFoundError('User not found')
+	if (!product) {
+		throw new CustomError.NotFoundError('No product found')
 	}
 
-	checkPermissions(req.user, user._id)
+	const user = await User.findOne({ _id: req.user.userId })
 
 	const isFavorite = user.favorites.includes(productId)
 
