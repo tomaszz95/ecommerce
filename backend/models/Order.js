@@ -2,27 +2,41 @@ const mongoose = require('mongoose')
 
 const SingleOrderItemSchema = mongoose.Schema({
 	name: { type: String, required: true },
-	image: { type: String, required: true },
 	price: { type: Number, required: true },
+	promotionPrice: { type: Number, required: true },
+	image: { type: String, required: true },
 	amount: { type: Number, required: true },
+	stock: { type: Number, required: true },
+	totalProductPrice: { type: Number, required: true },
+	category: {
+		type: String,
+		required: true,
+	},
+	promotion: {
+		isPromotion: {
+			type: Boolean,
+			default: false,
+		},
+		promotionPercent: {
+			type: Number,
+			default: 0,
+		},
+	},
 	product: {
 		type: mongoose.Types.ObjectId,
 		ref: 'Product',
 		required: true,
 	},
+	_id: false,
 })
 
 const OrderSchema = new mongoose.Schema(
 	{
-		tax: {
-			type: Number,
-			required: true,
-		},
-		shippingFee: {
-			type: Number,
-			required: true,
-		},
 		subtotal: {
+			type: Number,
+			required: true,
+		},
+		discount: {
 			type: Number,
 			required: true,
 		},
@@ -32,15 +46,31 @@ const OrderSchema = new mongoose.Schema(
 		},
 		status: {
 			type: String,
-			enum: ['pending', 'failed', 'paid', 'canceled', 'delivered'],
+			enum: ['pending', 'failed', 'paid', 'canceled', 'in delivery', 'delivered'],
 			default: 'pending',
 		},
-		clientSecret: {
+		comment: {
 			type: String,
-			required: true,
+			default: '',
+		},
+		payment: {
+			type: String,
+			default: '',
+		},
+		delivery: {
+			method: { type: String, enum: ['Store', 'Courier'], default: 'Courier' },
+			methodWay: { type: String, enum: ['FeedEx', 'Inpost', 'UPS', 'Warsaw', 'Cracow', 'Katowice'], default: 'FeedEx' },
+			informations: {
+				name: { type: String, default: '' },
+				address: { type: String, default: '' },
+				postalCode: { type: String, default: '' },
+				city: { type: String, default: '' },
+				phone: { type: String, default: '' },
+				email: { type: String, default: '' },
+			},
 		},
 		paymentIntentId: {
-			type: String,
+			type: Number,
 		},
 		orderItems: [SingleOrderItemSchema],
 		user: {

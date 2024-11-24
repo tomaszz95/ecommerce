@@ -27,8 +27,8 @@ const ordersDummy: orderType[] = [
             {
                 product: {
                     name: 'Apple Iphone 16',
-                    price: 699,
                     image: DummyImage,
+                    price: 699,
                     category: {
                         name: 'Smartphones',
                         link: '/shop/smartphones',

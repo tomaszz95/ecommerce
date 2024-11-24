@@ -2,18 +2,8 @@ const Order = require('../models/Order')
 const Product = require('../models/Product')
 const { StatusCodes } = require('http-status-codes')
 const CustomError = require('../errors/index')
-
-const fakeStripeAPI = async ({ amount, currenct }) => {
-	const client_secret = 'someRandomValue'
-
-	return { client_secret, amount }
-}
-
-const getAllOrders = async (req, res) => {
-	const orders = await Order.find({})
-
-	res.status(StatusCodes.OK).json({ orders })
-}
+const checkPermissions = require('../utils/checkPermissions')
+const validateDeliveryDetails = require('../utils/validateDeliveryDetails')
 
 const getSingleOrder = async (req, res) => {
 	const { id: orderId } = req.params
@@ -23,6 +13,8 @@ const getSingleOrder = async (req, res) => {
 	if (!order) {
 		throw new CustomError.NotFoundError('No order found')
 	}
+
+	checkPermissions(req.user, order.user)
 
 	res.status(StatusCodes.OK).json({ order })
 }
@@ -34,14 +26,10 @@ const getCurrentUserOrders = async (req, res) => {
 }
 
 const createOrder = async (req, res) => {
-	const { items: cartItems, tax, shippingFee } = req.body
+	const { items: cartItems, discount } = req.body
 
 	if (!cartItems || cartItems.length < 1) {
 		throw new CustomError.BadRequestError('No cart items provided')
-	}
-
-	if (!tax || !shippingFee) {
-		throw new CustomError.BadRequestError('Please provide tax and shipping fee')
 	}
 
 	let orderItems = []
@@ -54,44 +42,59 @@ const createOrder = async (req, res) => {
 			throw new CustomError.NotFoundError('Product not found')
 		}
 
-		const { name, price, image, _id } = dbProduct
+		const { name, price, images, _id, category, stock, promotion } = dbProduct
+
+		let productPrice = price
+
+		if (promotion.isPromotion) {
+			const promotionValue = (price * promotion.promotionPercent) / 100
+			productPrice = price - promotionValue
+		}
+
+		const productTotalPrice = item.amount * productPrice
 
 		const singleOrderItem = {
 			amount: item.amount,
 			name,
 			price,
-			image,
+			promotionPrice: productPrice,
+			image: images[0],
+			stock,
+			promotion,
+			category,
 			product: _id,
+			totalProductPrice: productTotalPrice,
 		}
 
-		orderItems = [...orderItems, singleOrderItem]
+		subtotal += productTotalPrice
 
-		subtotal += item.amount * price
+		orderItems = [...orderItems, singleOrderItem]
 	}
 
-	const total = tax + shippingFee + subtotal
+	let discountValue = 0
 
-	const paymentIntent = await fakeStripeAPI({
-		amount: total,
-		currency: 'usd',
-	})
+	if (discount !== 0) {
+		discountValue = ((subtotal * discount) / 100).toFixed(2)
+	}
+
+	const total = (subtotal - discountValue).toFixed(2)
+
+	const totalOrders = await Order.countDocuments()
 
 	const order = await Order.create({
-		orderItems,
-		total,
 		subtotal,
-		tax,
-		shippingFee,
-		clientSecret: paymentIntent.client_secret,
+		total,
+		discount,
+		orderItems,
+		paymentIntentId: totalOrders + 1,
 		user: req.user.userId,
 	})
 
-	res.status(StatusCodes.CREATED).json({ order, clientSecret: order.clientSecret })
+	res.status(StatusCodes.CREATED).json({ order })
 }
 
-const updateOrder = async (req, res) => {
-	const { id: orderId } = req.params
-	const { paymentIntentId } = req.body
+const updateOrderDelivery = async (req, res) => {
+	const { id: orderId, method, methodWay, informations } = req.body
 
 	const order = await Order.findOne({ _id: orderId })
 
@@ -99,8 +102,22 @@ const updateOrder = async (req, res) => {
 		throw new CustomError.NotFoundError('No order found')
 	}
 
-	order.paymentIntentId = paymentIntentId
-	order.status = 'paid'
+	checkPermissions(req.user, order.user)
+
+	validateDeliveryDetails(method, methodWay, informations)
+
+	order.delivery = {
+		method: method || order.delivery.method,
+		methodWay: methodWay || order.delivery.methodWay,
+		informations: {
+			name: informations.name || order.delivery.informations.name,
+			address: informations.address || order.delivery.informations.address,
+			postalCode: informations.postalCode || order.delivery.informations.postalCode,
+			city: informations.city || order.delivery.informations.city,
+			phone: informations.phone || order.delivery.informations.phone,
+			email: informations.email || order.delivery.informations.email,
+		},
+	}
 
 	await order.save()
 
@@ -108,9 +125,8 @@ const updateOrder = async (req, res) => {
 }
 
 module.exports = {
-	getAllOrders,
 	getSingleOrder,
 	getCurrentUserOrders,
 	createOrder,
-	updateOrder,
+	updateOrderDelivery,
 }
