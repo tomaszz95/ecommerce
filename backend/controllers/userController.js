@@ -117,9 +117,20 @@ const updateUserFavorites = async (req, res) => {
 	res.status(StatusCodes.OK).json({ msg: favoriteMessage, favorites: updatedUser.favorites })
 }
 
+const getUserFavorites = async (req, res) => {
+	const user = await User.findOne({ _id: req.user.userId }).populate('favorites')
+
+	if (!user) {
+		throw new CustomError.NotFoundError('User not found')
+	}
+
+	res.status(StatusCodes.OK).json({ favorites: user.favorites })
+}
+
 module.exports = {
 	getSingleUser,
 	updateUser,
 	updateUserPassword,
 	updateUserFavorites,
+	getUserFavorites,
 }

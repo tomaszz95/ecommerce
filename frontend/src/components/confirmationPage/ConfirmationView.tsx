@@ -9,12 +9,6 @@ const ConfirmationView = () => {
         <section className={styles.confirmationSection}>
             <div className={styles.confirmationContainer}>
                 <h2>Thank you for placing your order</h2>
-                <p>
-                    To pay for your order, click on the&nbsp;
-                    <Link href="/order/payed" aria-label="Pay for order" className={styles.confirmationLink}>
-                        highlighted link.
-                    </Link>
-                </p>
                 <p>You will receive an email with your order details shortly.</p>
                 <p>
                     If you are logged in you can also check your orders&nbsp;
@@ -29,7 +23,7 @@ const ConfirmationView = () => {
                         phone or e-mail.
                     </Link>
                 </p>
-                <HightlightButton href="/">Go back</HightlightButton>
+                <HightlightButton href="/order/paid">Pay for order</HightlightButton>
             </div>
         </section>
     )

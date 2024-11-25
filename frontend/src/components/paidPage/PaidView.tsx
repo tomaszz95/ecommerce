@@ -1,8 +1,8 @@
 import HightlightButton from '../UI/buttons/HightlightButton'
 
-import styles from './PayedView.module.css'
+import styles from './PaidView.module.css'
 
-const PayedView = () => {
+const PaidView = () => {
     return (
         <section className={styles.payedSection}>
             <div className={styles.payedContainer}>
@@ -18,4 +18,4 @@ const PayedView = () => {
     )
 }
 
-export default PayedView
+export default PaidView

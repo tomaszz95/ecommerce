@@ -46,8 +46,8 @@ const OrderSchema = new mongoose.Schema(
 		},
 		status: {
 			type: String,
-			enum: ['pending', 'failed', 'paid', 'canceled', 'in delivery', 'delivered'],
-			default: 'pending',
+			enum: ['In-progress', 'Pending', 'Failed', 'Confirmed', 'Paid', 'Canceled', 'In delivery', 'Delivered'],
+			default: 'Pending',
 		},
 		comment: {
 			type: String,
@@ -55,7 +55,8 @@ const OrderSchema = new mongoose.Schema(
 		},
 		payment: {
 			type: String,
-			default: '',
+			enum: ['Online payment', 'Payment by card', 'Traditional transfer', 'Upon receipt'],
+			default: 'Online payment',
 		},
 		delivery: {
 			method: { type: String, enum: ['Store', 'Courier'], default: 'Courier' },
@@ -74,8 +75,13 @@ const OrderSchema = new mongoose.Schema(
 		},
 		orderItems: [SingleOrderItemSchema],
 		user: {
-			type: mongoose.Types.ObjectId,
-			ref: 'User',
+			type: mongoose.Schema.Types.Mixed,
+			refPath: 'userType',
+			required: true,
+		},
+		userType: {
+			type: String,
+			enum: ['User', 'Guest'],
 			required: true,
 		},
 	},

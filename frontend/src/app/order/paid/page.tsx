@@ -1,18 +1,18 @@
 import MainLayout from '../../../components/layouts/MainLayout'
 import type { Metadata } from 'next'
-import PayedView from '../../../components/payedPage/PayedView'
+import PaidView from '../../../components/paidPage/PaidView'
 
 export const metadata: Metadata = {
-    title: 'NeXtPC - Payed',
+    title: 'NeXtPC - Paid',
     description: 'neXtPC app homepage',
 }
 
-const ConfirmationPage = () => {
+const PaidPage = () => {
     return (
         <MainLayout>
-            <PayedView />
+            <PaidView />
         </MainLayout>
     )
 }
 
-export default ConfirmationPage
+export default PaidPage

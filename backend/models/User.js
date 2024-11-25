@@ -20,8 +20,7 @@ const UserSchema = new mongoose.Schema({
 		city: { type: String, default: '' },
 		phone: { type: String, default: '' },
 	},
-	// favorites: { type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }], default: [] },
-	favorites: { type: [{ type: String }], default: [] },
+	favorites: { type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }], default: [] },
 })
 
 UserSchema.pre('save', async function () {
