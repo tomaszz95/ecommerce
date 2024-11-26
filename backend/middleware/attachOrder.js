@@ -1,4 +1,5 @@
 const Order = require('../models/Order')
+const CustomError = require('../errors/index')
 
 const attachOrderToRequest = async (req, res, next) => {
 	const { id: orderId } = req.params

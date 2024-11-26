@@ -3,19 +3,20 @@ const Product = require('../models/Product')
 const { StatusCodes } = require('http-status-codes')
 const { isTokenValid } = require('../utils/jwt')
 const CustomError = require('../errors/index')
-const checkPermissions = require('../utils/checkPermissions')
-const validateDeliveryDetails = require('../utils/validateDeliveryDetails')
 
-const getSingleOrder = async (req, res) => {
-	const order = req.order
+const validateDeliveryDetails = require('../utils/validateDeliveryDetails')
+const checkPromoCode = require('../utils/checkPromoCode')
+
+const getOrder = async (req, res) => {
+	const { orderId } = req.body
+
+	const order = await Order.findOne({ _id: orderId })
+
+	if (!order) {
+		throw new CustomError.NotFoundError('Order not found')
+	}
 
 	res.status(StatusCodes.OK).json({ order })
-}
-
-const getCurrentUserOrders = async (req, res) => {
-	const orders = await Order.find({ user: req.user.userId })
-
-	res.status(StatusCodes.OK).json({ orders })
 }
 
 const addToCart = async (req, res) => {
@@ -32,6 +33,10 @@ const addToCart = async (req, res) => {
 
 		if (!order) {
 			throw new CustomError.NotFoundError('Order not found')
+		}
+
+		if (order.status !== 'Pending') {
+			throw new CustomError.BadRequestError('Cannot add more products to this order')
 		}
 
 		user = order.user
@@ -56,9 +61,10 @@ const addToCart = async (req, res) => {
 			user: user,
 			userType: userType,
 			orderItems: [],
-			status: 'In-progress',
+			status: 'Pending',
 			subtotal: 0,
 			discount: 0,
+			discountValue: 0,
 			total: 0,
 			paymentIntentId: (await Order.countDocuments()) + 1,
 		})
@@ -112,14 +118,22 @@ const addToCart = async (req, res) => {
 	})
 
 	order.subtotal = subtotal
-	order.total = subtotal
+
+	if (order.discountValue !== 0) {
+		const discount = (subtotal * order.discountValue) / 100
+
+		order.discount = discount
+		order.total = subtotal - discount
+	} else {
+		order.total = subtotal
+	}
 
 	await order.save()
 
 	res.status(StatusCodes.OK).json({ orderId: order._id, userId: user, userType: userType })
 }
 
-const updateCart = async (req, res) => {
+const updateOrdersAmount = async (req, res) => {
 	const { orderId, productId, amountType } = req.body
 
 	if (!productId || !amountType) {
@@ -134,6 +148,10 @@ const updateCart = async (req, res) => {
 
 	if (!order) {
 		throw new CustomError.NotFoundError('Order not found')
+	}
+
+	if (order.status !== 'Pending') {
+		throw new CustomError.BadRequestError('Cannot edit this order')
 	}
 
 	const existingProductIndex = order.orderItems.findIndex(item => item.product.toString() === productId)
@@ -161,6 +179,7 @@ const updateCart = async (req, res) => {
 
 	if (order.orderItems.length === 0) {
 		await Order.deleteOne({ _id: orderId })
+
 		return res.status(StatusCodes.OK).json({ message: 'Order removed, no items left in cart' })
 	}
 
@@ -171,15 +190,64 @@ const updateCart = async (req, res) => {
 	})
 
 	order.subtotal = subtotal
-	order.total = subtotal
+
+	if (order.discountValue !== 0) {
+		const discount = (subtotal * order.discountValue) / 100
+
+		order.discount = discount
+		order.total = subtotal - discount
+	} else {
+		order.total = subtotal
+	}
 
 	await order.save()
 
 	res.status(StatusCodes.OK).json({ order: order })
 }
 
+const updateCart = async (req, res) => {
+	const { orderId, promoCode } = req.body
+
+	if (!promoCode || !orderId) {
+		throw new CustomError.BadRequestError('Order ID, and promo code are required')
+	}
+
+	const order = await Order.findById(orderId)
+
+	if (!order) {
+		throw new CustomError.NotFoundError('Order not found')
+	}
+
+	if (order.status !== 'Pending') {
+		throw new CustomError.BadRequestError('Cannot edit this order')
+	}
+
+	const promoValue = checkPromoCode(promoCode)
+
+	if (!promoValue) {
+		return res.status(StatusCodes.OK).json({ msg: 'Promo code invalid', order })
+	}
+
+	const discount = (order.subtotal * promoValue) / 100
+
+	order.discount = discount
+	order.discountValue = promoValue
+	order.total = order.subtotal - discount
+
+	await order.save()
+
+	return res.status(StatusCodes.OK).json({
+		msg: 'Promo code is valid',
+		order,
+	})
+}
+
 const updateOrderDelivery = async (req, res) => {
 	const order = req.order
+
+	if (order.status !== 'Pending') {
+		throw new CustomError.BadRequestError('Cannot edit this order')
+	}
 
 	const { method, methodWay, informations } = req.body
 
@@ -210,6 +278,10 @@ const updateOrderDelivery = async (req, res) => {
 const updateOrderPayment = async (req, res) => {
 	const order = req.order
 
+	if (order.status !== 'Pending') {
+		throw new CustomError.BadRequestError('Cannot edit this order')
+	}
+
 	const { payment } = req.body
 
 	if (!payment) {
@@ -226,6 +298,10 @@ const updateOrderPayment = async (req, res) => {
 const updateOrderComment = async (req, res) => {
 	const order = req.order
 
+	if (order.status !== 'Pending') {
+		throw new CustomError.BadRequestError('Cannot edit this order')
+	}
+
 	const { comment } = req.body
 
 	if (!comment) {
@@ -240,8 +316,12 @@ const updateOrderComment = async (req, res) => {
 	res.status(StatusCodes.OK).json({ msg: 'Order updated successfully' })
 }
 
-const updatePaid = async (req, res) => {
+const updateOrderPaid = async (req, res) => {
 	const order = req.order
+
+	if (order.status !== 'Confirmed') {
+		throw new CustomError.BadRequestError('You must confirm your order, then pay for it')
+	}
 
 	order.status = 'Paid'
 
@@ -251,12 +331,12 @@ const updatePaid = async (req, res) => {
 }
 
 module.exports = {
-	getSingleOrder,
-	getCurrentUserOrders,
+	getOrder,
 	addToCart,
-	updateCart,
+	updateOrdersAmount,
 	updateOrderDelivery,
 	updateOrderPayment,
 	updateOrderComment,
-	updatePaid,
+	updateOrderPaid,
+	updateCart,
 }

@@ -40,13 +40,17 @@ const OrderSchema = new mongoose.Schema(
 			type: Number,
 			required: true,
 		},
+		discountValue: {
+			type: Number,
+			required: true,
+		},
 		total: {
 			type: Number,
 			required: true,
 		},
 		status: {
 			type: String,
-			enum: ['In-progress', 'Pending', 'Failed', 'Confirmed', 'Paid', 'Canceled', 'In delivery', 'Delivered'],
+			enum: ['Pending', 'Confirmed', 'Paid'],
 			default: 'Pending',
 		},
 		comment: {

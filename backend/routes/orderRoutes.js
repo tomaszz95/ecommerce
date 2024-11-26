@@ -2,22 +2,23 @@ const express = require('express')
 const router = express.Router()
 
 const { attachOrderToRequest } = require('../middleware/attachOrder')
-const { authenticateUser } = require('../middleware/authentication')
 
 const {
-	getSingleOrder,
-	getCurrentUserOrders,
 	addToCart,
 	updateOrderDelivery,
 	updateOrderPayment,
 	updateOrderComment,
-	updatePaid,
+	updateOrderPaid,
+	updateOrdersAmount,
 	updateCart,
+	getOrder,
 } = require('../controllers/orderController')
+
+router.get('/getOrder', getOrder)
 
 router.post('/addToCart', addToCart)
 
-router.get('/orderList', authenticateUser, getCurrentUserOrders)
+router.patch('/updateAmount', updateOrdersAmount)
 
 router.patch('/updateCart', updateCart)
 
@@ -27,8 +28,6 @@ router.patch('/:id/payment', attachOrderToRequest, updateOrderPayment)
 
 router.patch('/:id/summary', attachOrderToRequest, updateOrderComment)
 
-router.patch('/:id/paid', attachOrderToRequest, updatePaid)
-
-router.get('/:id', attachOrderToRequest, getSingleOrder)
+router.patch('/:id/paid', attachOrderToRequest, updateOrderPaid)
 
 module.exports = router
