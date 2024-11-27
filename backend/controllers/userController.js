@@ -1,5 +1,6 @@
 const User = require('../models/User')
 const Product = require('../models/Product')
+
 const { StatusCodes } = require('http-status-codes')
 const { attachCookiesToResponse } = require('../utils/jwt')
 const createTokenUser = require('../utils/createTokenUser')

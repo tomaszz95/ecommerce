@@ -1,4 +1,5 @@
 const Product = require('../models/Product')
+
 const { StatusCodes } = require('http-status-codes')
 const CustomError = require('../errors/index')
 const { queryProductsBuilder, queryOptionsBuilder } = require('../utils/queryProductsUtils')
@@ -34,9 +35,16 @@ const getSingleProduct = async (req, res) => {
 }
 
 const createProduct = async (req, res) => {
-	const product = await Product.create(req.body)
+	const products = req.body
 
-	res.status(StatusCodes.CREATED).json({ product })
+	const createdProducts = await Promise.all(
+		products.map(async productData => {
+			const product = await Product.create(productData)
+			return product
+		})
+	)
+
+	res.status(StatusCodes.CREATED).json({ products: createdProducts })
 }
 
 module.exports = {

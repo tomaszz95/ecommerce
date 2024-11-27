@@ -5,10 +5,9 @@ const express = require('express')
 const app = express()
 
 const cookieParser = require('cookie-parser')
-const fileUpload = require('express-fileupload')
 const helmet = require('helmet')
 const mongoSanitize = require('express-mongo-sanitize')
-
+const cors = require('cors')
 const connectDB = require('./db/connect')
 
 const authRouter = require('./routes/authRoutes')
@@ -21,18 +20,14 @@ const orderRouter = require('./routes/orderRoutes')
 const notFoundMiddleware = require('./middleware/not-found')
 const errorHandlerMiddleware = require('./middleware/error-handler')
 
+app.use(cookieParser(process.env.JWT_SECRET))
 app.use(helmet())
 app.use(mongoSanitize())
+app.use(cors())
 
 app.use(express.json())
-app.use(cookieParser(process.env.JWT_SECRET))
 
 app.use(express.static('./public'))
-
-app.get('/api', (req, res) => {
-	console.log(req.signedCookies)
-	res.send('ecommerce')
-})
 
 app.use('/api/auth', authRouter)
 app.use('/api/users', userRouter)
