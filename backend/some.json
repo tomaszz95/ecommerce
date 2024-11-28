@@ -1,0 +1,802 @@
+[
+	{
+		"name": "Xiaomi MiFlex X",
+		"price": 799,
+		"description": "The Xiaomi MiFlex X is a top-of-the-line smartphone with a flexible OLED display that can be bent slightly without compromising durability. Powered by the Snapdragon 888 chipset and offering a 108 MP camera system, it’s perfect for gaming, media consumption, and creative photography.",
+		"images": ["smartphonephoto20.jpg", "smartphonephoto21.jpg", "smartphonephoto22.jpg", "smartphonephoto23.jpg"],
+		"category": "Smartphones",
+		"company": "Xiaomi",
+		"stock": 45,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": true,
+			"promotionPercent": 10
+		},
+		"specification": {
+			"Manufacturer": "Xiaomi",
+			"Warranty": "2 years",
+			"Screen Size": "6.8 inches",
+			"Resolution": "3200x1440",
+			"Processor": "Snapdragon 888",
+			"Camera": "108 MP (Main), 16 MP (Front)",
+			"Battery": "4500 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Black, Silver",
+			"Operating System": "MIUI 13 (Android)",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Flexible OLED display, 108 MP camera, 120 Hz refresh rate"
+		},
+		"presentation": [
+			{
+				"title": "Flexible OLED Display",
+				"text": "The Xiaomi MiFlex X comes with an innovative flexible OLED display that allows you to slightly bend the screen without compromising the integrity of the display. Perfect for users looking for durability combined with cutting-edge tech.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "Snapdragon 888 for Ultimate Performance",
+				"text": "The Snapdragon 888 chipset inside the MiFlex X ensures that you experience high performance for gaming, multitasking, and media consumption. Whether you're playing demanding games or editing videos, it handles everything with ease.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "Stunning 108 MP Camera System",
+				"text": "Capture professional-quality photos with the 108 MP camera system. Whether it's day or night, the AI-powered camera enhances every shot to produce crystal-clear images with vivid colors and sharp details.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "All-day Battery with Fast Charging",
+				"text": "With a 4500 mAh battery, the Xiaomi MiFlex X ensures that you can go through your day without worrying about recharging. Plus, it supports fast charging to quickly power up when you're in a rush.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"name": "HP SmartX Pro",
+		"price": 649,
+		"description": "The HP SmartX Pro is a versatile smartphone that offers an amazing combination of power and performance. Equipped with a 6.4-inch AMOLED display, Snapdragon 765G processor, and a 48 MP quad-camera setup, it is the ideal device for users who demand high performance and stunning visuals.",
+		"images": ["smartphonephoto21.jpg", "smartphonephoto22.jpg", "smartphonephoto23.jpg", "smartphonephoto24.jpg"],
+		"category": "Smartphones",
+		"company": "HP",
+		"stock": 65,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": true,
+			"promotionPercent": 7
+		},
+		"specification": {
+			"Manufacturer": "HP",
+			"Warranty": "1 year",
+			"Screen Size": "6.4 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Snapdragon 765G",
+			"Camera": "48 MP (Main), 8 MP (Wide), 2 MP (Macro), 2 MP (Depth)",
+			"Battery": "4000 mAh",
+			"Storage Options": "64GB, 128GB",
+			"Color Options": "Black, White",
+			"Operating System": "Android 11",
+			"Connectivity": "5G, Wi-Fi 5",
+			"Additional Features": "Multi-lens camera, AI-enhanced photography, fast charging"
+		},
+		"presentation": [
+			{
+				"title": "Quad-Camera System",
+				"text": "Capture every moment with the HP SmartX Pro's versatile quad-camera setup. Featuring a 48 MP main sensor, an 8 MP wide lens, a macro camera, and a depth sensor, it offers unparalleled flexibility in photography.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "6.4-inch AMOLED Display",
+				"text": "Enjoy bright and vivid colors on the 6.4-inch AMOLED display, which provides an immersive experience whether you're watching videos, playing games, or browsing your favorite apps.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "Powerful Snapdragon 765G Chipset",
+				"text": "The Snapdragon 765G processor delivers excellent performance for gaming, multitasking, and media. You can expect smooth performance whether you're on a video call or streaming content.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "Long-lasting Battery with Fast Charging",
+				"text": "With a 4000 mAh battery, the HP SmartX Pro can easily last through your busiest days. And with fast charging, you'll spend less time plugged in and more time enjoying your phone.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"name": "Microsoft Surface Phone",
+		"price": 899,
+		"description": "The Microsoft Surface Phone combines the best of both worlds: high performance and business-friendly features. Powered by the Snapdragon 8 Gen 1 processor, it has a 6.7-inch AMOLED display, 12 GB of RAM, and a 50 MP camera, making it an excellent choice for professionals and tech enthusiasts alike.",
+		"images": ["smartphonephoto22.jpg", "smartphonephoto23.jpg", "smartphonephoto24.jpg", "smartphonephoto25.jpg"],
+		"category": "Smartphones",
+		"company": "Microsoft",
+		"stock": 40,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": false,
+			"promotionPercent": 0
+		},
+		"specification": {
+			"Manufacturer": "Microsoft",
+			"Warranty": "1 year",
+			"Screen Size": "6.7 inches",
+			"Resolution": "3200x1440",
+			"Processor": "Snapdragon 8 Gen 1",
+			"Camera": "50 MP (Main), 12 MP (Front)",
+			"Battery": "4600 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Black, Silver",
+			"Operating System": "Windows 11 Mobile",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Business-friendly features, enterprise-grade security, powerful performance"
+		},
+		"presentation": [
+			{
+				"title": "Enterprise-Ready Performance",
+				"text": "The Surface Phone is built with professionals in mind, featuring a Snapdragon 8 Gen 1 chipset and 12 GB of RAM to handle demanding business applications, multitasking, and more.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "Stunning 6.7-inch AMOLED Display",
+				"text": "Enjoy crisp visuals and true-to-life colors with the 6.7-inch AMOLED display. Perfect for both work and play, it offers vibrant graphics and clarity for everything you do.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "50 MP Camera for Professional Quality Photos",
+				"text": "The Surface Phone’s 50 MP main camera captures stunning details in every shot, while the 12 MP front camera is perfect for professional-grade selfies or video calls.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "Windows 11 Mobile Experience",
+				"text": "Designed to integrate seamlessly with Windows 11, the Surface Phone offers a truly connected experience for all your devices, including enhanced productivity tools and security features.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"name": "Intel Ragnarok 5",
+		"price": 799,
+		"description": "The Intel Ragnarok 5 combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
+		"images": ["smartphonephoto23.jpg", "smartphonephoto24.jpg", "smartphonephoto25.jpg", "smartphonephoto26.jpg"],
+		"category": "Smartphones",
+		"company": "Intel",
+		"stock": 60,
+		"recommended": true,
+		"promotion": {
+			"isPromotion": true,
+			"promotionPercent": 8
+		},
+		"specification": {
+			"Manufacturer": "Intel",
+			"Warranty": "2 years",
+			"Screen Size": "6.5 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Intel 11th Gen",
+			"Camera": "48 MP (Main), 8 MP (Wide)",
+			"Battery": "5000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Blue, Silver",
+			"Operating System": "Android 12",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Fast 5G connectivity, long-lasting battery"
+		},
+		"presentation": [
+			{
+				"title": "Powerful Intel 11th Gen Chipset",
+				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "48 MP Main Camera",
+				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "Seamless 5G Connectivity",
+				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "5000 mAh Battery & Quick Charging",
+				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"name": "Acer Aragorn SmartPhone",
+		"price": 699,
+		"description": "Acer Aragorn combines power and sleek design with its Snapdragon 765G processor, a 6.5-inch Full HD display, and 48 MP camera. Whether you're gaming or capturing your moments, the phone ensures smooth performance and excellent photo quality.",
+		"images": ["smartphonephoto24.jpg", "smartphonephoto25.jpg", "smartphonephoto26.jpg", "smartphonephoto27.jpg"],
+		"category": "Smartphones",
+		"company": "Acer",
+		"stock": 40,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": false,
+			"promotionPercent": 0
+		},
+		"specification": {
+			"Manufacturer": "Acer",
+			"Warranty": "2 years",
+			"Screen Size": "6.5 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Snapdragon 765G",
+			"Camera": "48 MP (Main), 16 MP (Front)",
+			"Battery": "4000 mAh",
+			"Storage Options": "128GB",
+			"Color Options": "Black, Silver",
+			"Operating System": "Android 11",
+			"Connectivity": "4G, Wi-Fi 6",
+			"Additional Features": "AI-enhanced photography"
+		},
+		"presentation": [
+			{
+				"title": "AI-enhanced Photography",
+				"text": "Capture amazing photos with the Acer SmartPhone Z5's AI camera system. It automatically adjusts to your environment for the best shots, whether you’re in low light or bright daylight.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "Snapdragon 765G for Smooth Performance",
+				"text": "The Snapdragon 765G chipset delivers smooth performance for gaming, video streaming, and multitasking. With an efficient 5G connection, it ensures ultra-fast speeds wherever you are.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "6.5-inch Full HD Display",
+				"text": "Enjoy a clear, vibrant view with the 6.5-inch Full HD display. Perfect for gaming, streaming, or browsing, with vivid colors and sharp details that bring everything to life.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "All-day Battery Life",
+				"text": "With its 4000 mAh battery, the Acer SmartPhone Z5 can easily handle all-day usage, and fast charging ensures you can get back to what matters most in no time.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"name": "Apple Energy",
+		"price": 1199,
+		"description": "The iPhone 14 Pro Max offers premium features including a 6.7-inch Super Retina XDR display, A16 Bionic chip, and a triple-camera system. With the latest iOS 16, it delivers top-notch performance and exceptional photography capabilities.",
+		"images": ["smartphonephoto25.jpg", "smartphonephoto26.jpg", "smartphonephoto27.jpg", "smartphonephoto28.jpg"],
+		"category": "Smartphones",
+		"company": "Apple",
+		"stock": 0,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": true,
+			"promotionPercent": 5
+		},
+		"specification": {
+			"Manufacturer": "Apple",
+			"Warranty": "1 year",
+			"Screen Size": "6.7 inches",
+			"Resolution": "2778x1284",
+			"Processor": "A16 Bionic",
+			"Camera": "48 MP (Main), 12 MP (Ultra-wide), 12 MP (Telephoto)",
+			"Battery": "4323 mAh",
+			"Storage Options": "128GB, 256GB, 512GB",
+			"Color Options": "Space Black, Silver, Gold, Deep Purple",
+			"Operating System": "iOS 16",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "ProMotion, Dynamic Island"
+		},
+		"presentation": [
+			{
+				"title": "Pro-grade Camera System",
+				"text": "The iPhone 14 Pro Max is equipped with a powerful 48 MP camera system that captures stunning, detailed photos in any lighting. It also offers pro-level video recording with cinematic effects.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "Super Retina XDR Display",
+				"text": "The 6.7-inch Super Retina XDR display provides a clear and vibrant viewing experience with HDR10 support, ensuring every image and video is brought to life in rich color and deep contrasts.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "A16 Bionic Chip for Speed and Efficiency",
+				"text": "Powered by the A16 Bionic chip, the iPhone 14 Pro Max delivers industry-leading performance for gaming, multitasking, and more, with the efficiency to last all day on a single charge.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "Advanced 5G Connectivity",
+				"text": "With 5G connectivity, the iPhone 14 Pro Max ensures fast download and upload speeds, making it perfect for streaming, gaming, and video calling on the go.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"name": "Lenovo Armsrace 3",
+		"price": 899,
+		"description": "Designed for mobile gaming enthusiasts, the Lenovo Legion Phone Duel 2 features a 6.92-inch AMOLED display with a 144Hz refresh rate and is powered by the Snapdragon 888 Plus. The 64 MP camera and 44 MP front camera enhance your gaming and streaming experiences.",
+		"images": ["smartphonephoto26.jpg", "smartphonephoto27.jpg", "smartphonephoto28.jpg", "smartphonephoto29.jpg"],
+		"category": "Smartphones",
+		"company": "Lenovo",
+		"stock": 20,
+		"recommended": true,
+		"promotion": {
+			"isPromotion": false,
+			"promotionPercent": 0
+		},
+		"specification": {
+			"Manufacturer": "Lenovo",
+			"Warranty": "1 year",
+			"Screen Size": "6.92 inches",
+			"Resolution": "2460x1080",
+			"Processor": "Snapdragon 888 Plus",
+			"Camera": "64 MP (Main), 44 MP (Front)",
+			"Battery": "5500 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Black, White",
+			"Operating System": "Android 11",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Dual turbo fan cooling, side pop-up trigger buttons"
+		},
+		"presentation": [
+			{
+				"title": "144Hz AMOLED Display",
+				"text": "Immerse yourself in ultra-smooth gaming with the 6.92-inch AMOLED display that offers a 144Hz refresh rate and 720Hz touch sampling rate, delivering fast and responsive gameplay.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "Snapdragon 888 Plus for Gaming Power",
+				"text": "The Snapdragon 888 Plus chipset provides the performance and speed required for mobile gaming, ensuring a seamless and lag-free gaming experience.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "64 MP Main and 44 MP Front Camera",
+				"text": "Capture every moment with the Legion Phone Duel 2's 64 MP rear camera and 44 MP front camera, ensuring high-quality photos and live streams for content creators and gamers alike.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "Enhanced Cooling System",
+				"text": "Built-in turbo fan cooling allows you to push your mobile games to the limit without worrying about overheating, ensuring smooth gameplay in long sessions.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"name": "Samsung Witcher",
+		"price": 1799,
+		"description": "The Samsung Galaxy Z Fold 4 combines a foldable 7.6-inch AMOLED display with the power of the Snapdragon 8 Gen 1 chip. Its unique folding design allows for a tablet-like experience with exceptional multitasking capabilities.",
+		"images": ["smartphonephoto27.jpg", "smartphonephoto28.jpg", "smartphonephoto29.jpg", "smartphonephoto30.jpg"],
+		"category": "Smartphones",
+		"company": "Samsung",
+		"stock": 0,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": false,
+			"promotionPercent": 0
+		},
+		"specification": {
+			"Manufacturer": "Samsung",
+			"Warranty": "1 year",
+			"Screen Size": "7.6 inches (Folded)",
+			"Resolution": "2176x1812",
+			"Processor": "Snapdragon 8 Gen 1",
+			"Camera": "50 MP (Main), 12 MP (Ultra-wide), 10 MP (Telephoto)",
+			"Battery": "4400 mAh",
+			"Storage Options": "256GB, 512GB",
+			"Color Options": "Phantom Black, Green, Beige",
+			"Operating System": "Android 12L",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Foldable display, multitasking support"
+		},
+		"presentation": [
+			{
+				"title": "7.6-inch Foldable AMOLED Display",
+				"text": "Experience the future of smartphones with the Galaxy Z Fold 4’s foldable display, offering a tablet-like experience with stunning colors and high resolution when unfolded.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "Snapdragon 8 Gen 1 Performance",
+				"text": "Equipped with the latest Snapdragon 8 Gen 1 chip, the Z Fold 4 ensures lightning-fast performance, seamless multitasking, and efficient power consumption for all your apps.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "50 MP Triple Camera System",
+				"text": "Capture breathtaking photos with the 50 MP main camera, offering vibrant, crisp images even in challenging lighting conditions. The versatile camera setup also includes a telephoto and ultra-wide lens for all your shooting needs.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "Multitasking with Flex Mode",
+				"text": "Unlock the power of multitasking with Flex Mode. Open two apps side-by-side on the large display, and easily switch between them with smooth and fluid transitions.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"name": "Xiaomi Chinese Om",
+		"price": 899,
+		"description": "Xiaomi Chinese Om features a 6.81-inch AMOLED display with a 120Hz refresh rate and the powerful Snapdragon 888. It also includes a 108 MP camera for exceptional detail and clarity in every shot, making it a great choice for photography lovers.",
+		"images": ["smartphonephoto28.jpg", "smartphonephoto29.jpg", "smartphonephoto30.jpg", "smartphonephoto31.jpg"],
+		"category": "Smartphones",
+		"company": "Xiaomi",
+		"stock": 30,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": true,
+			"promotionPercent": 10
+		},
+		"specification": {
+			"Manufacturer": "Xiaomi",
+			"Warranty": "2 years",
+			"Screen Size": "6.81 inches",
+			"Resolution": "3200x1440",
+			"Processor": "Snapdragon 888",
+			"Camera": "108 MP (Main), 13 MP (Ultra-wide), 5 MP (Telephoto)",
+			"Battery": "5000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Black, White, Blue",
+			"Operating System": "Android 11",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "In-display fingerprint scanner, AMOLED display"
+		},
+		"presentation": [
+			{
+				"title": "108 MP Triple Camera Setup",
+				"text": "Capture stunning detail with the Xiaomi Mi 11 Ultra's 108 MP main camera. With ultra-wide and telephoto lenses, this camera system excels in every type of photography.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "120Hz AMOLED Display",
+				"text": "Enjoy vibrant colors and smooth transitions with the 6.81-inch AMOLED display. With a 120Hz refresh rate, everything from gaming to video streaming is ultra-smooth.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "Snapdragon 888 Performance",
+				"text": "Powered by the Snapdragon 888 processor, the Xiaomi Mi 11 Ultra offers fast performance, responsive gameplay, and seamless multitasking for all your needs.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "Fast Charging and Long Battery Life",
+				"text": "The 5000 mAh battery offers all-day power, and with fast charging capabilities, the Mi 11 Ultra ensures you're always ready for whatever comes next.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"name": "Acer Liquid Z16 Pro",
+		"price": 299,
+		"description": "Acer Liquid Z16 Pro is a budget-friendly smartphone featuring a 5.5-inch Full HD display and a 13 MP camera. Powered by a quad-core processor, it delivers solid performance for everyday use with a 3GB RAM capacity.",
+		"images": ["smartphonephoto29.jpg", "smartphonephoto30.jpg", "smartphonephoto31.jpg", "smartphonephoto32.jpg"],
+		"category": "Smartphones",
+		"company": "Acer",
+		"stock": 50,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": true,
+			"promotionPercent": 10
+		},
+		"specification": {
+			"Manufacturer": "Acer",
+			"Warranty": "1 year",
+			"Screen Size": "5.5 inches",
+			"Resolution": "1920x1080",
+			"Processor": "Quad-core",
+			"Camera": "13 MP (Main), 5 MP (Front)",
+			"Battery": "2700 mAh",
+			"Storage Options": "32GB, 64GB",
+			"Color Options": "Black, Gold",
+			"Operating System": "Android 7.0",
+			"Connectivity": "4G, Wi-Fi",
+			"Additional Features": "Fingerprint sensor, expandable storage"
+		},
+		"presentation": [
+			{
+				"title": "Clear Display",
+				"text": "The 5.5-inch Full HD display offers sharp, vibrant visuals for watching videos, browsing, and gaming.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "Impressive 13 MP Camera",
+				"text": "Capture beautiful photos with the 13 MP rear camera and take stunning selfies with the 5 MP front camera.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "Expandable Storage",
+				"text": "With expandable storage up to 256GB, you'll have plenty of space for all your apps, photos, and videos.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "Reliable Performance",
+				"text": "Equipped with a quad-core processor and 3GB of RAM, the Acer Liquid Z6 Pro handles daily tasks with ease.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"name": "Apple Appalah 10",
+		"price": 499,
+		"description": "The 2024 Apple Appalah 10 brings powerful performance in a compact design. Featuring the A15 Bionic chip and a 12 MP camera, it's the perfect phone for those who want an affordable option with top-tier performance.",
+		"images": ["smartphonephoto30.jpg", "smartphonephoto31.jpg", "smartphonephoto32.jpg", "smartphonephoto33.jpg"],
+		"category": "Smartphones",
+		"company": "Apple",
+		"stock": 40,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": true,
+			"promotionPercent": 5
+		},
+		"specification": {
+			"Manufacturer": "Apple",
+			"Warranty": "1 year",
+			"Screen Size": "4.7 inches",
+			"Resolution": "1334x750",
+			"Processor": "A15 Bionic",
+			"Camera": "12 MP (Main), 7 MP (Front)",
+			"Battery": "2018 mAh",
+			"Storage Options": "64GB, 128GB",
+			"Color Options": "Black, White, Red",
+			"Operating System": "iOS 16",
+			"Connectivity": "4G, Wi-Fi 6",
+			"Additional Features": "Touch ID, Portrait Mode"
+		},
+		"presentation": [
+			{
+				"title": "A15 Bionic Chip",
+				"text": "With the powerful A15 Bionic chip, the iPhone SE delivers fast performance, enhanced AI capabilities, and excellent energy efficiency for all your tasks.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "Compact Design",
+				"text": "The 4.7-inch Retina display is the perfect size for one-handed use, while still offering vibrant colors and sharp details.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "12 MP Camera",
+				"text": "Capture stunning photos with the 12 MP rear camera, and take beautiful selfies with the 7 MP front camera, enhanced with Portrait Mode.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "Affordable yet Powerful",
+				"text": "Get the performance you need without breaking the bank. The iPhone SE offers a premium experience at an affordable price.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"name": "Lenovo Amika ",
+		"price": 499,
+		"description": "Lenovo Z5 Pro GT features a stunning 6.39-inch Full HD+ display and is powered by the Snapdragon 855. With an innovative slider design, it boasts an under-display fingerprint sensor and a 24 MP front camera for impressive selfies.",
+		"images": ["smartphonephoto3.jpg", "smartphonephoto32.jpg", "smartphonephoto33.jpg", "smartphonephoto34.jpg"],
+		"category": "Smartphones",
+		"company": "Lenovo",
+		"stock": 0,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": true,
+			"promotionPercent": 8
+		},
+		"specification": {
+			"Manufacturer": "Lenovo",
+			"Warranty": "1 year",
+			"Screen Size": "6.39 inches",
+			"Resolution": "2340x1080",
+			"Processor": "Snapdragon 855",
+			"Camera": "16 MP (Main), 24 MP (Front)",
+			"Battery": "3350 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Black, Blue",
+			"Operating System": "Android 9.0",
+			"Connectivity": "4G, Wi-Fi",
+			"Additional Features": "Under-display fingerprint sensor, slider design"
+		},
+		"presentation": [
+			{
+				"title": "Innovative Slider Design",
+				"text": "The Lenovo Z5 Pro GT features a unique slider design that hides the front camera when not in use, offering a sleek, bezel-less display.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "Snapdragon 855 for Fast Performance",
+				"text": "Powered by the Snapdragon 855, the Z5 Pro GT offers excellent speed and responsiveness, whether you're gaming, browsing, or multitasking.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "24 MP Front Camera",
+				"text": "Take beautiful selfies with the 24 MP front camera, which captures sharp details and accurate colors in any lighting.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "Bezel-less Display",
+				"text": "Enjoy a full-screen experience with the 6.39-inch display, offering an immersive viewing experience for videos, games, and more.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"name": "Xiaomi Redmi Note Frodo",
+		"price": 299,
+		"description": "The Xiaomi Redmi Note Frodo features a 6.67-inch AMOLED display with a 120Hz refresh rate and a 108 MP camera. Powered by the MediaTek Dimensity 920, it's a budget-friendly smartphone with high-end features.",
+		"images": ["smartphonephoto32.jpg", "smartphonephoto33.jpg", "smartphonephoto34.jpg", "smartphonephoto35.jpg"],
+		"category": "Smartphones",
+		"company": "Xiaomi",
+		"stock": 60,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": true,
+			"promotionPercent": 15
+		},
+		"specification": {
+			"Manufacturer": "Xiaomi",
+			"Warranty": "1 year",
+			"Screen Size": "6.67 inches",
+			"Resolution": "2400x1080",
+			"Processor": "MediaTek Dimensity 920",
+			"Camera": "108 MP (Main), 8 MP (Ultra-wide), 2 MP (Depth)",
+			"Battery": "5000 mAh",
+			"Storage Options": "64GB, 128GB",
+			"Color Options": "Black, Blue, White",
+			"Operating System": "MIUI 12.5",
+			"Connectivity": "4G, Wi-Fi 6",
+			"Additional Features": "120Hz AMOLED display, fast charging"
+		},
+		"presentation": [
+			{
+				"title": "120Hz AMOLED Display",
+				"text": "Enjoy ultra-smooth scrolling and vibrant visuals with the 6.67-inch AMOLED display that supports a 120Hz refresh rate.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "108 MP Main Camera",
+				"text": "Capture professional-quality photos with the 108 MP camera, complemented by an ultra-wide and depth sensor for versatile photography.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "5000 mAh Battery",
+				"text": "With a large 5000 mAh battery, the Redmi Note 11 Pro offers long-lasting usage, and with 33W fast charging, you'll be ready in no time.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "MediaTek Dimensity 920",
+				"text": "The MediaTek Dimensity 920 processor provides fast and efficient performance for multitasking, gaming, and media consumption.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"name": "DJI Amazing Stack",
+		"price": 799,
+		"description": "The DJI Amazing Stac combines the best of DJI's innovative drone technology with a smartphone. Equipped with a 48 MP camera and AI-powered features, it’s perfect for content creators who want to shoot, edit, and share stunning videos on the go.",
+		"images": ["smartphonephoto33.jpg", "smartphonephoto34.jpg", "smartphonephoto35.jpg", "smartphonephoto1.jpg"],
+		"category": "Smartphones",
+		"company": "DJI",
+		"stock": 0,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": false,
+			"promotionPercent": 0
+		},
+		"specification": {
+			"Manufacturer": "DJI",
+			"Warranty": "1 year",
+			"Screen Size": "6.4 inches",
+			"Resolution": "2340x1080",
+			"Processor": "Octa-core",
+			"Camera": "48 MP (Main), 16 MP (Front)",
+			"Battery": "4000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Black, Silver",
+			"Operating System": "DJIOS",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "AI camera modes, gimbal stabilizer"
+		},
+		"presentation": [
+			{
+				"title": "48 MP AI Camera",
+				"text": "Capture breathtaking photos and videos with the DJI Phone X1's 48 MP camera, equipped with AI-powered features to automatically adjust settings for perfect shots.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "Gimbal Stabilizer for Smooth Videos",
+				"text": "The integrated gimbal stabilizer ensures that every video you shoot is smooth and professional-grade, even when you're on the move.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "Powerful AI Features",
+				"text": "The DJI Phone X1 leverages AI to enhance your photos, optimize settings, and help you create stunning content effortlessly.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "5G Connectivity",
+				"text": "Enjoy fast 5G speeds with the DJI Phone X1, allowing you to stream, download, and share content faster than ever before.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"name": "Microsoft Agodia Phone",
+		"price": 899,
+		"description": "The Microsoft Agodia Phone combines the versatility of a laptop with the portability of a smartphone. Powered by Windows 10 Mobile, it offers seamless integration with Microsoft Office and other services, along with a stunning 6-inch OLED display.",
+		"images": ["smartphonephoto34.jpg", "smartphonephoto35.jpg", "smartphonephoto3.jpg", "smartphonephoto4.jpg"],
+		"category": "Smartphones",
+		"company": "Microsoft",
+		"stock": 20,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": false,
+			"promotionPercent": 0
+		},
+		"specification": {
+			"Manufacturer": "Microsoft",
+			"Warranty": "1 year",
+			"Screen Size": "6 inches",
+			"Resolution": "2880x1440",
+			"Processor": "Snapdragon 8xx",
+			"Camera": "12 MP (Main), 8 MP (Front)",
+			"Battery": "4000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Black, Silver",
+			"Operating System": "Windows 10 Mobile",
+			"Connectivity": "4G, Wi-Fi 6",
+			"Additional Features": "Surface Pen compatibility, Cortana integration"
+		},
+		"presentation": [
+			{
+				"title": "Seamless Integration with Windows 10",
+				"text": "With Windows 10 Mobile, the Surface Phone offers seamless integration with your PC, making it perfect for productivity on the go.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "6-Inch OLED Display",
+				"text": "Enjoy vibrant colors and sharp contrast with the 6-inch OLED display, ideal for work, media, and gaming.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "Microsoft Office Integration",
+				"text": "Access all your essential Office apps like Word, Excel, and PowerPoint, as well as OneDrive and Teams, directly from your phone.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "Surface Pen Support",
+				"text": "The Microsoft Surface Phone supports the Surface Pen, allowing you to take notes, draw, and edit documents directly on your phone's screen.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"name": "HP Shadidee",
+		"price": 799,
+		"description": "The HP Shadidee is a business-focused smartphone with enterprise-grade security and performance. Equipped with a 6-inch display and the Qualcomm Snapdragon 820 processor, it is ideal for professionals looking to stay productive on the go.",
+		"images": ["smartphonephoto35.jpg", "smartphonephoto1.jpg", "smartphonephoto2.jpg", "smartphonephoto3.jpg"],
+		"category": "Smartphones",
+		"company": "HP",
+		"stock": 25,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": false,
+			"promotionPercent": 0
+		},
+		"specification": {
+			"Manufacturer": "HP",
+			"Warranty": "1 year",
+			"Screen Size": "6 inches",
+			"Resolution": "2560x1440",
+			"Processor": "Qualcomm Snapdragon 820",
+			"Camera": "16 MP (Main), 8 MP (Front)",
+			"Battery": "4150 mAh",
+			"Storage Options": "64GB, 128GB",
+			"Color Options": "Black, Gray",
+			"Operating System": "Windows 10 Mobile",
+			"Connectivity": "4G, Wi-Fi",
+			"Additional Features": "Enterprise security, Continuum support"
+		},
+		"presentation": [
+			{
+				"title": "Windows 10 Mobile",
+				"text": "Enjoy the full power of Windows 10 Mobile, offering enterprise-grade security and the ability to run desktop apps via Continuum.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "6-Inch QHD Display",
+				"text": "The HP Elite x3 features a sharp 6-inch QHD display with vibrant colors and excellent contrast, making it ideal for work and entertainment.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "Snapdragon 820 Processor",
+				"text": "Powered by the Snapdragon 820, the Elite x3 delivers smooth performance for multitasking, business apps, and media consumption.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "Enterprise-Grade Security",
+				"text": "With built-in enterprise security features, including Windows Hello facial recognition and secure boot, the Elite x3 ensures your business data stays safe.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	}
+]
