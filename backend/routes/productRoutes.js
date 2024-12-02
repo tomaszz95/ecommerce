@@ -9,6 +9,6 @@ router.get('/', queryProductsValidator, getFilteredProducts)
 
 router.post('/', createProduct)
 
-router.get('/:id', getSingleProduct)
+router.get('/:uniqueId/:name', getSingleProduct)
 
 module.exports = router

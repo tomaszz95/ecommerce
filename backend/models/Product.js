@@ -76,6 +76,9 @@ const ProductSchema = new mongoose.Schema(
 			type: Number,
 			default: 0,
 		},
+		uniqueId: {
+			type: Number,
+		},
 	},
 	{ timestamps: true, toJSON: { virtuals: true }, toObject: { virtuals: true } }
 )
