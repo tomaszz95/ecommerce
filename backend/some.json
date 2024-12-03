@@ -1,726 +1,227 @@
 [
 	{
-		"name": "Apple MacBook Air M223",
-		"price": 999,
-		"uniqueId": "29",
-		"description": "The Apple MacBook Air M2 redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto9.jpg", "laptopsphoto10.jpg", "laptopsphoto11.jpg", "laptopsphoto12.jpg"],
-		"category": "Laptops",
-		"company": "Apple",
-		"stock": 0,
+		"uniqueId": "182",
+		"name": "Samsung RTX OMF 200",
+		"price": 799,
+		"description": "The Samsung RTX OMF 200 is designed for gamers who need high-performance components and portability. Equipped with an Intel Core i7-12700H processor and an NVIDIA GeForce RTX 3060, it delivers excellent gaming performance and smooth graphics rendering. The 15.6-inch 144Hz IPS display offers stunning visuals, while the advanced cooling system ensures that the laptop stays cool during long gaming sessions. With a 512GB SSD and 16GB RAM, it’s built to handle modern games with ease.",
+		"images": ["hardwarephoto12.jpg", "hardwarephoto13.jpg", "hardwarephoto14.jpg", "hardwarephoto15.jpg"],
+		"category": "Hardware",
+		"company": "Samsung",
+		"stock": 30,
 		"recommended": false,
 		"promotion": {
 			"isPromotion": false,
 			"promotionPercent": 0
 		},
 		"specification": {
-			"Manufacturer": "Apple",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
+			"Manufacturer": "Samsung",
+			"Warranty": "1 year",
+			"Processor": "Intel Core i7-12700H",
+			"Graphics": "NVIDIA GeForce RTX 3060",
+			"Display": "15.6-inch 144Hz IPS",
+			"Memory": "16GB DDR4",
+			"Storage": "512GB SSD",
+			"Battery": "Up to 8 hours",
+			"Operating System": "Windows 11",
 			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
+			"Ports": "USB-C, USB-A, HDMI 2.1",
+			"Audio": "DTS:X Ultra",
+			"Dimensions": "36.4 cm x 26.3 cm x 2.4 cm",
+			"Weight": "2.3 kg",
+			"Packaging": "Eco-friendly packaging"
 		},
 		"presentation": [
 			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
+				"title": "RTX 3060 Graphics for Superior Performance",
+				"text": "Enjoy smooth and stunning visuals with the NVIDIA GeForce RTX 3060, providing high frame rates and beautiful graphics for the latest games.",
+				"img": "hardwarepresphoto1.jpg"
 			},
 			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
+				"title": "144Hz IPS Display for Fluid Gameplay",
+				"text": "The 15.6-inch 144Hz IPS display ensures smooth and responsive gameplay with vibrant colors and wide viewing angles.",
+				"img": "hardwarepresphoto2.jpg"
 			},
 			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
+				"title": "Advanced Cooling System",
+				"text": "Stay cool during intense gaming sessions with Acer’s advanced cooling system, designed to keep the laptop running at peak performance.",
+				"img": "hardwarepresphoto3.jpg"
 			},
 			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
+				"title": "Built for Gamers, Designed for Performance",
+				"text": "With a powerful Intel Core i7 processor and 16GB RAM, the Acer Nitro 5 is designed to handle demanding games and applications with ease.",
+				"img": "hardwarepresphoto4.jpg"
 			}
 		]
 	},
 	{
-		"name": "DJI Air M2",
-		"price": 1239,
-		"uniqueId": "30",
-		"description": "The DJI2 redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto10.jpg", "laptopsphoto11.jpg", "laptopsphoto12.jpg", "laptopsphoto13.jpg"],
-		"category": "Laptops",
-		"company": "DJI",
-		"stock": 0,
+		"uniqueId": "183",
+		"name": "Acer RTX 20330",
+		"price": 555,
+		"description": "The Acer RTX 20330 is designed for gamers who need high-performance components and portability. Equipped with an Intel Core i7-12700H processor and an NVIDIA GeForce RTX 3060, it delivers excellent gaming performance and smooth graphics rendering. The 15.6-inch 144Hz IPS display offers stunning visuals, while the advanced cooling system ensures that the laptop stays cool during long gaming sessions. With a 512GB SSD and 16GB RAM, it’s built to handle modern games with ease.",
+		"images": ["hardwarephoto13.jpg", "hardwarephoto14.jpg", "hardwarephoto15.jpg", "hardwarephoto16.jpg"],
+		"category": "Hardware",
+		"company": "Acer",
+		"stock": 20,
 		"recommended": false,
 		"promotion": {
 			"isPromotion": true,
-			"promotionPercent": 6
+			"promotionPercent": 10
 		},
 		"specification": {
-			"Manufacturer": "DJI",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
+			"Manufacturer": "Acer",
+			"Warranty": "1 year",
+			"Processor": "Intel Core i7-12700H",
+			"Graphics": "NVIDIA GeForce RTX 3060",
+			"Display": "15.6-inch 144Hz IPS",
+			"Memory": "16GB DDR4",
+			"Storage": "512GB SSD",
+			"Battery": "Up to 8 hours",
+			"Operating System": "Windows 11",
 			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
+			"Ports": "USB-C, USB-A, HDMI 2.1",
+			"Audio": "DTS:X Ultra",
+			"Dimensions": "36.4 cm x 26.3 cm x 2.4 cm",
+			"Weight": "2.3 kg",
+			"Packaging": "Eco-friendly packaging"
 		},
 		"presentation": [
 			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
+				"title": "RTX 3060 Graphics for Superior Performance",
+				"text": "Enjoy smooth and stunning visuals with the NVIDIA GeForce RTX 3060, providing high frame rates and beautiful graphics for the latest games.",
+				"img": "hardwarepresphoto1.jpg"
 			},
 			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
+				"title": "144Hz IPS Display for Fluid Gameplay",
+				"text": "The 15.6-inch 144Hz IPS display ensures smooth and responsive gameplay with vibrant colors and wide viewing angles.",
+				"img": "hardwarepresphoto2.jpg"
 			},
 			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
+				"title": "Advanced Cooling System",
+				"text": "Stay cool during intense gaming sessions with Acer’s advanced cooling system, designed to keep the laptop running at peak performance.",
+				"img": "hardwarepresphoto3.jpg"
 			},
 			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
+				"title": "Built for Gamers, Designed for Performance",
+				"text": "With a powerful Intel Core i7 processor and 16GB RAM, the Acer Nitro 5 is designed to handle demanding games and applications with ease.",
+				"img": "hardwarepresphoto4.jpg"
 			}
 		]
 	},
 	{
-		"name": "Acer Migmig",
-		"price": 1333,
-		"uniqueId": "31",
-		"description": "The Acer Migmig redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto11.jpg", "laptopsphoto12.jpg", "laptopsphoto13.jpg", "laptopsphoto14.jpg"],
-		"category": "Laptops",
-		"company": "Acer",
-		"stock": 33,
-		"recommended": false,
-		"promotion": {
-			"isPromotion": false,
-			"promotionPercent": 0
-		},
-		"specification": {
-			"Manufacturer": "Apple",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
-		},
-		"presentation": [
-			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
-			},
-			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
-			},
-			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
-			},
-			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"name": "Asus Pathus",
-		"price": 1033,
-		"uniqueId": "32",
-		"description": "The Asus Pathus redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto12.jpg", "laptopsphoto13.jpg", "laptopsphoto14.jpg", "laptopsphoto15.jpg"],
-		"category": "Laptops",
-		"company": "Asus",
-		"stock": 99,
-		"recommended": true,
-		"promotion": {
-			"isPromotion": false,
-			"promotionPercent": 0
-		},
-		"specification": {
-			"Manufacturer": "Apple",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
-		},
-		"presentation": [
-			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
-			},
-			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
-			},
-			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
-			},
-			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"name": "Intel Arctic",
-		"price": 822,
-		"uniqueId": "33",
-		"description": "The Intel Arctic redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto13.jpg", "laptopsphoto14.jpg", "laptopsphoto15.jpg", "laptopsphoto16.jpg"],
-		"category": "Laptops",
-		"company": "Intel",
-		"stock": 66,
+		"uniqueId": "184",
+		"name": "Sony RAM 100TB",
+		"price": 109,
+		"description": "The Sony RAM 100TB is designed for gamers who need high-performance components and portability. Equipped with an Intel Core i7-12700H processor and an NVIDIA GeForce RTX 3060, it delivers excellent gaming performance and smooth graphics rendering. The 15.6-inch 144Hz IPS display offers stunning visuals, while the advanced cooling system ensures that the laptop stays cool during long gaming sessions. With a 512GB SSD and 16GB RAM, it’s built to handle modern games with ease.",
+		"images": ["hardwarephoto14.jpg", "hardwarephoto15.jpg", "hardwarephoto16.jpg", "hardwarephoto17.jpg"],
+		"category": "Hardware",
+		"company": "Sony",
+		"stock": 10,
 		"recommended": false,
 		"promotion": {
 			"isPromotion": true,
 			"promotionPercent": 20
 		},
 		"specification": {
-			"Manufacturer": "Intel",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
-		},
-		"presentation": [
-			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
-			},
-			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
-			},
-			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
-			},
-			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"name": "Microsoft Box Laptop",
-		"price": 777,
-		"uniqueId": "34",
-		"description": "The Apple MacBook Air M2 redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto14.jpg", "laptopsphoto15.jpg", "laptopsphoto16.jpg", "laptopsphoto17.jpg"],
-		"category": "Laptops",
-		"company": "Microsoft",
-		"stock": 10,
-		"recommended": false,
-		"promotion": {
-			"isPromotion": true,
-			"promotionPercent": 10
-		},
-		"specification": {
-			"Manufacturer": "Microsoft",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
-		},
-		"presentation": [
-			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
-			},
-			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
-			},
-			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
-			},
-			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"name": "Xiaomi chinese",
-		"price": 999,
-		"uniqueId": "35",
-		"description": "The Xiaomi chinese redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto15.jpg", "laptopsphoto16.jpg", "laptopsphoto17.jpg", "laptopsphoto18.jpg"],
-		"category": "Laptops",
-		"company": "Xiaomi",
-		"stock": 30,
-		"recommended": false,
-		"promotion": {
-			"isPromotion": true,
-			"promotionPercent": 30
-		},
-		"specification": {
-			"Manufacturer": "Apple",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
-		},
-		"presentation": [
-			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
-			},
-			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
-			},
-			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
-			},
-			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"name": "HP amadio X2",
-		"price": 1999,
-		"uniqueId": "36",
-		"description": "The HP amadio redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto16.jpg", "laptopsphoto17.jpg", "laptopsphoto18.jpg", "laptopsphoto19.jpg"],
-		"category": "Laptops",
-		"company": "HP",
-		"stock": 42,
-		"recommended": true,
-		"promotion": {
-			"isPromotion": false,
-			"promotionPercent": 0
-		},
-		"specification": {
-			"Manufacturer": "HP",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
-		},
-		"presentation": [
-			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
-			},
-			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
-			},
-			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
-			},
-			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"name": "Lenovo Adios X3",
-		"price": 1099,
-		"uniqueId": "37",
-		"description": "The Lenovo Adios X3 redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto17.jpg", "laptopsphoto18.jpg", "laptopsphoto19.jpg", "laptopsphoto20.jpg"],
-		"category": "Laptops",
-		"company": "Lenovo",
-		"stock": 20,
-		"recommended": true,
-		"promotion": {
-			"isPromotion": true,
-			"promotionPercent": 10
-		},
-		"specification": {
-			"Manufacturer": "Lenovo",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
-		},
-		"presentation": [
-			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
-			},
-			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
-			},
-			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
-			},
-			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"name": "Sony perfect notepad",
-		"price": 888,
-		"uniqueId": "38",
-		"description": "The Sony perfect notepad redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto18.jpg", "laptopsphoto19.jpg", "laptopsphoto20.jpg", "laptopsphoto1.jpg"],
-		"category": "Laptops",
-		"company": "Sony",
-		"stock": 19,
-		"recommended": false,
-		"promotion": {
-			"isPromotion": true,
-			"promotionPercent": 10
-		},
-		"specification": {
 			"Manufacturer": "Sony",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
+			"Warranty": "1 year",
+			"Processor": "Intel Core i7-12700H",
+			"Graphics": "NVIDIA GeForce RTX 3060",
+			"Display": "15.6-inch 144Hz IPS",
+			"Memory": "16GB DDR4",
+			"Storage": "512GB SSD",
+			"Battery": "Up to 8 hours",
+			"Operating System": "Windows 11",
 			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
+			"Ports": "USB-C, USB-A, HDMI 2.1",
+			"Audio": "DTS:X Ultra",
+			"Dimensions": "36.4 cm x 26.3 cm x 2.4 cm",
+			"Weight": "2.3 kg",
+			"Packaging": "Eco-friendly packaging"
 		},
 		"presentation": [
 			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
+				"title": "RTX 3060 Graphics for Superior Performance",
+				"text": "Enjoy smooth and stunning visuals with the NVIDIA GeForce RTX 3060, providing high frame rates and beautiful graphics for the latest games.",
+				"img": "hardwarepresphoto1.jpg"
 			},
 			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
+				"title": "144Hz IPS Display for Fluid Gameplay",
+				"text": "The 15.6-inch 144Hz IPS display ensures smooth and responsive gameplay with vibrant colors and wide viewing angles.",
+				"img": "hardwarepresphoto2.jpg"
 			},
 			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
+				"title": "Advanced Cooling System",
+				"text": "Stay cool during intense gaming sessions with Acer’s advanced cooling system, designed to keep the laptop running at peak performance.",
+				"img": "hardwarepresphoto3.jpg"
 			},
 			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
+				"title": "Built for Gamers, Designed for Performance",
+				"text": "With a powerful Intel Core i7 processor and 16GB RAM, the Acer Nitro 5 is designed to handle demanding games and applications with ease.",
+				"img": "hardwarepresphoto4.jpg"
 			}
 		]
 	},
 	{
-		"name": "Samsung touchpad ragnarok",
-		"price": 666,
-		"uniqueId": "39",
-		"description": "The Samsung touchpad ragnarok redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto19.jpg", "laptopsphoto20.jpg", "laptopsphoto2.jpg", "laptopsphoto1.jpg"],
-		"category": "Laptops",
-		"company": "Samsung",
-		"stock": 44,
-		"recommended": false,
-		"promotion": {
-			"isPromotion": false,
-			"promotionPercent": 0
-		},
-		"specification": {
-			"Manufacturer": "Samsung",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
-		},
-		"presentation": [
-			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
-			},
-			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
-			},
-			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
-			},
-			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"name": "Samsung loki XS3",
-		"price": 699,
-		"uniqueId": "40",
-		"description": "The Samsung loki XS3 redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto20.jpg", "laptopsphoto1.jpg", "laptopsphoto2.jpg", "laptopsphoto3.jpg"],
-		"category": "Laptops",
-		"company": "Samsung",
-		"stock": 12,
-		"recommended": false,
-		"promotion": {
-			"isPromotion": false,
-			"promotionPercent": 0
-		},
-		"specification": {
-			"Manufacturer": "Samsung",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
-		},
-		"presentation": [
-			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
-			},
-			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
-			},
-			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
-			},
-			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"name": "Acer dragon S1",
-		"price": 1232,
-		"uniqueId": "41",
-		"description": "The Acer dragon S1 redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto1.jpg", "laptopsphoto2.jpg", "laptopsphoto3.jpg", "laptopsphoto4.jpg"],
-		"category": "Laptops",
-		"company": "Acer",
-		"stock": 40,
+		"uniqueId": "185",
+		"name": "Xiaomi 1TB Memory Card",
+		"price": 712,
+		"description": "The Xiaomi 1TB Memory Card is designed for gamers who need high-performance components and portability. Equipped with an Intel Core i7-12700H processor and an NVIDIA GeForce RTX 3060, it delivers excellent gaming performance and smooth graphics rendering. The 15.6-inch 144Hz IPS display offers stunning visuals, while the advanced cooling system ensures that the laptop stays cool during long gaming sessions. With a 512GB SSD and 16GB RAM, it’s built to handle modern games with ease.",
+		"images": ["hardwarephoto15.jpg", "hardwarephoto16.jpg", "hardwarephoto17.jpg", "hardwarephoto18.jpg"],
+		"category": "Hardware",
+		"company": "Xiaomi",
+		"stock": 56,
 		"recommended": true,
 		"promotion": {
 			"isPromotion": false,
 			"promotionPercent": 0
 		},
 		"specification": {
-			"Manufacturer": "Apple",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
+			"Manufacturer": "Xiaomi",
+			"Warranty": "1 year",
+			"Processor": "Intel Core i7-12700H",
+			"Graphics": "NVIDIA GeForce RTX 3060",
+			"Display": "15.6-inch 144Hz IPS",
+			"Memory": "16GB DDR4",
+			"Storage": "512GB SSD",
+			"Battery": "Up to 8 hours",
+			"Operating System": "Windows 11",
 			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
+			"Ports": "USB-C, USB-A, HDMI 2.1",
+			"Audio": "DTS:X Ultra",
+			"Dimensions": "36.4 cm x 26.3 cm x 2.4 cm",
+			"Weight": "2.3 kg",
+			"Packaging": "Eco-friendly packaging"
 		},
 		"presentation": [
 			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
+				"title": "RTX 3060 Graphics for Superior Performance",
+				"text": "Enjoy smooth and stunning visuals with the NVIDIA GeForce RTX 3060, providing high frame rates and beautiful graphics for the latest games.",
+				"img": "hardwarepresphoto1.jpg"
 			},
 			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
+				"title": "144Hz IPS Display for Fluid Gameplay",
+				"text": "The 15.6-inch 144Hz IPS display ensures smooth and responsive gameplay with vibrant colors and wide viewing angles.",
+				"img": "hardwarepresphoto2.jpg"
 			},
 			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
+				"title": "Advanced Cooling System",
+				"text": "Stay cool during intense gaming sessions with Acer’s advanced cooling system, designed to keep the laptop running at peak performance.",
+				"img": "hardwarepresphoto3.jpg"
 			},
 			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
+				"title": "Built for Gamers, Designed for Performance",
+				"text": "With a powerful Intel Core i7 processor and 16GB RAM, the Acer Nitro 5 is designed to handle demanding games and applications with ease.",
+				"img": "hardwarepresphoto4.jpg"
 			}
 		]
 	},
 	{
-		"name": "Apple omnibus olag",
-		"price": 1559,
-		"uniqueId": "42",
-		"description": "The Apple omnibus olag redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto2.jpg", "laptopsphoto3.jpg", "laptopsphoto4.jpg", "laptopsphoto5.jpg"],
-		"category": "Laptops",
+		"uniqueId": "186",
+		"name": "Apple HardDisc SSD May",
+		"price": 299,
+		"description": "The Apple HardDisc SSD May is designed for gamers who need high-performance components and portability. Equipped with an Intel Core i7-12700H processor and an NVIDIA GeForce RTX 3060, it delivers excellent gaming performance and smooth graphics rendering. The 15.6-inch 144Hz IPS display offers stunning visuals, while the advanced cooling system ensures that the laptop stays cool during long gaming sessions. With a 512GB SSD and 16GB RAM, it’s built to handle modern games with ease.",
+		"images": ["hardwarephoto12.jpg", "hardwarephoto13.jpg", "hardwarephoto14.jpg", "hardwarephoto15.jpg"],
+		"category": "Hardware",
 		"company": "Apple",
 		"stock": 0,
 		"recommended": false,
@@ -730,482 +231,257 @@
 		},
 		"specification": {
 			"Manufacturer": "Apple",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
+			"Warranty": "1 year",
+			"Processor": "Intel Core i7-12700H",
+			"Graphics": "NVIDIA GeForce RTX 3060",
+			"Display": "15.6-inch 144Hz IPS",
+			"Memory": "16GB DDR4",
+			"Storage": "512GB SSD",
+			"Battery": "Up to 8 hours",
+			"Operating System": "Windows 11",
 			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
+			"Ports": "USB-C, USB-A, HDMI 2.1",
+			"Audio": "DTS:X Ultra",
+			"Dimensions": "36.4 cm x 26.3 cm x 2.4 cm",
+			"Weight": "2.3 kg",
+			"Packaging": "Eco-friendly packaging"
 		},
 		"presentation": [
 			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
+				"title": "RTX 3060 Graphics for Superior Performance",
+				"text": "Enjoy smooth and stunning visuals with the NVIDIA GeForce RTX 3060, providing high frame rates and beautiful graphics for the latest games.",
+				"img": "hardwarepresphoto1.jpg"
 			},
 			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
+				"title": "144Hz IPS Display for Fluid Gameplay",
+				"text": "The 15.6-inch 144Hz IPS display ensures smooth and responsive gameplay with vibrant colors and wide viewing angles.",
+				"img": "hardwarepresphoto2.jpg"
 			},
 			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
+				"title": "Advanced Cooling System",
+				"text": "Stay cool during intense gaming sessions with Acer’s advanced cooling system, designed to keep the laptop running at peak performance.",
+				"img": "hardwarepresphoto3.jpg"
 			},
 			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
+				"title": "Built for Gamers, Designed for Performance",
+				"text": "With a powerful Intel Core i7 processor and 16GB RAM, the Acer Nitro 5 is designed to handle demanding games and applications with ease.",
+				"img": "hardwarepresphoto4.jpg"
 			}
 		]
 	},
 	{
-		"name": "Xiaomi OnMyWay Atrio",
-		"price": 1499,
-		"uniqueId": "43",
-		"description": "The Xiaomi OnMyWay Atrio redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto3.jpg", "laptopsphoto4.jpg", "laptopsphoto5.jpg", "laptopsphoto6.jpg"],
-		"category": "Laptops",
-		"company": "Xiaomi",
-		"stock": 40,
+		"uniqueId": "187",
+		"name": "HP Colorfull Graphic Card 2",
+		"price": 1111,
+		"description": "The HP Colorfull Graphic Card 2 is designed for gamers who need high-performance components and portability. Equipped with an Intel Core i7-12700H processor and an NVIDIA GeForce RTX 3060, it delivers excellent gaming performance and smooth graphics rendering. The 15.6-inch 144Hz IPS display offers stunning visuals, while the advanced cooling system ensures that the laptop stays cool during long gaming sessions. With a 512GB SSD and 16GB RAM, it’s built to handle modern games with ease.",
+		"images": ["hardwarephoto17.jpg", "hardwarephoto18.jpg", "hardwarephoto19.jpg", "hardwarephoto20.jpg"],
+		"category": "Hardware",
+		"company": "HP",
+		"stock": 123,
 		"recommended": false,
 		"promotion": {
 			"isPromotion": true,
 			"promotionPercent": 15
 		},
 		"specification": {
-			"Manufacturer": "Xiaomi",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
+			"Manufacturer": "HP",
+			"Warranty": "1 year",
+			"Processor": "Intel Core i7-12700H",
+			"Graphics": "NVIDIA GeForce RTX 3060",
+			"Display": "15.6-inch 144Hz IPS",
+			"Memory": "16GB DDR4",
+			"Storage": "512GB SSD",
+			"Battery": "Up to 8 hours",
+			"Operating System": "Windows 11",
 			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
+			"Ports": "USB-C, USB-A, HDMI 2.1",
+			"Audio": "DTS:X Ultra",
+			"Dimensions": "36.4 cm x 26.3 cm x 2.4 cm",
+			"Weight": "2.3 kg",
+			"Packaging": "Eco-friendly packaging"
 		},
 		"presentation": [
 			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
+				"title": "RTX 3060 Graphics for Superior Performance",
+				"text": "Enjoy smooth and stunning visuals with the NVIDIA GeForce RTX 3060, providing high frame rates and beautiful graphics for the latest games.",
+				"img": "hardwarepresphoto1.jpg"
 			},
 			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
+				"title": "144Hz IPS Display for Fluid Gameplay",
+				"text": "The 15.6-inch 144Hz IPS display ensures smooth and responsive gameplay with vibrant colors and wide viewing angles.",
+				"img": "hardwarepresphoto2.jpg"
 			},
 			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
+				"title": "Advanced Cooling System",
+				"text": "Stay cool during intense gaming sessions with Acer’s advanced cooling system, designed to keep the laptop running at peak performance.",
+				"img": "hardwarepresphoto3.jpg"
 			},
 			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
+				"title": "Built for Gamers, Designed for Performance",
+				"text": "With a powerful Intel Core i7 processor and 16GB RAM, the Acer Nitro 5 is designed to handle demanding games and applications with ease.",
+				"img": "hardwarepresphoto4.jpg"
 			}
 		]
 	},
 	{
-		"name": "Lenovo Attic OMEGA 3",
-		"price": 859,
-		"uniqueId": "44",
-		"description": "The Lenovo Attic OMEGA 3 redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto4.jpg", "laptopsphoto5.jpg", "laptopsphoto6.jpg", "laptopsphoto7.jpg"],
-		"category": "Laptops",
-		"company": "Lenovo",
+		"uniqueId": "188",
+		"name": "Samsung Scenic Memory Card 2TB",
+		"price": 911,
+		"description": "The Samsung Scenic Memory Card 2TB is designed for gamers who need high-performance components and portability. Equipped with an Intel Core i7-12700H processor and an NVIDIA GeForce RTX 3060, it delivers excellent gaming performance and smooth graphics rendering. The 15.6-inch 144Hz IPS display offers stunning visuals, while the advanced cooling system ensures that the laptop stays cool during long gaming sessions. With a 512GB SSD and 16GB RAM, it’s built to handle modern games with ease.",
+		"images": ["hardwarephoto18.jpg", "hardwarephoto19.jpg", "hardwarephoto20.jpg", "hardwarephoto1.jpg"],
+		"category": "Hardware",
+		"company": "Samsung",
 		"stock": 0,
 		"recommended": false,
 		"promotion": {
 			"isPromotion": true,
-			"promotionPercent": 10
+			"promotionPercent": 15
 		},
 		"specification": {
-			"Manufacturer": "Lenovo",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
+			"Manufacturer": "Samsung",
+			"Warranty": "1 year",
+			"Processor": "Intel Core i7-12700H",
+			"Graphics": "NVIDIA GeForce RTX 3060",
+			"Display": "15.6-inch 144Hz IPS",
+			"Memory": "16GB DDR4",
+			"Storage": "512GB SSD",
+			"Battery": "Up to 8 hours",
+			"Operating System": "Windows 11",
 			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
+			"Ports": "USB-C, USB-A, HDMI 2.1",
+			"Audio": "DTS:X Ultra",
+			"Dimensions": "36.4 cm x 26.3 cm x 2.4 cm",
+			"Weight": "2.3 kg",
+			"Packaging": "Eco-friendly packaging"
 		},
 		"presentation": [
 			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
+				"title": "RTX 3060 Graphics for Superior Performance",
+				"text": "Enjoy smooth and stunning visuals with the NVIDIA GeForce RTX 3060, providing high frame rates and beautiful graphics for the latest games.",
+				"img": "hardwarepresphoto1.jpg"
 			},
 			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
+				"title": "144Hz IPS Display for Fluid Gameplay",
+				"text": "The 15.6-inch 144Hz IPS display ensures smooth and responsive gameplay with vibrant colors and wide viewing angles.",
+				"img": "hardwarepresphoto2.jpg"
 			},
 			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
+				"title": "Advanced Cooling System",
+				"text": "Stay cool during intense gaming sessions with Acer’s advanced cooling system, designed to keep the laptop running at peak performance.",
+				"img": "hardwarepresphoto3.jpg"
 			},
 			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
+				"title": "Built for Gamers, Designed for Performance",
+				"text": "With a powerful Intel Core i7 processor and 16GB RAM, the Acer Nitro 5 is designed to handle demanding games and applications with ease.",
+				"img": "hardwarepresphoto4.jpg"
 			}
 		]
 	},
 	{
-		"name": "DJI Kenlji F3",
-		"price": 1033,
-		"uniqueId": "45",
-		"description": "The DJI Kenlji F3 redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto5.jpg", "laptopsphoto6.jpg", "laptopsphoto7.jpg", "laptopsphoto8.jpg"],
-		"category": "Laptops",
+		"uniqueId": "189",
+		"name": "DJI Scandisc Small 22",
+		"price": 99,
+		"description": "The DJI Scandisc Small 22 is designed for gamers who need high-performance components and portability. Equipped with an Intel Core i7-12700H processor and an NVIDIA GeForce RTX 3060, it delivers excellent gaming performance and smooth graphics rendering. The 15.6-inch 144Hz IPS display offers stunning visuals, while the advanced cooling system ensures that the laptop stays cool during long gaming sessions. With a 512GB SSD and 16GB RAM, it’s built to handle modern games with ease.",
+		"images": ["hardwarephoto19.jpg", "hardwarephoto20.jpg", "hardwarephoto1.jpg", "hardwarephoto2.jpg"],
+		"category": "Hardware",
 		"company": "DJI",
-		"stock": 50,
-		"recommended": false,
+		"stock": 13,
+		"recommended": true,
 		"promotion": {
 			"isPromotion": true,
-			"promotionPercent": 5
+			"promotionPercent": 15
 		},
 		"specification": {
 			"Manufacturer": "DJI",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
+			"Warranty": "1 year",
+			"Processor": "Intel Core i7-12700H",
+			"Graphics": "NVIDIA GeForce RTX 3060",
+			"Display": "15.6-inch 144Hz IPS",
+			"Memory": "16GB DDR4",
+			"Storage": "512GB SSD",
+			"Battery": "Up to 8 hours",
+			"Operating System": "Windows 11",
 			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
+			"Ports": "USB-C, USB-A, HDMI 2.1",
+			"Audio": "DTS:X Ultra",
+			"Dimensions": "36.4 cm x 26.3 cm x 2.4 cm",
+			"Weight": "2.3 kg",
+			"Packaging": "Eco-friendly packaging"
 		},
 		"presentation": [
 			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
+				"title": "RTX 3060 Graphics for Superior Performance",
+				"text": "Enjoy smooth and stunning visuals with the NVIDIA GeForce RTX 3060, providing high frame rates and beautiful graphics for the latest games.",
+				"img": "hardwarepresphoto1.jpg"
 			},
 			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
+				"title": "144Hz IPS Display for Fluid Gameplay",
+				"text": "The 15.6-inch 144Hz IPS display ensures smooth and responsive gameplay with vibrant colors and wide viewing angles.",
+				"img": "hardwarepresphoto2.jpg"
 			},
 			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
+				"title": "Advanced Cooling System",
+				"text": "Stay cool during intense gaming sessions with Acer’s advanced cooling system, designed to keep the laptop running at peak performance.",
+				"img": "hardwarepresphoto3.jpg"
 			},
 			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
+				"title": "Built for Gamers, Designed for Performance",
+				"text": "With a powerful Intel Core i7 processor and 16GB RAM, the Acer Nitro 5 is designed to handle demanding games and applications with ease.",
+				"img": "hardwarepresphoto4.jpg"
 			}
 		]
 	},
 	{
-		"name": "Logitech WoodenBox g3",
-		"price": 999,
-		"uniqueId": "46",
-		"description": "The Logitech WoodenBox g3 redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto6.jpg", "laptopsphoto7.jpg", "laptopsphoto8.jpg", "laptopsphoto9.jpg"],
-		"category": "Laptops",
+		"uniqueId": "190",
+		"name": "Logitech Attic Card",
+		"price": 333,
+		"description": "The Logitech Attic Card is designed for gamers who need high-performance components and portability. Equipped with an Intel Core i7-12700H processor and an NVIDIA GeForce RTX 3060, it delivers excellent gaming performance and smooth graphics rendering. The 15.6-inch 144Hz IPS display offers stunning visuals, while the advanced cooling system ensures that the laptop stays cool during long gaming sessions. With a 512GB SSD and 16GB RAM, it’s built to handle modern games with ease.",
+		"images": ["hardwarephoto20.jpg", "hardwarephoto1.jpg", "hardwarephoto2.jpg", "hardwarephoto3.jpg"],
+		"category": "Hardware",
 		"company": "Logitech",
-		"stock": 0,
+		"stock": 33,
 		"recommended": false,
 		"promotion": {
-			"isPromotion": false,
-			"promotionPercent": 0
+			"isPromotion": true,
+			"promotionPercent": 10
 		},
 		"specification": {
 			"Manufacturer": "Logitech",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
+			"Warranty": "1 year",
+			"Processor": "Intel Core i7-12700H",
+			"Graphics": "NVIDIA GeForce RTX 3060",
+			"Display": "15.6-inch 144Hz IPS",
+			"Memory": "16GB DDR4",
+			"Storage": "512GB SSD",
+			"Battery": "Up to 8 hours",
+			"Operating System": "Windows 11",
 			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
+			"Ports": "USB-C, USB-A, HDMI 2.1",
+			"Audio": "DTS:X Ultra",
+			"Dimensions": "36.4 cm x 26.3 cm x 2.4 cm",
+			"Weight": "2.3 kg",
+			"Packaging": "Eco-friendly packaging"
 		},
 		"presentation": [
 			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
+				"title": "RTX 3060 Graphics for Superior Performance",
+				"text": "Enjoy smooth and stunning visuals with the NVIDIA GeForce RTX 3060, providing high frame rates and beautiful graphics for the latest games.",
+				"img": "hardwarepresphoto1.jpg"
 			},
 			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
+				"title": "144Hz IPS Display for Fluid Gameplay",
+				"text": "The 15.6-inch 144Hz IPS display ensures smooth and responsive gameplay with vibrant colors and wide viewing angles.",
+				"img": "hardwarepresphoto2.jpg"
 			},
 			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
+				"title": "Advanced Cooling System",
+				"text": "Stay cool during intense gaming sessions with Acer’s advanced cooling system, designed to keep the laptop running at peak performance.",
+				"img": "hardwarepresphoto3.jpg"
 			},
 			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"name": "HP chrome color 3",
-		"price": 849,
-		"uniqueId": "47",
-		"description": "The HP chrome color 3 redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto7.jpg", "laptopsphoto8.jpg", "laptopsphoto9.jpg", "laptopsphoto10.jpg"],
-		"category": "Laptops",
-		"company": "HP",
-		"stock": 0,
-		"recommended": false,
-		"promotion": {
-			"isPromotion": true,
-			"promotionPercent": 10
-		},
-		"specification": {
-			"Manufacturer": "HP",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
-		},
-		"presentation": [
-			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
-			},
-			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
-			},
-			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
-			},
-			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"name": "Lenovo amico pro",
-		"price": 1922,
-		"uniqueId": "48",
-		"description": "The Lenovo amico pro redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto8.jpg", "laptopsphoto9.jpg", "laptopsphoto10.jpg", "laptopsphoto11.jpg"],
-		"category": "Laptops",
-		"company": "Lenovo",
-		"stock": 30,
-		"recommended": true,
-		"promotion": {
-			"isPromotion": false,
-			"promotionPercent": 0
-		},
-		"specification": {
-			"Manufacturer": "Lenovo",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
-		},
-		"presentation": [
-			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
-			},
-			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
-			},
-			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
-			},
-			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"name": "Apple Olenji Omic",
-		"price": 822,
-		"uniqueId": "49",
-		"description": "The Apple Olenji Omic redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto9.jpg", "laptopsphoto10.jpg", "laptopsphoto11.jpg", "laptopsphoto12.jpg"],
-		"category": "Laptops",
-		"company": "Apple",
-		"stock": 0,
-		"recommended": false,
-		"promotion": {
-			"isPromotion": true,
-			"promotionPercent": 10
-		},
-		"specification": {
-			"Manufacturer": "Apple",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
-		},
-		"presentation": [
-			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
-			},
-			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
-			},
-			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
-			},
-			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"name": "Xiaomi penhose pro",
-		"price": 1299,
-		"uniqueId": "50",
-		"description": "The Xiaomi penhose pro redefines lightweight performance. Powered by the M2 chip, it offers lightning-fast speed, seamless multitasking, and a stunning Retina display. With a robust aluminum body, extended battery life, and macOS integration, this laptop is perfect for professionals, students, and casual users who value portability and power in one sleek package.",
-		"images": ["laptopsphoto10.jpg", "laptopsphoto11.jpg", "laptopsphoto12.jpg", "laptopsphoto13.jpg"],
-		"category": "Laptops",
-		"company": "Xiaomi",
-		"stock": 44,
-		"recommended": true,
-		"promotion": {
-			"isPromotion": true,
-			"promotionPercent": 12
-		},
-		"specification": {
-			"Manufacturer": "Xiaomi",
-			"Warranty": "1 year external service",
-			"Screen size": "13.6 inches",
-			"Processor family": "Apple Silicon",
-			"Processor model": "M2 (8-core CPU, 10-core GPU)",
-			"RAM": "8 GB LPDDR5",
-			"Storage capacity": "256 GB SSD",
-			"Display": "Liquid Retina, True Tone",
-			"Resolution": "2560 x 1664 pixels",
-			"Brightness": "500 nits",
-			"Ports": "2x Thunderbolt 4, 1x MagSafe 3",
-			"Weight": "1.24 kg",
-			"Color": "Space Gray",
-			"Battery": "Up to 18 hours",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Audio system": "Stereo speakers with Spatial Audio"
-		},
-		"presentation": [
-			{
-				"title": "Modern solutions",
-				"text": "The MacBook Air M2 combines advanced technology with a minimalist design, offering unparalleled performance for work and play. It is engineered to adapt seamlessly to your daily tasks with macOS’s optimized features. Whether you're editing videos, streaming content, or coding, the M2 chip ensures top-notch efficiency. Built with sustainability in mind, this laptop uses eco-friendly materials while maintaining its signature durability.",
-				"img": "laptoppresphoto1.jpg"
-			},
-			{
-				"title": "Stunning image quality",
-				"text": "Enjoy an immersive visual experience with the Liquid Retina display, featuring True Tone and P3 wide color support. With a 2560 x 1664 resolution and 500 nits brightness, every detail is vivid and lifelike. Whether you're watching your favorite shows or designing intricate graphics, the display delivers unmatched clarity and brilliance, making it a joy to use for any creative or leisure activity.",
-				"img": "laptoppresphoto2.jpg"
-			},
-			{
-				"title": "Next-gen connectivity",
-				"text": "Equipped with the latest Wi-Fi 6 and Thunderbolt 4 technology, the MacBook Air M2 ensures blazing-fast data transfers, smooth streaming, and seamless multitasking. The MagSafe 3 charging port adds a convenient and secure way to power your laptop. Combined with up to 18 hours of battery life, this laptop keeps you connected and productive wherever your day takes you.",
-				"img": "laptoppresphoto3.jpg"
-			},
-			{
-				"title": "Lightweight yet powerful",
-				"text": "Weighing only 1.24 kg and boasting a sleek aluminum body, the MacBook Air M2 is designed for portability without compromising power. Its fanless design ensures silent operation, while the Magic Keyboard with Touch ID enhances your productivity with a comfortable typing experience. Ideal for students, professionals, and on-the-go users, this laptop redefines mobility and performance.",
-				"img": "laptoppresphoto4.jpg"
+				"title": "Built for Gamers, Designed for Performance",
+				"text": "With a powerful Intel Core i7 processor and 16GB RAM, the Acer Nitro 5 is designed to handle demanding games and applications with ease.",
+				"img": "hardwarepresphoto4.jpg"
 			}
 		]
 	}
