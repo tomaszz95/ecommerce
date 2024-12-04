@@ -1,67 +1,64 @@
 [
 	{
-		"uniqueId": "182",
-		"name": "Samsung RTX OMF 200",
-		"price": 799,
-		"description": "The Samsung RTX OMF 200 is designed for gamers who need high-performance components and portability. Equipped with an Intel Core i7-12700H processor and an NVIDIA GeForce RTX 3060, it delivers excellent gaming performance and smooth graphics rendering. The 15.6-inch 144Hz IPS display offers stunning visuals, while the advanced cooling system ensures that the laptop stays cool during long gaming sessions. With a 512GB SSD and 16GB RAM, it’s built to handle modern games with ease.",
-		"images": ["hardwarephoto12.jpg", "hardwarephoto13.jpg", "hardwarephoto14.jpg", "hardwarephoto15.jpg"],
-		"category": "Hardware",
-		"company": "Samsung",
-		"stock": 30,
+		"uniqueId": "295",
+		"name": "Acer Nova X",
+		"price": 559,
+		"description": "The Acer Nova X combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
+		"images": ["smartphonephoto15.jpg", "smartphonephoto16.jpg", "smartphonephoto17.jpg", "smartphonephoto18.jpg"],
+		"category": "Smartphones",
+		"company": "Acer",
+		"stock": 0,
 		"recommended": false,
 		"promotion": {
-			"isPromotion": false,
-			"promotionPercent": 0
+			"isPromotion": true,
+			"promotionPercent": 5
 		},
 		"specification": {
-			"Manufacturer": "Samsung",
-			"Warranty": "1 year",
-			"Processor": "Intel Core i7-12700H",
-			"Graphics": "NVIDIA GeForce RTX 3060",
-			"Display": "15.6-inch 144Hz IPS",
-			"Memory": "16GB DDR4",
-			"Storage": "512GB SSD",
-			"Battery": "Up to 8 hours",
-			"Operating System": "Windows 11",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Ports": "USB-C, USB-A, HDMI 2.1",
-			"Audio": "DTS:X Ultra",
-			"Dimensions": "36.4 cm x 26.3 cm x 2.4 cm",
-			"Weight": "2.3 kg",
-			"Packaging": "Eco-friendly packaging"
+			"Manufacturer": "Acer",
+			"Warranty": "2 years",
+			"Screen Size": "6.5 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Intel 11th Gen",
+			"Camera": "48 MP (Main), 8 MP (Wide)",
+			"Battery": "5000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Blue, Silver",
+			"Operating System": "Android 12",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Fast 5G connectivity, long-lasting battery"
 		},
 		"presentation": [
 			{
-				"title": "RTX 3060 Graphics for Superior Performance",
-				"text": "Enjoy smooth and stunning visuals with the NVIDIA GeForce RTX 3060, providing high frame rates and beautiful graphics for the latest games.",
-				"img": "hardwarepresphoto1.jpg"
+				"title": "Powerful Intel 11th Gen Chipset",
+				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
+				"img": "smartphonepresphoto1.jpg"
 			},
 			{
-				"title": "144Hz IPS Display for Fluid Gameplay",
-				"text": "The 15.6-inch 144Hz IPS display ensures smooth and responsive gameplay with vibrant colors and wide viewing angles.",
-				"img": "hardwarepresphoto2.jpg"
+				"title": "48 MP Main Camera",
+				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
+				"img": "smartphonepresphoto2.jpg"
 			},
 			{
-				"title": "Advanced Cooling System",
-				"text": "Stay cool during intense gaming sessions with Acer’s advanced cooling system, designed to keep the laptop running at peak performance.",
-				"img": "hardwarepresphoto3.jpg"
+				"title": "Seamless 5G Connectivity",
+				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
+				"img": "smartphonepresphoto3.jpg"
 			},
 			{
-				"title": "Built for Gamers, Designed for Performance",
-				"text": "With a powerful Intel Core i7 processor and 16GB RAM, the Acer Nitro 5 is designed to handle demanding games and applications with ease.",
-				"img": "hardwarepresphoto4.jpg"
+				"title": "5000 mAh Battery & Quick Charging",
+				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
+				"img": "smartphonepresphoto4.jpg"
 			}
 		]
 	},
 	{
-		"uniqueId": "183",
-		"name": "Acer RTX 20330",
-		"price": 555,
-		"description": "The Acer RTX 20330 is designed for gamers who need high-performance components and portability. Equipped with an Intel Core i7-12700H processor and an NVIDIA GeForce RTX 3060, it delivers excellent gaming performance and smooth graphics rendering. The 15.6-inch 144Hz IPS display offers stunning visuals, while the advanced cooling system ensures that the laptop stays cool during long gaming sessions. With a 512GB SSD and 16GB RAM, it’s built to handle modern games with ease.",
-		"images": ["hardwarephoto13.jpg", "hardwarephoto14.jpg", "hardwarephoto15.jpg", "hardwarephoto16.jpg"],
-		"category": "Hardware",
+		"uniqueId": "296",
+		"name": "Acer Helix Pro",
+		"price": 888,
+		"description": "The Acer Helix Pro combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
+		"images": ["smartphonephoto16.jpg", "smartphonephoto17.jpg", "smartphonephoto18.jpg", "smartphonephoto19.jpg"],
+		"category": "Smartphones",
 		"company": "Acer",
-		"stock": 20,
+		"stock": 63,
 		"recommended": false,
 		"promotion": {
 			"isPromotion": true,
@@ -69,161 +66,101 @@
 		},
 		"specification": {
 			"Manufacturer": "Acer",
-			"Warranty": "1 year",
-			"Processor": "Intel Core i7-12700H",
-			"Graphics": "NVIDIA GeForce RTX 3060",
-			"Display": "15.6-inch 144Hz IPS",
-			"Memory": "16GB DDR4",
-			"Storage": "512GB SSD",
-			"Battery": "Up to 8 hours",
-			"Operating System": "Windows 11",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Ports": "USB-C, USB-A, HDMI 2.1",
-			"Audio": "DTS:X Ultra",
-			"Dimensions": "36.4 cm x 26.3 cm x 2.4 cm",
-			"Weight": "2.3 kg",
-			"Packaging": "Eco-friendly packaging"
+			"Warranty": "2 years",
+			"Screen Size": "6.5 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Intel 11th Gen",
+			"Camera": "48 MP (Main), 8 MP (Wide)",
+			"Battery": "5000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Blue, Silver",
+			"Operating System": "Android 12",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Fast 5G connectivity, long-lasting battery"
 		},
 		"presentation": [
 			{
-				"title": "RTX 3060 Graphics for Superior Performance",
-				"text": "Enjoy smooth and stunning visuals with the NVIDIA GeForce RTX 3060, providing high frame rates and beautiful graphics for the latest games.",
-				"img": "hardwarepresphoto1.jpg"
+				"title": "Powerful Intel 11th Gen Chipset",
+				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
+				"img": "smartphonepresphoto1.jpg"
 			},
 			{
-				"title": "144Hz IPS Display for Fluid Gameplay",
-				"text": "The 15.6-inch 144Hz IPS display ensures smooth and responsive gameplay with vibrant colors and wide viewing angles.",
-				"img": "hardwarepresphoto2.jpg"
+				"title": "48 MP Main Camera",
+				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
+				"img": "smartphonepresphoto2.jpg"
 			},
 			{
-				"title": "Advanced Cooling System",
-				"text": "Stay cool during intense gaming sessions with Acer’s advanced cooling system, designed to keep the laptop running at peak performance.",
-				"img": "hardwarepresphoto3.jpg"
+				"title": "Seamless 5G Connectivity",
+				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
+				"img": "smartphonepresphoto3.jpg"
 			},
 			{
-				"title": "Built for Gamers, Designed for Performance",
-				"text": "With a powerful Intel Core i7 processor and 16GB RAM, the Acer Nitro 5 is designed to handle demanding games and applications with ease.",
-				"img": "hardwarepresphoto4.jpg"
+				"title": "5000 mAh Battery & Quick Charging",
+				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
+				"img": "smartphonepresphoto4.jpg"
 			}
 		]
 	},
 	{
-		"uniqueId": "184",
-		"name": "Sony RAM 100TB",
-		"price": 109,
-		"description": "The Sony RAM 100TB is designed for gamers who need high-performance components and portability. Equipped with an Intel Core i7-12700H processor and an NVIDIA GeForce RTX 3060, it delivers excellent gaming performance and smooth graphics rendering. The 15.6-inch 144Hz IPS display offers stunning visuals, while the advanced cooling system ensures that the laptop stays cool during long gaming sessions. With a 512GB SSD and 16GB RAM, it’s built to handle modern games with ease.",
-		"images": ["hardwarephoto14.jpg", "hardwarephoto15.jpg", "hardwarephoto16.jpg", "hardwarephoto17.jpg"],
-		"category": "Hardware",
-		"company": "Sony",
-		"stock": 10,
-		"recommended": false,
-		"promotion": {
-			"isPromotion": true,
-			"promotionPercent": 20
-		},
-		"specification": {
-			"Manufacturer": "Sony",
-			"Warranty": "1 year",
-			"Processor": "Intel Core i7-12700H",
-			"Graphics": "NVIDIA GeForce RTX 3060",
-			"Display": "15.6-inch 144Hz IPS",
-			"Memory": "16GB DDR4",
-			"Storage": "512GB SSD",
-			"Battery": "Up to 8 hours",
-			"Operating System": "Windows 11",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Ports": "USB-C, USB-A, HDMI 2.1",
-			"Audio": "DTS:X Ultra",
-			"Dimensions": "36.4 cm x 26.3 cm x 2.4 cm",
-			"Weight": "2.3 kg",
-			"Packaging": "Eco-friendly packaging"
-		},
-		"presentation": [
-			{
-				"title": "RTX 3060 Graphics for Superior Performance",
-				"text": "Enjoy smooth and stunning visuals with the NVIDIA GeForce RTX 3060, providing high frame rates and beautiful graphics for the latest games.",
-				"img": "hardwarepresphoto1.jpg"
-			},
-			{
-				"title": "144Hz IPS Display for Fluid Gameplay",
-				"text": "The 15.6-inch 144Hz IPS display ensures smooth and responsive gameplay with vibrant colors and wide viewing angles.",
-				"img": "hardwarepresphoto2.jpg"
-			},
-			{
-				"title": "Advanced Cooling System",
-				"text": "Stay cool during intense gaming sessions with Acer’s advanced cooling system, designed to keep the laptop running at peak performance.",
-				"img": "hardwarepresphoto3.jpg"
-			},
-			{
-				"title": "Built for Gamers, Designed for Performance",
-				"text": "With a powerful Intel Core i7 processor and 16GB RAM, the Acer Nitro 5 is designed to handle demanding games and applications with ease.",
-				"img": "hardwarepresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"uniqueId": "185",
-		"name": "Xiaomi 1TB Memory Card",
-		"price": 712,
-		"description": "The Xiaomi 1TB Memory Card is designed for gamers who need high-performance components and portability. Equipped with an Intel Core i7-12700H processor and an NVIDIA GeForce RTX 3060, it delivers excellent gaming performance and smooth graphics rendering. The 15.6-inch 144Hz IPS display offers stunning visuals, while the advanced cooling system ensures that the laptop stays cool during long gaming sessions. With a 512GB SSD and 16GB RAM, it’s built to handle modern games with ease.",
-		"images": ["hardwarephoto15.jpg", "hardwarephoto16.jpg", "hardwarephoto17.jpg", "hardwarephoto18.jpg"],
-		"category": "Hardware",
-		"company": "Xiaomi",
-		"stock": 56,
+		"uniqueId": "297",
+		"name": "Apple iPhone Stellar 15",
+		"price": 1111,
+		"description": "The Apple iPhone Stellar 15 combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
+		"images": ["smartphonephoto17.jpg", "smartphonephoto18.jpg", "smartphonephoto19.jpg", "smartphonephoto20.jpg"],
+		"category": "Smartphones",
+		"company": "Apple",
+		"stock": 40,
 		"recommended": true,
 		"promotion": {
 			"isPromotion": false,
 			"promotionPercent": 0
 		},
 		"specification": {
-			"Manufacturer": "Xiaomi",
-			"Warranty": "1 year",
-			"Processor": "Intel Core i7-12700H",
-			"Graphics": "NVIDIA GeForce RTX 3060",
-			"Display": "15.6-inch 144Hz IPS",
-			"Memory": "16GB DDR4",
-			"Storage": "512GB SSD",
-			"Battery": "Up to 8 hours",
-			"Operating System": "Windows 11",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Ports": "USB-C, USB-A, HDMI 2.1",
-			"Audio": "DTS:X Ultra",
-			"Dimensions": "36.4 cm x 26.3 cm x 2.4 cm",
-			"Weight": "2.3 kg",
-			"Packaging": "Eco-friendly packaging"
+			"Manufacturer": "Apple",
+			"Warranty": "2 years",
+			"Screen Size": "6.5 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Intel 11th Gen",
+			"Camera": "48 MP (Main), 8 MP (Wide)",
+			"Battery": "5000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Blue, Silver",
+			"Operating System": "Android 12",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Fast 5G connectivity, long-lasting battery"
 		},
 		"presentation": [
 			{
-				"title": "RTX 3060 Graphics for Superior Performance",
-				"text": "Enjoy smooth and stunning visuals with the NVIDIA GeForce RTX 3060, providing high frame rates and beautiful graphics for the latest games.",
-				"img": "hardwarepresphoto1.jpg"
+				"title": "Powerful Intel 11th Gen Chipset",
+				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
+				"img": "smartphonepresphoto1.jpg"
 			},
 			{
-				"title": "144Hz IPS Display for Fluid Gameplay",
-				"text": "The 15.6-inch 144Hz IPS display ensures smooth and responsive gameplay with vibrant colors and wide viewing angles.",
-				"img": "hardwarepresphoto2.jpg"
+				"title": "48 MP Main Camera",
+				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
+				"img": "smartphonepresphoto2.jpg"
 			},
 			{
-				"title": "Advanced Cooling System",
-				"text": "Stay cool during intense gaming sessions with Acer’s advanced cooling system, designed to keep the laptop running at peak performance.",
-				"img": "hardwarepresphoto3.jpg"
+				"title": "Seamless 5G Connectivity",
+				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
+				"img": "smartphonepresphoto3.jpg"
 			},
 			{
-				"title": "Built for Gamers, Designed for Performance",
-				"text": "With a powerful Intel Core i7 processor and 16GB RAM, the Acer Nitro 5 is designed to handle demanding games and applications with ease.",
-				"img": "hardwarepresphoto4.jpg"
+				"title": "5000 mAh Battery & Quick Charging",
+				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
+				"img": "smartphonepresphoto4.jpg"
 			}
 		]
 	},
 	{
-		"uniqueId": "186",
-		"name": "Apple HardDisc SSD May",
-		"price": 299,
-		"description": "The Apple HardDisc SSD May is designed for gamers who need high-performance components and portability. Equipped with an Intel Core i7-12700H processor and an NVIDIA GeForce RTX 3060, it delivers excellent gaming performance and smooth graphics rendering. The 15.6-inch 144Hz IPS display offers stunning visuals, while the advanced cooling system ensures that the laptop stays cool during long gaming sessions. With a 512GB SSD and 16GB RAM, it’s built to handle modern games with ease.",
-		"images": ["hardwarephoto12.jpg", "hardwarephoto13.jpg", "hardwarephoto14.jpg", "hardwarephoto15.jpg"],
-		"category": "Hardware",
+		"uniqueId": "298",
+		"name": "Apple iPhone Lumina X",
+		"price": 999,
+		"description": "The Apple iPhone Lumina X combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
+		"images": ["smartphonephoto18.jpg", "smartphonephoto19.jpg", "smartphonephoto20.jpg", "smartphonephoto1.jpg"],
+		"category": "Smartphones",
 		"company": "Apple",
-		"stock": 0,
+		"stock": 52,
 		"recommended": false,
 		"promotion": {
 			"isPromotion": false,
@@ -231,215 +168,356 @@
 		},
 		"specification": {
 			"Manufacturer": "Apple",
-			"Warranty": "1 year",
-			"Processor": "Intel Core i7-12700H",
-			"Graphics": "NVIDIA GeForce RTX 3060",
-			"Display": "15.6-inch 144Hz IPS",
-			"Memory": "16GB DDR4",
-			"Storage": "512GB SSD",
-			"Battery": "Up to 8 hours",
-			"Operating System": "Windows 11",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Ports": "USB-C, USB-A, HDMI 2.1",
-			"Audio": "DTS:X Ultra",
-			"Dimensions": "36.4 cm x 26.3 cm x 2.4 cm",
-			"Weight": "2.3 kg",
-			"Packaging": "Eco-friendly packaging"
+			"Warranty": "2 years",
+			"Screen Size": "6.5 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Intel 11th Gen",
+			"Camera": "48 MP (Main), 8 MP (Wide)",
+			"Battery": "5000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Blue, Silver",
+			"Operating System": "Android 12",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Fast 5G connectivity, long-lasting battery"
 		},
 		"presentation": [
 			{
-				"title": "RTX 3060 Graphics for Superior Performance",
-				"text": "Enjoy smooth and stunning visuals with the NVIDIA GeForce RTX 3060, providing high frame rates and beautiful graphics for the latest games.",
-				"img": "hardwarepresphoto1.jpg"
+				"title": "Powerful Intel 11th Gen Chipset",
+				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
+				"img": "smartphonepresphoto1.jpg"
 			},
 			{
-				"title": "144Hz IPS Display for Fluid Gameplay",
-				"text": "The 15.6-inch 144Hz IPS display ensures smooth and responsive gameplay with vibrant colors and wide viewing angles.",
-				"img": "hardwarepresphoto2.jpg"
+				"title": "48 MP Main Camera",
+				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
+				"img": "smartphonepresphoto2.jpg"
 			},
 			{
-				"title": "Advanced Cooling System",
-				"text": "Stay cool during intense gaming sessions with Acer’s advanced cooling system, designed to keep the laptop running at peak performance.",
-				"img": "hardwarepresphoto3.jpg"
+				"title": "Seamless 5G Connectivity",
+				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
+				"img": "smartphonepresphoto3.jpg"
 			},
 			{
-				"title": "Built for Gamers, Designed for Performance",
-				"text": "With a powerful Intel Core i7 processor and 16GB RAM, the Acer Nitro 5 is designed to handle demanding games and applications with ease.",
-				"img": "hardwarepresphoto4.jpg"
+				"title": "5000 mAh Battery & Quick Charging",
+				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
+				"img": "smartphonepresphoto4.jpg"
 			}
 		]
 	},
 	{
-		"uniqueId": "187",
-		"name": "HP Colorfull Graphic Card 2",
-		"price": 1111,
-		"description": "The HP Colorfull Graphic Card 2 is designed for gamers who need high-performance components and portability. Equipped with an Intel Core i7-12700H processor and an NVIDIA GeForce RTX 3060, it delivers excellent gaming performance and smooth graphics rendering. The 15.6-inch 144Hz IPS display offers stunning visuals, while the advanced cooling system ensures that the laptop stays cool during long gaming sessions. With a 512GB SSD and 16GB RAM, it’s built to handle modern games with ease.",
-		"images": ["hardwarephoto17.jpg", "hardwarephoto18.jpg", "hardwarephoto19.jpg", "hardwarephoto20.jpg"],
-		"category": "Hardware",
-		"company": "HP",
-		"stock": 123,
+		"uniqueId": "299",
+		"name": "Asus Zenith Pro",
+		"price": 789,
+		"description": "The Asus Zenith Procombines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
+		"images": ["smartphonephoto19.jpg", "smartphonephoto20.jpg", "smartphonephoto1.jpg", "smartphonephoto2.jpg"],
+		"category": "Smartphones",
+		"company": "Asus",
+		"stock": 142,
 		"recommended": false,
 		"promotion": {
 			"isPromotion": true,
 			"promotionPercent": 15
 		},
 		"specification": {
-			"Manufacturer": "HP",
-			"Warranty": "1 year",
-			"Processor": "Intel Core i7-12700H",
-			"Graphics": "NVIDIA GeForce RTX 3060",
-			"Display": "15.6-inch 144Hz IPS",
-			"Memory": "16GB DDR4",
-			"Storage": "512GB SSD",
-			"Battery": "Up to 8 hours",
-			"Operating System": "Windows 11",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Ports": "USB-C, USB-A, HDMI 2.1",
-			"Audio": "DTS:X Ultra",
-			"Dimensions": "36.4 cm x 26.3 cm x 2.4 cm",
-			"Weight": "2.3 kg",
-			"Packaging": "Eco-friendly packaging"
+			"Manufacturer": "Asus",
+			"Warranty": "2 years",
+			"Screen Size": "6.5 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Intel 11th Gen",
+			"Camera": "48 MP (Main), 8 MP (Wide)",
+			"Battery": "5000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Blue, Silver",
+			"Operating System": "Android 12",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Fast 5G connectivity, long-lasting battery"
 		},
 		"presentation": [
 			{
-				"title": "RTX 3060 Graphics for Superior Performance",
-				"text": "Enjoy smooth and stunning visuals with the NVIDIA GeForce RTX 3060, providing high frame rates and beautiful graphics for the latest games.",
-				"img": "hardwarepresphoto1.jpg"
+				"title": "Powerful Intel 11th Gen Chipset",
+				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
+				"img": "smartphonepresphoto1.jpg"
 			},
 			{
-				"title": "144Hz IPS Display for Fluid Gameplay",
-				"text": "The 15.6-inch 144Hz IPS display ensures smooth and responsive gameplay with vibrant colors and wide viewing angles.",
-				"img": "hardwarepresphoto2.jpg"
+				"title": "48 MP Main Camera",
+				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
+				"img": "smartphonepresphoto2.jpg"
 			},
 			{
-				"title": "Advanced Cooling System",
-				"text": "Stay cool during intense gaming sessions with Acer’s advanced cooling system, designed to keep the laptop running at peak performance.",
-				"img": "hardwarepresphoto3.jpg"
+				"title": "Seamless 5G Connectivity",
+				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
+				"img": "smartphonepresphoto3.jpg"
 			},
 			{
-				"title": "Built for Gamers, Designed for Performance",
-				"text": "With a powerful Intel Core i7 processor and 16GB RAM, the Acer Nitro 5 is designed to handle demanding games and applications with ease.",
-				"img": "hardwarepresphoto4.jpg"
+				"title": "5000 mAh Battery & Quick Charging",
+				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
+				"img": "smartphonepresphoto4.jpg"
 			}
 		]
 	},
 	{
-		"uniqueId": "188",
-		"name": "Samsung Scenic Memory Card 2TB",
-		"price": 911,
-		"description": "The Samsung Scenic Memory Card 2TB is designed for gamers who need high-performance components and portability. Equipped with an Intel Core i7-12700H processor and an NVIDIA GeForce RTX 3060, it delivers excellent gaming performance and smooth graphics rendering. The 15.6-inch 144Hz IPS display offers stunning visuals, while the advanced cooling system ensures that the laptop stays cool during long gaming sessions. With a 512GB SSD and 16GB RAM, it’s built to handle modern games with ease.",
-		"images": ["hardwarephoto18.jpg", "hardwarephoto19.jpg", "hardwarephoto20.jpg", "hardwarephoto1.jpg"],
-		"category": "Hardware",
-		"company": "Samsung",
-		"stock": 0,
+		"uniqueId": "300",
+		"name": "Asus Orion X5",
+		"price": 723,
+		"description": "The Asus Orion X5 combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
+		"images": ["smartphonephoto20.jpg", "smartphonephoto1.jpg", "smartphonephoto2.jpg", "smartphonephoto3.jpg"],
+		"category": "Smartphones",
+		"company": "Asus",
+		"stock": 68,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": false,
+			"promotionPercent": 0
+		},
+		"specification": {
+			"Manufacturer": "Asus",
+			"Warranty": "2 years",
+			"Screen Size": "6.5 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Intel 11th Gen",
+			"Camera": "48 MP (Main), 8 MP (Wide)",
+			"Battery": "5000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Blue, Silver",
+			"Operating System": "Android 12",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Fast 5G connectivity, long-lasting battery"
+		},
+		"presentation": [
+			{
+				"title": "Powerful Intel 11th Gen Chipset",
+				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "48 MP Main Camera",
+				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "Seamless 5G Connectivity",
+				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "5000 mAh Battery & Quick Charging",
+				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"uniqueId": "301",
+		"name": "Intel Corephone 12X",
+		"price": 1223,
+		"description": "The Intel Corephone 12X combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
+		"images": ["smartphonephoto1.jpg", "smartphonephoto2.jpg", "smartphonephoto3.jpg", "smartphonephoto4.jpg"],
+		"category": "Smartphones",
+		"company": "Intel",
+		"stock": 28,
 		"recommended": false,
 		"promotion": {
 			"isPromotion": true,
-			"promotionPercent": 15
+			"promotionPercent": 10
 		},
 		"specification": {
-			"Manufacturer": "Samsung",
-			"Warranty": "1 year",
-			"Processor": "Intel Core i7-12700H",
-			"Graphics": "NVIDIA GeForce RTX 3060",
-			"Display": "15.6-inch 144Hz IPS",
-			"Memory": "16GB DDR4",
-			"Storage": "512GB SSD",
-			"Battery": "Up to 8 hours",
-			"Operating System": "Windows 11",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Ports": "USB-C, USB-A, HDMI 2.1",
-			"Audio": "DTS:X Ultra",
-			"Dimensions": "36.4 cm x 26.3 cm x 2.4 cm",
-			"Weight": "2.3 kg",
-			"Packaging": "Eco-friendly packaging"
+			"Manufacturer": "Intel",
+			"Warranty": "2 years",
+			"Screen Size": "6.5 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Intel 11th Gen",
+			"Camera": "48 MP (Main), 8 MP (Wide)",
+			"Battery": "5000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Blue, Silver",
+			"Operating System": "Android 12",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Fast 5G connectivity, long-lasting battery"
 		},
 		"presentation": [
 			{
-				"title": "RTX 3060 Graphics for Superior Performance",
-				"text": "Enjoy smooth and stunning visuals with the NVIDIA GeForce RTX 3060, providing high frame rates and beautiful graphics for the latest games.",
-				"img": "hardwarepresphoto1.jpg"
+				"title": "Powerful Intel 11th Gen Chipset",
+				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
+				"img": "smartphonepresphoto1.jpg"
 			},
 			{
-				"title": "144Hz IPS Display for Fluid Gameplay",
-				"text": "The 15.6-inch 144Hz IPS display ensures smooth and responsive gameplay with vibrant colors and wide viewing angles.",
-				"img": "hardwarepresphoto2.jpg"
+				"title": "48 MP Main Camera",
+				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
+				"img": "smartphonepresphoto2.jpg"
 			},
 			{
-				"title": "Advanced Cooling System",
-				"text": "Stay cool during intense gaming sessions with Acer’s advanced cooling system, designed to keep the laptop running at peak performance.",
-				"img": "hardwarepresphoto3.jpg"
+				"title": "Seamless 5G Connectivity",
+				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
+				"img": "smartphonepresphoto3.jpg"
 			},
 			{
-				"title": "Built for Gamers, Designed for Performance",
-				"text": "With a powerful Intel Core i7 processor and 16GB RAM, the Acer Nitro 5 is designed to handle demanding games and applications with ease.",
-				"img": "hardwarepresphoto4.jpg"
+				"title": "5000 mAh Battery & Quick Charging",
+				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
+				"img": "smartphonepresphoto4.jpg"
 			}
 		]
 	},
 	{
-		"uniqueId": "189",
-		"name": "DJI Scandisc Small 22",
-		"price": 99,
-		"description": "The DJI Scandisc Small 22 is designed for gamers who need high-performance components and portability. Equipped with an Intel Core i7-12700H processor and an NVIDIA GeForce RTX 3060, it delivers excellent gaming performance and smooth graphics rendering. The 15.6-inch 144Hz IPS display offers stunning visuals, while the advanced cooling system ensures that the laptop stays cool during long gaming sessions. With a 512GB SSD and 16GB RAM, it’s built to handle modern games with ease.",
-		"images": ["hardwarephoto19.jpg", "hardwarephoto20.jpg", "hardwarephoto1.jpg", "hardwarephoto2.jpg"],
-		"category": "Hardware",
-		"company": "DJI",
-		"stock": 13,
+		"uniqueId": "302",
+		"name": "Intel EvoLink 5",
+		"price": 553,
+		"description": "The Intel EvoLink 5 combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
+		"images": ["smartphonephoto2.jpg", "smartphonephoto3.jpg", "smartphonephoto4.jpg", "smartphonephoto5.jpg"],
+		"category": "Smartphones",
+		"company": "Intel",
+		"stock": 29,
 		"recommended": true,
 		"promotion": {
 			"isPromotion": true,
-			"promotionPercent": 15
+			"promotionPercent": 10
 		},
 		"specification": {
-			"Manufacturer": "DJI",
-			"Warranty": "1 year",
-			"Processor": "Intel Core i7-12700H",
-			"Graphics": "NVIDIA GeForce RTX 3060",
-			"Display": "15.6-inch 144Hz IPS",
-			"Memory": "16GB DDR4",
-			"Storage": "512GB SSD",
-			"Battery": "Up to 8 hours",
-			"Operating System": "Windows 11",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Ports": "USB-C, USB-A, HDMI 2.1",
-			"Audio": "DTS:X Ultra",
-			"Dimensions": "36.4 cm x 26.3 cm x 2.4 cm",
-			"Weight": "2.3 kg",
-			"Packaging": "Eco-friendly packaging"
+			"Manufacturer": "Intel",
+			"Warranty": "2 years",
+			"Screen Size": "6.5 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Intel 11th Gen",
+			"Camera": "48 MP (Main), 8 MP (Wide)",
+			"Battery": "5000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Blue, Silver",
+			"Operating System": "Android 12",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Fast 5G connectivity, long-lasting battery"
 		},
 		"presentation": [
 			{
-				"title": "RTX 3060 Graphics for Superior Performance",
-				"text": "Enjoy smooth and stunning visuals with the NVIDIA GeForce RTX 3060, providing high frame rates and beautiful graphics for the latest games.",
-				"img": "hardwarepresphoto1.jpg"
+				"title": "Powerful Intel 11th Gen Chipset",
+				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
+				"img": "smartphonepresphoto1.jpg"
 			},
 			{
-				"title": "144Hz IPS Display for Fluid Gameplay",
-				"text": "The 15.6-inch 144Hz IPS display ensures smooth and responsive gameplay with vibrant colors and wide viewing angles.",
-				"img": "hardwarepresphoto2.jpg"
+				"title": "48 MP Main Camera",
+				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
+				"img": "smartphonepresphoto2.jpg"
 			},
 			{
-				"title": "Advanced Cooling System",
-				"text": "Stay cool during intense gaming sessions with Acer’s advanced cooling system, designed to keep the laptop running at peak performance.",
-				"img": "hardwarepresphoto3.jpg"
+				"title": "Seamless 5G Connectivity",
+				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
+				"img": "smartphonepresphoto3.jpg"
 			},
 			{
-				"title": "Built for Gamers, Designed for Performance",
-				"text": "With a powerful Intel Core i7 processor and 16GB RAM, the Acer Nitro 5 is designed to handle demanding games and applications with ease.",
-				"img": "hardwarepresphoto4.jpg"
+				"title": "5000 mAh Battery & Quick Charging",
+				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
+				"img": "smartphonepresphoto4.jpg"
 			}
 		]
 	},
 	{
-		"uniqueId": "190",
-		"name": "Logitech Attic Card",
+		"uniqueId": "303",
+		"name": "Lenovo Fusion Edge",
 		"price": 333,
-		"description": "The Logitech Attic Card is designed for gamers who need high-performance components and portability. Equipped with an Intel Core i7-12700H processor and an NVIDIA GeForce RTX 3060, it delivers excellent gaming performance and smooth graphics rendering. The 15.6-inch 144Hz IPS display offers stunning visuals, while the advanced cooling system ensures that the laptop stays cool during long gaming sessions. With a 512GB SSD and 16GB RAM, it’s built to handle modern games with ease.",
-		"images": ["hardwarephoto20.jpg", "hardwarephoto1.jpg", "hardwarephoto2.jpg", "hardwarephoto3.jpg"],
-		"category": "Hardware",
+		"description": "The Lenovo Fusion Edge combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
+		"images": ["smartphonephoto3.jpg", "smartphonephoto4.jpg", "smartphonephoto5.jpg", "smartphonephoto6.jpg"],
+		"category": "Smartphones",
+		"company": "Lenovo",
+		"stock": 12,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": true,
+			"promotionPercent": 10
+		},
+		"specification": {
+			"Manufacturer": "Lenovo",
+			"Warranty": "2 years",
+			"Screen Size": "6.5 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Intel 11th Gen",
+			"Camera": "48 MP (Main), 8 MP (Wide)",
+			"Battery": "5000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Blue, Silver",
+			"Operating System": "Android 12",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Fast 5G connectivity, long-lasting battery"
+		},
+		"presentation": [
+			{
+				"title": "Powerful Intel 11th Gen Chipset",
+				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "48 MP Main Camera",
+				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "Seamless 5G Connectivity",
+				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "5000 mAh Battery & Quick Charging",
+				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"uniqueId": "304",
+		"name": "Lenovo Nexus One",
+		"price": 699,
+		"description": "The Lenovo Nexus One combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
+		"images": ["smartphonephoto4.jpg", "smartphonephoto5.jpg", "smartphonephoto6.jpg", "smartphonephoto7.jpg"],
+		"category": "Smartphones",
+		"company": "Lenovo",
+		"stock": 111,
+		"recommended": true,
+		"promotion": {
+			"isPromotion": false,
+			"promotionPercent": 0
+		},
+		"specification": {
+			"Manufacturer": "Lenovo",
+			"Warranty": "2 years",
+			"Screen Size": "6.5 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Intel 11th Gen",
+			"Camera": "48 MP (Main), 8 MP (Wide)",
+			"Battery": "5000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Blue, Silver",
+			"Operating System": "Android 12",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Fast 5G connectivity, long-lasting battery"
+		},
+		"presentation": [
+			{
+				"title": "Powerful Intel 11th Gen Chipset",
+				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "48 MP Main Camera",
+				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "Seamless 5G Connectivity",
+				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "5000 mAh Battery & Quick Charging",
+				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"uniqueId": "305",
+		"name": "Logitech Pulse M1",
+		"price": 663,
+		"description": "The Logitech Pulse M1 combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
+		"images": ["smartphonephoto5.jpg", "smartphonephoto6.jpg", "smartphonephoto7.jpg", "smartphonephoto8.jpg"],
+		"category": "Smartphones",
 		"company": "Logitech",
-		"stock": 33,
+		"stock": 22,
 		"recommended": false,
 		"promotion": {
 			"isPromotion": true,
@@ -447,41 +525,293 @@
 		},
 		"specification": {
 			"Manufacturer": "Logitech",
-			"Warranty": "1 year",
-			"Processor": "Intel Core i7-12700H",
-			"Graphics": "NVIDIA GeForce RTX 3060",
-			"Display": "15.6-inch 144Hz IPS",
-			"Memory": "16GB DDR4",
-			"Storage": "512GB SSD",
-			"Battery": "Up to 8 hours",
-			"Operating System": "Windows 11",
-			"Connectivity": "Wi-Fi 6, Bluetooth 5.2",
-			"Ports": "USB-C, USB-A, HDMI 2.1",
-			"Audio": "DTS:X Ultra",
-			"Dimensions": "36.4 cm x 26.3 cm x 2.4 cm",
-			"Weight": "2.3 kg",
-			"Packaging": "Eco-friendly packaging"
+			"Warranty": "2 years",
+			"Screen Size": "6.5 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Intel 11th Gen",
+			"Camera": "48 MP (Main), 8 MP (Wide)",
+			"Battery": "5000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Blue, Silver",
+			"Operating System": "Android 12",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Fast 5G connectivity, long-lasting battery"
 		},
 		"presentation": [
 			{
-				"title": "RTX 3060 Graphics for Superior Performance",
-				"text": "Enjoy smooth and stunning visuals with the NVIDIA GeForce RTX 3060, providing high frame rates and beautiful graphics for the latest games.",
-				"img": "hardwarepresphoto1.jpg"
+				"title": "Powerful Intel 11th Gen Chipset",
+				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
+				"img": "smartphonepresphoto1.jpg"
 			},
 			{
-				"title": "144Hz IPS Display for Fluid Gameplay",
-				"text": "The 15.6-inch 144Hz IPS display ensures smooth and responsive gameplay with vibrant colors and wide viewing angles.",
-				"img": "hardwarepresphoto2.jpg"
+				"title": "48 MP Main Camera",
+				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
+				"img": "smartphonepresphoto2.jpg"
 			},
 			{
-				"title": "Advanced Cooling System",
-				"text": "Stay cool during intense gaming sessions with Acer’s advanced cooling system, designed to keep the laptop running at peak performance.",
-				"img": "hardwarepresphoto3.jpg"
+				"title": "Seamless 5G Connectivity",
+				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
+				"img": "smartphonepresphoto3.jpg"
 			},
 			{
-				"title": "Built for Gamers, Designed for Performance",
-				"text": "With a powerful Intel Core i7 processor and 16GB RAM, the Acer Nitro 5 is designed to handle demanding games and applications with ease.",
-				"img": "hardwarepresphoto4.jpg"
+				"title": "5000 mAh Battery & Quick Charging",
+				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"uniqueId": "306",
+		"name": "Logitech Nova S2",
+		"price": 892,
+		"description": "The Logitech Nova S2 combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
+		"images": ["smartphonephoto6.jpg", "smartphonephoto7.jpg", "smartphonephoto8.jpg", "smartphonephoto9.jpg"],
+		"category": "Smartphones",
+		"company": "Logitech",
+		"stock": 23,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": false,
+			"promotionPercent": 0
+		},
+		"specification": {
+			"Manufacturer": "Logitech",
+			"Warranty": "2 years",
+			"Screen Size": "6.5 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Intel 11th Gen",
+			"Camera": "48 MP (Main), 8 MP (Wide)",
+			"Battery": "5000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Blue, Silver",
+			"Operating System": "Android 12",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Fast 5G connectivity, long-lasting battery"
+		},
+		"presentation": [
+			{
+				"title": "Powerful Intel 11th Gen Chipset",
+				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "48 MP Main Camera",
+				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "Seamless 5G Connectivity",
+				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "5000 mAh Battery & Quick Charging",
+				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"uniqueId": "307",
+		"name": "Microsoft Lumia Pro",
+		"price": 299,
+		"description": "The Microsoft Lumia Pro combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
+		"images": ["smartphonephoto7.jpg", "smartphonephoto8.jpg", "smartphonephoto9.jpg", "smartphonephoto10.jpg"],
+		"category": "Smartphones",
+		"company": "Microsoft",
+		"stock": 44,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": false,
+			"promotionPercent": 0
+		},
+		"specification": {
+			"Manufacturer": "Microsoft",
+			"Warranty": "2 years",
+			"Screen Size": "6.5 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Intel 11th Gen",
+			"Camera": "48 MP (Main), 8 MP (Wide)",
+			"Battery": "5000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Blue, Silver",
+			"Operating System": "Android 12",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Fast 5G connectivity, long-lasting battery"
+		},
+		"presentation": [
+			{
+				"title": "Powerful Intel 11th Gen Chipset",
+				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "48 MP Main Camera",
+				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "Seamless 5G Connectivity",
+				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "5000 mAh Battery & Quick Charging",
+				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"uniqueId": "308",
+		"name": "Microsoft Surface Orbit",
+		"price": 683,
+		"description": "The Microsoft Surface Orbit combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
+		"images": ["smartphonephoto8.jpg", "smartphonephoto9.jpg", "smartphonephoto10.jpg", "smartphonephoto11.jpg"],
+		"category": "Smartphones",
+		"company": "Microsoft",
+		"stock": 24,
+		"recommended": true,
+		"promotion": {
+			"isPromotion": true,
+			"promotionPercent": 10
+		},
+		"specification": {
+			"Manufacturer": "Microsoft",
+			"Warranty": "2 years",
+			"Screen Size": "6.5 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Intel 11th Gen",
+			"Camera": "48 MP (Main), 8 MP (Wide)",
+			"Battery": "5000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Blue, Silver",
+			"Operating System": "Android 12",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Fast 5G connectivity, long-lasting battery"
+		},
+		"presentation": [
+			{
+				"title": "Powerful Intel 11th Gen Chipset",
+				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "48 MP Main Camera",
+				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "Seamless 5G Connectivity",
+				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "5000 mAh Battery & Quick Charging",
+				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"uniqueId": "309",
+		"name": "Samsung Galaxy Zephyr",
+		"price": 1068,
+		"description": "The Samsung Galaxy Zephyr combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
+		"images": ["smartphonephoto9.jpg", "smartphonephoto10.jpg", "smartphonephoto11.jpg", "smartphonephoto12.jpg"],
+		"category": "Smartphones",
+		"company": "Samsung",
+		"stock": 4,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": false,
+			"promotionPercent": 0
+		},
+		"specification": {
+			"Manufacturer": "Samsung",
+			"Warranty": "2 years",
+			"Screen Size": "6.5 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Intel 11th Gen",
+			"Camera": "48 MP (Main), 8 MP (Wide)",
+			"Battery": "5000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Blue, Silver",
+			"Operating System": "Android 12",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Fast 5G connectivity, long-lasting battery"
+		},
+		"presentation": [
+			{
+				"title": "Powerful Intel 11th Gen Chipset",
+				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "48 MP Main Camera",
+				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "Seamless 5G Connectivity",
+				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "5000 mAh Battery & Quick Charging",
+				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
+				"img": "smartphonepresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"uniqueId": "310",
+		"name": "Samsung Neo Infinity",
+		"price": 893,
+		"description": "The Samsung Neo Infinity combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
+		"images": ["smartphonephoto10.jpg", "smartphonephoto11.jpg", "smartphonephoto12.jpg", "smartphonephoto13.jpg"],
+		"category": "Smartphones",
+		"company": "Samsung",
+		"stock": 89,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": false,
+			"promotionPercent": 0
+		},
+		"specification": {
+			"Manufacturer": "Samsung",
+			"Warranty": "2 years",
+			"Screen Size": "6.5 inches",
+			"Resolution": "2400x1080",
+			"Processor": "Intel 11th Gen",
+			"Camera": "48 MP (Main), 8 MP (Wide)",
+			"Battery": "5000 mAh",
+			"Storage Options": "128GB, 256GB",
+			"Color Options": "Blue, Silver",
+			"Operating System": "Android 12",
+			"Connectivity": "5G, Wi-Fi 6",
+			"Additional Features": "Fast 5G connectivity, long-lasting battery"
+		},
+		"presentation": [
+			{
+				"title": "Powerful Intel 11th Gen Chipset",
+				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
+				"img": "smartphonepresphoto1.jpg"
+			},
+			{
+				"title": "48 MP Main Camera",
+				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
+				"img": "smartphonepresphoto2.jpg"
+			},
+			{
+				"title": "Seamless 5G Connectivity",
+				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
+				"img": "smartphonepresphoto3.jpg"
+			},
+			{
+				"title": "5000 mAh Battery & Quick Charging",
+				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
+				"img": "smartphonepresphoto4.jpg"
 			}
 		]
 	}
