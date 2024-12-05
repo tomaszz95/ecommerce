@@ -1,421 +1,226 @@
 [
 	{
-		"uniqueId": "295",
-		"name": "Acer Nova X",
-		"price": 559,
-		"description": "The Acer Nova X combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
-		"images": ["smartphonephoto15.jpg", "smartphonephoto16.jpg", "smartphonephoto17.jpg", "smartphonephoto18.jpg"],
-		"category": "Smartphones",
+		"uniqueId": "396",
+		"name": "Acer StreamCommand 6",
+		"price": 129,
+		"description": "The Acer StreamCommand 6 is a powerful yet compact stream deck designed for gamers and content creators. With six customizable keys, it offers easy control over your live stream, including scene switching, media playback, and social media integration. The sleek design features a high-quality tactile response for a seamless streaming experience. Whether you’re using OBS, Streamlabs, or XSplit, the Acer StreamCommand 6 provides essential functions at your fingertips.",
+		"images": [
+			"streamingdeckphoto1.jpg",
+			"streamingdeckphoto2.jpg",
+			"streamingdeckphoto3.jpg",
+			"streamingdeckphoto4.jpg"
+		],
+		"category": "Streaming",
 		"company": "Acer",
-		"stock": 0,
+		"stock": 42,
+		"recommended": true,
+		"promotion": {
+			"isPromotion": true,
+			"promotionPercent": 10
+		},
+		"specification": {
+			"Manufacturer": "Acer",
+			"Warranty": "2 years",
+			"Number of Keys": "6",
+			"Connectivity": "USB 2.0",
+			"Dimensions": "130mm x 90mm x 45mm",
+			"Weight": "250g",
+			"Color": "Black",
+			"Additional Features": "Customizable key functions, High tactile response"
+		},
+		"presentation": [
+			{
+				"title": "Compact Design for Seamless Control",
+				"text": "The Acer StreamCommand 6 provides all the control you need for your live stream in a compact form. The six customizable buttons give you quick access to key streaming features, improving your workflow and reducing the hassle of managing multiple applications.",
+				"img": "streamingpresphoto1.jpg"
+			},
+			{
+				"title": "Easy Integration with Popular Software",
+				"text": "Whether you're using OBS, Streamlabs, or XSplit, the Acer StreamCommand 6 integrates effortlessly with major streaming platforms, allowing for an intuitive and efficient streaming experience.",
+				"img": "streamingpresphoto2.jpg"
+			},
+			{
+				"title": "Customizable Keys for Full Personalization",
+				"text": "With six programmable keys, you can personalize the Acer StreamCommand 6 to suit your streaming needs, ensuring quick and easy access to your most-used commands.",
+				"img": "streamingpresphoto3.jpg"
+			},
+			{
+				"title": "Sleek and Durable Build",
+				"text": "Designed for durability, the Acer StreamCommand 6 features a sleek black finish and sturdy build, making it perfect for both beginners and professional streamers looking for a reliable deck.",
+				"img": "streamingpresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"uniqueId": "397",
+		"name": "Apple StreamDeck Pro 12",
+		"price": 299,
+		"description": "The Apple StreamDeck Pro 12 is an advanced stream deck that features 12 customizable LCD keys, offering full control of your streaming setup. Designed for professional streamers, it supports various functions, including scene switching, media control, and Twitch chat management. The intuitive interface allows for quick, seamless interaction with popular streaming platforms such as OBS, Streamlabs, and more. With high-quality tactile feedback, this deck is perfect for streamers who need efficient and responsive control during live broadcasts.",
+		"images": [
+			"streamingdeckphoto2.jpg",
+			"streamingdeckphoto3.jpg",
+			"streamingdeckphoto4.jpg",
+			"streamingdeckphoto5.jpg"
+		],
+		"category": "Streaming",
+		"company": "Apple",
+		"stock": 31,
+		"recommended": false,
+		"promotion": {
+			"isPromotion": false,
+			"promotionPercent": 0
+		},
+		"specification": {
+			"Manufacturer": "Apple",
+			"Warranty": "1 year",
+			"Number of Keys": "12",
+			"Connectivity": "USB-C",
+			"Dimensions": "180mm x 110mm x 50mm",
+			"Weight": "350g",
+			"Color": "Silver",
+			"Additional Features": "High-quality tactile feedback, Customizable hotkeys, Multi-platform support"
+		},
+		"presentation": [
+			{
+				"title": "Professional-Level Control",
+				"text": "With 12 fully customizable keys, the Apple StreamDeck Pro 12 offers professional streamers the ultimate control over their streams. Perfect for managing scenes, media, and other broadcasting tasks with a single touch.",
+				"img": "streamingpresphoto1.jpg"
+			},
+			{
+				"title": "Instantly Customize and Control",
+				"text": "The Apple StreamDeck Pro 12 allows for instant customization of your stream, enabling you to access key streaming functions such as scene switching, media playback, and alerts with ease.",
+				"img": "streamingpresphoto2.jpg"
+			},
+			{
+				"title": "Seamless Integration with Streaming Software",
+				"text": "Compatible with all popular streaming software, including OBS, Streamlabs, and Twitch, the Apple StreamDeck Pro 12 integrates perfectly with your existing setup to optimize your broadcasting experience.",
+				"img": "streamingpresphoto3.jpg"
+			},
+			{
+				"title": "Sleek Design with High-Quality Build",
+				"text": "Built with premium materials and designed with a sleek silver finish, the Apple StreamDeck Pro 12 combines both form and function. It delivers durability and reliability for professional streamers.",
+				"img": "streamingpresphoto4.jpg"
+			}
+		]
+	},
+	{
+		"uniqueId": "398",
+		"name": "Logitech StreamPad 8",
+		"price": 179,
+		"description": "The Logitech StreamPad 8 is an intuitive stream deck designed for streamers looking for enhanced control and efficiency. With eight programmable keys, it offers easy access to essential streaming functions such as media control, scene switching, and overlays. Built with Logitech’s signature quality, the StreamPad 8 supports all major streaming platforms, including OBS, Streamlabs, and YouTube Live, offering flexibility and versatility for any content creator.",
+		"images": [
+			"streamingdeckphoto3.jpg",
+			"streamingdeckphoto4.jpg",
+			"streamingdeckphoto5.jpg",
+			"streamingdeckphoto1.jpg"
+		],
+		"category": "Streaming",
+		"company": "Logitech",
+		"stock": 50,
 		"recommended": false,
 		"promotion": {
 			"isPromotion": true,
 			"promotionPercent": 5
 		},
 		"specification": {
-			"Manufacturer": "Acer",
+			"Manufacturer": "Logitech",
 			"Warranty": "2 years",
-			"Screen Size": "6.5 inches",
-			"Resolution": "2400x1080",
-			"Processor": "Intel 11th Gen",
-			"Camera": "48 MP (Main), 8 MP (Wide)",
-			"Battery": "5000 mAh",
-			"Storage Options": "128GB, 256GB",
-			"Color Options": "Blue, Silver",
-			"Operating System": "Android 12",
-			"Connectivity": "5G, Wi-Fi 6",
-			"Additional Features": "Fast 5G connectivity, long-lasting battery"
+			"Number of Keys": "8",
+			"Connectivity": "USB 2.0",
+			"Dimensions": "150mm x 95mm x 45mm",
+			"Weight": "280g",
+			"Color": "Black",
+			"Additional Features": "Customizable keys, Multi-platform support"
 		},
 		"presentation": [
 			{
-				"title": "Powerful Intel 11th Gen Chipset",
-				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
-				"img": "smartphonepresphoto1.jpg"
+				"title": "Optimized for Streamers",
+				"text": "The Logitech StreamPad 8 is designed to meet the needs of streamers with eight customizable keys that give you control over scenes, media, and more. Make your stream management effortless with this compact deck.",
+				"img": "streamingpresphoto1.jpg"
 			},
 			{
-				"title": "48 MP Main Camera",
-				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
-				"img": "smartphonepresphoto2.jpg"
+				"title": "Enhanced Streaming Experience",
+				"text": "Streamers can customize the Logitech StreamPad 8 for a range of functions, including switching between scenes, controlling audio, and launching media files. It's built to provide an enhanced streaming experience.",
+				"img": "streamingpresphoto2.jpg"
 			},
 			{
-				"title": "Seamless 5G Connectivity",
-				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
-				"img": "smartphonepresphoto3.jpg"
+				"title": "Seamless Integration with Streaming Platforms",
+				"text": "The StreamPad 8 integrates seamlessly with all major streaming platforms like OBS and Streamlabs. Its plug-and-play setup means you’re ready to start streaming without complex installation steps.",
+				"img": "streamingpresphoto3.jpg"
 			},
 			{
-				"title": "5000 mAh Battery & Quick Charging",
-				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
-				"img": "smartphonepresphoto4.jpg"
+				"title": "Durable and Reliable Build",
+				"text": "The StreamPad 8 from Logitech is built to last. Its sleek black finish and sturdy design make it an excellent choice for streamers who need a reliable tool to manage their live broadcasts.",
+				"img": "streamingpresphoto4.jpg"
 			}
 		]
 	},
 	{
-		"uniqueId": "296",
-		"name": "Acer Helix Pro",
-		"price": 888,
-		"description": "The Acer Helix Pro combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
-		"images": ["smartphonephoto16.jpg", "smartphonephoto17.jpg", "smartphonephoto18.jpg", "smartphonephoto19.jpg"],
-		"category": "Smartphones",
-		"company": "Acer",
-		"stock": 63,
-		"recommended": false,
-		"promotion": {
-			"isPromotion": true,
-			"promotionPercent": 10
-		},
-		"specification": {
-			"Manufacturer": "Acer",
-			"Warranty": "2 years",
-			"Screen Size": "6.5 inches",
-			"Resolution": "2400x1080",
-			"Processor": "Intel 11th Gen",
-			"Camera": "48 MP (Main), 8 MP (Wide)",
-			"Battery": "5000 mAh",
-			"Storage Options": "128GB, 256GB",
-			"Color Options": "Blue, Silver",
-			"Operating System": "Android 12",
-			"Connectivity": "5G, Wi-Fi 6",
-			"Additional Features": "Fast 5G connectivity, long-lasting battery"
-		},
-		"presentation": [
-			{
-				"title": "Powerful Intel 11th Gen Chipset",
-				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
-				"img": "smartphonepresphoto1.jpg"
-			},
-			{
-				"title": "48 MP Main Camera",
-				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
-				"img": "smartphonepresphoto2.jpg"
-			},
-			{
-				"title": "Seamless 5G Connectivity",
-				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
-				"img": "smartphonepresphoto3.jpg"
-			},
-			{
-				"title": "5000 mAh Battery & Quick Charging",
-				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
-				"img": "smartphonepresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"uniqueId": "297",
-		"name": "Apple iPhone Stellar 15",
-		"price": 1111,
-		"description": "The Apple iPhone Stellar 15 combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
-		"images": ["smartphonephoto17.jpg", "smartphonephoto18.jpg", "smartphonephoto19.jpg", "smartphonephoto20.jpg"],
-		"category": "Smartphones",
-		"company": "Apple",
-		"stock": 40,
-		"recommended": true,
-		"promotion": {
-			"isPromotion": false,
-			"promotionPercent": 0
-		},
-		"specification": {
-			"Manufacturer": "Apple",
-			"Warranty": "2 years",
-			"Screen Size": "6.5 inches",
-			"Resolution": "2400x1080",
-			"Processor": "Intel 11th Gen",
-			"Camera": "48 MP (Main), 8 MP (Wide)",
-			"Battery": "5000 mAh",
-			"Storage Options": "128GB, 256GB",
-			"Color Options": "Blue, Silver",
-			"Operating System": "Android 12",
-			"Connectivity": "5G, Wi-Fi 6",
-			"Additional Features": "Fast 5G connectivity, long-lasting battery"
-		},
-		"presentation": [
-			{
-				"title": "Powerful Intel 11th Gen Chipset",
-				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
-				"img": "smartphonepresphoto1.jpg"
-			},
-			{
-				"title": "48 MP Main Camera",
-				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
-				"img": "smartphonepresphoto2.jpg"
-			},
-			{
-				"title": "Seamless 5G Connectivity",
-				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
-				"img": "smartphonepresphoto3.jpg"
-			},
-			{
-				"title": "5000 mAh Battery & Quick Charging",
-				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
-				"img": "smartphonepresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"uniqueId": "298",
-		"name": "Apple iPhone Lumina X",
-		"price": 999,
-		"description": "The Apple iPhone Lumina X combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
-		"images": ["smartphonephoto18.jpg", "smartphonephoto19.jpg", "smartphonephoto20.jpg", "smartphonephoto1.jpg"],
-		"category": "Smartphones",
-		"company": "Apple",
-		"stock": 52,
+		"uniqueId": "399",
+		"name": "HP StreamDeck Pro 6",
+		"price": 149,
+		"description": "The HP StreamDeck Pro 6 is an easy-to-use and reliable stream deck designed for content creators. With six programmable keys, it offers one-touch control of your stream. Compatible with OBS, Streamlabs, and other popular streaming software, this deck allows you to customize your commands for scene switching, media control, and more. Built with HP’s reputation for durability and performance, it’s a perfect addition to any streaming setup.",
+		"images": [
+			"streamingdeckphoto4.jpg",
+			"streamingdeckphoto5.jpg",
+			"streamingdeckphoto1.jpg",
+			"streamingdeckphoto2.jpg"
+		],
+		"category": "Streaming",
+		"company": "HP",
+		"stock": 25,
 		"recommended": false,
 		"promotion": {
 			"isPromotion": false,
 			"promotionPercent": 0
 		},
 		"specification": {
-			"Manufacturer": "Apple",
-			"Warranty": "2 years",
-			"Screen Size": "6.5 inches",
-			"Resolution": "2400x1080",
-			"Processor": "Intel 11th Gen",
-			"Camera": "48 MP (Main), 8 MP (Wide)",
-			"Battery": "5000 mAh",
-			"Storage Options": "128GB, 256GB",
-			"Color Options": "Blue, Silver",
-			"Operating System": "Android 12",
-			"Connectivity": "5G, Wi-Fi 6",
-			"Additional Features": "Fast 5G connectivity, long-lasting battery"
+			"Manufacturer": "HP",
+			"Warranty": "1 year",
+			"Number of Keys": "6",
+			"Connectivity": "USB 2.0",
+			"Dimensions": "120mm x 85mm x 40mm",
+			"Weight": "250g",
+			"Color": "Black",
+			"Additional Features": "One-touch control, Compatible with all major streaming software"
 		},
 		"presentation": [
 			{
-				"title": "Powerful Intel 11th Gen Chipset",
-				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
-				"img": "smartphonepresphoto1.jpg"
+				"title": "Effortless Stream Control",
+				"text": "With six programmable keys, the HP StreamDeck Pro 6 gives streamers quick and easy access to essential streaming functions such as switching scenes and media control. Customize each button for your exact needs.",
+				"img": "streamingpresphoto1.jpg"
 			},
 			{
-				"title": "48 MP Main Camera",
-				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
-				"img": "smartphonepresphoto2.jpg"
+				"title": "High Compatibility with Streaming Software",
+				"text": "The HP StreamDeck Pro 6 works flawlessly with software like OBS, Streamlabs, and YouTube Live. It integrates quickly into your streaming setup, offering seamless control during live broadcasts.",
+				"img": "streamingpresphoto2.jpg"
 			},
 			{
-				"title": "Seamless 5G Connectivity",
-				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
-				"img": "smartphonepresphoto3.jpg"
+				"title": "Sleek and Durable Design",
+				"text": "This deck combines sleek design with durability. Its black finish and sturdy construction make it perfect for regular use, even during long streaming sessions.",
+				"img": "streamingpresphoto3.jpg"
 			},
 			{
-				"title": "5000 mAh Battery & Quick Charging",
-				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
-				"img": "smartphonepresphoto4.jpg"
+				"title": "Portable and Lightweight",
+				"text": "The HP StreamDeck Pro 6 is compact and lightweight, making it easy to transport. Whether you’re setting up at home or on the go, it’s an excellent choice for streamers looking for portability without sacrificing control.",
+				"img": "streamingpresphoto4.jpg"
 			}
 		]
 	},
 	{
-		"uniqueId": "299",
-		"name": "Asus Zenith Pro",
-		"price": 789,
-		"description": "The Asus Zenith Procombines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
-		"images": ["smartphonephoto19.jpg", "smartphonephoto20.jpg", "smartphonephoto1.jpg", "smartphonephoto2.jpg"],
-		"category": "Smartphones",
-		"company": "Asus",
-		"stock": 142,
-		"recommended": false,
-		"promotion": {
-			"isPromotion": true,
-			"promotionPercent": 15
-		},
-		"specification": {
-			"Manufacturer": "Asus",
-			"Warranty": "2 years",
-			"Screen Size": "6.5 inches",
-			"Resolution": "2400x1080",
-			"Processor": "Intel 11th Gen",
-			"Camera": "48 MP (Main), 8 MP (Wide)",
-			"Battery": "5000 mAh",
-			"Storage Options": "128GB, 256GB",
-			"Color Options": "Blue, Silver",
-			"Operating System": "Android 12",
-			"Connectivity": "5G, Wi-Fi 6",
-			"Additional Features": "Fast 5G connectivity, long-lasting battery"
-		},
-		"presentation": [
-			{
-				"title": "Powerful Intel 11th Gen Chipset",
-				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
-				"img": "smartphonepresphoto1.jpg"
-			},
-			{
-				"title": "48 MP Main Camera",
-				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
-				"img": "smartphonepresphoto2.jpg"
-			},
-			{
-				"title": "Seamless 5G Connectivity",
-				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
-				"img": "smartphonepresphoto3.jpg"
-			},
-			{
-				"title": "5000 mAh Battery & Quick Charging",
-				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
-				"img": "smartphonepresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"uniqueId": "300",
-		"name": "Asus Orion X5",
-		"price": 723,
-		"description": "The Asus Orion X5 combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
-		"images": ["smartphonephoto20.jpg", "smartphonephoto1.jpg", "smartphonephoto2.jpg", "smartphonephoto3.jpg"],
-		"category": "Smartphones",
-		"company": "Asus",
-		"stock": 68,
-		"recommended": false,
-		"promotion": {
-			"isPromotion": false,
-			"promotionPercent": 0
-		},
-		"specification": {
-			"Manufacturer": "Asus",
-			"Warranty": "2 years",
-			"Screen Size": "6.5 inches",
-			"Resolution": "2400x1080",
-			"Processor": "Intel 11th Gen",
-			"Camera": "48 MP (Main), 8 MP (Wide)",
-			"Battery": "5000 mAh",
-			"Storage Options": "128GB, 256GB",
-			"Color Options": "Blue, Silver",
-			"Operating System": "Android 12",
-			"Connectivity": "5G, Wi-Fi 6",
-			"Additional Features": "Fast 5G connectivity, long-lasting battery"
-		},
-		"presentation": [
-			{
-				"title": "Powerful Intel 11th Gen Chipset",
-				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
-				"img": "smartphonepresphoto1.jpg"
-			},
-			{
-				"title": "48 MP Main Camera",
-				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
-				"img": "smartphonepresphoto2.jpg"
-			},
-			{
-				"title": "Seamless 5G Connectivity",
-				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
-				"img": "smartphonepresphoto3.jpg"
-			},
-			{
-				"title": "5000 mAh Battery & Quick Charging",
-				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
-				"img": "smartphonepresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"uniqueId": "301",
-		"name": "Intel Corephone 12X",
-		"price": 1223,
-		"description": "The Intel Corephone 12X combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
-		"images": ["smartphonephoto1.jpg", "smartphonephoto2.jpg", "smartphonephoto3.jpg", "smartphonephoto4.jpg"],
-		"category": "Smartphones",
-		"company": "Intel",
-		"stock": 28,
-		"recommended": false,
-		"promotion": {
-			"isPromotion": true,
-			"promotionPercent": 10
-		},
-		"specification": {
-			"Manufacturer": "Intel",
-			"Warranty": "2 years",
-			"Screen Size": "6.5 inches",
-			"Resolution": "2400x1080",
-			"Processor": "Intel 11th Gen",
-			"Camera": "48 MP (Main), 8 MP (Wide)",
-			"Battery": "5000 mAh",
-			"Storage Options": "128GB, 256GB",
-			"Color Options": "Blue, Silver",
-			"Operating System": "Android 12",
-			"Connectivity": "5G, Wi-Fi 6",
-			"Additional Features": "Fast 5G connectivity, long-lasting battery"
-		},
-		"presentation": [
-			{
-				"title": "Powerful Intel 11th Gen Chipset",
-				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
-				"img": "smartphonepresphoto1.jpg"
-			},
-			{
-				"title": "48 MP Main Camera",
-				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
-				"img": "smartphonepresphoto2.jpg"
-			},
-			{
-				"title": "Seamless 5G Connectivity",
-				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
-				"img": "smartphonepresphoto3.jpg"
-			},
-			{
-				"title": "5000 mAh Battery & Quick Charging",
-				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
-				"img": "smartphonepresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"uniqueId": "302",
-		"name": "Intel EvoLink 5",
-		"price": 553,
-		"description": "The Intel EvoLink 5 combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
-		"images": ["smartphonephoto2.jpg", "smartphonephoto3.jpg", "smartphonephoto4.jpg", "smartphonephoto5.jpg"],
-		"category": "Smartphones",
-		"company": "Intel",
-		"stock": 29,
-		"recommended": true,
-		"promotion": {
-			"isPromotion": true,
-			"promotionPercent": 10
-		},
-		"specification": {
-			"Manufacturer": "Intel",
-			"Warranty": "2 years",
-			"Screen Size": "6.5 inches",
-			"Resolution": "2400x1080",
-			"Processor": "Intel 11th Gen",
-			"Camera": "48 MP (Main), 8 MP (Wide)",
-			"Battery": "5000 mAh",
-			"Storage Options": "128GB, 256GB",
-			"Color Options": "Blue, Silver",
-			"Operating System": "Android 12",
-			"Connectivity": "5G, Wi-Fi 6",
-			"Additional Features": "Fast 5G connectivity, long-lasting battery"
-		},
-		"presentation": [
-			{
-				"title": "Powerful Intel 11th Gen Chipset",
-				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
-				"img": "smartphonepresphoto1.jpg"
-			},
-			{
-				"title": "48 MP Main Camera",
-				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
-				"img": "smartphonepresphoto2.jpg"
-			},
-			{
-				"title": "Seamless 5G Connectivity",
-				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
-				"img": "smartphonepresphoto3.jpg"
-			},
-			{
-				"title": "5000 mAh Battery & Quick Charging",
-				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
-				"img": "smartphonepresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"uniqueId": "303",
-		"name": "Lenovo Fusion Edge",
-		"price": 333,
-		"description": "The Lenovo Fusion Edge combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
-		"images": ["smartphonephoto3.jpg", "smartphonephoto4.jpg", "smartphonephoto5.jpg", "smartphonephoto6.jpg"],
-		"category": "Smartphones",
+		"uniqueId": "400",
+		"name": "Lenovo StreamDeck Compact Pro 4",
+		"price": 99,
+		"description": "The Lenovo StreamDeck Compact Pro 4 is a budget-friendly yet highly effective stream deck designed for beginner streamers. It features four customizable keys that allow you to manage scenes, audio, and media with ease. Lightweight and simple to use, it integrates perfectly with OBS and Streamlabs. Ideal for streamers just getting started, this deck provides all the essential tools for managing your live broadcasts.",
+		"images": [
+			"streamingdeckphoto5.jpg",
+			"streamingdeckphoto1.jpg",
+			"streamingdeckphoto2.jpg",
+			"streamingdeckphoto3.jpg"
+		],
+		"category": "Streaming",
 		"company": "Lenovo",
-		"stock": 12,
+		"stock": 60,
 		"recommended": false,
 		"promotion": {
 			"isPromotion": true,
@@ -423,395 +228,34 @@
 		},
 		"specification": {
 			"Manufacturer": "Lenovo",
-			"Warranty": "2 years",
-			"Screen Size": "6.5 inches",
-			"Resolution": "2400x1080",
-			"Processor": "Intel 11th Gen",
-			"Camera": "48 MP (Main), 8 MP (Wide)",
-			"Battery": "5000 mAh",
-			"Storage Options": "128GB, 256GB",
-			"Color Options": "Blue, Silver",
-			"Operating System": "Android 12",
-			"Connectivity": "5G, Wi-Fi 6",
-			"Additional Features": "Fast 5G connectivity, long-lasting battery"
+			"Warranty": "1 year",
+			"Number of Keys": "4",
+			"Connectivity": "USB 2.0",
+			"Dimensions": "100mm x 70mm x 30mm",
+			"Weight": "150g",
+			"Color": "Black",
+			"Additional Features": "Affordable, Easy-to-use interface"
 		},
 		"presentation": [
 			{
-				"title": "Powerful Intel 11th Gen Chipset",
-				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
-				"img": "smartphonepresphoto1.jpg"
+				"title": "Simple Control for Beginner Streamers",
+				"text": "The Lenovo StreamDeck Compact 4 is designed for streamers who are just starting out. With four programmable keys, it offers a simple and effective way to control your stream, switch scenes, and manage audio.",
+				"img": "streamingpresphoto1.jpg"
 			},
 			{
-				"title": "48 MP Main Camera",
-				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
-				"img": "smartphonepresphoto2.jpg"
+				"title": "Easy Setup and Integration",
+				"text": "Setting up the Lenovo StreamDeck Compact 4 is straightforward, and it works seamlessly with OBS, Streamlabs, and YouTube Live. Ideal for beginners who want a hassle-free setup.",
+				"img": "streamingpresphoto2.jpg"
 			},
 			{
-				"title": "Seamless 5G Connectivity",
-				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
-				"img": "smartphonepresphoto3.jpg"
+				"title": "Compact and Portable",
+				"text": "With its small and lightweight design, the Lenovo StreamDeck Compact 4 is easy to take with you on the go. Whether you're at home or on location, it’s a perfect portable solution.",
+				"img": "streamingpresphoto3.jpg"
 			},
 			{
-				"title": "5000 mAh Battery & Quick Charging",
-				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
-				"img": "smartphonepresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"uniqueId": "304",
-		"name": "Lenovo Nexus One",
-		"price": 699,
-		"description": "The Lenovo Nexus One combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
-		"images": ["smartphonephoto4.jpg", "smartphonephoto5.jpg", "smartphonephoto6.jpg", "smartphonephoto7.jpg"],
-		"category": "Smartphones",
-		"company": "Lenovo",
-		"stock": 111,
-		"recommended": true,
-		"promotion": {
-			"isPromotion": false,
-			"promotionPercent": 0
-		},
-		"specification": {
-			"Manufacturer": "Lenovo",
-			"Warranty": "2 years",
-			"Screen Size": "6.5 inches",
-			"Resolution": "2400x1080",
-			"Processor": "Intel 11th Gen",
-			"Camera": "48 MP (Main), 8 MP (Wide)",
-			"Battery": "5000 mAh",
-			"Storage Options": "128GB, 256GB",
-			"Color Options": "Blue, Silver",
-			"Operating System": "Android 12",
-			"Connectivity": "5G, Wi-Fi 6",
-			"Additional Features": "Fast 5G connectivity, long-lasting battery"
-		},
-		"presentation": [
-			{
-				"title": "Powerful Intel 11th Gen Chipset",
-				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
-				"img": "smartphonepresphoto1.jpg"
-			},
-			{
-				"title": "48 MP Main Camera",
-				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
-				"img": "smartphonepresphoto2.jpg"
-			},
-			{
-				"title": "Seamless 5G Connectivity",
-				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
-				"img": "smartphonepresphoto3.jpg"
-			},
-			{
-				"title": "5000 mAh Battery & Quick Charging",
-				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
-				"img": "smartphonepresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"uniqueId": "305",
-		"name": "Logitech Pulse M1",
-		"price": 663,
-		"description": "The Logitech Pulse M1 combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
-		"images": ["smartphonephoto5.jpg", "smartphonephoto6.jpg", "smartphonephoto7.jpg", "smartphonephoto8.jpg"],
-		"category": "Smartphones",
-		"company": "Logitech",
-		"stock": 22,
-		"recommended": false,
-		"promotion": {
-			"isPromotion": true,
-			"promotionPercent": 10
-		},
-		"specification": {
-			"Manufacturer": "Logitech",
-			"Warranty": "2 years",
-			"Screen Size": "6.5 inches",
-			"Resolution": "2400x1080",
-			"Processor": "Intel 11th Gen",
-			"Camera": "48 MP (Main), 8 MP (Wide)",
-			"Battery": "5000 mAh",
-			"Storage Options": "128GB, 256GB",
-			"Color Options": "Blue, Silver",
-			"Operating System": "Android 12",
-			"Connectivity": "5G, Wi-Fi 6",
-			"Additional Features": "Fast 5G connectivity, long-lasting battery"
-		},
-		"presentation": [
-			{
-				"title": "Powerful Intel 11th Gen Chipset",
-				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
-				"img": "smartphonepresphoto1.jpg"
-			},
-			{
-				"title": "48 MP Main Camera",
-				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
-				"img": "smartphonepresphoto2.jpg"
-			},
-			{
-				"title": "Seamless 5G Connectivity",
-				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
-				"img": "smartphonepresphoto3.jpg"
-			},
-			{
-				"title": "5000 mAh Battery & Quick Charging",
-				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
-				"img": "smartphonepresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"uniqueId": "306",
-		"name": "Logitech Nova S2",
-		"price": 892,
-		"description": "The Logitech Nova S2 combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
-		"images": ["smartphonephoto6.jpg", "smartphonephoto7.jpg", "smartphonephoto8.jpg", "smartphonephoto9.jpg"],
-		"category": "Smartphones",
-		"company": "Logitech",
-		"stock": 23,
-		"recommended": false,
-		"promotion": {
-			"isPromotion": false,
-			"promotionPercent": 0
-		},
-		"specification": {
-			"Manufacturer": "Logitech",
-			"Warranty": "2 years",
-			"Screen Size": "6.5 inches",
-			"Resolution": "2400x1080",
-			"Processor": "Intel 11th Gen",
-			"Camera": "48 MP (Main), 8 MP (Wide)",
-			"Battery": "5000 mAh",
-			"Storage Options": "128GB, 256GB",
-			"Color Options": "Blue, Silver",
-			"Operating System": "Android 12",
-			"Connectivity": "5G, Wi-Fi 6",
-			"Additional Features": "Fast 5G connectivity, long-lasting battery"
-		},
-		"presentation": [
-			{
-				"title": "Powerful Intel 11th Gen Chipset",
-				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
-				"img": "smartphonepresphoto1.jpg"
-			},
-			{
-				"title": "48 MP Main Camera",
-				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
-				"img": "smartphonepresphoto2.jpg"
-			},
-			{
-				"title": "Seamless 5G Connectivity",
-				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
-				"img": "smartphonepresphoto3.jpg"
-			},
-			{
-				"title": "5000 mAh Battery & Quick Charging",
-				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
-				"img": "smartphonepresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"uniqueId": "307",
-		"name": "Microsoft Lumia Pro",
-		"price": 299,
-		"description": "The Microsoft Lumia Pro combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
-		"images": ["smartphonephoto7.jpg", "smartphonephoto8.jpg", "smartphonephoto9.jpg", "smartphonephoto10.jpg"],
-		"category": "Smartphones",
-		"company": "Microsoft",
-		"stock": 44,
-		"recommended": false,
-		"promotion": {
-			"isPromotion": false,
-			"promotionPercent": 0
-		},
-		"specification": {
-			"Manufacturer": "Microsoft",
-			"Warranty": "2 years",
-			"Screen Size": "6.5 inches",
-			"Resolution": "2400x1080",
-			"Processor": "Intel 11th Gen",
-			"Camera": "48 MP (Main), 8 MP (Wide)",
-			"Battery": "5000 mAh",
-			"Storage Options": "128GB, 256GB",
-			"Color Options": "Blue, Silver",
-			"Operating System": "Android 12",
-			"Connectivity": "5G, Wi-Fi 6",
-			"Additional Features": "Fast 5G connectivity, long-lasting battery"
-		},
-		"presentation": [
-			{
-				"title": "Powerful Intel 11th Gen Chipset",
-				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
-				"img": "smartphonepresphoto1.jpg"
-			},
-			{
-				"title": "48 MP Main Camera",
-				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
-				"img": "smartphonepresphoto2.jpg"
-			},
-			{
-				"title": "Seamless 5G Connectivity",
-				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
-				"img": "smartphonepresphoto3.jpg"
-			},
-			{
-				"title": "5000 mAh Battery & Quick Charging",
-				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
-				"img": "smartphonepresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"uniqueId": "308",
-		"name": "Microsoft Surface Orbit",
-		"price": 683,
-		"description": "The Microsoft Surface Orbit combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
-		"images": ["smartphonephoto8.jpg", "smartphonephoto9.jpg", "smartphonephoto10.jpg", "smartphonephoto11.jpg"],
-		"category": "Smartphones",
-		"company": "Microsoft",
-		"stock": 24,
-		"recommended": true,
-		"promotion": {
-			"isPromotion": true,
-			"promotionPercent": 10
-		},
-		"specification": {
-			"Manufacturer": "Microsoft",
-			"Warranty": "2 years",
-			"Screen Size": "6.5 inches",
-			"Resolution": "2400x1080",
-			"Processor": "Intel 11th Gen",
-			"Camera": "48 MP (Main), 8 MP (Wide)",
-			"Battery": "5000 mAh",
-			"Storage Options": "128GB, 256GB",
-			"Color Options": "Blue, Silver",
-			"Operating System": "Android 12",
-			"Connectivity": "5G, Wi-Fi 6",
-			"Additional Features": "Fast 5G connectivity, long-lasting battery"
-		},
-		"presentation": [
-			{
-				"title": "Powerful Intel 11th Gen Chipset",
-				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
-				"img": "smartphonepresphoto1.jpg"
-			},
-			{
-				"title": "48 MP Main Camera",
-				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
-				"img": "smartphonepresphoto2.jpg"
-			},
-			{
-				"title": "Seamless 5G Connectivity",
-				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
-				"img": "smartphonepresphoto3.jpg"
-			},
-			{
-				"title": "5000 mAh Battery & Quick Charging",
-				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
-				"img": "smartphonepresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"uniqueId": "309",
-		"name": "Samsung Galaxy Zephyr",
-		"price": 1068,
-		"description": "The Samsung Galaxy Zephyr combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
-		"images": ["smartphonephoto9.jpg", "smartphonephoto10.jpg", "smartphonephoto11.jpg", "smartphonephoto12.jpg"],
-		"category": "Smartphones",
-		"company": "Samsung",
-		"stock": 4,
-		"recommended": false,
-		"promotion": {
-			"isPromotion": false,
-			"promotionPercent": 0
-		},
-		"specification": {
-			"Manufacturer": "Samsung",
-			"Warranty": "2 years",
-			"Screen Size": "6.5 inches",
-			"Resolution": "2400x1080",
-			"Processor": "Intel 11th Gen",
-			"Camera": "48 MP (Main), 8 MP (Wide)",
-			"Battery": "5000 mAh",
-			"Storage Options": "128GB, 256GB",
-			"Color Options": "Blue, Silver",
-			"Operating System": "Android 12",
-			"Connectivity": "5G, Wi-Fi 6",
-			"Additional Features": "Fast 5G connectivity, long-lasting battery"
-		},
-		"presentation": [
-			{
-				"title": "Powerful Intel 11th Gen Chipset",
-				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
-				"img": "smartphonepresphoto1.jpg"
-			},
-			{
-				"title": "48 MP Main Camera",
-				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
-				"img": "smartphonepresphoto2.jpg"
-			},
-			{
-				"title": "Seamless 5G Connectivity",
-				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
-				"img": "smartphonepresphoto3.jpg"
-			},
-			{
-				"title": "5000 mAh Battery & Quick Charging",
-				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
-				"img": "smartphonepresphoto4.jpg"
-			}
-		]
-	},
-	{
-		"uniqueId": "310",
-		"name": "Samsung Neo Infinity",
-		"price": 893,
-		"description": "The Samsung Neo Infinity combines the power of Intel's 11th Gen processors with a 5G-ready design, making it an ideal choice for high-speed connectivity and multitasking. With a 6.5-inch Full HD+ display and 48 MP camera, it's perfect for anyone needing fast performance and high-quality photos.",
-		"images": ["smartphonephoto10.jpg", "smartphonephoto11.jpg", "smartphonephoto12.jpg", "smartphonephoto13.jpg"],
-		"category": "Smartphones",
-		"company": "Samsung",
-		"stock": 89,
-		"recommended": false,
-		"promotion": {
-			"isPromotion": false,
-			"promotionPercent": 0
-		},
-		"specification": {
-			"Manufacturer": "Samsung",
-			"Warranty": "2 years",
-			"Screen Size": "6.5 inches",
-			"Resolution": "2400x1080",
-			"Processor": "Intel 11th Gen",
-			"Camera": "48 MP (Main), 8 MP (Wide)",
-			"Battery": "5000 mAh",
-			"Storage Options": "128GB, 256GB",
-			"Color Options": "Blue, Silver",
-			"Operating System": "Android 12",
-			"Connectivity": "5G, Wi-Fi 6",
-			"Additional Features": "Fast 5G connectivity, long-lasting battery"
-		},
-		"presentation": [
-			{
-				"title": "Powerful Intel 11th Gen Chipset",
-				"text": "The Intel 11th Gen chipset delivers exceptional speed, power efficiency, and multitasking ability, making the MobileX 5 ideal for users who need high-performance in a compact smartphone.",
-				"img": "smartphonepresphoto1.jpg"
-			},
-			{
-				"title": "48 MP Main Camera",
-				"text": "Capture every moment in stunning detail with the 48 MP main camera, offering excellent image quality for both day and night photography. Whether you're taking portraits or landscapes, your photos will always look crisp and sharp.",
-				"img": "smartphonepresphoto2.jpg"
-			},
-			{
-				"title": "Seamless 5G Connectivity",
-				"text": "The Intel MobileX 5 supports 5G connectivity for blazing-fast speeds, whether you're streaming content, downloading apps, or making video calls.",
-				"img": "smartphonepresphoto3.jpg"
-			},
-			{
-				"title": "5000 mAh Battery & Quick Charging",
-				"text": "Enjoy all-day usage with the 5000 mAh battery, and quickly recharge your phone with fast charging technology to minimize downtime.",
-				"img": "smartphonepresphoto4.jpg"
+				"title": "Affordable Yet Reliable",
+				"text": "Offering great value for money, the Lenovo StreamDeck Compact 4 is a reliable choice for entry-level streamers who want to manage their broadcasts without breaking the bank.",
+				"img": "streamingpresphoto4.jpg"
 			}
 		]
 	}
