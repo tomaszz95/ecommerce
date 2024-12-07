@@ -7,7 +7,7 @@ const queryProductsValidator = require('../middleware/queryProductsValidator')
 
 router.get('/', queryProductsValidator, getFilteredProducts)
 
-router.post('/', createProduct)
+// router.post('/', createProduct)
 
 router.get('/:uniqueId/:name', getSingleProduct)
 

@@ -34,21 +34,21 @@ const getSingleProduct = async (req, res) => {
 	res.status(StatusCodes.OK).json({ product })
 }
 
-const createProduct = async (req, res) => {
-	const products = req.body
+// const createProduct = async (req, res) => {
+// 	const products = req.body
 
-	const createdProducts = await Promise.all(
-		products.map(async productData => {
-			const product = await Product.create(productData)
-			return product
-		})
-	)
+// 	const createdProducts = await Promise.all(
+// 		products.map(async productData => {
+// 			const product = await Product.create(productData)
+// 			return product
+// 		})
+// 	)
 
-	res.status(StatusCodes.CREATED).json({ products: createdProducts })
-}
+// 	res.status(StatusCodes.CREATED).json({ products: createdProducts })
+// }
 
 module.exports = {
 	getFilteredProducts,
 	getSingleProduct,
-	createProduct,
+	// createProduct,
 }
