@@ -2,22 +2,15 @@ export const productSliderSettings = {
     dots: false,
     infinite: true,
     speed: 1000,
-    slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToShow: 2,
+    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
     draggable: true,
     responsive: [
         {
-            breakpoint: 700,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-            },
-        },
-        {
-            breakpoint: 500,
+            breakpoint: 550,
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,

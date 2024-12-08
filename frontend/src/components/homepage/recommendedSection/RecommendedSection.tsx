@@ -6,13 +6,16 @@ import ProductsCarousel from '../../carousels/productCarousel/ProductsCarousel'
 import RecommendedProductsBox from './RecommendedProductsBox'
 import LoadingSpinner from '../../loadingSpinner/LoadingSpinner'
 
-import { productType } from '../../../types/types'
-import dummyProducts from '../../../constans/dummyProducts'
+import { homepageSingleProductData } from '../../../types/types'
 
 import styles from './RecommendedSection.module.css'
 
-const RecommendedSection = () => {
-    const [products, setProducts] = useState<productType[]>([])
+type ComponentType = {
+    recommendedProducts: homepageSingleProductData[]
+}
+
+const RecommendedSection = ({ recommendedProducts }: ComponentType) => {
+    const [products, setProducts] = useState<homepageSingleProductData[]>([])
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
@@ -20,8 +23,6 @@ const RecommendedSection = () => {
             setLoading(true)
 
             try {
-                await new Promise((resolve) => setTimeout(resolve, 1000))
-                const recommendedProducts = dummyProducts.filter((product) => product.recommended === true).slice(0, 8)
                 setProducts(recommendedProducts)
             } catch (error) {
                 console.error('Error fetching products:', error)

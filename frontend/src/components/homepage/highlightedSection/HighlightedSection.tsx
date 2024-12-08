@@ -7,24 +7,29 @@ import BiggestPromotion from './BiggestPromotion'
 import LatestProducts from './LatestProducts'
 import LoadingSpinner from '../../loadingSpinner/LoadingSpinner'
 
-import { productType } from '../../../types/types'
-import highestPromotionFilter from '../../../helpers/highestPromotionFilter'
-import dummyProducts from '../../../constans/dummyProducts'
+import { homepageSingleProductData } from '../../../types/types'
 
 import styles from './HighlightedSection.module.css'
 
-const HighlightedSection = () => {
-    const [latestProducts, setLatestProducts] = useState<productType[] | null>(null)
-    const [productWithHighestPromotion, setProductWithHighestPromotion] = useState<productType | null>(null)
+type ComponentType = {
+    biggestDiscountProduct: homepageSingleProductData
+    latestProducts: homepageSingleProductData[]
+}
+
+const HighlightedSection = ({ biggestDiscountProduct, latestProducts }: ComponentType) => {
+    const [products, setProducts] = useState<homepageSingleProductData[]>([])
+    const [productWithHighestPromotion, setProductWithHighestPromotion] = useState<homepageSingleProductData | null>(
+        null,
+    )
     const [loadingPromotion, setLoadingPromotion] = useState(true)
     const [loadingLatest, setLoadingLatest] = useState(true)
 
     useEffect(() => {
         const fetchPromotionProduct = async () => {
             setLoadingPromotion(true)
+
             try {
-                await new Promise((resolve) => setTimeout(resolve, 1000))
-                setProductWithHighestPromotion(highestPromotionFilter(dummyProducts))
+                setProductWithHighestPromotion(biggestDiscountProduct)
             } catch (error) {
                 console.error('Error fetching promotion product:', error)
             } finally {
@@ -34,9 +39,9 @@ const HighlightedSection = () => {
 
         const fetchLatestProducts = async () => {
             setLoadingLatest(true)
+
             try {
-                await new Promise((resolve) => setTimeout(resolve, 1000))
-                setLatestProducts(dummyProducts.slice(0, 8))
+                setProducts(latestProducts)
             } catch (error) {
                 console.error('Error fetching latest products:', error)
             } finally {
@@ -69,10 +74,10 @@ const HighlightedSection = () => {
                 {loadingLatest ? (
                     <LoadingSpinner />
                 ) : (
-                    <div className={styles.highlightSectionLatest}>
-                        <LatestProducts products={latestProducts || []} />
-                        <ProductsCarousel products={latestProducts || []} />
-                    </div>
+                    <>
+                        <LatestProducts products={products} />
+                        <ProductsCarousel products={products} />
+                    </>
                 )}
             </div>
         </section>

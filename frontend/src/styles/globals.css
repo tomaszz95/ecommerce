@@ -65,16 +65,23 @@ a {
     --danger-color: rgb(238, 36, 22);
 }
 
+.slick-track {
+    display: flex !important;
+    justify-content: center;
+    align-items: stretch;
+    min-height: 100%;
+}
+
+.slick-slide {
+    height: 350px !important;
+    align-self: stretch;
+}
+
 .slick-slide div {
     display: flex !important;
     justify-content: center;
-    align-items: center;
-}
-
-.slick-list div {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    min-height: 100%;
 }
 
 .slick-dots li button:before {

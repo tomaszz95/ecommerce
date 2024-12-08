@@ -1,9 +1,16 @@
 const express = require('express')
 const router = express.Router()
 
-const { getFilteredProducts, getSingleProduct, createProduct } = require('../controllers/productController')
+const {
+	getFilteredProducts,
+	getSingleProduct,
+	createProduct,
+	getHomepageProducts,
+} = require('../controllers/productController')
 
 const queryProductsValidator = require('../middleware/queryProductsValidator')
+
+router.get('/homepage', getHomepageProducts)
 
 router.get('/', queryProductsValidator, getFilteredProducts)
 

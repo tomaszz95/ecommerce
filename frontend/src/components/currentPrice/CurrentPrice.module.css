@@ -1,5 +1,6 @@
 .priceBox .defaultPrice {
     text-decoration: line-through;
+    font-size: 1.2rem;
 }
 
 .priceBox .promotionPrice {
@@ -7,11 +8,11 @@
     color: var(--danger-color);
 }
 
-.priceBox.big .defaultPrice{
+.priceBox.big .defaultPrice {
     font-size: 1.3rem;
 }
 
-.priceBox.big .curPrice{
+.priceBox.big .curPrice {
     font-size: 1.6rem;
 }
 

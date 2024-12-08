@@ -21,6 +21,27 @@ export type productType = {
     stock: number
 }
 
+export type homepageProductsData = {
+    recommendedProducts: homepageSingleProductData[]
+    latestProducts: homepageSingleProductData[]
+    biggestDiscountProduct: homepageSingleProductData
+    productsByCategory: { [category: string]: homepageSingleProductData[] }
+}
+
+export type homepageSingleProductData = {
+    _id: string
+    name: string
+    price: number
+    category: string
+    promotion: {
+        isPromotion: boolean
+        promotionPercent: number
+        promotionPrice: number
+    }
+    uniqueId: string
+    image: string
+}
+
 export type singleOpinionType = {
     opinionId: string
     opinionAuthor: string

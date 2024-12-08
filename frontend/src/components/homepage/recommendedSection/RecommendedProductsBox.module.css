@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     margin-top: 1.5rem;
     width: 100%;
+    max-width: 1200px;
 }
 
 @media (768px < width) {
