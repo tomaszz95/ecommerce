@@ -6,13 +6,13 @@ import Slider from 'react-slick'
 
 import SingleProduct from './SingleProduct'
 
-import { productType } from '../../../types/types'
+import { homepageSingleProductData } from '../../../types/types'
 import { productSliderSettings } from '../../../helpers/sliderSettings'
 
 import styles from './ProductsCarousel.module.css'
 
 type ComponentType = {
-    products: productType[]
+    products: homepageSingleProductData[]
 }
 
 const ProductsCarousel = ({ products }: ComponentType) => {
@@ -21,14 +21,12 @@ const ProductsCarousel = ({ products }: ComponentType) => {
             {products.map((item) => (
                 <SingleProduct
                     name={item.name}
-                    prodId={item.prodId}
-                    mainImage={item.images[0]}
-                    category={item.category.name}
-                    categoryLink={item.category.link}
                     price={item.price}
-                    key={item.prodId}
-                    promotion={item.promotion.isPromotion}
-                    promotionPercent={item.promotion.promotionPercent}
+                    category={item.category}
+                    promotion={item.promotion}
+                    uniqueId={item.uniqueId}
+                    image={item.image}
+                    key={item._id}
                 />
             ))}
         </Slider>

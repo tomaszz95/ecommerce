@@ -1,22 +1,17 @@
-import countPromotionPrice from '../../helpers/countPromotionPrice'
-
 import styles from './CurrentPrice.module.css'
 
 type ComponentType = {
     price: number
-    promotion: boolean
-    promotionPercent: number
+    promotionPrice: number
     isBig?: boolean
 }
 
-const CurrentPrice = ({ price, promotion, promotionPercent, isBig }: ComponentType) => {
-    const currentPrice = promotion ? countPromotionPrice(price, promotionPercent) : price
-
+const CurrentPrice = ({ price, promotionPrice, isBig }: ComponentType) => {
     return (
-        <div className={`${styles.priceBox} ${isBig ? styles.big : ''}`}>
-            <span className={`${promotion ? styles.defaultPrice : styles.curPrice}`}>${price}</span>
-            {promotion && <span className={styles.promotionPrice}>&nbsp;&nbsp;${currentPrice}</span>}
-        </div>
+        <p className={`${styles.priceBox} ${isBig ? styles.big : ''}`}>
+            <span className={`${price !== promotionPrice ? styles.defaultPrice : styles.curPrice}`}>${price}</span>
+            {price !== promotionPrice && <span className={styles.promotionPrice}>&nbsp;&nbsp;${promotionPrice}</span>}
+        </p>
     )
 }
 

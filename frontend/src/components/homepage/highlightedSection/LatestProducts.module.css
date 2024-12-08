@@ -3,12 +3,36 @@
     align-items: stretch;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin-top: 1.8rem;
     width: 100%;
-    gap: 20px;
 }
 
 @media (768px < width) {
     .container {
+        display: flex;
+        gap: 10px 20px;
+    }
+
+    .container a {
+        display: none;
+    }
+
+    .container a:nth-child(1),
+    .container a:nth-child(2) {
+        display: flex;
+    }
+}
+
+@media (1093px < width) {
+    .container a:nth-child(3),
+    .container a:nth-child(4) {
+        display: flex;
+    }
+}
+
+@media (1353px < width) {
+    .container a:nth-child(5),
+    .container a:nth-child(6) {
         display: flex;
     }
 }

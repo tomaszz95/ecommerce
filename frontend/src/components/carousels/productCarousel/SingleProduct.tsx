@@ -1,49 +1,44 @@
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import CurrentPrice from '../../currentPrice/CurrentPrice'
 
 import createLinkFromProductName from '../../utils/createLinkFromProductName'
 
+import { API_URL } from '../../../constans/apiURL'
+
 import styles from './SingleProduct.module.css'
 
 type ComponentType = {
     name: string
-    prodId: string
-    mainImage: StaticImageData
-    category: string
-    categoryLink: string
     price: number
-    size?: string
-    promotion: boolean
-    promotionPercent: number
+    category: string
+    promotion: {
+        isPromotion: boolean
+        promotionPercent: number
+        promotionPrice: number
+    }
+    uniqueId: string
+    image: string
 }
 
-const SingleProduct = ({
-    name,
-    prodId,
-    mainImage,
-    category,
-    price,
-    size,
-    categoryLink,
-    promotion,
-    promotionPercent,
-}: ComponentType) => {
-    const linkSize = size === 'small' ? styles.small : size === 'big' ? styles.big : ''
+const SingleProduct = ({ name, price, category, promotion, uniqueId, image }: ComponentType) => {
+    const categoryLink = category.toLowerCase()
     const productLink = createLinkFromProductName(name)
 
     return (
         <Link
-            className={`${styles.item} ${linkSize}`}
-            href={`${categoryLink}/${productLink}`}
+            className={styles.item}
+            href={`${categoryLink}/${uniqueId}/${productLink}`}
             aria-label={`Click to see product ${name}`}
         >
-            {promotion && <div className={styles.promotionBanner}>{promotionPercent}%</div>}
-            <Image src={mainImage} alt={name} />
+            {promotion.isPromotion && <span className={styles.promotionBanner}>{promotion.promotionPercent}%</span>}
+            <Image src={`${API_URL}/photos/${image}`} width={1000} height={1000} alt={name} />
             <p>{category}</p>
             <h3>{name}</h3>
-            <CurrentPrice price={price} promotion={promotion} promotionPercent={promotionPercent} />
+            <span className={styles.price}>
+                <CurrentPrice price={price} promotionPrice={promotion.promotionPrice} />
+            </span>
         </Link>
     )
 }

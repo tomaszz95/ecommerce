@@ -1,11 +1,11 @@
 import SingleProduct from '../../carousels/productCarousel/SingleProduct'
 
-import { productType } from '../../../types/types'
+import { homepageSingleProductData } from '../../../types/types'
 
 import styles from './LatestProducts.module.css'
 
 type ComponentType = {
-    products: productType[]
+    products: homepageSingleProductData[]
 }
 
 const LatestProductsBox = ({ products }: ComponentType) => {
@@ -14,15 +14,12 @@ const LatestProductsBox = ({ products }: ComponentType) => {
             {products.map((item) => (
                 <SingleProduct
                     name={item.name}
-                    prodId={item.prodId}
-                    mainImage={item.images[0]}
-                    category={item.category.name}
-                    categoryLink={item.category.link}
                     price={item.price}
-                    key={item.prodId}
-                    size="small"
-                    promotion={item.promotion.isPromotion}
-                    promotionPercent={item.promotion.promotionPercent}
+                    category={item.category}
+                    promotion={item.promotion}
+                    uniqueId={item.uniqueId}
+                    image={item.image}
+                    key={item._id}
                 />
             ))}
         </div>
