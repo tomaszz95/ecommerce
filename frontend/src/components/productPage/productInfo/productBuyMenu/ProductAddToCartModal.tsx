@@ -1,29 +1,33 @@
 import ReactDOM from 'react-dom'
 
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 
 import HightlightButton from '../../../../components/UI/buttons/HightlightButton'
+import CurrentPrice from '../../../../components/currentPrice/CurrentPrice'
+
+import { API_URL } from '../../../../constans/url'
 
 import styles from './ProductAddToCartModal.module.css'
 
 type ComponentType = {
     price: number
     productName: string
-    photo: StaticImageData
+    photo: string
+    promotionPrice: number
     onClose: () => void
 }
 
-const ProductAddToCartModal = ({ price, productName, photo, onClose }: ComponentType) => {
+const ProductAddToCartModal = ({ price, promotionPrice, productName, photo, onClose }: ComponentType) => {
     return ReactDOM.createPortal(
         <div className={styles.modalContainer} onClick={onClose}>
             <div className={styles.modal}>
                 <h2>Product added to cart</h2>
                 <div className={styles.modalInfo}>
                     <div className={styles.modalName}>
-                        <Image src={photo} alt={productName} />
+                        <Image src={`${API_URL}/photos/${photo}`} width={1000} height={1000} alt={productName} />
                         <p>{productName}</p>
                     </div>
-                    <span className={styles.modalPrice}>${price}</span>
+                    <CurrentPrice price={price} promotionPrice={promotionPrice} isBig={true} />
                 </div>
                 <div className={styles.modalButtons}>
                     <button onClick={onClose} className={styles.modalBackButton}>

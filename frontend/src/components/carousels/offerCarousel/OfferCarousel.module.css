@@ -1,5 +1,5 @@
 .carousel {
-    margin: 3rem auto;
+    margin: 4rem auto;
     width: 100%;
     max-width: 1400px;
     border-radius: 10px;
@@ -7,5 +7,5 @@
 }
 
 .carousel a {
-    height: 320px;
+    height: 350px;
 }

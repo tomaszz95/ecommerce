@@ -4,7 +4,6 @@ import Link from 'next/link'
 import StarRating from '../../../starRating/StarRating'
 
 import getBrandLogo from '../../../../helpers/getBrandLogo'
-import getOpinions from '../../../../components/utils/getOpinions'
 
 import SpeechBubbleIcon from '../../../../assets/icons/speechbubble.svg'
 import styles from './ProductHeading.module.css'
@@ -13,10 +12,11 @@ type ComponentType = {
     productName: string
     productId: string
     company: string
+    averageRating: number
+    numOfReviews: number
 }
 
-const ProductHeading = ({ productName, productId, company }: ComponentType) => {
-    const { opinions, opinionsText } = getOpinions(productId, true)
+const ProductHeading = ({ productName, productId, company, averageRating, numOfReviews }: ComponentType) => {
     const brandLogo = getBrandLogo(company)
 
     return (
@@ -26,11 +26,11 @@ const ProductHeading = ({ productName, productId, company }: ComponentType) => {
                 {brandLogo && <Image src={brandLogo} alt={`${company} logo`} aria-label={`${brandLogo} logo`} />}
             </div>
             <div className={styles.productContainer}>
-                <StarRating rating={opinions ? opinions.opinionsAverage : 0} />
+                <StarRating rating={averageRating} />
                 <div className={styles.productOpinions}>
                     <Image src={SpeechBubbleIcon} alt="" />
                     <Link href="#opinions" aria-label="Go to opinions">
-                        {opinionsText}
+                        {numOfReviews} {numOfReviews === 1 ? 'opinion' : 'opinions'}
                     </Link>
                 </div>
             </div>

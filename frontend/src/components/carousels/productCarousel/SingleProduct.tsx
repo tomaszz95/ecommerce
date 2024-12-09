@@ -5,7 +5,7 @@ import CurrentPrice from '../../currentPrice/CurrentPrice'
 
 import createLinkFromProductName from '../../utils/createLinkFromProductName'
 
-import { API_URL } from '../../../constans/apiURL'
+import { API_URL } from '../../../constans/url'
 
 import styles from './SingleProduct.module.css'
 
@@ -29,7 +29,7 @@ const SingleProduct = ({ name, price, category, promotion, uniqueId, image }: Co
     return (
         <Link
             className={styles.item}
-            href={`${categoryLink}/${uniqueId}/${productLink}`}
+            href={`/shop/${categoryLink}/${uniqueId}/${productLink}`}
             aria-label={`Click to see product ${name}`}
         >
             {promotion.isPromotion && <span className={styles.promotionBanner}>{promotion.promotionPercent}%</span>}

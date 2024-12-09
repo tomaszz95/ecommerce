@@ -1,9 +1,11 @@
 .carouselItem {
     position: relative;
+    width: 100%;
 }
 
 .photo {
     max-width: 350px;
     width: 100%;
+    max-height: 300px;
     height: auto;
 }

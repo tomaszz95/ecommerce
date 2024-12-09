@@ -8,13 +8,16 @@ import LoadingSpinner from '../../loadingSpinner/LoadingSpinner'
 
 import navItems from '../../../constans/navItems'
 
-import dummyProducts from '../../../constans/dummyProducts'
-import { productType } from '../../../types/types'
+import { homepageSingleProductData } from '../../../types/types'
 
 import styles from './OfferSection.module.css'
 
-const OfferSection = () => {
-    const [productsByCategory, setProductsByCategory] = useState<Record<string, productType[]>>({})
+type ComponentType = {
+    productsByCategory: { [category: string]: homepageSingleProductData[] }
+}
+
+const OfferSection = ({ productsByCategory }: ComponentType) => {
+    const [products, setProducts] = useState<{ [category: string]: homepageSingleProductData[] }>({})
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
@@ -22,13 +25,7 @@ const OfferSection = () => {
             setLoading(true)
 
             try {
-                await new Promise((resolve) => setTimeout(resolve, 1000))
-
-                const categorizedProducts = navItems.reduce((acc: Record<string, productType[]>, item) => {
-                    acc[item.name] = dummyProducts.filter((product) => product.category.name === item.name).slice(0, 10)
-                    return acc
-                }, {})
-                setProductsByCategory(categorizedProducts)
+                setProducts(productsByCategory)
             } catch (error) {
                 console.error('Error fetching products:', error)
             } finally {
@@ -44,7 +41,7 @@ const OfferSection = () => {
             {navItems.map((item) => (
                 <div className={styles.offerSectionBox} key={item.name}>
                     <OfferSectionItem name={item.name} photo={item.photo} link={item.link} />
-                    {loading ? <LoadingSpinner /> : <OfferCarousel products={productsByCategory[item.name] || []} />}
+                    {loading ? <LoadingSpinner /> : <OfferCarousel products={products[item.name] || []} />}
                 </div>
             ))}
         </section>

@@ -1,12 +1,10 @@
-import { StaticImageData } from 'next/image'
-
 import PhotoCarousel from '../../../carousels/photoCarousel/PhotoCarousel'
 import DesktopGallery from './DesktopGallery'
 
 import styles from './ProductPhotoGallery.module.css'
 
 type ComponentType = {
-    photos: StaticImageData[]
+    photos: string[]
     productName: string
     productId: string
 }

@@ -8,11 +8,13 @@
 .presentationItemText {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 20px;
     padding: 2rem;
     background-color: var(--dirty-white);
     border-radius: 10px;
     line-height: 1.4rem;
+    width: 100%;
 }
 
 .presentationItemText h3 {
