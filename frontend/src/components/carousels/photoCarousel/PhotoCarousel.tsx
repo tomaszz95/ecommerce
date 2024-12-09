@@ -5,8 +5,6 @@ import 'slick-carousel/slick/slick-theme.css'
 
 import Slider from 'react-slick'
 
-import { StaticImageData } from 'next/image'
-
 import SinglePhoto from './SinglePhoto'
 
 import { photoSliderSettings } from '../../../helpers/sliderSettings'
@@ -14,7 +12,7 @@ import { photoSliderSettings } from '../../../helpers/sliderSettings'
 import styles from './PhotoCarousel.module.css'
 
 type ComponentType = {
-    photos: StaticImageData[]
+    photos: string[]
     productName: string
     productId: string
 }

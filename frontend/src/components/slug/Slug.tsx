@@ -5,13 +5,14 @@ import createLinkFromProductName from '../utils/createLinkFromProductName'
 import styles from './Slug.module.css'
 
 type ComponentType = {
-    categoryLink: string
-    categoryName: string
+    category: string
     productName?: string
+    uniqueId?: string
 }
 
-const Slug = ({ categoryLink, productName, categoryName }: ComponentType) => {
+const Slug = ({ category, productName, uniqueId }: ComponentType) => {
     const productLink = productName ? createLinkFromProductName(productName) : null
+    const categorySmall = category.toLowerCase()
 
     return (
         <div className={styles.slug}>
@@ -22,16 +23,16 @@ const Slug = ({ categoryLink, productName, categoryName }: ComponentType) => {
             <Link href="/shop" aria-label="Go to shop page">
                 Shop
             </Link>
-            {categoryName !== 'Shop' && (
+            {category !== 'Shop' && (
                 <>
                     <span>&gt;</span>
-                    <Link href={categoryLink} aria-label={`Go to ${categoryName} page`}>
-                        {categoryName}
+                    <Link href={`/shop/${categorySmall}`} aria-label={`Go to ${categorySmall} page`}>
+                        {category}
                     </Link>
                 </>
             )}
-            {productLink && <span>&gt;</span>}
-            {productLink && <Link href={`${categoryLink}/${productLink}`}> {productName}</Link>}
+            {productName && <span>&gt;</span>}
+            {productName && <Link href={`/shop/${categorySmall}/${uniqueId}/${productLink}`}> {productName}</Link>}
         </div>
     )
 }

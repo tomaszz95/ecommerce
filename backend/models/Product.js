@@ -80,7 +80,27 @@ const ProductSchema = new mongoose.Schema(
 			type: String,
 		},
 	},
-	{ timestamps: true, toJSON: { virtuals: true }, toObject: { virtuals: true } }
+	{
+		timestamps: true,
+		toJSON: {
+			virtuals: true,
+			transform: function (doc, ret) {
+				if (ret.specification instanceof Map) {
+					ret.specification = Object.fromEntries(ret.specification)
+				}
+				return ret
+			},
+		},
+		toObject: {
+			virtuals: true,
+			transform: function (doc, ret) {
+				if (ret.specification instanceof Map) {
+					ret.specification = Object.fromEntries(ret.specification)
+				}
+				return ret
+			},
+		},
+	}
 )
 
 ProductSchema.virtual('reviews', {

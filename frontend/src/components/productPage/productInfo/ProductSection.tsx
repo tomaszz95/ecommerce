@@ -12,11 +12,7 @@ type ComponentType = {
 const ProductSection = ({ product }: ComponentType) => {
     return (
         <section className={styles.productSection}>
-            <Slug
-                categoryLink={product.category.link}
-                categoryName={product.category.name}
-                productName={product.name}
-            />
+            <Slug category={product.category} productName={product.name} uniqueId={product.uniqueId} />
             <div className={styles.container}>
                 <ProductDetails product={product} />
             </div>

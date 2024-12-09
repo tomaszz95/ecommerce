@@ -1,14 +1,16 @@
 import PresentationItem from './PresentationItem'
 
-import productPresentationDummy from '../../../constans/productPresentationDummy'
-
 import styles from './ProductPresentation.module.css'
 
-const ProductPresentation = () => {
+type ComponentType = {
+    productPresentation: { title: string; text: string; img: string }[]
+}
+
+const ProductPresentation = ({ productPresentation }: ComponentType) => {
     return (
         <section className={styles.productPresentationSection}>
             <h2>Product Presentation</h2>
-            {productPresentationDummy.map((item) => (
+            {productPresentation.map((item) => (
                 <PresentationItem key={item.title} title={item.title} text={item.text} img={item.img} />
             ))}
         </section>

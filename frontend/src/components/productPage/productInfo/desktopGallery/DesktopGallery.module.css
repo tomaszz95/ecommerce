@@ -12,8 +12,8 @@
 }
 
 .mainImageContent {
-    width: 400px;
-    height: auto;
+    width: 350px;
+    height: 300px;
 }
 
 @media (768px < width) {

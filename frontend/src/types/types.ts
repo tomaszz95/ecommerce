@@ -1,31 +1,27 @@
 import { StaticImageData } from 'next/image'
 
-// Products
+// PRODUCT
 
 export type productType = {
     name: string
-    description: string
     price: number
-    images: StaticImageData[]
-    category: {
-        name: string
-        link: string
-    }
+    description: string
+    images: string[]
+    category: string
     company: string
-    prodId: string
+    stock: number
+    recommended: boolean
     promotion: {
         isPromotion: boolean
         promotionPercent: number
+        promotionPrice: number
     }
-    recommended: boolean
-    stock: number
-}
-
-export type homepageProductsData = {
-    recommendedProducts: homepageSingleProductData[]
-    latestProducts: homepageSingleProductData[]
-    biggestDiscountProduct: homepageSingleProductData
-    productsByCategory: { [category: string]: homepageSingleProductData[] }
+    _id: string
+    specification: { [keys: string]: string }
+    presentation: { title: string; text: string; img: string }[]
+    averageRating: number
+    numOfReviews: number
+    uniqueId: string
 }
 
 export type homepageSingleProductData = {
@@ -41,6 +37,15 @@ export type homepageSingleProductData = {
     uniqueId: string
     image: string
 }
+
+export type homepageProductsData = {
+    recommendedProducts: homepageSingleProductData[]
+    latestProducts: homepageSingleProductData[]
+    biggestDiscountProduct: homepageSingleProductData
+    productsByCategory: { [category: string]: homepageSingleProductData[] }
+}
+
+// OPINION
 
 export type singleOpinionType = {
     opinionId: string
@@ -64,21 +69,21 @@ export type productPresentationDummyType = {
     img: StaticImageData
 }
 
-// Logos
+// LOGOS
 
 export type brandLogoType = { brand: string; logo: StaticImageData }
 
-// Navigation / Header
+// NAV / HEADER
 
 export type navItemType = { name: string; link: string; icon: StaticImageData; photo: StaticImageData }
 
 export type headerOptionItemType = { icon: StaticImageData; text: string; href: string }
 
-// Login
+// LOGIN
 
 export type loginOfferItemType = { icon: StaticImageData; text: string }
 
-// Contact
+// CONTACT
 
 export type questionsType = {
     question: string
@@ -91,7 +96,7 @@ export type helpCenterItemType = {
     questions: questionsType[]
 }
 
-// Filters
+// FILTERS
 
 export type filterTypes = {
     priceFrom: number | null
@@ -101,7 +106,7 @@ export type filterTypes = {
     promotionsOnly: boolean
 }
 
-// Order
+// ORDER
 
 export type orderType = {
     orderId: string
@@ -146,7 +151,7 @@ export type singleProductType = {
     totalProductPrice: number
 }
 
-// User
+// USER
 
 export type userType = {
     userId: string

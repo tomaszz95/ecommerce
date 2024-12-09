@@ -147,7 +147,7 @@ const getFilteredProducts = async (req, res) => {
 }
 
 const getSingleProduct = async (req, res) => {
-	const { uniqueId: uniqueId } = req.params
+	const { uniqueId } = req.params
 
 	const product = await Product.findOne({ uniqueId: uniqueId }).populate('reviews')
 
@@ -155,7 +155,53 @@ const getSingleProduct = async (req, res) => {
 		throw new CustomError.NotFoundError('No product found')
 	}
 
-	res.status(StatusCodes.OK).json({ product })
+	const promotionPrice = product.promotion.isPromotion
+		? Math.round(product.price * (1 - product.promotion.promotionPercent / 100))
+		: product.price
+
+	const similarProducts = await Product.find({
+		category: product.category,
+		uniqueId: { $ne: uniqueId },
+	})
+		.select('_id name price category promotion uniqueId images')
+		.limit(10)
+		.lean()
+
+	const mayInterestProducts = await Product.find({
+		company: product.company,
+		uniqueId: { $ne: uniqueId },
+	})
+		.select('_id name price category promotion uniqueId images')
+		.limit(10)
+		.lean()
+
+	similarProducts.forEach(item => {
+		item.image = item.images?.[0] || null
+		item.promotion.promotionPrice = item.promotion.isPromotion
+			? Math.round(item.price * (1 - item.promotion.promotionPercent / 100))
+			: item.price
+		delete item.images
+	})
+
+	mayInterestProducts.forEach(item => {
+		item.image = item.images?.[0] || null
+		item.promotion.promotionPrice = item.promotion.isPromotion
+			? Math.round(item.price * (1 - item.promotion.promotionPercent / 100))
+			: item.price
+		delete item.images
+	})
+
+	res.status(StatusCodes.OK).json({
+		product: {
+			...product.toObject(),
+			promotion: {
+				...product.promotion,
+				promotionPrice,
+			},
+		},
+		similarProducts,
+		mayInterestProducts,
+	})
 }
 
 // const createProduct = async (req, res) => {

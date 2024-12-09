@@ -8,13 +8,18 @@ import NewsletterSection from '../components/homepage/newsletterSection/Newslett
 import BrandsSection from '../components/homepage/brandsSection/BrandsSection'
 import ServerError from '../components/serverError/ServerError'
 
-import { API_URL } from '../constans/apiURL'
+import { API_URL } from '../constans/url'
+
 import { homepageProductsData } from '../types/types'
 
 const Homepage = async () => {
     try {
         const response = await fetch(`${API_URL}/api/products/homepage`)
         const data: homepageProductsData = await response.json()
+
+        if (!response.ok) {
+            throw new Error('Products not found')
+        }
 
         const { recommendedProducts, latestProducts, biggestDiscountProduct, productsByCategory } = data
 
@@ -38,7 +43,7 @@ const Homepage = async () => {
                     linkText="Choose now!"
                 />
                 <HighlightedSection biggestDiscountProduct={biggestDiscountProduct} latestProducts={latestProducts} />
-                {/* <OfferSection productsByCategory={productsByCategory} /> */}
+                <OfferSection productsByCategory={productsByCategory} />
                 <NewsletterSection />
                 <BrandsSection />
             </MainLayout>

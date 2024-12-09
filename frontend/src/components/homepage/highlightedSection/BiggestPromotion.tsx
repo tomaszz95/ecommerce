@@ -8,7 +8,7 @@ import createLinkFromProductName from '../../../components/utils/createLinkFromP
 
 import { homepageSingleProductData } from '../../../types/types'
 
-import { API_URL } from '../../../constans/apiURL'
+import { API_URL } from '../../../constans/url'
 
 import styles from './BiggestPromotion.module.css'
 
@@ -23,7 +23,7 @@ const BiggestPromotion = ({ product }: ComponentType) => {
     return (
         <Link
             className={styles.item}
-            href={`${categoryLink}/${product.uniqueId}/${productLink}`}
+            href={`/shop/${categoryLink}/${product.uniqueId}/${productLink}`}
             aria-label="Biggest promotion item"
         >
             <Image src={`${API_URL}/photos/${product.image}`} width={1000} height={1000} alt={product.name} />

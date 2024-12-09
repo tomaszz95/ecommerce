@@ -1,34 +1,23 @@
 'use client'
 
 import { useState } from 'react'
-import { StaticImageData } from 'next/image'
 
 import CurrentPrice from '../../../currentPrice/CurrentPrice'
 import BuyMenuBenefits from './BuyMenuBenefits'
 import ProductAddToCartModal from './ProductAddToCartModal'
 
 import styles from './ProductBuyMenu.module.css'
-import AuthFormButton from '@/components/UI/buttons/AuthFormButton'
 
 type ComponentType = {
     price: number
+    promotionPrice: number
     stock: number
-    productId: string
-    promotion: boolean
-    promotionPercent: number
     productName: string
-    photo: StaticImageData
+    productId: string
+    photo: string
 }
 
-const ProductBuyMenu = ({
-    photo,
-    price,
-    stock,
-    productId,
-    promotion,
-    promotionPercent,
-    productName,
-}: ComponentType) => {
+const ProductBuyMenu = ({ price, promotionPrice, stock, productName, productId, photo }: ComponentType) => {
     const [showModal, setShowModal] = useState(false)
 
     const closeModalHandler = () => {
@@ -41,7 +30,7 @@ const ProductBuyMenu = ({
 
     return (
         <div className={styles.buyContainer}>
-            <CurrentPrice price={price} promotion={promotion} promotionPercent={promotionPercent} isBig={true} />
+            <CurrentPrice price={price} promotionPrice={promotionPrice} isBig={true} />
 
             <button
                 type="submit"
@@ -58,6 +47,7 @@ const ProductBuyMenu = ({
             {showModal && (
                 <ProductAddToCartModal
                     price={price}
+                    promotionPrice={promotionPrice}
                     photo={photo}
                     productName={productName}
                     onClose={closeModalHandler}
