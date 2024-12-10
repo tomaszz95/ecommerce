@@ -1,6 +1,6 @@
 'use client'
 
-import { FormEvent, useEffect, useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 import useInput from '../../hooks/useInput'
@@ -8,13 +8,14 @@ import useInput from '../../hooks/useInput'
 import Input from '../UI/inputs/Input'
 import AuthFormButton from '../UI/buttons/AuthFormButton'
 
+import { API_URL } from '../../constans/url'
+
 import styles from './LoginForm.module.css'
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const LoginForm = () => {
-    const [serverError, isServerError] = useState('')
-    const [isStorageValid, setIsStorageValid] = useState(false)
+    const [serverError, setServerError] = useState<string>('')
     const router = useRouter()
 
     const {
@@ -35,35 +36,50 @@ const LoginForm = () => {
 
     const formIsValid = emailIsValid && passwordIsValid
 
-    useEffect(() => {
-        const expirationKey = 'loginOrRegisterExpiration'
-        const storedExpiration = localStorage.getItem(expirationKey)
-        const now = new Date().getTime()
-
-        if (storedExpiration && now <= parseInt(storedExpiration)) {
-            setIsStorageValid(true)
-        }
-    }, [])
-
-    const submitHandler = (event: FormEvent) => {
+    const submitHandler = async (event: FormEvent) => {
         event.preventDefault()
 
+        const orderId = localStorage.getItem('orderId')
+
         if (!formIsValid) {
-            isServerError('Please fill out all required fields.')
+            setServerError('Please fill out all required fields.')
             return
         }
 
-        try {
-            localStorage.setItem('isLogin', 'true')
-            isServerError('')
+        setServerError('')
 
-            if (isStorageValid) {
+        try {
+            const response = await fetch(`${API_URL}/api/auth/login`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: enteredEmail,
+                    password: enteredPassword,
+                    orderId: orderId,
+                }),
+                credentials: 'include',
+            })
+
+            if (!response.ok) {
+                const errorData = await response.json()
+
+                throw new Error(errorData.message || 'Please enter correct email and password.')
+            }
+
+            const data = await response.json()
+
+            localStorage.setItem('userId', data.user.userId)
+            localStorage.setItem('loginExpiration', (Date.now() + 60 * 60 * 1000).toString())
+
+            if (orderId) {
                 router.push('/order/delivery')
             } else {
                 router.push('/')
             }
-        } catch (err) {
-            isServerError('Something went wrong. Please try again later.')
+        } catch (err: any) {
+            setServerError(err.message || 'Something went wrong. Please try again later.')
         }
     }
 
