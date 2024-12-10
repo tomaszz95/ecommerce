@@ -6,11 +6,14 @@ import MainLayout from '../../../components/layouts/MainLayout'
 import UserSettingsView from '../../../components/userSettingsPage/UserSettingsView'
 import LoadingSpinner from '../../../components/loadingSpinner/LoadingSpinner'
 
+import useAuth from '../../../hooks/useAuth'
 import userDummy from '../../../constans/userDummy'
 
 import { userType } from '../../../types/types'
 
 const UserSettingsPage = () => {
+    useAuth()
+
     const [user, setUser] = useState<userType | null>(null)
     const [loading, setLoading] = useState(true)
 

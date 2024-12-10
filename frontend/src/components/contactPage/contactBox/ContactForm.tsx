@@ -38,7 +38,7 @@ const ContactForm = () => {
         valueChangeHandler: messageChangeHandler,
         inputBlurHandler: messageBlurHandler,
         reset: resetMessage,
-    } = useInput((value) => value.trim() !== '' && value.length > 20)
+    } = useInput((value) => value.trim() !== '' && value.length > 10)
 
     const formIsValid = emailIsValid && subjectIsValid && messageIsValid
 
@@ -87,7 +87,7 @@ const ContactForm = () => {
                 hasError={messageInputHasError}
                 onChange={messageChangeHandler}
                 onBlur={messageBlurHandler}
-                errorText="The message must be at least 20 characters long."
+                errorText="The message must be at least 10 characters long."
             />
 
             {serverError && <p className={styles.serverError}>{serverError}</p>}

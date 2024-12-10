@@ -17,8 +17,6 @@ const register = async (req, res) => {
 
 	const user = await User.create({ email, name, password })
 
-	let userId, userType
-
 	if (orderId) {
 		const order = await Order.findById(orderId)
 
@@ -26,11 +24,8 @@ const register = async (req, res) => {
 			throw new CustomError.NotFoundError('Something went wrong. Please try again later')
 		}
 
-		userId = user._id
-		userType = 'User'
-
-		order.user = userId
-		order.userType = userType
+		order.user = user._id
+		order.userType = 'User'
 
 		await order.save()
 	}
@@ -52,16 +47,14 @@ const login = async (req, res) => {
 	const user = await User.findOne({ email })
 
 	if (!user) {
-		throw new CustomError.UnauthenticatedError('Invalid Credentials')
+		throw new CustomError.BadRequestError('Invalid Credentials')
 	}
 
 	const isPasswordCorrect = await user.comparePassword(password)
 
 	if (!isPasswordCorrect) {
-		throw new CustomError.UnauthenticatedError('Invalid Credentials')
+		throw new CustomError.BadRequestError('Invalid Credentials')
 	}
-
-	let userId, userType
 
 	if (orderId) {
 		const order = await Order.findById(orderId)
@@ -70,11 +63,8 @@ const login = async (req, res) => {
 			throw new CustomError.NotFoundError('Something went wrong. Please try again later')
 		}
 
-		userId = user._id
-		userType = 'User'
-
-		order.user = userId
-		order.userType = userType
+		order.user = user._id
+		order.userType = 'User'
 
 		await order.save()
 	}
@@ -83,7 +73,7 @@ const login = async (req, res) => {
 
 	attachCookiesToResponse({ res, user: tokenUser })
 
-	res.status(StatusCodes.CREATED).json({ user: tokenUser, userId: userId, userType: userType })
+	res.status(StatusCodes.CREATED).json({ user: tokenUser })
 }
 
 const logout = async (req, res) => {

@@ -1,20 +1,19 @@
-'use client'
-
 import { useState } from 'react'
 
-type ComponentType = {
+type ComponentType<T> = {
     validateForm: () => boolean
     resetForm: () => void
     errorMessage: string
+    onSubmit?: (formData: T) => Promise<void>
 }
 
-export const useSubmitForm = ({ validateForm, resetForm, errorMessage }: ComponentType) => {
-    const [serverError, setServerError] = useState('')
-    const [isModalVisible, setIsModalVisible] = useState(false)
-    const [isSubmitting, setIsSubmitting] = useState(false)
-    const [firstLoading, setFirstLoading] = useState(true)
+export const useSubmitForm = <T,>({ validateForm, resetForm, errorMessage, onSubmit }: ComponentType<T>) => {
+    const [serverError, setServerError] = useState<string>('')
+    const [isModalVisible, setIsModalVisible] = useState<boolean>(false)
+    const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
+    const [firstLoading, setFirstLoading] = useState<boolean>(true)
 
-    const submitHandler = async (event: React.FormEvent) => {
+    const submitHandler = async (event: React.FormEvent, formData?: T) => {
         event.preventDefault()
 
         setIsSubmitting(true)
@@ -27,6 +26,10 @@ export const useSubmitForm = ({ validateForm, resetForm, errorMessage }: Compone
         }
 
         try {
+            if (onSubmit) {
+                await onSubmit(formData!)
+            }
+
             setIsModalVisible(true)
 
             setTimeout(() => {
@@ -34,8 +37,8 @@ export const useSubmitForm = ({ validateForm, resetForm, errorMessage }: Compone
                 setIsSubmitting(false)
                 resetForm()
             }, 3000)
-        } catch (err) {
-            setServerError('Something went wrong. Please try again later.')
+        } catch (err: any) {
+            setServerError(err.message || 'Something went wrong. Please try again later.')
             setIsSubmitting(false)
         }
     }
