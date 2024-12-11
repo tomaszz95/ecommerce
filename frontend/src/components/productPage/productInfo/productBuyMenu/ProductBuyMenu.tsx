@@ -6,6 +6,8 @@ import CurrentPrice from '../../../currentPrice/CurrentPrice'
 import BuyMenuBenefits from './BuyMenuBenefits'
 import ProductAddToCartModal from './ProductAddToCartModal'
 
+import { API_URL } from '../../../../constans/url'
+
 import styles from './ProductBuyMenu.module.css'
 
 type ComponentType = {
@@ -24,8 +26,36 @@ const ProductBuyMenu = ({ price, promotionPrice, stock, productName, productId, 
         setShowModal(false)
     }
 
-    const addToCartHandler = () => {
+    const addToCartHandler = async () => {
         setShowModal(true)
+
+        const orderId = localStorage.getItem('orderId')
+
+        try {
+            const response = await fetch(`${API_URL}/api/orders/addToCart`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    productId: productId,
+                    orderId: orderId,
+                }),
+                credentials: 'include',
+            })
+
+            if (!response.ok) {
+                const errorData = await response.json()
+
+                throw new Error(errorData.msg || 'Something went wrong. Please try again later.')
+            }
+
+            const data = await response.json()
+
+            localStorage.setItem('orderId', data.orderId)
+        } catch (err: any) {
+            throw new Error(err.message || 'Something went wrong. Please try again later.')
+        }
     }
 
     return (

@@ -6,11 +6,14 @@ import MainLayout from '../../../components/layouts/MainLayout'
 import OrdersView from '../../../components/userOrdersPage/OrdersView'
 import LoadingSpinner from '../../../components/loadingSpinner/LoadingSpinner'
 
+import useProtectFromGuests from '../../../hooks/useProtect'
 import ordersDummy from '../../../constans/ordersDummy'
 
 import { orderType } from '../../../types/types'
 
 const UserOrdersPage = () => {
+    useProtectFromGuests()
+
     const [orders, setOrders] = useState<orderType[] | null>(null)
     const [loading, setLoading] = useState(true)
 

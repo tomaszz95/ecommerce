@@ -19,17 +19,6 @@ const authenticateUser = async (req, res, next) => {
 	}
 }
 
-const checkNotLoggedIn = (req, res, next) => {
-	const token = req.signedCookies.token
-
-	if (token) {
-		throw new CustomError.BadRequestError('You are already logged in')
-	}
-
-	next()
-}
-
 module.exports = {
 	authenticateUser,
-	checkNotLoggedIn,
 }

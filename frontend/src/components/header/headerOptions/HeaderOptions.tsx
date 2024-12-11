@@ -8,19 +8,34 @@ import UserIcon from '../../../assets/icons/user.svg'
 import ContactIcon from '../../../assets/icons/contact.svg'
 import CartIcon from '../../../assets/icons/cart.svg'
 
+import { API_URL } from '../../../constans/url'
+
 import styles from './HeaderOptions.module.css'
 
 const HeaderOptions = () => {
     const [isLogin, setIsLogin] = useState(false)
 
     useEffect(() => {
-        const isLogin = localStorage.getItem('isLogin')
+        const checkAuth = async () => {
+            try {
+                const response = await fetch(`${API_URL}/api/auth/isLogged`, {
+                    method: 'GET',
+                    credentials: 'include',
+                })
 
-        if (isLogin === 'true') {
-            setIsLogin(true)
-        } else {
-            setIsLogin(false)
+                const data = await response.json()
+
+                if (data.message === 'User') {
+                    setIsLogin(true)
+                } else {
+                    setIsLogin(false)
+                }
+            } catch (error) {
+                setIsLogin(false)
+            }
         }
+
+        checkAuth()
     }, [])
 
     return (
