@@ -1,15 +1,15 @@
-import type { Metadata } from 'next'
+'use client'
 
 import AuthLayout from '../../components/layouts/AuthLayout'
-
 import RegisterView from '../../components/registerPage/RegisterView'
 
-export const metadata: Metadata = {
-    title: 'NeXtPC - Register',
-    description: 'neXtPC app homepage',
-}
+import useProtect from '../../hooks/useProtect'
+import useMetadata from '../../hooks/useMetadata'
 
 const RegisterPage = () => {
+    useProtect({ from: 'User' })
+    useMetadata({ title: 'Register', description: 'register page' })
+
     return (
         <AuthLayout>
             <RegisterView />

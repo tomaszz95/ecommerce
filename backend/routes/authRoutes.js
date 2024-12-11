@@ -1,18 +1,14 @@
 const express = require('express')
 const router = express.Router()
 
-const { checkNotLoggedIn, authenticateUser } = require('../middleware/authentication')
+const { register, login, logout, checkIfLogged } = require('../controllers/authController')
 
-const { register, login, logout } = require('../controllers/authController')
+router.get('/isLogged', checkIfLogged)
 
-router.get('/protected', authenticateUser, (req, res) => {
-	res.status(200).json({ msg: 'You are authenticated', user: req.user })
-})
+router.post('/register', register)
 
-router.post('/register', checkNotLoggedIn, register)
+router.post('/login', login)
 
-router.post('/login', checkNotLoggedIn, login)
-
-router.get('/logout', logout)
+router.post('/logout', logout)
 
 module.exports = router

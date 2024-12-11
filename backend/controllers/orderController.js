@@ -32,17 +32,12 @@ const addToCart = async (req, res) => {
 	if (orderId) {
 		order = await Order.findById(orderId)
 
-		if (!order) {
-			throw new CustomError.NotFoundError('Order not found')
-		}
-
-		if (order.status !== 'Pending') {
+		if (order && order.status !== 'Pending') {
 			throw new CustomError.BadRequestError('Cannot add more products to this order')
 		}
+	}
 
-		user = order.user
-		userType = order.userType
-	} else {
+	if (!order) {
 		const token = req.signedCookies.token
 
 		if (token) {
@@ -87,6 +82,7 @@ const addToCart = async (req, res) => {
 		}
 
 		const { name, price, images, category, stock, promotion } = dbProduct
+
 		let productPrice = price
 
 		if (promotion.isPromotion) {
@@ -118,20 +114,20 @@ const addToCart = async (req, res) => {
 		subtotal += item.totalProductPrice
 	})
 
-	order.subtotal = subtotal
+	order.subtotal = subtotal.toFixed()
 
 	if (order.discountValue !== 0) {
 		const discount = (subtotal * order.discountValue) / 100
 
-		order.discount = discount
-		order.total = subtotal - discount
+		order.discount = discount.toFixed()
+		order.total = (subtotal - discount).toFixed()
 	} else {
-		order.total = subtotal
+		order.total = subtotal.toFixed()
 	}
 
 	await order.save()
 
-	res.status(StatusCodes.OK).json({ orderId: order._id, userId: user, userType: userType })
+	res.status(StatusCodes.OK).json({ orderId: order._id })
 }
 
 const updateOrdersAmount = async (req, res) => {

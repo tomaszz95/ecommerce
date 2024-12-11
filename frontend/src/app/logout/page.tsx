@@ -1,15 +1,15 @@
-import type { Metadata } from 'next'
+'use client'
 
 import AuthLayout from '../../components/layouts/AuthLayout'
-
 import LogoutView from '../../components/logoutPage/LogoutView'
 
-export const metadata: Metadata = {
-    title: 'NeXtPC - Logout',
-    description: 'neXtPC app homepage',
-}
+import useProtect from '../../hooks/useProtect'
+import useMetadata from '../../hooks/useMetadata'
 
 const LogoutPage = () => {
+    useProtect({ from: 'Guest' })
+    useMetadata({ title: 'Logout', description: 'logout page' })
+
     return (
         <AuthLayout>
             <LogoutView />

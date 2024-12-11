@@ -65,13 +65,8 @@ const LoginForm = () => {
             if (!response.ok) {
                 const errorData = await response.json()
 
-                throw new Error(errorData.message || 'Please enter correct email and password.')
+                throw new Error(errorData.msg || 'Please enter correct email and password.')
             }
-
-            const data = await response.json()
-
-            localStorage.setItem('userId', data.user.userId)
-            localStorage.setItem('loginExpiration', (Date.now() + 60 * 60 * 1000).toString())
 
             if (orderId) {
                 router.push('/order/delivery')

@@ -109,13 +109,13 @@ const updateUserFavorites = async (req, res) => {
 		favoriteMessage = 'Product added to favorites'
 	}
 
-	const updatedUser = await User.findOneAndUpdate(
+	await User.findOneAndUpdate(
 		{ _id: req.user.userId },
 		{ favorites: updatedFavorites },
 		{ new: true, runValidators: true }
 	)
 
-	res.status(StatusCodes.OK).json({ msg: favoriteMessage, favorites: updatedUser.favorites })
+	res.status(StatusCodes.OK).json({ msg: favoriteMessage })
 }
 
 const getUserFavorites = async (req, res) => {

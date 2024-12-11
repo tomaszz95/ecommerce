@@ -1,12 +1,15 @@
 'use client'
 
-import { FormEvent, useEffect, useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
+import useInput from '../../hooks/useInput'
+
+import Input from '../UI/inputs/Input'
 import FormalConsents from './consents/FormalConsents'
 import AuthFormButton from '../UI/buttons/AuthFormButton'
-import Input from '../UI/inputs/Input'
-import useInput from '../../hooks/useInput'
+
+import { API_URL } from '../../constans/url'
 
 import styles from './RegisterForm.module.css'
 
@@ -14,7 +17,6 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const RegisterForm = () => {
     const [serverError, setServerError] = useState('')
-    const [isStorageValid, setIsStorageValid] = useState(false)
     const router = useRouter()
 
     const {
@@ -45,35 +47,46 @@ const RegisterForm = () => {
 
     const formIsValid = nameIsValid && emailIsValid && passwordIsValid && areConsentsAgreed
 
-    useEffect(() => {
-        const expirationKey = 'loginOrRegisterExpiration'
-        const storedExpiration = localStorage.getItem(expirationKey)
-        const now = new Date().getTime()
-
-        if (storedExpiration && now <= parseInt(storedExpiration)) {
-            setIsStorageValid(true)
-        }
-    }, [])
-
-    const submitHandler = (event: FormEvent) => {
+    const submitHandler = async (event: FormEvent) => {
         event.preventDefault()
+
+        const orderId = localStorage.getItem('orderId')
 
         if (!formIsValid) {
             setServerError('Please fill out all required fields.')
             return
         }
 
-        try {
-            localStorage.setItem('isLogin', 'true')
-            setServerError('')
+        setServerError('')
 
-            if (isStorageValid) {
+        try {
+            const response = await fetch(`${API_URL}/api/auth/register`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: enteredEmail,
+                    name: enteredName,
+                    password: enteredPassword,
+                    orderId: orderId,
+                }),
+                credentials: 'include',
+            })
+
+            if (!response.ok) {
+                const errorData = await response.json()
+
+                throw new Error(errorData.msg || 'Please enter correct email, name and password.')
+            }
+
+            if (orderId) {
                 router.push('/order/delivery')
             } else {
                 router.push('/')
             }
-        } catch (err) {
-            setServerError('Something went wrong. Please try again later.')
+        } catch (err: any) {
+            setServerError(err.message || 'Something went wrong. Please try again later.')
         }
     }
 

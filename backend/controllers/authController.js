@@ -34,7 +34,7 @@ const register = async (req, res) => {
 
 	attachCookiesToResponse({ res, user: tokenUser })
 
-	res.status(StatusCodes.CREATED).json({ user: tokenUser, userId: userId, userType: userType })
+	res.status(StatusCodes.CREATED).json({ user: tokenUser })
 }
 
 const login = async (req, res) => {
@@ -79,8 +79,6 @@ const login = async (req, res) => {
 const logout = async (req, res) => {
 	const { orderId } = req.body
 
-	let userId, userType
-
 	if (orderId) {
 		const order = await Order.findById(orderId)
 
@@ -88,11 +86,8 @@ const logout = async (req, res) => {
 			throw new CustomError.NotFoundError('Something went wrong. Please try again later')
 		}
 
-		userId = `guest#${order.paymentIntentId}`
-		userType = 'Guest'
-
-		order.user = userId
-		order.userType = userType
+		order.user = `guest#${order.paymentIntentId}`
+		order.userType = 'Guest'
 
 		await order.save()
 	}
@@ -102,7 +97,17 @@ const logout = async (req, res) => {
 		expires: new Date(Date.now()),
 	})
 
-	res.status(StatusCodes.OK).json({ msg: 'User logged out', userId: userId, userType: userType })
+	res.status(StatusCodes.OK).json({ msg: 'User logged out' })
 }
 
-module.exports = { register, login, logout }
+const checkIfLogged = (req, res, next) => {
+	const token = req.signedCookies.token
+
+	if (token) {
+		return res.status(200).json({ message: 'User' })
+	}
+
+	return res.status(200).json({ message: 'Guest' })
+}
+
+module.exports = { register, login, logout, checkIfLogged }

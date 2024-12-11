@@ -7,6 +7,8 @@ import MainLayout from '../../../../components/layouts/MainLayout'
 import SingleOrderView from '../../../../components/userSingleOrderPage/SingleOrderView'
 import LoadingSpinner from '../../../../components/loadingSpinner/LoadingSpinner'
 
+import useProtectFromGuests from '../../../../hooks/useProtect'
+
 import ordersDummy from '../../../../constans/ordersDummy'
 
 type Props = {
@@ -14,6 +16,8 @@ type Props = {
 }
 
 const UserSingleOrderPage = ({ params }: Props) => {
+    useProtectFromGuests()
+
     const orderId = params.orderId
 
     const [order, setOrder] = useState<(typeof ordersDummy)[0] | null>(null)

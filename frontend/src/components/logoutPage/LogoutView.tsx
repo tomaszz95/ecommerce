@@ -5,17 +5,44 @@ import { useRouter } from 'next/navigation'
 
 import HightlightButton from '../UI/buttons/HightlightButton'
 
+import { API_URL } from '../../constans/url'
+
 import styles from './LogoutView.module.css'
 
 const LogoutView = () => {
     const router = useRouter()
 
     useEffect(() => {
+        const orderId = localStorage.getItem('orderId')
+
+        const logoutAuth = async () => {
+            try {
+                const response = await fetch(`${API_URL}/api/auth/logout`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        orderId: orderId,
+                    }),
+                    credentials: 'include',
+                })
+
+                if (!response.ok) {
+                    const errorData = await response.json()
+
+                    throw new Error(errorData.message || 'Logout failed.')
+                }
+            } catch (err: any) {
+                throw new Error(err.message || 'Something went wrong')
+            }
+        }
+
+        logoutAuth()
+
         const timer = setTimeout(() => {
             router.push('/')
         }, 30000)
-
-        localStorage.removeItem('isLogin')
 
         return () => clearTimeout(timer)
     })

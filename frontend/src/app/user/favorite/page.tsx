@@ -8,9 +8,13 @@ import LoadingSpinner from '../../../components/loadingSpinner/LoadingSpinner'
 
 import favoriteProducts from '../../../constans/favoriteProducts'
 
+import useProtectFromGuests from '../../../hooks/useProtect'
+
 import { productType } from '../../../types/types'
 
 const UserFavoritePage = () => {
+    useProtectFromGuests()
+
     const [favorites, setFavorites] = useState<productType[] | null>(null)
     const [loading, setLoading] = useState(true)
 

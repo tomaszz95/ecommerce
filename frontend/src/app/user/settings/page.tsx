@@ -6,13 +6,13 @@ import MainLayout from '../../../components/layouts/MainLayout'
 import UserSettingsView from '../../../components/userSettingsPage/UserSettingsView'
 import LoadingSpinner from '../../../components/loadingSpinner/LoadingSpinner'
 
-import useAuth from '../../../hooks/useAuth'
+import useProtectFromGuests from '../../../hooks/useProtect'
 import userDummy from '../../../constans/userDummy'
 
 import { userType } from '../../../types/types'
 
 const UserSettingsPage = () => {
-    useAuth()
+    useProtectFromGuests()
 
     const [user, setUser] = useState<userType | null>(null)
     const [loading, setLoading] = useState(true)
