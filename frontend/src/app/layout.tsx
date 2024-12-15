@@ -8,7 +8,7 @@ type ComponentType = {
 
 export const metadata: Metadata = {
     title: 'NeXtPC - Computer Shop',
-    description: 'NeXtPC main site homepage',
+    description: 'NeXtPC main site',
 }
 
 const RootLayout = ({ children }: ComponentType) => {
