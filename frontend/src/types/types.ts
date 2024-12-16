@@ -48,25 +48,12 @@ export type homepageProductsData = {
 // OPINION
 
 export type singleOpinionType = {
-    opinionId: string
-    opinionAuthor: string
-    opinionText: string
-    opinionValue: number
-    likes: number
-    dislikes: number
-}
-
-export type productOpinionType = {
-    productId: string
-    opinionsCount: number
-    opinionsAverage: number
-    opinions: singleOpinionType[]
-}
-
-export type productPresentationDummyType = {
-    title: string
-    text: string
-    img: StaticImageData
+    _id: string
+    author: string
+    message: string
+    rating: number
+    product: string
+    user: string
 }
 
 // LOGOS

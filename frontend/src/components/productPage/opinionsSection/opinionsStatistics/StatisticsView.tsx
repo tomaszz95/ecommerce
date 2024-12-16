@@ -3,20 +3,22 @@ import StatisticsHeader from './StatisticsHeader'
 
 import { calculateOpinionCounts, calculateBarWidth } from '../../../../helpers/statisticsHelper'
 
-import { productOpinionType } from '../../../../types/types'
+import { singleOpinionType } from '../../../../types/types'
 
 import styles from './StatisticsView.module.css'
 
 type ComponentType = {
-    opinions: productOpinionType
+    opinions: singleOpinionType[]
+    numOfReviews: number
+    averageRating: number
 }
 
-const StatisticsView = ({ opinions }: ComponentType) => {
-    const opinionCounts = calculateOpinionCounts(opinions.opinions)
+const StatisticsView = ({ opinions, numOfReviews, averageRating }: ComponentType) => {
+    const opinionCounts = calculateOpinionCounts(opinions)
 
     return (
         <div className={styles.statisticsContainer}>
-            <StatisticsHeader average={opinions.opinionsAverage} totalOpinions={opinions.opinionsCount} />
+            <StatisticsHeader average={averageRating} totalOpinions={numOfReviews} />
 
             <div className={styles.progressBarsBox}>
                 {([5, 4, 3, 2, 1] as const).map((value) => (
@@ -24,7 +26,7 @@ const StatisticsView = ({ opinions }: ComponentType) => {
                         key={value}
                         value={value}
                         count={opinionCounts[value]}
-                        barWidth={calculateBarWidth(value, opinionCounts, opinions.opinionsCount)}
+                        barWidth={calculateBarWidth(value, opinionCounts, numOfReviews)}
                     />
                 ))}
             </div>

@@ -46,6 +46,13 @@
     color: gold;
 }
 
+.serverError {
+    text-align: center;
+    color: var(--danger-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
 @media (1100px < width) {
     .noOpinions {
         margin: 0 auto;

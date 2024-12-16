@@ -149,7 +149,10 @@ const getFilteredProducts = async (req, res) => {
 const getSingleProduct = async (req, res) => {
 	const { uniqueId } = req.params
 
-	const product = await Product.findOne({ uniqueId: uniqueId }).populate('reviews')
+	const product = await Product.findOne({ uniqueId: uniqueId }).populate({
+		path: 'reviews',
+		select: 'author message rating _id',
+	})
 
 	if (!product) {
 		throw new CustomError.NotFoundError('No product found')

@@ -1,5 +1,6 @@
-import OnClickButton from '@/components/UI/buttons/OnClickButton'
 import ReactDOM from 'react-dom'
+
+import OnClickButton from '../../../../../components/UI/buttons/OnClickButton'
 
 import styles from './DeleteOpinionModal.module.css'
 
@@ -10,7 +11,6 @@ type ComponentType = {
 
 const DeleteOpinionModal = ({ onClose, opinionId }: ComponentType) => {
     const deleteOpinion = () => {
-        console.log(opinionId)
         onClose()
     }
 

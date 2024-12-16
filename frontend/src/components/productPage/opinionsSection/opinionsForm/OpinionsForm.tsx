@@ -7,19 +7,23 @@ import TextArea from '../../../../components/UI/textarea/TextArea'
 import useInput from '../../../../hooks/useInput'
 import AuthFormButton from '../../../../components/UI/buttons/AuthFormButton'
 import Modal from '../../../../components/UI/Modal/Modal'
+
+import { API_URL } from '../../../../constans/url'
+
 import { useSubmitForm } from '../../../../hooks/useSubmitForm'
 
 import styles from './OpinionsForm.module.css'
 
 type ComponentType = {
+    formMode: string
     opinionsCount?: number
-    formMode?: string
     author?: string
     rating?: number
     message?: string
     opinionId?: string
     onClose?: () => void
     onDisableHandler?: (value: boolean) => void
+    productId?: string
 }
 
 const OpinionsForm = ({
@@ -31,6 +35,7 @@ const OpinionsForm = ({
     opinionId,
     onClose,
     onDisableHandler,
+    productId,
 }: ComponentType) => {
     const [newRating, setNewRating] = useState(rating || 0)
     const [hoveredRating, setHoveredRating] = useState(0)
@@ -55,7 +60,7 @@ const OpinionsForm = ({
 
     const formIsValid = nameIsValid && messageIsValid && newRating > 0
 
-    const validateForm = () => nameIsValid && messageIsValid && newRating > 0
+    const validateForm = () => formIsValid
 
     const resetForm = () => {
         resetName()
@@ -63,16 +68,54 @@ const OpinionsForm = ({
         setNewRating(0)
     }
 
+    const submitReviewHandler = async (formData: any) => {
+        if (formMode === 'new') {
+            const response = await fetch(`${API_URL}/apia/reviews`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    ...formData,
+                    productId: productId,
+                }),
+                credentials: 'include',
+            })
+
+            if (!response.ok) {
+                const errorData = await response.json()
+              
+                throw new Error(errorData.msg || 'Something went wrong, please try again later')
+            }
+        } else if (formMode === 'edit') {
+            const response = await fetch(`${API_URL}/api/reviews/${opinionId}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+                credentials: 'include',
+            })
+
+            if (!response.ok) {
+                const errorData = await response.json()
+
+                throw new Error(errorData.msg || 'Something went wrong, please try again later')
+            }
+        }
+    }
+
     const { serverError, isModalVisible, isSubmitting, firstLoading, submitHandler, setIsModalVisible } = useSubmitForm(
         {
             validateForm,
             resetForm,
             errorMessage: 'Please fill out all required fields correctly.',
+            onSubmit: submitReviewHandler,
         },
     )
 
     const formSubmitHandler = (event: React.FormEvent) => {
-        submitHandler(event)
+        submitHandler(event, {
+            author: enteredName,
+            message: enteredMessage,
+            rating: newRating,
+        })
 
         if (formMode === 'edit' && onClose && onDisableHandler) {
             onDisableHandler(true)
@@ -137,9 +180,9 @@ const OpinionsForm = ({
                 {formMode === 'edit' ? 'Edit review' : 'Add Review'}
             </AuthFormButton>
 
-            {!firstLoading && (
+            {!firstLoading && !isSubmitting && (
                 <Modal isVisible={isModalVisible} onAnimationEnd={() => setIsModalVisible(false)}>
-                    Your review has been submitted!
+                    {serverError ? serverError : 'Your review has been submitted!'}
                 </Modal>
             )}
         </form>

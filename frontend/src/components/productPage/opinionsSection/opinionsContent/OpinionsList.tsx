@@ -12,7 +12,7 @@ const OpinionsList = ({ opinions }: ComponentType) => {
     return (
         <ul className={styles.opinionsListBox}>
             {opinions.map((opinion) => (
-                <OpinionsListItem opinion={opinion} key={opinion.opinionId} />
+                <OpinionsListItem opinion={opinion} key={opinion._id} />
             ))}
         </ul>
     )
