@@ -1,17 +1,19 @@
 import StatisticsView from './StatisticsView'
 
-import { productOpinionType } from '../../../../types/types'
+import { singleOpinionType } from '../../../../types/types'
 
 import styles from './OpinionsStatistics.module.css'
 
 type ComponentType = {
-    opinions: productOpinionType
+    opinions: singleOpinionType[]
+    numOfReviews: number
+    averageRating: number
 }
 
-const OpinionsStatistics = ({ opinions }: ComponentType) => {
+const OpinionsStatistics = ({ opinions, numOfReviews, averageRating }: ComponentType) => {
     return (
         <div className={styles.statisticsContainer}>
-            <StatisticsView opinions={opinions} />
+            <StatisticsView opinions={opinions} numOfReviews={numOfReviews} averageRating={averageRating} />
         </div>
     )
 }

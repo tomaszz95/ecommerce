@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ReactDOM from 'react-dom'
+
 import OpinionsForm from '../../opinionsForm/OpinionsForm'
 
 import styles from './EditOpinionModal.module.css'

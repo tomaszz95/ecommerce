@@ -29,9 +29,14 @@ const SingleProductPage = async ({ params }: Props) => {
                 <ProductSection product={product} />
                 <ProductPresentation productPresentation={product.presentation} />
                 <ProductSpecification productSpecification={product.specification} />
-                {/* <SimilarCarousel similarProducts={similarProducts} />
-                <OpinionsSection productReviews={product.reviews} uniqueId={product.uniqueId} />
-                <MayInterestCarousel mayInterestProducts={mayInterestProducts} /> */}
+                <SimilarCarousel similarProducts={similarProducts} />
+                <OpinionsSection
+                    productReviews={product.reviews}
+                    averageRating={product.averageRating}
+                    numOfReviews={product.numOfReviews}
+                    productId={product._id}
+                />
+                <MayInterestCarousel mayInterestProducts={mayInterestProducts} />
             </MainLayout>
         )
     } catch (err) {

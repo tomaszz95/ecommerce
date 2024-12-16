@@ -18,6 +18,7 @@ export const useSubmitForm = <T,>({ validateForm, resetForm, errorMessage, onSub
 
         setIsSubmitting(true)
         setFirstLoading(false)
+        setServerError('')
 
         if (!validateForm()) {
             setServerError(errorMessage)
@@ -29,17 +30,18 @@ export const useSubmitForm = <T,>({ validateForm, resetForm, errorMessage, onSub
             if (onSubmit) {
                 await onSubmit(formData!)
             }
-
             setIsModalVisible(true)
 
             setTimeout(() => {
                 setIsModalVisible(false)
                 setIsSubmitting(false)
+                window.location.reload()
                 resetForm()
             }, 3000)
         } catch (err: any) {
-            setServerError(err.message || 'Something went wrong. Please try again later.')
+            setServerError('Something went wrong. Please try again later.')
             setIsSubmitting(false)
+            setIsModalVisible(true)
         }
     }
 

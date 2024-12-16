@@ -2,28 +2,33 @@ import OpinionsStatistics from './opinionsStatistics/OpinionsStatistics'
 import OpinionsList from './opinionsContent/OpinionsList'
 import OpinionsForm from './opinionsForm/OpinionsForm'
 
-import productsOpinions from '../../../constans/productsOpinions'
+import { singleOpinionType } from '../../../types/types'
 
 import styles from './OpinionsSection.module.css'
 
 type ComponentType = {
+    productReviews: singleOpinionType[]
+    numOfReviews: number
+    averageRating: number
     productId: string
 }
 
-const OpinionsSection = ({ productId }: ComponentType) => {
-    const filteredOpinions = productsOpinions.find((opinions) => opinions.productId === productId)
-
-    const opinionCount = !filteredOpinions ? 0 : filteredOpinions.opinionsCount
-
+const OpinionsSection = ({ productReviews, numOfReviews, averageRating, productId }: ComponentType) => {
     return (
         <section id="opinions" className={styles.opinionsContainer}>
             <h2>Opinions</h2>
-            <div className={`${styles.opinionsSection} ${opinionCount === 0 ? styles.noOpinions : ''}`}>
+            <div className={`${styles.opinionsSection} ${numOfReviews === 0 ? styles.noOpinions : ''}`}>
                 <div className={styles.leftColumn}>
-                    {filteredOpinions && <OpinionsStatistics opinions={filteredOpinions} />}
-                    <OpinionsForm opinionsCount={opinionCount} />
+                    {numOfReviews !== 0 && (
+                        <OpinionsStatistics
+                            opinions={productReviews}
+                            averageRating={averageRating}
+                            numOfReviews={numOfReviews}
+                        />
+                    )}
+                    <OpinionsForm opinionsCount={numOfReviews} formMode="new" productId={productId} />
                 </div>
-                {filteredOpinions && <OpinionsList opinions={filteredOpinions.opinions} />}
+                {numOfReviews !== 0 && <OpinionsList opinions={productReviews} />}
             </div>
         </section>
     )

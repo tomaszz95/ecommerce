@@ -15,16 +15,16 @@ const OpinionsListItem = ({ opinion }: ComponentType) => {
     return (
         <div className={styles.opinionItem}>
             <div className={styles.opinionInfo}>
-                <h4>{opinion.opinionAuthor}</h4>
-                <StarRating rating={opinion.opinionValue} />
+                <h4>{opinion.author}</h4>
+                <StarRating rating={opinion.rating} />
             </div>
-            <p className={styles.opinionText}>{opinion.opinionText}</p>
+            <p className={styles.opinionText}>{opinion.message}</p>
             <div className={styles.opinionBottomBox}>
                 <ReviewsButtons
-                    opinionId={opinion.opinionId}
-                    author={opinion.opinionAuthor}
-                    message={opinion.opinionText}
-                    rating={opinion.opinionValue}
+                    opinionId={opinion._id}
+                    author={opinion.author}
+                    message={opinion.message}
+                    rating={opinion.rating}
                 />
             </div>
         </div>
