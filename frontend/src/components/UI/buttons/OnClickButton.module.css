@@ -32,3 +32,8 @@
     left: 130%;
     opacity: 1;
 }
+
+.button.disabled {
+    background-color: var(--lighter-grey);
+    cursor: default;
+}

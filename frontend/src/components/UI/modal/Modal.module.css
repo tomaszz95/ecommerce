@@ -16,11 +16,11 @@
 }
 
 .modal.slideIn {
-    animation: slideIn 2s forwards;
+    animation: slideIn 1.5s forwards;
 }
 
 .modal.slideOut {
-    animation: slideOut 2s forwards;
+    animation: slideOut 1.5s forwards;
 }
 
 @keyframes slideIn {

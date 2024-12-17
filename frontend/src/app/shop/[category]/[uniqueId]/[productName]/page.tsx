@@ -10,7 +10,7 @@ import ServerError from '../../../../../components/serverError/ServerError'
 import { API_URL } from '../../../../../constans/url'
 
 type Props = {
-    params: { uniqueId: string }
+    params: { uniqueId: string; productName: string; category: string }
 }
 
 const SingleProductPage = async ({ params }: Props) => {
@@ -22,6 +22,7 @@ const SingleProductPage = async ({ params }: Props) => {
         if (!response.ok) {
             throw new Error('Product not found')
         }
+
         const { product, similarProducts, mayInterestProducts } = await response.json()
 
         return (
