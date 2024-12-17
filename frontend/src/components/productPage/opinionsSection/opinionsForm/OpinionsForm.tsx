@@ -70,7 +70,7 @@ const OpinionsForm = ({
 
     const submitReviewHandler = async (formData: any) => {
         if (formMode === 'new') {
-            const response = await fetch(`${API_URL}/apia/reviews`, {
+            const response = await fetch(`${API_URL}/api/reviews`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -82,7 +82,7 @@ const OpinionsForm = ({
 
             if (!response.ok) {
                 const errorData = await response.json()
-              
+
                 throw new Error(errorData.msg || 'Something went wrong, please try again later')
             }
         } else if (formMode === 'edit') {
@@ -176,7 +176,7 @@ const OpinionsForm = ({
 
             {serverError && <p className={styles.serverError}>{serverError}</p>}
 
-            <AuthFormButton type="submit" formIsValid={formIsValid && !isSubmitting}>
+            <AuthFormButton type="submit" formIsValid={formIsValid && !isSubmitting && !isModalVisible && firstLoading}>
                 {formMode === 'edit' ? 'Edit review' : 'Add Review'}
             </AuthFormButton>
 

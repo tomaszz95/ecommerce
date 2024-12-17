@@ -11,6 +11,10 @@
     margin-bottom: 1rem;
 }
 
+.opinionsContainer h3 {
+    margin-bottom: 2rem;
+}
+
 .opinionsSection {
     display: flex;
     flex-direction: column;

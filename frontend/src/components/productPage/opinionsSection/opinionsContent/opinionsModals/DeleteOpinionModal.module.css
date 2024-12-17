@@ -62,6 +62,13 @@
     opacity: 1;
 }
 
+.modalButtons button.disabled {
+    background-color: var(--lighter-grey);
+    color: var(--pure-white);
+    border: var(--pure-white);
+    cursor: default;
+}
+
 @media (550px < width) {
     .modalButtons {
         margin-top: 3rem;
