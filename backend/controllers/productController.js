@@ -129,17 +129,35 @@ const getHomepageProducts = async (req, res) => {
 }
 
 const getFilteredProducts = async (req, res) => {
-	const queryObject = queryProductsBuilder(req.query)
-
+	const queryObject = queryProductsBuilder({ ...req.query })
+console.log(req.query)
 	const { sortOption, limit, skip, pageNum } = queryOptionsBuilder(req.query)
 
-	const products = await Product.find(queryObject).sort(sortOption).skip(skip).limit(limit)
+	const products = await Product.find(queryObject)
+		.sort(sortOption)
+		.skip(skip)
+		.limit(limit)
+		.select(
+			'name price images category promotion uniqueId recommended company description stock averageRating numOfReviews'
+		)
+		.lean()
+
+	products.forEach(product => {
+		product.image = product.images[0]
+		delete product.images
+
+		product.promotion = {
+			...product.promotion,
+			promotionPrice: product.promotion.isPromotion
+				? Math.round(product.price * (1 - product.promotion.promotionPercent / 100))
+				: product.price,
+		}
+	})
 
 	const totalProducts = await Product.countDocuments(queryObject)
 
 	res.status(StatusCodes.OK).json({
 		products,
-		count: products.length,
 		totalProducts,
 		totalPages: Math.ceil(totalProducts / limit),
 		currentPage: pageNum,
@@ -207,22 +225,8 @@ const getSingleProduct = async (req, res) => {
 	})
 }
 
-// const createProduct = async (req, res) => {
-// 	const products = req.body
-
-// 	const createdProducts = await Promise.all(
-// 		products.map(async productData => {
-// 			const product = await Product.create(productData)
-// 			return product
-// 		})
-// 	)
-
-// 	res.status(StatusCodes.CREATED).json({ products: createdProducts })
-// }
-
 module.exports = {
 	getFilteredProducts,
 	getSingleProduct,
 	getHomepageProducts,
-	// createProduct,
 }

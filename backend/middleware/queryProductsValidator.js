@@ -30,12 +30,16 @@ const VALID_SORT_OPTIONS = ['price', '-price', 'reviews', 'alphabetically', '-al
 const queryProductsValidator = (req, res, next) => {
 	const { company, category, minPrice, maxPrice, available, isPromotion, sort } = req.query
 
+	const categoryName = category.charAt(0).toUpperCase() + category.slice(1)
+
+	req.query.category = categoryName
+
 	try {
 		if (company && !VALID_COMPANIES.includes(company)) {
 			throw new CustomError.BadRequestError("We didn't find what you were looking for")
 		}
 
-		if (category && !VALID_CATEGORIES.includes(category)) {
+		if (categoryName && !VALID_CATEGORIES.includes(category)) {
 			throw new CustomError.BadRequestError("We didn't find what you were looking for")
 		}
 

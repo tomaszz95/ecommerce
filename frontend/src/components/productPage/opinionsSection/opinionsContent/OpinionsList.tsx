@@ -6,13 +6,14 @@ import styles from './OpinionsList.module.css'
 
 type ComponentType = {
     opinions: singleOpinionType[]
+    isLogin: boolean
 }
 
-const OpinionsList = ({ opinions }: ComponentType) => {
+const OpinionsList = ({ opinions, isLogin }: ComponentType) => {
     return (
         <ul className={styles.opinionsListBox}>
             {opinions.map((opinion) => (
-                <OpinionsListItem opinion={opinion} key={opinion._id} />
+                <OpinionsListItem opinion={opinion} key={opinion._id} isLogin={isLogin} />
             ))}
         </ul>
     )

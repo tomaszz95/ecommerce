@@ -2,48 +2,53 @@
 
 import { useState } from 'react'
 
+import { API_URL } from '../../constans/url'
+
 import styles from './Pagination.module.css'
 
-const itemsPerPage = 6
-
 type ComponentType = {
-    productsLength: number
+    currentPage: number
+    totalPages: number
 }
 
-const Pagination = ({ productsLength }: ComponentType) => {
-    const [currentPage, setCurrentPage] = useState(1)
+const Pagination = ({ currentPage, totalPages }: ComponentType) => {
+    const [page, setPage] = useState(currentPage)
+    const [error, setError] = useState(false)
 
-    const maxPage = Math.ceil(productsLength / itemsPerPage)
+    const handlePageChange = async (newPage: number) => {
+        setPage(newPage)
 
-    const handlePageInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const value = Number(event.target.value)
-        if (value >= 1 && value <= maxPage) {
-            setCurrentPage(value)
-        }
-    }
+        try {
+            const currentUrl = new URL(window.location.href)
 
-    const goToPreviousPage = () => {
-        if (currentPage > 1) {
-            setCurrentPage((prevPage) => prevPage - 1)
-        }
-    }
+            currentUrl.searchParams.set('page', newPage.toString())
 
-    const goToNextPage = () => {
-        if (currentPage < maxPage) {
-            setCurrentPage((prevPage) => prevPage + 1)
+            const response = await fetch(currentUrl.href)
+
+            if (!response.ok) {
+                throw new Error('Products not found')
+            }
+
+            window.history.pushState(null, '', currentUrl.toString())
+        } catch (err) {
+            console.error(err)
+            setError(true)
         }
     }
 
     return (
         <div className={styles.pagination}>
-            <button onClick={goToPreviousPage} disabled={currentPage === 1} aria-label="Go to previous page">
+            <button onClick={() => handlePageChange(page - 1)} disabled={page === 1} aria-label="Go to previous page">
                 &lt;
             </button>
             <span>
-                <input type="number" value={currentPage} onChange={handlePageInputChange} min={1} max={maxPage} /> of{' '}
-                {maxPage}
+                {page} of {totalPages}
             </span>
-            <button onClick={goToNextPage} disabled={currentPage === maxPage} aria-label="Go to next page">
+            <button
+                onClick={() => handlePageChange(page + 1)}
+                disabled={page === totalPages}
+                aria-label="Go to next page"
+            >
                 &gt;
             </button>
         </div>

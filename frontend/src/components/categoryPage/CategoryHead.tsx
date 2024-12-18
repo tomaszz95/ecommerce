@@ -1,17 +1,19 @@
 import Slug from '../slug/Slug'
 
+import capitalizeFirstLetter from '../utils/capitalizeFirstLetter'
+
 import styles from './CategoryHead.module.css'
 
 type ComponentType = {
-    categoryName: string
-    categorySlug: string
+    category: string
     productsCount: number
 }
 
-const CategoryHead = ({ categorySlug, categoryName, productsCount }: ComponentType) => {
+const CategoryHead = ({ category, productsCount }: ComponentType) => {
+    const categoryName = capitalizeFirstLetter(category)
     return (
         <section className={styles.categoryHeadSection}>
-            <Slug categoryLink={`/shop/${categorySlug}`} categoryName={categoryName} />
+            <Slug category={categoryName} />
             <div className={styles.categoryHeadText}>
                 <h1>{categoryName}</h1>
                 <span>

@@ -38,6 +38,26 @@ export type homepageSingleProductData = {
     image: string
 }
 
+export type categorySingleProductData = {
+    _id: string
+    name: string
+    price: number
+    category: string
+    promotion: {
+        isPromotion: boolean
+        promotionPercent: number
+        promotionPrice: number
+    }
+    uniqueId: string
+    image: string
+    recommended: boolean
+    company: string
+    description: string
+    stock: number
+    averageRating: number
+    numOfReviews: number
+}
+
 export type homepageProductsData = {
     recommendedProducts: homepageSingleProductData[]
     latestProducts: homepageSingleProductData[]

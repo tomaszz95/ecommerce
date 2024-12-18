@@ -7,19 +7,19 @@ import HightlightButton from '../../../components/UI/buttons/HightlightButton'
 
 import createLinkFromProductName from '../../../components/utils/createLinkFromProductName'
 
-import { productType } from '../../../types/types'
+import { homepageSingleProductData } from '../../../types/types'
 
 import styles from './ProductsListItem.module.css'
 
 type ComponentType = {
-    product: productType
+    product: homepageSingleProductData
 }
 
 const ProductsListItem = ({ product }: ComponentType) => {
     const productLink = createLinkFromProductName(product.name)
 
     return (
-        <li className={`${styles.listItem} ${product.recommended ? styles.recommended : ''}`}>
+        <li className={`${styles.listItem} ${product.recommended. ? styles.recommended : ''}`}>
             {product.recommended && <span className={styles.recommendedText}>Recommended</span>}
             <div className={styles.listMainDataBox}>
                 <h2>{product.name}</h2>
