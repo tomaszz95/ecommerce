@@ -5,16 +5,19 @@ import Pagination from '../../../components/pagination/Pagination'
 import styles from './SortProducts.module.css'
 
 type ComponentType = {
-    productsLength: number
+    currentPage: number
+    totalPages: number
 }
 
-const SortProducts = ({ productsLength }: ComponentType) => {
+const SortProducts = ({ currentPage, totalPages }: ComponentType) => {
     const [selectedOption, setSelectedOption] = useState('default')
 
     const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const value = event.target.value
 
         setSelectedOption(value)
+
+        console.log(value)
     }
 
     return (
@@ -30,7 +33,7 @@ const SortProducts = ({ productsLength }: ComponentType) => {
                     <option value="alph-desc">Alphabetically: From z - a</option>
                 </select>
             </div>
-            <Pagination productsLength={productsLength} />
+            <Pagination currentPage={currentPage} totalPages={totalPages} />
         </div>
     )
 }

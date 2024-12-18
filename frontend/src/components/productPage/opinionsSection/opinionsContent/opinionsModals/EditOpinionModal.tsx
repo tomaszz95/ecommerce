@@ -35,7 +35,6 @@ const EditOpinionModal = ({ onClose, opinionId, author, rating, message }: Compo
                     message={message}
                     rating={rating}
                     opinionId={opinionId}
-                    onClose={onClose}
                     onDisableHandler={disableHandler}
                 />
                 <div>

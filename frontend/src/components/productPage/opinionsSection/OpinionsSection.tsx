@@ -50,8 +50,8 @@ const OpinionsSection = ({ productReviews, numOfReviews, averageRating, productI
         <section id="opinions" className={styles.opinionsContainer}>
             <h2>Reviews</h2>
             {isLoading && <LoadingSpinner />}
-            {!isLogin && !isLoading && <h3>To add your review you must me logged in!</h3>}
-            {isLogin && !isLoading && (
+
+            {!isLoading && (
                 <div className={`${styles.opinionsSection} ${numOfReviews === 0 ? styles.noOpinions : ''}`}>
                     <div className={styles.leftColumn}>
                         {numOfReviews !== 0 && (
@@ -61,11 +61,16 @@ const OpinionsSection = ({ productReviews, numOfReviews, averageRating, productI
                                 numOfReviews={numOfReviews}
                             />
                         )}
-                        <OpinionsForm opinionsCount={numOfReviews} formMode="new" productId={productId} />
+
+                        {isLogin && !isLoading && (
+                            <OpinionsForm opinionsCount={numOfReviews} formMode="new" productId={productId} />
+                        )}
                     </div>
-                    {numOfReviews !== 0 && <OpinionsList opinions={productReviews} />}
+                    {numOfReviews !== 0 && <OpinionsList opinions={productReviews} isLogin={isLogin} />}
                 </div>
             )}
+
+            {!isLogin && !isLoading && <h3>To add your review you must be logged in.</h3>}
         </section>
     )
 }

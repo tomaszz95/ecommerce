@@ -21,7 +21,6 @@ type ComponentType = {
     rating?: number
     message?: string
     opinionId?: string
-    onClose?: () => void
     onDisableHandler?: (value: boolean) => void
     productId?: string
 }
@@ -33,13 +32,11 @@ const OpinionsForm = ({
     rating,
     message,
     opinionId,
-    onClose,
     onDisableHandler,
     productId,
 }: ComponentType) => {
     const [newRating, setNewRating] = useState(rating || 0)
     const [hoveredRating, setHoveredRating] = useState(0)
-
     const {
         value: enteredName,
         hasError: nameInputHasError,
@@ -86,10 +83,17 @@ const OpinionsForm = ({
                 throw new Error(errorData.msg || 'Something went wrong, please try again later')
             }
         } else if (formMode === 'edit') {
-            const response = await fetch(`${API_URL}/api/reviews/${opinionId}`, {
+            const resBody = {
+                ...formData,
+                reviewId: opinionId,
+            }
+
+            onDisableHandler!(formIsValid && !isSubmitting && !isModalVisible)
+
+            const response = await fetch(`${API_URL}/api/reviews`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(resBody),
                 credentials: 'include',
             })
 
@@ -116,15 +120,6 @@ const OpinionsForm = ({
             message: enteredMessage,
             rating: newRating,
         })
-
-        if (formMode === 'edit' && onClose && onDisableHandler) {
-            onDisableHandler(true)
-
-            setTimeout(() => {
-                onClose()
-                onDisableHandler(false)
-            }, 3000)
-        }
     }
 
     return (

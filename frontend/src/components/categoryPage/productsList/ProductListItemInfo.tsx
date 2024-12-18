@@ -2,7 +2,6 @@ import Image from 'next/image'
 
 import StarRating from '../../../components/starRating/StarRating'
 
-import getOpinions from '../../../components/utils/getOpinions'
 import getBrandLogo from '../../../helpers/getBrandLogo'
 import SpeechBubbleIcon from '../../../assets/icons/speechbubble.svg'
 
@@ -15,7 +14,6 @@ type ComponentType = {
 }
 
 const ProductListItemInfo = ({ product }: ComponentType) => {
-    const { opinions, opinionsText } = getOpinions(product.prodId, false)
     const brandLogo = getBrandLogo(product.company)
 
     return (

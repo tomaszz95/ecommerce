@@ -9,9 +9,10 @@ import styles from './OpinionsListItem.module.css'
 
 type ComponentType = {
     opinion: singleOpinionType
+    isLogin: boolean
 }
 
-const OpinionsListItem = ({ opinion }: ComponentType) => {
+const OpinionsListItem = ({ opinion, isLogin }: ComponentType) => {
     return (
         <div className={styles.opinionItem}>
             <div className={styles.opinionInfo}>
@@ -19,14 +20,16 @@ const OpinionsListItem = ({ opinion }: ComponentType) => {
                 <StarRating rating={opinion.rating} />
             </div>
             <p className={styles.opinionText}>{opinion.message}</p>
-            <div className={styles.opinionBottomBox}>
-                <ReviewsButtons
-                    opinionId={opinion._id}
-                    author={opinion.author}
-                    message={opinion.message}
-                    rating={opinion.rating}
-                />
-            </div>
+            {isLogin && (
+                <div className={styles.opinionBottomBox}>
+                    <ReviewsButtons
+                        opinionId={opinion._id}
+                        author={opinion.author}
+                        message={opinion.message}
+                        rating={opinion.rating}
+                    />
+                </div>
+            )}
         </div>
     )
 }
