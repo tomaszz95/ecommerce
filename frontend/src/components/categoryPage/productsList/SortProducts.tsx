@@ -7,17 +7,22 @@ import styles from './SortProducts.module.css'
 type ComponentType = {
     currentPage: number
     totalPages: number
+    sort: string
 }
 
-const SortProducts = ({ currentPage, totalPages }: ComponentType) => {
-    const [selectedOption, setSelectedOption] = useState('default')
+const SortProducts = ({ currentPage, totalPages, sort }: ComponentType) => {
+    const [selectedOption, setSelectedOption] = useState(sort)
 
     const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const value = event.target.value
 
         setSelectedOption(value)
 
-        console.log(value)
+        const currentUrl = new URL(window.location.href)
+
+        currentUrl.searchParams.set('sort', event.target.value.toString())
+
+        window.location.href = currentUrl.toString()
     }
 
     return (
@@ -27,10 +32,10 @@ const SortProducts = ({ currentPage, totalPages }: ComponentType) => {
                 <select id="sort" value={selectedOption} onChange={handleSortChange}>
                     <option value="default">Default</option>
                     <option value="rating">Rating</option>
-                    <option value="price-asc">Price: Low to High</option>
-                    <option value="price-desc">Price: High to Low</option>
-                    <option value="alph-asc">Alphabetically: From a - z</option>
-                    <option value="alph-desc">Alphabetically: From z - a</option>
+                    <option value="price">Price: Low to High</option>
+                    <option value="-price">Price: High to Low</option>
+                    <option value="alphabetically">Alphabetically: From a - z</option>
+                    <option value="-alphabetically">Alphabetically: From z - a</option>
                 </select>
             </div>
             <Pagination currentPage={currentPage} totalPages={totalPages} />
