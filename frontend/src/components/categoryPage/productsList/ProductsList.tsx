@@ -10,13 +10,14 @@ type ComponentType = {
     products: categorySingleProductData[]
     currentPage: number
     totalPages: number
+    sort: string
 }
 
-const ProductsList = ({ products, currentPage, totalPages }: ComponentType) => {
+const ProductsList = ({ products, currentPage, totalPages, sort }: ComponentType) => {
     return (
         <section className={styles.productsSection}>
-            <SortProducts currentPage={currentPage} totalPages={totalPages} />
-            {/* <ul className={styles.productsList}>
+            <SortProducts currentPage={currentPage} totalPages={totalPages} sort={sort} />
+            <ul className={styles.productsList}>
                 {products.length === 0 ? (
                     <p className={styles.noProducts}>No products with selected filters</p>
                 ) : (
@@ -25,9 +26,9 @@ const ProductsList = ({ products, currentPage, totalPages }: ComponentType) => {
             </ul>
             {products.length !== 0 && (
                 <div className={styles.productsSectionPagination}>
-                    <Pagination productsLength={products.length} />
+                    <Pagination currentPage={currentPage} totalPages={totalPages} />
                 </div>
-            )} */}
+            )}
         </section>
     )
 }

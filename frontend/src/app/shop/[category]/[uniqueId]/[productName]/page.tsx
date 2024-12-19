@@ -17,7 +17,7 @@ const SingleProductPage = async ({ params }: Props) => {
     const { uniqueId } = params
 
     try {
-        const response = await fetch(`${API_URL}/api/products/${uniqueId}?timestamp=${Date.now()}`)
+        const response = await fetch(`${API_URL}/api/products/product/${uniqueId}?timestamp=${Date.now()}`)
 
         if (!response.ok) {
             throw new Error('Product not found')

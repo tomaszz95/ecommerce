@@ -1,9 +1,10 @@
 const VALID_SORT_OPTIONS = {
 	price: 'price',
 	'-price': '-price',
-	reviews: '-reviews',
+	rating: '-averageRating',
 	alphabetically: 'name',
 	'-alphabetically': '-name',
+	default: '-createdAt',
 }
 
 const DEFAULT_LIMIT = 6

@@ -2,33 +2,36 @@ import Image from 'next/image'
 
 import StarRating from '../../../components/starRating/StarRating'
 
-import getBrandLogo from '../../../helpers/getBrandLogo'
 import SpeechBubbleIcon from '../../../assets/icons/speechbubble.svg'
-
-import { productType } from '../../../types/types'
+import getBrandLogo from '../../../helpers/getBrandLogo'
 
 import styles from './ProductListItemInfo.module.css'
 
 type ComponentType = {
-    product: productType
+    averageRating: number
+    numOfReviews: number
+    company: string
+    description: string
 }
 
-const ProductListItemInfo = ({ product }: ComponentType) => {
-    const brandLogo = getBrandLogo(product.company)
+const ProductListItemInfo = ({ averageRating, numOfReviews, company, description }: ComponentType) => {
+    const brandLogo = getBrandLogo(company)
 
     return (
         <div className={styles.listInfoBox}>
             <div className={styles.listAdditionalInfoBox}>
                 <div className={styles.listAdditionalInfoBoxOpinions}>
-                    <StarRating rating={opinions ? opinions.opinionsAverage : 0} />
+                    <StarRating rating={averageRating} />
                     <div className={styles.productOpinions}>
                         <Image src={SpeechBubbleIcon} alt="" />
-                        <p>{opinionsText}</p>
+                        <p>
+                            {numOfReviews} {numOfReviews === 1 ? 'opinion' : 'opinions'}
+                        </p>
                     </div>
                 </div>
-                {brandLogo && <Image src={brandLogo} alt={`${product.company} logo`} />}
+                {brandLogo && <Image src={brandLogo} alt={`${company} logo`} />}
             </div>
-            <p className={styles.listInfoDescription}>{product.description}</p>
+            <p className={styles.listInfoDescription}>{description}</p>
         </div>
     )
 }

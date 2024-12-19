@@ -25,10 +25,11 @@ const VALID_CATEGORIES = [
 	'smartwatches',
 ]
 
-const VALID_SORT_OPTIONS = ['price', '-price', 'reviews', 'alphabetically', '-alphabetically']
+const VALID_SORT_OPTIONS = ['price', '-price', 'rating', 'alphabetically', '-alphabetically', 'default']
 
 const queryProductsValidator = (req, res, next) => {
-	const { company, category, minPrice, maxPrice, available, isPromotion, sort } = req.query
+	const { category } = req.params
+	const { company, minPrice, maxPrice, available, isPromotion, sort } = req.query
 
 	const categoryName = category.charAt(0).toUpperCase() + category.slice(1)
 

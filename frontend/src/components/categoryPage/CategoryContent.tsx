@@ -13,15 +13,15 @@ type ComponentType = {
     products: categorySingleProductData[]
     currentPage: number
     totalPages: number
+    sort: string
 }
 
-const CategoryContent = ({ products, currentPage, totalPages }: ComponentType) => {
-    console.log(products)
+const CategoryContent = ({ products, currentPage, totalPages, sort }: ComponentType) => {
     return (
         <div className={styles.container}>
             {/* <FiltrationSection products={initialProducts} /> */}
 
-            <ProductsList products={products} totalPages={totalPages} currentPage={currentPage} />
+            <ProductsList products={products} totalPages={totalPages} currentPage={currentPage} sort={sort} />
         </div>
     )
 }

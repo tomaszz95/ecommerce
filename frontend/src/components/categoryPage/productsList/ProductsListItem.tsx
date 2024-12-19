@@ -7,35 +7,38 @@ import HightlightButton from '../../../components/UI/buttons/HightlightButton'
 
 import createLinkFromProductName from '../../../components/utils/createLinkFromProductName'
 
-import { homepageSingleProductData } from '../../../types/types'
+import { API_URL, FRONTEND_URL } from '../../../constans/url'
+
+import { categorySingleProductData } from '../../../types/types'
 
 import styles from './ProductsListItem.module.css'
 
 type ComponentType = {
-    product: homepageSingleProductData
+    product: categorySingleProductData
 }
 
 const ProductsListItem = ({ product }: ComponentType) => {
-    const productLink = createLinkFromProductName(product.name)
-
+    const productName = createLinkFromProductName(product.name)
+    const productLink = `${FRONTEND_URL}/shop/${product.category.toLocaleLowerCase()}/${product.uniqueId}/${productName}`
+    console.log(productLink)
     return (
-        <li className={`${styles.listItem} ${product.recommended. ? styles.recommended : ''}`}>
+        <li className={`${styles.listItem} ${product.recommended ? styles.recommended : ''}`}>
             {product.recommended && <span className={styles.recommendedText}>Recommended</span>}
             <div className={styles.listMainDataBox}>
                 <h2>{product.name}</h2>
-                <Image src={product.images[0]} alt={product.name} />
+                <Image src={`${API_URL}/photos/${product.image}`} width={1000} height={1000} alt={product.name} />
             </div>
-            <ProductListItemInfo product={product} />
+            <ProductListItemInfo
+                averageRating={product.averageRating}
+                numOfReviews={product.numOfReviews}
+                company={product.company}
+                description={product.description}
+            />
             <div className={styles.listSaleBox}>
-                <CurrentPrice
-                    price={product.price}
-                    promotion={product.promotion.isPromotion}
-                    promotionPercent={product.promotion.promotionPercent}
-                    isBig
-                />
+                <CurrentPrice price={product.price} promotionPrice={product.promotion.promotionPrice} isBig />
                 <BuyMenuBenefits stock={product.stock} />
                 <div className={styles.listSaleBoxBtn}>
-                    <HightlightButton href={`${product.category.link}/${productLink}`}>Show more</HightlightButton>
+                    <HightlightButton href={productLink}>Show more</HightlightButton>
                 </div>
             </div>
         </li>

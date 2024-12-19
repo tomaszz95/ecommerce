@@ -2,8 +2,6 @@
 
 import { useState } from 'react'
 
-import { API_URL } from '../../constans/url'
-
 import styles from './Pagination.module.css'
 
 type ComponentType = {
@@ -13,27 +11,15 @@ type ComponentType = {
 
 const Pagination = ({ currentPage, totalPages }: ComponentType) => {
     const [page, setPage] = useState(currentPage)
-    const [error, setError] = useState(false)
 
     const handlePageChange = async (newPage: number) => {
         setPage(newPage)
 
-        try {
-            const currentUrl = new URL(window.location.href)
+        const currentUrl = new URL(window.location.href)
 
-            currentUrl.searchParams.set('page', newPage.toString())
+        currentUrl.searchParams.set('page', newPage.toString())
 
-            const response = await fetch(currentUrl.href)
-
-            if (!response.ok) {
-                throw new Error('Products not found')
-            }
-
-            window.history.pushState(null, '', currentUrl.toString())
-        } catch (err) {
-            console.error(err)
-            setError(true)
-        }
+        window.location.href = currentUrl.toString()
     }
 
     return (

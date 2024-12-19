@@ -130,7 +130,7 @@ const getHomepageProducts = async (req, res) => {
 
 const getFilteredProducts = async (req, res) => {
 	const queryObject = queryProductsBuilder({ ...req.query })
-console.log(req.query)
+
 	const { sortOption, limit, skip, pageNum } = queryOptionsBuilder(req.query)
 
 	const products = await Product.find(queryObject)
@@ -153,7 +153,6 @@ console.log(req.query)
 				: product.price,
 		}
 	})
-
 	const totalProducts = await Product.countDocuments(queryObject)
 
 	res.status(StatusCodes.OK).json({
