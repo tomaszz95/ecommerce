@@ -3,19 +3,26 @@ import { filterTypes } from '../../../../types/types'
 import styles from './PriceFilters.module.css'
 
 type ComponentType = {
-    filters: filterTypes
-    onFilterChange: (newFilters: Partial<filterTypes>) => void
+    priceFrom: number
+    priceTo: number
+    onFilterChange: (value: Partial<filterTypes>) => void
 }
 
-const PriceFilters = ({ filters, onFilterChange }: ComponentType) => {
+const PriceFilters = ({ priceFrom, priceTo, onFilterChange }: ComponentType) => {
     return (
         <div className={styles.priceFiltersContainer}>
             <div className={styles.priceFiltersValues}>
                 <span>$</span>
                 <input
                     placeholder="from"
-                    value={filters.priceFrom ?? ''}
-                    onChange={(e) => onFilterChange({ priceFrom: Number(e.target.value) || null })}
+                    type="number"
+                    value={priceFrom}
+                    min={0}
+                    onChange={(e) => {
+                        const newValue = e.target.value.replace(/^0+/, '')
+                        e.target.value = newValue
+                        onFilterChange({ priceFrom: Number(newValue) })
+                    }}
                     aria-label="Lowest price"
                 />
             </div>
@@ -23,8 +30,12 @@ const PriceFilters = ({ filters, onFilterChange }: ComponentType) => {
                 <span>$</span>
                 <input
                     placeholder="to"
-                    value={filters.priceTo ?? ''}
-                    onChange={(e) => onFilterChange({ priceTo: Number(e.target.value) || null })}
+                    value={priceTo}
+                    min={1}
+                    onChange={(e) => {
+                        const newValue = e.target.value.replace(/^0+/, '')
+                        onFilterChange({ priceTo: Number(newValue) })
+                    }}
                     aria-label="Highest price"
                 />
             </div>

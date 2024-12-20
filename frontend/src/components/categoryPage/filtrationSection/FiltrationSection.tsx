@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react'
 
 import AvailableFilter from './filters/AvailableFilter'
@@ -6,18 +8,19 @@ import PriceFilters from './filters/PriceFilters'
 import PromotionFilter from './filters/PromotionFilter'
 import OnClickButton from '../../../components/UI/buttons/OnClickButton'
 
-import { productType, filterTypes } from '../../../types/types'
+import { filterTypes } from '../../../types/types'
 
 import styles from './FiltrationSection.module.css'
 
-type ComponentType = {
-    products: productType[]
-    filters: filterTypes
-    onFilterChange: (newFilters: Partial<filterTypes>) => void
-    onClearFilters: () => void
-}
+const FiltrationSection = () => {
+    const [filters, setFilters] = useState<filterTypes>({
+        priceFrom: 0,
+        priceTo: 9999,
+        company: [],
+        available: false,
+        promotion: false,
+    })
 
-const FiltrationSection = ({ products, filters, onFilterChange, onClearFilters }: ComponentType) => {
     const [showMobileFilters, setShowMobileFilters] = useState(false)
 
     const showMobileFiltersHandler = () => {
@@ -28,6 +31,13 @@ const FiltrationSection = ({ products, filters, onFilterChange, onClearFilters }
         setShowMobileFilters(false)
     }
 
+    const filterChangeHandler = (value: Partial<filterTypes>) => {
+        setFilters((prevFilters) => ({
+            ...prevFilters,
+            ...value,
+        }))
+    }
+    console.log(filters)
     return (
         <section className={styles.filtrationSection}>
             <div className={`${styles.filtrationContent} ${showMobileFilters ? styles.active : ''}`}>
@@ -37,13 +47,17 @@ const FiltrationSection = ({ products, filters, onFilterChange, onClearFilters }
                 </div>
                 <div className={styles.singleFilterBox}>
                     <h3>Price</h3>
-                    <PriceFilters filters={filters} onFilterChange={onFilterChange} />
+                    <PriceFilters
+                        priceFrom={filters.priceFrom}
+                        priceTo={filters.priceTo}
+                        onFilterChange={filterChangeHandler}
+                    />
                 </div>
                 <div className={styles.singleFilterBox}>
                     <h3>Company</h3>
-                    <CompanyFilters filters={filters} onFilterChange={onFilterChange} products={products} />
+                    <CompanyFilters company={filters.company} onFilterChange={filterChangeHandler} />
                 </div>
-                <div className={styles.singleFilterBox}>
+                {/* <div className={styles.singleFilterBox}>
                     <h3>Available</h3>
                     <AvailableFilter filters={filters} onFilterChange={onFilterChange} />
                 </div>
@@ -54,7 +68,7 @@ const FiltrationSection = ({ products, filters, onFilterChange, onClearFilters }
 
                 <button className={styles.clearButton} onClick={onClearFilters}>
                     Clear filters
-                </button>
+                </button> */}
 
                 <div className={styles.filtrationButtonSection}>
                     <OnClickButton onClick={closeMobileFiltersHandler}>Apply filters</OnClickButton>

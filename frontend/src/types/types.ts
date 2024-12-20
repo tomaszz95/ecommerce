@@ -106,11 +106,11 @@ export type helpCenterItemType = {
 // FILTERS
 
 export type filterTypes = {
-    priceFrom: number | null
-    priceTo: number | null
-    selectedCompanies: string[]
-    availableOnly: boolean
-    promotionsOnly: boolean
+    priceFrom: number
+    priceTo: number
+    company: string[]
+    available: boolean
+    promotion: boolean
 }
 
 // ORDER
