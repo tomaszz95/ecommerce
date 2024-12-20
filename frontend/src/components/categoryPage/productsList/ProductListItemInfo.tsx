@@ -29,7 +29,7 @@ const ProductListItemInfo = ({ averageRating, numOfReviews, company, description
                         </p>
                     </div>
                 </div>
-                {brandLogo && <Image src={brandLogo} alt={`${company} logo`} />}
+                {brandLogo && <Image width={100} src={brandLogo} alt={`${company} logo`} />}
             </div>
             <p className={styles.listInfoDescription}>{description}</p>
         </div>

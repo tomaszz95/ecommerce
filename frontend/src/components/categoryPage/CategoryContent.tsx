@@ -1,6 +1,4 @@
-'use client'
-
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 import FiltrationSection from './filtrationSection/FiltrationSection'
 import ProductsList from './productsList/ProductsList'
@@ -19,7 +17,7 @@ type ComponentType = {
 const CategoryContent = ({ products, currentPage, totalPages, sort }: ComponentType) => {
     return (
         <div className={styles.container}>
-            {/* <FiltrationSection products={initialProducts} /> */}
+            <FiltrationSection />
 
             <ProductsList products={products} totalPages={totalPages} currentPage={currentPage} sort={sort} />
         </div>

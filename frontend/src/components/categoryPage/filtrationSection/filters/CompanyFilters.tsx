@@ -1,46 +1,41 @@
+import capitalizeFirstLetter from '../../../../components/utils/capitalizeFirstLetter'
+
 import brandLogos from '../../../../constans/brandLogos'
 
-import capitalizeFirstLetter from '../../../utils/capitalizeFirstLetter'
-import { filterTypes, productType } from '../../../../types/types'
+import { filterTypes } from '../../../../types/types'
 
 import styles from './CompanyFilters.module.css'
 
 type ComponentType = {
-    products: productType[]
-    filters: filterTypes
-    onFilterChange: (newFilters: Partial<filterTypes>) => void
+    company: string[]
+    onFilterChange: (value: Partial<filterTypes>) => void
 }
 
-const CompanyFilters = ({ filters, onFilterChange, products }: ComponentType) => {
-    const handleCompanyChange = (company: string) => {
-        const newSelectedCompanies = filters.selectedCompanies.includes(company)
-            ? filters.selectedCompanies.filter((c) => c !== company)
-            : [...filters.selectedCompanies, company]
+const CompanyFilters = ({ company, onFilterChange }: ComponentType) => {
+    const companyFilterHandler = (brandName: string) => {
+        const updatedCompanies = company.includes(brandName)
+            ? company.filter((name) => name !== brandName)
+            : [...company, brandName]
 
-        onFilterChange({ selectedCompanies: newSelectedCompanies })
+        onFilterChange({ company: updatedCompanies })
     }
-
-    const companyProductCounts = brandLogos.map((brand) => {
-        const capitalizeBrand = capitalizeFirstLetter(brand.brand)
-        const count = products.filter((product) => product.company === capitalizeBrand).length
-        return { brand: capitalizeBrand, count }
-    })
 
     return (
         <>
-            {companyProductCounts.map(({ brand, count }) => (
-                <div key={brand} className={styles.companyList}>
-                    <input
-                        type="checkbox"
-                        checked={filters.selectedCompanies.includes(brand)}
-                        onChange={() => handleCompanyChange(brand)}
-                        aria-label="Company filter"
-                    />
-                    <p>
-                        {brand} ({count})
-                    </p>
-                </div>
-            ))}
+            {brandLogos.map(({ brand }) => {
+                const brandName = capitalizeFirstLetter(brand)
+                return (
+                    <div key={brandName} className={styles.companyList}>
+                        <input
+                            type="checkbox"
+                            checked={company.includes(brandName)}
+                            onChange={() => companyFilterHandler(brandName)}
+                            aria-label="Company filter"
+                        />
+                        <p>{brandName}</p>
+                    </div>
+                )
+            })}
         </>
     )
 }
