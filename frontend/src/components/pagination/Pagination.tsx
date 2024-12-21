@@ -10,7 +10,7 @@ type ComponentType = {
 }
 
 const Pagination = ({ currentPage, totalPages }: ComponentType) => {
-    const [page, setPage] = useState(currentPage)
+    const [page, setPage] = useState(totalPages !== 0 ? currentPage : 0)
 
     const handlePageChange = async (newPage: number) => {
         setPage(newPage)
@@ -24,7 +24,11 @@ const Pagination = ({ currentPage, totalPages }: ComponentType) => {
 
     return (
         <div className={styles.pagination}>
-            <button onClick={() => handlePageChange(page - 1)} disabled={page === 1} aria-label="Go to previous page">
+            <button
+                onClick={() => handlePageChange(page - 1)}
+                disabled={page === 1 || page === 0}
+                aria-label="Go to previous page"
+            >
                 &lt;
             </button>
             <span>
@@ -32,7 +36,7 @@ const Pagination = ({ currentPage, totalPages }: ComponentType) => {
             </span>
             <button
                 onClick={() => handlePageChange(page + 1)}
-                disabled={page === totalPages}
+                disabled={page === totalPages || page === 0}
                 aria-label="Go to next page"
             >
                 &gt;

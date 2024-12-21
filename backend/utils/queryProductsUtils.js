@@ -10,30 +10,31 @@ const VALID_SORT_OPTIONS = {
 const DEFAULT_LIMIT = 6
 
 const queryProductsBuilder = query => {
-	const { company, category, minPrice, maxPrice, available, isPromotion } = query
+	const { company, category, priceFrom, priceTo, available, promotion } = query
 
 	const queryObject = {}
 
 	if (company) {
-		queryObject.company = company
+		const companyArray = company.split(',').map(c => c.trim())
+		queryObject.company = { $in: companyArray }
 	}
 
 	if (category) {
 		queryObject.category = category
 	}
 
-	if (minPrice || maxPrice) {
+	if (priceFrom || priceTo) {
 		queryObject.price = {}
-		if (minPrice) queryObject.price.$gte = Number(minPrice)
-		if (maxPrice) queryObject.price.$lte = Number(maxPrice)
+		if (priceFrom) queryObject.price.$gte = Number(priceFrom)
+		if (priceTo) queryObject.price.$lte = Number(priceTo)
 	}
 
 	if (available) {
 		queryObject.stock = { $gt: 0 }
 	}
 
-	if (isPromotion) {
-		queryObject['promotion.isPromotion'] = isPromotion === 'true'
+	if (promotion) {
+		queryObject['promotion.isPromotion'] = promotion === 'true'
 	}
 
 	return queryObject

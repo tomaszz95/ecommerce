@@ -13,10 +13,22 @@ type Props = {
 const CategoryPage = async ({ params, searchParams }: Props) => {
     const { category } = params
     const { page = '1', sort = 'default' } = searchParams
+    const { priceFrom = '1', priceTo = '9999', company = '[]', available = 'false', promotion = 'false' } = searchParams
+
+    const filterParams = {
+        priceFrom: Number(priceFrom),
+        priceTo: Number(priceTo),
+        company: company === '[]' ? [] : company.split(',').map((item) => item.trim()),
+        available: available === 'true',
+        promotion: promotion === 'true',
+    }
 
     try {
-        const url = `${API_URL}/api/products/${category}?page=${page}&sort=${sort}`
+        const sortUrl = sort === 'default' ? '' : `&sort=${sort}`
+        const filtersUrl = `${priceFrom === '1' ? '' : `&priceFrom=${priceFrom}`}${priceTo === '9999' ? '' : `&priceTo=${priceTo}`}${company !== '[]' ? `&company=${company}` : ''}${available === 'true' ? `&available=true` : ''}${promotion === 'true' ? `&promotion=true` : ''}`
 
+        const url = `${API_URL}/api/products/${category}?page=${page}${sortUrl}${filtersUrl}`
+    
         const response = await fetch(url)
 
         if (!response.ok) {
@@ -24,11 +36,17 @@ const CategoryPage = async ({ params, searchParams }: Props) => {
         }
 
         const { products, totalProducts, totalPages, currentPage } = await response.json()
-        // console.log(products)
+       
         return (
             <MainLayout>
                 <CategoryHead category={category || 'shop'} productsCount={totalProducts} />
-                <CategoryContent products={products} totalPages={totalPages} currentPage={currentPage} sort={sort} />
+                <CategoryContent
+                    products={products}
+                    totalPages={totalPages}
+                    currentPage={currentPage}
+                    sort={sort}
+                    filterParams={filterParams}
+                />
             </MainLayout>
         )
     } catch (err) {

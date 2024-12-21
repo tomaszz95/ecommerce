@@ -1,19 +1,20 @@
 const CustomError = require('../errors/index')
 
 const VALID_COMPANIES = [
-	'acer',
-	'apple',
-	'asus',
-	'intel',
-	'lenovo',
-	'logitech',
-	'microsoft',
-	'samsung',
-	'sony',
-	'xiaomi',
-	'dji',
-	'hp',
+	'Acer',
+	'Apple',
+	'Asus',
+	'Intel',
+	'Lenovo',
+	'Logitech',
+	'Microsoft',
+	'Samsung',
+	'Sony',
+	'Xiaomi',
+	'Dji',
+	'Hp',
 ]
+
 const VALID_CATEGORIES = [
 	'computers',
 	'laptops',
@@ -29,34 +30,40 @@ const VALID_SORT_OPTIONS = ['price', '-price', 'rating', 'alphabetically', '-alp
 
 const queryProductsValidator = (req, res, next) => {
 	const { category } = req.params
-	const { company, minPrice, maxPrice, available, isPromotion, sort } = req.query
+
+	const { company, priceFrom, priceTo, available, promotion, sort } = req.query
 
 	const categoryName = category.charAt(0).toUpperCase() + category.slice(1)
 
 	req.query.category = categoryName
 
 	try {
-		if (company && !VALID_COMPANIES.includes(company)) {
-			throw new CustomError.BadRequestError("We didn't find what you were looking for")
+		if (company) {
+			const companyArray = company.split(',').map(item => item.trim())
+
+			const isValid = companyArray.every(c => VALID_COMPANIES.includes(c))
+
+			if (!isValid) {
+				throw new CustomError.BadRequestError("We didn't find what you were looking for")
+			}
 		}
 
 		if (categoryName && !VALID_CATEGORIES.includes(category)) {
 			throw new CustomError.BadRequestError("We didn't find what you were looking for")
 		}
 
-		if (minPrice) {
-			if (isNaN(Number(minPrice)) || Number(minPrice) <= 0) {
+		if (priceFrom) {
+			if (isNaN(Number(priceFrom)) || Number(priceFrom) <= 0) {
+				throw new CustomError.BadRequestError("We didn't find what you were looking for")
+			}
+		}
+		if (priceTo) {
+			if (isNaN(Number(priceTo)) || Number(priceTo) <= 0) {
 				throw new CustomError.BadRequestError("We didn't find what you were looking for")
 			}
 		}
 
-		if (maxPrice) {
-			if (isNaN(Number(maxPrice)) || Number(maxPrice) <= 0) {
-				throw new CustomError.BadRequestError("We didn't find what you were looking for")
-			}
-		}
-
-		if (minPrice && maxPrice && Number(minPrice) >= Number(maxPrice)) {
+		if (priceFrom && priceTo && Number(priceFrom) >= Number(priceTo)) {
 			throw new CustomError.BadRequestError('Minimum price must be lower than maximum price')
 		}
 
@@ -64,7 +71,7 @@ const queryProductsValidator = (req, res, next) => {
 			throw new CustomError.BadRequestError("We didn't find what you were looking for")
 		}
 
-		if (isPromotion && isPromotion !== 'true') {
+		if (promotion && promotion !== 'true') {
 			throw new CustomError.BadRequestError("We didn't find what you were looking for")
 		}
 
