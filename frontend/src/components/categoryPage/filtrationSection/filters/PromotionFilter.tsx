@@ -3,17 +3,17 @@ import { filterTypes } from '../../../../types/types'
 import styles from './PromotionFilter.module.css'
 
 type ComponentType = {
-    filters: filterTypes
-    onFilterChange: (newFilters: Partial<filterTypes>) => void
+    promotion: boolean
+    onFilterChange: (value: Partial<filterTypes>) => void
 }
 
-const PromotionFilter = ({ filters, onFilterChange }: ComponentType) => {
+const PromotionFilter = ({ promotion, onFilterChange }: ComponentType) => {
     return (
         <div className={styles.promotionFiltersContainer}>
             <input
                 type="checkbox"
-                checked={filters.promotionsOnly}
-                onChange={(e) => onFilterChange({ promotionsOnly: e.target.checked })}
+                checked={promotion}
+                onChange={(e) => onFilterChange({ promotion: e.target.checked })}
                 aria-label="Show products on a sale"
             />
             <p>Show products on sale</p>

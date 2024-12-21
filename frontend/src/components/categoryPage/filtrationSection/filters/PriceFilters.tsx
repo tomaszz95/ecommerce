@@ -17,7 +17,7 @@ const PriceFilters = ({ priceFrom, priceTo, onFilterChange }: ComponentType) => 
                     placeholder="from"
                     type="number"
                     value={priceFrom}
-                    min={0}
+                    min={1}
                     onChange={(e) => {
                         const newValue = e.target.value.replace(/^0+/, '')
                         e.target.value = newValue

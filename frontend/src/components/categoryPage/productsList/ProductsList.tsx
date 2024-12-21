@@ -1,5 +1,5 @@
 import ProductsListItem from './ProductsListItem'
-import SortProducts from './SortProducts'
+import SortProducts from '../filtrationSection/sortProducts/SortProducts'
 import Pagination from '../../../components/pagination/Pagination'
 
 import { categorySingleProductData } from '../../../types/types'

@@ -57,7 +57,8 @@
     z-index: 1010;
 }
 
-.clearButton {
+.clearButton,
+.applyButton {
     position: relative;
     display: block;
     margin: 0 auto;
@@ -74,7 +75,8 @@
     border-radius: 10px;
 }
 
-.clearButton::before {
+.clearButton::before,
+.applyButton::before {
     content: '';
     position: absolute;
     top: -30px;
@@ -89,9 +91,14 @@
     z-index: 1;
 }
 
-.clearButton:hover::before {
+.clearButton:hover::before,
+.applyButton:hover::before {
     left: 130%;
     opacity: 1;
+}
+
+.applyButton {
+    display: none;
 }
 
 @media (768px < width) {
@@ -113,7 +120,7 @@
         position: relative;
         display: block;
         width: 25%;
-        min-width: 200px;
+        min-width: 320px;
     }
 
     .filtrationHeading {
@@ -127,10 +134,23 @@
     .singleFilterBox h3 {
         margin-bottom: 1rem;
     }
-}
 
-@media (768px < width) {
-    .filtrationContent {
-        min-width: 320px;
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .applyButton {
+        margin-top: 0.6rem;
+        display: block;
+        background-color: var(--main-color);
+        color: var(--pure-white);
+        max-width: 250px;
+        height: 50px;
+    }
+
+    .applyButton::before {
+        background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
     }
 }

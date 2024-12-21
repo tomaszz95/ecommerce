@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import Pagination from '../../../components/pagination/Pagination'
+import Pagination from '../../../pagination/Pagination'
 
 import styles from './SortProducts.module.css'
 
@@ -22,7 +22,13 @@ const SortProducts = ({ currentPage, totalPages, sort }: ComponentType) => {
 
         const currentUrl = new URL(window.location.href)
 
-        currentUrl.searchParams.set('sort', event.target.value.toString())
+        if (event.target.value !== 'default') {
+            currentUrl.searchParams.set('sort', event.target.value.toString())
+        } else {
+            currentUrl.searchParams.delete('sort')
+        }
+
+        currentUrl.searchParams.set('page', '1')
 
         window.location.href = currentUrl.toString()
     }
