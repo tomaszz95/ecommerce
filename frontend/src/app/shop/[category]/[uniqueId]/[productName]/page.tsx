@@ -20,7 +20,9 @@ const SingleProductPage = async ({ params }: Props) => {
         const response = await fetch(`${API_URL}/api/products/product/${uniqueId}?timestamp=${Date.now()}`)
 
         if (!response.ok) {
-            throw new Error('Product not found')
+            const errorData = await response.json()
+
+            throw new Error(errorData.msg || 'Product not found')
         }
 
         const { product, similarProducts, mayInterestProducts } = await response.json()
@@ -40,10 +42,10 @@ const SingleProductPage = async ({ params }: Props) => {
                 <MayInterestCarousel mayInterestProducts={mayInterestProducts} />
             </MainLayout>
         )
-    } catch (err) {
+    } catch (err: any) {
         return (
             <MainLayout>
-                <ServerError />
+                <ServerError errorText={err.message} />
             </MainLayout>
         )
     }

@@ -1,10 +1,15 @@
 import styles from './ServerError.module.css'
 
-const ServerError = () => {
+type ComponentType = {
+    errorText?: string
+    errorMsg?: string
+}
+
+const ServerError = ({ errorText = 'Something went wrong', errorMsg = 'Please try again later.' }: ComponentType) => {
     return (
         <div className={styles.error}>
-            <h1>Something went wrong.</h1>
-            <h2>Please try again later.</h2>
+            <h1>{errorText}</h1>
+            <h2>{errorMsg}</h2>
         </div>
     )
 }

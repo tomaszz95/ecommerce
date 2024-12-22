@@ -10,7 +10,7 @@ const VALID_SORT_OPTIONS = {
 const DEFAULT_LIMIT = 6
 
 const queryProductsBuilder = query => {
-	const { company, category, priceFrom, priceTo, available, promotion } = query
+	const { company, category, priceFrom, priceTo, available, promotion, search } = query
 
 	const queryObject = {}
 
@@ -19,7 +19,7 @@ const queryProductsBuilder = query => {
 		queryObject.company = { $in: companyArray }
 	}
 
-	if (category) {
+	if (category && category !== 'Shop') {
 		queryObject.category = category
 	}
 
@@ -35,6 +35,10 @@ const queryProductsBuilder = query => {
 
 	if (promotion) {
 		queryObject['promotion.isPromotion'] = promotion === 'true'
+	}
+
+	if (search) {
+		queryObject.name = { $regex: search.trim(), $options: 'i' }
 	}
 
 	return queryObject

@@ -20,7 +20,7 @@ type ComponentType = {
 const ProductsListItem = ({ product }: ComponentType) => {
     const productName = createLinkFromProductName(product.name)
     const productLink = `${FRONTEND_URL}/shop/${product.category.toLocaleLowerCase()}/${product.uniqueId}/${productName}`
-   
+
     return (
         <li className={`${styles.listItem} ${product.recommended ? styles.recommended : ''}`}>
             {product.recommended && <span className={styles.recommendedText}>Recommended</span>}
