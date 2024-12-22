@@ -1,40 +1,51 @@
-'use client'
-
-import { useState, useEffect } from 'react'
-
+import MainLayout from '../../components/layouts/MainLayout'
 import CategoryContent from '../../components/categoryPage/CategoryContent'
 import CategoryHead from '../../components/categoryPage/CategoryHead'
-import MainLayout from '../../components/layouts/MainLayout'
-import LoadingSpinner from '../../components/loadingSpinner/LoadingSpinner'
+import ServerError from '../../components/serverError/ServerError'
 
-import dummyProducts from '../../constans/dummyProducts'
+import buildFiltersUrl from '../../helpers/buildFiltersUrl'
+import useFetchFilterProducts from '../../hooks/useFetchFilterProducts'
 
-const ShopPage = () => {
-    const [products, setProducts] = useState<typeof dummyProducts | null>(null)
-    const [loading, setLoading] = useState(true)
+type Props = {
+    searchParams: { [key: string]: string }
+}
 
-    useEffect(() => {
-        const fetchProducts = async () => {
-            setLoading(true)
-            try {
-                await new Promise((resolve) => setTimeout(resolve, 1000))
-                setProducts(dummyProducts)
-            } catch (error) {
-                console.error('Error fetching products:', error)
-            } finally {
-                setLoading(false)
-            }
-        }
+const ShopPage = async ({ searchParams }: Props) => {
+    const filterParams = {
+        priceFrom: Number(searchParams.priceFrom || '1'),
+        priceTo: Number(searchParams.priceTo || '9999'),
+        company:
+            searchParams.company && searchParams.company !== '[]'
+                ? searchParams.company.split(',').map((item) => item.trim())
+                : [],
+        available: searchParams.available === 'true',
+        promotion: searchParams.promotion === 'true',
+    }
 
-        fetchProducts()
-    }, [])
+    try {
+        const url = buildFiltersUrl(searchParams)
 
-    return (
-        <MainLayout>
-            <CategoryHead categoryName="Shop" categorySlug="" productsCount={products?.length || 0} />
-            {loading ? <LoadingSpinner /> : <CategoryContent initialProducts={products || []} />}
-        </MainLayout>
-    )
+        const { products, totalProducts, totalPages, currentPage } = await useFetchFilterProducts(url)
+
+        return (
+            <MainLayout>
+                <CategoryHead category="shop" productsCount={totalProducts} />
+                <CategoryContent
+                    products={products}
+                    totalPages={totalPages}
+                    currentPage={currentPage}
+                    sort={searchParams.sort || 'default'}
+                    filterParams={filterParams}
+                />
+            </MainLayout>
+        )
+    } catch (err: any) {
+        return (
+            <MainLayout>
+                <ServerError errorText={err.message} errorMsg="Please provide valid filters" />
+            </MainLayout>
+        )
+    }
 }
 
 export default ShopPage

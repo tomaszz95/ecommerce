@@ -1,28 +1,45 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
-import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 
 import SearchIcon from '../../assets/icons/search.svg'
 
+import { FRONTEND_URL } from '../../constans/url'
+
 import styles from './SearchBox.module.css'
 
 const SearchBox = () => {
+    const [currentUrl, setCurrentUrl] = useState<URL | null>(null)
     const [inputSearchValue, setInputSearchValue] = useState<string>('')
     const pathname = usePathname()
-    const router = useRouter()
 
     if (pathname === '/contact') {
         return null
     }
 
+    useEffect(() => {
+        const url = new URL(window.location.href)
+
+        setCurrentUrl(url)
+        setInputSearchValue(url.searchParams.get('search') || '')
+    }, [])
+
     const inputHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        if (inputSearchValue.trim() !== '') {
-            router.push(`/shop?search=${inputSearchValue}`)
+        if (currentUrl && inputSearchValue === '') {
+            currentUrl.searchParams.delete('search')
+        } else if (currentUrl) {
+            currentUrl.searchParams.set('search', inputSearchValue)
+            currentUrl.searchParams.set('page', '1')
+        }
+
+        if (currentUrl) {
+            const properUrl = `${FRONTEND_URL}/${currentUrl?.pathname === '/' ? 'shop' : `${currentUrl.pathname}/`}${currentUrl.search}`
+
+            window.location.href = properUrl.toString()
         }
     }
 

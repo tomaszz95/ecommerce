@@ -55,6 +55,7 @@ const FiltrationSection = ({ filterParams }: ComponentType) => {
         }
 
         currentUrl.searchParams.set('page', '1')
+        currentUrl.searchParams.delete('search')
 
         window.location.href = currentUrl.toString()
     }
