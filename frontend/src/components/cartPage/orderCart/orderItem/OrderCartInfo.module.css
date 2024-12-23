@@ -33,6 +33,13 @@
 .orderItemInfoCount button {
     font-size: 2rem;
     background-color: var(--pure-white);
+    border-radius: 10px;
+    padding: 0.3rem 0.6rem;
+    transition: background-color 0.3s;
+}
+
+.orderItemInfoCount button:hover {
+    background-color: var(--dirty-white);
 }
 
 .orderItemInfoCount input {

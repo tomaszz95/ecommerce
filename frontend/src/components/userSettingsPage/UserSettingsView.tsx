@@ -1,14 +1,12 @@
-'use client'
-
 import UserSettingsForm from './UserSettingsForm'
 import UserSettingsPassword from './UserSettingsPassword'
 
-import { userType } from '../../types/types'
+import { userSettingType } from '../../types/types'
 
 import styles from './UserSettingsView.module.css'
 
 type ComponentType = {
-    userData: userType
+    userData: userSettingType
 }
 
 const UserSettingsView = ({ userData }: ComponentType) => {
@@ -17,7 +15,7 @@ const UserSettingsView = ({ userData }: ComponentType) => {
             <h1>Your settings</h1>
             <div className={styles.settings}>
                 <UserSettingsForm userData={userData} />
-                <UserSettingsPassword password={userData.credentials.password} />
+                {/* <UserSettingsPassword /> */}
             </div>
         </div>
     )

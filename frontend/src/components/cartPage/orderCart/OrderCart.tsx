@@ -1,32 +1,25 @@
-'use client'
-
 import OrderCartHeading from './OrderCartHeading'
 import OrderCartItem from './orderItem/OrderCartItem'
 
-import { orderType } from '../../../types/types'
+import { cartOrderType } from '../../../types/types'
 
 import styles from './OrderCart.module.css'
 
 type ComponentType = {
-    order: orderType
+    order: cartOrderType
 }
 
 const OrderCart = ({ order }: ComponentType) => {
-    const calculateTotalCount = (order: orderType): number => {
-        return order.products.reduce((total, item) => total + item.count, 0)
-    }
-
-    const productsCount = calculateTotalCount(order)
-
     return (
         <section className={styles.orderCart}>
-            <OrderCartHeading productsCount={productsCount} />
+            <OrderCartHeading productsCount={order.orderItems.length} orderId={order._id} />
             <ul className={styles.orderProductsList}>
-                {order.products.map((product, index) => (
+                {order.orderItems.map((product, index) => (
                     <OrderCartItem
                         product={product}
-                        key={product.product.prodId}
-                        isLast={index === order.products.length - 1}
+                        orderId={order._id}
+                        key={product.product}
+                        isLast={index === order.orderItems.length - 1}
                     />
                 ))}
             </ul>

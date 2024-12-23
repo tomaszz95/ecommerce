@@ -18,7 +18,6 @@ const ProductDetails = ({ product }: ComponentType) => {
                 company={product.company}
                 description={product.description}
                 productName={product.name}
-                productId={product._id}
                 averageRating={product.averageRating}
                 numOfReviews={product.numOfReviews}
             />

@@ -1,14 +1,17 @@
 import Image from 'next/image'
 
-import { singleProductType } from '../../../../types/types'
+import { API_URL } from '../../../../constans/url'
 
 import styles from './OrderCartInfo.module.css'
 
 type ComponentType = {
-    product: singleProductType
+    name: string
+    image: string
+    amount: number
+    orderId: string
 }
 
-const OrderCartInfo = ({ product }: ComponentType) => {
+const OrderCartInfo = ({ name, image, amount, orderId }: ComponentType) => {
     const RemoveItemCountHandler = () => {
         console.log('-1')
     }
@@ -20,14 +23,14 @@ const OrderCartInfo = ({ product }: ComponentType) => {
     return (
         <div className={styles.orderItemInfo}>
             <div className={styles.orderItemInfoText}>
-                <Image src={product.product.image} alt={product.product.name} />
-                <h3>{product.product.name}</h3>
+                <Image src={`${API_URL}/photos/${image}`} width={1000} height={1000} alt={name} />
+                <h3>{name}</h3>
             </div>
             <div className={styles.orderItemInfoCount}>
                 <button onClick={RemoveItemCountHandler} aria-label="Add  item">
                     -
                 </button>
-                <input defaultValue={product.count} />
+                <input defaultValue={amount} />
                 <button onClick={AddItemCountHandler} aria-label="Add  item">
                     +
                 </button>

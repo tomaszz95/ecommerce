@@ -7,10 +7,16 @@ type ComponentType = {
 }
 
 const CurrentPrice = ({ price, promotionPrice, isBig }: ComponentType) => {
+    const priceFixed = Math.round(price)
+    const promotionPriceFixed = Math.round(promotionPrice)
     return (
         <p className={`${styles.priceBox} ${isBig ? styles.big : ''}`}>
-            <span className={`${price !== promotionPrice ? styles.defaultPrice : styles.curPrice}`}>${price}</span>
-            {price !== promotionPrice && <span className={styles.promotionPrice}>&nbsp;&nbsp;${promotionPrice}</span>}
+            <span className={`${priceFixed !== promotionPriceFixed ? styles.defaultPrice : styles.curPrice}`}>
+                ${priceFixed}
+            </span>
+            {priceFixed !== promotionPriceFixed && (
+                <span className={styles.promotionPrice}>&nbsp;&nbsp;${promotionPriceFixed}</span>
+            )}
         </p>
     )
 }

@@ -1,5 +1,3 @@
-'use client'
-
 import { FormEvent, useState } from 'react'
 
 import useInput from '../../hooks/useInput'
@@ -7,12 +5,12 @@ import Input from '../UI/inputs/Input'
 import AuthFormButton from '../UI/buttons/AuthFormButton'
 import Modal from '../UI/Modal/Modal'
 
-import { userType } from '../../types/types'
+import { userSettingType } from '../../types/types'
 
 import styles from './UserSettingsForm.module.css'
 
 type ComponentType = {
-    userData: userType
+    userData: userSettingType
 }
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -29,7 +27,7 @@ const UserSettingsForm = ({ userData }: ComponentType) => {
         valueIsValid: nameIsValid,
         valueChangeHandler: nameChangeHandler,
         inputBlurHandler: nameBlurHandler,
-    } = useInput((value) => value.trim() !== '', userData.credentials.name || '')
+    } = useInput((value) => value.trim() !== '', userData.name || '')
 
     const {
         value: enteredEmail,
@@ -37,7 +35,7 @@ const UserSettingsForm = ({ userData }: ComponentType) => {
         valueIsValid: emailIsValid,
         valueChangeHandler: emailChangeHandler,
         inputBlurHandler: emailBlurHandler,
-    } = useInput((value) => value.trim() !== '' && emailRegex.test(value), userData.credentials.email || '')
+    } = useInput((value) => value.trim() !== '' && emailRegex.test(value), userData.email || '')
 
     const {
         value: enteredAddress,

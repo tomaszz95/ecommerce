@@ -8,7 +8,7 @@ const promoCodes = [
 
 const checkPromoCode = promoCode => {
 	const code = promoCodes.find(code => code.name.toLowerCase() === promoCode.toLowerCase())
-    
+
 	return code ? code.value : null
 }
 

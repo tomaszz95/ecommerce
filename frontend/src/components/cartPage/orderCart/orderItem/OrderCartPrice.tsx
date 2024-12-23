@@ -1,29 +1,25 @@
 import CurrentPrice from '../../../currentPrice/CurrentPrice'
 
-import { singleProductType } from '../../../../types/types'
-
 import styles from './OrderCartPrice.module.css'
 
 type ComponentType = {
-    product: singleProductType
+    totalProductPrice: number
+    price: number
+    promotionPrice: number
     isLast: boolean
 }
 
-const OrderCartPrice = ({ product, isLast }: ComponentType) => {
+const OrderCartPrice = ({ totalProductPrice, price, promotionPrice, isLast }: ComponentType) => {
+    const totalPriceRound = Math.round(totalProductPrice)
     return (
         <div className={`${styles.orderItemPriceBox} ${isLast ? styles.noBorder : ''}`}>
             <div className={styles.orderItemPrice}>
                 <p>Price</p>
-                <CurrentPrice
-                    price={product.product.price}
-                    promotion={product.product.promotion.isPromotion}
-                    promotionPercent={product.product.promotion.promotionPercent}
-                    isBig
-                />
+                <CurrentPrice price={price} promotionPrice={promotionPrice} isBig />
             </div>
             <div className={styles.orderItemValue}>
                 <p>Value</p>
-                <span>${product.totalProductPrice}</span>
+                <span>${totalPriceRound}</span>
             </div>
         </div>
     )

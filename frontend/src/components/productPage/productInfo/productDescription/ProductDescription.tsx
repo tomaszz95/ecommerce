@@ -6,24 +6,15 @@ type ComponentType = {
     company: string
     description: string
     productName: string
-    productId: string
     averageRating: number
     numOfReviews: number
 }
 
-const ProductDescription = ({
-    description,
-    productName,
-    productId,
-    company,
-    averageRating,
-    numOfReviews,
-}: ComponentType) => {
+const ProductDescription = ({ description, productName, company, averageRating, numOfReviews }: ComponentType) => {
     return (
         <div className={styles.descriptionBox}>
             <ProductHeading
                 productName={productName}
-                productId={productId}
                 company={company}
                 averageRating={averageRating}
                 numOfReviews={numOfReviews}

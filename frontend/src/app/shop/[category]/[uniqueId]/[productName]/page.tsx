@@ -1,3 +1,5 @@
+import type { Metadata } from 'next'
+
 import MainLayout from '../../../../../components/layouts/MainLayout'
 import ProductSection from '../../../../../components/productPage/productInfo/ProductSection'
 import ProductPresentation from '../../../../../components/productPage/productPresentation/ProductPresentation'
@@ -8,6 +10,29 @@ import MayInterestCarousel from '../../../../../components/productPage/mayIntere
 import ServerError from '../../../../../components/serverError/ServerError'
 
 import { API_URL } from '../../../../../constans/url'
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { uniqueId } = params
+
+    try {
+        const response = await fetch(`${API_URL}/api/products/product/${uniqueId}?timestamp=${Date.now()}`)
+        if (!response.ok) {
+            throw new Error('Failed to fetch product data')
+        }
+
+        const { product } = await response.json()
+
+        return {
+            title: `NeXtPC - ${product.name}`,
+            description: `Find out more about the ${product.name}, its features, specifications, and reviews.`,
+        }
+    } catch (error) {
+        return {
+            title: 'NeXtPC - Product',
+            description: 'Explore our wide range of products and find your perfect match.',
+        }
+    }
+}
 
 type Props = {
     params: { uniqueId: string; productName: string; category: string }

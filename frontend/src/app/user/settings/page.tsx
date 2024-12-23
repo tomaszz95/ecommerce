@@ -1,53 +1,66 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
+
+import useProtect from '../../../hooks/useProtect'
 
 import MainLayout from '../../../components/layouts/MainLayout'
 import UserSettingsView from '../../../components/userSettingsPage/UserSettingsView'
 import LoadingSpinner from '../../../components/loadingSpinner/LoadingSpinner'
+import ServerError from '../../../components/serverError/ServerError'
 
-import useProtectFromGuests from '../../../hooks/useProtect'
-import userDummy from '../../../constans/userDummy'
-
-import { userType } from '../../../types/types'
+import { API_URL } from '../../../constans/url'
 
 const UserSettingsPage = () => {
-    useProtectFromGuests()
+    useProtect({ from: 'Guest' })
 
-    const [user, setUser] = useState<userType | null>(null)
-    const [loading, setLoading] = useState(true)
+    const [userData, setUserData] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
+    const [serverError, setServerError] = useState('Something went wrong')
 
     useEffect(() => {
-        const fetchUserData = async () => {
-            setLoading(true)
+        setIsLoading(true)
+        const getUserData = async () => {
             try {
-                await new Promise((resolve) => setTimeout(resolve, 1000))
-                setUser(userDummy)
-            } catch (error) {
-                console.error('Error fetching user data:', error)
-            } finally {
-                setLoading(false)
+                const response = await fetch(`${API_URL}/api/users`, {
+                    method: 'GET',
+                    credentials: 'include',
+                })
+
+                if (!response.ok) {
+                    const errorData = await response.json()
+                    throw new Error(errorData.msg || 'User not found')
+                }
+
+                const data = await response.json()
+
+                setUserData(data)
+                setIsLoading(false)
+            } catch (err: any) {
+                setIsLoading(false)
             }
         }
 
-        fetchUserData()
+        getUserData()
     }, [])
 
-    useEffect(() => {
-        if (user) {
-            document.title = 'NeXtPC - User settings'
-            const metaDescription = document.querySelector('meta[name="description"]')
-            if (metaDescription) {
-                metaDescription.setAttribute('content', 'Manage your user settings in NeXtPC app')
-            }
-        }
-    }, [user])
+    if (isLoading) {
+        return (
+            <MainLayout>
+                <LoadingSpinner />
+            </MainLayout>
+        )
+    }
 
-    return (
-        <MainLayout>
-            {loading ? <LoadingSpinner /> : <UserSettingsView userData={user || ({} as userType)} />}
-        </MainLayout>
-    )
+    if (!isLoading && userData === null) {
+        return (
+            <MainLayout>
+                <ServerError errorText={serverError} errorMsg="Please try again later" />
+            </MainLayout>
+        )
+    }
+
+    return <MainLayout>{userData !== null && <UserSettingsView userData={userData} />}</MainLayout>
 }
 
 export default UserSettingsPage

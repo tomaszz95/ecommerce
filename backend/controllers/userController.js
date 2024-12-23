@@ -4,23 +4,16 @@ const Product = require('../models/Product')
 const { StatusCodes } = require('http-status-codes')
 const { attachCookiesToResponse } = require('../utils/jwt')
 const createTokenUser = require('../utils/createTokenUser')
-const checkPermissions = require('../utils/checkPermissions')
 const CustomError = require('../errors/index')
 
 const getSingleUser = async (req, res) => {
-	if (req.params.id.toString() !== req.user.userId.toString()) {
-		throw new CustomError.UnauthorizedError('Unauthorized')
-	}
-
-	const user = await User.findOne({ _id: req.params.id }).select('-password')
+	const user = await User.findOne({ _id: req.user.userId }).select('-password -favorites')
 
 	if (!user) {
 		throw new CustomError.NotFoundError(`No user found`)
 	}
 
-	checkPermissions(req.user, user._id)
-
-	res.status(StatusCodes.OK).json({ user })
+	res.status(StatusCodes.OK).json(user)
 }
 
 const updateUser = async (req, res) => {
