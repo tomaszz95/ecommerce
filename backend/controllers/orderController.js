@@ -11,13 +11,29 @@ const checkPromoCode = require('../utils/checkPromoCode')
 const getOrder = async (req, res) => {
 	const { orderId } = req.body
 
-	const order = await Order.findOne({ _id: orderId })
+	const order = await Order.findOne({ _id: orderId }).select(
+		'discount discountValue orderItems subtotal total user _id'
+	)
 
 	if (!order) {
 		throw new CustomError.NotFoundError('Order not found')
 	}
 
-	res.status(StatusCodes.OK).json({ order })
+	const similarProducts = await Product.find({
+		category: order.orderItems[0].category,
+	})
+		.select('_id name price category promotion uniqueId images')
+		.limit(10)
+		.lean()
+	similarProducts.forEach(item => {
+		item.image = item.images?.[0] || null
+		item.promotion.promotionPrice = item.promotion.isPromotion
+			? Math.round(item.price * (1 - item.promotion.promotionPercent / 100))
+			: item.price.toFixed()
+		delete item.images
+	})
+
+	res.status(StatusCodes.OK).json({ order, similarProducts })
 }
 
 const addToCart = async (req, res) => {
@@ -72,7 +88,7 @@ const addToCart = async (req, res) => {
 		const existingProduct = order.orderItems[existingProductIndex]
 
 		existingProduct.amount += 1
-		existingProduct.totalProductPrice = existingProduct.amount * existingProduct.promotionPrice
+		existingProduct.totalProductPrice = (existingProduct.amount * existingProduct.promotionPrice).toFixed()
 		order.orderItems[existingProductIndex] = existingProduct
 	} else {
 		const dbProduct = await Product.findOne({ _id: productId })
@@ -87,7 +103,7 @@ const addToCart = async (req, res) => {
 
 		if (promotion.isPromotion) {
 			const promotionValue = (price * promotion.promotionPercent) / 100
-			productPrice = price - promotionValue
+			productPrice = (price - promotionValue).toFixed()
 		}
 
 		const totalProductPrice = productPrice
@@ -161,13 +177,13 @@ const updateOrdersAmount = async (req, res) => {
 
 	if (amountType === 'increase') {
 		existingProduct.amount += 1
-		existingProduct.totalProductPrice = existingProduct.amount * existingProduct.promotionPrice
+		existingProduct.totalProductPrice = (existingProduct.amount * existingProduct.promotionPrice).toFixed()
 	} else if (amountType === 'decrease') {
 		existingProduct.amount -= 1
 		if (existingProduct.amount === 0) {
 			order.orderItems.splice(existingProductIndex, 1)
 		} else {
-			existingProduct.totalProductPrice = existingProduct.amount * existingProduct.promotionPrice
+			existingProduct.totalProductPrice = (existingProduct.amount * existingProduct.promotionPrice).toFixed()
 			order.orderItems[existingProductIndex] = existingProduct
 		}
 	} else {
@@ -186,15 +202,15 @@ const updateOrdersAmount = async (req, res) => {
 		subtotal += item.totalProductPrice
 	})
 
-	order.subtotal = subtotal
+	order.subtotal = subtotal.toFixed()
 
 	if (order.discountValue !== 0) {
 		const discount = (subtotal * order.discountValue) / 100
 
-		order.discount = discount
-		order.total = subtotal - discount
+		order.discount = discount.toFixed()
+		order.total = (subtotal - discount).toFixed()
 	} else {
-		order.total = subtotal
+		order.total = subtotal.toFixed()
 	}
 
 	await order.save()
@@ -202,7 +218,7 @@ const updateOrdersAmount = async (req, res) => {
 	res.status(StatusCodes.OK).json({ order: order })
 }
 
-const updateCart = async (req, res) => {
+const checkPromotionCode = async (req, res) => {
 	const { orderId, promoCode } = req.body
 
 	if (!promoCode || !orderId) {
@@ -222,20 +238,19 @@ const updateCart = async (req, res) => {
 	const promoValue = checkPromoCode(promoCode)
 
 	if (!promoValue) {
-		return res.status(StatusCodes.OK).json({ msg: 'Promo code invalid', order })
+		return res.status(StatusCodes.OK).json({ msg: 'Promo code is invalid' })
 	}
 
 	const discount = (order.subtotal * promoValue) / 100
 
-	order.discount = discount
-	order.discountValue = promoValue
-	order.total = order.subtotal - discount
+	order.discount = discount.toFixed()
+	order.discountValue = promoValue.toFixed()
+	order.total = (order.subtotal - discount).toFixed()
 
 	await order.save()
 
 	return res.status(StatusCodes.OK).json({
 		msg: 'Promo code is valid',
-		order,
 	})
 }
 
@@ -335,5 +350,5 @@ module.exports = {
 	updateOrderPayment,
 	updateOrderComment,
 	updateOrderPaid,
-	updateCart,
+	checkPromotionCode,
 }

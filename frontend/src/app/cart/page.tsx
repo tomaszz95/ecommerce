@@ -1,60 +1,106 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 import MainLayout from '../../components/layouts/MainLayout'
 import StepsChart from '../../components/stepsChart/StepsChart'
 import CartView from '../../components/cartPage/CartView'
 import SimilarCarousel from '../../components/productPage/similarProductsCarousel/SimilarCarousel'
+import ServerError from '../../components/serverError/ServerError'
 import LoadingSpinner from '../../components/loadingSpinner/LoadingSpinner'
 
-import { orderType } from '../../types/types'
+import { cartOrderType, homepageSingleProductData } from '../../types/types'
 
-import orderDummy from '../../constans/orderDummy'
+import { API_URL } from '../../constans/url'
 
 const CartPage = () => {
-    const [order, setOrder] = useState<orderType | null>(null)
-    const [loading, setLoading] = useState(true)
+    const [fetchedData, setFetchedData] = useState<{
+        order: cartOrderType | null
+        similarProducts: homepageSingleProductData[]
+    }>({
+        order: null,
+        similarProducts: [],
+    })
+    const [error, setError] = useState<string | null>(null)
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
+        setIsLoading(true)
+
         const fetchOrderData = async () => {
-            setLoading(true)
+            const orderId = localStorage.getItem('orderId') || ''
+
             try {
-                await new Promise((resolve) => setTimeout(resolve, 1000))
-                setOrder(orderDummy)
-            } catch (error) {
-                console.error('Error fetching order data:', error)
+                if (orderId === '') {
+                    setIsLoading(false)
+
+                    return setFetchedData({ order: null, similarProducts: [] })
+                }
+
+                const response = await fetch(`${API_URL}/api/orders/getOrder`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        orderId: orderId,
+                    }),
+                    credentials: 'include',
+                })
+
+                if (!response.ok) {
+                    const errorData = await response.json()
+
+                    throw new Error(errorData.msg || 'Order not found')
+                }
+
+                const orderData = await response.json()
+                setFetchedData(orderData)
+            } catch (err: any) {
+                setError(err.message)
             } finally {
-                setLoading(false)
+                setIsLoading(false)
             }
         }
 
         fetchOrderData()
     }, [])
 
-    useEffect(() => {
-        if (order) {
-            document.title = 'NeXtPC - Cart'
-            const metaDescription = document.querySelector('meta[name="description"]')
-            if (metaDescription) {
-                metaDescription.setAttribute('content', 'Cart details for your order on NeXtPC')
-            }
-        }
-    }, [order])
+    if (isLoading) {
+        return (
+            <MainLayout>
+                <StepsChart step="cart" />
+                <LoadingSpinner />
+            </MainLayout>
+        )
+    }
 
-    const productCategory = order?.products[0]?.product?.category?.name
+    if (error) {
+        return (
+            <MainLayout>
+                <StepsChart step="cart" />
+                <ServerError errorText={error} />
+            </MainLayout>
+        )
+    }
 
+    if (fetchedData.order === null) {
+        return (
+            <MainLayout>
+                <StepsChart step="cart" />
+                <ServerError
+                    errorText="No items added to cart yet"
+                    errorMsg="Please add items to buy to see your cart"
+                />
+            </MainLayout>
+        )
+    }
+    console.log(fetchedData)
     return (
         <MainLayout>
             <StepsChart step="cart" />
-            {loading ? (
-                <LoadingSpinner />
-            ) : (
-                <>
-                    <CartView order={order || ({} as orderType)} />
-                    {productCategory && <SimilarCarousel productCategory={productCategory} />}
-                </>
-            )}
+            {fetchedData.order && <CartView order={fetchedData.order} />}
+            {fetchedData.similarProducts && <SimilarCarousel similarProducts={fetchedData.similarProducts} />}
         </MainLayout>
     )
 }

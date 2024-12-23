@@ -58,6 +58,23 @@ export type categorySingleProductData = {
     numOfReviews: number
 }
 
+export type cartSingleProductData = {
+    amount: number
+    category: string
+    image: string
+    name: string
+    price: number
+    product: string
+    promotion: {
+        isPromotion: boolean
+        promotionPercent: number
+        promotionPrice: number
+    }
+    promotionPrice: number
+    stock: number
+    totalProductPrice: number
+}
+
 export type homepageProductsData = {
     recommendedProducts: homepageSingleProductData[]
     latestProducts: homepageSingleProductData[]
@@ -115,58 +132,22 @@ export type filterTypes = {
 
 // ORDER
 
-export type orderType = {
-    orderId: string
-    totalPrice: number
+export type cartOrderType = {
     discount: number
-    finalTotalPrice: number
-    comment: string
-    status: string
-    delivery: {
-        method: string
-        methodWay: string
-        informations: {
-            name: string
-            address: string
-            postalCode: string
-            city: string
-            phone: string
-            email: string
-        }
-    }
-    payment: string
-    products: singleProductType[]
-}
-
-export type singleProductType = {
-    product: {
-        name: string
-        price: number
-        image: StaticImageData
-        category: {
-            name: string
-            link: string
-        }
-        prodId: string
-        promotion: {
-            isPromotion: boolean
-            promotionPercent: number
-        }
-        stock: number
-    }
-    count: number
-    totalProductPrice: number
+    discountValue: number
+    orderItems: cartSingleProductData[]
+    subtotal: number
+    total: number
+    user: string
+    _id: string
 }
 
 // USER
 
-export type userType = {
-    userId: string
-    credentials: {
-        name: string
-        password: string
-        email: string
-    }
+export type userSettingType = {
+    email: string
+    name: string
+    _id: string
     informations: {
         address: string
         postalCode: string

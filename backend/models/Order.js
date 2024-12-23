@@ -27,6 +27,9 @@ const SingleOrderItemSchema = mongoose.Schema({
 		ref: 'Product',
 		required: true,
 	},
+	uniqueId: {
+		type: String,
+	},
 	_id: false,
 })
 

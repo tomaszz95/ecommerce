@@ -1,3 +1,5 @@
+import type { Metadata } from 'next'
+
 import MainLayout from '../../components/layouts/MainLayout'
 import CategoryContent from '../../components/categoryPage/CategoryContent'
 import CategoryHead from '../../components/categoryPage/CategoryHead'
@@ -5,6 +7,11 @@ import ServerError from '../../components/serverError/ServerError'
 
 import buildFiltersUrl from '../../helpers/buildFiltersUrl'
 import useFetchFilterProducts from '../../hooks/useFetchFilterProducts'
+
+export const metadata: Metadata = {
+    title: 'NeXtPC - Shop',
+    description: 'NextPC shop page',
+}
 
 type Props = {
     searchParams: { [key: string]: string }

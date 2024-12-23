@@ -14,6 +14,10 @@
     font-size: 1.8rem;
 }
 
+.productHeadingTitle img {
+    width: 100px;
+}
+
 .productContainer {
     display: flex;
     align-items: center;

@@ -5,10 +5,10 @@ type ComponentType = {
     promoInput: string
     setPromoInput: (value: string) => void
     isValid: boolean
-    discount: number
+    discountValue: number
 }
 
-const PromotionCode = ({ onPromoCodeHandler, promoInput, setPromoInput, isValid, discount }: ComponentType) => {
+const PromotionCode = ({ onPromoCodeHandler, promoInput, setPromoInput, isValid, discountValue }: ComponentType) => {
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             onPromoCodeHandler()
@@ -17,6 +17,7 @@ const PromotionCode = ({ onPromoCodeHandler, promoInput, setPromoInput, isValid,
 
     return (
         <div className={styles.promotionCodeContainer}>
+            {discountValue !== 0 && <p className={styles.valid}>Used promo code: Promo{discountValue}</p>}
             <div className={styles.promotionCodeBox}>
                 <input
                     placeholder="Enter promotion code"
@@ -27,7 +28,7 @@ const PromotionCode = ({ onPromoCodeHandler, promoInput, setPromoInput, isValid,
                 <button onClick={onPromoCodeHandler}>Activate</button>
             </div>
             {!isValid && <p className={styles.error}>Please enter a valid code</p>}
-            {isValid && discount > 0 && <p className={styles.valid}>Code is valid</p>}
+            {isValid && discountValue > 0 && <p className={styles.valid}>Code is valid</p>}
         </div>
     )
 }

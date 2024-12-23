@@ -4,16 +4,17 @@ import OrderCartInfo from './OrderCartInfo'
 import OrderCartPrice from './OrderCartPrice'
 import TrashIcon from '../../../../assets/icons/trash.svg'
 
-import { singleProductType } from '../../../../types/types'
+import { cartSingleProductData } from '../../../../types/types'
 
 import styles from './OrderCartItem.module.css'
 
 type ComponentType = {
-    product: singleProductType
+    product: cartSingleProductData
     isLast: boolean
+    orderId: string
 }
 
-const OrderCartItem = ({ product, isLast }: ComponentType) => {
+const OrderCartItem = ({ product, isLast, orderId }: ComponentType) => {
     const removeCartItemHandler = () => {
         console.log('delete')
     }
@@ -27,8 +28,13 @@ const OrderCartItem = ({ product, isLast }: ComponentType) => {
             >
                 <Image src={TrashIcon} alt="" />
             </button>
-            <OrderCartInfo product={product} />
-            <OrderCartPrice product={product} isLast={isLast} />
+            <OrderCartInfo name={product.name} image={product.image} amount={product.amount} orderId={orderId} />
+            <OrderCartPrice
+                totalProductPrice={product.totalProductPrice}
+                price={product.price}
+                promotionPrice={product.promotionPrice}
+                isLast={isLast}
+            />
         </div>
     )
 }

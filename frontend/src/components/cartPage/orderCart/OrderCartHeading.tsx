@@ -1,12 +1,15 @@
-import TrashIcon from '../../../assets/icons/trash.svg'
 import Image from 'next/image'
+
+import TrashIcon from '../../../assets/icons/trash.svg'
+
 import styles from './OrderCartHeading.module.css'
 
 type ComponentType = {
     productsCount: number
+    orderId: string
 }
 
-const OrderCartHeading = ({ productsCount }: ComponentType) => {
+const OrderCartHeading = ({ productsCount, orderId }: ComponentType) => {
     const clearOrderHandler = () => {
         console.log('clear order')
     }

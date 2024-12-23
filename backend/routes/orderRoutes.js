@@ -10,17 +10,17 @@ const {
 	updateOrderComment,
 	updateOrderPaid,
 	updateOrdersAmount,
-	updateCart,
+	checkPromotionCode,
 	getOrder,
 } = require('../controllers/orderController')
 
-router.get('/getOrder', getOrder)
+router.post('/getOrder', getOrder)
 
 router.post('/addToCart', addToCart)
 
 router.patch('/updateAmount', updateOrdersAmount)
 
-router.patch('/updateCart', updateCart)
+router.patch('/checkPromoCode', checkPromotionCode)
 
 router.patch('/:id/delivery', attachOrderToRequest, updateOrderDelivery)
 

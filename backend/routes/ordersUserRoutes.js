@@ -6,8 +6,8 @@ const { authenticateUser } = require('../middleware/authentication')
 
 const { getSingleUserOrder, getCurrentUserOrders } = require('../controllers/ordersUserController')
 
-router.get('/orderList', authenticateUser, getCurrentUserOrders)
+router.post('/getUser', attachOrderToRequest, authenticateUser, getSingleUserOrder)
 
-router.get('/:id', attachOrderToRequest, authenticateUser, getSingleUserOrder)
+router.post('/orderList', authenticateUser, getCurrentUserOrders)
 
 module.exports = router

@@ -10,13 +10,12 @@ import styles from './ProductHeading.module.css'
 
 type ComponentType = {
     productName: string
-    productId: string
     company: string
     averageRating: number
     numOfReviews: number
 }
 
-const ProductHeading = ({ productName, productId, company, averageRating, numOfReviews }: ComponentType) => {
+const ProductHeading = ({ productName, company, averageRating, numOfReviews }: ComponentType) => {
     const brandLogo = getBrandLogo(company)
 
     return (
