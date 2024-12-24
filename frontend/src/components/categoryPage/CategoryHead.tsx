@@ -11,6 +11,7 @@ type ComponentType = {
 
 const CategoryHead = ({ category, productsCount }: ComponentType) => {
     const categoryName = capitalizeFirstLetter(category)
+    
     return (
         <section className={styles.categoryHeadSection}>
             <Slug category={categoryName} />

@@ -16,6 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     try {
         const response = await fetch(`${API_URL}/api/products/product/${uniqueId}?timestamp=${Date.now()}`)
+
         if (!response.ok) {
             throw new Error('Failed to fetch product data')
         }

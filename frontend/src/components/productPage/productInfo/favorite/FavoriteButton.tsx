@@ -13,9 +13,10 @@ import styles from './FavoriteButton.module.css'
 
 type ComponentType = {
     productId: string
+    uniqueId: string
 }
 
-const FavoriteButton = ({ productId }: ComponentType) => {
+const FavoriteButton = ({ productId, uniqueId }: ComponentType) => {
     const [isLogin, setIsLogin] = useState(false)
     const [isFavorite, setIsFavorite] = useState(false)
     const [modalMessage, setModalMessage] = useState('')
@@ -48,7 +49,10 @@ const FavoriteButton = ({ productId }: ComponentType) => {
                 }
 
                 const favData = await favoritesResponse.json()
-                const isProductFavorite = favData.favorites.some((item: { id: string }) => item.id === productId)
+
+                const isProductFavorite = favData.favorites.some(
+                    (item: { uniqueId: string }) => item.uniqueId === uniqueId.toString(),
+                )
 
                 setIsFavorite(isProductFavorite)
             } catch (err: any) {

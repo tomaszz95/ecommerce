@@ -15,9 +15,10 @@ type ComponentType = {
     photos: string[]
     productName: string
     productId: string
+    uniqueId: string
 }
 
-const DesktopGallery = ({ photos, productName, productId }: ComponentType) => {
+const DesktopGallery = ({ photos, productName, productId, uniqueId }: ComponentType) => {
     const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(0)
 
     const handleClick = (index: number) => {
@@ -27,7 +28,7 @@ const DesktopGallery = ({ photos, productName, productId }: ComponentType) => {
     return (
         <div className={styles.imageGallery}>
             <div className={styles.mainImage}>
-                <FavoriteButton productId={productId} />
+                <FavoriteButton productId={productId} uniqueId={uniqueId} />
                 <Image
                     src={`${API_URL}/photos/${photos[selectedPhotoIndex]}`}
                     width={1000}

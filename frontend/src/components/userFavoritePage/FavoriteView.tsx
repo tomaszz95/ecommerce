@@ -1,22 +1,18 @@
 import FavoriteList from './FavoriteList'
 
-import { productType } from '../../types/types'
+import { categorySingleProductData } from '../../types/types'
 
 import styles from './FavoriteView.module.css'
 
 type ComponentType = {
-    favorites: productType[]
+    favoriteData: categorySingleProductData[]
 }
 
-const FavoriteView = ({ favorites }: ComponentType) => {
+const FavoriteView = ({ favoriteData }: ComponentType) => {
     return (
         <section className={styles.favSection}>
             <h1>Favorite products</h1>
-            {favorites.length === 0 ? (
-                <p className={styles.errorText}>No favorite products</p>
-            ) : (
-                <FavoriteList favorites={favorites} />
-            )}
+            <FavoriteList favoriteData={favoriteData} />
         </section>
     )
 }

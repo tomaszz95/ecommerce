@@ -1,23 +1,15 @@
-import { FormEvent, useState } from 'react'
-
 import useInput from '../../hooks/useInput'
+import { useSubmitForm } from '../../hooks/useSubmitForm'
 
 import Input from '../UI/inputs/Input'
 import AuthFormButton from '../UI/buttons/AuthFormButton'
 import Modal from '../UI/Modal/Modal'
 
+import { API_URL } from '../../constans/url'
+
 import styles from './UserSettingsPassword.module.css'
 
-type ComponentType = {
-    password: string
-}
-
-const UserSettingsPassword = ({ password }: ComponentType) => {
-    const [serverError, setServerError] = useState('')
-    const [isModalVisible, setIsModalVisible] = useState(false)
-    const [firstLoading, setFirstLoading] = useState(true)
-    const [isSubmitting, setIsSubmitting] = useState(false)
-
+const UserSettingsPassword = () => {
     const {
         value: enteredPassword,
         hasError: passwordInputHasError,
@@ -35,6 +27,7 @@ const UserSettingsPassword = ({ password }: ComponentType) => {
         inputBlurHandler: newPasswordBlurHandler,
         reset: resetNewPassword,
     } = useInput((value) => value.length >= 8, '')
+
     const {
         value: enteredNewRepeatPassword,
         hasError: newPasswordRepeatInputHasError,
@@ -42,7 +35,7 @@ const UserSettingsPassword = ({ password }: ComponentType) => {
         valueChangeHandler: newPasswordRepeatChangeHandler,
         inputBlurHandler: newPasswordRepeatBlurHandler,
         reset: resetNewRepeatPassword,
-    } = useInput((value) => value === enteredNewPassword && value.length >= 8)
+    } = useInput((value) => value === enteredNewPassword && value.length >= 8, '')
 
     const formIsValid =
         passwordIsValid &&
@@ -50,38 +43,52 @@ const UserSettingsPassword = ({ password }: ComponentType) => {
         newPasswordRepeatIsValid &&
         enteredNewPassword === enteredNewRepeatPassword
 
-    const submitHandler = (event: FormEvent) => {
-        event.preventDefault()
+    const validateForm = () => formIsValid
 
-        setIsSubmitting(true)
-        setFirstLoading(false)
+    const resetForm = () => {
+        resetPassword()
+        resetNewPassword()
+        resetNewRepeatPassword()
+    }
 
-        if (!formIsValid) {
-            setServerError('Please fill out all required fields correctly.')
-            setIsSubmitting(false)
-            return
-        }
+    const updatePasswordHandler = async (formData: any) => {
+        const response = await fetch(`${API_URL}/api/users/updateUserPassword`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                oldPassword: formData.oldPassword,
+                newPassword: formData.newPassword,
+            }),
+            credentials: 'include',
+        })
 
-        try {
-            setIsModalVisible(true)
-            setServerError('')
+        if (!response.ok) {
+            const errorData = await response.json()
 
-            setTimeout(() => {
-                setIsModalVisible(false)
-                setIsSubmitting(false)
-
-                resetPassword()
-                resetNewPassword()
-                resetNewRepeatPassword()
-            }, 3000)
-        } catch (err) {
-            setServerError('Something went wrong. Please try again later.')
-            setIsSubmitting(false)
+            throw new Error(errorData.msg || 'Something went wrong. Please try again later.')
         }
     }
 
+    const { serverError, isModalVisible, isSubmitting, firstLoading, submitHandler, setIsModalVisible } = useSubmitForm(
+        {
+            validateForm,
+            resetForm,
+            errorMessage: 'Please fill out all required fields correctly.',
+            onSubmit: updatePasswordHandler,
+        },
+    )
+
+    const formSubmitHandler = (event: React.FormEvent) => {
+        submitHandler(event, {
+            oldPassword: enteredPassword,
+            newPassword: enteredNewPassword,
+        })
+    }
+
     return (
-        <form className={styles.settingsContainer} onSubmit={submitHandler}>
+        <form className={styles.settingsContainer} onSubmit={formSubmitHandler}>
             <h2>Change password</h2>
             <div>
                 <h3>Current Password:</h3>
@@ -125,13 +132,13 @@ const UserSettingsPassword = ({ password }: ComponentType) => {
 
             {serverError && <p className={styles.serverError}>{serverError}</p>}
 
-            <AuthFormButton type="submit" formIsValid={formIsValid && !isSubmitting}>
+            <AuthFormButton type="submit" formIsValid={formIsValid && !isSubmitting && !isModalVisible}>
                 Change password
             </AuthFormButton>
 
-            {!firstLoading && (
+            {!firstLoading && !isSubmitting && (
                 <Modal isVisible={isModalVisible} onAnimationEnd={() => setIsModalVisible(false)}>
-                    Password has been changed
+                    {serverError ? serverError : 'Password has been changed'}
                 </Modal>
             )}
         </form>
