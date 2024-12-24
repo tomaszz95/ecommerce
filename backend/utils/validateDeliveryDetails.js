@@ -23,7 +23,7 @@ const validateDeliveryDetails = (method, methodWay, informations) => {
 	}
 
 	if (postalCode && !/^(\d{2}-\d{3}|\d{5}|\d{2}\s\d{3})$/.test(postalCode)) {
-		throw new BadRequestError('Invalid postal code format (expected: 00-000, 00000, or 00 000)')
+		throw new BadRequestError('Invalid postal code format')
 	}
 
 	if (city && city.trim().length === 0) {
@@ -31,7 +31,7 @@ const validateDeliveryDetails = (method, methodWay, informations) => {
 	}
 
 	if (phone && !/^\d{2}\s?\d{3}\s?\d{2}\s?\d{2}$|^\d{3}\s?\d{3}\s?\d{3}$|^\d{9}$/.test(phone)) {
-		throw new BadRequestError("Invalid phone number format (do not use '+' sign")
+		throw new BadRequestError('Invalid phone number format')
 	}
 
 	if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {

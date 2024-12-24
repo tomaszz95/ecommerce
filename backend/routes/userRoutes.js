@@ -17,7 +17,7 @@ router.patch('/updateUser', authenticateUser, updateUser)
 
 router.patch('/updateUserPassword', authenticateUser, updateUserPassword)
 
-router.post('/getUserFavorites', authenticateUser, getUserFavorites)
+router.get('/getUserFavorites', authenticateUser, getUserFavorites)
 
 router.patch('/updateUserFavorites', authenticateUser, updateUserFavorites)
 

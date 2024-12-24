@@ -37,6 +37,7 @@ const UserSettingsPage = () => {
                 setUserData(data)
                 setIsLoading(false)
             } catch (err: any) {
+                setServerError(err.message)
                 setIsLoading(false)
             }
         }

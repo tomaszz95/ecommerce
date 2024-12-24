@@ -15,13 +15,20 @@ type ComponentType = {
     photos: string[]
     productName: string
     productId: string
+    uniqueId: string
 }
 
-const PhotoCarousel = ({ photos, productName, productId }: ComponentType) => {
+const PhotoCarousel = ({ photos, productName, productId, uniqueId }: ComponentType) => {
     return (
         <Slider {...photoSliderSettings} className={styles.carousel}>
             {photos.map((item, index) => (
-                <SinglePhoto photo={item} key={index} productName={productName} productId={productId} />
+                <SinglePhoto
+                    photo={item}
+                    key={index}
+                    productName={productName}
+                    productId={productId}
+                    uniqueId={uniqueId}
+                />
             ))}
         </Slider>
     )

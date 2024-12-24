@@ -1,11 +1,15 @@
-import { FormEvent, useState } from 'react'
+import { useEffect, useState } from 'react'
 
+import { useSubmitForm } from '../../hooks/useSubmitForm'
 import useInput from '../../hooks/useInput'
+
 import Input from '../UI/inputs/Input'
-import AuthFormButton from '../UI/buttons/AuthFormButton'
 import Modal from '../UI/Modal/Modal'
+import AuthFormButton from '../UI/buttons/AuthFormButton'
 
 import { userSettingType } from '../../types/types'
+
+import { API_URL } from '../../constans/url'
 
 import styles from './UserSettingsForm.module.css'
 
@@ -16,18 +20,15 @@ type ComponentType = {
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const UserSettingsForm = ({ userData }: ComponentType) => {
-    const [serverError, setServerError] = useState('')
-    const [isNewData, setIsNewData] = useState(false)
-    const [firstLoading, setFirstLoading] = useState(true)
-    const [isSubmitting, setIsSubmitting] = useState(false)
-
+    const [isModified, setIsModified] = useState(false)
     const {
         value: enteredName,
         hasError: nameInputHasError,
         valueIsValid: nameIsValid,
         valueChangeHandler: nameChangeHandler,
         inputBlurHandler: nameBlurHandler,
-    } = useInput((value) => value.trim() !== '', userData.name || '')
+        reset: resetName,
+    } = useInput((value) => value.trim().length > 2, userData.name || '')
 
     const {
         value: enteredEmail,
@@ -35,6 +36,7 @@ const UserSettingsForm = ({ userData }: ComponentType) => {
         valueIsValid: emailIsValid,
         valueChangeHandler: emailChangeHandler,
         inputBlurHandler: emailBlurHandler,
+        reset: resetEmail,
     } = useInput((value) => value.trim() !== '' && emailRegex.test(value), userData.email || '')
 
     const {
@@ -43,6 +45,7 @@ const UserSettingsForm = ({ userData }: ComponentType) => {
         valueIsValid: addressIsValid,
         valueChangeHandler: addressChangeHandler,
         inputBlurHandler: addressBlurHandler,
+        reset: resetAddress,
     } = useInput((value) => value.trim() !== '', userData.informations.address || '')
 
     const {
@@ -51,6 +54,7 @@ const UserSettingsForm = ({ userData }: ComponentType) => {
         valueIsValid: postalCodeIsValid,
         valueChangeHandler: postalCodeChangeHandler,
         inputBlurHandler: postalCodeBlurHandler,
+        reset: resetPostalCode,
     } = useInput((value) => value.trim() !== '', userData.informations.postalCode || '')
 
     const {
@@ -59,6 +63,7 @@ const UserSettingsForm = ({ userData }: ComponentType) => {
         valueIsValid: cityIsValid,
         valueChangeHandler: cityChangeHandler,
         inputBlurHandler: cityBlurHandler,
+        reset: resetCity,
     } = useInput((value) => value.trim() !== '', userData.informations.city || '')
 
     const {
@@ -67,39 +72,75 @@ const UserSettingsForm = ({ userData }: ComponentType) => {
         valueIsValid: phoneIsValid,
         valueChangeHandler: phoneChangeHandler,
         inputBlurHandler: phoneBlurHandler,
+        reset: resetPhone,
     } = useInput((value) => value.trim() !== '', userData.informations.phone || '')
 
+    useEffect(() => {
+        const hasChanged =
+            enteredName !== userData.name ||
+            enteredEmail !== userData.email ||
+            enteredAddress !== userData.informations.address ||
+            enteredPostalCode !== userData.informations.postalCode ||
+            enteredCity !== userData.informations.city ||
+            enteredPhone !== userData.informations.phone
+
+        setIsModified(hasChanged)
+    }, [enteredName, enteredEmail, enteredAddress, enteredPostalCode, enteredCity, enteredPhone, userData])
+
     const formIsValid =
-        nameIsValid && emailIsValid && addressIsValid && postalCodeIsValid && cityIsValid && phoneIsValid
+        nameIsValid && emailIsValid && addressIsValid && postalCodeIsValid && cityIsValid && phoneIsValid && isModified
 
-    const submitHandler = (event: FormEvent) => {
-        event.preventDefault()
+    const validateForm = () => formIsValid
 
-        setIsSubmitting(true)
-        setFirstLoading(false)
+    const resetForm = () => {
+        resetName()
+        resetEmail()
+        resetAddress()
+        resetPostalCode()
+        resetCity()
+        resetPhone()
+        setIsModified(false)
+    }
 
-        if (!formIsValid) {
-            setServerError('Please fill out all required fields correctly.')
-            setIsSubmitting(false)
-            return
-        }
+    const submitUserDataHandler = async (formData: any) => {
+        const response = await fetch(`${API_URL}/api/users/updateUser`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+            credentials: 'include',
+        })
 
-        try {
-            setIsNewData(true)
-            setServerError('')
+        if (!response.ok) {
+            const errorData = await response.json()
 
-            setTimeout(() => {
-                setIsNewData(false)
-                setIsSubmitting(false)
-            }, 3500)
-        } catch (err) {
-            setServerError('Something went wrong. Please try again later.')
-            setIsSubmitting(false)
+            throw new Error(errorData.msg || 'Please enter correct data.')
         }
     }
 
+    const { serverError, isModalVisible, isSubmitting, firstLoading, submitHandler, setIsModalVisible } = useSubmitForm(
+        {
+            validateForm,
+            resetForm,
+            errorMessage: 'Please fill out all required fields correctly.',
+            onSubmit: submitUserDataHandler,
+        },
+    )
+
+    const formSubmitHandler = (event: React.FormEvent) => {
+        submitHandler(event, {
+            name: enteredName,
+            email: enteredEmail,
+            address: enteredAddress,
+            postalCode: enteredPostalCode,
+            city: enteredCity,
+            phone: enteredPhone,
+        })
+    }
+
     return (
-        <form className={styles.settingsContainer} onSubmit={submitHandler}>
+        <form className={styles.settingsContainer} onSubmit={formSubmitHandler}>
             <h2>Your data</h2>
             <div>
                 <h3>Name:</h3>
@@ -178,13 +219,13 @@ const UserSettingsForm = ({ userData }: ComponentType) => {
 
             {serverError && <p className={styles.serverError}>{serverError}</p>}
 
-            <AuthFormButton type="submit" formIsValid={formIsValid && !isSubmitting}>
+            <AuthFormButton type="submit" formIsValid={formIsValid && !isSubmitting && !isModalVisible}>
                 Save Changes
             </AuthFormButton>
 
-            {!firstLoading && (
-                <Modal isVisible={isNewData} onAnimationEnd={() => setIsNewData(false)}>
-                    User data has been changed
+            {!firstLoading && !isSubmitting && (
+                <Modal isVisible={isModalVisible} onAnimationEnd={() => setIsModalVisible(false)}>
+                    {serverError ? serverError : 'Your data has been updated!'}
                 </Modal>
             )}
         </form>

@@ -15,7 +15,7 @@ const UserSettingsView = ({ userData }: ComponentType) => {
             <h1>Your settings</h1>
             <div className={styles.settings}>
                 <UserSettingsForm userData={userData} />
-                {/* <UserSettingsPassword /> */}
+                <UserSettingsPassword />
             </div>
         </div>
     )

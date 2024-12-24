@@ -10,12 +10,13 @@ type ComponentType = {
     photo: string
     productName: string
     productId: string
+    uniqueId: string
 }
 
-const SinglePhoto = ({ photo, productName, productId }: ComponentType) => {
+const SinglePhoto = ({ photo, productName, productId, uniqueId }: ComponentType) => {
     return (
         <div className={styles.carouselItem}>
-            <FavoriteButton productId={productId} />
+            <FavoriteButton productId={productId} uniqueId={uniqueId} />
             <Image
                 className={styles.photo}
                 src={`${API_URL}/photos/${photo}`}

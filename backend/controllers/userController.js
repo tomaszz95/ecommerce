@@ -3,6 +3,7 @@ const Product = require('../models/Product')
 
 const { StatusCodes } = require('http-status-codes')
 const { attachCookiesToResponse } = require('../utils/jwt')
+const validateDeliveryDetails = require('../utils/validateDeliveryDetails')
 const createTokenUser = require('../utils/createTokenUser')
 const CustomError = require('../errors/index')
 
@@ -31,6 +32,8 @@ const updateUser = async (req, res) => {
 		}
 	}
 
+	validateDeliveryDetails(null, null, { email, name, address, postalCode, city, phone })
+
 	const updatedUser = await User.findOneAndUpdate(
 		{ _id: req.user.userId },
 		{ email, name, informations: { address, postalCode, city, phone } },
@@ -45,11 +48,7 @@ const updateUser = async (req, res) => {
 
 	attachCookiesToResponse({ res, user: tokenUser })
 
-	const { favorites, password, ...userResponse } = updatedUser.toObject()
-
-	res.status(StatusCodes.OK).json({
-		user: userResponse,
-	})
+	res.status(StatusCodes.OK).json('The user has been successfully updated')
 }
 
 const updateUserPassword = async (req, res) => {
@@ -59,19 +58,23 @@ const updateUserPassword = async (req, res) => {
 		throw new CustomError.BadRequestError('Please provide both values')
 	}
 
+	if (oldPassword === newPassword) {
+		throw new CustomError.BadRequestError('Your old password is identical as new password. Please use another.')
+	}
+
 	const user = await User.findOne({ _id: req.user.userId })
 
 	const isPasswordCorrect = await user.comparePassword(oldPassword)
 
 	if (!isPasswordCorrect) {
-		throw new CustomError.UnauthenticatedError('Invalid Credentials')
+		throw new CustomError.UnauthenticatedError('Please use a valid password')
 	}
 
 	user.password = newPassword
 
 	await user.save()
 
-	res.status(StatusCodes.OK).json({ msg: 'Password changed' })
+	res.status(StatusCodes.OK).json({ msg: 'Password succesfully changed' })
 }
 
 const updateUserFavorites = async (req, res) => {
@@ -112,13 +115,46 @@ const updateUserFavorites = async (req, res) => {
 }
 
 const getUserFavorites = async (req, res) => {
-	const user = await User.findOne({ _id: req.user.userId }).populate('favorites')
+	const user = await User.findOne({ _id: req.user.userId })
+		.populate({
+			path: 'favorites',
+			select:
+				'name price images category promotion uniqueId recommended company description stock averageRating numOfReviews',
+		})
+		.lean()
 
 	if (!user) {
 		throw new CustomError.NotFoundError('User not found')
 	}
 
-	res.status(StatusCodes.OK).json({ favorites: user.favorites })
+	const favorites = user.favorites.map(product => {
+		product.image = product.images[0]
+		delete product.images
+
+		product.promotion = {
+			...product.promotion,
+			promotionPrice: product.promotion.isPromotion
+				? Math.round(product.price * (1 - product.promotion.promotionPercent / 100))
+				: product.price,
+		}
+
+		return {
+			name: product.name,
+			price: product.price,
+			image: product.image,
+			category: product.category,
+			promotion: product.promotion,
+			uniqueId: product.uniqueId,
+			recommended: product.recommended,
+			company: product.company,
+			description: product.description,
+			stock: product.stock,
+			averageRating: product.averageRating,
+			numOfReviews: product.numOfReviews,
+		}
+	})
+
+	res.status(StatusCodes.OK).json({ favorites })
 }
 
 module.exports = {

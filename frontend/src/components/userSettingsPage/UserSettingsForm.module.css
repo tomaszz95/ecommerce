@@ -43,6 +43,13 @@
     animation: slideOut 0.5s forwards;
 }
 
+.serverError {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--danger-color);
+    margin-bottom: 2rem;
+}
+
 @keyframes slideIn {
     from {
         transform: translate(-50%, -100%);

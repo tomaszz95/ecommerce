@@ -25,7 +25,7 @@ const RegisterForm = () => {
         valueIsValid: nameIsValid,
         valueChangeHandler: nameChangeHandler,
         inputBlurHandler: nameBlurHandler,
-    } = useInput((value) => value.trim() !== '')
+    } = useInput((value) => value.trim().length > 2)
 
     const {
         value: enteredEmail,

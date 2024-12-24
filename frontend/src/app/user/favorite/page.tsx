@@ -2,47 +2,81 @@
 
 import { useState, useEffect } from 'react'
 
+import useProtect from '../../../hooks/useProtect'
+
 import MainLayout from '../../../components/layouts/MainLayout'
 import FavoriteView from '../../../components/userFavoritePage/FavoriteView'
 import LoadingSpinner from '../../../components/loadingSpinner/LoadingSpinner'
+import ServerError from '../../../components/serverError/ServerError'
 
-import favoriteProducts from '../../../constans/favoriteProducts'
-
-import useProtectFromGuests from '../../../hooks/useProtect'
-
-import { productType } from '../../../types/types'
+import { API_URL } from '../../../constans/url'
 
 const UserFavoritePage = () => {
-    useProtectFromGuests()
+    useProtect({ from: 'Guest' })
 
-    const [favorites, setFavorites] = useState<productType[] | null>(null)
-    const [loading, setLoading] = useState(true)
+    const [favoriteData, setFavoriteData] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
+    const [serverError, setServerError] = useState('')
 
     useEffect(() => {
-        const fetchFavorites = async () => {
-            setLoading(true)
+        setIsLoading(true)
+        const getUserData = async () => {
             try {
-                await new Promise((resolve) => setTimeout(resolve, 1000))
-                setFavorites(favoriteProducts)
-            } catch (error) {
-                console.error('Error fetching favorite products:', error)
-            } finally {
-                setLoading(false)
+                const response = await fetch(`${API_URL}/api/users/getUserFavorites`, {
+                    method: 'GET',
+                    credentials: 'include',
+                })
+
+                if (!response.ok) {
+                    const errorData = await response.json()
+                    throw new Error(errorData.msg || 'Favorites products not found')
+                }
+
+                const data = await response.json()
+
+                setFavoriteData(data.favorites)
+                setIsLoading(false)
+            } catch (err: any) {
+                setServerError(err.message)
+                setIsLoading(false)
             }
         }
 
-        fetchFavorites()
+        getUserData()
     }, [])
 
-    useEffect(() => {
-        document.title = 'NeXtPC - Favorite products'
-        const metaDescription = document.querySelector('meta[name="description"]')
-        if (metaDescription) {
-            metaDescription.setAttribute('content', 'View your favorite products on NeXtPC')
-        }
-    }, [])
+    if (isLoading) {
+        return (
+            <MainLayout>
+                <LoadingSpinner />
+            </MainLayout>
+        )
+    }
 
-    return <MainLayout>{loading ? <LoadingSpinner /> : <FavoriteView favorites={favorites || []} />}</MainLayout>
+    if (!isLoading && serverError !== '') {
+        return (
+            <MainLayout>
+                <ServerError errorText={serverError} errorMsg="Please try again later" />
+            </MainLayout>
+        )
+    }
+
+    if (!isLoading && serverError === '' && favoriteData.length === 0) {
+        return (
+            <MainLayout>
+                <ServerError
+                    errorText="No favorite products found for the user"
+                    errorMsg="If you want to add a product to your favorites, click the heart next to the item's photo"
+                />
+            </MainLayout>
+        )
+    }
+
+    return (
+        <MainLayout>
+            <FavoriteView favoriteData={favoriteData} />
+        </MainLayout>
+    )
 }
 
 export default UserFavoritePage

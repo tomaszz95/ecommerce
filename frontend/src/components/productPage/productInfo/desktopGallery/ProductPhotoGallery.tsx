@@ -7,13 +7,14 @@ type ComponentType = {
     photos: string[]
     productName: string
     productId: string
+    uniqueId: string
 }
 
-const ProductPhotoGallery = ({ photos, productName, productId }: ComponentType) => {
+const ProductPhotoGallery = ({ photos, productName, productId, uniqueId }: ComponentType) => {
     return (
         <div className={styles.photoGallery}>
-            <PhotoCarousel photos={photos} productName={productName} productId={productId} />
-            <DesktopGallery photos={photos} productName={productName} productId={productId} />
+            <PhotoCarousel photos={photos} productName={productName} productId={productId} uniqueId={uniqueId} />
+            <DesktopGallery photos={photos} productName={productName} productId={productId} uniqueId={uniqueId} />
         </div>
     )
 }

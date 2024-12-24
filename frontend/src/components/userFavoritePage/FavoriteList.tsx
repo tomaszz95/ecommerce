@@ -1,18 +1,18 @@
 import ProductsListItem from '../categoryPage/productsList/ProductsListItem'
 
-import { productType } from '../../types/types'
+import { categorySingleProductData } from '../../types/types'
 
 import styles from './FavoriteList.module.css'
 
 type ComponentType = {
-    favorites: productType[]
+    favoriteData: categorySingleProductData[]
 }
 
-const FavoriteList = ({ favorites }: ComponentType) => {
+const FavoriteList = ({ favoriteData }: ComponentType) => {
     return (
         <ul className={styles.favList}>
-            {favorites.map((favorite) => (
-                <ProductsListItem product={favorite} key={favorite.prodId} />
+            {favoriteData.map((favorite) => (
+                <ProductsListItem product={favorite} key={favorite.uniqueId} />
             ))}
         </ul>
     )
