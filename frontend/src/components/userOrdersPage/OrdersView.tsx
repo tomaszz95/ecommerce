@@ -1,18 +1,18 @@
 import OrdersList from './OrdersList'
 
-import { orderType } from '../../types/types'
+import { userOrderType } from '../../types/types'
 
 import styles from './OrdersView.module.css'
 
 type ComponentType = {
-    orders: orderType[]
+    ordersData: userOrderType[]
 }
 
-const OrdersView = ({ orders }: ComponentType) => {
+const OrdersView = ({ ordersData }: ComponentType) => {
     return (
         <section className={styles.orderSection}>
             <h1>Your orders</h1>
-            {orders.length === 0 ? <p className={styles.errorText}>No orders found</p> : <OrdersList orders={orders} />}
+            <OrdersList ordersData={ordersData} />
         </section>
     )
 }

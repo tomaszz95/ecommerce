@@ -1,23 +1,31 @@
 const Order = require('../models/Order')
 
 const { StatusCodes } = require('http-status-codes')
-const checkPermissions = require('../utils/checkPermissions')
+const CustomError = require('../errors/index')
 
-const getSingleUserOrder = async (req, res) => {
-	const order = req.order
-
-	checkPermissions(req.user, order.user)
-
-	res.status(StatusCodes.OK).json({ order })
-}
-
-const getCurrentUserOrders = async (req, res) => {
-	const orders = await Order.find({ user: req.user.userId })
+const getUserOrderList = async (req, res) => {
+	const orders = await Order.find({ user: req.user.userId }).select('delivery total payment paymentIntentId status _id')
 
 	res.status(StatusCodes.OK).json({ orders })
 }
 
+const getSingleOrder = async (req, res) => {
+	const { orderId } = req.params
+
+	if (!orderId) {
+		throw new CustomError.BadRequestError('Please provide a valid order id')
+	}
+
+	const order = await Order.findOne({ _id: orderId, user: req.user.userId }).select('-createdAt -user -userType -updatedAt')
+
+	if (!order) {
+		throw new CustomError.NotFoundError(`Please provide a valid id`)
+	}
+
+	res.status(StatusCodes.OK).json({ order })
+}
+
 module.exports = {
-	getSingleUserOrder,
-	getCurrentUserOrders,
+	getUserOrderList,
+	getSingleOrder,
 }
