@@ -1,59 +1,80 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { notFound } from 'next/navigation'
+
+import useProtect from '../../../../hooks/useProtect'
 
 import MainLayout from '../../../../components/layouts/MainLayout'
 import SingleOrderView from '../../../../components/userSingleOrderPage/SingleOrderView'
 import LoadingSpinner from '../../../../components/loadingSpinner/LoadingSpinner'
 
-import useProtectFromGuests from '../../../../hooks/useProtect'
+import ServerError from '../../../../components/serverError/ServerError'
 
-import ordersDummy from '../../../../constans/ordersDummy'
+import { API_URL } from '../../../../constans/url'
 
 type Props = {
     params: { orderId: string }
 }
 
 const UserSingleOrderPage = ({ params }: Props) => {
-    useProtectFromGuests()
+    useProtect({ from: 'Guest' })
 
-    const orderId = params.orderId
-
-    const [order, setOrder] = useState<(typeof ordersDummy)[0] | null>(null)
-    const [loading, setLoading] = useState(true)
+    const [orderData, setOrderData] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
+    const [serverError, setServerError] = useState('')
 
     useEffect(() => {
-        const fetchOrder = async () => {
-            setLoading(true)
-            try {
-                await new Promise((resolve) => setTimeout(resolve, 1000))
-                const foundOrder = ordersDummy.find((order) => order.orderId === orderId)
+        const orderId = params.orderId
 
-                if (!foundOrder) {
-                    notFound()
+        setIsLoading(true)
+
+        const getSingleOrder = async () => {
+            try {
+                const response = await fetch(`${API_URL}/api/orders/user/${orderId}`, {
+                    method: 'GET',
+                    credentials: 'include',
+                })
+
+                if (!response.ok) {
+                    const errorData = await response.json()
+
+                    throw new Error(errorData.msg || 'Order not found')
                 }
 
-                setOrder(foundOrder)
-            } catch (error) {
-                console.error('Error fetching order:', error)
-            } finally {
-                setLoading(false)
+                const data = await response.json()
+
+                setOrderData(data.order)
+                setIsLoading(false)
+            } catch (err: any) {
+                setServerError(err.message)
+                setIsLoading(false)
             }
         }
 
-        fetchOrder()
-    }, [orderId])
-
-    useEffect(() => {
-        document.title = 'NeXtPC - Order'
-        const metaDescription = document.querySelector('meta[name="description"]')
-        if (metaDescription) {
-            metaDescription.setAttribute('content', 'View details for your order on NeXtPC')
-        }
+        getSingleOrder()
     }, [])
 
-    return <MainLayout>{loading ? <LoadingSpinner /> : order ? <SingleOrderView order={order} /> : null}</MainLayout>
+    if (isLoading) {
+        return (
+            <MainLayout>
+                <LoadingSpinner />
+            </MainLayout>
+        )
+    }
+
+    if (!isLoading && serverError !== '') {
+        return (
+            <MainLayout>
+                <ServerError errorText={serverError} errorMsg="Please try again later" />
+            </MainLayout>
+        )
+    }
+    console.log(orderData)
+    return (
+        <MainLayout>
+            <SingleOrderView order={orderData} />
+        </MainLayout>
+    )
 }
 
 export default UserSingleOrderPage

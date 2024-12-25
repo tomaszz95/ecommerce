@@ -31,7 +31,7 @@ const ProductAddToCartModal = ({ price, promotionPrice, productName, photo, onCl
                 </div>
                 <div className={styles.modalButtons}>
                     <button onClick={onClose} className={styles.modalBackButton}>
-                        Back to shopping
+                        Back to shop
                     </button>
                     <HightlightButton href="/cart">Go to the cart</HightlightButton>
                 </div>

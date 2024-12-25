@@ -142,6 +142,51 @@ export type cartOrderType = {
     _id: string
 }
 
+export type userOrderType = {
+    delivery: {
+        method: string
+        methodWay: string
+        informations: {
+            address: string
+            city: string
+            email: string
+            name: string
+            phone: string
+            postalcode: string
+        }
+    }
+    payment: string
+    paymentIntentId: number
+    status: string
+    total: number
+    _id: string
+}
+
+export type singleOrderType = {
+    comment: string
+    delivery: {
+        method: string
+        methodWay: string
+        informations: {
+            address: string
+            city: string
+            email: string
+            name: string
+            phone: string
+            postalcode: string
+        }
+    }
+    discount: number
+    discountValue: number
+    orderItems: cartSingleProductData[]
+    payment: string
+    paymentIntentId: number
+    status: string
+    subtotal: number
+    total: number
+    _id: string
+}
+
 // USER
 
 export type userSettingType = {

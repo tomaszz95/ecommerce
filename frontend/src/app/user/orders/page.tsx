@@ -2,46 +2,79 @@
 
 import { useState, useEffect } from 'react'
 
+import useProtect from '../../../hooks/useProtect'
+
 import MainLayout from '../../../components/layouts/MainLayout'
 import OrdersView from '../../../components/userOrdersPage/OrdersView'
 import LoadingSpinner from '../../../components/loadingSpinner/LoadingSpinner'
+import ServerError from '../../../components/serverError/ServerError'
 
-import useProtectFromGuests from '../../../hooks/useProtect'
-import ordersDummy from '../../../constans/ordersDummy'
-
-import { orderType } from '../../../types/types'
+import { API_URL } from '../../../constans/url'
 
 const UserOrdersPage = () => {
-    useProtectFromGuests()
+    useProtect({ from: 'Guest' })
 
-    const [orders, setOrders] = useState<orderType[] | null>(null)
-    const [loading, setLoading] = useState(true)
+    const [ordersData, setOrdersData] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
+    const [serverError, setServerError] = useState('')
 
     useEffect(() => {
-        const fetchOrders = async () => {
-            setLoading(true)
+        setIsLoading(true)
+
+        const getOrdersData = async () => {
             try {
-                await new Promise((resolve) => setTimeout(resolve, 1000))
-                setOrders(ordersDummy)
-            } catch (error) {
-                console.error('Error fetching orders:', error)
-            } finally {
-                setLoading(false)
+                const response = await fetch(`${API_URL}/api/orders/user/orderList`, {
+                    method: 'GET',
+                    credentials: 'include',
+                })
+
+                if (!response.ok) {
+                    const errorData = await response.json()
+                    throw new Error(errorData.msg || 'Orders not found')
+                }
+
+                const data = await response.json()
+
+                setOrdersData(data.orders)
+                setIsLoading(false)
+            } catch (err: any) {
+                setServerError(err.message)
+                setIsLoading(false)
             }
         }
 
-        fetchOrders()
+        getOrdersData()
     }, [])
 
-    useEffect(() => {
-        document.title = 'NeXtPC - User orders'
-        const metaDescription = document.querySelector('meta[name="description"]')
-        if (metaDescription) {
-            metaDescription.setAttribute('content', 'View your orders on NeXtPC')
-        }
-    }, [])
+    if (isLoading) {
+        return (
+            <MainLayout>
+                <LoadingSpinner />
+            </MainLayout>
+        )
+    }
 
-    return <MainLayout>{loading ? <LoadingSpinner /> : <OrdersView orders={orders || []} />}</MainLayout>
+    if (!isLoading && serverError !== '') {
+        return (
+            <MainLayout>
+                <ServerError errorText={serverError} errorMsg="Please try again later" />
+            </MainLayout>
+        )
+    }
+
+    if (!isLoading && serverError === '' && ordersData.length === 0) {
+        return (
+            <MainLayout>
+                <ServerError errorText="No orders yet" errorMsg="Add product to cart to see your order" />
+            </MainLayout>
+        )
+    }
+
+    return (
+        <MainLayout>
+            <OrdersView ordersData={ordersData} />
+        </MainLayout>
+    )
 }
 
 export default UserOrdersPage

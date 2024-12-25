@@ -1,31 +1,31 @@
 import OrderSummaryItem from '../orderSummary/OrderSummaryItem'
 
-import { orderType } from '../../types/types'
+import { singleOrderType } from '../../types/types'
 
 import styles from './SingleOrderProducts.module.css'
 
 type ComponentType = {
-    order: orderType
+    order: singleOrderType
 }
 
 const SingleOrderProducts = ({ order }: ComponentType) => {
     return (
         <div className={styles.singleBox}>
             <ul className={styles.singleList}>
-                {order.products.map((product) => (
+                {order.orderItems.map((product) => (
                     <OrderSummaryItem
-                        key={product.product.prodId}
-                        productName={product.product.name}
-                        productCount={product.count}
+                        key={product.product}
+                        productName={product.name}
+                        productCount={product.amount}
                         productPrice={product.totalProductPrice}
-                        productPhoto={product.product.image}
+                        productPhoto={product.image}
                     />
                 ))}
             </ul>
             <div className={styles.priceContainer}>
                 <div className={styles.priceBox}>
                     <span>Products value:</span>
-                    <b>${order.totalPrice}</b>
+                    <b>${order.subtotal}</b>
                 </div>
                 <div className={styles.priceBox}>
                     <span>Discount:</span>
@@ -37,7 +37,7 @@ const SingleOrderProducts = ({ order }: ComponentType) => {
                 </div>
                 <div className={`${styles.priceBox} ${styles.totalPrice}`}>
                     <span>Total price:</span>
-                    <b>${order.finalTotalPrice}</b>
+                    <b>${order.total}</b>
                 </div>
             </div>
         </div>

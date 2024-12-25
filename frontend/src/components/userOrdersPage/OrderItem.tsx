@@ -1,11 +1,11 @@
 import Link from 'next/link'
 
-import { orderType } from '../../types/types'
+import { userOrderType } from '../../types/types'
 
 import styles from './OrderItem.module.css'
 
 type ComponentType = {
-    order: orderType
+    order: userOrderType
 }
 
 const OrderItem = ({ order }: ComponentType) => {
@@ -13,12 +13,12 @@ const OrderItem = ({ order }: ComponentType) => {
     const paymentText = order.payment === '' ? 'Not selected yet' : order.payment
 
     return (
-        <Link className={styles.itemBox} href={`/user/orders/${order.orderId}`} aria-label="Click to go to order">
-            <h2>Order #{order.orderId}</h2>
+        <Link className={styles.itemBox} href={`/user/orders/${order._id}`} aria-label="Click to go to order">
+            <h2>Order #{order.paymentIntentId}</h2>
             <div className={styles.itemContainer}>
                 <div className={styles.itemContent}>
                     <span className={styles.title}>Price:</span>
-                    <span className={`${styles.value} ${styles.set}`}>${order.finalTotalPrice}</span>
+                    <span className={`${styles.value} ${styles.set}`}>${order.total}</span>
                 </div>
                 <div className={styles.itemContent}>
                     <span className={styles.title}>Delivery method:</span>

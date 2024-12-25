@@ -1,18 +1,18 @@
 import OrderItem from './OrderItem'
 
-import { orderType } from '../../types/types'
+import { userOrderType } from '../../types/types'
 
 import styles from './OrdersList.module.css'
 
 type ComponentType = {
-    orders: orderType[]
+    ordersData: userOrderType[]
 }
 
-const OrdersList = ({ orders }: ComponentType) => {
+const OrdersList = ({ ordersData }: ComponentType) => {
     return (
         <ul className={styles.orderList}>
-            {orders.map((order) => (
-                <OrderItem order={order} key={order.orderId} />
+            {ordersData.map((order) => (
+                <OrderItem order={order} key={order._id} />
             ))}
         </ul>
     )
