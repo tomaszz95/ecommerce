@@ -30,7 +30,7 @@ const UserSingleOrderPage = ({ params }: Props) => {
 
         const getSingleOrder = async () => {
             try {
-                const response = await fetch(`${API_URL}/api/orders/user/${orderId}`, {
+                const response = await fetch(`${API_URL}/api/orders/user/orderList/${orderId}`, {
                     method: 'GET',
                     credentials: 'include',
                 })
@@ -62,14 +62,14 @@ const UserSingleOrderPage = ({ params }: Props) => {
         )
     }
 
-    if (!isLoading && serverError !== '') {
+    if ((!isLoading && serverError !== '') || orderData === null) {
         return (
             <MainLayout>
                 <ServerError errorText={serverError} errorMsg="Please try again later" />
             </MainLayout>
         )
     }
-    console.log(orderData)
+
     return (
         <MainLayout>
             <SingleOrderView order={orderData} />

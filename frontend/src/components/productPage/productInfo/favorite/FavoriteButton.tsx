@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 
-import PopModal from './FavoriteModal'
+import FavoriteModal from './FavoriteModal'
 
 import FavoriteIcon from '../../../../assets/icons/favoritefill.svg'
 
@@ -128,7 +128,7 @@ const FavoriteButton = ({ productId, uniqueId }: ComponentType) => {
                     <Image src={FavoriteIcon} alt="" />
                 </button>
             )}
-            {showModal && <PopModal isExiting={isExiting}>{modalMessage}</PopModal>}
+            {showModal && <FavoriteModal isExiting={isExiting}>{modalMessage}</FavoriteModal>}
         </>
     )
 }

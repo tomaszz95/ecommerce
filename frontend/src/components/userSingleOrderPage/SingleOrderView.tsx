@@ -18,9 +18,9 @@ const SingleOrderView = ({ order }: ComponentType) => {
             </h2>
             <div className={styles.singleOrderMain}>
                 <SingleOrderProducts order={order} />
-                {/* <section className={styles.orderData}>
+                <section className={styles.orderData}>
                     <SummaryData order={order} singleOrder={true} />
-                </section> */}
+                </section>
             </div>
         </div>
     )

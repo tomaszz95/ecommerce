@@ -11,6 +11,7 @@ type ComponentType = {
 
 const OrderCartPrice = ({ totalProductPrice, price, promotionPrice, isLast }: ComponentType) => {
     const totalPriceRound = Math.round(totalProductPrice)
+
     return (
         <div className={`${styles.orderItemPriceBox} ${isLast ? styles.noBorder : ''}`}>
             <div className={styles.orderItemPrice}>

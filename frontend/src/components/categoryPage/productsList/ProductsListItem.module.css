@@ -53,6 +53,30 @@
     width: 100%;
 }
 
+.favoriteButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1rem;
+    border: none;
+    border-bottom-left-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.favoriteButton.active img {
+    filter: brightness(0) saturate(100%) invert(34%) sepia(98%) saturate(7488%) hue-rotate(355deg) brightness(99%)
+        contrast(118%);
+}
+
+.favoriteButton:hover {
+    background-color: var(--lighter-grey);
+}
+
+.favoriteButton:hover img {
+    filter: brightness(0) saturate(100%) invert(34%) sepia(98%) saturate(7488%) hue-rotate(355deg) brightness(99%)
+        contrast(118%);
+}
+
 @media (1100px < width) {
     .listItem {
         display: grid;

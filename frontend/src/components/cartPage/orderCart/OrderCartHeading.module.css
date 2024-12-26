@@ -5,14 +5,18 @@
     align-items: center;
 }
 
+.orderTitle {
+    align-items: baseline;
+}
+
 .orderTitle h1 {
     margin-right: 0.5rem;
     font-size: 1.8rem;
 }
 
 .orderTitle span {
-    font-size: 1.2rem;
-    color: var(--dark-grey);
+    font-size: 1.4rem;
+    color: var(--light-grey);
 }
 
 .orderClearBtn {

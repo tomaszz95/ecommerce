@@ -12,7 +12,7 @@ const FavoriteList = ({ favoriteData }: ComponentType) => {
     return (
         <ul className={styles.favList}>
             {favoriteData.map((favorite) => (
-                <ProductsListItem product={favorite} key={favorite.uniqueId} />
+                <ProductsListItem product={favorite} key={favorite.uniqueId} isUserFav={true} />
             ))}
         </ul>
     )

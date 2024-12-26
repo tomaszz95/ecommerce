@@ -84,7 +84,7 @@ const CartPage = () => {
         )
     }
 
-    if (fetchedData.order === null) {
+    if (fetchedData.order === null || fetchedData.similarProducts.length === 0) {
         return (
             <MainLayout>
                 <StepsChart step="cart" />
@@ -95,7 +95,7 @@ const CartPage = () => {
             </MainLayout>
         )
     }
-    console.log(fetchedData)
+
     return (
         <MainLayout>
             <StepsChart step="cart" />

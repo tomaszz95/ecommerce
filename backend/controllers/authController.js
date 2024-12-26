@@ -24,7 +24,7 @@ const register = async (req, res) => {
 			throw new CustomError.NotFoundError('Something went wrong. Please try again later')
 		}
 
-		order.user = user._id
+		order.user = user._id.toString()
 		order.userType = 'User'
 
 		await order.save()
@@ -63,7 +63,7 @@ const login = async (req, res) => {
 			throw new CustomError.NotFoundError('Something went wrong. Please try again later')
 		}
 
-		order.user = user._id
+		order.user = user._id.toString()
 		order.userType = 'User'
 
 		await order.save()
