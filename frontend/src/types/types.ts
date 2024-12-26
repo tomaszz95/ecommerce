@@ -152,7 +152,7 @@ export type userOrderType = {
             email: string
             name: string
             phone: string
-            postalcode: string
+            postalCode: string
         }
     }
     payment: string
@@ -173,7 +173,7 @@ export type singleOrderType = {
             email: string
             name: string
             phone: string
-            postalcode: string
+            postalCode: string
         }
     }
     discount: number

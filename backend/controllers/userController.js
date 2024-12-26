@@ -119,7 +119,7 @@ const getUserFavorites = async (req, res) => {
 		.populate({
 			path: 'favorites',
 			select:
-				'name price images category promotion uniqueId recommended company description stock averageRating numOfReviews',
+				'name price images category promotion uniqueId recommended company description stock averageRating numOfReviews _id',
 		})
 		.lean()
 
@@ -149,6 +149,7 @@ const getUserFavorites = async (req, res) => {
 			company: product.company,
 			description: product.description,
 			stock: product.stock,
+			_id: product._id,
 			averageRating: product.averageRating,
 			numOfReviews: product.numOfReviews,
 		}

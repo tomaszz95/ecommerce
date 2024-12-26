@@ -6,12 +6,12 @@ import SummaryPayment from './SummaryPayment'
 import SummaryTitle from './SummaryTitle'
 import SummaryComment from './SummaryComment'
 
-import { orderType } from '../../../types/types'
+import { singleOrderType } from '../../../types/types'
 
 import styles from './SummaryData.module.css'
 
 type ComponentType = {
-    order: orderType
+    order: singleOrderType
     singleOrder?: boolean
 }
 

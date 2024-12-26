@@ -79,6 +79,7 @@ const OrderSchema = new mongoose.Schema(
 		},
 		paymentIntentId: {
 			type: Number,
+			immutable: true,
 		},
 		orderItems: [SingleOrderItemSchema],
 		user: {

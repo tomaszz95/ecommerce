@@ -29,7 +29,7 @@ const SingleOrderProducts = ({ order }: ComponentType) => {
                 </div>
                 <div className={styles.priceBox}>
                     <span>Discount:</span>
-                    <b>${order.discount}</b>
+                    <b>-${order.discount}</b>
                 </div>
                 <div className={styles.priceBox}>
                     <span>Delivery:</span>

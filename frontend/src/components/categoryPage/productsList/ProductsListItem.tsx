@@ -11,15 +11,43 @@ import { API_URL, FRONTEND_URL } from '../../../constans/url'
 
 import { categorySingleProductData } from '../../../types/types'
 
+import FavoriteIcon from '../../../assets/icons/favoritefill.svg'
+
 import styles from './ProductsListItem.module.css'
 
 type ComponentType = {
     product: categorySingleProductData
+    isUserFav?: boolean
 }
 
-const ProductsListItem = ({ product }: ComponentType) => {
+const ProductsListItem = ({ product, isUserFav = false }: ComponentType) => {
     const productName = createLinkFromProductName(product.name)
     const productLink = `${FRONTEND_URL}/shop/${product.category.toLocaleLowerCase()}/${product.uniqueId}/${productName}`
+
+    const deleteFromFav = async () => {
+        try {
+            const response = await fetch(`${API_URL}/api/users/updateUserFavorites`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    productId: product._id,
+                }),
+                credentials: 'include',
+            })
+
+            if (!response.ok) {
+                const errorData = await response.json()
+
+                throw new Error(errorData.msg || 'Something went wrong.')
+            }
+
+            window.location.reload()
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
     return (
         <li className={`${styles.listItem} ${product.recommended ? styles.recommended : ''}`}>
@@ -41,6 +69,17 @@ const ProductsListItem = ({ product }: ComponentType) => {
                     <HightlightButton href={productLink}>Show more</HightlightButton>
                 </div>
             </div>
+
+            {isUserFav && (
+                <button
+                    type="button"
+                    className={`${styles.favoriteButton} ${styles.active} `}
+                    onClick={deleteFromFav}
+                    aria-label="Click to delete from favorite"
+                >
+                    <Image src={FavoriteIcon} alt="" />
+                </button>
+            )}
         </li>
     )
 }

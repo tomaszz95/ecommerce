@@ -1,5 +1,9 @@
 import Image from 'next/image'
 
+import { useState } from 'react'
+
+import Modal from '../../../../components/UI/Modal/Modal'
+
 import { API_URL } from '../../../../constans/url'
 
 import styles from './OrderCartInfo.module.css'
@@ -9,15 +13,37 @@ type ComponentType = {
     image: string
     amount: number
     orderId: string
+    productId: string
 }
 
-const OrderCartInfo = ({ name, image, amount, orderId }: ComponentType) => {
-    const RemoveItemCountHandler = () => {
-        console.log('-1')
-    }
+const OrderCartInfo = ({ name, image, amount, orderId, productId }: ComponentType) => {
+    const [serverError, setServerError] = useState(false)
 
-    const AddItemCountHandler = () => {
-        console.log('+1')
+    const updateItemCountHandler = async (type: 'increase' | 'decrease') => {
+        try {
+            const response = await fetch(`${API_URL}/api/orders/updateAmount`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    orderId,
+                    productId,
+                    amountType: type,
+                }),
+                credentials: 'include',
+            })
+
+            if (!response.ok) {
+                const errorData = await response.json()
+
+                throw new Error(errorData.msg || 'Failed to update product quantity.')
+            }
+
+            window.location.reload()
+        } catch (err) {
+            setServerError(true)
+        }
     }
 
     return (
@@ -27,14 +53,19 @@ const OrderCartInfo = ({ name, image, amount, orderId }: ComponentType) => {
                 <h3>{name}</h3>
             </div>
             <div className={styles.orderItemInfoCount}>
-                <button onClick={RemoveItemCountHandler} aria-label="Add  item">
+                <button
+                    onClick={() => updateItemCountHandler('decrease')}
+                    aria-label="Decrease item count"
+                    disabled={amount === 1}
+                >
                     -
                 </button>
-                <input defaultValue={amount} />
-                <button onClick={AddItemCountHandler} aria-label="Add  item">
+                <input value={amount} readOnly />
+                <button onClick={() => updateItemCountHandler('increase')} aria-label="Increase item count">
                     +
                 </button>
             </div>
+            {serverError && <Modal isVisible={serverError}>Something went wrong. Please try again later.</Modal>}
         </div>
     )
 }

@@ -33,7 +33,6 @@
 @media (768px < width) {
     .orderItemPrice p,
     .orderItemValue p {
-        margin-bottom: 0.5rem;
         font-size: 1.1rem;
     }
 
