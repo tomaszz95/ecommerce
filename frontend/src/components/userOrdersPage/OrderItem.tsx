@@ -9,9 +9,6 @@ type ComponentType = {
 }
 
 const OrderItem = ({ order }: ComponentType) => {
-    const deliveryText = order.delivery.method === '' ? 'Not selected yet' : order.delivery.method
-    const paymentText = order.payment === '' ? 'Not selected yet' : order.payment
-
     return (
         <Link className={styles.itemBox} href={`/user/orders/${order._id}`} aria-label="Click to go to order">
             <h2>Order #{order.paymentIntentId}</h2>
@@ -23,17 +20,17 @@ const OrderItem = ({ order }: ComponentType) => {
                 <div className={styles.itemContent}>
                     <span className={styles.title}>Delivery method:</span>
                     <span
-                        className={`${styles.value} ${deliveryText === 'Not selected yet' ? styles.notSet : styles.set}`}
+                        className={`${styles.value} ${order.delivery.method === 'Not selected yet' ? styles.notSet : styles.set}`}
                     >
-                        {deliveryText}
+                        {order.delivery.method}
                     </span>
                 </div>
                 <div className={styles.itemContent}>
                     <span className={styles.title}>Payment:</span>
                     <span
-                        className={`${styles.value} ${paymentText === 'Not selected yet' ? styles.notSet : styles.set}`}
+                        className={`${styles.value} ${order.payment === 'Not selected yet' ? styles.notSet : styles.set}`}
                     >
-                        {paymentText}
+                        {order.payment}
                     </span>
                 </div>
                 <div className={styles.itemContent}>

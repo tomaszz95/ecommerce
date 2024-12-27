@@ -1,26 +1,44 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+
 import useInput from '../../../hooks/useInput'
 
 import Input from '../../UI/inputs/Input'
 
+import { emailRegex, addressRegex, postalCodeRegex, phoneRegex } from '../../../constans/dataRegexCheck'
+
 import styles from './DeliveryForm.module.css'
 
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
 type ComponentType = {
-    onFormValidationChange: (isValid: boolean, {}) => void
+    deliveryInputsData: {
+        enteredCity: string
+        enteredEmail: string
+        enteredName: string
+        enteredPhone: string
+        enteredPostalCode: string
+        enteredStreet: string
+    }
+    fieldErrors: Record<string, string>
+    onFormValidationChange: (
+        isValid: boolean,
+        deliveryData: {
+            enteredCity: string
+            enteredEmail: string
+            enteredName: string
+            enteredPhone: string
+            enteredPostalCode: string
+            enteredStreet: string
+        },
+    ) => void
 }
 
-const DeliveryForm = ({ onFormValidationChange }: ComponentType) => {
-    const [prevFormIsValid, setPrevFormIsValid] = useState(false)
-
+const DeliveryForm = ({ onFormValidationChange, deliveryInputsData, fieldErrors }: ComponentType) => {
     const {
         value: enteredName,
         hasError: nameInputHasError,
         valueIsValid: nameIsValid,
         valueChangeHandler: nameChangeHandler,
         inputBlurHandler: nameBlurHandler,
-    } = useInput((value) => value.trim() !== '')
+    } = useInput((value) => value.trim().length > 2, deliveryInputsData.enteredName || '')
 
     const {
         value: enteredStreet,
@@ -28,7 +46,7 @@ const DeliveryForm = ({ onFormValidationChange }: ComponentType) => {
         valueIsValid: streetIsValid,
         valueChangeHandler: streetChangeHandler,
         inputBlurHandler: streetBlurHandler,
-    } = useInput((value) => value.trim() !== '')
+    } = useInput((value) => addressRegex.test(value.trim()), deliveryInputsData.enteredStreet || '')
 
     const {
         value: enteredPostalCode,
@@ -36,7 +54,7 @@ const DeliveryForm = ({ onFormValidationChange }: ComponentType) => {
         valueIsValid: postalCodeIsValid,
         valueChangeHandler: postalCodeChangeHandler,
         inputBlurHandler: postalCodeBlurHandler,
-    } = useInput((value) => value.trim() !== '')
+    } = useInput((value) => postalCodeRegex.test(value.trim()), deliveryInputsData.enteredPostalCode || '')
 
     const {
         value: enteredCity,
@@ -44,7 +62,7 @@ const DeliveryForm = ({ onFormValidationChange }: ComponentType) => {
         valueIsValid: cityIsValid,
         valueChangeHandler: cityChangeHandler,
         inputBlurHandler: cityBlurHandler,
-    } = useInput((value) => value.trim() !== '')
+    } = useInput((value) => value.trim() !== '', deliveryInputsData.enteredCity || '')
 
     const {
         value: enteredPhone,
@@ -52,7 +70,7 @@ const DeliveryForm = ({ onFormValidationChange }: ComponentType) => {
         valueIsValid: phoneIsValid,
         valueChangeHandler: phoneChangeHandler,
         inputBlurHandler: phoneBlurHandler,
-    } = useInput((value) => value.trim() !== '')
+    } = useInput((value) => phoneRegex.test(value.trim()), deliveryInputsData.enteredPhone || '')
 
     const {
         value: enteredEmail,
@@ -60,25 +78,21 @@ const DeliveryForm = ({ onFormValidationChange }: ComponentType) => {
         valueIsValid: emailIsValid,
         valueChangeHandler: emailChangeHandler,
         inputBlurHandler: emailBlurHandler,
-    } = useInput((value) => emailRegex.test(value.trim()))
+    } = useInput((value) => emailRegex.test(value.trim()), deliveryInputsData.enteredEmail || '')
 
     const formIsValid = nameIsValid && streetIsValid && postalCodeIsValid && cityIsValid && phoneIsValid && emailIsValid
 
     useEffect(() => {
-        if (prevFormIsValid !== formIsValid) {
-            setPrevFormIsValid(formIsValid)
-
-            const inputsData = {
-                enteredName,
-                enteredStreet,
-                enteredPostalCode,
-                enteredCity,
-                enteredPhone,
-                enteredEmail,
-            }
-
-            onFormValidationChange(formIsValid, inputsData)
+        const inputsData = {
+            enteredName,
+            enteredStreet,
+            enteredPostalCode,
+            enteredCity,
+            enteredPhone,
+            enteredEmail,
         }
+
+        onFormValidationChange(formIsValid, inputsData)
     }, [formIsValid, enteredName, enteredStreet, enteredPostalCode, enteredCity, enteredPhone, enteredEmail])
 
     return (
@@ -88,53 +102,53 @@ const DeliveryForm = ({ onFormValidationChange }: ComponentType) => {
                 label="Full Name or Company Name"
                 id="name"
                 value={enteredName}
-                hasError={nameInputHasError}
+                hasError={nameInputHasError || !!fieldErrors.name}
                 onChange={nameChangeHandler}
                 onBlur={nameBlurHandler}
-                errorText="This field must contain only letters."
+                errorText="Name must be at least 3 characters long."
             />
             <Input
                 label="Street and House/Apartment Number"
                 id="street"
                 value={enteredStreet}
-                hasError={streetInputHasError}
+                hasError={streetInputHasError || !!fieldErrors.address}
                 onChange={streetChangeHandler}
                 onBlur={streetBlurHandler}
-                errorText="This field cannot be empty."
+                errorText="Please enter a valid address."
             />
             <Input
                 label="Postal Code"
                 id="postalCode"
                 value={enteredPostalCode}
-                hasError={postalCodeInputHasError}
+                hasError={postalCodeInputHasError || !!fieldErrors.postalCode}
                 onChange={postalCodeChangeHandler}
                 onBlur={postalCodeBlurHandler}
-                errorText="Postal code must be numeric."
+                errorText="Please enter a valid postal code."
             />
             <Input
                 label="City"
                 id="city"
                 value={enteredCity}
-                hasError={cityInputHasError}
+                hasError={cityInputHasError || !!fieldErrors.city}
                 onChange={cityChangeHandler}
                 onBlur={cityBlurHandler}
-                errorText="City must contain only letters and spaces."
+                errorText="Please enter a valid city name."
             />
             <Input
                 label="Phone"
                 id="phone"
                 value={enteredPhone}
-                hasError={phoneInputHasError}
+                hasError={phoneInputHasError || !!fieldErrors.phone}
                 onChange={phoneChangeHandler}
                 onBlur={phoneBlurHandler}
-                errorText="Phone number must be numeric."
+                errorText="Please enter a valid phone number."
                 type="tel"
             />
             <Input
                 label="Email"
                 id="email"
                 value={enteredEmail}
-                hasError={emailInputHasError}
+                hasError={emailInputHasError || !!fieldErrors.email}
                 onChange={emailChangeHandler}
                 onBlur={emailBlurHandler}
                 errorText="Please provide a valid email."

@@ -1,6 +1,6 @@
-import MainLayout from '../../../components/layouts/MainLayout'
+import MainLayout from '../../../../components/layouts/MainLayout'
 import type { Metadata } from 'next'
-import PaidView from '../../../components/paidPage/PaidView'
+import PaidView from '../../../../components/paidPage/PaidView'
 
 export const metadata: Metadata = {
     title: 'NeXtPC - Paid',

@@ -62,12 +62,11 @@ const OrderSchema = new mongoose.Schema(
 		},
 		payment: {
 			type: String,
-			enum: ['Online payment', 'Payment by card', 'Traditional transfer', 'Upon receipt'],
-			default: 'Online payment',
+			default: 'Not selected yet',
 		},
 		delivery: {
-			method: { type: String, enum: ['Store', 'Courier'], default: 'Courier' },
-			methodWay: { type: String, enum: ['FeedEx', 'Inpost', 'UPS', 'Warsaw', 'Cracow', 'Katowice'], default: 'FeedEx' },
+			method: { type: String, default: 'Not selected yet' },
+			methodWay: { type: String, default: 'Not selected yet' },
 			informations: {
 				name: { type: String, default: '' },
 				address: { type: String, default: '' },

@@ -10,11 +10,15 @@ import AuthFormButton from '../UI/buttons/AuthFormButton'
 
 import { API_URL } from '../../constans/url'
 
+import { emailRegex } from '../../constans/dataRegexCheck'
+
 import styles from './LoginForm.module.css'
 
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+type ComponentType = {
+    orderId?: string
+}
 
-const LoginForm = () => {
+const LoginForm = ({ orderId }: ComponentType) => {
     const [serverError, setServerError] = useState<string>('')
     const router = useRouter()
 
@@ -39,7 +43,7 @@ const LoginForm = () => {
     const submitHandler = async (event: FormEvent) => {
         event.preventDefault()
 
-        const orderId = localStorage.getItem('orderId')
+        const orderIdent = orderId || localStorage.getItem('orderId')
 
         if (!formIsValid) {
             setServerError('Please fill out all required fields.')
@@ -57,7 +61,7 @@ const LoginForm = () => {
                 body: JSON.stringify({
                     email: enteredEmail,
                     password: enteredPassword,
-                    orderId: orderId,
+                    orderId: orderIdent,
                 }),
                 credentials: 'include',
             })
@@ -69,7 +73,7 @@ const LoginForm = () => {
             }
 
             if (orderId) {
-                router.push('/order/delivery')
+                router.push(`/order/delivery/${orderId}`)
             } else {
                 router.push('/')
             }

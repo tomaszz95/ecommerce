@@ -11,13 +11,13 @@ import { userSettingType } from '../../types/types'
 
 import { API_URL } from '../../constans/url'
 
+import { emailRegex, addressRegex, postalCodeRegex, phoneRegex } from '../../constans/dataRegexCheck'
+
 import styles from './UserSettingsForm.module.css'
 
 type ComponentType = {
     userData: userSettingType
 }
-
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const UserSettingsForm = ({ userData }: ComponentType) => {
     const [isModified, setIsModified] = useState(false)
@@ -37,7 +37,7 @@ const UserSettingsForm = ({ userData }: ComponentType) => {
         valueChangeHandler: emailChangeHandler,
         inputBlurHandler: emailBlurHandler,
         reset: resetEmail,
-    } = useInput((value) => value.trim() !== '' && emailRegex.test(value), userData.email || '')
+    } = useInput((value) => emailRegex.test(value.trim()), userData.email || '')
 
     const {
         value: enteredAddress,
@@ -46,7 +46,7 @@ const UserSettingsForm = ({ userData }: ComponentType) => {
         valueChangeHandler: addressChangeHandler,
         inputBlurHandler: addressBlurHandler,
         reset: resetAddress,
-    } = useInput((value) => value.trim() !== '', userData.informations.address || '')
+    } = useInput((value) => addressRegex.test(value.trim()), userData.informations.address || '')
 
     const {
         value: enteredPostalCode,
@@ -55,7 +55,7 @@ const UserSettingsForm = ({ userData }: ComponentType) => {
         valueChangeHandler: postalCodeChangeHandler,
         inputBlurHandler: postalCodeBlurHandler,
         reset: resetPostalCode,
-    } = useInput((value) => value.trim() !== '', userData.informations.postalCode || '')
+    } = useInput((value) => postalCodeRegex.test(value.trim()), userData.informations.postalCode || '')
 
     const {
         value: enteredCity,
@@ -73,7 +73,7 @@ const UserSettingsForm = ({ userData }: ComponentType) => {
         valueChangeHandler: phoneChangeHandler,
         inputBlurHandler: phoneBlurHandler,
         reset: resetPhone,
-    } = useInput((value) => value.trim() !== '', userData.informations.phone || '')
+    } = useInput((value) => phoneRegex.test(value.trim()), userData.informations.phone || '')
 
     useEffect(() => {
         const hasChanged =

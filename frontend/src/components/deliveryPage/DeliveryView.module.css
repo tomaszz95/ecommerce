@@ -17,6 +17,14 @@
     width: 100%;
 }
 
+.serverError {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--danger-color);
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
 @media (1100px < width) {
     .deliveryPage {
         flex-direction: row;

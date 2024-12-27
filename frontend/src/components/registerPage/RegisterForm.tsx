@@ -11,9 +11,9 @@ import AuthFormButton from '../UI/buttons/AuthFormButton'
 
 import { API_URL } from '../../constans/url'
 
-import styles from './RegisterForm.module.css'
+import { emailRegex } from '../../constans/dataRegexCheck'
 
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+import styles from './RegisterForm.module.css'
 
 const RegisterForm = () => {
     const [serverError, setServerError] = useState('')
@@ -81,7 +81,7 @@ const RegisterForm = () => {
             }
 
             if (orderId) {
-                router.push('/order/delivery')
+                router.push(`/order/delivery/${orderId}`)
             } else {
                 router.push('/')
             }

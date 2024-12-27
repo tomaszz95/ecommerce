@@ -2,16 +2,16 @@
 
 import { useState, useEffect } from 'react'
 
-import MainLayout from '../../../components/layouts/MainLayout'
-import StepsChart from '../../../components/stepsChart/StepsChart'
-import PaymentView from '../../../components/paymentPage/PaymentView'
-import LoadingSpinner from '../../../components/loadingSpinner/LoadingSpinner'
+import MainLayout from '../../../../components/layouts/MainLayout'
+import StepsChart from '../../../../components/stepsChart/StepsChart'
+import SummaryView from '../../../../components/summaryPage/SummaryView'
+import LoadingSpinner from '../../../../components/loadingSpinner/LoadingSpinner'
 
 import orderDummy from '../../../constans/orderDummy'
 
-import { orderType } from '../../../types/types'
+import { orderType } from '../../../../types/types'
 
-const PaymentPage = () => {
+const SummaryPage = () => {
     const [order, setOrder] = useState<orderType | null>(null)
     const [loading, setLoading] = useState(true)
 
@@ -33,20 +33,20 @@ const PaymentPage = () => {
 
     useEffect(() => {
         if (order) {
-            document.title = 'NeXtPC - Payment'
+            document.title = 'NeXtPC - Summary'
             const metaDescription = document.querySelector('meta[name="description"]')
             if (metaDescription) {
-                metaDescription.setAttribute('content', 'Payment details for your order on NeXtPC')
+                metaDescription.setAttribute('content', 'Summary of your order on NeXtPC')
             }
         }
     }, [order])
 
     return (
         <MainLayout>
-            <StepsChart step="payment" />
-            {loading ? <LoadingSpinner /> : <PaymentView order={order || ({} as orderType)} />}
+            <StepsChart step="summary" />
+            {loading ? <LoadingSpinner /> : <SummaryView order={order || ({} as orderType)} />}
         </MainLayout>
     )
 }
 
-export default PaymentPage
+export default SummaryPage
