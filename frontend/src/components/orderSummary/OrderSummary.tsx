@@ -1,37 +1,35 @@
 import OrderSummaryItem from './OrderSummaryItem'
 import OrderPriceBox from './OrderPriceBox'
 
-import { orderType } from '../../types/types'
+import { singleOrderType } from '../../types/types'
 
 import styles from './OrderSummary.module.css'
 
 type ComponentType = {
     isFormValid: boolean
-    order: orderType
+    order: singleOrderType
     onHandleSubmit: () => void
-    link: string
     linkText: string
 }
 
-const OrderSummary = ({ isFormValid, order, onHandleSubmit, link, linkText }: ComponentType) => {
+const OrderSummary = ({ isFormValid, order, onHandleSubmit, linkText }: ComponentType) => {
     return (
         <section className={styles.summarySection}>
             <ul>
-                {order.products.map((product) => (
+                {order.orderItems.map((product) => (
                     <OrderSummaryItem
-                        key={product.product.prodId}
-                        productName={product.product.name}
-                        productCount={product.count}
+                        key={product.product}
+                        productName={product.name}
+                        productCount={product.amount}
                         productPrice={product.totalProductPrice}
-                        productPhoto={product.product.image}
+                        productPhoto={product.image}
                     />
                 ))}
             </ul>
             <OrderPriceBox
-                totalPrice={order.totalPrice}
-                finalTotalPrice={order.finalTotalPrice}
+                totalPrice={order.subtotal}
+                finalTotalPrice={order.total}
                 discount={order.discount}
-                link={link}
                 linkText={linkText}
                 isFormValid={isFormValid}
                 onHandleSubmit={onHandleSubmit}

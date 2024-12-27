@@ -5,20 +5,20 @@ const { authenticateUser } = require('../middleware/authentication')
 
 const { attachOrderToRequest } = require('../middleware/attachOrder')
 
+const { getOrder, addToCart, getSingleOrder, getUserOrderList } = require('../controllers/orderController')
 const {
-	addToCart,
 	updateOrderDelivery,
 	updateOrderPayment,
 	updateOrderComment,
 	updateOrderPaid,
+} = require('../controllers/orderDeliveryController')
+
+const {
 	updateOrdersAmount,
 	checkPromotionCode,
-	getOrder,
-	getSingleOrder,
-	getUserOrderList,
 	deleteWholeCart,
 	deleteSingleProduct,
-} = require('../controllers/orderController')
+} = require('../controllers/orderCartController')
 
 router.post('/getOrder', getOrder)
 
@@ -36,12 +36,12 @@ router.get('/user/orderList', authenticateUser, getUserOrderList)
 
 router.get('/user/orderList/:orderId', authenticateUser, getSingleOrder)
 
-router.patch('/:id/delivery', attachOrderToRequest, updateOrderDelivery)
+router.patch('/delivery/:id', attachOrderToRequest, updateOrderDelivery)
 
-router.patch('/:id/payment', attachOrderToRequest, updateOrderPayment)
+router.get('/payment/id', attachOrderToRequest, updateOrderPayment)
 
-router.patch('/:id/summary', attachOrderToRequest, updateOrderComment)
+router.get('/summary/id', attachOrderToRequest, updateOrderComment)
 
-router.patch('/:id/paid', attachOrderToRequest, updateOrderPaid)
+router.get('/paid/:id', attachOrderToRequest, updateOrderPaid)
 
 module.exports = router

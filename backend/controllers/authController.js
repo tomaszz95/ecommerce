@@ -26,6 +26,8 @@ const register = async (req, res) => {
 
 		order.user = user._id.toString()
 		order.userType = 'User'
+		order.delivery.informations.email = email
+		order.delivery.informations.name = name
 
 		await order.save()
 	}

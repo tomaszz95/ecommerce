@@ -12,7 +12,7 @@ type ComponentType = {
 }
 
 const SummaryPayment = ({ payment }: ComponentType) => {
-    const isChosen = payment !== ''
+    const isChosen = payment !== 'Not selected yet'
 
     const deliveryIcon =
         payment === 'Online payment'

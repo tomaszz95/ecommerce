@@ -7,9 +7,9 @@ import AuthFormButton from '../../UI/buttons/AuthFormButton'
 import Modal from '../../UI/Modal/Modal'
 import { useSubmitForm } from '../../../hooks/useSubmitForm'
 
-import styles from './NewsletterSection.module.css'
+import { emailRegex } from '../../../constans/dataRegexCheck'
 
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+import styles from './NewsletterSection.module.css'
 
 const NewsletterSection = () => {
     const {

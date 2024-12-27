@@ -34,7 +34,7 @@ const UserOrdersPage = () => {
                 }
 
                 const data = await response.json()
-console.log(data)
+
                 setOrdersData(data.orders)
                 setIsLoading(false)
             } catch (err: any) {

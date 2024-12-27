@@ -16,32 +16,41 @@ type ComponentType = {
 }
 
 const SummaryData = ({ order, singleOrder = false }: ComponentType) => {
-    const isDeliveryChosen = order.delivery.method !== '' && order.delivery.methodWay !== ''
-    const isAddressChosen = order.delivery.informations.address !== ''
-
     return (
         <>
             <section className={styles.section}>
-                <SummaryTitle title="Delivery method" link="/order/delivery" canEdit={order.status === 'Pending'} />
+                <SummaryTitle
+                    title="Delivery method"
+                    link={`/order/delivery/${order._id}`}
+                    canEdit={order.status === 'Pending'}
+                />
                 <SummaryDelivery
                     deliveryMethod={order.delivery.method}
                     deliveryWay={order.delivery.methodWay}
-                    isDeliveryChosen={isDeliveryChosen}
+                    isDeliveryChosen={order.delivery.method !== 'Not selected yet'}
                 />
             </section>
             <section className={styles.section}>
-                <SummaryTitle title="Delivery address" link="/order/delivery" canEdit={order.status === 'Pending'} />
+                <SummaryTitle
+                    title="Delivery address"
+                    link={`/order/delivery/${order._id}`}
+                    canEdit={order.status === 'Pending'}
+                />
                 <SummaryAddress
                     summaryAddress={order.delivery.informations}
                     singleOrder={singleOrder}
-                    isAddressChosen={isAddressChosen}
+                    isAddressChosen={order.delivery.informations.address !== ''}
                 />
             </section>
             <section className={styles.section}>
                 <SummaryTitle
                     title="Payment method"
-                    link="/order/payment"
-                    canEdit={order.status === 'Pending' && isDeliveryChosen && isAddressChosen}
+                    link={`/order/payment/${order._id}`}
+                    canEdit={
+                        order.status === 'Pending' &&
+                        order.delivery.method !== 'Not selected yet' &&
+                        order.payment !== 'Not selected yet'
+                    }
                 />
                 <SummaryPayment payment={order.payment} />
             </section>

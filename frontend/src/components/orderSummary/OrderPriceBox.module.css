@@ -60,9 +60,14 @@
     opacity: 1;
 }
 
-.nextButton.disabled {
+.nextButton:disabled {
     background-color: var(--lighter-grey);
     pointer-events: none;
+}
+
+.nextButton:disabled:hover::before {
+    left: -130px;
+    opacity: 0;
 }
 
 .priceBoxInfo {

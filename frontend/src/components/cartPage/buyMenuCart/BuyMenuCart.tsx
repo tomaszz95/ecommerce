@@ -19,7 +19,7 @@ type ComponentType = {
 const BuyMenuCart = ({ totalPrice, subtotalPrice, discount, discountValue, orderId }: ComponentType) => {
     const [promoInput, setPromoInput] = useState('')
     const [isValid, setIsValid] = useState(true)
-    const [linkPath, setLinkPath] = useState('/order/login-or-register')
+    const [linkPath, setLinkPath] = useState(`/order/login-or-register/${orderId}`)
 
     useEffect(() => {
         const checkAuth = async () => {
@@ -32,12 +32,12 @@ const BuyMenuCart = ({ totalPrice, subtotalPrice, discount, discountValue, order
                 const data = await response.json()
 
                 if (data.message === 'User') {
-                    setLinkPath('/order/delivery')
+                    setLinkPath(`/order/delivery/${orderId}`)
                 } else {
-                    setLinkPath('/order/login-or-register')
+                    setLinkPath(`/order/login-or-register/${orderId}`)
                 }
             } catch (error) {
-                setLinkPath('/order/login-or-register')
+                setLinkPath(`/order/login-or-register/${orderId}`)
             }
         }
 
