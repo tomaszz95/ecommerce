@@ -19,7 +19,7 @@ type ComponentType = {
 }
 
 const LoginForm = ({ orderId }: ComponentType) => {
-    const [serverError, setServerError] = useState<string>('')
+    const [serverError, setServerError] = useState('')
     const router = useRouter()
 
     const {

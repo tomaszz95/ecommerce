@@ -1,52 +1,26 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-
-import MainLayout from '../../../../components/layouts/MainLayout'
+import OrderLayout from '../../../../components/layouts/OrderLayout'
 import StepsChart from '../../../../components/stepsChart/StepsChart'
 import PaymentView from '../../../../components/paymentPage/PaymentView'
-import LoadingSpinner from '../../../../components/loadingSpinner/LoadingSpinner'
 
-import orderDummy from '../../../constans/orderDummy'
+import useMetadata from '../../../../hooks/useMetadata'
+import { useGetOrderData } from '../../../../hooks/useGetOrderData'
 
-import { orderType } from '../../../../types/types'
+type Props = {
+    params: { orderId: string }
+}
 
-const PaymentPage = () => {
-    const [order, setOrder] = useState<orderType | null>(null)
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-        const fetchOrderData = async () => {
-            setLoading(true)
-            try {
-                await new Promise((resolve) => setTimeout(resolve, 1000))
-                setOrder(orderDummy)
-            } catch (error) {
-                console.error('Error fetching order data:', error)
-            } finally {
-                setLoading(false)
-            }
-        }
-
-        fetchOrderData()
-    }, [])
-
-    useEffect(() => {
-        if (order) {
-            document.title = 'NeXtPC - Payment'
-            const metaDescription = document.querySelector('meta[name="description"]')
-            if (metaDescription) {
-                metaDescription.setAttribute('content', 'Payment details for your order on NeXtPC')
-            }
-        }
-    }, [order])
+const SummaryPage = ({ params }: Props) => {
+    useMetadata({ title: 'Payment', description: 'NeXtPC payment page' })
+    const { orderData, isLoading, serverError } = useGetOrderData(params.orderId)
 
     return (
-        <MainLayout>
+        <OrderLayout isLoading={isLoading} serverError={serverError} orderData={orderData}>
             <StepsChart step="payment" />
-            {loading ? <LoadingSpinner /> : <PaymentView order={order || ({} as orderType)} />}
-        </MainLayout>
+            {orderData && <PaymentView order={orderData} />}
+        </OrderLayout>
     )
 }
 
-export default PaymentPage
+export default SummaryPage

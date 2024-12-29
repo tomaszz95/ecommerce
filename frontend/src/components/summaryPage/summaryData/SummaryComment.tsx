@@ -1,10 +1,24 @@
+import { Dispatch, SetStateAction, useEffect } from 'react'
+
 import useInput from '../../../hooks/useInput'
 import TextArea from '../../../components/UI/textarea/TextArea'
 
 import styles from './SummaryComment.module.css'
 
-const SummaryComment = () => {
-    const { value: enteredComment, valueChangeHandler: commentChangeHandler } = useInput((value) => value.trim() !== '')
+type ComponentType = {
+    comment: string
+    onSetComment: Dispatch<SetStateAction<string>>
+}
+
+const SummaryComment = ({ comment, onSetComment }: ComponentType) => {
+    const { value: enteredComment, valueChangeHandler: commentChangeHandler } = useInput(
+        (value) => value.trim() !== null,
+        comment,
+    )
+
+    useEffect(() => {
+        onSetComment(enteredComment)
+    }, [enteredComment])
 
     return (
         <>

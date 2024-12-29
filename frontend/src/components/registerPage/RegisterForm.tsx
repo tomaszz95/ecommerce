@@ -15,7 +15,11 @@ import { emailRegex } from '../../constans/dataRegexCheck'
 
 import styles from './RegisterForm.module.css'
 
-const RegisterForm = () => {
+type ComponentType = {
+    orderId?: string
+}
+
+const RegisterForm = ({ orderId }: ComponentType) => {
     const [serverError, setServerError] = useState('')
     const router = useRouter()
 
@@ -50,7 +54,7 @@ const RegisterForm = () => {
     const submitHandler = async (event: FormEvent) => {
         event.preventDefault()
 
-        const orderId = localStorage.getItem('orderId')
+        const orderIdent = orderId || localStorage.getItem('orderId')
 
         if (!formIsValid) {
             setServerError('Please fill out all required fields.')
@@ -69,7 +73,7 @@ const RegisterForm = () => {
                     email: enteredEmail,
                     name: enteredName,
                     password: enteredPassword,
-                    orderId: orderId,
+                    orderId: orderIdent,
                 }),
                 credentials: 'include',
             })

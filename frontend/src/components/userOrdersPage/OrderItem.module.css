@@ -27,6 +27,7 @@
     align-items: center;
     gap: 10px;
     font-weight: bold;
+    width: 25%;
 }
 
 .title {
@@ -39,6 +40,10 @@
 
 .set {
     color: rgb(4, 145, 23);
+}
+
+.confirmed {
+    color: rgb(209, 122, 6);
 }
 
 @media (768px < width) {

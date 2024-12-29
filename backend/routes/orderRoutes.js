@@ -11,6 +11,7 @@ const {
 	updateOrderPayment,
 	updateOrderComment,
 	updateOrderPaid,
+	getOrderDeliveryData,
 } = require('../controllers/orderDeliveryController')
 
 const {
@@ -36,12 +37,14 @@ router.get('/user/orderList', authenticateUser, getUserOrderList)
 
 router.get('/user/orderList/:orderId', authenticateUser, getSingleOrder)
 
+router.get('/cart/:id', getOrderDeliveryData)
+
 router.patch('/delivery/:id', attachOrderToRequest, updateOrderDelivery)
 
-router.get('/payment/id', attachOrderToRequest, updateOrderPayment)
+router.patch('/payment/:id', attachOrderToRequest, updateOrderPayment)
 
-router.get('/summary/id', attachOrderToRequest, updateOrderComment)
+router.patch('/summary/:id', attachOrderToRequest, updateOrderComment)
 
-router.get('/paid/:id', attachOrderToRequest, updateOrderPaid)
+router.patch('/paid/:id', attachOrderToRequest, updateOrderPaid)
 
 module.exports = router

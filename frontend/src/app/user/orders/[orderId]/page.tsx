@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 
 import useProtect from '../../../../hooks/useProtect'
+import useMetadata from '../../../../hooks/useMetadata'
 
 import MainLayout from '../../../../components/layouts/MainLayout'
 import SingleOrderView from '../../../../components/userSingleOrderPage/SingleOrderView'
@@ -18,6 +19,7 @@ type Props = {
 
 const UserSingleOrderPage = ({ params }: Props) => {
     useProtect({ from: 'Guest' })
+    useMetadata({ title: 'Order', description: 'NeXtPC user order  page' })
 
     const [orderData, setOrderData] = useState(null)
     const [isLoading, setIsLoading] = useState(true)

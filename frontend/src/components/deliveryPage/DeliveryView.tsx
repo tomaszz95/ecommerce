@@ -30,8 +30,8 @@ const DeliveryView = ({ order }: ComponentType) => {
         enteredPostalCode: order.delivery.informations.postalCode || '',
         enteredStreet: order.delivery.informations.address || '',
     })
-    const [selectedMethod, setSelectedMethod] = useState(order.delivery.method || 'Courier')
-    const [selectedMethodDelivery, setSelectedMethodDelivery] = useState(order.delivery.methodWay || 'FeedEx')
+    const [selectedMethod, setSelectedMethod] = useState(order.delivery.method)
+    const [selectedMethodDelivery, setSelectedMethodDelivery] = useState(order.delivery.methodWay)
     const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
     const [isError, setIsError] = useState(false)
 
