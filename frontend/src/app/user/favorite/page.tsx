@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 
 import useProtect from '../../../hooks/useProtect'
+import useMetadata from '../../../hooks/useMetadata'
 
 import MainLayout from '../../../components/layouts/MainLayout'
 import FavoriteView from '../../../components/userFavoritePage/FavoriteView'
@@ -13,6 +14,7 @@ import { API_URL } from '../../../constans/url'
 
 const UserFavoritePage = () => {
     useProtect({ from: 'Guest' })
+    useMetadata({ title: 'Favorite', description: 'NeXtPC user favorite page' })
 
     const [favoriteData, setFavoriteData] = useState([])
     const [isLoading, setIsLoading] = useState(true)

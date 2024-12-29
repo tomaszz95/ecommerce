@@ -29,6 +29,43 @@
     text-decoration: underline;
 }
 
+.nextButton {
+    display: block;
+    margin: 0.6rem auto;
+    position: relative;
+    padding: 1rem 1.6rem;
+    width: 80%;
+    text-align: center;
+    max-width: 250px;
+    font-size: 1.1rem;
+    color: var(--pure-white);
+    background-color: var(--main-color);
+    color: var(--pure-white);
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.nextButton::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -130px;
+    display: block;
+    height: 180%;
+    width: 100px;
+    background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+    transform: rotate(20deg);
+    transition: all 0.5s;
+    opacity: 0;
+    z-index: 1;
+}
+
+.nextButton:hover::before {
+    left: 130%;
+    opacity: 1;
+}
+
 @media (768px < width) {
     .confirmationSection {
         margin: 6rem 0;

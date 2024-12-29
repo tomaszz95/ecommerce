@@ -4,7 +4,6 @@ import SummaryDelivery from './SummaryDelivery'
 import SummaryAddress from './SummaryAddress'
 import SummaryPayment from './SummaryPayment'
 import SummaryTitle from './SummaryTitle'
-import SummaryComment from './SummaryComment'
 
 import { singleOrderType } from '../../../types/types'
 
@@ -16,6 +15,7 @@ type ComponentType = {
 }
 
 const SummaryData = ({ order, singleOrder = false }: ComponentType) => {
+    console.log(order.status, order.delivery.method, order.payment)
     return (
         <>
             <section className={styles.section}>
@@ -54,11 +54,6 @@ const SummaryData = ({ order, singleOrder = false }: ComponentType) => {
                 />
                 <SummaryPayment payment={order.payment} />
             </section>
-            {!singleOrder && (
-                <section className={`${styles.sectionComment} ${styles.section}`}>
-                    <SummaryComment />
-                </section>
-            )}
         </>
     )
 }

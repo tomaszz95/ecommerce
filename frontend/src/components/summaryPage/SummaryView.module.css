@@ -17,6 +17,21 @@
     width: 100%;
 }
 
+.section {
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 660px;
+    background-color: var(--light-white);
+    border: 1px solid var(--lighter-grey);
+    border-radius: 10px;
+}
+
+@media (768px < width) {
+    .section {
+        padding: 2rem;
+    }
+}
+
 @media (1100px < width) {
     .summaryPage {
         flex-direction: row;

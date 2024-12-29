@@ -1,10 +1,52 @@
+'use client'
+
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+
 import Link from 'next/link'
 
-import HightlightButton from '../UI/buttons/HightlightButton'
+import Modal from '../UI/Modal/Modal'
+
+import { API_URL, FRONTEND_URL } from '../../constans/url'
 
 import styles from './ConfirmationView.module.css'
 
-const ConfirmationView = () => {
+type ComponentType = {
+    orderId: string
+}
+
+const ConfirmationView = ({ orderId }: ComponentType) => {
+    const router = useRouter()
+    const [serverError, setServerError] = useState('')
+
+    const handleSubmit = async () => {
+        try {
+            const response = await fetch(`${API_URL}/api/orders/paid/${orderId}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    orderId: orderId,
+                }),
+                credentials: 'include',
+            })
+
+            if (!response.ok) {
+                const errorData = await response.json()
+
+                setServerError(errorData.msg)
+                return
+            }
+
+            localStorage.removeItem('orderId')
+
+            router.push(`${FRONTEND_URL}/order/paid`)
+        } catch (err: any) {
+            setServerError(err.message)
+        }
+    }
+
     return (
         <section className={styles.confirmationSection}>
             <div className={styles.confirmationContainer}>
@@ -23,8 +65,17 @@ const ConfirmationView = () => {
                         phone or e-mail.
                     </Link>
                 </p>
-                <HightlightButton href="/order/paid">Pay for order</HightlightButton>
+
+                <button onClick={handleSubmit} className={styles.nextButton}>
+                    Pay for order
+                </button>
             </div>
+
+            {serverError !== '' && (
+                <Modal isVisible={serverError !== ''} onAnimationEnd={() => setServerError('')}>
+                    {serverError}
+                </Modal>
+            )}
         </section>
     )
 }

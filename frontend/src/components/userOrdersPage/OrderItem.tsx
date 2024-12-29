@@ -35,7 +35,9 @@ const OrderItem = ({ order }: ComponentType) => {
                 </div>
                 <div className={styles.itemContent}>
                     <span className={styles.title}>Status:</span>
-                    <span className={`${styles.value} ${order.status === 'Pending' ? styles.notSet : styles.set}`}>
+                    <span
+                        className={`${styles.value} ${order.status === 'Pending' ? styles.notSet : order.status === 'Confirmed' ? styles.confirmed : styles.set}`}
+                    >
                         {order.status}
                     </span>
                 </div>

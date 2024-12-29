@@ -12,10 +12,10 @@ type Props = {
 }
 
 const LoginOrRegisterPage = ({ params }: Props) => {
-    const orderId = params.orderId
-
     useProtect({ from: 'User' })
     useMetadata({ title: 'Authentication', description: 'Authentication page' })
+
+    const orderId = params.orderId
 
     return (
         <AuthLayout>

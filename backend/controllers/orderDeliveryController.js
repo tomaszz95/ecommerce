@@ -1,7 +1,26 @@
+const User = require('../models/User')
+const Order = require('../models/Order')
+
 const { StatusCodes } = require('http-status-codes')
 const CustomError = require('../errors/index')
 
 const validateDeliveryDetails = require('../utils/validateDeliveryDetails')
+
+const getOrderDeliveryData = async (req, res) => {
+	const { id: orderId } = req.params
+
+	if (!orderId) {
+		throw new CustomError.BadRequestError('Please provide a valid order id')
+	}
+
+	const order = await Order.findOne({ _id: orderId }).select('-createdAt -user -userType -updatedAt')
+
+	if (!order) {
+		throw new CustomError.NotFoundError(`Please provide a valid id`)
+	}
+
+	res.status(StatusCodes.OK).json({ order })
+}
 
 const updateOrderDelivery = async (req, res) => {
 	const order = req.order
@@ -32,6 +51,21 @@ const updateOrderDelivery = async (req, res) => {
 	}
 
 	await order.save()
+
+	if (!order.user.includes('guest')) {
+		await User.findOneAndUpdate(
+			{ _id: order.user },
+			{
+				informations: {
+					address: informations.address || order.delivery.informations.name,
+					postalCode: informations.postalCode || order.delivery.informations.postalCode,
+					city: informations.city || order.delivery.informations.city,
+					phone: informations.phone || order.delivery.informations.phone,
+				},
+			},
+			{ new: true, runValidators: true }
+		)
+	}
 
 	res.status(StatusCodes.OK).json({ msg: 'Order updated successfully' })
 }
@@ -65,10 +99,6 @@ const updateOrderComment = async (req, res) => {
 
 	const { comment } = req.body
 
-	if (!comment) {
-		throw new CustomError.BadRequestError('Please provide a comment')
-	}
-
 	order.comment = comment
 	order.status = 'Confirmed'
 
@@ -96,4 +126,5 @@ module.exports = {
 	updateOrderPayment,
 	updateOrderComment,
 	updateOrderPaid,
+	getOrderDeliveryData,
 }

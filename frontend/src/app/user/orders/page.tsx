@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 
 import useProtect from '../../../hooks/useProtect'
+import useMetadata from '../../../hooks/useMetadata'
 
 import MainLayout from '../../../components/layouts/MainLayout'
 import OrdersView from '../../../components/userOrdersPage/OrdersView'
@@ -13,6 +14,7 @@ import { API_URL } from '../../../constans/url'
 
 const UserOrdersPage = () => {
     useProtect({ from: 'Guest' })
+    useMetadata({ title: 'Orders List', description: 'NeXtPC user orders list page' })
 
     const [ordersData, setOrdersData] = useState([])
     const [isLoading, setIsLoading] = useState(true)

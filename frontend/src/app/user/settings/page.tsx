@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 
 import useProtect from '../../../hooks/useProtect'
+import useMetadata from '../../../hooks/useMetadata'
 
 import MainLayout from '../../../components/layouts/MainLayout'
 import UserSettingsView from '../../../components/userSettingsPage/UserSettingsView'
@@ -13,6 +14,7 @@ import { API_URL } from '../../../constans/url'
 
 const UserSettingsPage = () => {
     useProtect({ from: 'Guest' })
+    useMetadata({ title: 'Settings', description: 'NeXtPC settings page' })
 
     const [userData, setUserData] = useState(null)
     const [isLoading, setIsLoading] = useState(true)

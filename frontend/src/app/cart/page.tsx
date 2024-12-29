@@ -9,11 +9,14 @@ import SimilarCarousel from '../../components/productPage/similarProductsCarouse
 import ServerError from '../../components/serverError/ServerError'
 import LoadingSpinner from '../../components/loadingSpinner/LoadingSpinner'
 
+import useMetadata from '../../hooks/useMetadata'
 import { cartOrderType, homepageSingleProductData } from '../../types/types'
 
 import { API_URL } from '../../constans/url'
 
 const CartPage = () => {
+    useMetadata({ title: 'Cart', description: 'NeXtPC cart page' })
+
     const [fetchedData, setFetchedData] = useState<{
         order: cartOrderType | null
         similarProducts: homepageSingleProductData[]

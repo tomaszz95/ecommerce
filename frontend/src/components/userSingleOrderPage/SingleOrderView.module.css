@@ -40,6 +40,31 @@
     color: rgb(4, 145, 23);
 }
 
+.confirmed {
+    color: rgb(209, 122, 6);
+}
+
+.productBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.payForOrder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 660px;
+    background-color: var(--light-white);
+    border-radius: 10px;
+    border: 2px solid var(--dirtier-white);
+}
+
 @media (1100px < width) {
     .orderData {
         display: flex;
