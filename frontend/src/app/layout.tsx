@@ -9,6 +9,9 @@ type ComponentType = {
 export const metadata: Metadata = {
     title: 'NeXtPC - Computer Shop',
     description: 'NeXtPC main site',
+    icons: {
+        icon: '/favicon.ico',
+    },
 }
 
 const RootLayout = ({ children }: ComponentType) => {

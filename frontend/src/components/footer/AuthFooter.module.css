@@ -18,9 +18,9 @@
 }
 
 .contact > p {
+    margin-bottom: 0.4rem;
     font-weight: bold;
     font-size: 1rem;
-    margin-bottom: 0.4rem;
 }
 
 .contactPhone {
@@ -41,8 +41,8 @@
 }
 
 .info {
-    font-size: 0.9rem;
     padding-top: 1rem;
+    font-size: 0.9rem;
 }
 
 @media (768px < width) {

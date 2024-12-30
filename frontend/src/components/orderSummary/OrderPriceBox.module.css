@@ -19,18 +19,18 @@
 }
 
 .totalPrice {
-    border-top: 1px solid var(--lighter-grey);
     padding-top: 1rem;
+    border-top: 1px solid var(--lighter-grey);
 }
 
 .nextButton {
+    position: relative;
     display: block;
     margin: 1.6rem auto;
-    position: relative;
     padding: 0.8rem 1.6rem;
     width: 80%;
-    text-align: center;
     max-width: 250px;
+    text-align: center;
     font-size: 1.1rem;
     color: var(--pure-white);
     background-color: var(--main-color);

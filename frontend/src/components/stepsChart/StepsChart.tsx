@@ -1,4 +1,5 @@
 import capitalizeFirstLetter from '../utils/capitalizeFirstLetter'
+
 import styles from './StepsChart.module.css'
 
 type ComponentType = {

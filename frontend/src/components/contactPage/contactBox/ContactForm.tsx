@@ -1,12 +1,12 @@
 'use client'
 
 import useInput from '../../../hooks/useInput'
+import { useSubmitForm } from '../../../hooks/useSubmitForm'
 
 import Modal from '../../../components/UI/Modal/Modal'
 import AuthFormButton from '../../UI/buttons/AuthFormButton'
 import Input from '../../UI/inputs/Input'
 import TextArea from '../../UI/textarea/TextArea'
-import { useSubmitForm } from '../../../hooks/useSubmitForm'
 
 import styles from './ContactForm.module.css'
 

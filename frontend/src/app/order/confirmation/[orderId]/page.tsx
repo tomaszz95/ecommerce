@@ -1,5 +1,6 @@
-import MainLayout from '../../../../components/layouts/MainLayout'
 import type { Metadata } from 'next'
+
+import MainLayout from '../../../../components/layouts/MainLayout'
 import ConfirmationView from '../../../../components/confirmationPage/ConfirmationView'
 
 export const metadata: Metadata = {

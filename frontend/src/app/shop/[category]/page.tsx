@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
 
+import useFetchFilterProducts from '../../../hooks/useFetchFilterProducts'
+
 import MainLayout from '../../../components/layouts/MainLayout'
 import CategoryHead from '../../../components/categoryPage/CategoryHead'
 import CategoryContent from '../../../components/categoryPage/CategoryContent'
 import ServerError from '../../../components/serverError/ServerError'
 
 import buildFiltersUrl from '../../../helpers/buildFiltersUrl'
-import useFetchFilterProducts from '../../../hooks/useFetchFilterProducts'
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { category } = params

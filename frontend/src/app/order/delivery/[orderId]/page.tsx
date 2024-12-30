@@ -1,11 +1,11 @@
 'use client'
 
+import useMetadata from '../../../../hooks/useMetadata'
+import { useGetOrderData } from '../../../../hooks/useGetOrderData'
+
 import OrderLayout from '../../../../components/layouts/OrderLayout'
 import StepsChart from '../../../../components/stepsChart/StepsChart'
 import DeliveryView from '../../../../components/deliveryPage/DeliveryView'
-
-import useMetadata from '../../../../hooks/useMetadata'
-import { useGetOrderData } from '../../../../hooks/useGetOrderData'
 
 type Props = {
     params: { orderId: string }

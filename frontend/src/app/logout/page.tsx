@@ -1,10 +1,10 @@
 'use client'
 
-import AuthLayout from '../../components/layouts/AuthLayout'
-import LogoutView from '../../components/logoutPage/LogoutView'
-
 import useProtect from '../../hooks/useProtect'
 import useMetadata from '../../hooks/useMetadata'
+
+import AuthLayout from '../../components/layouts/AuthLayout'
+import LogoutView from '../../components/logoutPage/LogoutView'
 
 const LogoutPage = () => {
     useProtect({ from: 'Guest' })

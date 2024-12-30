@@ -1,14 +1,14 @@
 .item {
     position: relative;
-    align-self: stretch;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    align-self: stretch;
     padding: 1rem;
-    max-width: 240px;
     width: 100%;
     height: 350px;
+    max-width: 240px;
     text-align: center;
     transition: border 0.5s;
     border-radius: 10px;
@@ -20,13 +20,13 @@
     position: absolute;
     top: 10px;
     left: -50px;
-    transform: rotate(-45deg);
-    background-color: var(--danger-color);
-    width: 160px;
-    height: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 160px;
+    height: 10%;
+    transform: rotate(-45deg);
+    background-color: var(--danger-color);
     color: var(--pure-white);
     font-weight: 500;
 }

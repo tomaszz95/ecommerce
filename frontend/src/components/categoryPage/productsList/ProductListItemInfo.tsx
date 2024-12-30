@@ -2,8 +2,9 @@ import Image from 'next/image'
 
 import StarRating from '../../../components/starRating/StarRating'
 
-import SpeechBubbleIcon from '../../../assets/icons/speechbubble.svg'
 import getBrandLogo from '../../../helpers/getBrandLogo'
+
+import SpeechBubbleIcon from '../../../assets/icons/speechbubble.svg'
 
 import styles from './ProductListItemInfo.module.css'
 

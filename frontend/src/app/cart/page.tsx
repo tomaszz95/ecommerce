@@ -2,14 +2,16 @@
 
 import { useEffect, useState } from 'react'
 
+import useMetadata from '../../hooks/useMetadata'
+
 import MainLayout from '../../components/layouts/MainLayout'
 import StepsChart from '../../components/stepsChart/StepsChart'
 import CartView from '../../components/cartPage/CartView'
 import SimilarCarousel from '../../components/productPage/similarProductsCarousel/SimilarCarousel'
 import ServerError from '../../components/serverError/ServerError'
+
 import LoadingSpinner from '../../components/loadingSpinner/LoadingSpinner'
 
-import useMetadata from '../../hooks/useMetadata'
 import { cartOrderType, homepageSingleProductData } from '../../types/types'
 
 import { API_URL } from '../../constans/url'

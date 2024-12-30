@@ -1,6 +1,7 @@
-import styles from './ContactInfo.module.css'
 import ContactInfoCompany from './ContactInfoCompany'
 import ContactInfoCustomers from './ContactInfoCustomers'
+
+import styles from './ContactInfo.module.css'
 
 const ContactInfo = () => {
     return (
