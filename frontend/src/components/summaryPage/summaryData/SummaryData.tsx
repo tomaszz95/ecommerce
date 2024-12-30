@@ -15,7 +15,6 @@ type ComponentType = {
 }
 
 const SummaryData = ({ order, singleOrder = false }: ComponentType) => {
-    console.log(order.status, order.delivery.method, order.payment)
     return (
         <>
             <section className={styles.section}>

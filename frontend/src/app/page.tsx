@@ -1,5 +1,4 @@
 import MainLayout from '../components/layouts/MainLayout'
-
 import HeroImage from '../components/heroImage/HeroImage'
 import RecommendedSection from '../components/homepage/recommendedSection/RecommendedSection'
 import HighlightedSection from '../components/homepage/highlightedSection/HighlightedSection'

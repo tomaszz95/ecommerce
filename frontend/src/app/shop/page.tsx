@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
 
+import useFetchFilterProducts from '../../hooks/useFetchFilterProducts'
+
 import MainLayout from '../../components/layouts/MainLayout'
 import CategoryContent from '../../components/categoryPage/CategoryContent'
 import CategoryHead from '../../components/categoryPage/CategoryHead'
 import ServerError from '../../components/serverError/ServerError'
 
 import buildFiltersUrl from '../../helpers/buildFiltersUrl'
-import useFetchFilterProducts from '../../hooks/useFetchFilterProducts'
 
 export const metadata: Metadata = {
     title: 'NeXtPC - Shop',

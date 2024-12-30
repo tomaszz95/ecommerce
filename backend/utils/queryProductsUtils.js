@@ -16,7 +16,9 @@ const queryProductsBuilder = query => {
 
 	if (company) {
 		const companyArray = company.split(',').map(c => c.trim())
-		queryObject.company = { $in: companyArray }
+		queryObject.company = {
+			$in: companyArray.map(c => new RegExp(`^${c}$`, 'i')),
+		}
 	}
 
 	if (category && category !== 'Shop') {

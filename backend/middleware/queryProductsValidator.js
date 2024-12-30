@@ -1,18 +1,18 @@
 const CustomError = require('../errors/index')
 
 const VALID_COMPANIES = [
-	'Acer',
-	'Apple',
-	'Asus',
-	'Intel',
-	'Lenovo',
-	'Logitech',
-	'Microsoft',
-	'Samsung',
-	'Sony',
-	'Xiaomi',
-	'Dji',
-	'Hp',
+	'acer',
+	'apple',
+	'asus',
+	'intel',
+	'lenovo',
+	'logitech',
+	'microsoft',
+	'samsung',
+	'sony',
+	'xiaomi',
+	'dji',
+	'hp',
 ]
 
 const VALID_CATEGORIES = [
@@ -31,6 +31,7 @@ const VALID_SORT_OPTIONS = ['price', '-price', 'rating', 'alphabetically', '-alp
 
 const queryProductsValidator = (req, res, next) => {
 	const { category } = req.params
+
 	const { company, priceFrom, priceTo, available, promotion, sort, search } = req.query
 
 	const categoryName = category.charAt(0).toUpperCase() + category.slice(1)
@@ -39,8 +40,7 @@ const queryProductsValidator = (req, res, next) => {
 
 	try {
 		if (company) {
-			const companyArray = company.split(',').map(item => item.trim())
-
+			const companyArray = company.split(',').map(item => item.trim().toLowerCase())
 			const isValid = companyArray.every(c => VALID_COMPANIES.includes(c))
 
 			if (!isValid) {
@@ -49,7 +49,6 @@ const queryProductsValidator = (req, res, next) => {
 		}
 
 		if (categoryName && !VALID_CATEGORIES.includes(category)) {
-			console.log('ta')
 			throw new CustomError.BadRequestError('No products with provided category name')
 		}
 

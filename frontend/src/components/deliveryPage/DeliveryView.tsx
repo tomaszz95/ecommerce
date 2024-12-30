@@ -19,7 +19,6 @@ type ComponentType = {
 }
 
 const DeliveryView = ({ order }: ComponentType) => {
-    console.log(order)
     const router = useRouter()
     const [isFormValid, setIsFormValid] = useState(false)
     const [deliveryInputsData, setDeliveryInputsData] = useState({

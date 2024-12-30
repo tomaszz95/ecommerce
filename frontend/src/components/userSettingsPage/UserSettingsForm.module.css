@@ -44,10 +44,10 @@
 }
 
 .serverError {
+    margin-bottom: 2rem;
     text-align: center;
     font-size: 1.1rem;
     color: var(--danger-color);
-    margin-bottom: 2rem;
 }
 
 @keyframes slideIn {

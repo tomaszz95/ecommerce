@@ -9,11 +9,11 @@
     left: 0;
     right: 0;
     bottom: 100px;
+    display: none;
     padding: 2rem;
     background-color: var(--pure-white);
     z-index: 1000;
     overflow-y: auto;
-    display: none;
 }
 
 .filtrationContent.active {
@@ -142,12 +142,12 @@
     }
 
     .applyButton {
-        margin-top: 0.6rem;
         display: block;
+        margin-top: 0.6rem;
+        height: 50px;
+        max-width: 250px;
         background-color: var(--main-color);
         color: var(--pure-white);
-        max-width: 250px;
-        height: 50px;
     }
 
     .applyButton::before {

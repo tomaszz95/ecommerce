@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 
 import HightlightButton from '../../../components/UI/buttons/HightlightButton'
-
 import PromotionCode from './PromotionCode'
 
 import { API_URL } from '../../../constans/url'

@@ -2,8 +2,9 @@ import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
-import styles from './HeaderItem.module.css'
 import ProfileMenu from './ProfileMenu'
+
+import styles from './HeaderItem.module.css'
 
 type ComponentType = {
     icon: StaticImageData
