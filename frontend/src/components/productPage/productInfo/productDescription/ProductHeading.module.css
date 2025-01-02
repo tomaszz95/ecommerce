@@ -7,6 +7,7 @@
     flex-direction: column;
     gap: 10px;
     margin: 0.6rem 0 1rem;
+    height: 130px;
 }
 
 .productHeadingTitle h1 {

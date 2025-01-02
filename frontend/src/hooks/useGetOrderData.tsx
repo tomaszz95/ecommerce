@@ -15,13 +15,13 @@ export const useGetOrderData = (orderId: string) => {
                     method: 'GET',
                     credentials: 'include',
                 })
-
                 if (!response.ok) {
                     const errorData = await response.json()
                     throw new Error(errorData.msg || 'Order not found')
                 }
 
                 const data = await response.json()
+
                 setOrderData(data.order)
             } catch (err: any) {
                 setServerError(err.message)

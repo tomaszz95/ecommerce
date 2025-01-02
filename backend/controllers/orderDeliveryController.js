@@ -8,13 +8,13 @@ const validateDeliveryDetails = require('../utils/validateDeliveryDetails')
 
 const getOrderDeliveryData = async (req, res) => {
 	const { id: orderId } = req.params
-
 	if (!orderId) {
 		throw new CustomError.BadRequestError('Please provide a valid order id')
 	}
-
+	
 	const order = await Order.findOne({ _id: orderId }).select('-createdAt -user -userType -updatedAt')
-
+	
+	console.log(order)
 	if (!order) {
 		throw new CustomError.NotFoundError(`Please provide a valid id`)
 	}
