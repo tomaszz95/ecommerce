@@ -1,4 +1,5 @@
 const Order = require('../models/Order')
+const User = require('../models/User')
 const Product = require('../models/Product')
 
 const { StatusCodes } = require('http-status-codes')
@@ -46,7 +47,7 @@ const addToCart = async (req, res) => {
 		throw new CustomError.BadRequestError('Product ID is required')
 	}
 
-	let order, user, userType, userEmail, userName
+	let order, user, userType, userEmail, userName, userAddress, userCity, userPhone, userPostalCode
 
 	if (orderId) {
 		order = await Order.findById(orderId)
@@ -63,9 +64,14 @@ const addToCart = async (req, res) => {
 			try {
 				const { userId, email, name } = isTokenValid({ token })
 				user = userId
+				const databaseUser = await User.findOne({ _id: userId })
 				userType = 'User'
 				userEmail = email
 				userName = name
+				userAddress = databaseUser.informations.address
+				userCity = databaseUser.informations.city
+				userPhone = databaseUser.informations.phone
+				userPostalCode = databaseUser.informations.postalCode
 			} catch (err) {
 				throw new CustomError.UnauthenticatedError('Invalid token')
 			}
@@ -74,6 +80,10 @@ const addToCart = async (req, res) => {
 			userType = 'Guest'
 			userEmail = ''
 			userName = ''
+			userAddress = ''
+			userCity = ''
+			userPhone = ''
+			userPostalCode = ''
 		}
 
 		order = await Order.create({
@@ -89,6 +99,10 @@ const addToCart = async (req, res) => {
 				informations: {
 					email: userEmail,
 					name: userName,
+					address: userAddress,
+					city: userCity,
+					phone: userPhone,
+					postalCode: userPostalCode,
 				},
 			},
 			paymentIntentId: (await Order.countDocuments()) + 1,

@@ -41,7 +41,7 @@ const CategoryPage = async ({ params, searchParams }: Props) => {
         const url = buildFiltersUrl(searchParams, category)
 
         const { products, totalProducts, totalPages, currentPage } = await useFetchFilterProducts(url)
-
+        console.log(products)
         return (
             <MainLayout>
                 <CategoryHead category={category || 'shop'} productsCount={totalProducts} />
