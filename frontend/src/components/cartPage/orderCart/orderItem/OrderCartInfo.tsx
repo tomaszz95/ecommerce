@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import { useState } from 'react'
 
-import Modal from '../../../../components/UI/Modal/Modal'
+import Modal from '../../../../components/UI/modal/Modal'
 
 import { API_URL } from '../../../../constans/url'
 

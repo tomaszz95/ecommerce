@@ -18,7 +18,7 @@ const SummaryComment = ({ comment, onSetComment }: ComponentType) => {
 
     useEffect(() => {
         onSetComment(enteredComment)
-    }, [enteredComment])
+    }, [enteredComment, onSetComment])
 
     return (
         <>

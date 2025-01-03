@@ -51,7 +51,7 @@ const HighlightedSection = ({ biggestDiscountProduct, latestProducts }: Componen
 
         fetchPromotionProduct()
         fetchLatestProducts()
-    }, [])
+    }, [biggestDiscountProduct, latestProducts])
 
     return (
         <section className={styles.highlightSection}>

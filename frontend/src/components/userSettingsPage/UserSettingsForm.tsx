@@ -4,7 +4,7 @@ import { useSubmitForm } from '../../hooks/useSubmitForm'
 import useInput from '../../hooks/useInput'
 
 import Input from '../UI/inputs/Input'
-import Modal from '../UI/Modal/Modal'
+import Modal from '../UI/modal/Modal'
 import AuthFormButton from '../UI/buttons/AuthFormButton'
 
 import { userSettingType } from '../../types/types'
@@ -102,7 +102,14 @@ const UserSettingsForm = ({ userData }: ComponentType) => {
         setIsModified(false)
     }
 
-    const submitUserDataHandler = async (formData: any) => {
+    const submitUserDataHandler = async (formData: {
+        name: string
+        email: string
+        address: string
+        postalCode: string
+        city: string
+        phone: string
+    }) => {
         const response = await fetch(`${API_URL}/api/users/updateUser`, {
             method: 'PATCH',
             headers: {

@@ -61,8 +61,9 @@ const CartPage = () => {
 
                 const orderData = await response.json()
                 setFetchedData(orderData)
-            } catch (err: any) {
-                setError(err.message)
+            } catch (err: unknown) {
+                const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred'
+                setError(errorMessage)
             } finally {
                 setIsLoading(false)
             }

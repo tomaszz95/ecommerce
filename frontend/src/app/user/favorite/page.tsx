@@ -22,6 +22,7 @@ const UserFavoritePage = () => {
 
     useEffect(() => {
         setIsLoading(true)
+
         const getUserData = async () => {
             try {
                 const response = await fetch(`${API_URL}/api/users/getUserFavorites`, {
@@ -38,8 +39,10 @@ const UserFavoritePage = () => {
 
                 setFavoriteData(data.favorites)
                 setIsLoading(false)
-            } catch (err: any) {
-                setServerError(err.message)
+            } catch (err: unknown) {
+                const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred'
+
+                setServerError(errorMessage)
                 setIsLoading(false)
             }
         }

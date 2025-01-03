@@ -1,6 +1,18 @@
 import { API_URL } from '../constans/url'
 
-const buildFiltersUrl = (params: Record<string, any>, category?: string) => {
+const buildFiltersUrl = (
+    params: {
+        page?: string
+        sort?: string
+        priceFrom?: string
+        priceTo?: string
+        company?: string
+        available?: string
+        promotion?: string
+        search?: string
+    },
+    category?: string,
+) => {
     const {
         page = '1',
         sort = 'default',

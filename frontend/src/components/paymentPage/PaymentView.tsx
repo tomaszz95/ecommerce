@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 
 import OrderSummary from '../orderSummary/OrderSummary'
 import PaymentOptions from './paymentOptions/PaymentOptions'
-import Modal from '../UI/Modal/Modal'
+import Modal from '../UI/modal/Modal'
 
 import { API_URL, FRONTEND_URL } from '../../constans/url'
 
@@ -62,8 +62,10 @@ const PaymentView = ({ order }: ComponentType) => {
                 }
 
                 router.push(`${FRONTEND_URL}/order/summary/${order._id}`)
-            } catch (err: any) {
-                setServerError(err.message)
+            } catch (err: unknown) {
+                const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred'
+
+                setServerError(errorMessage)
             }
         } else {
             setServerError('Something went wrong. Please try again later.')

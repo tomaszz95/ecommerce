@@ -14,7 +14,7 @@ const useMetadata = ({ title, description }: MetadataProps) => {
         if (metaDescription) {
             metaDescription.setAttribute('content', `NeXtPC ${description}`)
         }
-    }, [])
+    }, [title, description])
 }
 
 export default useMetadata

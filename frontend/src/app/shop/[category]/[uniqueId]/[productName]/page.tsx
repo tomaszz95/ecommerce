@@ -6,7 +6,7 @@ import ProductPresentation from '../../../../../components/productPage/productPr
 import ProductSpecification from '../../../../../components/productPage/productSpecification/ProductSpecification'
 import SimilarCarousel from '../../../../../components/productPage/similarProductsCarousel/SimilarCarousel'
 import OpinionsSection from '../../../../../components/productPage/opinionsSection/OpinionsSection'
-import MayInterestCarousel from '../../../../../components/productPage/mayInterestSection/mayInterestCarousel'
+import MayInterestCarousel from '../../../../../components/productPage/mayInterestSection/MayInterestCarousel'
 import ServerError from '../../../../../components/serverError/ServerError'
 
 import { API_URL } from '../../../../../constans/url'
@@ -68,10 +68,12 @@ const SingleProductPage = async ({ params }: Props) => {
                 <MayInterestCarousel mayInterestProducts={mayInterestProducts} />
             </MainLayout>
         )
-    } catch (err: any) {
+    } catch (err: unknown) {
+        const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred'
+
         return (
             <MainLayout>
-                <ServerError errorText={err.message} />
+                <ServerError errorText={errorMessage} />
             </MainLayout>
         )
     }

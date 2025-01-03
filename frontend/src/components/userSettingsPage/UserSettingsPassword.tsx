@@ -3,7 +3,7 @@ import { useSubmitForm } from '../../hooks/useSubmitForm'
 
 import Input from '../UI/inputs/Input'
 import AuthFormButton from '../UI/buttons/AuthFormButton'
-import Modal from '../UI/Modal/Modal'
+import Modal from '../UI/modal/Modal'
 
 import { API_URL } from '../../constans/url'
 
@@ -51,7 +51,7 @@ const UserSettingsPassword = () => {
         resetNewRepeatPassword()
     }
 
-    const updatePasswordHandler = async (formData: any) => {
+    const updatePasswordHandler = async (formData: { oldPassword: string; newPassword: string }) => {
         const response = await fetch(`${API_URL}/api/users/updateUserPassword`, {
             method: 'PATCH',
             headers: {

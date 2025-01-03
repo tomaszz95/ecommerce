@@ -4,7 +4,7 @@ import useInput from '../../../hooks/useInput'
 
 import Input from '../../UI/inputs/Input'
 import AuthFormButton from '../../UI/buttons/AuthFormButton'
-import Modal from '../../UI/Modal/Modal'
+import Modal from '../../UI/modal/Modal'
 import { useSubmitForm } from '../../../hooks/useSubmitForm'
 
 import { emailRegex } from '../../../constans/dataRegexCheck'
@@ -40,7 +40,7 @@ const NewsletterSection = () => {
             <div className={styles.container}>
                 <div className={styles.textBox}>
                     <h2>Sign up for the newsletter</h2>
-                    <p>Don't miss any promotion and get additional discounts</p>
+                    <p>Don`&apos;`t miss any promotion and get additional discounts</p>
                 </div>
                 <form className={styles.inputBox} onSubmit={submitHandler}>
                     <Input
@@ -61,7 +61,7 @@ const NewsletterSection = () => {
 
             {!firstLoading && (
                 <Modal isVisible={isModalVisible} onAnimationEnd={() => setIsModalVisible(false)}>
-                    You've successfully subscribed to the newsletter!
+                    You`&apos;`ve successfully subscribed to the newsletter!
                 </Modal>
             )}
         </section>

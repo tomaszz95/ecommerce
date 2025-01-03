@@ -93,7 +93,16 @@ const DeliveryForm = ({ onFormValidationChange, deliveryInputsData, fieldErrors 
         }
 
         onFormValidationChange(formIsValid, inputsData)
-    }, [formIsValid, enteredName, enteredStreet, enteredPostalCode, enteredCity, enteredPhone, enteredEmail])
+    }, [
+        formIsValid,
+        enteredName,
+        enteredStreet,
+        enteredPostalCode,
+        enteredCity,
+        enteredPhone,
+        enteredEmail,
+        onFormValidationChange,
+    ])
 
     return (
         <form className={styles.deliveryForm}>

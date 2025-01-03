@@ -15,16 +15,16 @@ const SearchBox = () => {
     const [inputSearchValue, setInputSearchValue] = useState<string>('')
     const pathname = usePathname()
 
-    if (pathname === '/contact') {
-        return null
-    }
-
     useEffect(() => {
         const url = new URL(window.location.href)
 
         setCurrentUrl(url)
         setInputSearchValue(url.searchParams.get('search') || '')
     }, [])
+
+    if (pathname === '/contact') {
+        return null
+    }
 
     const inputHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()

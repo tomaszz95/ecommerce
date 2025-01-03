@@ -33,8 +33,10 @@ const LogoutView = () => {
 
                     throw new Error(errorData.message || 'Logout failed.')
                 }
-            } catch (err: any) {
-                throw new Error(err.message || 'Something went wrong')
+            } catch (err: unknown) {
+                const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred'
+
+                throw new Error(errorMessage || 'Something went wrong')
             }
         }
 
