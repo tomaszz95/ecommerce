@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import XCircle from '../../../assets/icons/xcircle.png'
+import circle from '../../../assets/icons/circle.png'
 
 import styles from './InputError.module.css'
 
@@ -11,7 +11,7 @@ type ComponentType = {
 const InputError = ({ children }: ComponentType) => {
     return (
         <div className={styles.errorBox}>
-            <Image src={XCircle} alt="" />
+            <Image src={circle} alt="" />
             <p>{children}</p>
         </div>
     )
