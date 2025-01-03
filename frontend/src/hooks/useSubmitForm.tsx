@@ -40,8 +40,10 @@ export const useSubmitForm = <T,>({ validateForm, resetForm, errorMessage, onSub
 
                 window.location.reload()
             }, 2400)
-        } catch (err: any) {
-            setServerError(err.message || 'Something went wrong. Please try again later.')
+        } catch (err: unknown) {
+            const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred'
+
+            setServerError(errorMessage || 'Something went wrong. Please try again later.')
             setIsSubmitting(false)
             setIsModalVisible(true)
         }

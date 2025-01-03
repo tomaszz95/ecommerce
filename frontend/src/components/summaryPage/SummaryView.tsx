@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import SummaryData from './summaryData/SummaryData'
 import OrderSummary from '../orderSummary/OrderSummary'
 import SummaryComment from './summaryData/SummaryComment'
-import Modal from '../UI/Modal/Modal'
+import Modal from '../UI/modal/Modal'
 
 import { API_URL, FRONTEND_URL } from '../../constans/url'
 
@@ -44,8 +44,10 @@ const SummaryView = ({ order }: ComponentType) => {
             }
 
             router.push(`${FRONTEND_URL}/order/confirmation/${order._id}`)
-        } catch (err: any) {
-            setServerError(err.message)
+        } catch (err: unknown) {
+            const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred'
+
+            setServerError(errorMessage)
         }
     }
 

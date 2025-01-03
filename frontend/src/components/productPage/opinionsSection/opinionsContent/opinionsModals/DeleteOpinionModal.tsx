@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
-import Modal from '../../../../../components/UI/Modal/Modal'
+import Modal from '../../../../../components/UI/modal/Modal'
 import OnClickButton from '../../../../../components/UI/buttons/OnClickButton'
 
 import { useSubmitForm } from '../../../../../hooks/useSubmitForm'

@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import OrderSummary from '../orderSummary/OrderSummary'
 import DeliveryOptions from './deliveryMethods/DeliveryOptions'
 import DeliveryForm from './deliveryForm/DeliveryForm'
-import Modal from '../UI/Modal/Modal'
+import Modal from '../UI/modal/Modal'
 
 import { API_URL, FRONTEND_URL } from '../../constans/url'
 
@@ -104,7 +104,7 @@ const DeliveryView = ({ order }: ComponentType) => {
                 setFieldErrors({})
 
                 router.push(`${FRONTEND_URL}/order/payment/${order._id}`)
-            } catch (err: any) {
+            } catch (err: unknown) {
                 setIsError(true)
             }
         } else {

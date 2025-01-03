@@ -32,7 +32,7 @@ const RecommendedSection = ({ recommendedProducts }: ComponentType) => {
         }
 
         fetchProducts()
-    }, [])
+    }, [recommendedProducts])
 
     return (
         <section className={styles.recommendedSection}>

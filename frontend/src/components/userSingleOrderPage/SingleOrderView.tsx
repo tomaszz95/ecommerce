@@ -26,7 +26,7 @@ const SingleOrderView = ({ order }: ComponentType) => {
                     <SingleOrderProducts order={order} />
                     {order.status === 'Confirmed' && (
                         <div className={styles.payForOrder}>
-                            <h3>You haven't paid for the product yet. Do it now!</h3>
+                            <h3>You haven`&apos;`t paid for the product yet. Do it now!</h3>
                             <HightlightButton href={`${FRONTEND_URL}/order/confirmation/${order._id}`}>
                                 Pay for order
                             </HightlightButton>

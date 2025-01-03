@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 import OrderModal from './orderModal/OrderModal'
-import Modal from '../../../components/UI/Modal/Modal'
+import Modal from '../../../components/UI/modal/Modal'
 
 import TrashIcon from '../../../assets/icons/trash.svg'
 

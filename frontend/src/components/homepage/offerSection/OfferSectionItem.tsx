@@ -1,10 +1,10 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 
 import HightlightButton from '../../UI/buttons/HightlightButton'
 
 import styles from './OfferSectionItem.module.css'
 
-type ComponentType = { name: string; link: string; photo: any }
+type ComponentType = { name: string; link: string; photo: StaticImageData }
 
 const OfferSectionItem = ({ name, photo, link }: ComponentType) => {
     return (

@@ -40,7 +40,7 @@ const OrderPriceBox = ({
                 {linkText === 'Buy and pay' ? 'Buy and pay' : `Go to ${linkText}`}
             </button>
 
-            <p className={styles.priceBoxInfo}>Don't delay, the products in your cart are not reserved.</p>
+            <p className={styles.priceBoxInfo}>Don`&apos;`t delay, the products in your cart are not reserved.</p>
         </div>
     )
 }

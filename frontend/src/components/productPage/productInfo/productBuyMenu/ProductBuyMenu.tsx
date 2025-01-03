@@ -53,8 +53,10 @@ const ProductBuyMenu = ({ price, promotionPrice, stock, productName, productId, 
             const data = await response.json()
 
             localStorage.setItem('orderId', data.orderId)
-        } catch (err: any) {
-            throw new Error(err.message || 'Something went wrong. Please try again later.')
+        } catch (err: unknown) {
+            const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred'
+
+            throw new Error(errorMessage || 'Something went wrong. Please try again later.')
         }
     }
 

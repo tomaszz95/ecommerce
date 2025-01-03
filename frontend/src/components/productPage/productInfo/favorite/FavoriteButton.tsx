@@ -55,14 +55,16 @@ const FavoriteButton = ({ productId, uniqueId }: ComponentType) => {
                 )
 
                 setIsFavorite(isProductFavorite)
-            } catch (err: any) {
-                setModalMessage(err.message || 'Something went wrong.')
+            } catch (err: unknown) {
+                const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred'
+
+                setModalMessage(errorMessage || 'Something went wrong.')
                 setShowModal(true)
             }
         }
 
         checkAuthAndFavorites()
-    }, [])
+    }, [uniqueId])
 
     const toggleFavoriteHandler = async () => {
         try {
@@ -89,8 +91,10 @@ const FavoriteButton = ({ productId, uniqueId }: ComponentType) => {
 
             setIsFavorite(data.msg === 'Product added to favorites')
             setShowModal(true)
-        } catch (err: any) {
-            setModalMessage(err.message)
+        } catch (err: unknown) {
+            const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred'
+
+            setModalMessage(errorMessage || 'Something went wrong.')
             setShowModal(true)
         }
 

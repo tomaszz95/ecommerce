@@ -3,7 +3,7 @@
 import useInput from '../../../hooks/useInput'
 import { useSubmitForm } from '../../../hooks/useSubmitForm'
 
-import Modal from '../../../components/UI/Modal/Modal'
+import Modal from '../../../components/UI/modal/Modal'
 import AuthFormButton from '../../UI/buttons/AuthFormButton'
 import Input from '../../UI/inputs/Input'
 import TextArea from '../../UI/textarea/TextArea'
@@ -98,7 +98,7 @@ const ContactForm = () => {
 
             {!firstLoading && (
                 <Modal isVisible={isModalVisible} onAnimationEnd={() => setIsModalVisible(false)}>
-                    You've successfully sent a message!
+                    You`&apos;`ve successfully sent a message!
                 </Modal>
             )}
         </form>

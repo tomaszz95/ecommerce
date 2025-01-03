@@ -34,7 +34,7 @@ const OfferSection = ({ productsByCategory }: ComponentType) => {
         }
 
         fetchProductsByCategory()
-    }, [])
+    }, [productsByCategory])
 
     return (
         <section className={styles.offerSection}>

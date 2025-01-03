@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 
 import Link from 'next/link'
 
-import Modal from '../UI/Modal/Modal'
+import Modal from '../UI/modal/Modal'
 
 import { API_URL, FRONTEND_URL } from '../../constans/url'
 
@@ -42,8 +42,10 @@ const ConfirmationView = ({ orderId }: ComponentType) => {
             localStorage.removeItem('orderId')
 
             router.push(`${FRONTEND_URL}/order/paid`)
-        } catch (err: any) {
-            setServerError(err.message)
+        } catch (err: unknown) {
+            const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred'
+
+            setServerError(errorMessage)
         }
     }
 

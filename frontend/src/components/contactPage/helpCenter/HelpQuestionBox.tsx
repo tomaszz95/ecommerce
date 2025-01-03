@@ -11,6 +11,10 @@ type ComponentType = {
 const HelpQuestionBox = ({ activeSection }: ComponentType) => {
     const [openQuestionIndex, setOpenQuestionIndex] = useState<number | null>(null)
 
+    useEffect(() => {
+        setOpenQuestionIndex(null)
+    }, [activeSection])
+
     const selectedSection = helpCenterItems.find((item) => item.text === activeSection)
 
     if (!selectedSection) {
@@ -24,10 +28,6 @@ const HelpQuestionBox = ({ activeSection }: ComponentType) => {
     const handleQuestionClick = (index: number) => {
         setOpenQuestionIndex(openQuestionIndex === index ? null : index)
     }
-
-    useEffect(() => {
-        setOpenQuestionIndex(null)
-    }, [activeSection])
 
     return (
         <div className={styles.helpQuestionContainer}>

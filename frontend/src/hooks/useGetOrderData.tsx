@@ -23,8 +23,10 @@ export const useGetOrderData = (orderId: string) => {
                 const data = await response.json()
 
                 setOrderData(data.order)
-            } catch (err: any) {
-                setServerError(err.message)
+            } catch (err: unknown) {
+                const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred'
+
+                setServerError(errorMessage)
             } finally {
                 setIsLoading(false)
             }

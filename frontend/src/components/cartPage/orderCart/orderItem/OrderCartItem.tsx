@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 import OrderCartInfo from './OrderCartInfo'
 import OrderCartPrice from './OrderCartPrice'
-import Modal from '../../../../components/UI/Modal/Modal'
+import Modal from '../../../../components/UI/modal/Modal'
 import OrderModal from '../orderModal/OrderModal'
 
 import TrashIcon from '../../../../assets/icons/trash.svg'

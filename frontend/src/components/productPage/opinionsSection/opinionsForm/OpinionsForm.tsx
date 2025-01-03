@@ -6,7 +6,7 @@ import Input from '../../../../components/UI/inputs/Input'
 import TextArea from '../../../../components/UI/textarea/TextArea'
 import useInput from '../../../../hooks/useInput'
 import AuthFormButton from '../../../../components/UI/buttons/AuthFormButton'
-import Modal from '../../../../components/UI/Modal/Modal'
+import Modal from '../../../../components/UI/modal/Modal'
 
 import { API_URL } from '../../../../constans/url'
 
@@ -65,7 +65,7 @@ const OpinionsForm = ({
         setNewRating(0)
     }
 
-    const submitReviewHandler = async (formData: any) => {
+    const submitReviewHandler = async (formData: { author: string; message: string; rating: number }) => {
         if (formMode === 'new') {
             const response = await fetch(`${API_URL}/api/reviews`, {
                 method: 'POST',

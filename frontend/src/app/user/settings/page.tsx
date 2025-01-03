@@ -38,8 +38,10 @@ const UserSettingsPage = () => {
 
                 setUserData(data)
                 setIsLoading(false)
-            } catch (err: any) {
-                setServerError(err.message)
+            } catch (err: unknown) {
+                const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred'
+
+                setServerError(errorMessage)
                 setIsLoading(false)
             }
         }

@@ -33,7 +33,7 @@ const useProtect = ({ from }: ProtectProps) => {
         }
 
         checkAuth()
-    }, [router])
+    }, [router, from])
 }
 
 export default useProtect
