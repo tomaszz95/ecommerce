@@ -1,2 +1,2 @@
-export const API_URL = process.env.API_URL || 'http://localhost:5000'
-export const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:3000'
+export const API_URL = 'https://nextpc.onrender.com/' || 'http://localhost:5000'
+export const FRONTEND_URL = 'https://nextpc.vercel.app/' || 'http://localhost:3000'
