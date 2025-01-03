@@ -24,7 +24,7 @@ app.use(helmet())
 app.use(mongoSanitize())
 app.use(
 	cors({
-		origin: 'http://localhost:3000',
+		origin: 'https://nextpc.vercel.app/',
 		credentials: true,
 		methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
 		allowedHeaders: ['Content-Type', 'Authorization'],
@@ -48,6 +48,7 @@ const port = process.env.PORT || 5000
 const start = async () => {
 	try {
 		await connectDB(process.env.MONGO_URL)
+
 		app.listen(port, console.log(`Server is listening on port ${port}...`))
 	} catch (err) {
 		console.log(err)
