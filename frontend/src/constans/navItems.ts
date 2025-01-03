@@ -9,14 +9,14 @@ import StreamingIcon from '../assets/icons/streaming.svg'
 import SmartphonesIcon from '../assets/icons/smartphone.svg'
 import SmartwatchesIcon from '../assets/icons/smartwatch.svg'
 
-import ComputersHero from '../assets/photos/computerhero.jpg'
-import LaptopsHero from '../assets/photos/laptophero.jpg'
-import AccessoriesHero from '../assets/photos/accessorieshero.jpg'
-import HardwareHero from '../assets/photos/hardwarehero.jpg'
-import GamingHero from '../assets/photos/gaminghero.jpg'
-import StreamingHero from '../assets/photos/streaminghero.jpg'
-import SmartphonesHero from '../assets/photos/smartphonehero.jpg'
-import SmartwatchesHero from '../assets/photos/smartwatchhero.jpg'
+import ComputersHero from '../../public/photos/computerhero.jpg'
+import LaptopsHero from '../../public/photos/laptophero.jpg'
+import AccessoriesHero from '../../public/photos/accessorieshero.jpg'
+import HardwareHero from '../../public/photos/hardwarehero.jpg'
+import GamingHero from '../../public/photos/gaminghero.jpg'
+import StreamingHero from '../../public/photos/streaminghero.jpg'
+import SmartphonesHero from '../../public/photos/smartphonehero.jpg'
+import SmartwatchesHero from '../../public/photos/smartwatchhero.jpg'
 
 const navItems: navItemType[] = [
     {
