@@ -12,11 +12,11 @@
 }
 
 .heroImagePhoto.main {
-    background-image: url('../../assets/photos/heroimagesmall.jpg');
+    background-image: url('../../../public/photos/encouragesectionbig.jpg');
 }
 
 .heroImagePhoto.encourage {
-    background-image: url('../../assets/photos/encouragesectionsmall.jpg');
+    background-image: url('../../../public/photos/encouragesectionsmall.jpg');
 }
 
 .heroImageShadow {
@@ -61,11 +61,11 @@
     }
 
     .heroImagePhoto.main {
-        background-image: url('../../assets/photos/heroimagebig.jpg');
+        background-image: url('../../../public/photos/heroimagebig.jpg');
     }
 
     .heroImagePhoto.encourage {
-        background-image: url('../../assets/photos/encouragesectionbig.jpg');
+        background-image: url('../../../public/photos/encouragesectionbig.jpg');
     }
 
     .heroImageText h1 {
