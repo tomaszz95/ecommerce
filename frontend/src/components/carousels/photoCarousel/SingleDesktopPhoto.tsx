@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import { API_URL } from '../../../constans/url'
 
 import styles from './SingleDesktopPhoto.module.css'
@@ -13,7 +11,7 @@ type ComponentType = {
 const SingleDesktopPhoto = ({ photo, productName, onClick }: ComponentType) => {
     return (
         <div className={styles.photoWrapper} onClick={onClick}>
-            <Image
+            <img
                 className={styles.photo}
                 src={`${API_URL}/photos/${photo}`}
                 width={1000}
