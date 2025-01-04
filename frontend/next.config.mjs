@@ -1,4 +1,16 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = { reactStrictMode: true, swcMinify: true }
 
-module.exports = nextConfig
+const nextConfig = {
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'nextpc',
+                port: '10000',
+                pathname: '/**',
+            },
+        ],
+    },
+}
+
+export default nextConfig
