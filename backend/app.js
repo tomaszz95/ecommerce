@@ -24,7 +24,7 @@ app.use(helmet())
 app.use(mongoSanitize())
 app.use(
 	cors({
-		origin: 'https://nextpc.vercel.app/',
+		origin: 'https://nextpc.vercel.app',
 		credentials: true,
 		methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
 		allowedHeaders: ['Content-Type', 'Authorization'],
