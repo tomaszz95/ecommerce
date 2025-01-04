@@ -6,11 +6,11 @@ type ComponentType = {
     id: string
     label: string
     checked: boolean
-    onChange: (checked: boolean) => void
+    onClickHandler: (checked: boolean) => void
     isError?: boolean
 }
 
-const FormalConsentItem = ({ id, label, checked, onChange, isError = false }: ComponentType) => {
+const FormalConsentItem = ({ id, label, checked, onClickHandler, isError = false }: ComponentType) => {
     const [isTouched, setIsTouched] = useState(false)
 
     const handleBlur = () => {
@@ -18,16 +18,12 @@ const FormalConsentItem = ({ id, label, checked, onChange, isError = false }: Co
     }
 
     return (
-        <div className={`${styles.consentItem} ${isError && isTouched ? styles.error : ''}`}>
+        <div
+            className={`${styles.consentItem} ${isError && isTouched ? styles.error : ''}`}
+            onClick={() => (checked ? onClickHandler(false) : onClickHandler(true))}
+        >
             <div>
-                <input
-                    id={id}
-                    type="checkbox"
-                    checked={checked}
-                    onChange={(e) => onChange(e.target.checked)}
-                    onBlur={handleBlur}
-                    aria-label="Accept consents"
-                />
+                <input id={id} type="checkbox" checked={checked} onBlur={handleBlur} aria-label="Accept consents" />
             </div>
             <label htmlFor={id}>{label}</label>
         </div>

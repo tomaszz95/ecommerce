@@ -25,7 +25,7 @@ const FormalConsents = ({ onConsentsAgree }: ComponentType) => {
                 id="acceptRegulations"
                 label="I accept the store regulations (required)"
                 checked={acceptRegulations}
-                onChange={setAcceptRegulations}
+                onClickHandler={setAcceptRegulations}
                 isError={isConsentError}
             />
 
@@ -33,14 +33,14 @@ const FormalConsents = ({ onConsentsAgree }: ComponentType) => {
                 id="receiveOffers"
                 label="I want to receive information about current offers and promotions by e-mail"
                 checked={receiveOffers}
-                onChange={setReceiveOffers}
+                onClickHandler={setReceiveOffers}
             />
 
             <FormalConsentItem
                 id="tailoredOffers"
                 label="I want to receive an offer tailored to my needs"
                 checked={tailoredOffers}
-                onChange={setTailoredOffers}
+                onClickHandler={setTailoredOffers}
             />
         </div>
     )
