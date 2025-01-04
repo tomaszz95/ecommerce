@@ -2,6 +2,8 @@
 
 import { useState } from 'react'
 
+import Image from 'next/image'
+
 import DesktopPhotoCarousel from '../../../carousels/photoCarousel/DesktopPhotoCarousel'
 
 import FavoriteButton from '../favorite/FavoriteButton'
@@ -28,13 +30,14 @@ const DesktopGallery = ({ photos, productName, productId, uniqueId }: ComponentT
         <div className={styles.imageGallery}>
             <div className={styles.mainImage}>
                 <FavoriteButton productId={productId} uniqueId={uniqueId} />
-                <img
+                <Image
                     src={`${API_URL}/photos/${photos[selectedPhotoIndex]}`}
                     width={1000}
                     height={1000}
                     alt={`${productName} photo`}
                     className={styles.mainImageContent}
                     crossOrigin="anonymous"
+                    unoptimized
                 />
             </div>
 
