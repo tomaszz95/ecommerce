@@ -5,9 +5,8 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'nextpc',
-                port: '10000',
-                pathname: '/**',
+                hostname: 'nextpc.onrender.com',
+                pathname: '/photos/**',
             },
         ],
     },
