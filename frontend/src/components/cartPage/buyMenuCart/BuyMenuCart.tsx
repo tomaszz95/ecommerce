@@ -105,7 +105,7 @@ const BuyMenuCart = ({ totalPrice, subtotalPrice, discount, discountValue, order
                 <b>${totalPrice}</b>
             </div>
             <HightlightButton href={linkPath}>Go to delivery</HightlightButton>
-            <p className={styles.priceBoxInfo}>Don`&apos;`t delay, the products in your cart are not reserved.</p>
+            <p className={styles.priceBoxInfo}>Don&apos;t delay, the products in your cart are not reserved.</p>
         </section>
     )
 }
