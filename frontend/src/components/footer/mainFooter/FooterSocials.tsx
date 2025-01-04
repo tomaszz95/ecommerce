@@ -23,7 +23,7 @@ const FooterSocials = () => {
             </div>
             <div className={styles.socialsBox}>
                 <Image src={FacebookIcon} alt="" />
-                <a href="https://facebook.com/nextpc" aria-label="NeXtPC facebook page">
+                <a href="https://www.facebook.com/GameOfThrones" aria-label="NeXtPC facebook page">
                     Facebook
                 </a>
             </div>
