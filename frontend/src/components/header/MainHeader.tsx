@@ -5,7 +5,7 @@ import MobileNavigation from '../navigation/mobileNavModal/MobileNavigation'
 import SearchBox from '../searchBox/SearchBox'
 import HeaderOptions from './headerOptions/HeaderOptions'
 
-import Logo from '../../assets/photos/nextpc.png'
+import Logo from '../../../public/photos/nextpc.png'
 
 import styles from './MainHeader.module.css'
 
