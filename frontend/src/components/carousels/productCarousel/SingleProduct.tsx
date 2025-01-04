@@ -32,7 +32,7 @@ const SingleProduct = ({ name, price, category, promotion, uniqueId, image }: Co
             aria-label={`Click to see product ${name}`}
         >
             {promotion.isPromotion && <span className={styles.promotionBanner}>{promotion.promotionPercent}%</span>}
-            <img src={`${API_URL}/photos/${image}`} width={1000} height={1000} alt={name} />
+            <img src={`${API_URL}/photos/${image}`} width={1000} height={1000} alt={name} crossOrigin="anonymous" />
             <p>{category}</p>
             <h3>{name}</h3>
             <span className={styles.price}>

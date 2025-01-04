@@ -21,6 +21,7 @@ const SinglePhoto = ({ photo, productName, productId, uniqueId }: ComponentType)
                 width={1000}
                 height={1000}
                 alt={`${productName} photo`}
+                crossOrigin="anonymous"
             />
         </div>
     )

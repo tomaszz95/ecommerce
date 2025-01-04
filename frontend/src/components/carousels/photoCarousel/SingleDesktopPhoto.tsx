@@ -17,6 +17,7 @@ const SingleDesktopPhoto = ({ photo, productName, onClick }: ComponentType) => {
                 width={1000}
                 height={1000}
                 alt={`${productName} photo`}
+                crossOrigin="anonymous"
             />
         </div>
     )
