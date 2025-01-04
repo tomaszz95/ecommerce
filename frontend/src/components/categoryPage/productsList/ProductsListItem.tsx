@@ -54,7 +54,13 @@ const ProductsListItem = ({ product, isUserFav = false }: ComponentType) => {
             {product.recommended && <span className={styles.recommendedText}>Recommended</span>}
             <div className={styles.listMainDataBox}>
                 <h2>{product.name}</h2>
-                <Image src={`${API_URL}/photos/${product.image}`} width={1000} height={1000} alt={product.name} />
+                <img
+                    src={`${API_URL}/photos/${product.image}`}
+                    width={1000}
+                    height={1000}
+                    alt={product.name}
+                    crossOrigin="anonymous"
+                />
             </div>
             <ProductListItemInfo
                 averageRating={product.averageRating}
