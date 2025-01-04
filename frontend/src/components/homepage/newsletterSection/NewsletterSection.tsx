@@ -40,7 +40,7 @@ const NewsletterSection = () => {
             <div className={styles.container}>
                 <div className={styles.textBox}>
                     <h2>Sign up for the newsletter</h2>
-                    <p>Don`&apos;`t miss any promotion and get additional discounts</p>
+                    <p>Don&apos;t miss any promotion and get additional discounts</p>
                 </div>
                 <form className={styles.inputBox} onSubmit={submitHandler}>
                     <Input
@@ -61,7 +61,7 @@ const NewsletterSection = () => {
 
             {!firstLoading && (
                 <Modal isVisible={isModalVisible} onAnimationEnd={() => setIsModalVisible(false)}>
-                    You`&apos;`ve successfully subscribed to the newsletter!
+                    You&apos;ve successfully subscribed to the newsletter!
                 </Modal>
             )}
         </section>

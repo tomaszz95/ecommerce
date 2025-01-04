@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 
 import PromotionTimer from './PromotionTimer'
 import CurrentPrice from '../../../components/currentPrice/CurrentPrice'
@@ -26,7 +25,13 @@ const BiggestPromotion = ({ product }: ComponentType) => {
             href={`/shop/${categoryLink}/${product.uniqueId}/${productLink}`}
             aria-label="Biggest promotion item"
         >
-            <Image src={`${API_URL}/photos/${product.image}`} width={1000} height={1000} alt={product.name} />
+            <img
+                src={`${API_URL}/photos/${product.image}`}
+                width={1000}
+                height={1000}
+                alt={product.name}
+                crossOrigin="anonymous"
+            />
             <p>{product.category}</p>
             <h3>{product.name}</h3>
             <CurrentPrice isBig={true} price={product.price} promotionPrice={product.promotion.promotionPrice} />

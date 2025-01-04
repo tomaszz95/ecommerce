@@ -98,7 +98,7 @@ const ContactForm = () => {
 
             {!firstLoading && (
                 <Modal isVisible={isModalVisible} onAnimationEnd={() => setIsModalVisible(false)}>
-                    You`&apos;`ve successfully sent a message!
+                    You&apos;ve successfully sent a message!
                 </Modal>
             )}
         </form>

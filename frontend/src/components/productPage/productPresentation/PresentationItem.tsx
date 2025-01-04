@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import { API_URL } from '../../../constans/url'
 
 import styles from './PresentationItem.module.css'
@@ -17,12 +15,13 @@ const PresentationItem = ({ text, img, title }: ComponentType) => {
                 <h3>{title}</h3>
                 <p>{text}</p>
             </div>
-            <Image
+            <img
                 src={`${API_URL}/photos/${img}`}
                 width={1000}
                 height={1000}
                 alt={`${title} photo`}
                 aria-label={`${title} photo`}
+                crossOrigin="anonymous"
             />
         </div>
     )
