@@ -23,7 +23,14 @@ const FormalConsentItem = ({ id, label, checked, onClickHandler, isError = false
             onClick={() => (checked ? onClickHandler(false) : onClickHandler(true))}
         >
             <div>
-                <input id={id} type="checkbox" checked={checked} onBlur={handleBlur} aria-label="Accept consents" />
+                <input
+                    id={id}
+                    type="checkbox"
+                    checked={checked}
+                    onBlur={handleBlur}
+                    aria-label="Accept consents"
+                    onChange={() => {}}
+                />
             </div>
             <label htmlFor={id}>{label}</label>
         </div>
