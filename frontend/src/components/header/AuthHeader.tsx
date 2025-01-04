@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import Logo from '../../assets/photos/nextpc.png'
+import Logo from '../../../public/photos/nextpc.png'
 
 import styles from './AuthHeader.module.css'
 
