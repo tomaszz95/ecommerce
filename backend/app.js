@@ -20,7 +20,11 @@ const notFoundMiddleware = require('./middleware/not-found')
 const errorHandlerMiddleware = require('./middleware/error-handler')
 
 app.use(cookieParser(process.env.JWT_SECRET))
-app.use(helmet())
+app.use(
+	helmet({
+		crossOriginResourcePolicy: false,
+	})
+)
 app.use(mongoSanitize())
 app.use(
 	cors({
