@@ -103,7 +103,7 @@ const CategoryPage = ({ params, searchParams }: Props) => {
 
     return (
         <MainLayout>
-            <CategoryHead category="shop" productsCount={productsData.totalProducts} />
+            <CategoryHead category={category} productsCount={productsData.totalProducts} />
             <CategoryContent
                 products={productsData.products}
                 totalPages={productsData.totalPages}
