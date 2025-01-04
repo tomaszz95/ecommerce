@@ -27,9 +27,11 @@ app.use(
 		origin: 'https://nextpc.vercel.app',
 		credentials: true,
 		methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-		allowedHeaders: ['Content-Type', 'Authorization'],
+		allowedHeaders: ['Content-Type', 'Authorization', 'X-Custom-Header'],
 	})
 )
+app.options('*', cors())
+
 app.use(express.json())
 
 app.use(express.static('./public'))
