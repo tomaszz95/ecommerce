@@ -22,7 +22,9 @@ const ProductHeading = ({ productName, company, averageRating, numOfReviews }: C
         <div className={styles.productHeading}>
             <div className={styles.productHeadingTitle}>
                 <h1>{productName}</h1>
-                {brandLogo && <Image src={brandLogo} alt={`${company} logo`} aria-label={`${brandLogo} logo`} />}
+                {brandLogo && (
+                    <Image src={brandLogo} alt={`${company} logo`} aria-label={`${brandLogo} logo`} width={100} />
+                )}
             </div>
             <div className={styles.productContainer}>
                 <StarRating rating={averageRating} />

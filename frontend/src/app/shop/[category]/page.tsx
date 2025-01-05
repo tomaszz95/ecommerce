@@ -23,7 +23,7 @@ const CategoryPage = ({ params, searchParams }: Props) => {
     const { category } = params
 
     useMetadata({
-        title: `NeXtPC - ${category.charAt(0).toUpperCase() + category.slice(1)}`,
+        title: `${category.charAt(0).toUpperCase() + category.slice(1)}`,
         description: `Products from category ${category}`,
     })
 
@@ -54,7 +54,10 @@ const CategoryPage = ({ params, searchParams }: Props) => {
             const url = buildFiltersUrl(searchParams, category)
 
             try {
-                const response = await fetch(url)
+                const response = await fetch(url, {
+                    method: 'GET',
+                    credentials: 'include',
+                })
 
                 if (!response.ok) {
                     const errorData = await response.json()

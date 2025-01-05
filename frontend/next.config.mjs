@@ -9,6 +9,14 @@ const nextConfig = {
                 pathname: '/photos/**',
             },
         ],
+        // remotePatterns: [
+        //     {
+        //         protocol: 'http',
+        //         hostname: 'localhost',
+        //         port: '5000',
+        //         pathname: '/**',
+        //     },
+        // ],
     },
 }
 

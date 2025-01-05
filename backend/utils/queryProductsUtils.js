@@ -49,7 +49,21 @@ const queryProductsBuilder = query => {
 const queryOptionsBuilder = query => {
 	const { sort, page } = query
 
-	const sortOption = VALID_SORT_OPTIONS[sort] || '-createdAt'
+	let sortOption
+	if (sort === 'rating') {
+		sortOption = { averageRating: -1, numOfReviews: -1 }
+	} else if (sort === '-price') {
+		sortOption = { 'promotion.promotionPrice': -1 }
+	} else if (sort === 'price') {
+		sortOption = { 'promotion.promotionPrice': 1 }
+	} else if (sort === 'alphabetically') {
+		sortOption = { name: 1 }
+	} else if (sort === '-alphabetically') {
+		sortOption = { name: -1 }
+	} else {
+		sortOption = { createdAt: -1 }
+	}
+
 	const limit = DEFAULT_LIMIT
 	const pageNum = Number(page) || 1
 	const skip = (pageNum - 1) * limit
