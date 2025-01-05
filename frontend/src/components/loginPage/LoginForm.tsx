@@ -36,7 +36,11 @@ const LoginForm = ({ orderId }: ComponentType) => {
         valueIsValid: passwordIsValid,
         valueChangeHandler: passwordChangeHandler,
         inputBlurHandler: passwordBlurHandler,
-    } = useInput((value) => value.length >= 8)
+    } = useInput(
+        (value) => value.length >= 8 && !/\s/.test(value),
+        '',
+        (value) => value.replace(/\s/g, ''),
+    )
 
     const formIsValid = emailIsValid && passwordIsValid
 

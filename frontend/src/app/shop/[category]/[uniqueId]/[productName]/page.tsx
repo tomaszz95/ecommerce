@@ -1,4 +1,8 @@
-import type { Metadata } from 'next'
+'use client'
+
+import { useEffect, useState } from 'react'
+
+import useMetadata from '../../../../../hooks/useMetadata'
 
 import MainLayout from '../../../../../components/layouts/MainLayout'
 import ProductSection from '../../../../../components/productPage/productInfo/ProductSection'
@@ -7,76 +11,111 @@ import ProductSpecification from '../../../../../components/productPage/productS
 import SimilarCarousel from '../../../../../components/productPage/similarProductsCarousel/SimilarCarousel'
 import OpinionsSection from '../../../../../components/productPage/opinionsSection/OpinionsSection'
 import MayInterestCarousel from '../../../../../components/productPage/mayInterestSection/MayInterestCarousel'
+import LoadingSpinner from '../../../../../components/loadingSpinner/LoadingSpinner'
 import ServerError from '../../../../../components/serverError/ServerError'
 
+import createProductNameFromLink from '../../../../../components/utils/createProductNameFromString'
+
+import { homepageSingleProductData, productType } from '../../../../../types/types'
+
 import { API_URL } from '../../../../../constans/url'
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const { uniqueId } = params
-
-    try {
-        const response = await fetch(`${API_URL}/api/products/product/${uniqueId}?timestamp=${Date.now()}`)
-
-        if (!response.ok) {
-            throw new Error('Failed to fetch product data')
-        }
-
-        const { product } = await response.json()
-
-        return {
-            title: `NeXtPC - ${product.name}`,
-            description: `Find out more about the ${product.name}, its features, specifications, and reviews.`,
-        }
-    } catch (error) {
-        return {
-            title: 'NeXtPC - Product',
-            description: 'Explore our wide range of products and find your perfect match.',
-        }
-    }
-}
 
 type Props = {
     params: { uniqueId: string; productName: string; category: string }
 }
 
-const SingleProductPage = async ({ params }: Props) => {
-    const { uniqueId } = params
+const SingleProductPage = ({ params }: Props) => {
+    const { uniqueId, productName, category } = params
+    const prodNameTitle = createProductNameFromLink(productName)
 
-    try {
-        const response = await fetch(`${API_URL}/api/products/product/${uniqueId}?timestamp=${Date.now()}`)
+    useMetadata({
+        title: `${prodNameTitle}`,
+        description: `Main page for product ${prodNameTitle}`,
+    })
 
-        if (!response.ok) {
-            const errorData = await response.json()
+    const [productData, setProductData] = useState<{
+        product: productType
+        similarProducts: homepageSingleProductData[]
+        mayInterestProducts: homepageSingleProductData[]
+        tokenData: {
+            name: string
+            userId: string
+        }
+    } | null>(null)
+    const [isLoading, setIsLoading] = useState(true)
+    const [serverError, setServerError] = useState('')
 
-            throw new Error(errorData.msg || 'Product not found')
+    useEffect(() => {
+        setIsLoading(true)
+
+        const getProductsData = async () => {
+            try {
+                const response = await fetch(`${API_URL}/api/products/product/${uniqueId}?timestamp=${Date.now()}`, {
+                    method: 'GET',
+                    credentials: 'include',
+                })
+
+                if (!response.ok) {
+                    const errorData = await response.json()
+
+                    throw new Error(errorData.msg || 'Product not found')
+                }
+
+                const data = await response.json()
+
+                setProductData(data)
+                setIsLoading(false)
+            } catch (err: unknown) {
+                const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred'
+
+                setServerError(errorMessage)
+                setIsLoading(false)
+            }
         }
 
-        const { product, similarProducts, mayInterestProducts } = await response.json()
+        getProductsData()
+    }, [uniqueId])
 
+    if (isLoading) {
         return (
             <MainLayout>
-                <ProductSection product={product} />
-                <ProductPresentation productPresentation={product.presentation} />
-                <ProductSpecification productSpecification={product.specification} />
-                <SimilarCarousel similarProducts={similarProducts} />
-                <OpinionsSection
-                    productReviews={product.reviews}
-                    averageRating={product.averageRating}
-                    numOfReviews={product.numOfReviews}
-                    productId={product._id}
-                />
-                <MayInterestCarousel mayInterestProducts={mayInterestProducts} />
-            </MainLayout>
-        )
-    } catch (err: unknown) {
-        const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred'
-
-        return (
-            <MainLayout>
-                <ServerError errorText={errorMessage} />
+                <LoadingSpinner />
             </MainLayout>
         )
     }
+
+    if (!isLoading && serverError !== '') {
+        return (
+            <MainLayout>
+                <ServerError errorText={serverError} errorMsg="Please try again later" />
+            </MainLayout>
+        )
+    }
+
+    if (!productData) {
+        return (
+            <MainLayout>
+                <ServerError errorText="Something went wrong." errorMsg="Please try again later." />
+            </MainLayout>
+        )
+    }
+
+    return (
+        <MainLayout>
+            <ProductSection product={productData.product} />
+            <ProductPresentation productPresentation={productData.product.presentation} />
+            <ProductSpecification productSpecification={productData.product.specification} />
+            <SimilarCarousel similarProducts={productData.similarProducts} />
+            <OpinionsSection
+                productReviews={productData.product.reviews}
+                averageRating={productData.product.averageRating}
+                numOfReviews={productData.product.numOfReviews}
+                productId={productData.product._id}
+                tokenData={productData.tokenData}
+            />
+            <MayInterestCarousel mayInterestProducts={productData.mayInterestProducts} />
+        </MainLayout>
+    )
 }
 
 export default SingleProductPage

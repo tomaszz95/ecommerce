@@ -16,6 +16,7 @@ export type productType = {
         promotionPercent: number
         promotionPrice: number
     }
+    reviews: singleOpinionType[]
     _id: string
     specification: { [keys: string]: string }
     presentation: { title: string; text: string; img: string }[]

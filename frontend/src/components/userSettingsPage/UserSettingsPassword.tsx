@@ -17,7 +17,11 @@ const UserSettingsPassword = () => {
         valueChangeHandler: passwordChangeHandler,
         inputBlurHandler: passwordBlurHandler,
         reset: resetPassword,
-    } = useInput((value) => value.trim() !== '', '')
+    } = useInput(
+        (value) => value.trim() !== '' && !/\s/.test(value),
+        '',
+        (value) => value.replace(/\s/g, ''),
+    )
 
     const {
         value: enteredNewPassword,
@@ -26,7 +30,11 @@ const UserSettingsPassword = () => {
         valueChangeHandler: newPasswordChangeHandler,
         inputBlurHandler: newPasswordBlurHandler,
         reset: resetNewPassword,
-    } = useInput((value) => value.length >= 8, '')
+    } = useInput(
+        (value) => value.length >= 8 && !/\s/.test(value),
+        '',
+        (value) => value.replace(/\s/g, ''),
+    )
 
     const {
         value: enteredNewRepeatPassword,
@@ -35,7 +43,11 @@ const UserSettingsPassword = () => {
         valueChangeHandler: newPasswordRepeatChangeHandler,
         inputBlurHandler: newPasswordRepeatBlurHandler,
         reset: resetNewRepeatPassword,
-    } = useInput((value) => value === enteredNewPassword && value.length >= 8, '')
+    } = useInput(
+        (value) => value === enteredNewPassword && value.length >= 8 && !/\s/.test(value),
+        '',
+        (value) => value.replace(/\s/g, ''),
+    )
 
     const formIsValid =
         passwordIsValid &&

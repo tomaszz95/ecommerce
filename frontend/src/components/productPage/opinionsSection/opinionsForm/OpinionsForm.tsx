@@ -23,6 +23,7 @@ type ComponentType = {
     opinionId?: string
     onDisableHandler?: (value: boolean) => void
     productId?: string
+    userName?: string
 }
 
 const OpinionsForm = ({
@@ -34,6 +35,7 @@ const OpinionsForm = ({
     opinionId,
     onDisableHandler,
     productId,
+    userName,
 }: ComponentType) => {
     const [newRating, setNewRating] = useState(rating || 0)
     const [hoveredRating, setHoveredRating] = useState(0)
@@ -44,7 +46,7 @@ const OpinionsForm = ({
         valueChangeHandler: nameChangeHandler,
         inputBlurHandler: nameBlurHandler,
         reset: resetName,
-    } = useInput((value) => value.trim() !== '', author || '')
+    } = useInput((value) => value.trim() !== '', author || userName || '')
 
     const {
         value: enteredMessage,

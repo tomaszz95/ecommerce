@@ -3,6 +3,7 @@ const Product = require('../models/Product')
 const { StatusCodes } = require('http-status-codes')
 const CustomError = require('../errors/index')
 const { queryProductsBuilder, queryOptionsBuilder } = require('../utils/queryProductsUtils')
+const { isTokenValid } = require('../utils/jwt')
 
 const categories = [
 	'Computers',
@@ -132,26 +133,50 @@ const getFilteredProducts = async (req, res) => {
 	const queryObject = queryProductsBuilder({ ...req.query })
 	const { sortOption, limit, skip, pageNum } = queryOptionsBuilder(req.query)
 
-	const products = await Product.find(queryObject)
-		.sort(sortOption)
-		.skip(skip)
-		.limit(limit)
-		.select(
-			'name price images category promotion uniqueId recommended company description stock averageRating numOfReviews'
-		)
-		.lean()
+	const aggregationPipeline = [
+		{ $match: queryObject },
+		{
+			$addFields: {
+				'promotion.promotionPrice': {
+					$cond: [
+						{ $eq: ['$promotion.isPromotion', true] },
+						{
+							$round: [
+								{
+									$multiply: ['$price', { $subtract: [1, { $divide: ['$promotion.promotionPercent', 100] }] }],
+								},
+								0,
+							],
+						},
+						'$price',
+					],
+				},
+				image: { $arrayElemAt: ['$images', 0] },
+			},
+		},
+		{ $sort: sortOption },
+		{ $skip: skip },
+		{ $limit: limit },
+		{
+			$project: {
+				name: 1,
+				price: 1,
+				image: 1,
+				category: 1,
+				promotion: 1,
+				uniqueId: 1,
+				recommended: 1,
+				company: 1,
+				description: 1,
+				stock: 1,
+				averageRating: 1,
+				numOfReviews: 1,
+			},
+		},
+	]
 
-	products.forEach(product => {
-		product.image = product.images[0]
-		delete product.images
+	const products = await Product.aggregate(aggregationPipeline)
 
-		product.promotion = {
-			...product.promotion,
-			promotionPrice: product.promotion.isPromotion
-				? Math.round(product.price * (1 - product.promotion.promotionPercent / 100))
-				: product.price,
-		}
-	})
 	const totalProducts = await Product.countDocuments(queryObject)
 
 	res.status(StatusCodes.OK).json({
@@ -164,10 +189,20 @@ const getFilteredProducts = async (req, res) => {
 
 const getSingleProduct = async (req, res) => {
 	const { uniqueId } = req.params
+	const token = req.signedCookies.token
+
+	let tokenData = {
+		name: '',
+		userId: '',
+	}
+
+	if (token) {
+		tokenData = isTokenValid({ token })
+	}
 
 	const product = await Product.findOne({ uniqueId: uniqueId }).populate({
 		path: 'reviews',
-		select: 'author message rating _id',
+		select: 'author message rating _id user',
 	})
 
 	if (!product) {
@@ -220,6 +255,10 @@ const getSingleProduct = async (req, res) => {
 		},
 		similarProducts,
 		mayInterestProducts,
+		tokenData: {
+			name: tokenData.name,
+			userId: tokenData.userId,
+		},
 	})
 }
 

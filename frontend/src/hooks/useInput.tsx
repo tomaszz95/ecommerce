@@ -1,6 +1,10 @@
 import { useState } from 'react'
 
-const useInput = (validateValue: (value: string) => boolean, initialValue: string = '') => {
+const useInput = (
+    validateValue: (value: string) => boolean,
+    initialValue: string = '',
+    filterValue?: (value: string) => string,
+) => {
     const [value, setValue] = useState(initialValue)
     const [isTouched, setIsTouched] = useState(false)
 
@@ -8,7 +12,11 @@ const useInput = (validateValue: (value: string) => boolean, initialValue: strin
     const hasError = !valueIsValid && isTouched
 
     const valueChangeHandler = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setValue(event.target.value)
+        let inputValue = event.target.value
+        if (filterValue) {
+            inputValue = filterValue(inputValue)
+        }
+        setValue(inputValue)
     }
 
     const inputBlurHandler = () => {

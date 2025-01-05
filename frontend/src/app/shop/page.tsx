@@ -48,7 +48,10 @@ const ShopPage = ({ searchParams }: Props) => {
             const url = buildFiltersUrl(searchParams)
 
             try {
-                const response = await fetch(url)
+                const response = await fetch(url, {
+                    method: 'GET',
+                    credentials: 'include',
+                })
 
                 if (!response.ok) {
                     const errorData = await response.json()
