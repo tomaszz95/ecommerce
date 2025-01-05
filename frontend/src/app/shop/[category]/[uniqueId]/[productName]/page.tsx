@@ -21,11 +21,11 @@ import { homepageSingleProductData, productType } from '../../../../../types/typ
 import { API_URL } from '../../../../../constans/url'
 
 type Props = {
-    params: { uniqueId: string; productName: string; category: string }
+    params: { uniqueId: string; productName: string }
 }
 
 const SingleProductPage = ({ params }: Props) => {
-    const { uniqueId, productName, category } = params
+    const { uniqueId, productName } = params
     const prodNameTitle = createProductNameFromLink(productName)
 
     useMetadata({
