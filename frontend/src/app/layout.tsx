@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 
+import EntranceModal from '../components/UI/entranceModal/EntranceModal'
+
 import '../styles/globals.css'
 
 type ComponentType = {
@@ -17,7 +19,10 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: ComponentType) => {
     return (
         <html lang="en">
-            <body>{children}</body>
+            <body>
+                <EntranceModal />
+                {children}
+            </body>
         </html>
     )
 }
