@@ -19,7 +19,7 @@ const Homepage = async () => {
         if (!response.ok) {
             throw new Error('Products not found')
         }
-        console.log(data)
+
         const { recommendedProducts, latestProducts, biggestDiscountProduct, productsByCategory } = data
 
         return (
