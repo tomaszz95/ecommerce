@@ -4,9 +4,6 @@
 
 <p>I encourage you to check the website - uploaded to vercel <a href='https://nextpc.vercel.app/'>NeXtPC ecommerce app</a></p>
 
-<h2>Important Notice!</h2>
-<p>Please note that the backend is hosted on a free server (render.com), which may take up to 30 seconds to start. As a result, photos and data might take a moment to load. I apologize for the inconvenience—this issue is solely due to the limitations of free hosting. In a production environment, this delay would not occur.</p>
-
 <h2>📫 Project contains</h2>
 
 <ul>
