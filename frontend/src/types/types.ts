@@ -131,7 +131,7 @@ export type filterTypes = {
     promotion: boolean
 }
 
-// ORDER
+// ORDERS
 
 export type cartOrderType = {
     discount: number
