@@ -8,7 +8,7 @@ import createLinkFromProductName from '../../../components/utils/createLinkFromP
 
 import { homepageSingleProductData } from '../../../types/types'
 
-import { API_URL } from '../../../constans/url'
+import { STATIC_URL } from '../../../constans/url'
 
 import styles from './BiggestPromotion.module.css'
 
@@ -27,7 +27,7 @@ const BiggestPromotion = ({ product }: ComponentType) => {
             aria-label="Biggest promotion item"
         >
             <Image
-                src={`${API_URL}/photos/${product.image}`}
+                src={`${STATIC_URL}/photos/${product.image}`}
                 width={1000}
                 height={1000}
                 alt={product.name}

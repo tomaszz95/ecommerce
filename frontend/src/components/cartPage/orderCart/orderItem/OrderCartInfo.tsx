@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 import Modal from '../../../../components/UI/modal/Modal'
 
-import { API_URL } from '../../../../constans/url'
+import { API_URL, STATIC_URL } from '../../../../constans/url'
 
 import styles from './OrderCartInfo.module.css'
 
@@ -49,7 +49,7 @@ const OrderCartInfo = ({ name, image, amount, orderId, productId }: ComponentTyp
     return (
         <div className={styles.orderItemInfo}>
             <div className={styles.orderItemInfoText}>
-                <Image src={`${API_URL}/photos/${image}`} width={1000} height={1000} alt={name} />
+                <Image src={`${STATIC_URL}/photos/${image}`} width={1000} height={1000} alt={name} />
                 <h3>{name}</h3>
             </div>
             <div className={styles.orderItemInfoCount}>

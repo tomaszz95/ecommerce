@@ -5,7 +5,7 @@ import CurrentPrice from '../../currentPrice/CurrentPrice'
 
 import createLinkFromProductName from '../../utils/createLinkFromProductName'
 
-import { API_URL } from '../../../constans/url'
+import { STATIC_URL } from '../../../constans/url'
 
 import styles from './SingleProduct.module.css'
 
@@ -34,7 +34,7 @@ const SingleProduct = ({ name, price, category, promotion, uniqueId, image }: Co
         >
             {promotion.isPromotion && <span className={styles.promotionBanner}>{promotion.promotionPercent}%</span>}
             <Image
-                src={`${API_URL}/photos/${image}`}
+                src={`${STATIC_URL}/photos/${image}`}
                 width={1000}
                 height={1000}
                 alt={name}

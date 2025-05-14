@@ -8,7 +8,7 @@ import DesktopPhotoCarousel from '../../../carousels/photoCarousel/DesktopPhotoC
 
 import FavoriteButton from '../favorite/FavoriteButton'
 
-import { API_URL } from '../../../../constans/url'
+import { STATIC_URL } from '../../../../constans/url'
 
 import styles from './DesktopGallery.module.css'
 
@@ -31,7 +31,7 @@ const DesktopGallery = ({ photos, productName, productId, uniqueId }: ComponentT
             <div className={styles.mainImage}>
                 <FavoriteButton productId={productId} uniqueId={uniqueId} />
                 <Image
-                    src={`${API_URL}/photos/${photos[selectedPhotoIndex]}`}
+                    src={`${STATIC_URL}/photos/${photos[selectedPhotoIndex]}`}
                     width={1000}
                     height={1000}
                     alt={`${productName} photo`}

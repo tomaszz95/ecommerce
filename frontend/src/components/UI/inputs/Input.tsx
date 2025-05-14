@@ -1,5 +1,6 @@
-import styles from './Input.module.css'
 import InputError from './InputError'
+
+import styles from './Input.module.css'
 
 type ComponentType = {
     label: string

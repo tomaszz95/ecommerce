@@ -7,7 +7,7 @@ import HightlightButton from '../../../components/UI/buttons/HightlightButton'
 
 import createLinkFromProductName from '../../../components/utils/createLinkFromProductName'
 
-import { API_URL, FRONTEND_URL } from '../../../constans/url'
+import { API_URL, FRONTEND_URL, STATIC_URL } from '../../../constans/url'
 
 import { categorySingleProductData } from '../../../types/types'
 
@@ -55,7 +55,7 @@ const ProductsListItem = ({ product, isUserFav = false }: ComponentType) => {
             <div className={styles.listMainDataBox}>
                 <h2>{product.name}</h2>
                 <Image
-                    src={`${API_URL}/photos/${product.image}`}
+                    src={`${STATIC_URL}/photos/${product.image}`}
                     width={1000}
                     height={1000}
                     alt={product.name}

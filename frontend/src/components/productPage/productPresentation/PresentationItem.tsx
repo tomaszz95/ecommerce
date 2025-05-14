@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { API_URL } from '../../../constans/url'
+import { STATIC_URL } from '../../../constans/url'
 
 import styles from './PresentationItem.module.css'
 
@@ -18,7 +18,7 @@ const PresentationItem = ({ text, img, title }: ComponentType) => {
                 <p>{text}</p>
             </div>
             <Image
-                src={`${API_URL}/photos/${img}`}
+                src={`${STATIC_URL}/photos/${img}`}
                 width={1000}
                 height={1000}
                 alt={`${title} photo`}

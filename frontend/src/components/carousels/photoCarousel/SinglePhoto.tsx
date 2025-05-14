@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import FavoriteButton from '../../productPage/productInfo/favorite/FavoriteButton'
 
-import { API_URL } from '../../../constans/url'
+import { STATIC_URL } from '../../../constans/url'
 
 import styles from './SinglePhoto.module.css'
 
@@ -19,7 +19,7 @@ const SinglePhoto = ({ photo, productName, productId, uniqueId }: ComponentType)
             <FavoriteButton productId={productId} uniqueId={uniqueId} />
             <Image
                 className={styles.photo}
-                src={`${API_URL}/photos/${photo}`}
+                src={`${STATIC_URL}/photos/${photo}`}
                 width={1000}
                 height={1000}
                 alt={`${productName} photo`}

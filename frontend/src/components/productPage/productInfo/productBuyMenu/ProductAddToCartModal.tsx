@@ -5,7 +5,7 @@ import Image from 'next/image'
 import HightlightButton from '../../../../components/UI/buttons/HightlightButton'
 import CurrentPrice from '../../../../components/currentPrice/CurrentPrice'
 
-import { API_URL } from '../../../../constans/url'
+import { STATIC_URL } from '../../../../constans/url'
 
 import styles from './ProductAddToCartModal.module.css'
 
@@ -24,7 +24,7 @@ const ProductAddToCartModal = ({ price, promotionPrice, productName, photo, onCl
                 <h2>Product added to cart</h2>
                 <div className={styles.modalInfo}>
                     <div className={styles.modalName}>
-                        <Image src={`${API_URL}/photos/${photo}`} width={1000} height={1000} alt={productName} />
+                        <Image src={`${STATIC_URL}/photos/${photo}`} width={1000} height={1000} alt={productName} />
                         <p>{productName}</p>
                     </div>
                     <CurrentPrice price={price} promotionPrice={promotionPrice} isBig={true} />
