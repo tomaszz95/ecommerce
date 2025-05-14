@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        {
+            "source": "/api/:path*",
+            "destination": "https://nextpc.onrender.com/api/:path*"
+        }
+    ]
+}
