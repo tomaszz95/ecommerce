@@ -2,7 +2,7 @@
 
 <p>I would like to present with the greatest pleasure my most advanced project, which is a fully functional ecommerce website selling electronic items. I created the entire project from scratch: the frontend was written in Next.js (also Typescript), the backend in Node.js using Express.js and Mongoose, also I used a MongoDB database (REST API). The page is fully responsive - for mobiles, tablets and desktops. The application contains many pages - starting with the home page through individual product categories, sub-pages with individual products, where you can rate the products, the ability to log in/register, and the entire process of buying a product up to payment (which, of course, since this is not a full-fledged application, ends when you have to pay for the product). Being logged in allows you to add products to your favorites, save your data and track products later.</p>
 
-<p>Check out the live demo hosted on Vercel: <a href='https://nextpc.vercel.app'>NeXtPC ecommerce app</a></p>
+<p>Check out the live demo: <a href='https://nextpc.vercel.app'>NeXtPC ecommerce app</a></p>
 
 <h2>📫 Project contains</h2>
 
