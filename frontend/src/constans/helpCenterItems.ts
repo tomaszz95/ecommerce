@@ -58,7 +58,7 @@ const helpCenterItems: helpCenterItemType[] = [
         questions: [
             {
                 question: 'To what extent is it possible to modify the equipment before purchase?',
-                answer: 'The computers we currently sell can be modified for RAM expansions',
+                answer: 'The computers we currently sell can be modified for RAM expansions.',
             },
             {
                 question: 'Can I exchange a product from the promotional set for another one?',
@@ -80,7 +80,7 @@ const helpCenterItems: helpCenterItemType[] = [
         questions: [
             {
                 question: 'How can I insure my goods?',
-                answer: 'If you are interested, please contact us by phone from Monday to Friday, 8:00 a.m. - 6:00 p.m., by phone: 00 000 00 00 and by e-mail: nextpcsafe@nextpc.com',
+                answer: 'If you are interested, please contact us by phone from Monday to Friday, 8:00 a.m. - 6:00 p.m., by phone: 00 000 00 00 and by e-mail: nextpcsafe@nextpc.com.',
             },
             {
                 question: 'What equipment can I insure?',
